@@ -27,9 +27,16 @@ add_executable(${PROJECT_NAME} main.cc)
 # add_subdirectory(drogon) 
 # target_link_libraries(${PROJECT_NAME} PRIVATE drogon)
 #
+add_subdirectory(/home/akram/Desktop/WebserverDrogon/WebServer/SubModules/jwt-cpp)
+target_link_libraries(${PROJECT_NAME} PRIVATE jwt-cpp)
+
+# https://github.com/trusch/libbcrypt
+add_subdirectory(/home/akram/Desktop/WebserverDrogon/WebServer/SubModules/libbcrypt)
+target_link_libraries(${PROJECT_NAME} PRIVATE bcrypt)
 # and comment out the following lines
 find_package(Drogon CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE Drogon::Drogon)
+# https://github.com/Thalhammer/jwt-cpp
 
 # ##############################################################################
 
@@ -48,6 +55,7 @@ aux_source_directory(controllers CTL_SRC)
 aux_source_directory(filters FILTER_SRC)
 aux_source_directory(plugins PLUGIN_SRC)
 aux_source_directory(models MODEL_SRC)
+aux_source_directory(utils UTIL_SRC)
 
 drogon_create_views(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/views
                     ${CMAKE_CURRENT_BINARY_DIR})

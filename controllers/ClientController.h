@@ -10,11 +10,11 @@ class ClientController : public drogon::HttpController<ClientController>
 {
   public:
     METHOD_LIST_BEGIN
-     ADD_METHOD_TO(ClientController::get, "/Client", Get);
-     ADD_METHOD_TO(ClientController::getOne, "/Client/{1}", Get);
-     ADD_METHOD_TO(ClientController::createOne, "/Client", Post);
-     ADD_METHOD_TO(ClientController::updateOne, "/Client/{1}", Put);
-     ADD_METHOD_TO(ClientController::deleteOne, "/Client/{1}", Delete);
+     ADD_METHOD_TO(ClientController::get, "/Client", Get , "LoginFilter");
+     ADD_METHOD_TO(ClientController::getOne, "/Client/{1}", Get, "LoginFilter");
+     ADD_METHOD_TO(ClientController::createOne, "/Client", Post , "LoginFilter");
+     ADD_METHOD_TO(ClientController::updateOne, "/Client/{1}", Put) , "LoginFilter";
+     ADD_METHOD_TO(ClientController::deleteOne, "/Client/{1}", Delete, "LoginFilter");
     METHOD_LIST_END
     void get(const HttpRequestPtr& req, std::function<void(const HttpResponsePtr &)> &&callback) const;
     void getOne(const HttpRequestPtr& req, std::function<void(const HttpResponsePtr &)> &&callback, int ClientID) const;

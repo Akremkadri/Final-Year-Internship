@@ -10,11 +10,11 @@ class PorfolioController : public drogon::HttpController<PorfolioController>
   public:
     METHOD_LIST_BEGIN
     // use METHOD_ADD to add your custom processing function here;
-     ADD_METHOD_TO(PorfolioController::get, "/Porfolio", Get);
-     ADD_METHOD_TO(PorfolioController::getOne, "/Porfolio/{1}", Get);
-     ADD_METHOD_TO(PorfolioController::createOne, "/Porfolio", Post);
-     ADD_METHOD_TO(PorfolioController::updateOne, "/Porfolio/{1}", Put);
-     ADD_METHOD_TO(PorfolioController::deleteOne, "/Porfolio/{1}", Delete);
+     ADD_METHOD_TO(PorfolioController::get, "/Porfolio", Get , "LoginFilter");
+     ADD_METHOD_TO(PorfolioController::getOne, "/Porfolio/{1}", Get, "LoginFilter");
+     ADD_METHOD_TO(PorfolioController::createOne, "/Porfolio", Post, "LoginFilter");
+     ADD_METHOD_TO(PorfolioController::updateOne, "/Porfolio/{1}", Put, "LoginFilter");
+     ADD_METHOD_TO(PorfolioController::deleteOne, "/Porfolio/{1}", Delete, "LoginFilter");
     METHOD_LIST_END
     // your declaration of processing function maybe like this:
     void get(const HttpRequestPtr& req, std::function<void(const HttpResponsePtr &)> &&callback) const;

@@ -1,0 +1,198 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "SubModules/libbcrypt/libbcrypt.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"install",
+			"include_directories",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"SubModules/libbcrypt/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 57,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 75,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 52,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 55,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 67,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " -Wall -O3 -g  "
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/home/akram/Desktop/WebserverDrogon/WebServer/SubModules/libbcrypt/include/bcrypt"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/akram/Desktop/WebserverDrogon/WebServer/SubModules/libbcrypt/include"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/home/akram/Desktop/WebserverDrogon/WebServer/SubModules/libbcrypt/src"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " -x assembler-with-cpp -g  "
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/home/akram/Desktop/WebserverDrogon/WebServer/SubModules/libbcrypt/include/bcrypt"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/akram/Desktop/WebserverDrogon/WebServer/SubModules/libbcrypt/include"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/home/akram/Desktop/WebserverDrogon/WebServer/SubModules/libbcrypt/src"
+				}
+			],
+			"language" : "ASM",
+			"sourceIndexes" : 
+			[
+				4
+			]
+		}
+	],
+	"id" : "bcrypt::@54a9922497cf910abb91",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 2,
+				"path" : "lib"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/usr/local"
+		}
+	},
+	"name" : "bcrypt",
+	"nameOnDisk" : "libbcrypt.a",
+	"paths" : 
+	{
+		"build" : "SubModules/libbcrypt",
+		"source" : "SubModules/libbcrypt"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				4
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "SubModules/libbcrypt/src/bcrypt.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "SubModules/libbcrypt/src/crypt_blowfish.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "SubModules/libbcrypt/src/crypt_gensalt.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "SubModules/libbcrypt/src/wrapper.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "SubModules/libbcrypt/src/x86.S",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}
