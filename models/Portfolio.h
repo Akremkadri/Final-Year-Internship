@@ -42,17 +42,179 @@ class Portfolio
   public:
     struct Cols
     {
-        static const std::string _porfolio_id;
-        static const std::string _porfolio_name;
-        static const std::string _date_Creation;
-        static const std::string _open_closed;
+        static const std::string _KUNDENID;
+        static const std::string _PORTFOLIONO;
+        static const std::string _BEZEICHNUNG;
+        static const std::string _MANAGEMENTTYP_CD;
+        static const std::string _MANAGER1_CD;
+        static const std::string _MANAGER2_CD;
+        static const std::string _MANAGER3_CD;
+        static const std::string _MANAGER4_CD;
+        static const std::string _MANAGER5_CD;
+        static const std::string _VERMITTLER_CD;
+        static const std::string _INFOVOLLMACHT;
+        static const std::string _KONTAKT;
+        static const std::string _ERTRAEGNISAUF_CD;
+        static const std::string _WAEHRUNGS_CD;
+        static const std::string _BELEGSATZ_CD;
+        static const std::string _LOESCH_CD;
+        static const std::string _LOESCHDATUM;
+        static const std::string _CRTDATUM;
+        static const std::string _CRTUSER;
+        static const std::string _MUTDATUM;
+        static const std::string _MUTUSER;
+        static const std::string _MISDOMIZIL_CD;
+        static const std::string _ANLAGESTRATEGIE_CD;
+        static const std::string _USWBASKET_CD;
+        static const std::string _VERSANDHAEUFIG_CD;
+        static const std::string _RUBRIK;
+        static const std::string _VERWALTUNGSMODUS_CD;
+        static const std::string _KUNDELETZTERBESUCH;
+        static const std::string _ANTRAGSORT;
+        static const std::string _ANTRAGSDATUM;
+        static const std::string _ANDEREPOSTADRESSE_CD;
+        static const std::string _BANKLAGERND_CD;
+        static const std::string _SPEZIALINSTRUKTION;
+        static const std::string _GELDVONKONTOINHABER_CD;
+        static const std::string _MANUALOPEN_CD;
+        static const std::string _KONTONUMMER1;
+        static const std::string _KONTONUMMER2;
+        static const std::string _KONTONUMMER3;
+        static const std::string _FILIAL_CD;
+        static const std::string _RUBRIK1;
+        static const std::string _RUBRIK2;
+        static const std::string _RUBRIK3;
+        static const std::string _ONLINE_CD;
+        static const std::string _PORTFOLIOTYP_CD;
+        static const std::string _CDPARTC;
+        static const std::string _PO_EU_TAX_PROZENT;
+        static const std::string _APSYS_STATUS_OPEC;
+        static const std::string _APSYS_ERRI;
+        static const std::string _APSYS_SHNAS;
+        static const std::string _APSYS_TYPMDCS;
+        static const std::string _APSYS_INTILGS;
+        static const std::string _APSYS_SHLIBPTFS;
+        static const std::string _APSYS_CDSTATDUSC;
+        static const std::string _APSYS_DTDEBPARTL;
+        static const std::string _APSYS_DTFINPARTL;
+        static const std::string _APSYS_IDSTRUCS;
+        static const std::string _APSYS_CDPERMI;
+        static const std::string _APSYS_CDCTGPTFINTS;
+        static const std::string _APSYS_CDCTGPTFSTES;
+        static const std::string _APSYS_CDCTGPTFSTMS;
+        static const std::string _APSYS_CDCTGPTFMAFS;
+        static const std::string _APSYS_CDCTGPTFRISKS;
+        static const std::string _APSYS_CDCTGPTFCOUS;
+        static const std::string _APSYS_CDCTGPTFTRCS;
+        static const std::string _APSYS_CDCTGPTFSTEBRUTNETS;
+        static const std::string _APSYS_FLAGIRSREPPARTC;
+        static const std::string _APSYS_CDCTGPTFTAXINTS;
+        static const std::string _APSYS_IDPOCS;
+        static const std::string _APSYS_INFO;
+        static const std::string _NETTOVERMOEGEN_CHF;
+        static const std::string _APSYS_INTISHS;
+        static const std::string _APSYS_IDPERSL;
+        static const std::string _APSYS_CDMOTIFPARTS;
+        static const std::string _IN_APSYS_TEMP_ENTSP_USERID;
+        static const std::string _IN_APSYS_TEMP_ENTSP_DATUM;
+        static const std::string _IN_APSYS_TEMP_ENTSPERREN_CD;
+        static const std::string _KUNDENKATEGORIE_CD;
+        static const std::string _GEMEINSCHAFTSKONTO_CD;
+        static const std::string _DRITTE_SAEULE_CD;
+        static const std::string _APSYS_TYPPTFS;
+        static const std::string _AUTO_EU_TAX_PERCENTAGE;
+        static const std::string _AKTID;
+        static const std::string _VALIDID;
+        static const std::string _VALID_CD;
+        static const std::string _VALIDUSER;
+        static const std::string _APSYS_CDCTGPTFSBXPS;
+        static const std::string _APSYS_CDCTGPTFSDOCS;
+        static const std::string _APSYS_IDENTS;
+        static const std::string _APSYS_CDSOUMBOLC;
+        static const std::string _APSYS_CDFACBOLC;
+        static const std::string _APSYS_FLAGTYPTRFPOLC;
+        static const std::string _APSYS_IDTRFPOLS;
+        static const std::string _APSYS_CDPCTPARTICTITUEUTAXC;
+        static const std::string _APSYS_CDMOTIFCLOS;
+        static const std::string _ENC_SALT;
+        static const std::string _BEZEICHNUNG_ENC;
+        static const std::string _KTOE_AML_PROFIL_CD;
+        static const std::string _APSYS_DEVEVALS;
+        static const std::string _APSYS_CDRNVSTMC;
+        static const std::string _APSYS_CDRGLPRLGC;
+        static const std::string _APSYS_CDCTGPTFCOMAGTCPTS;
+        static const std::string _APSYS_CDCTGPTFROUTORDS;
+        static const std::string _APSYS_CDCTGPTFGRECPTS;
+        static const std::string _APSYS_CDCTGPTFTRSFTITS;
+        static const std::string _APSYS_FLAGEXPSYSEXTTAXI;
+        static const std::string _WB_IST_NICHT_ZWINGEND_CD;
+        static const std::string _APSYS_CDBQERESTC;
+        static const std::string _APSYS_CDCTGPTFTYPPLACS;
+        static const std::string _APSYS_CDEANGRMTCLI1S;
+        static const std::string _APSYS_CDEANGRMTCLI2S;
+        static const std::string _APSYS_CDFATCATYPC;
+        static const std::string _APSYS_IDFATCACLAS;
+        static const std::string _APSYS_CDFATCASTATCALCCRMC;
+        static const std::string _APSYS_CDFATCASTATC;
+        static const std::string _APSYS_COMMENTFATCASTATS;
+        static const std::string _APSYS_CDFATCAMOTIFPARTS;
+        static const std::string _APSYS_CDFATCASTATCALCGLOBC;
+        static const std::string _APSYS_CDFATCASTATCALCLOCC;
+        static const std::string _APSYS_CDVALIDSTATC;
+        static const std::string _APSYS_USERVALIDFATCASTATS;
+        static const std::string _APSYS_DTVALIDFATCASTATL;
+        static const std::string _APSYS_HRVALIDFATCASTATL;
+        static const std::string _APSYS_CDCTRNETTC553C;
+        static const std::string _APSYS_FLAGFORCEPOSOSTMANAGI;
+        static const std::string _APSYS_POSOSTMANAGC;
+        static const std::string _APSYS_CRITEREUSFATCASTATL;
+        static const std::string _APSYS_FLAGSIMSI;
+        static const std::string _NR_OF_BO_IN_WHT_STATEMENT;
+        static const std::string _PARTNER_WITH_UNL_LIABILITY_CD;
+        static const std::string _COMPANY_MANAGED_BY_BO_CD;
+        static const std::string _IS_TRUSTEE_PHYSICAL_CD;
+        static const std::string _NO_TRADING_US_SECURITIES_CD;
+        static const std::string _PORTFOLIO_SEGR_ACCOUNT_CD;
+        static const std::string _US_WHT_START_DATE;
+        static const std::string _APSYS_CDCTGPTFIVSTAUTOS;
+        static const std::string _AUTOMATISCHE_VERTEILUNG_CD;
+        static const std::string _APSYS_CDTYPREPORTQIC;
+        static const std::string _APSYS_FLAGIRSNONACTIFI;
+        static const std::string _OPENING_DOCUMENTS_PROPOSED_CD;
+        static const std::string _APSYS_CDCTGPTFALGCPTS;
+        static const std::string _APSYS_IDSTRUCFORJURS;
+        static const std::string _APSYS_IDENTFORJURS;
+        static const std::string _FATCA_BASKET_CD;
+        static const std::string _APSYS_CDMETHCLOC;
+        static const std::string _APSYS_DTEVALCLOL;
+        static const std::string _AEOI_EXEMPTION_CD;
+        static const std::string _AEOI_SUB_EXEMPTION_CD;
+        static const std::string _UNDOCUMENTED_ACCOUNT_CD;
+        static const std::string _DORMANT_ACCOUNT_CD;
+        static const std::string _AEOI_CONSISTENCY_STATUS_CD;
+        static const std::string _AEOI_FINAL_STATUS_CD;
+        static const std::string _AEOI_REVIEW_DATE;
+        static const std::string _APSYS_CDMIFIDEXEMPTC;
+        static const std::string _APSYS_DTDEBMIFIDL;
+        static const std::string _OPENED_IN_APSYS_DATE;
+        static const std::string _APSYS_FLAGDELDATAPERSI;
+        static const std::string _APSYS_DTWAITDELDATAPERSL;
+        static const std::string _APSYS_CDPTFSELDGSC;
+        static const std::string _APSYS_CDMOTIFPARTDGSS;
+        static const std::string _EAM_CD;
+        static const std::string _RETENTION_ON_HOLD;
+        static const std::string _LOGICAL_ERASURE;
+        static const std::string _RETENTION_ON_HOLD_DATE;
+        static const std::string _RETENTION_ON_HOLD_REASON;
+        static const std::string _LOGICAL_ERASURE_DATE;
+        static const std::string _LOGICAL_ERASURE_REASON;
     };
 
     const static int primaryKeyNumber;
     const static std::string tableName;
     const static bool hasPrimaryKey;
     const static std::string primaryKeyName;
-    using PrimaryKeyType = int32_t;
+    using PrimaryKeyType = double;
     const PrimaryKeyType &getPrimaryKey() const;
 
     /**
@@ -97,43 +259,1636 @@ class Portfolio
                           std::string &err,
                           bool isForCreation);
 
-    /**  For column porfolio_id  */
-    ///Get the value of the column porfolio_id, returns the default value if the column is null
-    const int32_t &getValueOfPorfolioId() const noexcept;
+    /**  For column KUNDENID  */
+    ///Get the value of the column KUNDENID, returns the default value if the column is null
+    const double &getValueOfKundenid() const noexcept;
     ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
-    const std::shared_ptr<int32_t> &getPorfolioId() const noexcept;
-    ///Set the value of the column porfolio_id
-    void setPorfolioId(const int32_t &pPorfolioId) noexcept;
+    const std::shared_ptr<double> &getKundenid() const noexcept;
+    ///Set the value of the column KUNDENID
+    void setKundenid(const double &pKundenid) noexcept;
+    void setKundenidToNull() noexcept;
 
-    /**  For column porfolio_name  */
-    ///Get the value of the column porfolio_name, returns the default value if the column is null
-    const std::string &getValueOfPorfolioName() const noexcept;
+    /**  For column PORTFOLIONO  */
+    ///Get the value of the column PORTFOLIONO, returns the default value if the column is null
+    const double &getValueOfPortfoliono() const noexcept;
     ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
-    const std::shared_ptr<std::string> &getPorfolioName() const noexcept;
-    ///Set the value of the column porfolio_name
-    void setPorfolioName(const std::string &pPorfolioName) noexcept;
-    void setPorfolioName(std::string &&pPorfolioName) noexcept;
+    const std::shared_ptr<double> &getPortfoliono() const noexcept;
+    ///Set the value of the column PORTFOLIONO
+    void setPortfoliono(const double &pPortfoliono) noexcept;
 
-    /**  For column date_Creation  */
-    ///Get the value of the column date_Creation, returns the default value if the column is null
-    const ::trantor::Date &getValueOfDateCreation() const noexcept;
+    /**  For column BEZEICHNUNG  */
+    ///Get the value of the column BEZEICHNUNG, returns the default value if the column is null
+    const std::string &getValueOfBezeichnung() const noexcept;
     ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
-    const std::shared_ptr<::trantor::Date> &getDateCreation() const noexcept;
-    ///Set the value of the column date_Creation
-    void setDateCreation(const ::trantor::Date &pDateCreation) noexcept;
-    void setDateCreationToNull() noexcept;
+    const std::shared_ptr<std::string> &getBezeichnung() const noexcept;
+    ///Set the value of the column BEZEICHNUNG
+    void setBezeichnung(const std::string &pBezeichnung) noexcept;
+    void setBezeichnung(std::string &&pBezeichnung) noexcept;
+    void setBezeichnungToNull() noexcept;
 
-    /**  For column open_closed  */
-    ///Get the value of the column open_closed, returns the default value if the column is null
-    const int32_t &getValueOfOpenClosed() const noexcept;
+    /**  For column MANAGEMENTTYP_CD  */
+    ///Get the value of the column MANAGEMENTTYP_CD, returns the default value if the column is null
+    const std::string &getValueOfManagementtypCd() const noexcept;
     ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
-    const std::shared_ptr<int32_t> &getOpenClosed() const noexcept;
-    ///Set the value of the column open_closed
-    void setOpenClosed(const int32_t &pOpenClosed) noexcept;
-    void setOpenClosedToNull() noexcept;
+    const std::shared_ptr<std::string> &getManagementtypCd() const noexcept;
+    ///Set the value of the column MANAGEMENTTYP_CD
+    void setManagementtypCd(const std::string &pManagementtypCd) noexcept;
+    void setManagementtypCd(std::string &&pManagementtypCd) noexcept;
+    void setManagementtypCdToNull() noexcept;
+
+    /**  For column MANAGER1_CD  */
+    ///Get the value of the column MANAGER1_CD, returns the default value if the column is null
+    const std::string &getValueOfManager1Cd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getManager1Cd() const noexcept;
+    ///Set the value of the column MANAGER1_CD
+    void setManager1Cd(const std::string &pManager1Cd) noexcept;
+    void setManager1Cd(std::string &&pManager1Cd) noexcept;
+    void setManager1CdToNull() noexcept;
+
+    /**  For column MANAGER2_CD  */
+    ///Get the value of the column MANAGER2_CD, returns the default value if the column is null
+    const std::string &getValueOfManager2Cd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getManager2Cd() const noexcept;
+    ///Set the value of the column MANAGER2_CD
+    void setManager2Cd(const std::string &pManager2Cd) noexcept;
+    void setManager2Cd(std::string &&pManager2Cd) noexcept;
+    void setManager2CdToNull() noexcept;
+
+    /**  For column MANAGER3_CD  */
+    ///Get the value of the column MANAGER3_CD, returns the default value if the column is null
+    const std::string &getValueOfManager3Cd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getManager3Cd() const noexcept;
+    ///Set the value of the column MANAGER3_CD
+    void setManager3Cd(const std::string &pManager3Cd) noexcept;
+    void setManager3Cd(std::string &&pManager3Cd) noexcept;
+    void setManager3CdToNull() noexcept;
+
+    /**  For column MANAGER4_CD  */
+    ///Get the value of the column MANAGER4_CD, returns the default value if the column is null
+    const std::string &getValueOfManager4Cd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getManager4Cd() const noexcept;
+    ///Set the value of the column MANAGER4_CD
+    void setManager4Cd(const std::string &pManager4Cd) noexcept;
+    void setManager4Cd(std::string &&pManager4Cd) noexcept;
+    void setManager4CdToNull() noexcept;
+
+    /**  For column MANAGER5_CD  */
+    ///Get the value of the column MANAGER5_CD, returns the default value if the column is null
+    const std::string &getValueOfManager5Cd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getManager5Cd() const noexcept;
+    ///Set the value of the column MANAGER5_CD
+    void setManager5Cd(const std::string &pManager5Cd) noexcept;
+    void setManager5Cd(std::string &&pManager5Cd) noexcept;
+    void setManager5CdToNull() noexcept;
+
+    /**  For column VERMITTLER_CD  */
+    ///Get the value of the column VERMITTLER_CD, returns the default value if the column is null
+    const std::string &getValueOfVermittlerCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getVermittlerCd() const noexcept;
+    ///Set the value of the column VERMITTLER_CD
+    void setVermittlerCd(const std::string &pVermittlerCd) noexcept;
+    void setVermittlerCd(std::string &&pVermittlerCd) noexcept;
+    void setVermittlerCdToNull() noexcept;
+
+    /**  For column INFOVOLLMACHT  */
+    ///Get the value of the column INFOVOLLMACHT, returns the default value if the column is null
+    const std::string &getValueOfInfovollmacht() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getInfovollmacht() const noexcept;
+    ///Set the value of the column INFOVOLLMACHT
+    void setInfovollmacht(const std::string &pInfovollmacht) noexcept;
+    void setInfovollmacht(std::string &&pInfovollmacht) noexcept;
+    void setInfovollmachtToNull() noexcept;
+
+    /**  For column KONTAKT  */
+    ///Get the value of the column KONTAKT, returns the default value if the column is null
+    const std::string &getValueOfKontakt() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getKontakt() const noexcept;
+    ///Set the value of the column KONTAKT
+    void setKontakt(const std::string &pKontakt) noexcept;
+    void setKontakt(std::string &&pKontakt) noexcept;
+    void setKontaktToNull() noexcept;
+
+    /**  For column ERTRAEGNISAUF_CD  */
+    ///Get the value of the column ERTRAEGNISAUF_CD, returns the default value if the column is null
+    const std::string &getValueOfErtraegnisaufCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getErtraegnisaufCd() const noexcept;
+    ///Set the value of the column ERTRAEGNISAUF_CD
+    void setErtraegnisaufCd(const std::string &pErtraegnisaufCd) noexcept;
+    void setErtraegnisaufCd(std::string &&pErtraegnisaufCd) noexcept;
+    void setErtraegnisaufCdToNull() noexcept;
+
+    /**  For column WAEHRUNGS_CD  */
+    ///Get the value of the column WAEHRUNGS_CD, returns the default value if the column is null
+    const std::string &getValueOfWaehrungsCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getWaehrungsCd() const noexcept;
+    ///Set the value of the column WAEHRUNGS_CD
+    void setWaehrungsCd(const std::string &pWaehrungsCd) noexcept;
+    void setWaehrungsCd(std::string &&pWaehrungsCd) noexcept;
+    void setWaehrungsCdToNull() noexcept;
+
+    /**  For column BELEGSATZ_CD  */
+    ///Get the value of the column BELEGSATZ_CD, returns the default value if the column is null
+    const std::string &getValueOfBelegsatzCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getBelegsatzCd() const noexcept;
+    ///Set the value of the column BELEGSATZ_CD
+    void setBelegsatzCd(const std::string &pBelegsatzCd) noexcept;
+    void setBelegsatzCd(std::string &&pBelegsatzCd) noexcept;
+    void setBelegsatzCdToNull() noexcept;
+
+    /**  For column LOESCH_CD  */
+    ///Get the value of the column LOESCH_CD, returns the default value if the column is null
+    const std::string &getValueOfLoeschCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getLoeschCd() const noexcept;
+    ///Set the value of the column LOESCH_CD
+    void setLoeschCd(const std::string &pLoeschCd) noexcept;
+    void setLoeschCd(std::string &&pLoeschCd) noexcept;
+    void setLoeschCdToNull() noexcept;
+
+    /**  For column LOESCHDATUM  */
+    ///Get the value of the column LOESCHDATUM, returns the default value if the column is null
+    const ::trantor::Date &getValueOfLoeschdatum() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getLoeschdatum() const noexcept;
+    ///Set the value of the column LOESCHDATUM
+    void setLoeschdatum(const ::trantor::Date &pLoeschdatum) noexcept;
+    void setLoeschdatumToNull() noexcept;
+
+    /**  For column CRTDATUM  */
+    ///Get the value of the column CRTDATUM, returns the default value if the column is null
+    const ::trantor::Date &getValueOfCrtdatum() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getCrtdatum() const noexcept;
+    ///Set the value of the column CRTDATUM
+    void setCrtdatum(const ::trantor::Date &pCrtdatum) noexcept;
+    void setCrtdatumToNull() noexcept;
+
+    /**  For column CRTUSER  */
+    ///Get the value of the column CRTUSER, returns the default value if the column is null
+    const std::string &getValueOfCrtuser() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getCrtuser() const noexcept;
+    ///Set the value of the column CRTUSER
+    void setCrtuser(const std::string &pCrtuser) noexcept;
+    void setCrtuser(std::string &&pCrtuser) noexcept;
+    void setCrtuserToNull() noexcept;
+
+    /**  For column MUTDATUM  */
+    ///Get the value of the column MUTDATUM, returns the default value if the column is null
+    const ::trantor::Date &getValueOfMutdatum() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getMutdatum() const noexcept;
+    ///Set the value of the column MUTDATUM
+    void setMutdatum(const ::trantor::Date &pMutdatum) noexcept;
+    void setMutdatumToNull() noexcept;
+
+    /**  For column MUTUSER  */
+    ///Get the value of the column MUTUSER, returns the default value if the column is null
+    const std::string &getValueOfMutuser() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getMutuser() const noexcept;
+    ///Set the value of the column MUTUSER
+    void setMutuser(const std::string &pMutuser) noexcept;
+    void setMutuser(std::string &&pMutuser) noexcept;
+    void setMutuserToNull() noexcept;
+
+    /**  For column MISDOMIZIL_CD  */
+    ///Get the value of the column MISDOMIZIL_CD, returns the default value if the column is null
+    const std::string &getValueOfMisdomizilCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getMisdomizilCd() const noexcept;
+    ///Set the value of the column MISDOMIZIL_CD
+    void setMisdomizilCd(const std::string &pMisdomizilCd) noexcept;
+    void setMisdomizilCd(std::string &&pMisdomizilCd) noexcept;
+    void setMisdomizilCdToNull() noexcept;
+
+    /**  For column ANLAGESTRATEGIE_CD  */
+    ///Get the value of the column ANLAGESTRATEGIE_CD, returns the default value if the column is null
+    const std::string &getValueOfAnlagestrategieCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getAnlagestrategieCd() const noexcept;
+    ///Set the value of the column ANLAGESTRATEGIE_CD
+    void setAnlagestrategieCd(const std::string &pAnlagestrategieCd) noexcept;
+    void setAnlagestrategieCd(std::string &&pAnlagestrategieCd) noexcept;
+    void setAnlagestrategieCdToNull() noexcept;
+
+    /**  For column USWBASKET_CD  */
+    ///Get the value of the column USWBASKET_CD, returns the default value if the column is null
+    const std::string &getValueOfUswbasketCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getUswbasketCd() const noexcept;
+    ///Set the value of the column USWBASKET_CD
+    void setUswbasketCd(const std::string &pUswbasketCd) noexcept;
+    void setUswbasketCd(std::string &&pUswbasketCd) noexcept;
+    void setUswbasketCdToNull() noexcept;
+
+    /**  For column VERSANDHAEUFIG_CD  */
+    ///Get the value of the column VERSANDHAEUFIG_CD, returns the default value if the column is null
+    const std::string &getValueOfVersandhaeufigCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getVersandhaeufigCd() const noexcept;
+    ///Set the value of the column VERSANDHAEUFIG_CD
+    void setVersandhaeufigCd(const std::string &pVersandhaeufigCd) noexcept;
+    void setVersandhaeufigCd(std::string &&pVersandhaeufigCd) noexcept;
+    void setVersandhaeufigCdToNull() noexcept;
+
+    /**  For column RUBRIK  */
+    ///Get the value of the column RUBRIK, returns the default value if the column is null
+    const std::string &getValueOfRubrik() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getRubrik() const noexcept;
+    ///Set the value of the column RUBRIK
+    void setRubrik(const std::string &pRubrik) noexcept;
+    void setRubrik(std::string &&pRubrik) noexcept;
+    void setRubrikToNull() noexcept;
+
+    /**  For column VERWALTUNGSMODUS_CD  */
+    ///Get the value of the column VERWALTUNGSMODUS_CD, returns the default value if the column is null
+    const std::string &getValueOfVerwaltungsmodusCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getVerwaltungsmodusCd() const noexcept;
+    ///Set the value of the column VERWALTUNGSMODUS_CD
+    void setVerwaltungsmodusCd(const std::string &pVerwaltungsmodusCd) noexcept;
+    void setVerwaltungsmodusCd(std::string &&pVerwaltungsmodusCd) noexcept;
+    void setVerwaltungsmodusCdToNull() noexcept;
+
+    /**  For column KUNDELETZTERBESUCH  */
+    ///Get the value of the column KUNDELETZTERBESUCH, returns the default value if the column is null
+    const ::trantor::Date &getValueOfKundeletzterbesuch() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getKundeletzterbesuch() const noexcept;
+    ///Set the value of the column KUNDELETZTERBESUCH
+    void setKundeletzterbesuch(const ::trantor::Date &pKundeletzterbesuch) noexcept;
+    void setKundeletzterbesuchToNull() noexcept;
+
+    /**  For column ANTRAGSORT  */
+    ///Get the value of the column ANTRAGSORT, returns the default value if the column is null
+    const std::string &getValueOfAntragsort() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getAntragsort() const noexcept;
+    ///Set the value of the column ANTRAGSORT
+    void setAntragsort(const std::string &pAntragsort) noexcept;
+    void setAntragsort(std::string &&pAntragsort) noexcept;
+    void setAntragsortToNull() noexcept;
+
+    /**  For column ANTRAGSDATUM  */
+    ///Get the value of the column ANTRAGSDATUM, returns the default value if the column is null
+    const ::trantor::Date &getValueOfAntragsdatum() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getAntragsdatum() const noexcept;
+    ///Set the value of the column ANTRAGSDATUM
+    void setAntragsdatum(const ::trantor::Date &pAntragsdatum) noexcept;
+    void setAntragsdatumToNull() noexcept;
+
+    /**  For column ANDEREPOSTADRESSE_CD  */
+    ///Get the value of the column ANDEREPOSTADRESSE_CD, returns the default value if the column is null
+    const std::string &getValueOfAnderepostadresseCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getAnderepostadresseCd() const noexcept;
+    ///Set the value of the column ANDEREPOSTADRESSE_CD
+    void setAnderepostadresseCd(const std::string &pAnderepostadresseCd) noexcept;
+    void setAnderepostadresseCd(std::string &&pAnderepostadresseCd) noexcept;
+    void setAnderepostadresseCdToNull() noexcept;
+
+    /**  For column BANKLAGERND_CD  */
+    ///Get the value of the column BANKLAGERND_CD, returns the default value if the column is null
+    const std::string &getValueOfBanklagerndCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getBanklagerndCd() const noexcept;
+    ///Set the value of the column BANKLAGERND_CD
+    void setBanklagerndCd(const std::string &pBanklagerndCd) noexcept;
+    void setBanklagerndCd(std::string &&pBanklagerndCd) noexcept;
+    void setBanklagerndCdToNull() noexcept;
+
+    /**  For column SPEZIALINSTRUKTION  */
+    ///Get the value of the column SPEZIALINSTRUKTION, returns the default value if the column is null
+    const std::string &getValueOfSpezialinstruktion() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getSpezialinstruktion() const noexcept;
+    ///Set the value of the column SPEZIALINSTRUKTION
+    void setSpezialinstruktion(const std::string &pSpezialinstruktion) noexcept;
+    void setSpezialinstruktion(std::string &&pSpezialinstruktion) noexcept;
+    void setSpezialinstruktionToNull() noexcept;
+
+    /**  For column GELDVONKONTOINHABER_CD  */
+    ///Get the value of the column GELDVONKONTOINHABER_CD, returns the default value if the column is null
+    const std::string &getValueOfGeldvonkontoinhaberCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getGeldvonkontoinhaberCd() const noexcept;
+    ///Set the value of the column GELDVONKONTOINHABER_CD
+    void setGeldvonkontoinhaberCd(const std::string &pGeldvonkontoinhaberCd) noexcept;
+    void setGeldvonkontoinhaberCd(std::string &&pGeldvonkontoinhaberCd) noexcept;
+    void setGeldvonkontoinhaberCdToNull() noexcept;
+
+    /**  For column MANUALOPEN_CD  */
+    ///Get the value of the column MANUALOPEN_CD, returns the default value if the column is null
+    const std::string &getValueOfManualopenCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getManualopenCd() const noexcept;
+    ///Set the value of the column MANUALOPEN_CD
+    void setManualopenCd(const std::string &pManualopenCd) noexcept;
+    void setManualopenCd(std::string &&pManualopenCd) noexcept;
+    void setManualopenCdToNull() noexcept;
+
+    /**  For column KONTONUMMER1  */
+    ///Get the value of the column KONTONUMMER1, returns the default value if the column is null
+    const std::string &getValueOfKontonummer1() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getKontonummer1() const noexcept;
+    ///Set the value of the column KONTONUMMER1
+    void setKontonummer1(const std::string &pKontonummer1) noexcept;
+    void setKontonummer1(std::string &&pKontonummer1) noexcept;
+    void setKontonummer1ToNull() noexcept;
+
+    /**  For column KONTONUMMER2  */
+    ///Get the value of the column KONTONUMMER2, returns the default value if the column is null
+    const std::string &getValueOfKontonummer2() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getKontonummer2() const noexcept;
+    ///Set the value of the column KONTONUMMER2
+    void setKontonummer2(const std::string &pKontonummer2) noexcept;
+    void setKontonummer2(std::string &&pKontonummer2) noexcept;
+    void setKontonummer2ToNull() noexcept;
+
+    /**  For column KONTONUMMER3  */
+    ///Get the value of the column KONTONUMMER3, returns the default value if the column is null
+    const std::string &getValueOfKontonummer3() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getKontonummer3() const noexcept;
+    ///Set the value of the column KONTONUMMER3
+    void setKontonummer3(const std::string &pKontonummer3) noexcept;
+    void setKontonummer3(std::string &&pKontonummer3) noexcept;
+    void setKontonummer3ToNull() noexcept;
+
+    /**  For column FILIAL_CD  */
+    ///Get the value of the column FILIAL_CD, returns the default value if the column is null
+    const std::string &getValueOfFilialCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getFilialCd() const noexcept;
+    ///Set the value of the column FILIAL_CD
+    void setFilialCd(const std::string &pFilialCd) noexcept;
+    void setFilialCd(std::string &&pFilialCd) noexcept;
+    void setFilialCdToNull() noexcept;
+
+    /**  For column RUBRIK1  */
+    ///Get the value of the column RUBRIK1, returns the default value if the column is null
+    const std::string &getValueOfRubrik1() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getRubrik1() const noexcept;
+    ///Set the value of the column RUBRIK1
+    void setRubrik1(const std::string &pRubrik1) noexcept;
+    void setRubrik1(std::string &&pRubrik1) noexcept;
+    void setRubrik1ToNull() noexcept;
+
+    /**  For column RUBRIK2  */
+    ///Get the value of the column RUBRIK2, returns the default value if the column is null
+    const std::string &getValueOfRubrik2() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getRubrik2() const noexcept;
+    ///Set the value of the column RUBRIK2
+    void setRubrik2(const std::string &pRubrik2) noexcept;
+    void setRubrik2(std::string &&pRubrik2) noexcept;
+    void setRubrik2ToNull() noexcept;
+
+    /**  For column RUBRIK3  */
+    ///Get the value of the column RUBRIK3, returns the default value if the column is null
+    const std::string &getValueOfRubrik3() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getRubrik3() const noexcept;
+    ///Set the value of the column RUBRIK3
+    void setRubrik3(const std::string &pRubrik3) noexcept;
+    void setRubrik3(std::string &&pRubrik3) noexcept;
+    void setRubrik3ToNull() noexcept;
+
+    /**  For column ONLINE_CD  */
+    ///Get the value of the column ONLINE_CD, returns the default value if the column is null
+    const double &getValueOfOnlineCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<double> &getOnlineCd() const noexcept;
+    ///Set the value of the column ONLINE_CD
+    void setOnlineCd(const double &pOnlineCd) noexcept;
+    void setOnlineCdToNull() noexcept;
+
+    /**  For column PORTFOLIOTYP_CD  */
+    ///Get the value of the column PORTFOLIOTYP_CD, returns the default value if the column is null
+    const std::string &getValueOfPortfoliotypCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getPortfoliotypCd() const noexcept;
+    ///Set the value of the column PORTFOLIOTYP_CD
+    void setPortfoliotypCd(const std::string &pPortfoliotypCd) noexcept;
+    void setPortfoliotypCd(std::string &&pPortfoliotypCd) noexcept;
+    void setPortfoliotypCdToNull() noexcept;
+
+    /**  For column CDPARTC  */
+    ///Get the value of the column CDPARTC, returns the default value if the column is null
+    const std::string &getValueOfCdpartc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getCdpartc() const noexcept;
+    ///Set the value of the column CDPARTC
+    void setCdpartc(const std::string &pCdpartc) noexcept;
+    void setCdpartc(std::string &&pCdpartc) noexcept;
+    void setCdpartcToNull() noexcept;
+
+    /**  For column PO_EU_TAX_PROZENT  */
+    ///Get the value of the column PO_EU_TAX_PROZENT, returns the default value if the column is null
+    const float &getValueOfPoEuTaxProzent() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<float> &getPoEuTaxProzent() const noexcept;
+    ///Set the value of the column PO_EU_TAX_PROZENT
+    void setPoEuTaxProzent(const float &pPoEuTaxProzent) noexcept;
+    void setPoEuTaxProzentToNull() noexcept;
+
+    /**  For column APSYS_STATUS_OPEC  */
+    ///Get the value of the column APSYS_STATUS_OPEC, returns the default value if the column is null
+    const std::string &getValueOfApsysStatusOpec() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysStatusOpec() const noexcept;
+    ///Set the value of the column APSYS_STATUS_OPEC
+    void setApsysStatusOpec(const std::string &pApsysStatusOpec) noexcept;
+    void setApsysStatusOpec(std::string &&pApsysStatusOpec) noexcept;
+    void setApsysStatusOpecToNull() noexcept;
+
+    /**  For column APSYS_ERRI  */
+    ///Get the value of the column APSYS_ERRI, returns the default value if the column is null
+    const double &getValueOfApsysErri() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<double> &getApsysErri() const noexcept;
+    ///Set the value of the column APSYS_ERRI
+    void setApsysErri(const double &pApsysErri) noexcept;
+    void setApsysErriToNull() noexcept;
+
+    /**  For column APSYS_SHNAS  */
+    ///Get the value of the column APSYS_SHNAS, returns the default value if the column is null
+    const std::string &getValueOfApsysShnas() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysShnas() const noexcept;
+    ///Set the value of the column APSYS_SHNAS
+    void setApsysShnas(const std::string &pApsysShnas) noexcept;
+    void setApsysShnas(std::string &&pApsysShnas) noexcept;
+    void setApsysShnasToNull() noexcept;
+
+    /**  For column APSYS_TYPMDCS  */
+    ///Get the value of the column APSYS_TYPMDCS, returns the default value if the column is null
+    const std::string &getValueOfApsysTypmdcs() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysTypmdcs() const noexcept;
+    ///Set the value of the column APSYS_TYPMDCS
+    void setApsysTypmdcs(const std::string &pApsysTypmdcs) noexcept;
+    void setApsysTypmdcs(std::string &&pApsysTypmdcs) noexcept;
+    void setApsysTypmdcsToNull() noexcept;
+
+    /**  For column APSYS_INTILGS  */
+    ///Get the value of the column APSYS_INTILGS, returns the default value if the column is null
+    const std::string &getValueOfApsysIntilgs() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysIntilgs() const noexcept;
+    ///Set the value of the column APSYS_INTILGS
+    void setApsysIntilgs(const std::string &pApsysIntilgs) noexcept;
+    void setApsysIntilgs(std::string &&pApsysIntilgs) noexcept;
+    void setApsysIntilgsToNull() noexcept;
+
+    /**  For column APSYS_SHLIBPTFS  */
+    ///Get the value of the column APSYS_SHLIBPTFS, returns the default value if the column is null
+    const std::string &getValueOfApsysShlibptfs() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysShlibptfs() const noexcept;
+    ///Set the value of the column APSYS_SHLIBPTFS
+    void setApsysShlibptfs(const std::string &pApsysShlibptfs) noexcept;
+    void setApsysShlibptfs(std::string &&pApsysShlibptfs) noexcept;
+    void setApsysShlibptfsToNull() noexcept;
+
+    /**  For column APSYS_CDSTATDUSC  */
+    ///Get the value of the column APSYS_CDSTATDUSC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdstatdusc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdstatdusc() const noexcept;
+    ///Set the value of the column APSYS_CDSTATDUSC
+    void setApsysCdstatdusc(const std::string &pApsysCdstatdusc) noexcept;
+    void setApsysCdstatdusc(std::string &&pApsysCdstatdusc) noexcept;
+    void setApsysCdstatduscToNull() noexcept;
+
+    /**  For column APSYS_DTDEBPARTL  */
+    ///Get the value of the column APSYS_DTDEBPARTL, returns the default value if the column is null
+    const ::trantor::Date &getValueOfApsysDtdebpartl() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getApsysDtdebpartl() const noexcept;
+    ///Set the value of the column APSYS_DTDEBPARTL
+    void setApsysDtdebpartl(const ::trantor::Date &pApsysDtdebpartl) noexcept;
+    void setApsysDtdebpartlToNull() noexcept;
+
+    /**  For column APSYS_DTFINPARTL  */
+    ///Get the value of the column APSYS_DTFINPARTL, returns the default value if the column is null
+    const ::trantor::Date &getValueOfApsysDtfinpartl() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getApsysDtfinpartl() const noexcept;
+    ///Set the value of the column APSYS_DTFINPARTL
+    void setApsysDtfinpartl(const ::trantor::Date &pApsysDtfinpartl) noexcept;
+    void setApsysDtfinpartlToNull() noexcept;
+
+    /**  For column APSYS_IDSTRUCS  */
+    ///Get the value of the column APSYS_IDSTRUCS, returns the default value if the column is null
+    const std::string &getValueOfApsysIdstrucs() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysIdstrucs() const noexcept;
+    ///Set the value of the column APSYS_IDSTRUCS
+    void setApsysIdstrucs(const std::string &pApsysIdstrucs) noexcept;
+    void setApsysIdstrucs(std::string &&pApsysIdstrucs) noexcept;
+    void setApsysIdstrucsToNull() noexcept;
+
+    /**  For column APSYS_CDPERMI  */
+    ///Get the value of the column APSYS_CDPERMI, returns the default value if the column is null
+    const double &getValueOfApsysCdpermi() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<double> &getApsysCdpermi() const noexcept;
+    ///Set the value of the column APSYS_CDPERMI
+    void setApsysCdpermi(const double &pApsysCdpermi) noexcept;
+    void setApsysCdpermiToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFINTS  */
+    ///Get the value of the column APSYS_CDCTGPTFINTS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptfints() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptfints() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFINTS
+    void setApsysCdctgptfints(const std::string &pApsysCdctgptfints) noexcept;
+    void setApsysCdctgptfints(std::string &&pApsysCdctgptfints) noexcept;
+    void setApsysCdctgptfintsToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFSTES  */
+    ///Get the value of the column APSYS_CDCTGPTFSTES, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptfstes() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptfstes() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFSTES
+    void setApsysCdctgptfstes(const std::string &pApsysCdctgptfstes) noexcept;
+    void setApsysCdctgptfstes(std::string &&pApsysCdctgptfstes) noexcept;
+    void setApsysCdctgptfstesToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFSTMS  */
+    ///Get the value of the column APSYS_CDCTGPTFSTMS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptfstms() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptfstms() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFSTMS
+    void setApsysCdctgptfstms(const std::string &pApsysCdctgptfstms) noexcept;
+    void setApsysCdctgptfstms(std::string &&pApsysCdctgptfstms) noexcept;
+    void setApsysCdctgptfstmsToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFMAFS  */
+    ///Get the value of the column APSYS_CDCTGPTFMAFS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptfmafs() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptfmafs() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFMAFS
+    void setApsysCdctgptfmafs(const std::string &pApsysCdctgptfmafs) noexcept;
+    void setApsysCdctgptfmafs(std::string &&pApsysCdctgptfmafs) noexcept;
+    void setApsysCdctgptfmafsToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFRISKS  */
+    ///Get the value of the column APSYS_CDCTGPTFRISKS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptfrisks() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptfrisks() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFRISKS
+    void setApsysCdctgptfrisks(const std::string &pApsysCdctgptfrisks) noexcept;
+    void setApsysCdctgptfrisks(std::string &&pApsysCdctgptfrisks) noexcept;
+    void setApsysCdctgptfrisksToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFCOUS  */
+    ///Get the value of the column APSYS_CDCTGPTFCOUS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptfcous() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptfcous() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFCOUS
+    void setApsysCdctgptfcous(const std::string &pApsysCdctgptfcous) noexcept;
+    void setApsysCdctgptfcous(std::string &&pApsysCdctgptfcous) noexcept;
+    void setApsysCdctgptfcousToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFTRCS  */
+    ///Get the value of the column APSYS_CDCTGPTFTRCS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptftrcs() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptftrcs() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFTRCS
+    void setApsysCdctgptftrcs(const std::string &pApsysCdctgptftrcs) noexcept;
+    void setApsysCdctgptftrcs(std::string &&pApsysCdctgptftrcs) noexcept;
+    void setApsysCdctgptftrcsToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFSTEBRUTNETS  */
+    ///Get the value of the column APSYS_CDCTGPTFSTEBRUTNETS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptfstebrutnets() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptfstebrutnets() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFSTEBRUTNETS
+    void setApsysCdctgptfstebrutnets(const std::string &pApsysCdctgptfstebrutnets) noexcept;
+    void setApsysCdctgptfstebrutnets(std::string &&pApsysCdctgptfstebrutnets) noexcept;
+    void setApsysCdctgptfstebrutnetsToNull() noexcept;
+
+    /**  For column APSYS_FLAGIRSREPPARTC  */
+    ///Get the value of the column APSYS_FLAGIRSREPPARTC, returns the default value if the column is null
+    const std::string &getValueOfApsysFlagirsreppartc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysFlagirsreppartc() const noexcept;
+    ///Set the value of the column APSYS_FLAGIRSREPPARTC
+    void setApsysFlagirsreppartc(const std::string &pApsysFlagirsreppartc) noexcept;
+    void setApsysFlagirsreppartc(std::string &&pApsysFlagirsreppartc) noexcept;
+    void setApsysFlagirsreppartcToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFTAXINTS  */
+    ///Get the value of the column APSYS_CDCTGPTFTAXINTS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptftaxints() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptftaxints() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFTAXINTS
+    void setApsysCdctgptftaxints(const std::string &pApsysCdctgptftaxints) noexcept;
+    void setApsysCdctgptftaxints(std::string &&pApsysCdctgptftaxints) noexcept;
+    void setApsysCdctgptftaxintsToNull() noexcept;
+
+    /**  For column APSYS_IDPOCS  */
+    ///Get the value of the column APSYS_IDPOCS, returns the default value if the column is null
+    const std::string &getValueOfApsysIdpocs() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysIdpocs() const noexcept;
+    ///Set the value of the column APSYS_IDPOCS
+    void setApsysIdpocs(const std::string &pApsysIdpocs) noexcept;
+    void setApsysIdpocs(std::string &&pApsysIdpocs) noexcept;
+    void setApsysIdpocsToNull() noexcept;
+
+    /**  For column APSYS_INFO  */
+    ///Get the value of the column APSYS_INFO, returns the default value if the column is null
+    const std::string &getValueOfApsysInfo() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysInfo() const noexcept;
+    ///Set the value of the column APSYS_INFO
+    void setApsysInfo(const std::string &pApsysInfo) noexcept;
+    void setApsysInfo(std::string &&pApsysInfo) noexcept;
+    void setApsysInfoToNull() noexcept;
+
+    /**  For column NETTOVERMOEGEN_CHF  */
+    ///Get the value of the column NETTOVERMOEGEN_CHF, returns the default value if the column is null
+    const std::string &getValueOfNettovermoegenChf() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getNettovermoegenChf() const noexcept;
+    ///Set the value of the column NETTOVERMOEGEN_CHF
+    void setNettovermoegenChf(const std::string &pNettovermoegenChf) noexcept;
+    void setNettovermoegenChf(std::string &&pNettovermoegenChf) noexcept;
+    void setNettovermoegenChfToNull() noexcept;
+
+    /**  For column APSYS_INTISHS  */
+    ///Get the value of the column APSYS_INTISHS, returns the default value if the column is null
+    const std::string &getValueOfApsysIntishs() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysIntishs() const noexcept;
+    ///Set the value of the column APSYS_INTISHS
+    void setApsysIntishs(const std::string &pApsysIntishs) noexcept;
+    void setApsysIntishs(std::string &&pApsysIntishs) noexcept;
+    void setApsysIntishsToNull() noexcept;
+
+    /**  For column APSYS_IDPERSL  */
+    ///Get the value of the column APSYS_IDPERSL, returns the default value if the column is null
+    const double &getValueOfApsysIdpersl() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<double> &getApsysIdpersl() const noexcept;
+    ///Set the value of the column APSYS_IDPERSL
+    void setApsysIdpersl(const double &pApsysIdpersl) noexcept;
+    void setApsysIdperslToNull() noexcept;
+
+    /**  For column APSYS_CDMOTIFPARTS  */
+    ///Get the value of the column APSYS_CDMOTIFPARTS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdmotifparts() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdmotifparts() const noexcept;
+    ///Set the value of the column APSYS_CDMOTIFPARTS
+    void setApsysCdmotifparts(const std::string &pApsysCdmotifparts) noexcept;
+    void setApsysCdmotifparts(std::string &&pApsysCdmotifparts) noexcept;
+    void setApsysCdmotifpartsToNull() noexcept;
+
+    /**  For column IN_APSYS_TEMP_ENTSP_USERID  */
+    ///Get the value of the column IN_APSYS_TEMP_ENTSP_USERID, returns the default value if the column is null
+    const std::string &getValueOfInApsysTempEntspUserid() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getInApsysTempEntspUserid() const noexcept;
+    ///Set the value of the column IN_APSYS_TEMP_ENTSP_USERID
+    void setInApsysTempEntspUserid(const std::string &pInApsysTempEntspUserid) noexcept;
+    void setInApsysTempEntspUserid(std::string &&pInApsysTempEntspUserid) noexcept;
+    void setInApsysTempEntspUseridToNull() noexcept;
+
+    /**  For column IN_APSYS_TEMP_ENTSP_DATUM  */
+    ///Get the value of the column IN_APSYS_TEMP_ENTSP_DATUM, returns the default value if the column is null
+    const ::trantor::Date &getValueOfInApsysTempEntspDatum() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getInApsysTempEntspDatum() const noexcept;
+    ///Set the value of the column IN_APSYS_TEMP_ENTSP_DATUM
+    void setInApsysTempEntspDatum(const ::trantor::Date &pInApsysTempEntspDatum) noexcept;
+    void setInApsysTempEntspDatumToNull() noexcept;
+
+    /**  For column IN_APSYS_TEMP_ENTSPERREN_CD  */
+    ///Get the value of the column IN_APSYS_TEMP_ENTSPERREN_CD, returns the default value if the column is null
+    const std::string &getValueOfInApsysTempEntsperrenCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getInApsysTempEntsperrenCd() const noexcept;
+    ///Set the value of the column IN_APSYS_TEMP_ENTSPERREN_CD
+    void setInApsysTempEntsperrenCd(const std::string &pInApsysTempEntsperrenCd) noexcept;
+    void setInApsysTempEntsperrenCd(std::string &&pInApsysTempEntsperrenCd) noexcept;
+    void setInApsysTempEntsperrenCdToNull() noexcept;
+
+    /**  For column KUNDENKATEGORIE_CD  */
+    ///Get the value of the column KUNDENKATEGORIE_CD, returns the default value if the column is null
+    const double &getValueOfKundenkategorieCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<double> &getKundenkategorieCd() const noexcept;
+    ///Set the value of the column KUNDENKATEGORIE_CD
+    void setKundenkategorieCd(const double &pKundenkategorieCd) noexcept;
+    void setKundenkategorieCdToNull() noexcept;
+
+    /**  For column GEMEINSCHAFTSKONTO_CD  */
+    ///Get the value of the column GEMEINSCHAFTSKONTO_CD, returns the default value if the column is null
+    const std::string &getValueOfGemeinschaftskontoCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getGemeinschaftskontoCd() const noexcept;
+    ///Set the value of the column GEMEINSCHAFTSKONTO_CD
+    void setGemeinschaftskontoCd(const std::string &pGemeinschaftskontoCd) noexcept;
+    void setGemeinschaftskontoCd(std::string &&pGemeinschaftskontoCd) noexcept;
+    void setGemeinschaftskontoCdToNull() noexcept;
+
+    /**  For column DRITTE_SAEULE_CD  */
+    ///Get the value of the column DRITTE_SAEULE_CD, returns the default value if the column is null
+    const std::string &getValueOfDritteSaeuleCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getDritteSaeuleCd() const noexcept;
+    ///Set the value of the column DRITTE_SAEULE_CD
+    void setDritteSaeuleCd(const std::string &pDritteSaeuleCd) noexcept;
+    void setDritteSaeuleCd(std::string &&pDritteSaeuleCd) noexcept;
+    void setDritteSaeuleCdToNull() noexcept;
+
+    /**  For column APSYS_TYPPTFS  */
+    ///Get the value of the column APSYS_TYPPTFS, returns the default value if the column is null
+    const std::string &getValueOfApsysTypptfs() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysTypptfs() const noexcept;
+    ///Set the value of the column APSYS_TYPPTFS
+    void setApsysTypptfs(const std::string &pApsysTypptfs) noexcept;
+    void setApsysTypptfs(std::string &&pApsysTypptfs) noexcept;
+    void setApsysTypptfsToNull() noexcept;
+
+    /**  For column AUTO_EU_TAX_PERCENTAGE  */
+    ///Get the value of the column AUTO_EU_TAX_PERCENTAGE, returns the default value if the column is null
+    const std::string &getValueOfAutoEuTaxPercentage() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getAutoEuTaxPercentage() const noexcept;
+    ///Set the value of the column AUTO_EU_TAX_PERCENTAGE
+    void setAutoEuTaxPercentage(const std::string &pAutoEuTaxPercentage) noexcept;
+    void setAutoEuTaxPercentage(std::string &&pAutoEuTaxPercentage) noexcept;
+    void setAutoEuTaxPercentageToNull() noexcept;
+
+    /**  For column AKTID  */
+    ///Get the value of the column AKTID, returns the default value if the column is null
+    const double &getValueOfAktid() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<double> &getAktid() const noexcept;
+    ///Set the value of the column AKTID
+    void setAktid(const double &pAktid) noexcept;
+    void setAktidToNull() noexcept;
+
+    /**  For column VALIDID  */
+    ///Get the value of the column VALIDID, returns the default value if the column is null
+    const double &getValueOfValidid() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<double> &getValidid() const noexcept;
+    ///Set the value of the column VALIDID
+    void setValidid(const double &pValidid) noexcept;
+    void setValididToNull() noexcept;
+
+    /**  For column VALID_CD  */
+    ///Get the value of the column VALID_CD, returns the default value if the column is null
+    const std::string &getValueOfValidCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getValidCd() const noexcept;
+    ///Set the value of the column VALID_CD
+    void setValidCd(const std::string &pValidCd) noexcept;
+    void setValidCd(std::string &&pValidCd) noexcept;
+    void setValidCdToNull() noexcept;
+
+    /**  For column VALIDUSER  */
+    ///Get the value of the column VALIDUSER, returns the default value if the column is null
+    const std::string &getValueOfValiduser() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getValiduser() const noexcept;
+    ///Set the value of the column VALIDUSER
+    void setValiduser(const std::string &pValiduser) noexcept;
+    void setValiduser(std::string &&pValiduser) noexcept;
+    void setValiduserToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFSBXPS  */
+    ///Get the value of the column APSYS_CDCTGPTFSBXPS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptfsbxps() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptfsbxps() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFSBXPS
+    void setApsysCdctgptfsbxps(const std::string &pApsysCdctgptfsbxps) noexcept;
+    void setApsysCdctgptfsbxps(std::string &&pApsysCdctgptfsbxps) noexcept;
+    void setApsysCdctgptfsbxpsToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFSDOCS  */
+    ///Get the value of the column APSYS_CDCTGPTFSDOCS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptfsdocs() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptfsdocs() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFSDOCS
+    void setApsysCdctgptfsdocs(const std::string &pApsysCdctgptfsdocs) noexcept;
+    void setApsysCdctgptfsdocs(std::string &&pApsysCdctgptfsdocs) noexcept;
+    void setApsysCdctgptfsdocsToNull() noexcept;
+
+    /**  For column APSYS_IDENTS  */
+    ///Get the value of the column APSYS_IDENTS, returns the default value if the column is null
+    const std::string &getValueOfApsysIdents() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysIdents() const noexcept;
+    ///Set the value of the column APSYS_IDENTS
+    void setApsysIdents(const std::string &pApsysIdents) noexcept;
+    void setApsysIdents(std::string &&pApsysIdents) noexcept;
+    void setApsysIdentsToNull() noexcept;
+
+    /**  For column APSYS_CDSOUMBOLC  */
+    ///Get the value of the column APSYS_CDSOUMBOLC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdsoumbolc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdsoumbolc() const noexcept;
+    ///Set the value of the column APSYS_CDSOUMBOLC
+    void setApsysCdsoumbolc(const std::string &pApsysCdsoumbolc) noexcept;
+    void setApsysCdsoumbolc(std::string &&pApsysCdsoumbolc) noexcept;
+    void setApsysCdsoumbolcToNull() noexcept;
+
+    /**  For column APSYS_CDFACBOLC  */
+    ///Get the value of the column APSYS_CDFACBOLC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdfacbolc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdfacbolc() const noexcept;
+    ///Set the value of the column APSYS_CDFACBOLC
+    void setApsysCdfacbolc(const std::string &pApsysCdfacbolc) noexcept;
+    void setApsysCdfacbolc(std::string &&pApsysCdfacbolc) noexcept;
+    void setApsysCdfacbolcToNull() noexcept;
+
+    /**  For column APSYS_FLAGTYPTRFPOLC  */
+    ///Get the value of the column APSYS_FLAGTYPTRFPOLC, returns the default value if the column is null
+    const std::string &getValueOfApsysFlagtyptrfpolc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysFlagtyptrfpolc() const noexcept;
+    ///Set the value of the column APSYS_FLAGTYPTRFPOLC
+    void setApsysFlagtyptrfpolc(const std::string &pApsysFlagtyptrfpolc) noexcept;
+    void setApsysFlagtyptrfpolc(std::string &&pApsysFlagtyptrfpolc) noexcept;
+    void setApsysFlagtyptrfpolcToNull() noexcept;
+
+    /**  For column APSYS_IDTRFPOLS  */
+    ///Get the value of the column APSYS_IDTRFPOLS, returns the default value if the column is null
+    const std::string &getValueOfApsysIdtrfpols() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysIdtrfpols() const noexcept;
+    ///Set the value of the column APSYS_IDTRFPOLS
+    void setApsysIdtrfpols(const std::string &pApsysIdtrfpols) noexcept;
+    void setApsysIdtrfpols(std::string &&pApsysIdtrfpols) noexcept;
+    void setApsysIdtrfpolsToNull() noexcept;
+
+    /**  For column APSYS_CDPCTPARTICTITUEUTAXC  */
+    ///Get the value of the column APSYS_CDPCTPARTICTITUEUTAXC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdpctpartictitueutaxc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdpctpartictitueutaxc() const noexcept;
+    ///Set the value of the column APSYS_CDPCTPARTICTITUEUTAXC
+    void setApsysCdpctpartictitueutaxc(const std::string &pApsysCdpctpartictitueutaxc) noexcept;
+    void setApsysCdpctpartictitueutaxc(std::string &&pApsysCdpctpartictitueutaxc) noexcept;
+    void setApsysCdpctpartictitueutaxcToNull() noexcept;
+
+    /**  For column APSYS_CDMOTIFCLOS  */
+    ///Get the value of the column APSYS_CDMOTIFCLOS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdmotifclos() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdmotifclos() const noexcept;
+    ///Set the value of the column APSYS_CDMOTIFCLOS
+    void setApsysCdmotifclos(const std::string &pApsysCdmotifclos) noexcept;
+    void setApsysCdmotifclos(std::string &&pApsysCdmotifclos) noexcept;
+    void setApsysCdmotifclosToNull() noexcept;
+
+    /**  For column ENC_SALT  */
+    ///Get the value of the column ENC_SALT, returns the default value if the column is null
+    const std::string &getValueOfEncSalt() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getEncSalt() const noexcept;
+    ///Set the value of the column ENC_SALT
+    void setEncSalt(const std::string &pEncSalt) noexcept;
+    void setEncSalt(std::string &&pEncSalt) noexcept;
+    void setEncSaltToNull() noexcept;
+
+    /**  For column BEZEICHNUNG_ENC  */
+    ///Get the value of the column BEZEICHNUNG_ENC, returns the default value if the column is null
+    const std::string &getValueOfBezeichnungEnc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getBezeichnungEnc() const noexcept;
+    ///Set the value of the column BEZEICHNUNG_ENC
+    void setBezeichnungEnc(const std::string &pBezeichnungEnc) noexcept;
+    void setBezeichnungEnc(std::string &&pBezeichnungEnc) noexcept;
+    void setBezeichnungEncToNull() noexcept;
+
+    /**  For column KTOE_AML_PROFIL_CD  */
+    ///Get the value of the column KTOE_AML_PROFIL_CD, returns the default value if the column is null
+    const std::string &getValueOfKtoeAmlProfilCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getKtoeAmlProfilCd() const noexcept;
+    ///Set the value of the column KTOE_AML_PROFIL_CD
+    void setKtoeAmlProfilCd(const std::string &pKtoeAmlProfilCd) noexcept;
+    void setKtoeAmlProfilCd(std::string &&pKtoeAmlProfilCd) noexcept;
+    void setKtoeAmlProfilCdToNull() noexcept;
+
+    /**  For column APSYS_DEVEVALS  */
+    ///Get the value of the column APSYS_DEVEVALS, returns the default value if the column is null
+    const std::string &getValueOfApsysDevevals() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysDevevals() const noexcept;
+    ///Set the value of the column APSYS_DEVEVALS
+    void setApsysDevevals(const std::string &pApsysDevevals) noexcept;
+    void setApsysDevevals(std::string &&pApsysDevevals) noexcept;
+    void setApsysDevevalsToNull() noexcept;
+
+    /**  For column APSYS_CDRNVSTMC  */
+    ///Get the value of the column APSYS_CDRNVSTMC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdrnvstmc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdrnvstmc() const noexcept;
+    ///Set the value of the column APSYS_CDRNVSTMC
+    void setApsysCdrnvstmc(const std::string &pApsysCdrnvstmc) noexcept;
+    void setApsysCdrnvstmc(std::string &&pApsysCdrnvstmc) noexcept;
+    void setApsysCdrnvstmcToNull() noexcept;
+
+    /**  For column APSYS_CDRGLPRLGC  */
+    ///Get the value of the column APSYS_CDRGLPRLGC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdrglprlgc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdrglprlgc() const noexcept;
+    ///Set the value of the column APSYS_CDRGLPRLGC
+    void setApsysCdrglprlgc(const std::string &pApsysCdrglprlgc) noexcept;
+    void setApsysCdrglprlgc(std::string &&pApsysCdrglprlgc) noexcept;
+    void setApsysCdrglprlgcToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFCOMAGTCPTS  */
+    ///Get the value of the column APSYS_CDCTGPTFCOMAGTCPTS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptfcomagtcpts() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptfcomagtcpts() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFCOMAGTCPTS
+    void setApsysCdctgptfcomagtcpts(const std::string &pApsysCdctgptfcomagtcpts) noexcept;
+    void setApsysCdctgptfcomagtcpts(std::string &&pApsysCdctgptfcomagtcpts) noexcept;
+    void setApsysCdctgptfcomagtcptsToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFROUTORDS  */
+    ///Get the value of the column APSYS_CDCTGPTFROUTORDS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptfroutords() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptfroutords() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFROUTORDS
+    void setApsysCdctgptfroutords(const std::string &pApsysCdctgptfroutords) noexcept;
+    void setApsysCdctgptfroutords(std::string &&pApsysCdctgptfroutords) noexcept;
+    void setApsysCdctgptfroutordsToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFGRECPTS  */
+    ///Get the value of the column APSYS_CDCTGPTFGRECPTS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptfgrecpts() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptfgrecpts() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFGRECPTS
+    void setApsysCdctgptfgrecpts(const std::string &pApsysCdctgptfgrecpts) noexcept;
+    void setApsysCdctgptfgrecpts(std::string &&pApsysCdctgptfgrecpts) noexcept;
+    void setApsysCdctgptfgrecptsToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFTRSFTITS  */
+    ///Get the value of the column APSYS_CDCTGPTFTRSFTITS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptftrsftits() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptftrsftits() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFTRSFTITS
+    void setApsysCdctgptftrsftits(const std::string &pApsysCdctgptftrsftits) noexcept;
+    void setApsysCdctgptftrsftits(std::string &&pApsysCdctgptftrsftits) noexcept;
+    void setApsysCdctgptftrsftitsToNull() noexcept;
+
+    /**  For column APSYS_FLAGEXPSYSEXTTAXI  */
+    ///Get the value of the column APSYS_FLAGEXPSYSEXTTAXI, returns the default value if the column is null
+    const std::string &getValueOfApsysFlagexpsysexttaxi() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysFlagexpsysexttaxi() const noexcept;
+    ///Set the value of the column APSYS_FLAGEXPSYSEXTTAXI
+    void setApsysFlagexpsysexttaxi(const std::string &pApsysFlagexpsysexttaxi) noexcept;
+    void setApsysFlagexpsysexttaxi(std::string &&pApsysFlagexpsysexttaxi) noexcept;
+    void setApsysFlagexpsysexttaxiToNull() noexcept;
+
+    /**  For column WB_IST_NICHT_ZWINGEND_CD  */
+    ///Get the value of the column WB_IST_NICHT_ZWINGEND_CD, returns the default value if the column is null
+    const std::string &getValueOfWbIstNichtZwingendCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getWbIstNichtZwingendCd() const noexcept;
+    ///Set the value of the column WB_IST_NICHT_ZWINGEND_CD
+    void setWbIstNichtZwingendCd(const std::string &pWbIstNichtZwingendCd) noexcept;
+    void setWbIstNichtZwingendCd(std::string &&pWbIstNichtZwingendCd) noexcept;
+    void setWbIstNichtZwingendCdToNull() noexcept;
+
+    /**  For column APSYS_CDBQERESTC  */
+    ///Get the value of the column APSYS_CDBQERESTC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdbqerestc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdbqerestc() const noexcept;
+    ///Set the value of the column APSYS_CDBQERESTC
+    void setApsysCdbqerestc(const std::string &pApsysCdbqerestc) noexcept;
+    void setApsysCdbqerestc(std::string &&pApsysCdbqerestc) noexcept;
+    void setApsysCdbqerestcToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFTYPPLACS  */
+    ///Get the value of the column APSYS_CDCTGPTFTYPPLACS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptftypplacs() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptftypplacs() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFTYPPLACS
+    void setApsysCdctgptftypplacs(const std::string &pApsysCdctgptftypplacs) noexcept;
+    void setApsysCdctgptftypplacs(std::string &&pApsysCdctgptftypplacs) noexcept;
+    void setApsysCdctgptftypplacsToNull() noexcept;
+
+    /**  For column APSYS_CDEANGRMTCLI1S  */
+    ///Get the value of the column APSYS_CDEANGRMTCLI1S, returns the default value if the column is null
+    const std::string &getValueOfApsysCdeangrmtcli1s() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdeangrmtcli1s() const noexcept;
+    ///Set the value of the column APSYS_CDEANGRMTCLI1S
+    void setApsysCdeangrmtcli1s(const std::string &pApsysCdeangrmtcli1s) noexcept;
+    void setApsysCdeangrmtcli1s(std::string &&pApsysCdeangrmtcli1s) noexcept;
+    void setApsysCdeangrmtcli1sToNull() noexcept;
+
+    /**  For column APSYS_CDEANGRMTCLI2S  */
+    ///Get the value of the column APSYS_CDEANGRMTCLI2S, returns the default value if the column is null
+    const std::string &getValueOfApsysCdeangrmtcli2s() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdeangrmtcli2s() const noexcept;
+    ///Set the value of the column APSYS_CDEANGRMTCLI2S
+    void setApsysCdeangrmtcli2s(const std::string &pApsysCdeangrmtcli2s) noexcept;
+    void setApsysCdeangrmtcli2s(std::string &&pApsysCdeangrmtcli2s) noexcept;
+    void setApsysCdeangrmtcli2sToNull() noexcept;
+
+    /**  For column APSYS_CDFATCATYPC  */
+    ///Get the value of the column APSYS_CDFATCATYPC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdfatcatypc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdfatcatypc() const noexcept;
+    ///Set the value of the column APSYS_CDFATCATYPC
+    void setApsysCdfatcatypc(const std::string &pApsysCdfatcatypc) noexcept;
+    void setApsysCdfatcatypc(std::string &&pApsysCdfatcatypc) noexcept;
+    void setApsysCdfatcatypcToNull() noexcept;
+
+    /**  For column APSYS_IDFATCACLAS  */
+    ///Get the value of the column APSYS_IDFATCACLAS, returns the default value if the column is null
+    const std::string &getValueOfApsysIdfatcaclas() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysIdfatcaclas() const noexcept;
+    ///Set the value of the column APSYS_IDFATCACLAS
+    void setApsysIdfatcaclas(const std::string &pApsysIdfatcaclas) noexcept;
+    void setApsysIdfatcaclas(std::string &&pApsysIdfatcaclas) noexcept;
+    void setApsysIdfatcaclasToNull() noexcept;
+
+    /**  For column APSYS_CDFATCASTATCALCCRMC  */
+    ///Get the value of the column APSYS_CDFATCASTATCALCCRMC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdfatcastatcalccrmc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdfatcastatcalccrmc() const noexcept;
+    ///Set the value of the column APSYS_CDFATCASTATCALCCRMC
+    void setApsysCdfatcastatcalccrmc(const std::string &pApsysCdfatcastatcalccrmc) noexcept;
+    void setApsysCdfatcastatcalccrmc(std::string &&pApsysCdfatcastatcalccrmc) noexcept;
+    void setApsysCdfatcastatcalccrmcToNull() noexcept;
+
+    /**  For column APSYS_CDFATCASTATC  */
+    ///Get the value of the column APSYS_CDFATCASTATC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdfatcastatc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdfatcastatc() const noexcept;
+    ///Set the value of the column APSYS_CDFATCASTATC
+    void setApsysCdfatcastatc(const std::string &pApsysCdfatcastatc) noexcept;
+    void setApsysCdfatcastatc(std::string &&pApsysCdfatcastatc) noexcept;
+    void setApsysCdfatcastatcToNull() noexcept;
+
+    /**  For column APSYS_COMMENTFATCASTATS  */
+    ///Get the value of the column APSYS_COMMENTFATCASTATS, returns the default value if the column is null
+    const std::string &getValueOfApsysCommentfatcastats() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCommentfatcastats() const noexcept;
+    ///Set the value of the column APSYS_COMMENTFATCASTATS
+    void setApsysCommentfatcastats(const std::string &pApsysCommentfatcastats) noexcept;
+    void setApsysCommentfatcastats(std::string &&pApsysCommentfatcastats) noexcept;
+    void setApsysCommentfatcastatsToNull() noexcept;
+
+    /**  For column APSYS_CDFATCAMOTIFPARTS  */
+    ///Get the value of the column APSYS_CDFATCAMOTIFPARTS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdfatcamotifparts() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdfatcamotifparts() const noexcept;
+    ///Set the value of the column APSYS_CDFATCAMOTIFPARTS
+    void setApsysCdfatcamotifparts(const std::string &pApsysCdfatcamotifparts) noexcept;
+    void setApsysCdfatcamotifparts(std::string &&pApsysCdfatcamotifparts) noexcept;
+    void setApsysCdfatcamotifpartsToNull() noexcept;
+
+    /**  For column APSYS_CDFATCASTATCALCGLOBC  */
+    ///Get the value of the column APSYS_CDFATCASTATCALCGLOBC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdfatcastatcalcglobc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdfatcastatcalcglobc() const noexcept;
+    ///Set the value of the column APSYS_CDFATCASTATCALCGLOBC
+    void setApsysCdfatcastatcalcglobc(const std::string &pApsysCdfatcastatcalcglobc) noexcept;
+    void setApsysCdfatcastatcalcglobc(std::string &&pApsysCdfatcastatcalcglobc) noexcept;
+    void setApsysCdfatcastatcalcglobcToNull() noexcept;
+
+    /**  For column APSYS_CDFATCASTATCALCLOCC  */
+    ///Get the value of the column APSYS_CDFATCASTATCALCLOCC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdfatcastatcalclocc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdfatcastatcalclocc() const noexcept;
+    ///Set the value of the column APSYS_CDFATCASTATCALCLOCC
+    void setApsysCdfatcastatcalclocc(const std::string &pApsysCdfatcastatcalclocc) noexcept;
+    void setApsysCdfatcastatcalclocc(std::string &&pApsysCdfatcastatcalclocc) noexcept;
+    void setApsysCdfatcastatcalcloccToNull() noexcept;
+
+    /**  For column APSYS_CDVALIDSTATC  */
+    ///Get the value of the column APSYS_CDVALIDSTATC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdvalidstatc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdvalidstatc() const noexcept;
+    ///Set the value of the column APSYS_CDVALIDSTATC
+    void setApsysCdvalidstatc(const std::string &pApsysCdvalidstatc) noexcept;
+    void setApsysCdvalidstatc(std::string &&pApsysCdvalidstatc) noexcept;
+    void setApsysCdvalidstatcToNull() noexcept;
+
+    /**  For column APSYS_USERVALIDFATCASTATS  */
+    ///Get the value of the column APSYS_USERVALIDFATCASTATS, returns the default value if the column is null
+    const std::string &getValueOfApsysUservalidfatcastats() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysUservalidfatcastats() const noexcept;
+    ///Set the value of the column APSYS_USERVALIDFATCASTATS
+    void setApsysUservalidfatcastats(const std::string &pApsysUservalidfatcastats) noexcept;
+    void setApsysUservalidfatcastats(std::string &&pApsysUservalidfatcastats) noexcept;
+    void setApsysUservalidfatcastatsToNull() noexcept;
+
+    /**  For column APSYS_DTVALIDFATCASTATL  */
+    ///Get the value of the column APSYS_DTVALIDFATCASTATL, returns the default value if the column is null
+    const ::trantor::Date &getValueOfApsysDtvalidfatcastatl() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getApsysDtvalidfatcastatl() const noexcept;
+    ///Set the value of the column APSYS_DTVALIDFATCASTATL
+    void setApsysDtvalidfatcastatl(const ::trantor::Date &pApsysDtvalidfatcastatl) noexcept;
+    void setApsysDtvalidfatcastatlToNull() noexcept;
+
+    /**  For column APSYS_HRVALIDFATCASTATL  */
+    ///Get the value of the column APSYS_HRVALIDFATCASTATL, returns the default value if the column is null
+    const ::trantor::Date &getValueOfApsysHrvalidfatcastatl() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getApsysHrvalidfatcastatl() const noexcept;
+    ///Set the value of the column APSYS_HRVALIDFATCASTATL
+    void setApsysHrvalidfatcastatl(const ::trantor::Date &pApsysHrvalidfatcastatl) noexcept;
+    void setApsysHrvalidfatcastatlToNull() noexcept;
+
+    /**  For column APSYS_CDCTRNETTC553C  */
+    ///Get the value of the column APSYS_CDCTRNETTC553C, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctrnettc553c() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctrnettc553c() const noexcept;
+    ///Set the value of the column APSYS_CDCTRNETTC553C
+    void setApsysCdctrnettc553c(const std::string &pApsysCdctrnettc553c) noexcept;
+    void setApsysCdctrnettc553c(std::string &&pApsysCdctrnettc553c) noexcept;
+    void setApsysCdctrnettc553cToNull() noexcept;
+
+    /**  For column APSYS_FLAGFORCEPOSOSTMANAGI  */
+    ///Get the value of the column APSYS_FLAGFORCEPOSOSTMANAGI, returns the default value if the column is null
+    const std::string &getValueOfApsysFlagforceposostmanagi() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysFlagforceposostmanagi() const noexcept;
+    ///Set the value of the column APSYS_FLAGFORCEPOSOSTMANAGI
+    void setApsysFlagforceposostmanagi(const std::string &pApsysFlagforceposostmanagi) noexcept;
+    void setApsysFlagforceposostmanagi(std::string &&pApsysFlagforceposostmanagi) noexcept;
+    void setApsysFlagforceposostmanagiToNull() noexcept;
+
+    /**  For column APSYS_POSOSTMANAGC  */
+    ///Get the value of the column APSYS_POSOSTMANAGC, returns the default value if the column is null
+    const std::string &getValueOfApsysPosostmanagc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysPosostmanagc() const noexcept;
+    ///Set the value of the column APSYS_POSOSTMANAGC
+    void setApsysPosostmanagc(const std::string &pApsysPosostmanagc) noexcept;
+    void setApsysPosostmanagc(std::string &&pApsysPosostmanagc) noexcept;
+    void setApsysPosostmanagcToNull() noexcept;
+
+    /**  For column APSYS_CRITEREUSFATCASTATL  */
+    ///Get the value of the column APSYS_CRITEREUSFATCASTATL, returns the default value if the column is null
+    const double &getValueOfApsysCritereusfatcastatl() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<double> &getApsysCritereusfatcastatl() const noexcept;
+    ///Set the value of the column APSYS_CRITEREUSFATCASTATL
+    void setApsysCritereusfatcastatl(const double &pApsysCritereusfatcastatl) noexcept;
+    void setApsysCritereusfatcastatlToNull() noexcept;
+
+    /**  For column APSYS_FLAGSIMSI  */
+    ///Get the value of the column APSYS_FLAGSIMSI, returns the default value if the column is null
+    const std::string &getValueOfApsysFlagsimsi() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysFlagsimsi() const noexcept;
+    ///Set the value of the column APSYS_FLAGSIMSI
+    void setApsysFlagsimsi(const std::string &pApsysFlagsimsi) noexcept;
+    void setApsysFlagsimsi(std::string &&pApsysFlagsimsi) noexcept;
+    void setApsysFlagsimsiToNull() noexcept;
+
+    /**  For column NR_OF_BO_IN_WHT_STATEMENT  */
+    ///Get the value of the column NR_OF_BO_IN_WHT_STATEMENT, returns the default value if the column is null
+    const double &getValueOfNrOfBoInWhtStatement() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<double> &getNrOfBoInWhtStatement() const noexcept;
+    ///Set the value of the column NR_OF_BO_IN_WHT_STATEMENT
+    void setNrOfBoInWhtStatement(const double &pNrOfBoInWhtStatement) noexcept;
+    void setNrOfBoInWhtStatementToNull() noexcept;
+
+    /**  For column PARTNER_WITH_UNL_LIABILITY_CD  */
+    ///Get the value of the column PARTNER_WITH_UNL_LIABILITY_CD, returns the default value if the column is null
+    const std::string &getValueOfPartnerWithUnlLiabilityCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getPartnerWithUnlLiabilityCd() const noexcept;
+    ///Set the value of the column PARTNER_WITH_UNL_LIABILITY_CD
+    void setPartnerWithUnlLiabilityCd(const std::string &pPartnerWithUnlLiabilityCd) noexcept;
+    void setPartnerWithUnlLiabilityCd(std::string &&pPartnerWithUnlLiabilityCd) noexcept;
+    void setPartnerWithUnlLiabilityCdToNull() noexcept;
+
+    /**  For column COMPANY_MANAGED_BY_BO_CD  */
+    ///Get the value of the column COMPANY_MANAGED_BY_BO_CD, returns the default value if the column is null
+    const std::string &getValueOfCompanyManagedByBoCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getCompanyManagedByBoCd() const noexcept;
+    ///Set the value of the column COMPANY_MANAGED_BY_BO_CD
+    void setCompanyManagedByBoCd(const std::string &pCompanyManagedByBoCd) noexcept;
+    void setCompanyManagedByBoCd(std::string &&pCompanyManagedByBoCd) noexcept;
+    void setCompanyManagedByBoCdToNull() noexcept;
+
+    /**  For column IS_TRUSTEE_PHYSICAL_CD  */
+    ///Get the value of the column IS_TRUSTEE_PHYSICAL_CD, returns the default value if the column is null
+    const std::string &getValueOfIsTrusteePhysicalCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getIsTrusteePhysicalCd() const noexcept;
+    ///Set the value of the column IS_TRUSTEE_PHYSICAL_CD
+    void setIsTrusteePhysicalCd(const std::string &pIsTrusteePhysicalCd) noexcept;
+    void setIsTrusteePhysicalCd(std::string &&pIsTrusteePhysicalCd) noexcept;
+    void setIsTrusteePhysicalCdToNull() noexcept;
+
+    /**  For column NO_TRADING_US_SECURITIES_CD  */
+    ///Get the value of the column NO_TRADING_US_SECURITIES_CD, returns the default value if the column is null
+    const std::string &getValueOfNoTradingUsSecuritiesCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getNoTradingUsSecuritiesCd() const noexcept;
+    ///Set the value of the column NO_TRADING_US_SECURITIES_CD
+    void setNoTradingUsSecuritiesCd(const std::string &pNoTradingUsSecuritiesCd) noexcept;
+    void setNoTradingUsSecuritiesCd(std::string &&pNoTradingUsSecuritiesCd) noexcept;
+    void setNoTradingUsSecuritiesCdToNull() noexcept;
+
+    /**  For column PORTFOLIO_SEGR_ACCOUNT_CD  */
+    ///Get the value of the column PORTFOLIO_SEGR_ACCOUNT_CD, returns the default value if the column is null
+    const std::string &getValueOfPortfolioSegrAccountCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getPortfolioSegrAccountCd() const noexcept;
+    ///Set the value of the column PORTFOLIO_SEGR_ACCOUNT_CD
+    void setPortfolioSegrAccountCd(const std::string &pPortfolioSegrAccountCd) noexcept;
+    void setPortfolioSegrAccountCd(std::string &&pPortfolioSegrAccountCd) noexcept;
+    void setPortfolioSegrAccountCdToNull() noexcept;
+
+    /**  For column US_WHT_START_DATE  */
+    ///Get the value of the column US_WHT_START_DATE, returns the default value if the column is null
+    const ::trantor::Date &getValueOfUsWhtStartDate() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getUsWhtStartDate() const noexcept;
+    ///Set the value of the column US_WHT_START_DATE
+    void setUsWhtStartDate(const ::trantor::Date &pUsWhtStartDate) noexcept;
+    void setUsWhtStartDateToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFIVSTAUTOS  */
+    ///Get the value of the column APSYS_CDCTGPTFIVSTAUTOS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptfivstautos() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptfivstautos() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFIVSTAUTOS
+    void setApsysCdctgptfivstautos(const std::string &pApsysCdctgptfivstautos) noexcept;
+    void setApsysCdctgptfivstautos(std::string &&pApsysCdctgptfivstautos) noexcept;
+    void setApsysCdctgptfivstautosToNull() noexcept;
+
+    /**  For column AUTOMATISCHE_VERTEILUNG_CD  */
+    ///Get the value of the column AUTOMATISCHE_VERTEILUNG_CD, returns the default value if the column is null
+    const std::string &getValueOfAutomatischeVerteilungCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getAutomatischeVerteilungCd() const noexcept;
+    ///Set the value of the column AUTOMATISCHE_VERTEILUNG_CD
+    void setAutomatischeVerteilungCd(const std::string &pAutomatischeVerteilungCd) noexcept;
+    void setAutomatischeVerteilungCd(std::string &&pAutomatischeVerteilungCd) noexcept;
+    void setAutomatischeVerteilungCdToNull() noexcept;
+
+    /**  For column APSYS_CDTYPREPORTQIC  */
+    ///Get the value of the column APSYS_CDTYPREPORTQIC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdtypreportqic() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdtypreportqic() const noexcept;
+    ///Set the value of the column APSYS_CDTYPREPORTQIC
+    void setApsysCdtypreportqic(const std::string &pApsysCdtypreportqic) noexcept;
+    void setApsysCdtypreportqic(std::string &&pApsysCdtypreportqic) noexcept;
+    void setApsysCdtypreportqicToNull() noexcept;
+
+    /**  For column APSYS_FLAGIRSNONACTIFI  */
+    ///Get the value of the column APSYS_FLAGIRSNONACTIFI, returns the default value if the column is null
+    const std::string &getValueOfApsysFlagirsnonactifi() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysFlagirsnonactifi() const noexcept;
+    ///Set the value of the column APSYS_FLAGIRSNONACTIFI
+    void setApsysFlagirsnonactifi(const std::string &pApsysFlagirsnonactifi) noexcept;
+    void setApsysFlagirsnonactifi(std::string &&pApsysFlagirsnonactifi) noexcept;
+    void setApsysFlagirsnonactifiToNull() noexcept;
+
+    /**  For column OPENING_DOCUMENTS_PROPOSED_CD  */
+    ///Get the value of the column OPENING_DOCUMENTS_PROPOSED_CD, returns the default value if the column is null
+    const std::string &getValueOfOpeningDocumentsProposedCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getOpeningDocumentsProposedCd() const noexcept;
+    ///Set the value of the column OPENING_DOCUMENTS_PROPOSED_CD
+    void setOpeningDocumentsProposedCd(const std::string &pOpeningDocumentsProposedCd) noexcept;
+    void setOpeningDocumentsProposedCd(std::string &&pOpeningDocumentsProposedCd) noexcept;
+    void setOpeningDocumentsProposedCdToNull() noexcept;
+
+    /**  For column APSYS_CDCTGPTFALGCPTS  */
+    ///Get the value of the column APSYS_CDCTGPTFALGCPTS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdctgptfalgcpts() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdctgptfalgcpts() const noexcept;
+    ///Set the value of the column APSYS_CDCTGPTFALGCPTS
+    void setApsysCdctgptfalgcpts(const std::string &pApsysCdctgptfalgcpts) noexcept;
+    void setApsysCdctgptfalgcpts(std::string &&pApsysCdctgptfalgcpts) noexcept;
+    void setApsysCdctgptfalgcptsToNull() noexcept;
+
+    /**  For column APSYS_IDSTRUCFORJURS  */
+    ///Get the value of the column APSYS_IDSTRUCFORJURS, returns the default value if the column is null
+    const std::string &getValueOfApsysIdstrucforjurs() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysIdstrucforjurs() const noexcept;
+    ///Set the value of the column APSYS_IDSTRUCFORJURS
+    void setApsysIdstrucforjurs(const std::string &pApsysIdstrucforjurs) noexcept;
+    void setApsysIdstrucforjurs(std::string &&pApsysIdstrucforjurs) noexcept;
+    void setApsysIdstrucforjursToNull() noexcept;
+
+    /**  For column APSYS_IDENTFORJURS  */
+    ///Get the value of the column APSYS_IDENTFORJURS, returns the default value if the column is null
+    const std::string &getValueOfApsysIdentforjurs() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysIdentforjurs() const noexcept;
+    ///Set the value of the column APSYS_IDENTFORJURS
+    void setApsysIdentforjurs(const std::string &pApsysIdentforjurs) noexcept;
+    void setApsysIdentforjurs(std::string &&pApsysIdentforjurs) noexcept;
+    void setApsysIdentforjursToNull() noexcept;
+
+    /**  For column FATCA_BASKET_CD  */
+    ///Get the value of the column FATCA_BASKET_CD, returns the default value if the column is null
+    const double &getValueOfFatcaBasketCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<double> &getFatcaBasketCd() const noexcept;
+    ///Set the value of the column FATCA_BASKET_CD
+    void setFatcaBasketCd(const double &pFatcaBasketCd) noexcept;
+    void setFatcaBasketCdToNull() noexcept;
+
+    /**  For column APSYS_CDMETHCLOC  */
+    ///Get the value of the column APSYS_CDMETHCLOC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdmethcloc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdmethcloc() const noexcept;
+    ///Set the value of the column APSYS_CDMETHCLOC
+    void setApsysCdmethcloc(const std::string &pApsysCdmethcloc) noexcept;
+    void setApsysCdmethcloc(std::string &&pApsysCdmethcloc) noexcept;
+    void setApsysCdmethclocToNull() noexcept;
+
+    /**  For column APSYS_DTEVALCLOL  */
+    ///Get the value of the column APSYS_DTEVALCLOL, returns the default value if the column is null
+    const ::trantor::Date &getValueOfApsysDtevalclol() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getApsysDtevalclol() const noexcept;
+    ///Set the value of the column APSYS_DTEVALCLOL
+    void setApsysDtevalclol(const ::trantor::Date &pApsysDtevalclol) noexcept;
+    void setApsysDtevalclolToNull() noexcept;
+
+    /**  For column AEOI_EXEMPTION_CD  */
+    ///Get the value of the column AEOI_EXEMPTION_CD, returns the default value if the column is null
+    const std::string &getValueOfAeoiExemptionCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getAeoiExemptionCd() const noexcept;
+    ///Set the value of the column AEOI_EXEMPTION_CD
+    void setAeoiExemptionCd(const std::string &pAeoiExemptionCd) noexcept;
+    void setAeoiExemptionCd(std::string &&pAeoiExemptionCd) noexcept;
+    void setAeoiExemptionCdToNull() noexcept;
+
+    /**  For column AEOI_SUB_EXEMPTION_CD  */
+    ///Get the value of the column AEOI_SUB_EXEMPTION_CD, returns the default value if the column is null
+    const std::string &getValueOfAeoiSubExemptionCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getAeoiSubExemptionCd() const noexcept;
+    ///Set the value of the column AEOI_SUB_EXEMPTION_CD
+    void setAeoiSubExemptionCd(const std::string &pAeoiSubExemptionCd) noexcept;
+    void setAeoiSubExemptionCd(std::string &&pAeoiSubExemptionCd) noexcept;
+    void setAeoiSubExemptionCdToNull() noexcept;
+
+    /**  For column UNDOCUMENTED_ACCOUNT_CD  */
+    ///Get the value of the column UNDOCUMENTED_ACCOUNT_CD, returns the default value if the column is null
+    const std::string &getValueOfUndocumentedAccountCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getUndocumentedAccountCd() const noexcept;
+    ///Set the value of the column UNDOCUMENTED_ACCOUNT_CD
+    void setUndocumentedAccountCd(const std::string &pUndocumentedAccountCd) noexcept;
+    void setUndocumentedAccountCd(std::string &&pUndocumentedAccountCd) noexcept;
+    void setUndocumentedAccountCdToNull() noexcept;
+
+    /**  For column DORMANT_ACCOUNT_CD  */
+    ///Get the value of the column DORMANT_ACCOUNT_CD, returns the default value if the column is null
+    const std::string &getValueOfDormantAccountCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getDormantAccountCd() const noexcept;
+    ///Set the value of the column DORMANT_ACCOUNT_CD
+    void setDormantAccountCd(const std::string &pDormantAccountCd) noexcept;
+    void setDormantAccountCd(std::string &&pDormantAccountCd) noexcept;
+    void setDormantAccountCdToNull() noexcept;
+
+    /**  For column AEOI_CONSISTENCY_STATUS_CD  */
+    ///Get the value of the column AEOI_CONSISTENCY_STATUS_CD, returns the default value if the column is null
+    const std::string &getValueOfAeoiConsistencyStatusCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getAeoiConsistencyStatusCd() const noexcept;
+    ///Set the value of the column AEOI_CONSISTENCY_STATUS_CD
+    void setAeoiConsistencyStatusCd(const std::string &pAeoiConsistencyStatusCd) noexcept;
+    void setAeoiConsistencyStatusCd(std::string &&pAeoiConsistencyStatusCd) noexcept;
+    void setAeoiConsistencyStatusCdToNull() noexcept;
+
+    /**  For column AEOI_FINAL_STATUS_CD  */
+    ///Get the value of the column AEOI_FINAL_STATUS_CD, returns the default value if the column is null
+    const std::string &getValueOfAeoiFinalStatusCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getAeoiFinalStatusCd() const noexcept;
+    ///Set the value of the column AEOI_FINAL_STATUS_CD
+    void setAeoiFinalStatusCd(const std::string &pAeoiFinalStatusCd) noexcept;
+    void setAeoiFinalStatusCd(std::string &&pAeoiFinalStatusCd) noexcept;
+    void setAeoiFinalStatusCdToNull() noexcept;
+
+    /**  For column AEOI_REVIEW_DATE  */
+    ///Get the value of the column AEOI_REVIEW_DATE, returns the default value if the column is null
+    const ::trantor::Date &getValueOfAeoiReviewDate() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getAeoiReviewDate() const noexcept;
+    ///Set the value of the column AEOI_REVIEW_DATE
+    void setAeoiReviewDate(const ::trantor::Date &pAeoiReviewDate) noexcept;
+    void setAeoiReviewDateToNull() noexcept;
+
+    /**  For column APSYS_CDMIFIDEXEMPTC  */
+    ///Get the value of the column APSYS_CDMIFIDEXEMPTC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdmifidexemptc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdmifidexemptc() const noexcept;
+    ///Set the value of the column APSYS_CDMIFIDEXEMPTC
+    void setApsysCdmifidexemptc(const std::string &pApsysCdmifidexemptc) noexcept;
+    void setApsysCdmifidexemptc(std::string &&pApsysCdmifidexemptc) noexcept;
+    void setApsysCdmifidexemptcToNull() noexcept;
+
+    /**  For column APSYS_DTDEBMIFIDL  */
+    ///Get the value of the column APSYS_DTDEBMIFIDL, returns the default value if the column is null
+    const ::trantor::Date &getValueOfApsysDtdebmifidl() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getApsysDtdebmifidl() const noexcept;
+    ///Set the value of the column APSYS_DTDEBMIFIDL
+    void setApsysDtdebmifidl(const ::trantor::Date &pApsysDtdebmifidl) noexcept;
+    void setApsysDtdebmifidlToNull() noexcept;
+
+    /**  For column OPENED_IN_APSYS_DATE  */
+    ///Get the value of the column OPENED_IN_APSYS_DATE, returns the default value if the column is null
+    const ::trantor::Date &getValueOfOpenedInApsysDate() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getOpenedInApsysDate() const noexcept;
+    ///Set the value of the column OPENED_IN_APSYS_DATE
+    void setOpenedInApsysDate(const ::trantor::Date &pOpenedInApsysDate) noexcept;
+    void setOpenedInApsysDateToNull() noexcept;
+
+    /**  For column APSYS_FLAGDELDATAPERSI  */
+    ///Get the value of the column APSYS_FLAGDELDATAPERSI, returns the default value if the column is null
+    const std::string &getValueOfApsysFlagdeldatapersi() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysFlagdeldatapersi() const noexcept;
+    ///Set the value of the column APSYS_FLAGDELDATAPERSI
+    void setApsysFlagdeldatapersi(const std::string &pApsysFlagdeldatapersi) noexcept;
+    void setApsysFlagdeldatapersi(std::string &&pApsysFlagdeldatapersi) noexcept;
+    void setApsysFlagdeldatapersiToNull() noexcept;
+
+    /**  For column APSYS_DTWAITDELDATAPERSL  */
+    ///Get the value of the column APSYS_DTWAITDELDATAPERSL, returns the default value if the column is null
+    const ::trantor::Date &getValueOfApsysDtwaitdeldatapersl() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getApsysDtwaitdeldatapersl() const noexcept;
+    ///Set the value of the column APSYS_DTWAITDELDATAPERSL
+    void setApsysDtwaitdeldatapersl(const ::trantor::Date &pApsysDtwaitdeldatapersl) noexcept;
+    void setApsysDtwaitdeldataperslToNull() noexcept;
+
+    /**  For column APSYS_CDPTFSELDGSC  */
+    ///Get the value of the column APSYS_CDPTFSELDGSC, returns the default value if the column is null
+    const std::string &getValueOfApsysCdptfseldgsc() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdptfseldgsc() const noexcept;
+    ///Set the value of the column APSYS_CDPTFSELDGSC
+    void setApsysCdptfseldgsc(const std::string &pApsysCdptfseldgsc) noexcept;
+    void setApsysCdptfseldgsc(std::string &&pApsysCdptfseldgsc) noexcept;
+    void setApsysCdptfseldgscToNull() noexcept;
+
+    /**  For column APSYS_CDMOTIFPARTDGSS  */
+    ///Get the value of the column APSYS_CDMOTIFPARTDGSS, returns the default value if the column is null
+    const std::string &getValueOfApsysCdmotifpartdgss() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getApsysCdmotifpartdgss() const noexcept;
+    ///Set the value of the column APSYS_CDMOTIFPARTDGSS
+    void setApsysCdmotifpartdgss(const std::string &pApsysCdmotifpartdgss) noexcept;
+    void setApsysCdmotifpartdgss(std::string &&pApsysCdmotifpartdgss) noexcept;
+    void setApsysCdmotifpartdgssToNull() noexcept;
+
+    /**  For column EAM_CD  */
+    ///Get the value of the column EAM_CD, returns the default value if the column is null
+    const std::string &getValueOfEamCd() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getEamCd() const noexcept;
+    ///Set the value of the column EAM_CD
+    void setEamCd(const std::string &pEamCd) noexcept;
+    void setEamCd(std::string &&pEamCd) noexcept;
+    void setEamCdToNull() noexcept;
+
+    /**  For column RETENTION_ON_HOLD  */
+    ///Get the value of the column RETENTION_ON_HOLD, returns the default value if the column is null
+    const std::string &getValueOfRetentionOnHold() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getRetentionOnHold() const noexcept;
+    ///Set the value of the column RETENTION_ON_HOLD
+    void setRetentionOnHold(const std::string &pRetentionOnHold) noexcept;
+    void setRetentionOnHold(std::string &&pRetentionOnHold) noexcept;
+    void setRetentionOnHoldToNull() noexcept;
+
+    /**  For column LOGICAL_ERASURE  */
+    ///Get the value of the column LOGICAL_ERASURE, returns the default value if the column is null
+    const std::string &getValueOfLogicalErasure() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getLogicalErasure() const noexcept;
+    ///Set the value of the column LOGICAL_ERASURE
+    void setLogicalErasure(const std::string &pLogicalErasure) noexcept;
+    void setLogicalErasure(std::string &&pLogicalErasure) noexcept;
+    void setLogicalErasureToNull() noexcept;
+
+    /**  For column RETENTION_ON_HOLD_DATE  */
+    ///Get the value of the column RETENTION_ON_HOLD_DATE, returns the default value if the column is null
+    const ::trantor::Date &getValueOfRetentionOnHoldDate() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getRetentionOnHoldDate() const noexcept;
+    ///Set the value of the column RETENTION_ON_HOLD_DATE
+    void setRetentionOnHoldDate(const ::trantor::Date &pRetentionOnHoldDate) noexcept;
+    void setRetentionOnHoldDateToNull() noexcept;
+
+    /**  For column RETENTION_ON_HOLD_REASON  */
+    ///Get the value of the column RETENTION_ON_HOLD_REASON, returns the default value if the column is null
+    const std::string &getValueOfRetentionOnHoldReason() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getRetentionOnHoldReason() const noexcept;
+    ///Set the value of the column RETENTION_ON_HOLD_REASON
+    void setRetentionOnHoldReason(const std::string &pRetentionOnHoldReason) noexcept;
+    void setRetentionOnHoldReason(std::string &&pRetentionOnHoldReason) noexcept;
+    void setRetentionOnHoldReasonToNull() noexcept;
+
+    /**  For column LOGICAL_ERASURE_DATE  */
+    ///Get the value of the column LOGICAL_ERASURE_DATE, returns the default value if the column is null
+    const ::trantor::Date &getValueOfLogicalErasureDate() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<::trantor::Date> &getLogicalErasureDate() const noexcept;
+    ///Set the value of the column LOGICAL_ERASURE_DATE
+    void setLogicalErasureDate(const ::trantor::Date &pLogicalErasureDate) noexcept;
+    void setLogicalErasureDateToNull() noexcept;
+
+    /**  For column LOGICAL_ERASURE_REASON  */
+    ///Get the value of the column LOGICAL_ERASURE_REASON, returns the default value if the column is null
+    const std::string &getValueOfLogicalErasureReason() const noexcept;
+    ///Return a shared_ptr object pointing to the column const value, or an empty shared_ptr object if the column is null
+    const std::shared_ptr<std::string> &getLogicalErasureReason() const noexcept;
+    ///Set the value of the column LOGICAL_ERASURE_REASON
+    void setLogicalErasureReason(const std::string &pLogicalErasureReason) noexcept;
+    void setLogicalErasureReason(std::string &&pLogicalErasureReason) noexcept;
+    void setLogicalErasureReasonToNull() noexcept;
 
 
-    static size_t getColumnNumber() noexcept {  return 4;  }
+    static size_t getColumnNumber() noexcept {  return 166;  }
     static const std::string &getColumnName(size_t index) noexcept(false);
 
     Json::Value toJson() const;
@@ -150,10 +1905,172 @@ class Portfolio
     void updateArgs(drogon::orm::internal::SqlBinder &binder) const;
     ///For mysql or sqlite3
     void updateId(const uint64_t id);
-    std::shared_ptr<int32_t> porfolioId_;
-    std::shared_ptr<std::string> porfolioName_;
-    std::shared_ptr<::trantor::Date> dateCreation_;
-    std::shared_ptr<int32_t> openClosed_;
+    std::shared_ptr<double> kundenid_;
+    std::shared_ptr<double> portfoliono_;
+    std::shared_ptr<std::string> bezeichnung_;
+    std::shared_ptr<std::string> managementtypCd_;
+    std::shared_ptr<std::string> manager1Cd_;
+    std::shared_ptr<std::string> manager2Cd_;
+    std::shared_ptr<std::string> manager3Cd_;
+    std::shared_ptr<std::string> manager4Cd_;
+    std::shared_ptr<std::string> manager5Cd_;
+    std::shared_ptr<std::string> vermittlerCd_;
+    std::shared_ptr<std::string> infovollmacht_;
+    std::shared_ptr<std::string> kontakt_;
+    std::shared_ptr<std::string> ertraegnisaufCd_;
+    std::shared_ptr<std::string> waehrungsCd_;
+    std::shared_ptr<std::string> belegsatzCd_;
+    std::shared_ptr<std::string> loeschCd_;
+    std::shared_ptr<::trantor::Date> loeschdatum_;
+    std::shared_ptr<::trantor::Date> crtdatum_;
+    std::shared_ptr<std::string> crtuser_;
+    std::shared_ptr<::trantor::Date> mutdatum_;
+    std::shared_ptr<std::string> mutuser_;
+    std::shared_ptr<std::string> misdomizilCd_;
+    std::shared_ptr<std::string> anlagestrategieCd_;
+    std::shared_ptr<std::string> uswbasketCd_;
+    std::shared_ptr<std::string> versandhaeufigCd_;
+    std::shared_ptr<std::string> rubrik_;
+    std::shared_ptr<std::string> verwaltungsmodusCd_;
+    std::shared_ptr<::trantor::Date> kundeletzterbesuch_;
+    std::shared_ptr<std::string> antragsort_;
+    std::shared_ptr<::trantor::Date> antragsdatum_;
+    std::shared_ptr<std::string> anderepostadresseCd_;
+    std::shared_ptr<std::string> banklagerndCd_;
+    std::shared_ptr<std::string> spezialinstruktion_;
+    std::shared_ptr<std::string> geldvonkontoinhaberCd_;
+    std::shared_ptr<std::string> manualopenCd_;
+    std::shared_ptr<std::string> kontonummer1_;
+    std::shared_ptr<std::string> kontonummer2_;
+    std::shared_ptr<std::string> kontonummer3_;
+    std::shared_ptr<std::string> filialCd_;
+    std::shared_ptr<std::string> rubrik1_;
+    std::shared_ptr<std::string> rubrik2_;
+    std::shared_ptr<std::string> rubrik3_;
+    std::shared_ptr<double> onlineCd_;
+    std::shared_ptr<std::string> portfoliotypCd_;
+    std::shared_ptr<std::string> cdpartc_;
+    std::shared_ptr<float> poEuTaxProzent_;
+    std::shared_ptr<std::string> apsysStatusOpec_;
+    std::shared_ptr<double> apsysErri_;
+    std::shared_ptr<std::string> apsysShnas_;
+    std::shared_ptr<std::string> apsysTypmdcs_;
+    std::shared_ptr<std::string> apsysIntilgs_;
+    std::shared_ptr<std::string> apsysShlibptfs_;
+    std::shared_ptr<std::string> apsysCdstatdusc_;
+    std::shared_ptr<::trantor::Date> apsysDtdebpartl_;
+    std::shared_ptr<::trantor::Date> apsysDtfinpartl_;
+    std::shared_ptr<std::string> apsysIdstrucs_;
+    std::shared_ptr<double> apsysCdpermi_;
+    std::shared_ptr<std::string> apsysCdctgptfints_;
+    std::shared_ptr<std::string> apsysCdctgptfstes_;
+    std::shared_ptr<std::string> apsysCdctgptfstms_;
+    std::shared_ptr<std::string> apsysCdctgptfmafs_;
+    std::shared_ptr<std::string> apsysCdctgptfrisks_;
+    std::shared_ptr<std::string> apsysCdctgptfcous_;
+    std::shared_ptr<std::string> apsysCdctgptftrcs_;
+    std::shared_ptr<std::string> apsysCdctgptfstebrutnets_;
+    std::shared_ptr<std::string> apsysFlagirsreppartc_;
+    std::shared_ptr<std::string> apsysCdctgptftaxints_;
+    std::shared_ptr<std::string> apsysIdpocs_;
+    std::shared_ptr<std::string> apsysInfo_;
+    std::shared_ptr<std::string> nettovermoegenChf_;
+    std::shared_ptr<std::string> apsysIntishs_;
+    std::shared_ptr<double> apsysIdpersl_;
+    std::shared_ptr<std::string> apsysCdmotifparts_;
+    std::shared_ptr<std::string> inApsysTempEntspUserid_;
+    std::shared_ptr<::trantor::Date> inApsysTempEntspDatum_;
+    std::shared_ptr<std::string> inApsysTempEntsperrenCd_;
+    std::shared_ptr<double> kundenkategorieCd_;
+    std::shared_ptr<std::string> gemeinschaftskontoCd_;
+    std::shared_ptr<std::string> dritteSaeuleCd_;
+    std::shared_ptr<std::string> apsysTypptfs_;
+    std::shared_ptr<std::string> autoEuTaxPercentage_;
+    std::shared_ptr<double> aktid_;
+    std::shared_ptr<double> validid_;
+    std::shared_ptr<std::string> validCd_;
+    std::shared_ptr<std::string> validuser_;
+    std::shared_ptr<std::string> apsysCdctgptfsbxps_;
+    std::shared_ptr<std::string> apsysCdctgptfsdocs_;
+    std::shared_ptr<std::string> apsysIdents_;
+    std::shared_ptr<std::string> apsysCdsoumbolc_;
+    std::shared_ptr<std::string> apsysCdfacbolc_;
+    std::shared_ptr<std::string> apsysFlagtyptrfpolc_;
+    std::shared_ptr<std::string> apsysIdtrfpols_;
+    std::shared_ptr<std::string> apsysCdpctpartictitueutaxc_;
+    std::shared_ptr<std::string> apsysCdmotifclos_;
+    std::shared_ptr<std::string> encSalt_;
+    std::shared_ptr<std::string> bezeichnungEnc_;
+    std::shared_ptr<std::string> ktoeAmlProfilCd_;
+    std::shared_ptr<std::string> apsysDevevals_;
+    std::shared_ptr<std::string> apsysCdrnvstmc_;
+    std::shared_ptr<std::string> apsysCdrglprlgc_;
+    std::shared_ptr<std::string> apsysCdctgptfcomagtcpts_;
+    std::shared_ptr<std::string> apsysCdctgptfroutords_;
+    std::shared_ptr<std::string> apsysCdctgptfgrecpts_;
+    std::shared_ptr<std::string> apsysCdctgptftrsftits_;
+    std::shared_ptr<std::string> apsysFlagexpsysexttaxi_;
+    std::shared_ptr<std::string> wbIstNichtZwingendCd_;
+    std::shared_ptr<std::string> apsysCdbqerestc_;
+    std::shared_ptr<std::string> apsysCdctgptftypplacs_;
+    std::shared_ptr<std::string> apsysCdeangrmtcli1s_;
+    std::shared_ptr<std::string> apsysCdeangrmtcli2s_;
+    std::shared_ptr<std::string> apsysCdfatcatypc_;
+    std::shared_ptr<std::string> apsysIdfatcaclas_;
+    std::shared_ptr<std::string> apsysCdfatcastatcalccrmc_;
+    std::shared_ptr<std::string> apsysCdfatcastatc_;
+    std::shared_ptr<std::string> apsysCommentfatcastats_;
+    std::shared_ptr<std::string> apsysCdfatcamotifparts_;
+    std::shared_ptr<std::string> apsysCdfatcastatcalcglobc_;
+    std::shared_ptr<std::string> apsysCdfatcastatcalclocc_;
+    std::shared_ptr<std::string> apsysCdvalidstatc_;
+    std::shared_ptr<std::string> apsysUservalidfatcastats_;
+    std::shared_ptr<::trantor::Date> apsysDtvalidfatcastatl_;
+    std::shared_ptr<::trantor::Date> apsysHrvalidfatcastatl_;
+    std::shared_ptr<std::string> apsysCdctrnettc553c_;
+    std::shared_ptr<std::string> apsysFlagforceposostmanagi_;
+    std::shared_ptr<std::string> apsysPosostmanagc_;
+    std::shared_ptr<double> apsysCritereusfatcastatl_;
+    std::shared_ptr<std::string> apsysFlagsimsi_;
+    std::shared_ptr<double> nrOfBoInWhtStatement_;
+    std::shared_ptr<std::string> partnerWithUnlLiabilityCd_;
+    std::shared_ptr<std::string> companyManagedByBoCd_;
+    std::shared_ptr<std::string> isTrusteePhysicalCd_;
+    std::shared_ptr<std::string> noTradingUsSecuritiesCd_;
+    std::shared_ptr<std::string> portfolioSegrAccountCd_;
+    std::shared_ptr<::trantor::Date> usWhtStartDate_;
+    std::shared_ptr<std::string> apsysCdctgptfivstautos_;
+    std::shared_ptr<std::string> automatischeVerteilungCd_;
+    std::shared_ptr<std::string> apsysCdtypreportqic_;
+    std::shared_ptr<std::string> apsysFlagirsnonactifi_;
+    std::shared_ptr<std::string> openingDocumentsProposedCd_;
+    std::shared_ptr<std::string> apsysCdctgptfalgcpts_;
+    std::shared_ptr<std::string> apsysIdstrucforjurs_;
+    std::shared_ptr<std::string> apsysIdentforjurs_;
+    std::shared_ptr<double> fatcaBasketCd_;
+    std::shared_ptr<std::string> apsysCdmethcloc_;
+    std::shared_ptr<::trantor::Date> apsysDtevalclol_;
+    std::shared_ptr<std::string> aeoiExemptionCd_;
+    std::shared_ptr<std::string> aeoiSubExemptionCd_;
+    std::shared_ptr<std::string> undocumentedAccountCd_;
+    std::shared_ptr<std::string> dormantAccountCd_;
+    std::shared_ptr<std::string> aeoiConsistencyStatusCd_;
+    std::shared_ptr<std::string> aeoiFinalStatusCd_;
+    std::shared_ptr<::trantor::Date> aeoiReviewDate_;
+    std::shared_ptr<std::string> apsysCdmifidexemptc_;
+    std::shared_ptr<::trantor::Date> apsysDtdebmifidl_;
+    std::shared_ptr<::trantor::Date> openedInApsysDate_;
+    std::shared_ptr<std::string> apsysFlagdeldatapersi_;
+    std::shared_ptr<::trantor::Date> apsysDtwaitdeldatapersl_;
+    std::shared_ptr<std::string> apsysCdptfseldgsc_;
+    std::shared_ptr<std::string> apsysCdmotifpartdgss_;
+    std::shared_ptr<std::string> eamCd_;
+    std::shared_ptr<std::string> retentionOnHold_;
+    std::shared_ptr<std::string> logicalErasure_;
+    std::shared_ptr<::trantor::Date> retentionOnHoldDate_;
+    std::shared_ptr<std::string> retentionOnHoldReason_;
+    std::shared_ptr<::trantor::Date> logicalErasureDate_;
+    std::shared_ptr<std::string> logicalErasureReason_;
     struct MetaData
     {
         const std::string colName_;
@@ -165,17 +2082,17 @@ class Portfolio
         const bool notNull_;
     };
     static const std::vector<MetaData> metaData_;
-    bool dirtyFlag_[4]={ false };
+    bool dirtyFlag_[166]={ false };
   public:
     static const std::string &sqlForFindingByPrimaryKey()
     {
-        static const std::string sql="select * from " + tableName + " where porfolio_id = ?";
+        static const std::string sql="select * from " + tableName + " where PORTFOLIONO = ?";
         return sql;
     }
 
     static const std::string &sqlForDeletingByPrimaryKey()
     {
-        static const std::string sql="delete from " + tableName + " where porfolio_id = ?";
+        static const std::string sql="delete from " + tableName + " where PORTFOLIONO = ?";
         return sql;
     }
     std::string sqlForInserting(bool &needSelection) const
@@ -183,24 +2100,865 @@ class Portfolio
         std::string sql="insert into " + tableName + " (";
         size_t parametersCount = 0;
         needSelection = false;
-            sql += "porfolio_id,";
+        if(dirtyFlag_[0])
+        {
+            sql += "KUNDENID,";
             ++parametersCount;
+        }
         if(dirtyFlag_[1])
         {
-            sql += "porfolio_name,";
+            sql += "PORTFOLIONO,";
             ++parametersCount;
         }
         if(dirtyFlag_[2])
         {
-            sql += "date_Creation,";
+            sql += "BEZEICHNUNG,";
             ++parametersCount;
         }
         if(dirtyFlag_[3])
         {
-            sql += "open_closed,";
+            sql += "MANAGEMENTTYP_CD,";
             ++parametersCount;
         }
-        needSelection=true;
+        if(dirtyFlag_[4])
+        {
+            sql += "MANAGER1_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[5])
+        {
+            sql += "MANAGER2_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[6])
+        {
+            sql += "MANAGER3_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[7])
+        {
+            sql += "MANAGER4_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[8])
+        {
+            sql += "MANAGER5_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[9])
+        {
+            sql += "VERMITTLER_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[10])
+        {
+            sql += "INFOVOLLMACHT,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[11])
+        {
+            sql += "KONTAKT,";
+            ++parametersCount;
+        }
+        sql += "ERTRAEGNISAUF_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[12])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[13])
+        {
+            sql += "WAEHRUNGS_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[14])
+        {
+            sql += "BELEGSATZ_CD,";
+            ++parametersCount;
+        }
+        sql += "LOESCH_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[15])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[16])
+        {
+            sql += "LOESCHDATUM,";
+            ++parametersCount;
+        }
+        sql += "CRTDATUM,";
+        ++parametersCount;
+        if(!dirtyFlag_[17])
+        {
+            needSelection=true;
+        }
+        sql += "CRTUSER,";
+        ++parametersCount;
+        if(!dirtyFlag_[18])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[19])
+        {
+            sql += "MUTDATUM,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[20])
+        {
+            sql += "MUTUSER,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[21])
+        {
+            sql += "MISDOMIZIL_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[22])
+        {
+            sql += "ANLAGESTRATEGIE_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[23])
+        {
+            sql += "USWBASKET_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[24])
+        {
+            sql += "VERSANDHAEUFIG_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[25])
+        {
+            sql += "RUBRIK,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[26])
+        {
+            sql += "VERWALTUNGSMODUS_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[27])
+        {
+            sql += "KUNDELETZTERBESUCH,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[28])
+        {
+            sql += "ANTRAGSORT,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[29])
+        {
+            sql += "ANTRAGSDATUM,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[30])
+        {
+            sql += "ANDEREPOSTADRESSE_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[31])
+        {
+            sql += "BANKLAGERND_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[32])
+        {
+            sql += "SPEZIALINSTRUKTION,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[33])
+        {
+            sql += "GELDVONKONTOINHABER_CD,";
+            ++parametersCount;
+        }
+        sql += "MANUALOPEN_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[34])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[35])
+        {
+            sql += "KONTONUMMER1,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[36])
+        {
+            sql += "KONTONUMMER2,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[37])
+        {
+            sql += "KONTONUMMER3,";
+            ++parametersCount;
+        }
+        sql += "FILIAL_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[38])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[39])
+        {
+            sql += "RUBRIK1,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[40])
+        {
+            sql += "RUBRIK2,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[41])
+        {
+            sql += "RUBRIK3,";
+            ++parametersCount;
+        }
+        sql += "ONLINE_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[42])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[43])
+        {
+            sql += "PORTFOLIOTYP_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[44])
+        {
+            sql += "CDPARTC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[45])
+        {
+            sql += "PO_EU_TAX_PROZENT,";
+            ++parametersCount;
+        }
+        sql += "APSYS_STATUS_OPEC,";
+        ++parametersCount;
+        if(!dirtyFlag_[46])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[47])
+        {
+            sql += "APSYS_ERRI,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[48])
+        {
+            sql += "APSYS_SHNAS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[49])
+        {
+            sql += "APSYS_TYPMDCS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[50])
+        {
+            sql += "APSYS_INTILGS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[51])
+        {
+            sql += "APSYS_SHLIBPTFS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[52])
+        {
+            sql += "APSYS_CDSTATDUSC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[53])
+        {
+            sql += "APSYS_DTDEBPARTL,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[54])
+        {
+            sql += "APSYS_DTFINPARTL,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[55])
+        {
+            sql += "APSYS_IDSTRUCS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[56])
+        {
+            sql += "APSYS_CDPERMI,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[57])
+        {
+            sql += "APSYS_CDCTGPTFINTS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[58])
+        {
+            sql += "APSYS_CDCTGPTFSTES,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[59])
+        {
+            sql += "APSYS_CDCTGPTFSTMS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[60])
+        {
+            sql += "APSYS_CDCTGPTFMAFS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[61])
+        {
+            sql += "APSYS_CDCTGPTFRISKS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[62])
+        {
+            sql += "APSYS_CDCTGPTFCOUS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[63])
+        {
+            sql += "APSYS_CDCTGPTFTRCS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[64])
+        {
+            sql += "APSYS_CDCTGPTFSTEBRUTNETS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[65])
+        {
+            sql += "APSYS_FLAGIRSREPPARTC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[66])
+        {
+            sql += "APSYS_CDCTGPTFTAXINTS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[67])
+        {
+            sql += "APSYS_IDPOCS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[68])
+        {
+            sql += "APSYS_INFO,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[69])
+        {
+            sql += "NETTOVERMOEGEN_CHF,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[70])
+        {
+            sql += "APSYS_INTISHS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[71])
+        {
+            sql += "APSYS_IDPERSL,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[72])
+        {
+            sql += "APSYS_CDMOTIFPARTS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[73])
+        {
+            sql += "IN_APSYS_TEMP_ENTSP_USERID,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[74])
+        {
+            sql += "IN_APSYS_TEMP_ENTSP_DATUM,";
+            ++parametersCount;
+        }
+        sql += "IN_APSYS_TEMP_ENTSPERREN_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[75])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[76])
+        {
+            sql += "KUNDENKATEGORIE_CD,";
+            ++parametersCount;
+        }
+        sql += "GEMEINSCHAFTSKONTO_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[77])
+        {
+            needSelection=true;
+        }
+        sql += "DRITTE_SAEULE_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[78])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[79])
+        {
+            sql += "APSYS_TYPPTFS,";
+            ++parametersCount;
+        }
+        sql += "AUTO_EU_TAX_PERCENTAGE,";
+        ++parametersCount;
+        if(!dirtyFlag_[80])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[81])
+        {
+            sql += "AKTID,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[82])
+        {
+            sql += "VALIDID,";
+            ++parametersCount;
+        }
+        sql += "VALID_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[83])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[84])
+        {
+            sql += "VALIDUSER,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[85])
+        {
+            sql += "APSYS_CDCTGPTFSBXPS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[86])
+        {
+            sql += "APSYS_CDCTGPTFSDOCS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[87])
+        {
+            sql += "APSYS_IDENTS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[88])
+        {
+            sql += "APSYS_CDSOUMBOLC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[89])
+        {
+            sql += "APSYS_CDFACBOLC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[90])
+        {
+            sql += "APSYS_FLAGTYPTRFPOLC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[91])
+        {
+            sql += "APSYS_IDTRFPOLS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[92])
+        {
+            sql += "APSYS_CDPCTPARTICTITUEUTAXC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[93])
+        {
+            sql += "APSYS_CDMOTIFCLOS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[94])
+        {
+            sql += "ENC_SALT,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[95])
+        {
+            sql += "BEZEICHNUNG_ENC,";
+            ++parametersCount;
+        }
+        sql += "KTOE_AML_PROFIL_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[96])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[97])
+        {
+            sql += "APSYS_DEVEVALS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[98])
+        {
+            sql += "APSYS_CDRNVSTMC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[99])
+        {
+            sql += "APSYS_CDRGLPRLGC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[100])
+        {
+            sql += "APSYS_CDCTGPTFCOMAGTCPTS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[101])
+        {
+            sql += "APSYS_CDCTGPTFROUTORDS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[102])
+        {
+            sql += "APSYS_CDCTGPTFGRECPTS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[103])
+        {
+            sql += "APSYS_CDCTGPTFTRSFTITS,";
+            ++parametersCount;
+        }
+        sql += "APSYS_FLAGEXPSYSEXTTAXI,";
+        ++parametersCount;
+        if(!dirtyFlag_[104])
+        {
+            needSelection=true;
+        }
+        sql += "WB_IST_NICHT_ZWINGEND_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[105])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[106])
+        {
+            sql += "APSYS_CDBQERESTC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[107])
+        {
+            sql += "APSYS_CDCTGPTFTYPPLACS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[108])
+        {
+            sql += "APSYS_CDEANGRMTCLI1S,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[109])
+        {
+            sql += "APSYS_CDEANGRMTCLI2S,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[110])
+        {
+            sql += "APSYS_CDFATCATYPC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[111])
+        {
+            sql += "APSYS_IDFATCACLAS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[112])
+        {
+            sql += "APSYS_CDFATCASTATCALCCRMC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[113])
+        {
+            sql += "APSYS_CDFATCASTATC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[114])
+        {
+            sql += "APSYS_COMMENTFATCASTATS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[115])
+        {
+            sql += "APSYS_CDFATCAMOTIFPARTS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[116])
+        {
+            sql += "APSYS_CDFATCASTATCALCGLOBC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[117])
+        {
+            sql += "APSYS_CDFATCASTATCALCLOCC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[118])
+        {
+            sql += "APSYS_CDVALIDSTATC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[119])
+        {
+            sql += "APSYS_USERVALIDFATCASTATS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[120])
+        {
+            sql += "APSYS_DTVALIDFATCASTATL,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[121])
+        {
+            sql += "APSYS_HRVALIDFATCASTATL,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[122])
+        {
+            sql += "APSYS_CDCTRNETTC553C,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[123])
+        {
+            sql += "APSYS_FLAGFORCEPOSOSTMANAGI,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[124])
+        {
+            sql += "APSYS_POSOSTMANAGC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[125])
+        {
+            sql += "APSYS_CRITEREUSFATCASTATL,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[126])
+        {
+            sql += "APSYS_FLAGSIMSI,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[127])
+        {
+            sql += "NR_OF_BO_IN_WHT_STATEMENT,";
+            ++parametersCount;
+        }
+        sql += "PARTNER_WITH_UNL_LIABILITY_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[128])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[129])
+        {
+            sql += "COMPANY_MANAGED_BY_BO_CD,";
+            ++parametersCount;
+        }
+        sql += "IS_TRUSTEE_PHYSICAL_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[130])
+        {
+            needSelection=true;
+        }
+        sql += "NO_TRADING_US_SECURITIES_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[131])
+        {
+            needSelection=true;
+        }
+        sql += "PORTFOLIO_SEGR_ACCOUNT_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[132])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[133])
+        {
+            sql += "US_WHT_START_DATE,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[134])
+        {
+            sql += "APSYS_CDCTGPTFIVSTAUTOS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[135])
+        {
+            sql += "AUTOMATISCHE_VERTEILUNG_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[136])
+        {
+            sql += "APSYS_CDTYPREPORTQIC,";
+            ++parametersCount;
+        }
+        sql += "APSYS_FLAGIRSNONACTIFI,";
+        ++parametersCount;
+        if(!dirtyFlag_[137])
+        {
+            needSelection=true;
+        }
+        sql += "OPENING_DOCUMENTS_PROPOSED_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[138])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[139])
+        {
+            sql += "APSYS_CDCTGPTFALGCPTS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[140])
+        {
+            sql += "APSYS_IDSTRUCFORJURS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[141])
+        {
+            sql += "APSYS_IDENTFORJURS,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[142])
+        {
+            sql += "FATCA_BASKET_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[143])
+        {
+            sql += "APSYS_CDMETHCLOC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[144])
+        {
+            sql += "APSYS_DTEVALCLOL,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[145])
+        {
+            sql += "AEOI_EXEMPTION_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[146])
+        {
+            sql += "AEOI_SUB_EXEMPTION_CD,";
+            ++parametersCount;
+        }
+        sql += "UNDOCUMENTED_ACCOUNT_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[147])
+        {
+            needSelection=true;
+        }
+        sql += "DORMANT_ACCOUNT_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[148])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[149])
+        {
+            sql += "AEOI_CONSISTENCY_STATUS_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[150])
+        {
+            sql += "AEOI_FINAL_STATUS_CD,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[151])
+        {
+            sql += "AEOI_REVIEW_DATE,";
+            ++parametersCount;
+        }
+        sql += "APSYS_CDMIFIDEXEMPTC,";
+        ++parametersCount;
+        if(!dirtyFlag_[152])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[153])
+        {
+            sql += "APSYS_DTDEBMIFIDL,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[154])
+        {
+            sql += "OPENED_IN_APSYS_DATE,";
+            ++parametersCount;
+        }
+        sql += "APSYS_FLAGDELDATAPERSI,";
+        ++parametersCount;
+        if(!dirtyFlag_[155])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[156])
+        {
+            sql += "APSYS_DTWAITDELDATAPERSL,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[157])
+        {
+            sql += "APSYS_CDPTFSELDGSC,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[158])
+        {
+            sql += "APSYS_CDMOTIFPARTDGSS,";
+            ++parametersCount;
+        }
+        sql += "EAM_CD,";
+        ++parametersCount;
+        if(!dirtyFlag_[159])
+        {
+            needSelection=true;
+        }
+        sql += "RETENTION_ON_HOLD,";
+        ++parametersCount;
+        if(!dirtyFlag_[160])
+        {
+            needSelection=true;
+        }
+        sql += "LOGICAL_ERASURE,";
+        ++parametersCount;
+        if(!dirtyFlag_[161])
+        {
+            needSelection=true;
+        }
+        if(dirtyFlag_[162])
+        {
+            sql += "RETENTION_ON_HOLD_DATE,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[163])
+        {
+            sql += "RETENTION_ON_HOLD_REASON,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[164])
+        {
+            sql += "LOGICAL_ERASURE_DATE,";
+            ++parametersCount;
+        }
+        if(dirtyFlag_[165])
+        {
+            sql += "LOGICAL_ERASURE_REASON,";
+            ++parametersCount;
+        }
         if(parametersCount > 0)
         {
             sql[sql.length()-1]=')';
@@ -209,7 +2967,11 @@ class Portfolio
         else
             sql += ") values (";
 
-        sql +="default,";
+        if(dirtyFlag_[0])
+        {
+            sql.append("?,");
+
+        }
         if(dirtyFlag_[1])
         {
             sql.append("?,");
@@ -221,6 +2983,932 @@ class Portfolio
 
         }
         if(dirtyFlag_[3])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[4])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[5])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[6])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[7])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[8])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[9])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[10])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[11])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[12])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[13])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[14])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[15])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[16])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[17])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[18])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[19])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[20])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[21])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[22])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[23])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[24])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[25])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[26])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[27])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[28])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[29])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[30])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[31])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[32])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[33])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[34])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[35])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[36])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[37])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[38])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[39])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[40])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[41])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[42])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[43])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[44])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[45])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[46])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[47])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[48])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[49])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[50])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[51])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[52])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[53])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[54])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[55])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[56])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[57])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[58])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[59])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[60])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[61])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[62])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[63])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[64])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[65])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[66])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[67])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[68])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[69])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[70])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[71])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[72])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[73])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[74])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[75])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[76])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[77])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[78])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[79])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[80])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[81])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[82])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[83])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[84])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[85])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[86])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[87])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[88])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[89])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[90])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[91])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[92])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[93])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[94])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[95])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[96])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[97])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[98])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[99])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[100])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[101])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[102])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[103])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[104])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[105])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[106])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[107])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[108])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[109])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[110])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[111])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[112])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[113])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[114])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[115])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[116])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[117])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[118])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[119])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[120])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[121])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[122])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[123])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[124])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[125])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[126])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[127])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[128])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[129])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[130])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[131])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[132])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[133])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[134])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[135])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[136])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[137])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[138])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[139])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[140])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[141])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[142])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[143])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[144])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[145])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[146])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[147])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[148])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[149])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[150])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[151])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[152])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[153])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[154])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[155])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[156])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[157])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[158])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[159])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[160])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[161])
+        {
+            sql.append("?,");
+
+        }
+        else
+        {
+            sql +="default,";
+        }
+        if(dirtyFlag_[162])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[163])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[164])
+        {
+            sql.append("?,");
+
+        }
+        if(dirtyFlag_[165])
         {
             sql.append("?,");
 

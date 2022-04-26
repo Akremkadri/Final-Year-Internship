@@ -23,7 +23,7 @@ const std::string User::tableName = "user";
 const std::vector<typename User::MetaData> User::metaData_={
 {"id","uint64_t","bigint(20) unsigned",8,1,1,1},
 {"username","std::string","varchar(50)",50,0,0,1},
-{"password","std::string","varchar(50)",50,0,0,1}
+{"password","std::string","text",0,0,0,1}
 };
 const std::string &User::getColumnName(size_t index) noexcept(false)
 {
@@ -640,15 +640,6 @@ bool User::validJsonOfField(size_t index,
                 err="Type error in the "+fieldName+" field";
                 return false;
             }
-            // asString().length() creates a string object, is there any better way to validate the length?
-            if(pJson.isString() && pJson.asString().length() > 50)
-            {
-                err="String length exceeds limit for the " +
-                    fieldName +
-                    " field (the maximum value is 50)";
-                return false;
-            }
-
             break;
         default:
             err="Internal error in the server";

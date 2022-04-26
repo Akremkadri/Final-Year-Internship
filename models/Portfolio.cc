@@ -13,19 +13,343 @@ using namespace drogon;
 using namespace drogon::orm;
 using namespace drogon_model::cim_web;
 
-const std::string Portfolio::Cols::_porfolio_id = "porfolio_id";
-const std::string Portfolio::Cols::_porfolio_name = "porfolio_name";
-const std::string Portfolio::Cols::_date_Creation = "date_Creation";
-const std::string Portfolio::Cols::_open_closed = "open_closed";
-const std::string Portfolio::primaryKeyName = "porfolio_id";
+const std::string Portfolio::Cols::_KUNDENID = "KUNDENID";
+const std::string Portfolio::Cols::_PORTFOLIONO = "PORTFOLIONO";
+const std::string Portfolio::Cols::_BEZEICHNUNG = "BEZEICHNUNG";
+const std::string Portfolio::Cols::_MANAGEMENTTYP_CD = "MANAGEMENTTYP_CD";
+const std::string Portfolio::Cols::_MANAGER1_CD = "MANAGER1_CD";
+const std::string Portfolio::Cols::_MANAGER2_CD = "MANAGER2_CD";
+const std::string Portfolio::Cols::_MANAGER3_CD = "MANAGER3_CD";
+const std::string Portfolio::Cols::_MANAGER4_CD = "MANAGER4_CD";
+const std::string Portfolio::Cols::_MANAGER5_CD = "MANAGER5_CD";
+const std::string Portfolio::Cols::_VERMITTLER_CD = "VERMITTLER_CD";
+const std::string Portfolio::Cols::_INFOVOLLMACHT = "INFOVOLLMACHT";
+const std::string Portfolio::Cols::_KONTAKT = "KONTAKT";
+const std::string Portfolio::Cols::_ERTRAEGNISAUF_CD = "ERTRAEGNISAUF_CD";
+const std::string Portfolio::Cols::_WAEHRUNGS_CD = "WAEHRUNGS_CD";
+const std::string Portfolio::Cols::_BELEGSATZ_CD = "BELEGSATZ_CD";
+const std::string Portfolio::Cols::_LOESCH_CD = "LOESCH_CD";
+const std::string Portfolio::Cols::_LOESCHDATUM = "LOESCHDATUM";
+const std::string Portfolio::Cols::_CRTDATUM = "CRTDATUM";
+const std::string Portfolio::Cols::_CRTUSER = "CRTUSER";
+const std::string Portfolio::Cols::_MUTDATUM = "MUTDATUM";
+const std::string Portfolio::Cols::_MUTUSER = "MUTUSER";
+const std::string Portfolio::Cols::_MISDOMIZIL_CD = "MISDOMIZIL_CD";
+const std::string Portfolio::Cols::_ANLAGESTRATEGIE_CD = "ANLAGESTRATEGIE_CD";
+const std::string Portfolio::Cols::_USWBASKET_CD = "USWBASKET_CD";
+const std::string Portfolio::Cols::_VERSANDHAEUFIG_CD = "VERSANDHAEUFIG_CD";
+const std::string Portfolio::Cols::_RUBRIK = "RUBRIK";
+const std::string Portfolio::Cols::_VERWALTUNGSMODUS_CD = "VERWALTUNGSMODUS_CD";
+const std::string Portfolio::Cols::_KUNDELETZTERBESUCH = "KUNDELETZTERBESUCH";
+const std::string Portfolio::Cols::_ANTRAGSORT = "ANTRAGSORT";
+const std::string Portfolio::Cols::_ANTRAGSDATUM = "ANTRAGSDATUM";
+const std::string Portfolio::Cols::_ANDEREPOSTADRESSE_CD = "ANDEREPOSTADRESSE_CD";
+const std::string Portfolio::Cols::_BANKLAGERND_CD = "BANKLAGERND_CD";
+const std::string Portfolio::Cols::_SPEZIALINSTRUKTION = "SPEZIALINSTRUKTION";
+const std::string Portfolio::Cols::_GELDVONKONTOINHABER_CD = "GELDVONKONTOINHABER_CD";
+const std::string Portfolio::Cols::_MANUALOPEN_CD = "MANUALOPEN_CD";
+const std::string Portfolio::Cols::_KONTONUMMER1 = "KONTONUMMER1";
+const std::string Portfolio::Cols::_KONTONUMMER2 = "KONTONUMMER2";
+const std::string Portfolio::Cols::_KONTONUMMER3 = "KONTONUMMER3";
+const std::string Portfolio::Cols::_FILIAL_CD = "FILIAL_CD";
+const std::string Portfolio::Cols::_RUBRIK1 = "RUBRIK1";
+const std::string Portfolio::Cols::_RUBRIK2 = "RUBRIK2";
+const std::string Portfolio::Cols::_RUBRIK3 = "RUBRIK3";
+const std::string Portfolio::Cols::_ONLINE_CD = "ONLINE_CD";
+const std::string Portfolio::Cols::_PORTFOLIOTYP_CD = "PORTFOLIOTYP_CD";
+const std::string Portfolio::Cols::_CDPARTC = "CDPARTC";
+const std::string Portfolio::Cols::_PO_EU_TAX_PROZENT = "PO_EU_TAX_PROZENT";
+const std::string Portfolio::Cols::_APSYS_STATUS_OPEC = "APSYS_STATUS_OPEC";
+const std::string Portfolio::Cols::_APSYS_ERRI = "APSYS_ERRI";
+const std::string Portfolio::Cols::_APSYS_SHNAS = "APSYS_SHNAS";
+const std::string Portfolio::Cols::_APSYS_TYPMDCS = "APSYS_TYPMDCS";
+const std::string Portfolio::Cols::_APSYS_INTILGS = "APSYS_INTILGS";
+const std::string Portfolio::Cols::_APSYS_SHLIBPTFS = "APSYS_SHLIBPTFS";
+const std::string Portfolio::Cols::_APSYS_CDSTATDUSC = "APSYS_CDSTATDUSC";
+const std::string Portfolio::Cols::_APSYS_DTDEBPARTL = "APSYS_DTDEBPARTL";
+const std::string Portfolio::Cols::_APSYS_DTFINPARTL = "APSYS_DTFINPARTL";
+const std::string Portfolio::Cols::_APSYS_IDSTRUCS = "APSYS_IDSTRUCS";
+const std::string Portfolio::Cols::_APSYS_CDPERMI = "APSYS_CDPERMI";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFINTS = "APSYS_CDCTGPTFINTS";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFSTES = "APSYS_CDCTGPTFSTES";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFSTMS = "APSYS_CDCTGPTFSTMS";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFMAFS = "APSYS_CDCTGPTFMAFS";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFRISKS = "APSYS_CDCTGPTFRISKS";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFCOUS = "APSYS_CDCTGPTFCOUS";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFTRCS = "APSYS_CDCTGPTFTRCS";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFSTEBRUTNETS = "APSYS_CDCTGPTFSTEBRUTNETS";
+const std::string Portfolio::Cols::_APSYS_FLAGIRSREPPARTC = "APSYS_FLAGIRSREPPARTC";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFTAXINTS = "APSYS_CDCTGPTFTAXINTS";
+const std::string Portfolio::Cols::_APSYS_IDPOCS = "APSYS_IDPOCS";
+const std::string Portfolio::Cols::_APSYS_INFO = "APSYS_INFO";
+const std::string Portfolio::Cols::_NETTOVERMOEGEN_CHF = "NETTOVERMOEGEN_CHF";
+const std::string Portfolio::Cols::_APSYS_INTISHS = "APSYS_INTISHS";
+const std::string Portfolio::Cols::_APSYS_IDPERSL = "APSYS_IDPERSL";
+const std::string Portfolio::Cols::_APSYS_CDMOTIFPARTS = "APSYS_CDMOTIFPARTS";
+const std::string Portfolio::Cols::_IN_APSYS_TEMP_ENTSP_USERID = "IN_APSYS_TEMP_ENTSP_USERID";
+const std::string Portfolio::Cols::_IN_APSYS_TEMP_ENTSP_DATUM = "IN_APSYS_TEMP_ENTSP_DATUM";
+const std::string Portfolio::Cols::_IN_APSYS_TEMP_ENTSPERREN_CD = "IN_APSYS_TEMP_ENTSPERREN_CD";
+const std::string Portfolio::Cols::_KUNDENKATEGORIE_CD = "KUNDENKATEGORIE_CD";
+const std::string Portfolio::Cols::_GEMEINSCHAFTSKONTO_CD = "GEMEINSCHAFTSKONTO_CD";
+const std::string Portfolio::Cols::_DRITTE_SAEULE_CD = "DRITTE_SAEULE_CD";
+const std::string Portfolio::Cols::_APSYS_TYPPTFS = "APSYS_TYPPTFS";
+const std::string Portfolio::Cols::_AUTO_EU_TAX_PERCENTAGE = "AUTO_EU_TAX_PERCENTAGE";
+const std::string Portfolio::Cols::_AKTID = "AKTID";
+const std::string Portfolio::Cols::_VALIDID = "VALIDID";
+const std::string Portfolio::Cols::_VALID_CD = "VALID_CD";
+const std::string Portfolio::Cols::_VALIDUSER = "VALIDUSER";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFSBXPS = "APSYS_CDCTGPTFSBXPS";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFSDOCS = "APSYS_CDCTGPTFSDOCS";
+const std::string Portfolio::Cols::_APSYS_IDENTS = "APSYS_IDENTS";
+const std::string Portfolio::Cols::_APSYS_CDSOUMBOLC = "APSYS_CDSOUMBOLC";
+const std::string Portfolio::Cols::_APSYS_CDFACBOLC = "APSYS_CDFACBOLC";
+const std::string Portfolio::Cols::_APSYS_FLAGTYPTRFPOLC = "APSYS_FLAGTYPTRFPOLC";
+const std::string Portfolio::Cols::_APSYS_IDTRFPOLS = "APSYS_IDTRFPOLS";
+const std::string Portfolio::Cols::_APSYS_CDPCTPARTICTITUEUTAXC = "APSYS_CDPCTPARTICTITUEUTAXC";
+const std::string Portfolio::Cols::_APSYS_CDMOTIFCLOS = "APSYS_CDMOTIFCLOS";
+const std::string Portfolio::Cols::_ENC_SALT = "ENC_SALT";
+const std::string Portfolio::Cols::_BEZEICHNUNG_ENC = "BEZEICHNUNG_ENC";
+const std::string Portfolio::Cols::_KTOE_AML_PROFIL_CD = "KTOE_AML_PROFIL_CD";
+const std::string Portfolio::Cols::_APSYS_DEVEVALS = "APSYS_DEVEVALS";
+const std::string Portfolio::Cols::_APSYS_CDRNVSTMC = "APSYS_CDRNVSTMC";
+const std::string Portfolio::Cols::_APSYS_CDRGLPRLGC = "APSYS_CDRGLPRLGC";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFCOMAGTCPTS = "APSYS_CDCTGPTFCOMAGTCPTS";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFROUTORDS = "APSYS_CDCTGPTFROUTORDS";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFGRECPTS = "APSYS_CDCTGPTFGRECPTS";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFTRSFTITS = "APSYS_CDCTGPTFTRSFTITS";
+const std::string Portfolio::Cols::_APSYS_FLAGEXPSYSEXTTAXI = "APSYS_FLAGEXPSYSEXTTAXI";
+const std::string Portfolio::Cols::_WB_IST_NICHT_ZWINGEND_CD = "WB_IST_NICHT_ZWINGEND_CD";
+const std::string Portfolio::Cols::_APSYS_CDBQERESTC = "APSYS_CDBQERESTC";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFTYPPLACS = "APSYS_CDCTGPTFTYPPLACS";
+const std::string Portfolio::Cols::_APSYS_CDEANGRMTCLI1S = "APSYS_CDEANGRMTCLI1S";
+const std::string Portfolio::Cols::_APSYS_CDEANGRMTCLI2S = "APSYS_CDEANGRMTCLI2S";
+const std::string Portfolio::Cols::_APSYS_CDFATCATYPC = "APSYS_CDFATCATYPC";
+const std::string Portfolio::Cols::_APSYS_IDFATCACLAS = "APSYS_IDFATCACLAS";
+const std::string Portfolio::Cols::_APSYS_CDFATCASTATCALCCRMC = "APSYS_CDFATCASTATCALCCRMC";
+const std::string Portfolio::Cols::_APSYS_CDFATCASTATC = "APSYS_CDFATCASTATC";
+const std::string Portfolio::Cols::_APSYS_COMMENTFATCASTATS = "APSYS_COMMENTFATCASTATS";
+const std::string Portfolio::Cols::_APSYS_CDFATCAMOTIFPARTS = "APSYS_CDFATCAMOTIFPARTS";
+const std::string Portfolio::Cols::_APSYS_CDFATCASTATCALCGLOBC = "APSYS_CDFATCASTATCALCGLOBC";
+const std::string Portfolio::Cols::_APSYS_CDFATCASTATCALCLOCC = "APSYS_CDFATCASTATCALCLOCC";
+const std::string Portfolio::Cols::_APSYS_CDVALIDSTATC = "APSYS_CDVALIDSTATC";
+const std::string Portfolio::Cols::_APSYS_USERVALIDFATCASTATS = "APSYS_USERVALIDFATCASTATS";
+const std::string Portfolio::Cols::_APSYS_DTVALIDFATCASTATL = "APSYS_DTVALIDFATCASTATL";
+const std::string Portfolio::Cols::_APSYS_HRVALIDFATCASTATL = "APSYS_HRVALIDFATCASTATL";
+const std::string Portfolio::Cols::_APSYS_CDCTRNETTC553C = "APSYS_CDCTRNETTC553C";
+const std::string Portfolio::Cols::_APSYS_FLAGFORCEPOSOSTMANAGI = "APSYS_FLAGFORCEPOSOSTMANAGI";
+const std::string Portfolio::Cols::_APSYS_POSOSTMANAGC = "APSYS_POSOSTMANAGC";
+const std::string Portfolio::Cols::_APSYS_CRITEREUSFATCASTATL = "APSYS_CRITEREUSFATCASTATL";
+const std::string Portfolio::Cols::_APSYS_FLAGSIMSI = "APSYS_FLAGSIMSI";
+const std::string Portfolio::Cols::_NR_OF_BO_IN_WHT_STATEMENT = "NR_OF_BO_IN_WHT_STATEMENT";
+const std::string Portfolio::Cols::_PARTNER_WITH_UNL_LIABILITY_CD = "PARTNER_WITH_UNL_LIABILITY_CD";
+const std::string Portfolio::Cols::_COMPANY_MANAGED_BY_BO_CD = "COMPANY_MANAGED_BY_BO_CD";
+const std::string Portfolio::Cols::_IS_TRUSTEE_PHYSICAL_CD = "IS_TRUSTEE_PHYSICAL_CD";
+const std::string Portfolio::Cols::_NO_TRADING_US_SECURITIES_CD = "NO_TRADING_US_SECURITIES_CD";
+const std::string Portfolio::Cols::_PORTFOLIO_SEGR_ACCOUNT_CD = "PORTFOLIO_SEGR_ACCOUNT_CD";
+const std::string Portfolio::Cols::_US_WHT_START_DATE = "US_WHT_START_DATE";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFIVSTAUTOS = "APSYS_CDCTGPTFIVSTAUTOS";
+const std::string Portfolio::Cols::_AUTOMATISCHE_VERTEILUNG_CD = "AUTOMATISCHE_VERTEILUNG_CD";
+const std::string Portfolio::Cols::_APSYS_CDTYPREPORTQIC = "APSYS_CDTYPREPORTQIC";
+const std::string Portfolio::Cols::_APSYS_FLAGIRSNONACTIFI = "APSYS_FLAGIRSNONACTIFI";
+const std::string Portfolio::Cols::_OPENING_DOCUMENTS_PROPOSED_CD = "OPENING_DOCUMENTS_PROPOSED_CD";
+const std::string Portfolio::Cols::_APSYS_CDCTGPTFALGCPTS = "APSYS_CDCTGPTFALGCPTS";
+const std::string Portfolio::Cols::_APSYS_IDSTRUCFORJURS = "APSYS_IDSTRUCFORJURS";
+const std::string Portfolio::Cols::_APSYS_IDENTFORJURS = "APSYS_IDENTFORJURS";
+const std::string Portfolio::Cols::_FATCA_BASKET_CD = "FATCA_BASKET_CD";
+const std::string Portfolio::Cols::_APSYS_CDMETHCLOC = "APSYS_CDMETHCLOC";
+const std::string Portfolio::Cols::_APSYS_DTEVALCLOL = "APSYS_DTEVALCLOL";
+const std::string Portfolio::Cols::_AEOI_EXEMPTION_CD = "AEOI_EXEMPTION_CD";
+const std::string Portfolio::Cols::_AEOI_SUB_EXEMPTION_CD = "AEOI_SUB_EXEMPTION_CD";
+const std::string Portfolio::Cols::_UNDOCUMENTED_ACCOUNT_CD = "UNDOCUMENTED_ACCOUNT_CD";
+const std::string Portfolio::Cols::_DORMANT_ACCOUNT_CD = "DORMANT_ACCOUNT_CD";
+const std::string Portfolio::Cols::_AEOI_CONSISTENCY_STATUS_CD = "AEOI_CONSISTENCY_STATUS_CD";
+const std::string Portfolio::Cols::_AEOI_FINAL_STATUS_CD = "AEOI_FINAL_STATUS_CD";
+const std::string Portfolio::Cols::_AEOI_REVIEW_DATE = "AEOI_REVIEW_DATE";
+const std::string Portfolio::Cols::_APSYS_CDMIFIDEXEMPTC = "APSYS_CDMIFIDEXEMPTC";
+const std::string Portfolio::Cols::_APSYS_DTDEBMIFIDL = "APSYS_DTDEBMIFIDL";
+const std::string Portfolio::Cols::_OPENED_IN_APSYS_DATE = "OPENED_IN_APSYS_DATE";
+const std::string Portfolio::Cols::_APSYS_FLAGDELDATAPERSI = "APSYS_FLAGDELDATAPERSI";
+const std::string Portfolio::Cols::_APSYS_DTWAITDELDATAPERSL = "APSYS_DTWAITDELDATAPERSL";
+const std::string Portfolio::Cols::_APSYS_CDPTFSELDGSC = "APSYS_CDPTFSELDGSC";
+const std::string Portfolio::Cols::_APSYS_CDMOTIFPARTDGSS = "APSYS_CDMOTIFPARTDGSS";
+const std::string Portfolio::Cols::_EAM_CD = "EAM_CD";
+const std::string Portfolio::Cols::_RETENTION_ON_HOLD = "RETENTION_ON_HOLD";
+const std::string Portfolio::Cols::_LOGICAL_ERASURE = "LOGICAL_ERASURE";
+const std::string Portfolio::Cols::_RETENTION_ON_HOLD_DATE = "RETENTION_ON_HOLD_DATE";
+const std::string Portfolio::Cols::_RETENTION_ON_HOLD_REASON = "RETENTION_ON_HOLD_REASON";
+const std::string Portfolio::Cols::_LOGICAL_ERASURE_DATE = "LOGICAL_ERASURE_DATE";
+const std::string Portfolio::Cols::_LOGICAL_ERASURE_REASON = "LOGICAL_ERASURE_REASON";
+const std::string Portfolio::primaryKeyName = "PORTFOLIONO";
 const bool Portfolio::hasPrimaryKey = true;
 const std::string Portfolio::tableName = "portfolio";
 
 const std::vector<typename Portfolio::MetaData> Portfolio::metaData_={
-{"porfolio_id","int32_t","int(11)",4,1,1,1},
-{"porfolio_name","std::string","varchar(255)",255,0,0,1},
-{"date_Creation","::trantor::Date","date",0,0,0,0},
-{"open_closed","int32_t","int(11)",4,0,0,0}
+{"KUNDENID","double","double",8,0,0,0},
+{"PORTFOLIONO","double","double",8,0,1,1},
+{"BEZEICHNUNG","std::string","varchar(30)",30,0,0,0},
+{"MANAGEMENTTYP_CD","std::string","varchar(3)",3,0,0,0},
+{"MANAGER1_CD","std::string","varchar(8)",8,0,0,0},
+{"MANAGER2_CD","std::string","varchar(8)",8,0,0,0},
+{"MANAGER3_CD","std::string","varchar(8)",8,0,0,0},
+{"MANAGER4_CD","std::string","varchar(8)",8,0,0,0},
+{"MANAGER5_CD","std::string","varchar(8)",8,0,0,0},
+{"VERMITTLER_CD","std::string","varchar(8)",8,0,0,0},
+{"INFOVOLLMACHT","std::string","varchar(30)",30,0,0,0},
+{"KONTAKT","std::string","varchar(50)",50,0,0,0},
+{"ERTRAEGNISAUF_CD","std::string","varchar(1)",1,0,0,0},
+{"WAEHRUNGS_CD","std::string","varchar(3)",3,0,0,0},
+{"BELEGSATZ_CD","std::string","decimal(3,0)",0,0,0,0},
+{"LOESCH_CD","std::string","varchar(1)",1,0,0,0},
+{"LOESCHDATUM","::trantor::Date","datetime",0,0,0,0},
+{"CRTDATUM","::trantor::Date","datetime",0,0,0,0},
+{"CRTUSER","std::string","varchar(30)",30,0,0,0},
+{"MUTDATUM","::trantor::Date","datetime",0,0,0,0},
+{"MUTUSER","std::string","varchar(30)",30,0,0,0},
+{"MISDOMIZIL_CD","std::string","varchar(3)",3,0,0,0},
+{"ANLAGESTRATEGIE_CD","std::string","decimal(2,0)",0,0,0,0},
+{"USWBASKET_CD","std::string","varchar(3)",3,0,0,0},
+{"VERSANDHAEUFIG_CD","std::string","decimal(2,0)",0,0,0,0},
+{"RUBRIK","std::string","varchar(60)",60,0,0,0},
+{"VERWALTUNGSMODUS_CD","std::string","decimal(2,0)",0,0,0,0},
+{"KUNDELETZTERBESUCH","::trantor::Date","datetime",0,0,0,0},
+{"ANTRAGSORT","std::string","varchar(35)",35,0,0,0},
+{"ANTRAGSDATUM","::trantor::Date","datetime",0,0,0,0},
+{"ANDEREPOSTADRESSE_CD","std::string","varchar(1)",1,0,0,0},
+{"BANKLAGERND_CD","std::string","varchar(1)",1,0,0,0},
+{"SPEZIALINSTRUKTION","std::string","varchar(512)",512,0,0,0},
+{"GELDVONKONTOINHABER_CD","std::string","varchar(1)",1,0,0,0},
+{"MANUALOPEN_CD","std::string","varchar(1)",1,0,0,0},
+{"KONTONUMMER1","std::string","varchar(30)",30,0,0,0},
+{"KONTONUMMER2","std::string","varchar(30)",30,0,0,0},
+{"KONTONUMMER3","std::string","varchar(30)",30,0,0,0},
+{"FILIAL_CD","std::string","varchar(3)",3,0,0,0},
+{"RUBRIK1","std::string","varchar(60)",60,0,0,0},
+{"RUBRIK2","std::string","varchar(60)",60,0,0,0},
+{"RUBRIK3","std::string","varchar(60)",60,0,0,0},
+{"ONLINE_CD","double","double",8,0,0,0},
+{"PORTFOLIOTYP_CD","std::string","varchar(1)",1,0,0,0},
+{"CDPARTC","std::string","varchar(1)",1,0,0,0},
+{"PO_EU_TAX_PROZENT","float","float(126,0)",4,0,0,0},
+{"APSYS_STATUS_OPEC","std::string","varchar(2)",2,0,0,0},
+{"APSYS_ERRI","double","double",8,0,0,0},
+{"APSYS_SHNAS","std::string","varchar(13)",13,0,0,0},
+{"APSYS_TYPMDCS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_INTILGS","std::string","varchar(60)",60,0,0,0},
+{"APSYS_SHLIBPTFS","std::string","varchar(30)",30,0,0,0},
+{"APSYS_CDSTATDUSC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_DTDEBPARTL","::trantor::Date","datetime",0,0,0,0},
+{"APSYS_DTFINPARTL","::trantor::Date","datetime",0,0,0,0},
+{"APSYS_IDSTRUCS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDPERMI","double","double",8,0,0,0},
+{"APSYS_CDCTGPTFINTS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDCTGPTFSTES","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDCTGPTFSTMS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDCTGPTFMAFS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDCTGPTFRISKS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDCTGPTFCOUS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDCTGPTFTRCS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDCTGPTFSTEBRUTNETS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_FLAGIRSREPPARTC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_CDCTGPTFTAXINTS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_IDPOCS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_INFO","std::string","varchar(60)",60,0,0,0},
+{"NETTOVERMOEGEN_CHF","std::string","decimal(20,2)",0,0,0,0},
+{"APSYS_INTISHS","std::string","varchar(30)",30,0,0,0},
+{"APSYS_IDPERSL","double","double",8,0,0,0},
+{"APSYS_CDMOTIFPARTS","std::string","varchar(3)",3,0,0,0},
+{"IN_APSYS_TEMP_ENTSP_USERID","std::string","varchar(30)",30,0,0,0},
+{"IN_APSYS_TEMP_ENTSP_DATUM","::trantor::Date","datetime",0,0,0,0},
+{"IN_APSYS_TEMP_ENTSPERREN_CD","std::string","varchar(1)",1,0,0,0},
+{"KUNDENKATEGORIE_CD","double","double",8,0,0,0},
+{"GEMEINSCHAFTSKONTO_CD","std::string","varchar(1)",1,0,0,0},
+{"DRITTE_SAEULE_CD","std::string","varchar(1)",1,0,0,0},
+{"APSYS_TYPPTFS","std::string","varchar(3)",3,0,0,0},
+{"AUTO_EU_TAX_PERCENTAGE","std::string","varchar(1)",1,0,0,0},
+{"AKTID","double","double",8,0,0,0},
+{"VALIDID","double","double",8,0,0,0},
+{"VALID_CD","std::string","varchar(1)",1,0,0,0},
+{"VALIDUSER","std::string","varchar(30)",30,0,0,0},
+{"APSYS_CDCTGPTFSBXPS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDCTGPTFSDOCS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_IDENTS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDSOUMBOLC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_CDFACBOLC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_FLAGTYPTRFPOLC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_IDTRFPOLS","std::string","varchar(5)",5,0,0,0},
+{"APSYS_CDPCTPARTICTITUEUTAXC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_CDMOTIFCLOS","std::string","varchar(3)",3,0,0,0},
+{"ENC_SALT","std::string","varbinary(32)",0,0,0,0},
+{"BEZEICHNUNG_ENC","std::string","varbinary(32)",0,0,0,0},
+{"KTOE_AML_PROFIL_CD","std::string","varchar(1)",1,0,0,0},
+{"APSYS_DEVEVALS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDRNVSTMC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_CDRGLPRLGC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_CDCTGPTFCOMAGTCPTS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDCTGPTFROUTORDS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDCTGPTFGRECPTS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDCTGPTFTRSFTITS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_FLAGEXPSYSEXTTAXI","std::string","varchar(1)",1,0,0,0},
+{"WB_IST_NICHT_ZWINGEND_CD","std::string","varchar(1)",1,0,0,0},
+{"APSYS_CDBQERESTC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_CDCTGPTFTYPPLACS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDEANGRMTCLI1S","std::string","varchar(5)",5,0,0,0},
+{"APSYS_CDEANGRMTCLI2S","std::string","varchar(5)",5,0,0,0},
+{"APSYS_CDFATCATYPC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_IDFATCACLAS","std::string","varchar(5)",5,0,0,0},
+{"APSYS_CDFATCASTATCALCCRMC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_CDFATCASTATC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_COMMENTFATCASTATS","std::string","varchar(60)",60,0,0,0},
+{"APSYS_CDFATCAMOTIFPARTS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_CDFATCASTATCALCGLOBC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_CDFATCASTATCALCLOCC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_CDVALIDSTATC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_USERVALIDFATCASTATS","std::string","varchar(9)",9,0,0,0},
+{"APSYS_DTVALIDFATCASTATL","::trantor::Date","datetime",0,0,0,0},
+{"APSYS_HRVALIDFATCASTATL","::trantor::Date","datetime",0,0,0,0},
+{"APSYS_CDCTRNETTC553C","std::string","varchar(1)",1,0,0,0},
+{"APSYS_FLAGFORCEPOSOSTMANAGI","std::string","varchar(1)",1,0,0,0},
+{"APSYS_POSOSTMANAGC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_CRITEREUSFATCASTATL","double","double",8,0,0,0},
+{"APSYS_FLAGSIMSI","std::string","varchar(1)",1,0,0,0},
+{"NR_OF_BO_IN_WHT_STATEMENT","double","double",8,0,0,0},
+{"PARTNER_WITH_UNL_LIABILITY_CD","std::string","varchar(1)",1,0,0,0},
+{"COMPANY_MANAGED_BY_BO_CD","std::string","varchar(1)",1,0,0,0},
+{"IS_TRUSTEE_PHYSICAL_CD","std::string","varchar(1)",1,0,0,0},
+{"NO_TRADING_US_SECURITIES_CD","std::string","varchar(1)",1,0,0,0},
+{"PORTFOLIO_SEGR_ACCOUNT_CD","std::string","varchar(1)",1,0,0,0},
+{"US_WHT_START_DATE","::trantor::Date","datetime",0,0,0,0},
+{"APSYS_CDCTGPTFIVSTAUTOS","std::string","varchar(3)",3,0,0,0},
+{"AUTOMATISCHE_VERTEILUNG_CD","std::string","varchar(1)",1,0,0,0},
+{"APSYS_CDTYPREPORTQIC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_FLAGIRSNONACTIFI","std::string","varchar(1)",1,0,0,0},
+{"OPENING_DOCUMENTS_PROPOSED_CD","std::string","varchar(1)",1,0,0,0},
+{"APSYS_CDCTGPTFALGCPTS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_IDSTRUCFORJURS","std::string","varchar(3)",3,0,0,0},
+{"APSYS_IDENTFORJURS","std::string","varchar(3)",3,0,0,0},
+{"FATCA_BASKET_CD","double","double",8,0,0,0},
+{"APSYS_CDMETHCLOC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_DTEVALCLOL","::trantor::Date","datetime",0,0,0,0},
+{"AEOI_EXEMPTION_CD","std::string","varchar(1)",1,0,0,0},
+{"AEOI_SUB_EXEMPTION_CD","std::string","varchar(3)",3,0,0,0},
+{"UNDOCUMENTED_ACCOUNT_CD","std::string","varchar(1)",1,0,0,0},
+{"DORMANT_ACCOUNT_CD","std::string","varchar(1)",1,0,0,0},
+{"AEOI_CONSISTENCY_STATUS_CD","std::string","varchar(1)",1,0,0,0},
+{"AEOI_FINAL_STATUS_CD","std::string","varchar(1)",1,0,0,0},
+{"AEOI_REVIEW_DATE","::trantor::Date","datetime",0,0,0,0},
+{"APSYS_CDMIFIDEXEMPTC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_DTDEBMIFIDL","::trantor::Date","datetime",0,0,0,0},
+{"OPENED_IN_APSYS_DATE","::trantor::Date","datetime",0,0,0,0},
+{"APSYS_FLAGDELDATAPERSI","std::string","varchar(1)",1,0,0,0},
+{"APSYS_DTWAITDELDATAPERSL","::trantor::Date","datetime",0,0,0,0},
+{"APSYS_CDPTFSELDGSC","std::string","varchar(1)",1,0,0,0},
+{"APSYS_CDMOTIFPARTDGSS","std::string","varchar(3)",3,0,0,0},
+{"EAM_CD","std::string","varchar(1)",1,0,0,0},
+{"RETENTION_ON_HOLD","std::string","varchar(1)",1,0,0,0},
+{"LOGICAL_ERASURE","std::string","varchar(1)",1,0,0,0},
+{"RETENTION_ON_HOLD_DATE","::trantor::Date","datetime",0,0,0,0},
+{"RETENTION_ON_HOLD_REASON","std::string","varchar(2000)",2000,0,0,0},
+{"LOGICAL_ERASURE_DATE","::trantor::Date","datetime",0,0,0,0},
+{"LOGICAL_ERASURE_REASON","std::string","varchar(2000)",2000,0,0,0}
 };
 const std::string &Portfolio::getColumnName(size_t index) noexcept(false)
 {
@@ -36,32 +360,999 @@ Portfolio::Portfolio(const Row &r, const ssize_t indexOffset) noexcept
 {
     if(indexOffset < 0)
     {
-        if(!r["porfolio_id"].isNull())
+        if(!r["KUNDENID"].isNull())
         {
-            porfolioId_=std::make_shared<int32_t>(r["porfolio_id"].as<int32_t>());
+            kundenid_=std::make_shared<double>(r["KUNDENID"].as<double>());
         }
-        if(!r["porfolio_name"].isNull())
+        if(!r["PORTFOLIONO"].isNull())
         {
-            porfolioName_=std::make_shared<std::string>(r["porfolio_name"].as<std::string>());
+            portfoliono_=std::make_shared<double>(r["PORTFOLIONO"].as<double>());
         }
-        if(!r["date_Creation"].isNull())
+        if(!r["BEZEICHNUNG"].isNull())
         {
-            auto daysStr = r["date_Creation"].as<std::string>();
+            bezeichnung_=std::make_shared<std::string>(r["BEZEICHNUNG"].as<std::string>());
+        }
+        if(!r["MANAGEMENTTYP_CD"].isNull())
+        {
+            managementtypCd_=std::make_shared<std::string>(r["MANAGEMENTTYP_CD"].as<std::string>());
+        }
+        if(!r["MANAGER1_CD"].isNull())
+        {
+            manager1Cd_=std::make_shared<std::string>(r["MANAGER1_CD"].as<std::string>());
+        }
+        if(!r["MANAGER2_CD"].isNull())
+        {
+            manager2Cd_=std::make_shared<std::string>(r["MANAGER2_CD"].as<std::string>());
+        }
+        if(!r["MANAGER3_CD"].isNull())
+        {
+            manager3Cd_=std::make_shared<std::string>(r["MANAGER3_CD"].as<std::string>());
+        }
+        if(!r["MANAGER4_CD"].isNull())
+        {
+            manager4Cd_=std::make_shared<std::string>(r["MANAGER4_CD"].as<std::string>());
+        }
+        if(!r["MANAGER5_CD"].isNull())
+        {
+            manager5Cd_=std::make_shared<std::string>(r["MANAGER5_CD"].as<std::string>());
+        }
+        if(!r["VERMITTLER_CD"].isNull())
+        {
+            vermittlerCd_=std::make_shared<std::string>(r["VERMITTLER_CD"].as<std::string>());
+        }
+        if(!r["INFOVOLLMACHT"].isNull())
+        {
+            infovollmacht_=std::make_shared<std::string>(r["INFOVOLLMACHT"].as<std::string>());
+        }
+        if(!r["KONTAKT"].isNull())
+        {
+            kontakt_=std::make_shared<std::string>(r["KONTAKT"].as<std::string>());
+        }
+        if(!r["ERTRAEGNISAUF_CD"].isNull())
+        {
+            ertraegnisaufCd_=std::make_shared<std::string>(r["ERTRAEGNISAUF_CD"].as<std::string>());
+        }
+        if(!r["WAEHRUNGS_CD"].isNull())
+        {
+            waehrungsCd_=std::make_shared<std::string>(r["WAEHRUNGS_CD"].as<std::string>());
+        }
+        if(!r["BELEGSATZ_CD"].isNull())
+        {
+            belegsatzCd_=std::make_shared<std::string>(r["BELEGSATZ_CD"].as<std::string>());
+        }
+        if(!r["LOESCH_CD"].isNull())
+        {
+            loeschCd_=std::make_shared<std::string>(r["LOESCH_CD"].as<std::string>());
+        }
+        if(!r["LOESCHDATUM"].isNull())
+        {
+            auto timeStr = r["LOESCHDATUM"].as<std::string>();
             struct tm stm;
             memset(&stm,0,sizeof(stm));
-            strptime(daysStr.c_str(),"%Y-%m-%d",&stm);
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
             time_t t = mktime(&stm);
-            dateCreation_=std::make_shared<::trantor::Date>(t*1000000);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                loeschdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
         }
-        if(!r["open_closed"].isNull())
+        if(!r["CRTDATUM"].isNull())
         {
-            openClosed_=std::make_shared<int32_t>(r["open_closed"].as<int32_t>());
+            auto timeStr = r["CRTDATUM"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                crtdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["CRTUSER"].isNull())
+        {
+            crtuser_=std::make_shared<std::string>(r["CRTUSER"].as<std::string>());
+        }
+        if(!r["MUTDATUM"].isNull())
+        {
+            auto timeStr = r["MUTDATUM"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                mutdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["MUTUSER"].isNull())
+        {
+            mutuser_=std::make_shared<std::string>(r["MUTUSER"].as<std::string>());
+        }
+        if(!r["MISDOMIZIL_CD"].isNull())
+        {
+            misdomizilCd_=std::make_shared<std::string>(r["MISDOMIZIL_CD"].as<std::string>());
+        }
+        if(!r["ANLAGESTRATEGIE_CD"].isNull())
+        {
+            anlagestrategieCd_=std::make_shared<std::string>(r["ANLAGESTRATEGIE_CD"].as<std::string>());
+        }
+        if(!r["USWBASKET_CD"].isNull())
+        {
+            uswbasketCd_=std::make_shared<std::string>(r["USWBASKET_CD"].as<std::string>());
+        }
+        if(!r["VERSANDHAEUFIG_CD"].isNull())
+        {
+            versandhaeufigCd_=std::make_shared<std::string>(r["VERSANDHAEUFIG_CD"].as<std::string>());
+        }
+        if(!r["RUBRIK"].isNull())
+        {
+            rubrik_=std::make_shared<std::string>(r["RUBRIK"].as<std::string>());
+        }
+        if(!r["VERWALTUNGSMODUS_CD"].isNull())
+        {
+            verwaltungsmodusCd_=std::make_shared<std::string>(r["VERWALTUNGSMODUS_CD"].as<std::string>());
+        }
+        if(!r["KUNDELETZTERBESUCH"].isNull())
+        {
+            auto timeStr = r["KUNDELETZTERBESUCH"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                kundeletzterbesuch_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["ANTRAGSORT"].isNull())
+        {
+            antragsort_=std::make_shared<std::string>(r["ANTRAGSORT"].as<std::string>());
+        }
+        if(!r["ANTRAGSDATUM"].isNull())
+        {
+            auto timeStr = r["ANTRAGSDATUM"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                antragsdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["ANDEREPOSTADRESSE_CD"].isNull())
+        {
+            anderepostadresseCd_=std::make_shared<std::string>(r["ANDEREPOSTADRESSE_CD"].as<std::string>());
+        }
+        if(!r["BANKLAGERND_CD"].isNull())
+        {
+            banklagerndCd_=std::make_shared<std::string>(r["BANKLAGERND_CD"].as<std::string>());
+        }
+        if(!r["SPEZIALINSTRUKTION"].isNull())
+        {
+            spezialinstruktion_=std::make_shared<std::string>(r["SPEZIALINSTRUKTION"].as<std::string>());
+        }
+        if(!r["GELDVONKONTOINHABER_CD"].isNull())
+        {
+            geldvonkontoinhaberCd_=std::make_shared<std::string>(r["GELDVONKONTOINHABER_CD"].as<std::string>());
+        }
+        if(!r["MANUALOPEN_CD"].isNull())
+        {
+            manualopenCd_=std::make_shared<std::string>(r["MANUALOPEN_CD"].as<std::string>());
+        }
+        if(!r["KONTONUMMER1"].isNull())
+        {
+            kontonummer1_=std::make_shared<std::string>(r["KONTONUMMER1"].as<std::string>());
+        }
+        if(!r["KONTONUMMER2"].isNull())
+        {
+            kontonummer2_=std::make_shared<std::string>(r["KONTONUMMER2"].as<std::string>());
+        }
+        if(!r["KONTONUMMER3"].isNull())
+        {
+            kontonummer3_=std::make_shared<std::string>(r["KONTONUMMER3"].as<std::string>());
+        }
+        if(!r["FILIAL_CD"].isNull())
+        {
+            filialCd_=std::make_shared<std::string>(r["FILIAL_CD"].as<std::string>());
+        }
+        if(!r["RUBRIK1"].isNull())
+        {
+            rubrik1_=std::make_shared<std::string>(r["RUBRIK1"].as<std::string>());
+        }
+        if(!r["RUBRIK2"].isNull())
+        {
+            rubrik2_=std::make_shared<std::string>(r["RUBRIK2"].as<std::string>());
+        }
+        if(!r["RUBRIK3"].isNull())
+        {
+            rubrik3_=std::make_shared<std::string>(r["RUBRIK3"].as<std::string>());
+        }
+        if(!r["ONLINE_CD"].isNull())
+        {
+            onlineCd_=std::make_shared<double>(r["ONLINE_CD"].as<double>());
+        }
+        if(!r["PORTFOLIOTYP_CD"].isNull())
+        {
+            portfoliotypCd_=std::make_shared<std::string>(r["PORTFOLIOTYP_CD"].as<std::string>());
+        }
+        if(!r["CDPARTC"].isNull())
+        {
+            cdpartc_=std::make_shared<std::string>(r["CDPARTC"].as<std::string>());
+        }
+        if(!r["PO_EU_TAX_PROZENT"].isNull())
+        {
+            poEuTaxProzent_=std::make_shared<float>(r["PO_EU_TAX_PROZENT"].as<float>());
+        }
+        if(!r["APSYS_STATUS_OPEC"].isNull())
+        {
+            apsysStatusOpec_=std::make_shared<std::string>(r["APSYS_STATUS_OPEC"].as<std::string>());
+        }
+        if(!r["APSYS_ERRI"].isNull())
+        {
+            apsysErri_=std::make_shared<double>(r["APSYS_ERRI"].as<double>());
+        }
+        if(!r["APSYS_SHNAS"].isNull())
+        {
+            apsysShnas_=std::make_shared<std::string>(r["APSYS_SHNAS"].as<std::string>());
+        }
+        if(!r["APSYS_TYPMDCS"].isNull())
+        {
+            apsysTypmdcs_=std::make_shared<std::string>(r["APSYS_TYPMDCS"].as<std::string>());
+        }
+        if(!r["APSYS_INTILGS"].isNull())
+        {
+            apsysIntilgs_=std::make_shared<std::string>(r["APSYS_INTILGS"].as<std::string>());
+        }
+        if(!r["APSYS_SHLIBPTFS"].isNull())
+        {
+            apsysShlibptfs_=std::make_shared<std::string>(r["APSYS_SHLIBPTFS"].as<std::string>());
+        }
+        if(!r["APSYS_CDSTATDUSC"].isNull())
+        {
+            apsysCdstatdusc_=std::make_shared<std::string>(r["APSYS_CDSTATDUSC"].as<std::string>());
+        }
+        if(!r["APSYS_DTDEBPARTL"].isNull())
+        {
+            auto timeStr = r["APSYS_DTDEBPARTL"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtdebpartl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["APSYS_DTFINPARTL"].isNull())
+        {
+            auto timeStr = r["APSYS_DTFINPARTL"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtfinpartl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["APSYS_IDSTRUCS"].isNull())
+        {
+            apsysIdstrucs_=std::make_shared<std::string>(r["APSYS_IDSTRUCS"].as<std::string>());
+        }
+        if(!r["APSYS_CDPERMI"].isNull())
+        {
+            apsysCdpermi_=std::make_shared<double>(r["APSYS_CDPERMI"].as<double>());
+        }
+        if(!r["APSYS_CDCTGPTFINTS"].isNull())
+        {
+            apsysCdctgptfints_=std::make_shared<std::string>(r["APSYS_CDCTGPTFINTS"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFSTES"].isNull())
+        {
+            apsysCdctgptfstes_=std::make_shared<std::string>(r["APSYS_CDCTGPTFSTES"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFSTMS"].isNull())
+        {
+            apsysCdctgptfstms_=std::make_shared<std::string>(r["APSYS_CDCTGPTFSTMS"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFMAFS"].isNull())
+        {
+            apsysCdctgptfmafs_=std::make_shared<std::string>(r["APSYS_CDCTGPTFMAFS"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFRISKS"].isNull())
+        {
+            apsysCdctgptfrisks_=std::make_shared<std::string>(r["APSYS_CDCTGPTFRISKS"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFCOUS"].isNull())
+        {
+            apsysCdctgptfcous_=std::make_shared<std::string>(r["APSYS_CDCTGPTFCOUS"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFTRCS"].isNull())
+        {
+            apsysCdctgptftrcs_=std::make_shared<std::string>(r["APSYS_CDCTGPTFTRCS"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFSTEBRUTNETS"].isNull())
+        {
+            apsysCdctgptfstebrutnets_=std::make_shared<std::string>(r["APSYS_CDCTGPTFSTEBRUTNETS"].as<std::string>());
+        }
+        if(!r["APSYS_FLAGIRSREPPARTC"].isNull())
+        {
+            apsysFlagirsreppartc_=std::make_shared<std::string>(r["APSYS_FLAGIRSREPPARTC"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFTAXINTS"].isNull())
+        {
+            apsysCdctgptftaxints_=std::make_shared<std::string>(r["APSYS_CDCTGPTFTAXINTS"].as<std::string>());
+        }
+        if(!r["APSYS_IDPOCS"].isNull())
+        {
+            apsysIdpocs_=std::make_shared<std::string>(r["APSYS_IDPOCS"].as<std::string>());
+        }
+        if(!r["APSYS_INFO"].isNull())
+        {
+            apsysInfo_=std::make_shared<std::string>(r["APSYS_INFO"].as<std::string>());
+        }
+        if(!r["NETTOVERMOEGEN_CHF"].isNull())
+        {
+            nettovermoegenChf_=std::make_shared<std::string>(r["NETTOVERMOEGEN_CHF"].as<std::string>());
+        }
+        if(!r["APSYS_INTISHS"].isNull())
+        {
+            apsysIntishs_=std::make_shared<std::string>(r["APSYS_INTISHS"].as<std::string>());
+        }
+        if(!r["APSYS_IDPERSL"].isNull())
+        {
+            apsysIdpersl_=std::make_shared<double>(r["APSYS_IDPERSL"].as<double>());
+        }
+        if(!r["APSYS_CDMOTIFPARTS"].isNull())
+        {
+            apsysCdmotifparts_=std::make_shared<std::string>(r["APSYS_CDMOTIFPARTS"].as<std::string>());
+        }
+        if(!r["IN_APSYS_TEMP_ENTSP_USERID"].isNull())
+        {
+            inApsysTempEntspUserid_=std::make_shared<std::string>(r["IN_APSYS_TEMP_ENTSP_USERID"].as<std::string>());
+        }
+        if(!r["IN_APSYS_TEMP_ENTSP_DATUM"].isNull())
+        {
+            auto timeStr = r["IN_APSYS_TEMP_ENTSP_DATUM"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                inApsysTempEntspDatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["IN_APSYS_TEMP_ENTSPERREN_CD"].isNull())
+        {
+            inApsysTempEntsperrenCd_=std::make_shared<std::string>(r["IN_APSYS_TEMP_ENTSPERREN_CD"].as<std::string>());
+        }
+        if(!r["KUNDENKATEGORIE_CD"].isNull())
+        {
+            kundenkategorieCd_=std::make_shared<double>(r["KUNDENKATEGORIE_CD"].as<double>());
+        }
+        if(!r["GEMEINSCHAFTSKONTO_CD"].isNull())
+        {
+            gemeinschaftskontoCd_=std::make_shared<std::string>(r["GEMEINSCHAFTSKONTO_CD"].as<std::string>());
+        }
+        if(!r["DRITTE_SAEULE_CD"].isNull())
+        {
+            dritteSaeuleCd_=std::make_shared<std::string>(r["DRITTE_SAEULE_CD"].as<std::string>());
+        }
+        if(!r["APSYS_TYPPTFS"].isNull())
+        {
+            apsysTypptfs_=std::make_shared<std::string>(r["APSYS_TYPPTFS"].as<std::string>());
+        }
+        if(!r["AUTO_EU_TAX_PERCENTAGE"].isNull())
+        {
+            autoEuTaxPercentage_=std::make_shared<std::string>(r["AUTO_EU_TAX_PERCENTAGE"].as<std::string>());
+        }
+        if(!r["AKTID"].isNull())
+        {
+            aktid_=std::make_shared<double>(r["AKTID"].as<double>());
+        }
+        if(!r["VALIDID"].isNull())
+        {
+            validid_=std::make_shared<double>(r["VALIDID"].as<double>());
+        }
+        if(!r["VALID_CD"].isNull())
+        {
+            validCd_=std::make_shared<std::string>(r["VALID_CD"].as<std::string>());
+        }
+        if(!r["VALIDUSER"].isNull())
+        {
+            validuser_=std::make_shared<std::string>(r["VALIDUSER"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFSBXPS"].isNull())
+        {
+            apsysCdctgptfsbxps_=std::make_shared<std::string>(r["APSYS_CDCTGPTFSBXPS"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFSDOCS"].isNull())
+        {
+            apsysCdctgptfsdocs_=std::make_shared<std::string>(r["APSYS_CDCTGPTFSDOCS"].as<std::string>());
+        }
+        if(!r["APSYS_IDENTS"].isNull())
+        {
+            apsysIdents_=std::make_shared<std::string>(r["APSYS_IDENTS"].as<std::string>());
+        }
+        if(!r["APSYS_CDSOUMBOLC"].isNull())
+        {
+            apsysCdsoumbolc_=std::make_shared<std::string>(r["APSYS_CDSOUMBOLC"].as<std::string>());
+        }
+        if(!r["APSYS_CDFACBOLC"].isNull())
+        {
+            apsysCdfacbolc_=std::make_shared<std::string>(r["APSYS_CDFACBOLC"].as<std::string>());
+        }
+        if(!r["APSYS_FLAGTYPTRFPOLC"].isNull())
+        {
+            apsysFlagtyptrfpolc_=std::make_shared<std::string>(r["APSYS_FLAGTYPTRFPOLC"].as<std::string>());
+        }
+        if(!r["APSYS_IDTRFPOLS"].isNull())
+        {
+            apsysIdtrfpols_=std::make_shared<std::string>(r["APSYS_IDTRFPOLS"].as<std::string>());
+        }
+        if(!r["APSYS_CDPCTPARTICTITUEUTAXC"].isNull())
+        {
+            apsysCdpctpartictitueutaxc_=std::make_shared<std::string>(r["APSYS_CDPCTPARTICTITUEUTAXC"].as<std::string>());
+        }
+        if(!r["APSYS_CDMOTIFCLOS"].isNull())
+        {
+            apsysCdmotifclos_=std::make_shared<std::string>(r["APSYS_CDMOTIFCLOS"].as<std::string>());
+        }
+        if(!r["ENC_SALT"].isNull())
+        {
+            encSalt_=std::make_shared<std::string>(r["ENC_SALT"].as<std::string>());
+        }
+        if(!r["BEZEICHNUNG_ENC"].isNull())
+        {
+            bezeichnungEnc_=std::make_shared<std::string>(r["BEZEICHNUNG_ENC"].as<std::string>());
+        }
+        if(!r["KTOE_AML_PROFIL_CD"].isNull())
+        {
+            ktoeAmlProfilCd_=std::make_shared<std::string>(r["KTOE_AML_PROFIL_CD"].as<std::string>());
+        }
+        if(!r["APSYS_DEVEVALS"].isNull())
+        {
+            apsysDevevals_=std::make_shared<std::string>(r["APSYS_DEVEVALS"].as<std::string>());
+        }
+        if(!r["APSYS_CDRNVSTMC"].isNull())
+        {
+            apsysCdrnvstmc_=std::make_shared<std::string>(r["APSYS_CDRNVSTMC"].as<std::string>());
+        }
+        if(!r["APSYS_CDRGLPRLGC"].isNull())
+        {
+            apsysCdrglprlgc_=std::make_shared<std::string>(r["APSYS_CDRGLPRLGC"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFCOMAGTCPTS"].isNull())
+        {
+            apsysCdctgptfcomagtcpts_=std::make_shared<std::string>(r["APSYS_CDCTGPTFCOMAGTCPTS"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFROUTORDS"].isNull())
+        {
+            apsysCdctgptfroutords_=std::make_shared<std::string>(r["APSYS_CDCTGPTFROUTORDS"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFGRECPTS"].isNull())
+        {
+            apsysCdctgptfgrecpts_=std::make_shared<std::string>(r["APSYS_CDCTGPTFGRECPTS"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFTRSFTITS"].isNull())
+        {
+            apsysCdctgptftrsftits_=std::make_shared<std::string>(r["APSYS_CDCTGPTFTRSFTITS"].as<std::string>());
+        }
+        if(!r["APSYS_FLAGEXPSYSEXTTAXI"].isNull())
+        {
+            apsysFlagexpsysexttaxi_=std::make_shared<std::string>(r["APSYS_FLAGEXPSYSEXTTAXI"].as<std::string>());
+        }
+        if(!r["WB_IST_NICHT_ZWINGEND_CD"].isNull())
+        {
+            wbIstNichtZwingendCd_=std::make_shared<std::string>(r["WB_IST_NICHT_ZWINGEND_CD"].as<std::string>());
+        }
+        if(!r["APSYS_CDBQERESTC"].isNull())
+        {
+            apsysCdbqerestc_=std::make_shared<std::string>(r["APSYS_CDBQERESTC"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFTYPPLACS"].isNull())
+        {
+            apsysCdctgptftypplacs_=std::make_shared<std::string>(r["APSYS_CDCTGPTFTYPPLACS"].as<std::string>());
+        }
+        if(!r["APSYS_CDEANGRMTCLI1S"].isNull())
+        {
+            apsysCdeangrmtcli1s_=std::make_shared<std::string>(r["APSYS_CDEANGRMTCLI1S"].as<std::string>());
+        }
+        if(!r["APSYS_CDEANGRMTCLI2S"].isNull())
+        {
+            apsysCdeangrmtcli2s_=std::make_shared<std::string>(r["APSYS_CDEANGRMTCLI2S"].as<std::string>());
+        }
+        if(!r["APSYS_CDFATCATYPC"].isNull())
+        {
+            apsysCdfatcatypc_=std::make_shared<std::string>(r["APSYS_CDFATCATYPC"].as<std::string>());
+        }
+        if(!r["APSYS_IDFATCACLAS"].isNull())
+        {
+            apsysIdfatcaclas_=std::make_shared<std::string>(r["APSYS_IDFATCACLAS"].as<std::string>());
+        }
+        if(!r["APSYS_CDFATCASTATCALCCRMC"].isNull())
+        {
+            apsysCdfatcastatcalccrmc_=std::make_shared<std::string>(r["APSYS_CDFATCASTATCALCCRMC"].as<std::string>());
+        }
+        if(!r["APSYS_CDFATCASTATC"].isNull())
+        {
+            apsysCdfatcastatc_=std::make_shared<std::string>(r["APSYS_CDFATCASTATC"].as<std::string>());
+        }
+        if(!r["APSYS_COMMENTFATCASTATS"].isNull())
+        {
+            apsysCommentfatcastats_=std::make_shared<std::string>(r["APSYS_COMMENTFATCASTATS"].as<std::string>());
+        }
+        if(!r["APSYS_CDFATCAMOTIFPARTS"].isNull())
+        {
+            apsysCdfatcamotifparts_=std::make_shared<std::string>(r["APSYS_CDFATCAMOTIFPARTS"].as<std::string>());
+        }
+        if(!r["APSYS_CDFATCASTATCALCGLOBC"].isNull())
+        {
+            apsysCdfatcastatcalcglobc_=std::make_shared<std::string>(r["APSYS_CDFATCASTATCALCGLOBC"].as<std::string>());
+        }
+        if(!r["APSYS_CDFATCASTATCALCLOCC"].isNull())
+        {
+            apsysCdfatcastatcalclocc_=std::make_shared<std::string>(r["APSYS_CDFATCASTATCALCLOCC"].as<std::string>());
+        }
+        if(!r["APSYS_CDVALIDSTATC"].isNull())
+        {
+            apsysCdvalidstatc_=std::make_shared<std::string>(r["APSYS_CDVALIDSTATC"].as<std::string>());
+        }
+        if(!r["APSYS_USERVALIDFATCASTATS"].isNull())
+        {
+            apsysUservalidfatcastats_=std::make_shared<std::string>(r["APSYS_USERVALIDFATCASTATS"].as<std::string>());
+        }
+        if(!r["APSYS_DTVALIDFATCASTATL"].isNull())
+        {
+            auto timeStr = r["APSYS_DTVALIDFATCASTATL"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtvalidfatcastatl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["APSYS_HRVALIDFATCASTATL"].isNull())
+        {
+            auto timeStr = r["APSYS_HRVALIDFATCASTATL"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysHrvalidfatcastatl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["APSYS_CDCTRNETTC553C"].isNull())
+        {
+            apsysCdctrnettc553c_=std::make_shared<std::string>(r["APSYS_CDCTRNETTC553C"].as<std::string>());
+        }
+        if(!r["APSYS_FLAGFORCEPOSOSTMANAGI"].isNull())
+        {
+            apsysFlagforceposostmanagi_=std::make_shared<std::string>(r["APSYS_FLAGFORCEPOSOSTMANAGI"].as<std::string>());
+        }
+        if(!r["APSYS_POSOSTMANAGC"].isNull())
+        {
+            apsysPosostmanagc_=std::make_shared<std::string>(r["APSYS_POSOSTMANAGC"].as<std::string>());
+        }
+        if(!r["APSYS_CRITEREUSFATCASTATL"].isNull())
+        {
+            apsysCritereusfatcastatl_=std::make_shared<double>(r["APSYS_CRITEREUSFATCASTATL"].as<double>());
+        }
+        if(!r["APSYS_FLAGSIMSI"].isNull())
+        {
+            apsysFlagsimsi_=std::make_shared<std::string>(r["APSYS_FLAGSIMSI"].as<std::string>());
+        }
+        if(!r["NR_OF_BO_IN_WHT_STATEMENT"].isNull())
+        {
+            nrOfBoInWhtStatement_=std::make_shared<double>(r["NR_OF_BO_IN_WHT_STATEMENT"].as<double>());
+        }
+        if(!r["PARTNER_WITH_UNL_LIABILITY_CD"].isNull())
+        {
+            partnerWithUnlLiabilityCd_=std::make_shared<std::string>(r["PARTNER_WITH_UNL_LIABILITY_CD"].as<std::string>());
+        }
+        if(!r["COMPANY_MANAGED_BY_BO_CD"].isNull())
+        {
+            companyManagedByBoCd_=std::make_shared<std::string>(r["COMPANY_MANAGED_BY_BO_CD"].as<std::string>());
+        }
+        if(!r["IS_TRUSTEE_PHYSICAL_CD"].isNull())
+        {
+            isTrusteePhysicalCd_=std::make_shared<std::string>(r["IS_TRUSTEE_PHYSICAL_CD"].as<std::string>());
+        }
+        if(!r["NO_TRADING_US_SECURITIES_CD"].isNull())
+        {
+            noTradingUsSecuritiesCd_=std::make_shared<std::string>(r["NO_TRADING_US_SECURITIES_CD"].as<std::string>());
+        }
+        if(!r["PORTFOLIO_SEGR_ACCOUNT_CD"].isNull())
+        {
+            portfolioSegrAccountCd_=std::make_shared<std::string>(r["PORTFOLIO_SEGR_ACCOUNT_CD"].as<std::string>());
+        }
+        if(!r["US_WHT_START_DATE"].isNull())
+        {
+            auto timeStr = r["US_WHT_START_DATE"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                usWhtStartDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["APSYS_CDCTGPTFIVSTAUTOS"].isNull())
+        {
+            apsysCdctgptfivstautos_=std::make_shared<std::string>(r["APSYS_CDCTGPTFIVSTAUTOS"].as<std::string>());
+        }
+        if(!r["AUTOMATISCHE_VERTEILUNG_CD"].isNull())
+        {
+            automatischeVerteilungCd_=std::make_shared<std::string>(r["AUTOMATISCHE_VERTEILUNG_CD"].as<std::string>());
+        }
+        if(!r["APSYS_CDTYPREPORTQIC"].isNull())
+        {
+            apsysCdtypreportqic_=std::make_shared<std::string>(r["APSYS_CDTYPREPORTQIC"].as<std::string>());
+        }
+        if(!r["APSYS_FLAGIRSNONACTIFI"].isNull())
+        {
+            apsysFlagirsnonactifi_=std::make_shared<std::string>(r["APSYS_FLAGIRSNONACTIFI"].as<std::string>());
+        }
+        if(!r["OPENING_DOCUMENTS_PROPOSED_CD"].isNull())
+        {
+            openingDocumentsProposedCd_=std::make_shared<std::string>(r["OPENING_DOCUMENTS_PROPOSED_CD"].as<std::string>());
+        }
+        if(!r["APSYS_CDCTGPTFALGCPTS"].isNull())
+        {
+            apsysCdctgptfalgcpts_=std::make_shared<std::string>(r["APSYS_CDCTGPTFALGCPTS"].as<std::string>());
+        }
+        if(!r["APSYS_IDSTRUCFORJURS"].isNull())
+        {
+            apsysIdstrucforjurs_=std::make_shared<std::string>(r["APSYS_IDSTRUCFORJURS"].as<std::string>());
+        }
+        if(!r["APSYS_IDENTFORJURS"].isNull())
+        {
+            apsysIdentforjurs_=std::make_shared<std::string>(r["APSYS_IDENTFORJURS"].as<std::string>());
+        }
+        if(!r["FATCA_BASKET_CD"].isNull())
+        {
+            fatcaBasketCd_=std::make_shared<double>(r["FATCA_BASKET_CD"].as<double>());
+        }
+        if(!r["APSYS_CDMETHCLOC"].isNull())
+        {
+            apsysCdmethcloc_=std::make_shared<std::string>(r["APSYS_CDMETHCLOC"].as<std::string>());
+        }
+        if(!r["APSYS_DTEVALCLOL"].isNull())
+        {
+            auto timeStr = r["APSYS_DTEVALCLOL"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtevalclol_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["AEOI_EXEMPTION_CD"].isNull())
+        {
+            aeoiExemptionCd_=std::make_shared<std::string>(r["AEOI_EXEMPTION_CD"].as<std::string>());
+        }
+        if(!r["AEOI_SUB_EXEMPTION_CD"].isNull())
+        {
+            aeoiSubExemptionCd_=std::make_shared<std::string>(r["AEOI_SUB_EXEMPTION_CD"].as<std::string>());
+        }
+        if(!r["UNDOCUMENTED_ACCOUNT_CD"].isNull())
+        {
+            undocumentedAccountCd_=std::make_shared<std::string>(r["UNDOCUMENTED_ACCOUNT_CD"].as<std::string>());
+        }
+        if(!r["DORMANT_ACCOUNT_CD"].isNull())
+        {
+            dormantAccountCd_=std::make_shared<std::string>(r["DORMANT_ACCOUNT_CD"].as<std::string>());
+        }
+        if(!r["AEOI_CONSISTENCY_STATUS_CD"].isNull())
+        {
+            aeoiConsistencyStatusCd_=std::make_shared<std::string>(r["AEOI_CONSISTENCY_STATUS_CD"].as<std::string>());
+        }
+        if(!r["AEOI_FINAL_STATUS_CD"].isNull())
+        {
+            aeoiFinalStatusCd_=std::make_shared<std::string>(r["AEOI_FINAL_STATUS_CD"].as<std::string>());
+        }
+        if(!r["AEOI_REVIEW_DATE"].isNull())
+        {
+            auto timeStr = r["AEOI_REVIEW_DATE"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                aeoiReviewDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["APSYS_CDMIFIDEXEMPTC"].isNull())
+        {
+            apsysCdmifidexemptc_=std::make_shared<std::string>(r["APSYS_CDMIFIDEXEMPTC"].as<std::string>());
+        }
+        if(!r["APSYS_DTDEBMIFIDL"].isNull())
+        {
+            auto timeStr = r["APSYS_DTDEBMIFIDL"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtdebmifidl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["OPENED_IN_APSYS_DATE"].isNull())
+        {
+            auto timeStr = r["OPENED_IN_APSYS_DATE"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                openedInApsysDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["APSYS_FLAGDELDATAPERSI"].isNull())
+        {
+            apsysFlagdeldatapersi_=std::make_shared<std::string>(r["APSYS_FLAGDELDATAPERSI"].as<std::string>());
+        }
+        if(!r["APSYS_DTWAITDELDATAPERSL"].isNull())
+        {
+            auto timeStr = r["APSYS_DTWAITDELDATAPERSL"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtwaitdeldatapersl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["APSYS_CDPTFSELDGSC"].isNull())
+        {
+            apsysCdptfseldgsc_=std::make_shared<std::string>(r["APSYS_CDPTFSELDGSC"].as<std::string>());
+        }
+        if(!r["APSYS_CDMOTIFPARTDGSS"].isNull())
+        {
+            apsysCdmotifpartdgss_=std::make_shared<std::string>(r["APSYS_CDMOTIFPARTDGSS"].as<std::string>());
+        }
+        if(!r["EAM_CD"].isNull())
+        {
+            eamCd_=std::make_shared<std::string>(r["EAM_CD"].as<std::string>());
+        }
+        if(!r["RETENTION_ON_HOLD"].isNull())
+        {
+            retentionOnHold_=std::make_shared<std::string>(r["RETENTION_ON_HOLD"].as<std::string>());
+        }
+        if(!r["LOGICAL_ERASURE"].isNull())
+        {
+            logicalErasure_=std::make_shared<std::string>(r["LOGICAL_ERASURE"].as<std::string>());
+        }
+        if(!r["RETENTION_ON_HOLD_DATE"].isNull())
+        {
+            auto timeStr = r["RETENTION_ON_HOLD_DATE"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                retentionOnHoldDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["RETENTION_ON_HOLD_REASON"].isNull())
+        {
+            retentionOnHoldReason_=std::make_shared<std::string>(r["RETENTION_ON_HOLD_REASON"].as<std::string>());
+        }
+        if(!r["LOGICAL_ERASURE_DATE"].isNull())
+        {
+            auto timeStr = r["LOGICAL_ERASURE_DATE"].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                logicalErasureDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        if(!r["LOGICAL_ERASURE_REASON"].isNull())
+        {
+            logicalErasureReason_=std::make_shared<std::string>(r["LOGICAL_ERASURE_REASON"].as<std::string>());
         }
     }
     else
     {
         size_t offset = (size_t)indexOffset;
-        if(offset + 4 > r.size())
+        if(offset + 166 > r.size())
         {
             LOG_FATAL << "Invalid SQL result for this model";
             return;
@@ -70,27 +1361,1156 @@ Portfolio::Portfolio(const Row &r, const ssize_t indexOffset) noexcept
         index = offset + 0;
         if(!r[index].isNull())
         {
-            porfolioId_=std::make_shared<int32_t>(r[index].as<int32_t>());
+            kundenid_=std::make_shared<double>(r[index].as<double>());
         }
         index = offset + 1;
         if(!r[index].isNull())
         {
-            porfolioName_=std::make_shared<std::string>(r[index].as<std::string>());
+            portfoliono_=std::make_shared<double>(r[index].as<double>());
         }
         index = offset + 2;
         if(!r[index].isNull())
         {
-            auto daysStr = r[index].as<std::string>();
-            struct tm stm;
-            memset(&stm,0,sizeof(stm));
-            strptime(daysStr.c_str(),"%Y-%m-%d",&stm);
-            time_t t = mktime(&stm);
-            dateCreation_=std::make_shared<::trantor::Date>(t*1000000);
+            bezeichnung_=std::make_shared<std::string>(r[index].as<std::string>());
         }
         index = offset + 3;
         if(!r[index].isNull())
         {
-            openClosed_=std::make_shared<int32_t>(r[index].as<int32_t>());
+            managementtypCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 4;
+        if(!r[index].isNull())
+        {
+            manager1Cd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 5;
+        if(!r[index].isNull())
+        {
+            manager2Cd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 6;
+        if(!r[index].isNull())
+        {
+            manager3Cd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 7;
+        if(!r[index].isNull())
+        {
+            manager4Cd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 8;
+        if(!r[index].isNull())
+        {
+            manager5Cd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 9;
+        if(!r[index].isNull())
+        {
+            vermittlerCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 10;
+        if(!r[index].isNull())
+        {
+            infovollmacht_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 11;
+        if(!r[index].isNull())
+        {
+            kontakt_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 12;
+        if(!r[index].isNull())
+        {
+            ertraegnisaufCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 13;
+        if(!r[index].isNull())
+        {
+            waehrungsCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 14;
+        if(!r[index].isNull())
+        {
+            belegsatzCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 15;
+        if(!r[index].isNull())
+        {
+            loeschCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 16;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                loeschdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 17;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                crtdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 18;
+        if(!r[index].isNull())
+        {
+            crtuser_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 19;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                mutdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 20;
+        if(!r[index].isNull())
+        {
+            mutuser_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 21;
+        if(!r[index].isNull())
+        {
+            misdomizilCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 22;
+        if(!r[index].isNull())
+        {
+            anlagestrategieCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 23;
+        if(!r[index].isNull())
+        {
+            uswbasketCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 24;
+        if(!r[index].isNull())
+        {
+            versandhaeufigCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 25;
+        if(!r[index].isNull())
+        {
+            rubrik_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 26;
+        if(!r[index].isNull())
+        {
+            verwaltungsmodusCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 27;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                kundeletzterbesuch_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 28;
+        if(!r[index].isNull())
+        {
+            antragsort_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 29;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                antragsdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 30;
+        if(!r[index].isNull())
+        {
+            anderepostadresseCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 31;
+        if(!r[index].isNull())
+        {
+            banklagerndCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 32;
+        if(!r[index].isNull())
+        {
+            spezialinstruktion_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 33;
+        if(!r[index].isNull())
+        {
+            geldvonkontoinhaberCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 34;
+        if(!r[index].isNull())
+        {
+            manualopenCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 35;
+        if(!r[index].isNull())
+        {
+            kontonummer1_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 36;
+        if(!r[index].isNull())
+        {
+            kontonummer2_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 37;
+        if(!r[index].isNull())
+        {
+            kontonummer3_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 38;
+        if(!r[index].isNull())
+        {
+            filialCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 39;
+        if(!r[index].isNull())
+        {
+            rubrik1_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 40;
+        if(!r[index].isNull())
+        {
+            rubrik2_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 41;
+        if(!r[index].isNull())
+        {
+            rubrik3_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 42;
+        if(!r[index].isNull())
+        {
+            onlineCd_=std::make_shared<double>(r[index].as<double>());
+        }
+        index = offset + 43;
+        if(!r[index].isNull())
+        {
+            portfoliotypCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 44;
+        if(!r[index].isNull())
+        {
+            cdpartc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 45;
+        if(!r[index].isNull())
+        {
+            poEuTaxProzent_=std::make_shared<float>(r[index].as<float>());
+        }
+        index = offset + 46;
+        if(!r[index].isNull())
+        {
+            apsysStatusOpec_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 47;
+        if(!r[index].isNull())
+        {
+            apsysErri_=std::make_shared<double>(r[index].as<double>());
+        }
+        index = offset + 48;
+        if(!r[index].isNull())
+        {
+            apsysShnas_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 49;
+        if(!r[index].isNull())
+        {
+            apsysTypmdcs_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 50;
+        if(!r[index].isNull())
+        {
+            apsysIntilgs_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 51;
+        if(!r[index].isNull())
+        {
+            apsysShlibptfs_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 52;
+        if(!r[index].isNull())
+        {
+            apsysCdstatdusc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 53;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtdebpartl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 54;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtfinpartl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 55;
+        if(!r[index].isNull())
+        {
+            apsysIdstrucs_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 56;
+        if(!r[index].isNull())
+        {
+            apsysCdpermi_=std::make_shared<double>(r[index].as<double>());
+        }
+        index = offset + 57;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptfints_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 58;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptfstes_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 59;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptfstms_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 60;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptfmafs_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 61;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptfrisks_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 62;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptfcous_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 63;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptftrcs_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 64;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptfstebrutnets_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 65;
+        if(!r[index].isNull())
+        {
+            apsysFlagirsreppartc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 66;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptftaxints_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 67;
+        if(!r[index].isNull())
+        {
+            apsysIdpocs_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 68;
+        if(!r[index].isNull())
+        {
+            apsysInfo_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 69;
+        if(!r[index].isNull())
+        {
+            nettovermoegenChf_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 70;
+        if(!r[index].isNull())
+        {
+            apsysIntishs_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 71;
+        if(!r[index].isNull())
+        {
+            apsysIdpersl_=std::make_shared<double>(r[index].as<double>());
+        }
+        index = offset + 72;
+        if(!r[index].isNull())
+        {
+            apsysCdmotifparts_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 73;
+        if(!r[index].isNull())
+        {
+            inApsysTempEntspUserid_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 74;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                inApsysTempEntspDatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 75;
+        if(!r[index].isNull())
+        {
+            inApsysTempEntsperrenCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 76;
+        if(!r[index].isNull())
+        {
+            kundenkategorieCd_=std::make_shared<double>(r[index].as<double>());
+        }
+        index = offset + 77;
+        if(!r[index].isNull())
+        {
+            gemeinschaftskontoCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 78;
+        if(!r[index].isNull())
+        {
+            dritteSaeuleCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 79;
+        if(!r[index].isNull())
+        {
+            apsysTypptfs_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 80;
+        if(!r[index].isNull())
+        {
+            autoEuTaxPercentage_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 81;
+        if(!r[index].isNull())
+        {
+            aktid_=std::make_shared<double>(r[index].as<double>());
+        }
+        index = offset + 82;
+        if(!r[index].isNull())
+        {
+            validid_=std::make_shared<double>(r[index].as<double>());
+        }
+        index = offset + 83;
+        if(!r[index].isNull())
+        {
+            validCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 84;
+        if(!r[index].isNull())
+        {
+            validuser_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 85;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptfsbxps_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 86;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptfsdocs_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 87;
+        if(!r[index].isNull())
+        {
+            apsysIdents_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 88;
+        if(!r[index].isNull())
+        {
+            apsysCdsoumbolc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 89;
+        if(!r[index].isNull())
+        {
+            apsysCdfacbolc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 90;
+        if(!r[index].isNull())
+        {
+            apsysFlagtyptrfpolc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 91;
+        if(!r[index].isNull())
+        {
+            apsysIdtrfpols_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 92;
+        if(!r[index].isNull())
+        {
+            apsysCdpctpartictitueutaxc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 93;
+        if(!r[index].isNull())
+        {
+            apsysCdmotifclos_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 94;
+        if(!r[index].isNull())
+        {
+            encSalt_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 95;
+        if(!r[index].isNull())
+        {
+            bezeichnungEnc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 96;
+        if(!r[index].isNull())
+        {
+            ktoeAmlProfilCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 97;
+        if(!r[index].isNull())
+        {
+            apsysDevevals_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 98;
+        if(!r[index].isNull())
+        {
+            apsysCdrnvstmc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 99;
+        if(!r[index].isNull())
+        {
+            apsysCdrglprlgc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 100;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptfcomagtcpts_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 101;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptfroutords_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 102;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptfgrecpts_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 103;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptftrsftits_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 104;
+        if(!r[index].isNull())
+        {
+            apsysFlagexpsysexttaxi_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 105;
+        if(!r[index].isNull())
+        {
+            wbIstNichtZwingendCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 106;
+        if(!r[index].isNull())
+        {
+            apsysCdbqerestc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 107;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptftypplacs_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 108;
+        if(!r[index].isNull())
+        {
+            apsysCdeangrmtcli1s_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 109;
+        if(!r[index].isNull())
+        {
+            apsysCdeangrmtcli2s_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 110;
+        if(!r[index].isNull())
+        {
+            apsysCdfatcatypc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 111;
+        if(!r[index].isNull())
+        {
+            apsysIdfatcaclas_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 112;
+        if(!r[index].isNull())
+        {
+            apsysCdfatcastatcalccrmc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 113;
+        if(!r[index].isNull())
+        {
+            apsysCdfatcastatc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 114;
+        if(!r[index].isNull())
+        {
+            apsysCommentfatcastats_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 115;
+        if(!r[index].isNull())
+        {
+            apsysCdfatcamotifparts_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 116;
+        if(!r[index].isNull())
+        {
+            apsysCdfatcastatcalcglobc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 117;
+        if(!r[index].isNull())
+        {
+            apsysCdfatcastatcalclocc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 118;
+        if(!r[index].isNull())
+        {
+            apsysCdvalidstatc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 119;
+        if(!r[index].isNull())
+        {
+            apsysUservalidfatcastats_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 120;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtvalidfatcastatl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 121;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysHrvalidfatcastatl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 122;
+        if(!r[index].isNull())
+        {
+            apsysCdctrnettc553c_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 123;
+        if(!r[index].isNull())
+        {
+            apsysFlagforceposostmanagi_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 124;
+        if(!r[index].isNull())
+        {
+            apsysPosostmanagc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 125;
+        if(!r[index].isNull())
+        {
+            apsysCritereusfatcastatl_=std::make_shared<double>(r[index].as<double>());
+        }
+        index = offset + 126;
+        if(!r[index].isNull())
+        {
+            apsysFlagsimsi_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 127;
+        if(!r[index].isNull())
+        {
+            nrOfBoInWhtStatement_=std::make_shared<double>(r[index].as<double>());
+        }
+        index = offset + 128;
+        if(!r[index].isNull())
+        {
+            partnerWithUnlLiabilityCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 129;
+        if(!r[index].isNull())
+        {
+            companyManagedByBoCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 130;
+        if(!r[index].isNull())
+        {
+            isTrusteePhysicalCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 131;
+        if(!r[index].isNull())
+        {
+            noTradingUsSecuritiesCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 132;
+        if(!r[index].isNull())
+        {
+            portfolioSegrAccountCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 133;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                usWhtStartDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 134;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptfivstautos_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 135;
+        if(!r[index].isNull())
+        {
+            automatischeVerteilungCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 136;
+        if(!r[index].isNull())
+        {
+            apsysCdtypreportqic_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 137;
+        if(!r[index].isNull())
+        {
+            apsysFlagirsnonactifi_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 138;
+        if(!r[index].isNull())
+        {
+            openingDocumentsProposedCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 139;
+        if(!r[index].isNull())
+        {
+            apsysCdctgptfalgcpts_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 140;
+        if(!r[index].isNull())
+        {
+            apsysIdstrucforjurs_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 141;
+        if(!r[index].isNull())
+        {
+            apsysIdentforjurs_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 142;
+        if(!r[index].isNull())
+        {
+            fatcaBasketCd_=std::make_shared<double>(r[index].as<double>());
+        }
+        index = offset + 143;
+        if(!r[index].isNull())
+        {
+            apsysCdmethcloc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 144;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtevalclol_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 145;
+        if(!r[index].isNull())
+        {
+            aeoiExemptionCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 146;
+        if(!r[index].isNull())
+        {
+            aeoiSubExemptionCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 147;
+        if(!r[index].isNull())
+        {
+            undocumentedAccountCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 148;
+        if(!r[index].isNull())
+        {
+            dormantAccountCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 149;
+        if(!r[index].isNull())
+        {
+            aeoiConsistencyStatusCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 150;
+        if(!r[index].isNull())
+        {
+            aeoiFinalStatusCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 151;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                aeoiReviewDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 152;
+        if(!r[index].isNull())
+        {
+            apsysCdmifidexemptc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 153;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtdebmifidl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 154;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                openedInApsysDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 155;
+        if(!r[index].isNull())
+        {
+            apsysFlagdeldatapersi_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 156;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtwaitdeldatapersl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 157;
+        if(!r[index].isNull())
+        {
+            apsysCdptfseldgsc_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 158;
+        if(!r[index].isNull())
+        {
+            apsysCdmotifpartdgss_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 159;
+        if(!r[index].isNull())
+        {
+            eamCd_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 160;
+        if(!r[index].isNull())
+        {
+            retentionOnHold_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 161;
+        if(!r[index].isNull())
+        {
+            logicalErasure_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 162;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                retentionOnHoldDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 163;
+        if(!r[index].isNull())
+        {
+            retentionOnHoldReason_=std::make_shared<std::string>(r[index].as<std::string>());
+        }
+        index = offset + 164;
+        if(!r[index].isNull())
+        {
+            auto timeStr = r[index].as<std::string>();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                logicalErasureDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+        index = offset + 165;
+        if(!r[index].isNull())
+        {
+            logicalErasureReason_=std::make_shared<std::string>(r[index].as<std::string>());
         }
     }
 
@@ -98,7 +2518,7 @@ Portfolio::Portfolio(const Row &r, const ssize_t indexOffset) noexcept
 
 Portfolio::Portfolio(const Json::Value &pJson, const std::vector<std::string> &pMasqueradingVector) noexcept(false)
 {
-    if(pMasqueradingVector.size() != 4)
+    if(pMasqueradingVector.size() != 166)
     {
         LOG_ERROR << "Bad masquerading vector";
         return;
@@ -108,7 +2528,7 @@ Portfolio::Portfolio(const Json::Value &pJson, const std::vector<std::string> &p
         dirtyFlag_[0] = true;
         if(!pJson[pMasqueradingVector[0]].isNull())
         {
-            porfolioId_=std::make_shared<int32_t>((int32_t)pJson[pMasqueradingVector[0]].asInt64());
+            kundenid_=std::make_shared<double>(pJson[pMasqueradingVector[0]].asDouble());
         }
     }
     if(!pMasqueradingVector[1].empty() && pJson.isMember(pMasqueradingVector[1]))
@@ -116,7 +2536,7 @@ Portfolio::Portfolio(const Json::Value &pJson, const std::vector<std::string> &p
         dirtyFlag_[1] = true;
         if(!pJson[pMasqueradingVector[1]].isNull())
         {
-            porfolioName_=std::make_shared<std::string>(pJson[pMasqueradingVector[1]].asString());
+            portfoliono_=std::make_shared<double>(pJson[pMasqueradingVector[1]].asDouble());
         }
     }
     if(!pMasqueradingVector[2].empty() && pJson.isMember(pMasqueradingVector[2]))
@@ -124,12 +2544,7 @@ Portfolio::Portfolio(const Json::Value &pJson, const std::vector<std::string> &p
         dirtyFlag_[2] = true;
         if(!pJson[pMasqueradingVector[2]].isNull())
         {
-            auto daysStr = pJson[pMasqueradingVector[2]].asString();
-            struct tm stm;
-            memset(&stm,0,sizeof(stm));
-            strptime(daysStr.c_str(),"%Y-%m-%d",&stm);
-            time_t t = mktime(&stm);
-            dateCreation_=std::make_shared<::trantor::Date>(t*1000000);
+            bezeichnung_=std::make_shared<std::string>(pJson[pMasqueradingVector[2]].asString());
         }
     }
     if(!pMasqueradingVector[3].empty() && pJson.isMember(pMasqueradingVector[3]))
@@ -137,48 +2552,3283 @@ Portfolio::Portfolio(const Json::Value &pJson, const std::vector<std::string> &p
         dirtyFlag_[3] = true;
         if(!pJson[pMasqueradingVector[3]].isNull())
         {
-            openClosed_=std::make_shared<int32_t>((int32_t)pJson[pMasqueradingVector[3]].asInt64());
+            managementtypCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[3]].asString());
+        }
+    }
+    if(!pMasqueradingVector[4].empty() && pJson.isMember(pMasqueradingVector[4]))
+    {
+        dirtyFlag_[4] = true;
+        if(!pJson[pMasqueradingVector[4]].isNull())
+        {
+            manager1Cd_=std::make_shared<std::string>(pJson[pMasqueradingVector[4]].asString());
+        }
+    }
+    if(!pMasqueradingVector[5].empty() && pJson.isMember(pMasqueradingVector[5]))
+    {
+        dirtyFlag_[5] = true;
+        if(!pJson[pMasqueradingVector[5]].isNull())
+        {
+            manager2Cd_=std::make_shared<std::string>(pJson[pMasqueradingVector[5]].asString());
+        }
+    }
+    if(!pMasqueradingVector[6].empty() && pJson.isMember(pMasqueradingVector[6]))
+    {
+        dirtyFlag_[6] = true;
+        if(!pJson[pMasqueradingVector[6]].isNull())
+        {
+            manager3Cd_=std::make_shared<std::string>(pJson[pMasqueradingVector[6]].asString());
+        }
+    }
+    if(!pMasqueradingVector[7].empty() && pJson.isMember(pMasqueradingVector[7]))
+    {
+        dirtyFlag_[7] = true;
+        if(!pJson[pMasqueradingVector[7]].isNull())
+        {
+            manager4Cd_=std::make_shared<std::string>(pJson[pMasqueradingVector[7]].asString());
+        }
+    }
+    if(!pMasqueradingVector[8].empty() && pJson.isMember(pMasqueradingVector[8]))
+    {
+        dirtyFlag_[8] = true;
+        if(!pJson[pMasqueradingVector[8]].isNull())
+        {
+            manager5Cd_=std::make_shared<std::string>(pJson[pMasqueradingVector[8]].asString());
+        }
+    }
+    if(!pMasqueradingVector[9].empty() && pJson.isMember(pMasqueradingVector[9]))
+    {
+        dirtyFlag_[9] = true;
+        if(!pJson[pMasqueradingVector[9]].isNull())
+        {
+            vermittlerCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[9]].asString());
+        }
+    }
+    if(!pMasqueradingVector[10].empty() && pJson.isMember(pMasqueradingVector[10]))
+    {
+        dirtyFlag_[10] = true;
+        if(!pJson[pMasqueradingVector[10]].isNull())
+        {
+            infovollmacht_=std::make_shared<std::string>(pJson[pMasqueradingVector[10]].asString());
+        }
+    }
+    if(!pMasqueradingVector[11].empty() && pJson.isMember(pMasqueradingVector[11]))
+    {
+        dirtyFlag_[11] = true;
+        if(!pJson[pMasqueradingVector[11]].isNull())
+        {
+            kontakt_=std::make_shared<std::string>(pJson[pMasqueradingVector[11]].asString());
+        }
+    }
+    if(!pMasqueradingVector[12].empty() && pJson.isMember(pMasqueradingVector[12]))
+    {
+        dirtyFlag_[12] = true;
+        if(!pJson[pMasqueradingVector[12]].isNull())
+        {
+            ertraegnisaufCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[12]].asString());
+        }
+    }
+    if(!pMasqueradingVector[13].empty() && pJson.isMember(pMasqueradingVector[13]))
+    {
+        dirtyFlag_[13] = true;
+        if(!pJson[pMasqueradingVector[13]].isNull())
+        {
+            waehrungsCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[13]].asString());
+        }
+    }
+    if(!pMasqueradingVector[14].empty() && pJson.isMember(pMasqueradingVector[14]))
+    {
+        dirtyFlag_[14] = true;
+        if(!pJson[pMasqueradingVector[14]].isNull())
+        {
+            belegsatzCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[14]].asString());
+        }
+    }
+    if(!pMasqueradingVector[15].empty() && pJson.isMember(pMasqueradingVector[15]))
+    {
+        dirtyFlag_[15] = true;
+        if(!pJson[pMasqueradingVector[15]].isNull())
+        {
+            loeschCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[15]].asString());
+        }
+    }
+    if(!pMasqueradingVector[16].empty() && pJson.isMember(pMasqueradingVector[16]))
+    {
+        dirtyFlag_[16] = true;
+        if(!pJson[pMasqueradingVector[16]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[16]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                loeschdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[17].empty() && pJson.isMember(pMasqueradingVector[17]))
+    {
+        dirtyFlag_[17] = true;
+        if(!pJson[pMasqueradingVector[17]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[17]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                crtdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[18].empty() && pJson.isMember(pMasqueradingVector[18]))
+    {
+        dirtyFlag_[18] = true;
+        if(!pJson[pMasqueradingVector[18]].isNull())
+        {
+            crtuser_=std::make_shared<std::string>(pJson[pMasqueradingVector[18]].asString());
+        }
+    }
+    if(!pMasqueradingVector[19].empty() && pJson.isMember(pMasqueradingVector[19]))
+    {
+        dirtyFlag_[19] = true;
+        if(!pJson[pMasqueradingVector[19]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[19]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                mutdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[20].empty() && pJson.isMember(pMasqueradingVector[20]))
+    {
+        dirtyFlag_[20] = true;
+        if(!pJson[pMasqueradingVector[20]].isNull())
+        {
+            mutuser_=std::make_shared<std::string>(pJson[pMasqueradingVector[20]].asString());
+        }
+    }
+    if(!pMasqueradingVector[21].empty() && pJson.isMember(pMasqueradingVector[21]))
+    {
+        dirtyFlag_[21] = true;
+        if(!pJson[pMasqueradingVector[21]].isNull())
+        {
+            misdomizilCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[21]].asString());
+        }
+    }
+    if(!pMasqueradingVector[22].empty() && pJson.isMember(pMasqueradingVector[22]))
+    {
+        dirtyFlag_[22] = true;
+        if(!pJson[pMasqueradingVector[22]].isNull())
+        {
+            anlagestrategieCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[22]].asString());
+        }
+    }
+    if(!pMasqueradingVector[23].empty() && pJson.isMember(pMasqueradingVector[23]))
+    {
+        dirtyFlag_[23] = true;
+        if(!pJson[pMasqueradingVector[23]].isNull())
+        {
+            uswbasketCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[23]].asString());
+        }
+    }
+    if(!pMasqueradingVector[24].empty() && pJson.isMember(pMasqueradingVector[24]))
+    {
+        dirtyFlag_[24] = true;
+        if(!pJson[pMasqueradingVector[24]].isNull())
+        {
+            versandhaeufigCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[24]].asString());
+        }
+    }
+    if(!pMasqueradingVector[25].empty() && pJson.isMember(pMasqueradingVector[25]))
+    {
+        dirtyFlag_[25] = true;
+        if(!pJson[pMasqueradingVector[25]].isNull())
+        {
+            rubrik_=std::make_shared<std::string>(pJson[pMasqueradingVector[25]].asString());
+        }
+    }
+    if(!pMasqueradingVector[26].empty() && pJson.isMember(pMasqueradingVector[26]))
+    {
+        dirtyFlag_[26] = true;
+        if(!pJson[pMasqueradingVector[26]].isNull())
+        {
+            verwaltungsmodusCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[26]].asString());
+        }
+    }
+    if(!pMasqueradingVector[27].empty() && pJson.isMember(pMasqueradingVector[27]))
+    {
+        dirtyFlag_[27] = true;
+        if(!pJson[pMasqueradingVector[27]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[27]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                kundeletzterbesuch_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[28].empty() && pJson.isMember(pMasqueradingVector[28]))
+    {
+        dirtyFlag_[28] = true;
+        if(!pJson[pMasqueradingVector[28]].isNull())
+        {
+            antragsort_=std::make_shared<std::string>(pJson[pMasqueradingVector[28]].asString());
+        }
+    }
+    if(!pMasqueradingVector[29].empty() && pJson.isMember(pMasqueradingVector[29]))
+    {
+        dirtyFlag_[29] = true;
+        if(!pJson[pMasqueradingVector[29]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[29]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                antragsdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[30].empty() && pJson.isMember(pMasqueradingVector[30]))
+    {
+        dirtyFlag_[30] = true;
+        if(!pJson[pMasqueradingVector[30]].isNull())
+        {
+            anderepostadresseCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[30]].asString());
+        }
+    }
+    if(!pMasqueradingVector[31].empty() && pJson.isMember(pMasqueradingVector[31]))
+    {
+        dirtyFlag_[31] = true;
+        if(!pJson[pMasqueradingVector[31]].isNull())
+        {
+            banklagerndCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[31]].asString());
+        }
+    }
+    if(!pMasqueradingVector[32].empty() && pJson.isMember(pMasqueradingVector[32]))
+    {
+        dirtyFlag_[32] = true;
+        if(!pJson[pMasqueradingVector[32]].isNull())
+        {
+            spezialinstruktion_=std::make_shared<std::string>(pJson[pMasqueradingVector[32]].asString());
+        }
+    }
+    if(!pMasqueradingVector[33].empty() && pJson.isMember(pMasqueradingVector[33]))
+    {
+        dirtyFlag_[33] = true;
+        if(!pJson[pMasqueradingVector[33]].isNull())
+        {
+            geldvonkontoinhaberCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[33]].asString());
+        }
+    }
+    if(!pMasqueradingVector[34].empty() && pJson.isMember(pMasqueradingVector[34]))
+    {
+        dirtyFlag_[34] = true;
+        if(!pJson[pMasqueradingVector[34]].isNull())
+        {
+            manualopenCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[34]].asString());
+        }
+    }
+    if(!pMasqueradingVector[35].empty() && pJson.isMember(pMasqueradingVector[35]))
+    {
+        dirtyFlag_[35] = true;
+        if(!pJson[pMasqueradingVector[35]].isNull())
+        {
+            kontonummer1_=std::make_shared<std::string>(pJson[pMasqueradingVector[35]].asString());
+        }
+    }
+    if(!pMasqueradingVector[36].empty() && pJson.isMember(pMasqueradingVector[36]))
+    {
+        dirtyFlag_[36] = true;
+        if(!pJson[pMasqueradingVector[36]].isNull())
+        {
+            kontonummer2_=std::make_shared<std::string>(pJson[pMasqueradingVector[36]].asString());
+        }
+    }
+    if(!pMasqueradingVector[37].empty() && pJson.isMember(pMasqueradingVector[37]))
+    {
+        dirtyFlag_[37] = true;
+        if(!pJson[pMasqueradingVector[37]].isNull())
+        {
+            kontonummer3_=std::make_shared<std::string>(pJson[pMasqueradingVector[37]].asString());
+        }
+    }
+    if(!pMasqueradingVector[38].empty() && pJson.isMember(pMasqueradingVector[38]))
+    {
+        dirtyFlag_[38] = true;
+        if(!pJson[pMasqueradingVector[38]].isNull())
+        {
+            filialCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[38]].asString());
+        }
+    }
+    if(!pMasqueradingVector[39].empty() && pJson.isMember(pMasqueradingVector[39]))
+    {
+        dirtyFlag_[39] = true;
+        if(!pJson[pMasqueradingVector[39]].isNull())
+        {
+            rubrik1_=std::make_shared<std::string>(pJson[pMasqueradingVector[39]].asString());
+        }
+    }
+    if(!pMasqueradingVector[40].empty() && pJson.isMember(pMasqueradingVector[40]))
+    {
+        dirtyFlag_[40] = true;
+        if(!pJson[pMasqueradingVector[40]].isNull())
+        {
+            rubrik2_=std::make_shared<std::string>(pJson[pMasqueradingVector[40]].asString());
+        }
+    }
+    if(!pMasqueradingVector[41].empty() && pJson.isMember(pMasqueradingVector[41]))
+    {
+        dirtyFlag_[41] = true;
+        if(!pJson[pMasqueradingVector[41]].isNull())
+        {
+            rubrik3_=std::make_shared<std::string>(pJson[pMasqueradingVector[41]].asString());
+        }
+    }
+    if(!pMasqueradingVector[42].empty() && pJson.isMember(pMasqueradingVector[42]))
+    {
+        dirtyFlag_[42] = true;
+        if(!pJson[pMasqueradingVector[42]].isNull())
+        {
+            onlineCd_=std::make_shared<double>(pJson[pMasqueradingVector[42]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[43].empty() && pJson.isMember(pMasqueradingVector[43]))
+    {
+        dirtyFlag_[43] = true;
+        if(!pJson[pMasqueradingVector[43]].isNull())
+        {
+            portfoliotypCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[43]].asString());
+        }
+    }
+    if(!pMasqueradingVector[44].empty() && pJson.isMember(pMasqueradingVector[44]))
+    {
+        dirtyFlag_[44] = true;
+        if(!pJson[pMasqueradingVector[44]].isNull())
+        {
+            cdpartc_=std::make_shared<std::string>(pJson[pMasqueradingVector[44]].asString());
+        }
+    }
+    if(!pMasqueradingVector[45].empty() && pJson.isMember(pMasqueradingVector[45]))
+    {
+        dirtyFlag_[45] = true;
+        if(!pJson[pMasqueradingVector[45]].isNull())
+        {
+            poEuTaxProzent_=std::make_shared<float>(pJson[pMasqueradingVector[45]].asFloat());
+        }
+     }
+    if(!pMasqueradingVector[46].empty() && pJson.isMember(pMasqueradingVector[46]))
+    {
+        dirtyFlag_[46] = true;
+        if(!pJson[pMasqueradingVector[46]].isNull())
+        {
+            apsysStatusOpec_=std::make_shared<std::string>(pJson[pMasqueradingVector[46]].asString());
+        }
+    }
+    if(!pMasqueradingVector[47].empty() && pJson.isMember(pMasqueradingVector[47]))
+    {
+        dirtyFlag_[47] = true;
+        if(!pJson[pMasqueradingVector[47]].isNull())
+        {
+            apsysErri_=std::make_shared<double>(pJson[pMasqueradingVector[47]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[48].empty() && pJson.isMember(pMasqueradingVector[48]))
+    {
+        dirtyFlag_[48] = true;
+        if(!pJson[pMasqueradingVector[48]].isNull())
+        {
+            apsysShnas_=std::make_shared<std::string>(pJson[pMasqueradingVector[48]].asString());
+        }
+    }
+    if(!pMasqueradingVector[49].empty() && pJson.isMember(pMasqueradingVector[49]))
+    {
+        dirtyFlag_[49] = true;
+        if(!pJson[pMasqueradingVector[49]].isNull())
+        {
+            apsysTypmdcs_=std::make_shared<std::string>(pJson[pMasqueradingVector[49]].asString());
+        }
+    }
+    if(!pMasqueradingVector[50].empty() && pJson.isMember(pMasqueradingVector[50]))
+    {
+        dirtyFlag_[50] = true;
+        if(!pJson[pMasqueradingVector[50]].isNull())
+        {
+            apsysIntilgs_=std::make_shared<std::string>(pJson[pMasqueradingVector[50]].asString());
+        }
+    }
+    if(!pMasqueradingVector[51].empty() && pJson.isMember(pMasqueradingVector[51]))
+    {
+        dirtyFlag_[51] = true;
+        if(!pJson[pMasqueradingVector[51]].isNull())
+        {
+            apsysShlibptfs_=std::make_shared<std::string>(pJson[pMasqueradingVector[51]].asString());
+        }
+    }
+    if(!pMasqueradingVector[52].empty() && pJson.isMember(pMasqueradingVector[52]))
+    {
+        dirtyFlag_[52] = true;
+        if(!pJson[pMasqueradingVector[52]].isNull())
+        {
+            apsysCdstatdusc_=std::make_shared<std::string>(pJson[pMasqueradingVector[52]].asString());
+        }
+    }
+    if(!pMasqueradingVector[53].empty() && pJson.isMember(pMasqueradingVector[53]))
+    {
+        dirtyFlag_[53] = true;
+        if(!pJson[pMasqueradingVector[53]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[53]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtdebpartl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[54].empty() && pJson.isMember(pMasqueradingVector[54]))
+    {
+        dirtyFlag_[54] = true;
+        if(!pJson[pMasqueradingVector[54]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[54]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtfinpartl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[55].empty() && pJson.isMember(pMasqueradingVector[55]))
+    {
+        dirtyFlag_[55] = true;
+        if(!pJson[pMasqueradingVector[55]].isNull())
+        {
+            apsysIdstrucs_=std::make_shared<std::string>(pJson[pMasqueradingVector[55]].asString());
+        }
+    }
+    if(!pMasqueradingVector[56].empty() && pJson.isMember(pMasqueradingVector[56]))
+    {
+        dirtyFlag_[56] = true;
+        if(!pJson[pMasqueradingVector[56]].isNull())
+        {
+            apsysCdpermi_=std::make_shared<double>(pJson[pMasqueradingVector[56]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[57].empty() && pJson.isMember(pMasqueradingVector[57]))
+    {
+        dirtyFlag_[57] = true;
+        if(!pJson[pMasqueradingVector[57]].isNull())
+        {
+            apsysCdctgptfints_=std::make_shared<std::string>(pJson[pMasqueradingVector[57]].asString());
+        }
+    }
+    if(!pMasqueradingVector[58].empty() && pJson.isMember(pMasqueradingVector[58]))
+    {
+        dirtyFlag_[58] = true;
+        if(!pJson[pMasqueradingVector[58]].isNull())
+        {
+            apsysCdctgptfstes_=std::make_shared<std::string>(pJson[pMasqueradingVector[58]].asString());
+        }
+    }
+    if(!pMasqueradingVector[59].empty() && pJson.isMember(pMasqueradingVector[59]))
+    {
+        dirtyFlag_[59] = true;
+        if(!pJson[pMasqueradingVector[59]].isNull())
+        {
+            apsysCdctgptfstms_=std::make_shared<std::string>(pJson[pMasqueradingVector[59]].asString());
+        }
+    }
+    if(!pMasqueradingVector[60].empty() && pJson.isMember(pMasqueradingVector[60]))
+    {
+        dirtyFlag_[60] = true;
+        if(!pJson[pMasqueradingVector[60]].isNull())
+        {
+            apsysCdctgptfmafs_=std::make_shared<std::string>(pJson[pMasqueradingVector[60]].asString());
+        }
+    }
+    if(!pMasqueradingVector[61].empty() && pJson.isMember(pMasqueradingVector[61]))
+    {
+        dirtyFlag_[61] = true;
+        if(!pJson[pMasqueradingVector[61]].isNull())
+        {
+            apsysCdctgptfrisks_=std::make_shared<std::string>(pJson[pMasqueradingVector[61]].asString());
+        }
+    }
+    if(!pMasqueradingVector[62].empty() && pJson.isMember(pMasqueradingVector[62]))
+    {
+        dirtyFlag_[62] = true;
+        if(!pJson[pMasqueradingVector[62]].isNull())
+        {
+            apsysCdctgptfcous_=std::make_shared<std::string>(pJson[pMasqueradingVector[62]].asString());
+        }
+    }
+    if(!pMasqueradingVector[63].empty() && pJson.isMember(pMasqueradingVector[63]))
+    {
+        dirtyFlag_[63] = true;
+        if(!pJson[pMasqueradingVector[63]].isNull())
+        {
+            apsysCdctgptftrcs_=std::make_shared<std::string>(pJson[pMasqueradingVector[63]].asString());
+        }
+    }
+    if(!pMasqueradingVector[64].empty() && pJson.isMember(pMasqueradingVector[64]))
+    {
+        dirtyFlag_[64] = true;
+        if(!pJson[pMasqueradingVector[64]].isNull())
+        {
+            apsysCdctgptfstebrutnets_=std::make_shared<std::string>(pJson[pMasqueradingVector[64]].asString());
+        }
+    }
+    if(!pMasqueradingVector[65].empty() && pJson.isMember(pMasqueradingVector[65]))
+    {
+        dirtyFlag_[65] = true;
+        if(!pJson[pMasqueradingVector[65]].isNull())
+        {
+            apsysFlagirsreppartc_=std::make_shared<std::string>(pJson[pMasqueradingVector[65]].asString());
+        }
+    }
+    if(!pMasqueradingVector[66].empty() && pJson.isMember(pMasqueradingVector[66]))
+    {
+        dirtyFlag_[66] = true;
+        if(!pJson[pMasqueradingVector[66]].isNull())
+        {
+            apsysCdctgptftaxints_=std::make_shared<std::string>(pJson[pMasqueradingVector[66]].asString());
+        }
+    }
+    if(!pMasqueradingVector[67].empty() && pJson.isMember(pMasqueradingVector[67]))
+    {
+        dirtyFlag_[67] = true;
+        if(!pJson[pMasqueradingVector[67]].isNull())
+        {
+            apsysIdpocs_=std::make_shared<std::string>(pJson[pMasqueradingVector[67]].asString());
+        }
+    }
+    if(!pMasqueradingVector[68].empty() && pJson.isMember(pMasqueradingVector[68]))
+    {
+        dirtyFlag_[68] = true;
+        if(!pJson[pMasqueradingVector[68]].isNull())
+        {
+            apsysInfo_=std::make_shared<std::string>(pJson[pMasqueradingVector[68]].asString());
+        }
+    }
+    if(!pMasqueradingVector[69].empty() && pJson.isMember(pMasqueradingVector[69]))
+    {
+        dirtyFlag_[69] = true;
+        if(!pJson[pMasqueradingVector[69]].isNull())
+        {
+            nettovermoegenChf_=std::make_shared<std::string>(pJson[pMasqueradingVector[69]].asString());
+        }
+    }
+    if(!pMasqueradingVector[70].empty() && pJson.isMember(pMasqueradingVector[70]))
+    {
+        dirtyFlag_[70] = true;
+        if(!pJson[pMasqueradingVector[70]].isNull())
+        {
+            apsysIntishs_=std::make_shared<std::string>(pJson[pMasqueradingVector[70]].asString());
+        }
+    }
+    if(!pMasqueradingVector[71].empty() && pJson.isMember(pMasqueradingVector[71]))
+    {
+        dirtyFlag_[71] = true;
+        if(!pJson[pMasqueradingVector[71]].isNull())
+        {
+            apsysIdpersl_=std::make_shared<double>(pJson[pMasqueradingVector[71]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[72].empty() && pJson.isMember(pMasqueradingVector[72]))
+    {
+        dirtyFlag_[72] = true;
+        if(!pJson[pMasqueradingVector[72]].isNull())
+        {
+            apsysCdmotifparts_=std::make_shared<std::string>(pJson[pMasqueradingVector[72]].asString());
+        }
+    }
+    if(!pMasqueradingVector[73].empty() && pJson.isMember(pMasqueradingVector[73]))
+    {
+        dirtyFlag_[73] = true;
+        if(!pJson[pMasqueradingVector[73]].isNull())
+        {
+            inApsysTempEntspUserid_=std::make_shared<std::string>(pJson[pMasqueradingVector[73]].asString());
+        }
+    }
+    if(!pMasqueradingVector[74].empty() && pJson.isMember(pMasqueradingVector[74]))
+    {
+        dirtyFlag_[74] = true;
+        if(!pJson[pMasqueradingVector[74]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[74]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                inApsysTempEntspDatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[75].empty() && pJson.isMember(pMasqueradingVector[75]))
+    {
+        dirtyFlag_[75] = true;
+        if(!pJson[pMasqueradingVector[75]].isNull())
+        {
+            inApsysTempEntsperrenCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[75]].asString());
+        }
+    }
+    if(!pMasqueradingVector[76].empty() && pJson.isMember(pMasqueradingVector[76]))
+    {
+        dirtyFlag_[76] = true;
+        if(!pJson[pMasqueradingVector[76]].isNull())
+        {
+            kundenkategorieCd_=std::make_shared<double>(pJson[pMasqueradingVector[76]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[77].empty() && pJson.isMember(pMasqueradingVector[77]))
+    {
+        dirtyFlag_[77] = true;
+        if(!pJson[pMasqueradingVector[77]].isNull())
+        {
+            gemeinschaftskontoCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[77]].asString());
+        }
+    }
+    if(!pMasqueradingVector[78].empty() && pJson.isMember(pMasqueradingVector[78]))
+    {
+        dirtyFlag_[78] = true;
+        if(!pJson[pMasqueradingVector[78]].isNull())
+        {
+            dritteSaeuleCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[78]].asString());
+        }
+    }
+    if(!pMasqueradingVector[79].empty() && pJson.isMember(pMasqueradingVector[79]))
+    {
+        dirtyFlag_[79] = true;
+        if(!pJson[pMasqueradingVector[79]].isNull())
+        {
+            apsysTypptfs_=std::make_shared<std::string>(pJson[pMasqueradingVector[79]].asString());
+        }
+    }
+    if(!pMasqueradingVector[80].empty() && pJson.isMember(pMasqueradingVector[80]))
+    {
+        dirtyFlag_[80] = true;
+        if(!pJson[pMasqueradingVector[80]].isNull())
+        {
+            autoEuTaxPercentage_=std::make_shared<std::string>(pJson[pMasqueradingVector[80]].asString());
+        }
+    }
+    if(!pMasqueradingVector[81].empty() && pJson.isMember(pMasqueradingVector[81]))
+    {
+        dirtyFlag_[81] = true;
+        if(!pJson[pMasqueradingVector[81]].isNull())
+        {
+            aktid_=std::make_shared<double>(pJson[pMasqueradingVector[81]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[82].empty() && pJson.isMember(pMasqueradingVector[82]))
+    {
+        dirtyFlag_[82] = true;
+        if(!pJson[pMasqueradingVector[82]].isNull())
+        {
+            validid_=std::make_shared<double>(pJson[pMasqueradingVector[82]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[83].empty() && pJson.isMember(pMasqueradingVector[83]))
+    {
+        dirtyFlag_[83] = true;
+        if(!pJson[pMasqueradingVector[83]].isNull())
+        {
+            validCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[83]].asString());
+        }
+    }
+    if(!pMasqueradingVector[84].empty() && pJson.isMember(pMasqueradingVector[84]))
+    {
+        dirtyFlag_[84] = true;
+        if(!pJson[pMasqueradingVector[84]].isNull())
+        {
+            validuser_=std::make_shared<std::string>(pJson[pMasqueradingVector[84]].asString());
+        }
+    }
+    if(!pMasqueradingVector[85].empty() && pJson.isMember(pMasqueradingVector[85]))
+    {
+        dirtyFlag_[85] = true;
+        if(!pJson[pMasqueradingVector[85]].isNull())
+        {
+            apsysCdctgptfsbxps_=std::make_shared<std::string>(pJson[pMasqueradingVector[85]].asString());
+        }
+    }
+    if(!pMasqueradingVector[86].empty() && pJson.isMember(pMasqueradingVector[86]))
+    {
+        dirtyFlag_[86] = true;
+        if(!pJson[pMasqueradingVector[86]].isNull())
+        {
+            apsysCdctgptfsdocs_=std::make_shared<std::string>(pJson[pMasqueradingVector[86]].asString());
+        }
+    }
+    if(!pMasqueradingVector[87].empty() && pJson.isMember(pMasqueradingVector[87]))
+    {
+        dirtyFlag_[87] = true;
+        if(!pJson[pMasqueradingVector[87]].isNull())
+        {
+            apsysIdents_=std::make_shared<std::string>(pJson[pMasqueradingVector[87]].asString());
+        }
+    }
+    if(!pMasqueradingVector[88].empty() && pJson.isMember(pMasqueradingVector[88]))
+    {
+        dirtyFlag_[88] = true;
+        if(!pJson[pMasqueradingVector[88]].isNull())
+        {
+            apsysCdsoumbolc_=std::make_shared<std::string>(pJson[pMasqueradingVector[88]].asString());
+        }
+    }
+    if(!pMasqueradingVector[89].empty() && pJson.isMember(pMasqueradingVector[89]))
+    {
+        dirtyFlag_[89] = true;
+        if(!pJson[pMasqueradingVector[89]].isNull())
+        {
+            apsysCdfacbolc_=std::make_shared<std::string>(pJson[pMasqueradingVector[89]].asString());
+        }
+    }
+    if(!pMasqueradingVector[90].empty() && pJson.isMember(pMasqueradingVector[90]))
+    {
+        dirtyFlag_[90] = true;
+        if(!pJson[pMasqueradingVector[90]].isNull())
+        {
+            apsysFlagtyptrfpolc_=std::make_shared<std::string>(pJson[pMasqueradingVector[90]].asString());
+        }
+    }
+    if(!pMasqueradingVector[91].empty() && pJson.isMember(pMasqueradingVector[91]))
+    {
+        dirtyFlag_[91] = true;
+        if(!pJson[pMasqueradingVector[91]].isNull())
+        {
+            apsysIdtrfpols_=std::make_shared<std::string>(pJson[pMasqueradingVector[91]].asString());
+        }
+    }
+    if(!pMasqueradingVector[92].empty() && pJson.isMember(pMasqueradingVector[92]))
+    {
+        dirtyFlag_[92] = true;
+        if(!pJson[pMasqueradingVector[92]].isNull())
+        {
+            apsysCdpctpartictitueutaxc_=std::make_shared<std::string>(pJson[pMasqueradingVector[92]].asString());
+        }
+    }
+    if(!pMasqueradingVector[93].empty() && pJson.isMember(pMasqueradingVector[93]))
+    {
+        dirtyFlag_[93] = true;
+        if(!pJson[pMasqueradingVector[93]].isNull())
+        {
+            apsysCdmotifclos_=std::make_shared<std::string>(pJson[pMasqueradingVector[93]].asString());
+        }
+    }
+    if(!pMasqueradingVector[94].empty() && pJson.isMember(pMasqueradingVector[94]))
+    {
+        dirtyFlag_[94] = true;
+        if(!pJson[pMasqueradingVector[94]].isNull())
+        {
+            encSalt_=std::make_shared<std::string>(pJson[pMasqueradingVector[94]].asString());
+        }
+    }
+    if(!pMasqueradingVector[95].empty() && pJson.isMember(pMasqueradingVector[95]))
+    {
+        dirtyFlag_[95] = true;
+        if(!pJson[pMasqueradingVector[95]].isNull())
+        {
+            bezeichnungEnc_=std::make_shared<std::string>(pJson[pMasqueradingVector[95]].asString());
+        }
+    }
+    if(!pMasqueradingVector[96].empty() && pJson.isMember(pMasqueradingVector[96]))
+    {
+        dirtyFlag_[96] = true;
+        if(!pJson[pMasqueradingVector[96]].isNull())
+        {
+            ktoeAmlProfilCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[96]].asString());
+        }
+    }
+    if(!pMasqueradingVector[97].empty() && pJson.isMember(pMasqueradingVector[97]))
+    {
+        dirtyFlag_[97] = true;
+        if(!pJson[pMasqueradingVector[97]].isNull())
+        {
+            apsysDevevals_=std::make_shared<std::string>(pJson[pMasqueradingVector[97]].asString());
+        }
+    }
+    if(!pMasqueradingVector[98].empty() && pJson.isMember(pMasqueradingVector[98]))
+    {
+        dirtyFlag_[98] = true;
+        if(!pJson[pMasqueradingVector[98]].isNull())
+        {
+            apsysCdrnvstmc_=std::make_shared<std::string>(pJson[pMasqueradingVector[98]].asString());
+        }
+    }
+    if(!pMasqueradingVector[99].empty() && pJson.isMember(pMasqueradingVector[99]))
+    {
+        dirtyFlag_[99] = true;
+        if(!pJson[pMasqueradingVector[99]].isNull())
+        {
+            apsysCdrglprlgc_=std::make_shared<std::string>(pJson[pMasqueradingVector[99]].asString());
+        }
+    }
+    if(!pMasqueradingVector[100].empty() && pJson.isMember(pMasqueradingVector[100]))
+    {
+        dirtyFlag_[100] = true;
+        if(!pJson[pMasqueradingVector[100]].isNull())
+        {
+            apsysCdctgptfcomagtcpts_=std::make_shared<std::string>(pJson[pMasqueradingVector[100]].asString());
+        }
+    }
+    if(!pMasqueradingVector[101].empty() && pJson.isMember(pMasqueradingVector[101]))
+    {
+        dirtyFlag_[101] = true;
+        if(!pJson[pMasqueradingVector[101]].isNull())
+        {
+            apsysCdctgptfroutords_=std::make_shared<std::string>(pJson[pMasqueradingVector[101]].asString());
+        }
+    }
+    if(!pMasqueradingVector[102].empty() && pJson.isMember(pMasqueradingVector[102]))
+    {
+        dirtyFlag_[102] = true;
+        if(!pJson[pMasqueradingVector[102]].isNull())
+        {
+            apsysCdctgptfgrecpts_=std::make_shared<std::string>(pJson[pMasqueradingVector[102]].asString());
+        }
+    }
+    if(!pMasqueradingVector[103].empty() && pJson.isMember(pMasqueradingVector[103]))
+    {
+        dirtyFlag_[103] = true;
+        if(!pJson[pMasqueradingVector[103]].isNull())
+        {
+            apsysCdctgptftrsftits_=std::make_shared<std::string>(pJson[pMasqueradingVector[103]].asString());
+        }
+    }
+    if(!pMasqueradingVector[104].empty() && pJson.isMember(pMasqueradingVector[104]))
+    {
+        dirtyFlag_[104] = true;
+        if(!pJson[pMasqueradingVector[104]].isNull())
+        {
+            apsysFlagexpsysexttaxi_=std::make_shared<std::string>(pJson[pMasqueradingVector[104]].asString());
+        }
+    }
+    if(!pMasqueradingVector[105].empty() && pJson.isMember(pMasqueradingVector[105]))
+    {
+        dirtyFlag_[105] = true;
+        if(!pJson[pMasqueradingVector[105]].isNull())
+        {
+            wbIstNichtZwingendCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[105]].asString());
+        }
+    }
+    if(!pMasqueradingVector[106].empty() && pJson.isMember(pMasqueradingVector[106]))
+    {
+        dirtyFlag_[106] = true;
+        if(!pJson[pMasqueradingVector[106]].isNull())
+        {
+            apsysCdbqerestc_=std::make_shared<std::string>(pJson[pMasqueradingVector[106]].asString());
+        }
+    }
+    if(!pMasqueradingVector[107].empty() && pJson.isMember(pMasqueradingVector[107]))
+    {
+        dirtyFlag_[107] = true;
+        if(!pJson[pMasqueradingVector[107]].isNull())
+        {
+            apsysCdctgptftypplacs_=std::make_shared<std::string>(pJson[pMasqueradingVector[107]].asString());
+        }
+    }
+    if(!pMasqueradingVector[108].empty() && pJson.isMember(pMasqueradingVector[108]))
+    {
+        dirtyFlag_[108] = true;
+        if(!pJson[pMasqueradingVector[108]].isNull())
+        {
+            apsysCdeangrmtcli1s_=std::make_shared<std::string>(pJson[pMasqueradingVector[108]].asString());
+        }
+    }
+    if(!pMasqueradingVector[109].empty() && pJson.isMember(pMasqueradingVector[109]))
+    {
+        dirtyFlag_[109] = true;
+        if(!pJson[pMasqueradingVector[109]].isNull())
+        {
+            apsysCdeangrmtcli2s_=std::make_shared<std::string>(pJson[pMasqueradingVector[109]].asString());
+        }
+    }
+    if(!pMasqueradingVector[110].empty() && pJson.isMember(pMasqueradingVector[110]))
+    {
+        dirtyFlag_[110] = true;
+        if(!pJson[pMasqueradingVector[110]].isNull())
+        {
+            apsysCdfatcatypc_=std::make_shared<std::string>(pJson[pMasqueradingVector[110]].asString());
+        }
+    }
+    if(!pMasqueradingVector[111].empty() && pJson.isMember(pMasqueradingVector[111]))
+    {
+        dirtyFlag_[111] = true;
+        if(!pJson[pMasqueradingVector[111]].isNull())
+        {
+            apsysIdfatcaclas_=std::make_shared<std::string>(pJson[pMasqueradingVector[111]].asString());
+        }
+    }
+    if(!pMasqueradingVector[112].empty() && pJson.isMember(pMasqueradingVector[112]))
+    {
+        dirtyFlag_[112] = true;
+        if(!pJson[pMasqueradingVector[112]].isNull())
+        {
+            apsysCdfatcastatcalccrmc_=std::make_shared<std::string>(pJson[pMasqueradingVector[112]].asString());
+        }
+    }
+    if(!pMasqueradingVector[113].empty() && pJson.isMember(pMasqueradingVector[113]))
+    {
+        dirtyFlag_[113] = true;
+        if(!pJson[pMasqueradingVector[113]].isNull())
+        {
+            apsysCdfatcastatc_=std::make_shared<std::string>(pJson[pMasqueradingVector[113]].asString());
+        }
+    }
+    if(!pMasqueradingVector[114].empty() && pJson.isMember(pMasqueradingVector[114]))
+    {
+        dirtyFlag_[114] = true;
+        if(!pJson[pMasqueradingVector[114]].isNull())
+        {
+            apsysCommentfatcastats_=std::make_shared<std::string>(pJson[pMasqueradingVector[114]].asString());
+        }
+    }
+    if(!pMasqueradingVector[115].empty() && pJson.isMember(pMasqueradingVector[115]))
+    {
+        dirtyFlag_[115] = true;
+        if(!pJson[pMasqueradingVector[115]].isNull())
+        {
+            apsysCdfatcamotifparts_=std::make_shared<std::string>(pJson[pMasqueradingVector[115]].asString());
+        }
+    }
+    if(!pMasqueradingVector[116].empty() && pJson.isMember(pMasqueradingVector[116]))
+    {
+        dirtyFlag_[116] = true;
+        if(!pJson[pMasqueradingVector[116]].isNull())
+        {
+            apsysCdfatcastatcalcglobc_=std::make_shared<std::string>(pJson[pMasqueradingVector[116]].asString());
+        }
+    }
+    if(!pMasqueradingVector[117].empty() && pJson.isMember(pMasqueradingVector[117]))
+    {
+        dirtyFlag_[117] = true;
+        if(!pJson[pMasqueradingVector[117]].isNull())
+        {
+            apsysCdfatcastatcalclocc_=std::make_shared<std::string>(pJson[pMasqueradingVector[117]].asString());
+        }
+    }
+    if(!pMasqueradingVector[118].empty() && pJson.isMember(pMasqueradingVector[118]))
+    {
+        dirtyFlag_[118] = true;
+        if(!pJson[pMasqueradingVector[118]].isNull())
+        {
+            apsysCdvalidstatc_=std::make_shared<std::string>(pJson[pMasqueradingVector[118]].asString());
+        }
+    }
+    if(!pMasqueradingVector[119].empty() && pJson.isMember(pMasqueradingVector[119]))
+    {
+        dirtyFlag_[119] = true;
+        if(!pJson[pMasqueradingVector[119]].isNull())
+        {
+            apsysUservalidfatcastats_=std::make_shared<std::string>(pJson[pMasqueradingVector[119]].asString());
+        }
+    }
+    if(!pMasqueradingVector[120].empty() && pJson.isMember(pMasqueradingVector[120]))
+    {
+        dirtyFlag_[120] = true;
+        if(!pJson[pMasqueradingVector[120]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[120]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtvalidfatcastatl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[121].empty() && pJson.isMember(pMasqueradingVector[121]))
+    {
+        dirtyFlag_[121] = true;
+        if(!pJson[pMasqueradingVector[121]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[121]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysHrvalidfatcastatl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[122].empty() && pJson.isMember(pMasqueradingVector[122]))
+    {
+        dirtyFlag_[122] = true;
+        if(!pJson[pMasqueradingVector[122]].isNull())
+        {
+            apsysCdctrnettc553c_=std::make_shared<std::string>(pJson[pMasqueradingVector[122]].asString());
+        }
+    }
+    if(!pMasqueradingVector[123].empty() && pJson.isMember(pMasqueradingVector[123]))
+    {
+        dirtyFlag_[123] = true;
+        if(!pJson[pMasqueradingVector[123]].isNull())
+        {
+            apsysFlagforceposostmanagi_=std::make_shared<std::string>(pJson[pMasqueradingVector[123]].asString());
+        }
+    }
+    if(!pMasqueradingVector[124].empty() && pJson.isMember(pMasqueradingVector[124]))
+    {
+        dirtyFlag_[124] = true;
+        if(!pJson[pMasqueradingVector[124]].isNull())
+        {
+            apsysPosostmanagc_=std::make_shared<std::string>(pJson[pMasqueradingVector[124]].asString());
+        }
+    }
+    if(!pMasqueradingVector[125].empty() && pJson.isMember(pMasqueradingVector[125]))
+    {
+        dirtyFlag_[125] = true;
+        if(!pJson[pMasqueradingVector[125]].isNull())
+        {
+            apsysCritereusfatcastatl_=std::make_shared<double>(pJson[pMasqueradingVector[125]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[126].empty() && pJson.isMember(pMasqueradingVector[126]))
+    {
+        dirtyFlag_[126] = true;
+        if(!pJson[pMasqueradingVector[126]].isNull())
+        {
+            apsysFlagsimsi_=std::make_shared<std::string>(pJson[pMasqueradingVector[126]].asString());
+        }
+    }
+    if(!pMasqueradingVector[127].empty() && pJson.isMember(pMasqueradingVector[127]))
+    {
+        dirtyFlag_[127] = true;
+        if(!pJson[pMasqueradingVector[127]].isNull())
+        {
+            nrOfBoInWhtStatement_=std::make_shared<double>(pJson[pMasqueradingVector[127]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[128].empty() && pJson.isMember(pMasqueradingVector[128]))
+    {
+        dirtyFlag_[128] = true;
+        if(!pJson[pMasqueradingVector[128]].isNull())
+        {
+            partnerWithUnlLiabilityCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[128]].asString());
+        }
+    }
+    if(!pMasqueradingVector[129].empty() && pJson.isMember(pMasqueradingVector[129]))
+    {
+        dirtyFlag_[129] = true;
+        if(!pJson[pMasqueradingVector[129]].isNull())
+        {
+            companyManagedByBoCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[129]].asString());
+        }
+    }
+    if(!pMasqueradingVector[130].empty() && pJson.isMember(pMasqueradingVector[130]))
+    {
+        dirtyFlag_[130] = true;
+        if(!pJson[pMasqueradingVector[130]].isNull())
+        {
+            isTrusteePhysicalCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[130]].asString());
+        }
+    }
+    if(!pMasqueradingVector[131].empty() && pJson.isMember(pMasqueradingVector[131]))
+    {
+        dirtyFlag_[131] = true;
+        if(!pJson[pMasqueradingVector[131]].isNull())
+        {
+            noTradingUsSecuritiesCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[131]].asString());
+        }
+    }
+    if(!pMasqueradingVector[132].empty() && pJson.isMember(pMasqueradingVector[132]))
+    {
+        dirtyFlag_[132] = true;
+        if(!pJson[pMasqueradingVector[132]].isNull())
+        {
+            portfolioSegrAccountCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[132]].asString());
+        }
+    }
+    if(!pMasqueradingVector[133].empty() && pJson.isMember(pMasqueradingVector[133]))
+    {
+        dirtyFlag_[133] = true;
+        if(!pJson[pMasqueradingVector[133]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[133]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                usWhtStartDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[134].empty() && pJson.isMember(pMasqueradingVector[134]))
+    {
+        dirtyFlag_[134] = true;
+        if(!pJson[pMasqueradingVector[134]].isNull())
+        {
+            apsysCdctgptfivstautos_=std::make_shared<std::string>(pJson[pMasqueradingVector[134]].asString());
+        }
+    }
+    if(!pMasqueradingVector[135].empty() && pJson.isMember(pMasqueradingVector[135]))
+    {
+        dirtyFlag_[135] = true;
+        if(!pJson[pMasqueradingVector[135]].isNull())
+        {
+            automatischeVerteilungCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[135]].asString());
+        }
+    }
+    if(!pMasqueradingVector[136].empty() && pJson.isMember(pMasqueradingVector[136]))
+    {
+        dirtyFlag_[136] = true;
+        if(!pJson[pMasqueradingVector[136]].isNull())
+        {
+            apsysCdtypreportqic_=std::make_shared<std::string>(pJson[pMasqueradingVector[136]].asString());
+        }
+    }
+    if(!pMasqueradingVector[137].empty() && pJson.isMember(pMasqueradingVector[137]))
+    {
+        dirtyFlag_[137] = true;
+        if(!pJson[pMasqueradingVector[137]].isNull())
+        {
+            apsysFlagirsnonactifi_=std::make_shared<std::string>(pJson[pMasqueradingVector[137]].asString());
+        }
+    }
+    if(!pMasqueradingVector[138].empty() && pJson.isMember(pMasqueradingVector[138]))
+    {
+        dirtyFlag_[138] = true;
+        if(!pJson[pMasqueradingVector[138]].isNull())
+        {
+            openingDocumentsProposedCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[138]].asString());
+        }
+    }
+    if(!pMasqueradingVector[139].empty() && pJson.isMember(pMasqueradingVector[139]))
+    {
+        dirtyFlag_[139] = true;
+        if(!pJson[pMasqueradingVector[139]].isNull())
+        {
+            apsysCdctgptfalgcpts_=std::make_shared<std::string>(pJson[pMasqueradingVector[139]].asString());
+        }
+    }
+    if(!pMasqueradingVector[140].empty() && pJson.isMember(pMasqueradingVector[140]))
+    {
+        dirtyFlag_[140] = true;
+        if(!pJson[pMasqueradingVector[140]].isNull())
+        {
+            apsysIdstrucforjurs_=std::make_shared<std::string>(pJson[pMasqueradingVector[140]].asString());
+        }
+    }
+    if(!pMasqueradingVector[141].empty() && pJson.isMember(pMasqueradingVector[141]))
+    {
+        dirtyFlag_[141] = true;
+        if(!pJson[pMasqueradingVector[141]].isNull())
+        {
+            apsysIdentforjurs_=std::make_shared<std::string>(pJson[pMasqueradingVector[141]].asString());
+        }
+    }
+    if(!pMasqueradingVector[142].empty() && pJson.isMember(pMasqueradingVector[142]))
+    {
+        dirtyFlag_[142] = true;
+        if(!pJson[pMasqueradingVector[142]].isNull())
+        {
+            fatcaBasketCd_=std::make_shared<double>(pJson[pMasqueradingVector[142]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[143].empty() && pJson.isMember(pMasqueradingVector[143]))
+    {
+        dirtyFlag_[143] = true;
+        if(!pJson[pMasqueradingVector[143]].isNull())
+        {
+            apsysCdmethcloc_=std::make_shared<std::string>(pJson[pMasqueradingVector[143]].asString());
+        }
+    }
+    if(!pMasqueradingVector[144].empty() && pJson.isMember(pMasqueradingVector[144]))
+    {
+        dirtyFlag_[144] = true;
+        if(!pJson[pMasqueradingVector[144]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[144]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtevalclol_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[145].empty() && pJson.isMember(pMasqueradingVector[145]))
+    {
+        dirtyFlag_[145] = true;
+        if(!pJson[pMasqueradingVector[145]].isNull())
+        {
+            aeoiExemptionCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[145]].asString());
+        }
+    }
+    if(!pMasqueradingVector[146].empty() && pJson.isMember(pMasqueradingVector[146]))
+    {
+        dirtyFlag_[146] = true;
+        if(!pJson[pMasqueradingVector[146]].isNull())
+        {
+            aeoiSubExemptionCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[146]].asString());
+        }
+    }
+    if(!pMasqueradingVector[147].empty() && pJson.isMember(pMasqueradingVector[147]))
+    {
+        dirtyFlag_[147] = true;
+        if(!pJson[pMasqueradingVector[147]].isNull())
+        {
+            undocumentedAccountCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[147]].asString());
+        }
+    }
+    if(!pMasqueradingVector[148].empty() && pJson.isMember(pMasqueradingVector[148]))
+    {
+        dirtyFlag_[148] = true;
+        if(!pJson[pMasqueradingVector[148]].isNull())
+        {
+            dormantAccountCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[148]].asString());
+        }
+    }
+    if(!pMasqueradingVector[149].empty() && pJson.isMember(pMasqueradingVector[149]))
+    {
+        dirtyFlag_[149] = true;
+        if(!pJson[pMasqueradingVector[149]].isNull())
+        {
+            aeoiConsistencyStatusCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[149]].asString());
+        }
+    }
+    if(!pMasqueradingVector[150].empty() && pJson.isMember(pMasqueradingVector[150]))
+    {
+        dirtyFlag_[150] = true;
+        if(!pJson[pMasqueradingVector[150]].isNull())
+        {
+            aeoiFinalStatusCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[150]].asString());
+        }
+    }
+    if(!pMasqueradingVector[151].empty() && pJson.isMember(pMasqueradingVector[151]))
+    {
+        dirtyFlag_[151] = true;
+        if(!pJson[pMasqueradingVector[151]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[151]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                aeoiReviewDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[152].empty() && pJson.isMember(pMasqueradingVector[152]))
+    {
+        dirtyFlag_[152] = true;
+        if(!pJson[pMasqueradingVector[152]].isNull())
+        {
+            apsysCdmifidexemptc_=std::make_shared<std::string>(pJson[pMasqueradingVector[152]].asString());
+        }
+    }
+    if(!pMasqueradingVector[153].empty() && pJson.isMember(pMasqueradingVector[153]))
+    {
+        dirtyFlag_[153] = true;
+        if(!pJson[pMasqueradingVector[153]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[153]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtdebmifidl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[154].empty() && pJson.isMember(pMasqueradingVector[154]))
+    {
+        dirtyFlag_[154] = true;
+        if(!pJson[pMasqueradingVector[154]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[154]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                openedInApsysDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[155].empty() && pJson.isMember(pMasqueradingVector[155]))
+    {
+        dirtyFlag_[155] = true;
+        if(!pJson[pMasqueradingVector[155]].isNull())
+        {
+            apsysFlagdeldatapersi_=std::make_shared<std::string>(pJson[pMasqueradingVector[155]].asString());
+        }
+    }
+    if(!pMasqueradingVector[156].empty() && pJson.isMember(pMasqueradingVector[156]))
+    {
+        dirtyFlag_[156] = true;
+        if(!pJson[pMasqueradingVector[156]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[156]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtwaitdeldatapersl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[157].empty() && pJson.isMember(pMasqueradingVector[157]))
+    {
+        dirtyFlag_[157] = true;
+        if(!pJson[pMasqueradingVector[157]].isNull())
+        {
+            apsysCdptfseldgsc_=std::make_shared<std::string>(pJson[pMasqueradingVector[157]].asString());
+        }
+    }
+    if(!pMasqueradingVector[158].empty() && pJson.isMember(pMasqueradingVector[158]))
+    {
+        dirtyFlag_[158] = true;
+        if(!pJson[pMasqueradingVector[158]].isNull())
+        {
+            apsysCdmotifpartdgss_=std::make_shared<std::string>(pJson[pMasqueradingVector[158]].asString());
+        }
+    }
+    if(!pMasqueradingVector[159].empty() && pJson.isMember(pMasqueradingVector[159]))
+    {
+        dirtyFlag_[159] = true;
+        if(!pJson[pMasqueradingVector[159]].isNull())
+        {
+            eamCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[159]].asString());
+        }
+    }
+    if(!pMasqueradingVector[160].empty() && pJson.isMember(pMasqueradingVector[160]))
+    {
+        dirtyFlag_[160] = true;
+        if(!pJson[pMasqueradingVector[160]].isNull())
+        {
+            retentionOnHold_=std::make_shared<std::string>(pJson[pMasqueradingVector[160]].asString());
+        }
+    }
+    if(!pMasqueradingVector[161].empty() && pJson.isMember(pMasqueradingVector[161]))
+    {
+        dirtyFlag_[161] = true;
+        if(!pJson[pMasqueradingVector[161]].isNull())
+        {
+            logicalErasure_=std::make_shared<std::string>(pJson[pMasqueradingVector[161]].asString());
+        }
+    }
+    if(!pMasqueradingVector[162].empty() && pJson.isMember(pMasqueradingVector[162]))
+    {
+        dirtyFlag_[162] = true;
+        if(!pJson[pMasqueradingVector[162]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[162]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                retentionOnHoldDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[163].empty() && pJson.isMember(pMasqueradingVector[163]))
+    {
+        dirtyFlag_[163] = true;
+        if(!pJson[pMasqueradingVector[163]].isNull())
+        {
+            retentionOnHoldReason_=std::make_shared<std::string>(pJson[pMasqueradingVector[163]].asString());
+        }
+    }
+    if(!pMasqueradingVector[164].empty() && pJson.isMember(pMasqueradingVector[164]))
+    {
+        dirtyFlag_[164] = true;
+        if(!pJson[pMasqueradingVector[164]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[164]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                logicalErasureDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[165].empty() && pJson.isMember(pMasqueradingVector[165]))
+    {
+        dirtyFlag_[165] = true;
+        if(!pJson[pMasqueradingVector[165]].isNull())
+        {
+            logicalErasureReason_=std::make_shared<std::string>(pJson[pMasqueradingVector[165]].asString());
         }
     }
 }
 
 Portfolio::Portfolio(const Json::Value &pJson) noexcept(false)
 {
-    if(pJson.isMember("porfolio_id"))
+    if(pJson.isMember("KUNDENID"))
     {
         dirtyFlag_[0]=true;
-        if(!pJson["porfolio_id"].isNull())
+        if(!pJson["KUNDENID"].isNull())
         {
-            porfolioId_=std::make_shared<int32_t>((int32_t)pJson["porfolio_id"].asInt64());
+            kundenid_=std::make_shared<double>(pJson["KUNDENID"].asDouble());
         }
     }
-    if(pJson.isMember("porfolio_name"))
+    if(pJson.isMember("PORTFOLIONO"))
     {
         dirtyFlag_[1]=true;
-        if(!pJson["porfolio_name"].isNull())
+        if(!pJson["PORTFOLIONO"].isNull())
         {
-            porfolioName_=std::make_shared<std::string>(pJson["porfolio_name"].asString());
+            portfoliono_=std::make_shared<double>(pJson["PORTFOLIONO"].asDouble());
         }
     }
-    if(pJson.isMember("date_Creation"))
+    if(pJson.isMember("BEZEICHNUNG"))
     {
         dirtyFlag_[2]=true;
-        if(!pJson["date_Creation"].isNull())
+        if(!pJson["BEZEICHNUNG"].isNull())
         {
-            auto daysStr = pJson["date_Creation"].asString();
-            struct tm stm;
-            memset(&stm,0,sizeof(stm));
-            strptime(daysStr.c_str(),"%Y-%m-%d",&stm);
-            time_t t = mktime(&stm);
-            dateCreation_=std::make_shared<::trantor::Date>(t*1000000);
+            bezeichnung_=std::make_shared<std::string>(pJson["BEZEICHNUNG"].asString());
         }
     }
-    if(pJson.isMember("open_closed"))
+    if(pJson.isMember("MANAGEMENTTYP_CD"))
     {
         dirtyFlag_[3]=true;
-        if(!pJson["open_closed"].isNull())
+        if(!pJson["MANAGEMENTTYP_CD"].isNull())
         {
-            openClosed_=std::make_shared<int32_t>((int32_t)pJson["open_closed"].asInt64());
+            managementtypCd_=std::make_shared<std::string>(pJson["MANAGEMENTTYP_CD"].asString());
+        }
+    }
+    if(pJson.isMember("MANAGER1_CD"))
+    {
+        dirtyFlag_[4]=true;
+        if(!pJson["MANAGER1_CD"].isNull())
+        {
+            manager1Cd_=std::make_shared<std::string>(pJson["MANAGER1_CD"].asString());
+        }
+    }
+    if(pJson.isMember("MANAGER2_CD"))
+    {
+        dirtyFlag_[5]=true;
+        if(!pJson["MANAGER2_CD"].isNull())
+        {
+            manager2Cd_=std::make_shared<std::string>(pJson["MANAGER2_CD"].asString());
+        }
+    }
+    if(pJson.isMember("MANAGER3_CD"))
+    {
+        dirtyFlag_[6]=true;
+        if(!pJson["MANAGER3_CD"].isNull())
+        {
+            manager3Cd_=std::make_shared<std::string>(pJson["MANAGER3_CD"].asString());
+        }
+    }
+    if(pJson.isMember("MANAGER4_CD"))
+    {
+        dirtyFlag_[7]=true;
+        if(!pJson["MANAGER4_CD"].isNull())
+        {
+            manager4Cd_=std::make_shared<std::string>(pJson["MANAGER4_CD"].asString());
+        }
+    }
+    if(pJson.isMember("MANAGER5_CD"))
+    {
+        dirtyFlag_[8]=true;
+        if(!pJson["MANAGER5_CD"].isNull())
+        {
+            manager5Cd_=std::make_shared<std::string>(pJson["MANAGER5_CD"].asString());
+        }
+    }
+    if(pJson.isMember("VERMITTLER_CD"))
+    {
+        dirtyFlag_[9]=true;
+        if(!pJson["VERMITTLER_CD"].isNull())
+        {
+            vermittlerCd_=std::make_shared<std::string>(pJson["VERMITTLER_CD"].asString());
+        }
+    }
+    if(pJson.isMember("INFOVOLLMACHT"))
+    {
+        dirtyFlag_[10]=true;
+        if(!pJson["INFOVOLLMACHT"].isNull())
+        {
+            infovollmacht_=std::make_shared<std::string>(pJson["INFOVOLLMACHT"].asString());
+        }
+    }
+    if(pJson.isMember("KONTAKT"))
+    {
+        dirtyFlag_[11]=true;
+        if(!pJson["KONTAKT"].isNull())
+        {
+            kontakt_=std::make_shared<std::string>(pJson["KONTAKT"].asString());
+        }
+    }
+    if(pJson.isMember("ERTRAEGNISAUF_CD"))
+    {
+        dirtyFlag_[12]=true;
+        if(!pJson["ERTRAEGNISAUF_CD"].isNull())
+        {
+            ertraegnisaufCd_=std::make_shared<std::string>(pJson["ERTRAEGNISAUF_CD"].asString());
+        }
+    }
+    if(pJson.isMember("WAEHRUNGS_CD"))
+    {
+        dirtyFlag_[13]=true;
+        if(!pJson["WAEHRUNGS_CD"].isNull())
+        {
+            waehrungsCd_=std::make_shared<std::string>(pJson["WAEHRUNGS_CD"].asString());
+        }
+    }
+    if(pJson.isMember("BELEGSATZ_CD"))
+    {
+        dirtyFlag_[14]=true;
+        if(!pJson["BELEGSATZ_CD"].isNull())
+        {
+            belegsatzCd_=std::make_shared<std::string>(pJson["BELEGSATZ_CD"].asString());
+        }
+    }
+    if(pJson.isMember("LOESCH_CD"))
+    {
+        dirtyFlag_[15]=true;
+        if(!pJson["LOESCH_CD"].isNull())
+        {
+            loeschCd_=std::make_shared<std::string>(pJson["LOESCH_CD"].asString());
+        }
+    }
+    if(pJson.isMember("LOESCHDATUM"))
+    {
+        dirtyFlag_[16]=true;
+        if(!pJson["LOESCHDATUM"].isNull())
+        {
+            auto timeStr = pJson["LOESCHDATUM"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                loeschdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("CRTDATUM"))
+    {
+        dirtyFlag_[17]=true;
+        if(!pJson["CRTDATUM"].isNull())
+        {
+            auto timeStr = pJson["CRTDATUM"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                crtdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("CRTUSER"))
+    {
+        dirtyFlag_[18]=true;
+        if(!pJson["CRTUSER"].isNull())
+        {
+            crtuser_=std::make_shared<std::string>(pJson["CRTUSER"].asString());
+        }
+    }
+    if(pJson.isMember("MUTDATUM"))
+    {
+        dirtyFlag_[19]=true;
+        if(!pJson["MUTDATUM"].isNull())
+        {
+            auto timeStr = pJson["MUTDATUM"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                mutdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("MUTUSER"))
+    {
+        dirtyFlag_[20]=true;
+        if(!pJson["MUTUSER"].isNull())
+        {
+            mutuser_=std::make_shared<std::string>(pJson["MUTUSER"].asString());
+        }
+    }
+    if(pJson.isMember("MISDOMIZIL_CD"))
+    {
+        dirtyFlag_[21]=true;
+        if(!pJson["MISDOMIZIL_CD"].isNull())
+        {
+            misdomizilCd_=std::make_shared<std::string>(pJson["MISDOMIZIL_CD"].asString());
+        }
+    }
+    if(pJson.isMember("ANLAGESTRATEGIE_CD"))
+    {
+        dirtyFlag_[22]=true;
+        if(!pJson["ANLAGESTRATEGIE_CD"].isNull())
+        {
+            anlagestrategieCd_=std::make_shared<std::string>(pJson["ANLAGESTRATEGIE_CD"].asString());
+        }
+    }
+    if(pJson.isMember("USWBASKET_CD"))
+    {
+        dirtyFlag_[23]=true;
+        if(!pJson["USWBASKET_CD"].isNull())
+        {
+            uswbasketCd_=std::make_shared<std::string>(pJson["USWBASKET_CD"].asString());
+        }
+    }
+    if(pJson.isMember("VERSANDHAEUFIG_CD"))
+    {
+        dirtyFlag_[24]=true;
+        if(!pJson["VERSANDHAEUFIG_CD"].isNull())
+        {
+            versandhaeufigCd_=std::make_shared<std::string>(pJson["VERSANDHAEUFIG_CD"].asString());
+        }
+    }
+    if(pJson.isMember("RUBRIK"))
+    {
+        dirtyFlag_[25]=true;
+        if(!pJson["RUBRIK"].isNull())
+        {
+            rubrik_=std::make_shared<std::string>(pJson["RUBRIK"].asString());
+        }
+    }
+    if(pJson.isMember("VERWALTUNGSMODUS_CD"))
+    {
+        dirtyFlag_[26]=true;
+        if(!pJson["VERWALTUNGSMODUS_CD"].isNull())
+        {
+            verwaltungsmodusCd_=std::make_shared<std::string>(pJson["VERWALTUNGSMODUS_CD"].asString());
+        }
+    }
+    if(pJson.isMember("KUNDELETZTERBESUCH"))
+    {
+        dirtyFlag_[27]=true;
+        if(!pJson["KUNDELETZTERBESUCH"].isNull())
+        {
+            auto timeStr = pJson["KUNDELETZTERBESUCH"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                kundeletzterbesuch_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("ANTRAGSORT"))
+    {
+        dirtyFlag_[28]=true;
+        if(!pJson["ANTRAGSORT"].isNull())
+        {
+            antragsort_=std::make_shared<std::string>(pJson["ANTRAGSORT"].asString());
+        }
+    }
+    if(pJson.isMember("ANTRAGSDATUM"))
+    {
+        dirtyFlag_[29]=true;
+        if(!pJson["ANTRAGSDATUM"].isNull())
+        {
+            auto timeStr = pJson["ANTRAGSDATUM"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                antragsdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("ANDEREPOSTADRESSE_CD"))
+    {
+        dirtyFlag_[30]=true;
+        if(!pJson["ANDEREPOSTADRESSE_CD"].isNull())
+        {
+            anderepostadresseCd_=std::make_shared<std::string>(pJson["ANDEREPOSTADRESSE_CD"].asString());
+        }
+    }
+    if(pJson.isMember("BANKLAGERND_CD"))
+    {
+        dirtyFlag_[31]=true;
+        if(!pJson["BANKLAGERND_CD"].isNull())
+        {
+            banklagerndCd_=std::make_shared<std::string>(pJson["BANKLAGERND_CD"].asString());
+        }
+    }
+    if(pJson.isMember("SPEZIALINSTRUKTION"))
+    {
+        dirtyFlag_[32]=true;
+        if(!pJson["SPEZIALINSTRUKTION"].isNull())
+        {
+            spezialinstruktion_=std::make_shared<std::string>(pJson["SPEZIALINSTRUKTION"].asString());
+        }
+    }
+    if(pJson.isMember("GELDVONKONTOINHABER_CD"))
+    {
+        dirtyFlag_[33]=true;
+        if(!pJson["GELDVONKONTOINHABER_CD"].isNull())
+        {
+            geldvonkontoinhaberCd_=std::make_shared<std::string>(pJson["GELDVONKONTOINHABER_CD"].asString());
+        }
+    }
+    if(pJson.isMember("MANUALOPEN_CD"))
+    {
+        dirtyFlag_[34]=true;
+        if(!pJson["MANUALOPEN_CD"].isNull())
+        {
+            manualopenCd_=std::make_shared<std::string>(pJson["MANUALOPEN_CD"].asString());
+        }
+    }
+    if(pJson.isMember("KONTONUMMER1"))
+    {
+        dirtyFlag_[35]=true;
+        if(!pJson["KONTONUMMER1"].isNull())
+        {
+            kontonummer1_=std::make_shared<std::string>(pJson["KONTONUMMER1"].asString());
+        }
+    }
+    if(pJson.isMember("KONTONUMMER2"))
+    {
+        dirtyFlag_[36]=true;
+        if(!pJson["KONTONUMMER2"].isNull())
+        {
+            kontonummer2_=std::make_shared<std::string>(pJson["KONTONUMMER2"].asString());
+        }
+    }
+    if(pJson.isMember("KONTONUMMER3"))
+    {
+        dirtyFlag_[37]=true;
+        if(!pJson["KONTONUMMER3"].isNull())
+        {
+            kontonummer3_=std::make_shared<std::string>(pJson["KONTONUMMER3"].asString());
+        }
+    }
+    if(pJson.isMember("FILIAL_CD"))
+    {
+        dirtyFlag_[38]=true;
+        if(!pJson["FILIAL_CD"].isNull())
+        {
+            filialCd_=std::make_shared<std::string>(pJson["FILIAL_CD"].asString());
+        }
+    }
+    if(pJson.isMember("RUBRIK1"))
+    {
+        dirtyFlag_[39]=true;
+        if(!pJson["RUBRIK1"].isNull())
+        {
+            rubrik1_=std::make_shared<std::string>(pJson["RUBRIK1"].asString());
+        }
+    }
+    if(pJson.isMember("RUBRIK2"))
+    {
+        dirtyFlag_[40]=true;
+        if(!pJson["RUBRIK2"].isNull())
+        {
+            rubrik2_=std::make_shared<std::string>(pJson["RUBRIK2"].asString());
+        }
+    }
+    if(pJson.isMember("RUBRIK3"))
+    {
+        dirtyFlag_[41]=true;
+        if(!pJson["RUBRIK3"].isNull())
+        {
+            rubrik3_=std::make_shared<std::string>(pJson["RUBRIK3"].asString());
+        }
+    }
+    if(pJson.isMember("ONLINE_CD"))
+    {
+        dirtyFlag_[42]=true;
+        if(!pJson["ONLINE_CD"].isNull())
+        {
+            onlineCd_=std::make_shared<double>(pJson["ONLINE_CD"].asDouble());
+        }
+    }
+    if(pJson.isMember("PORTFOLIOTYP_CD"))
+    {
+        dirtyFlag_[43]=true;
+        if(!pJson["PORTFOLIOTYP_CD"].isNull())
+        {
+            portfoliotypCd_=std::make_shared<std::string>(pJson["PORTFOLIOTYP_CD"].asString());
+        }
+    }
+    if(pJson.isMember("CDPARTC"))
+    {
+        dirtyFlag_[44]=true;
+        if(!pJson["CDPARTC"].isNull())
+        {
+            cdpartc_=std::make_shared<std::string>(pJson["CDPARTC"].asString());
+        }
+    }
+    if(pJson.isMember("PO_EU_TAX_PROZENT"))
+    {
+        dirtyFlag_[45]=true;
+        if(!pJson["PO_EU_TAX_PROZENT"].isNull())
+        {
+            poEuTaxProzent_=std::make_shared<float>(pJson["PO_EU_TAX_PROZENT"].asFloat());
+        }
+     }
+    if(pJson.isMember("APSYS_STATUS_OPEC"))
+    {
+        dirtyFlag_[46]=true;
+        if(!pJson["APSYS_STATUS_OPEC"].isNull())
+        {
+            apsysStatusOpec_=std::make_shared<std::string>(pJson["APSYS_STATUS_OPEC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_ERRI"))
+    {
+        dirtyFlag_[47]=true;
+        if(!pJson["APSYS_ERRI"].isNull())
+        {
+            apsysErri_=std::make_shared<double>(pJson["APSYS_ERRI"].asDouble());
+        }
+    }
+    if(pJson.isMember("APSYS_SHNAS"))
+    {
+        dirtyFlag_[48]=true;
+        if(!pJson["APSYS_SHNAS"].isNull())
+        {
+            apsysShnas_=std::make_shared<std::string>(pJson["APSYS_SHNAS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_TYPMDCS"))
+    {
+        dirtyFlag_[49]=true;
+        if(!pJson["APSYS_TYPMDCS"].isNull())
+        {
+            apsysTypmdcs_=std::make_shared<std::string>(pJson["APSYS_TYPMDCS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_INTILGS"))
+    {
+        dirtyFlag_[50]=true;
+        if(!pJson["APSYS_INTILGS"].isNull())
+        {
+            apsysIntilgs_=std::make_shared<std::string>(pJson["APSYS_INTILGS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_SHLIBPTFS"))
+    {
+        dirtyFlag_[51]=true;
+        if(!pJson["APSYS_SHLIBPTFS"].isNull())
+        {
+            apsysShlibptfs_=std::make_shared<std::string>(pJson["APSYS_SHLIBPTFS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDSTATDUSC"))
+    {
+        dirtyFlag_[52]=true;
+        if(!pJson["APSYS_CDSTATDUSC"].isNull())
+        {
+            apsysCdstatdusc_=std::make_shared<std::string>(pJson["APSYS_CDSTATDUSC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_DTDEBPARTL"))
+    {
+        dirtyFlag_[53]=true;
+        if(!pJson["APSYS_DTDEBPARTL"].isNull())
+        {
+            auto timeStr = pJson["APSYS_DTDEBPARTL"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtdebpartl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_DTFINPARTL"))
+    {
+        dirtyFlag_[54]=true;
+        if(!pJson["APSYS_DTFINPARTL"].isNull())
+        {
+            auto timeStr = pJson["APSYS_DTFINPARTL"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtfinpartl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_IDSTRUCS"))
+    {
+        dirtyFlag_[55]=true;
+        if(!pJson["APSYS_IDSTRUCS"].isNull())
+        {
+            apsysIdstrucs_=std::make_shared<std::string>(pJson["APSYS_IDSTRUCS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDPERMI"))
+    {
+        dirtyFlag_[56]=true;
+        if(!pJson["APSYS_CDPERMI"].isNull())
+        {
+            apsysCdpermi_=std::make_shared<double>(pJson["APSYS_CDPERMI"].asDouble());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFINTS"))
+    {
+        dirtyFlag_[57]=true;
+        if(!pJson["APSYS_CDCTGPTFINTS"].isNull())
+        {
+            apsysCdctgptfints_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFINTS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSTES"))
+    {
+        dirtyFlag_[58]=true;
+        if(!pJson["APSYS_CDCTGPTFSTES"].isNull())
+        {
+            apsysCdctgptfstes_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFSTES"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSTMS"))
+    {
+        dirtyFlag_[59]=true;
+        if(!pJson["APSYS_CDCTGPTFSTMS"].isNull())
+        {
+            apsysCdctgptfstms_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFSTMS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFMAFS"))
+    {
+        dirtyFlag_[60]=true;
+        if(!pJson["APSYS_CDCTGPTFMAFS"].isNull())
+        {
+            apsysCdctgptfmafs_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFMAFS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFRISKS"))
+    {
+        dirtyFlag_[61]=true;
+        if(!pJson["APSYS_CDCTGPTFRISKS"].isNull())
+        {
+            apsysCdctgptfrisks_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFRISKS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFCOUS"))
+    {
+        dirtyFlag_[62]=true;
+        if(!pJson["APSYS_CDCTGPTFCOUS"].isNull())
+        {
+            apsysCdctgptfcous_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFCOUS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTRCS"))
+    {
+        dirtyFlag_[63]=true;
+        if(!pJson["APSYS_CDCTGPTFTRCS"].isNull())
+        {
+            apsysCdctgptftrcs_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFTRCS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSTEBRUTNETS"))
+    {
+        dirtyFlag_[64]=true;
+        if(!pJson["APSYS_CDCTGPTFSTEBRUTNETS"].isNull())
+        {
+            apsysCdctgptfstebrutnets_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFSTEBRUTNETS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_FLAGIRSREPPARTC"))
+    {
+        dirtyFlag_[65]=true;
+        if(!pJson["APSYS_FLAGIRSREPPARTC"].isNull())
+        {
+            apsysFlagirsreppartc_=std::make_shared<std::string>(pJson["APSYS_FLAGIRSREPPARTC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTAXINTS"))
+    {
+        dirtyFlag_[66]=true;
+        if(!pJson["APSYS_CDCTGPTFTAXINTS"].isNull())
+        {
+            apsysCdctgptftaxints_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFTAXINTS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_IDPOCS"))
+    {
+        dirtyFlag_[67]=true;
+        if(!pJson["APSYS_IDPOCS"].isNull())
+        {
+            apsysIdpocs_=std::make_shared<std::string>(pJson["APSYS_IDPOCS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_INFO"))
+    {
+        dirtyFlag_[68]=true;
+        if(!pJson["APSYS_INFO"].isNull())
+        {
+            apsysInfo_=std::make_shared<std::string>(pJson["APSYS_INFO"].asString());
+        }
+    }
+    if(pJson.isMember("NETTOVERMOEGEN_CHF"))
+    {
+        dirtyFlag_[69]=true;
+        if(!pJson["NETTOVERMOEGEN_CHF"].isNull())
+        {
+            nettovermoegenChf_=std::make_shared<std::string>(pJson["NETTOVERMOEGEN_CHF"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_INTISHS"))
+    {
+        dirtyFlag_[70]=true;
+        if(!pJson["APSYS_INTISHS"].isNull())
+        {
+            apsysIntishs_=std::make_shared<std::string>(pJson["APSYS_INTISHS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_IDPERSL"))
+    {
+        dirtyFlag_[71]=true;
+        if(!pJson["APSYS_IDPERSL"].isNull())
+        {
+            apsysIdpersl_=std::make_shared<double>(pJson["APSYS_IDPERSL"].asDouble());
+        }
+    }
+    if(pJson.isMember("APSYS_CDMOTIFPARTS"))
+    {
+        dirtyFlag_[72]=true;
+        if(!pJson["APSYS_CDMOTIFPARTS"].isNull())
+        {
+            apsysCdmotifparts_=std::make_shared<std::string>(pJson["APSYS_CDMOTIFPARTS"].asString());
+        }
+    }
+    if(pJson.isMember("IN_APSYS_TEMP_ENTSP_USERID"))
+    {
+        dirtyFlag_[73]=true;
+        if(!pJson["IN_APSYS_TEMP_ENTSP_USERID"].isNull())
+        {
+            inApsysTempEntspUserid_=std::make_shared<std::string>(pJson["IN_APSYS_TEMP_ENTSP_USERID"].asString());
+        }
+    }
+    if(pJson.isMember("IN_APSYS_TEMP_ENTSP_DATUM"))
+    {
+        dirtyFlag_[74]=true;
+        if(!pJson["IN_APSYS_TEMP_ENTSP_DATUM"].isNull())
+        {
+            auto timeStr = pJson["IN_APSYS_TEMP_ENTSP_DATUM"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                inApsysTempEntspDatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("IN_APSYS_TEMP_ENTSPERREN_CD"))
+    {
+        dirtyFlag_[75]=true;
+        if(!pJson["IN_APSYS_TEMP_ENTSPERREN_CD"].isNull())
+        {
+            inApsysTempEntsperrenCd_=std::make_shared<std::string>(pJson["IN_APSYS_TEMP_ENTSPERREN_CD"].asString());
+        }
+    }
+    if(pJson.isMember("KUNDENKATEGORIE_CD"))
+    {
+        dirtyFlag_[76]=true;
+        if(!pJson["KUNDENKATEGORIE_CD"].isNull())
+        {
+            kundenkategorieCd_=std::make_shared<double>(pJson["KUNDENKATEGORIE_CD"].asDouble());
+        }
+    }
+    if(pJson.isMember("GEMEINSCHAFTSKONTO_CD"))
+    {
+        dirtyFlag_[77]=true;
+        if(!pJson["GEMEINSCHAFTSKONTO_CD"].isNull())
+        {
+            gemeinschaftskontoCd_=std::make_shared<std::string>(pJson["GEMEINSCHAFTSKONTO_CD"].asString());
+        }
+    }
+    if(pJson.isMember("DRITTE_SAEULE_CD"))
+    {
+        dirtyFlag_[78]=true;
+        if(!pJson["DRITTE_SAEULE_CD"].isNull())
+        {
+            dritteSaeuleCd_=std::make_shared<std::string>(pJson["DRITTE_SAEULE_CD"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_TYPPTFS"))
+    {
+        dirtyFlag_[79]=true;
+        if(!pJson["APSYS_TYPPTFS"].isNull())
+        {
+            apsysTypptfs_=std::make_shared<std::string>(pJson["APSYS_TYPPTFS"].asString());
+        }
+    }
+    if(pJson.isMember("AUTO_EU_TAX_PERCENTAGE"))
+    {
+        dirtyFlag_[80]=true;
+        if(!pJson["AUTO_EU_TAX_PERCENTAGE"].isNull())
+        {
+            autoEuTaxPercentage_=std::make_shared<std::string>(pJson["AUTO_EU_TAX_PERCENTAGE"].asString());
+        }
+    }
+    if(pJson.isMember("AKTID"))
+    {
+        dirtyFlag_[81]=true;
+        if(!pJson["AKTID"].isNull())
+        {
+            aktid_=std::make_shared<double>(pJson["AKTID"].asDouble());
+        }
+    }
+    if(pJson.isMember("VALIDID"))
+    {
+        dirtyFlag_[82]=true;
+        if(!pJson["VALIDID"].isNull())
+        {
+            validid_=std::make_shared<double>(pJson["VALIDID"].asDouble());
+        }
+    }
+    if(pJson.isMember("VALID_CD"))
+    {
+        dirtyFlag_[83]=true;
+        if(!pJson["VALID_CD"].isNull())
+        {
+            validCd_=std::make_shared<std::string>(pJson["VALID_CD"].asString());
+        }
+    }
+    if(pJson.isMember("VALIDUSER"))
+    {
+        dirtyFlag_[84]=true;
+        if(!pJson["VALIDUSER"].isNull())
+        {
+            validuser_=std::make_shared<std::string>(pJson["VALIDUSER"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSBXPS"))
+    {
+        dirtyFlag_[85]=true;
+        if(!pJson["APSYS_CDCTGPTFSBXPS"].isNull())
+        {
+            apsysCdctgptfsbxps_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFSBXPS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSDOCS"))
+    {
+        dirtyFlag_[86]=true;
+        if(!pJson["APSYS_CDCTGPTFSDOCS"].isNull())
+        {
+            apsysCdctgptfsdocs_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFSDOCS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_IDENTS"))
+    {
+        dirtyFlag_[87]=true;
+        if(!pJson["APSYS_IDENTS"].isNull())
+        {
+            apsysIdents_=std::make_shared<std::string>(pJson["APSYS_IDENTS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDSOUMBOLC"))
+    {
+        dirtyFlag_[88]=true;
+        if(!pJson["APSYS_CDSOUMBOLC"].isNull())
+        {
+            apsysCdsoumbolc_=std::make_shared<std::string>(pJson["APSYS_CDSOUMBOLC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDFACBOLC"))
+    {
+        dirtyFlag_[89]=true;
+        if(!pJson["APSYS_CDFACBOLC"].isNull())
+        {
+            apsysCdfacbolc_=std::make_shared<std::string>(pJson["APSYS_CDFACBOLC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_FLAGTYPTRFPOLC"))
+    {
+        dirtyFlag_[90]=true;
+        if(!pJson["APSYS_FLAGTYPTRFPOLC"].isNull())
+        {
+            apsysFlagtyptrfpolc_=std::make_shared<std::string>(pJson["APSYS_FLAGTYPTRFPOLC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_IDTRFPOLS"))
+    {
+        dirtyFlag_[91]=true;
+        if(!pJson["APSYS_IDTRFPOLS"].isNull())
+        {
+            apsysIdtrfpols_=std::make_shared<std::string>(pJson["APSYS_IDTRFPOLS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDPCTPARTICTITUEUTAXC"))
+    {
+        dirtyFlag_[92]=true;
+        if(!pJson["APSYS_CDPCTPARTICTITUEUTAXC"].isNull())
+        {
+            apsysCdpctpartictitueutaxc_=std::make_shared<std::string>(pJson["APSYS_CDPCTPARTICTITUEUTAXC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDMOTIFCLOS"))
+    {
+        dirtyFlag_[93]=true;
+        if(!pJson["APSYS_CDMOTIFCLOS"].isNull())
+        {
+            apsysCdmotifclos_=std::make_shared<std::string>(pJson["APSYS_CDMOTIFCLOS"].asString());
+        }
+    }
+    if(pJson.isMember("ENC_SALT"))
+    {
+        dirtyFlag_[94]=true;
+        if(!pJson["ENC_SALT"].isNull())
+        {
+            encSalt_=std::make_shared<std::string>(pJson["ENC_SALT"].asString());
+        }
+    }
+    if(pJson.isMember("BEZEICHNUNG_ENC"))
+    {
+        dirtyFlag_[95]=true;
+        if(!pJson["BEZEICHNUNG_ENC"].isNull())
+        {
+            bezeichnungEnc_=std::make_shared<std::string>(pJson["BEZEICHNUNG_ENC"].asString());
+        }
+    }
+    if(pJson.isMember("KTOE_AML_PROFIL_CD"))
+    {
+        dirtyFlag_[96]=true;
+        if(!pJson["KTOE_AML_PROFIL_CD"].isNull())
+        {
+            ktoeAmlProfilCd_=std::make_shared<std::string>(pJson["KTOE_AML_PROFIL_CD"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_DEVEVALS"))
+    {
+        dirtyFlag_[97]=true;
+        if(!pJson["APSYS_DEVEVALS"].isNull())
+        {
+            apsysDevevals_=std::make_shared<std::string>(pJson["APSYS_DEVEVALS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDRNVSTMC"))
+    {
+        dirtyFlag_[98]=true;
+        if(!pJson["APSYS_CDRNVSTMC"].isNull())
+        {
+            apsysCdrnvstmc_=std::make_shared<std::string>(pJson["APSYS_CDRNVSTMC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDRGLPRLGC"))
+    {
+        dirtyFlag_[99]=true;
+        if(!pJson["APSYS_CDRGLPRLGC"].isNull())
+        {
+            apsysCdrglprlgc_=std::make_shared<std::string>(pJson["APSYS_CDRGLPRLGC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFCOMAGTCPTS"))
+    {
+        dirtyFlag_[100]=true;
+        if(!pJson["APSYS_CDCTGPTFCOMAGTCPTS"].isNull())
+        {
+            apsysCdctgptfcomagtcpts_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFCOMAGTCPTS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFROUTORDS"))
+    {
+        dirtyFlag_[101]=true;
+        if(!pJson["APSYS_CDCTGPTFROUTORDS"].isNull())
+        {
+            apsysCdctgptfroutords_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFROUTORDS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFGRECPTS"))
+    {
+        dirtyFlag_[102]=true;
+        if(!pJson["APSYS_CDCTGPTFGRECPTS"].isNull())
+        {
+            apsysCdctgptfgrecpts_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFGRECPTS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTRSFTITS"))
+    {
+        dirtyFlag_[103]=true;
+        if(!pJson["APSYS_CDCTGPTFTRSFTITS"].isNull())
+        {
+            apsysCdctgptftrsftits_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFTRSFTITS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_FLAGEXPSYSEXTTAXI"))
+    {
+        dirtyFlag_[104]=true;
+        if(!pJson["APSYS_FLAGEXPSYSEXTTAXI"].isNull())
+        {
+            apsysFlagexpsysexttaxi_=std::make_shared<std::string>(pJson["APSYS_FLAGEXPSYSEXTTAXI"].asString());
+        }
+    }
+    if(pJson.isMember("WB_IST_NICHT_ZWINGEND_CD"))
+    {
+        dirtyFlag_[105]=true;
+        if(!pJson["WB_IST_NICHT_ZWINGEND_CD"].isNull())
+        {
+            wbIstNichtZwingendCd_=std::make_shared<std::string>(pJson["WB_IST_NICHT_ZWINGEND_CD"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDBQERESTC"))
+    {
+        dirtyFlag_[106]=true;
+        if(!pJson["APSYS_CDBQERESTC"].isNull())
+        {
+            apsysCdbqerestc_=std::make_shared<std::string>(pJson["APSYS_CDBQERESTC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTYPPLACS"))
+    {
+        dirtyFlag_[107]=true;
+        if(!pJson["APSYS_CDCTGPTFTYPPLACS"].isNull())
+        {
+            apsysCdctgptftypplacs_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFTYPPLACS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDEANGRMTCLI1S"))
+    {
+        dirtyFlag_[108]=true;
+        if(!pJson["APSYS_CDEANGRMTCLI1S"].isNull())
+        {
+            apsysCdeangrmtcli1s_=std::make_shared<std::string>(pJson["APSYS_CDEANGRMTCLI1S"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDEANGRMTCLI2S"))
+    {
+        dirtyFlag_[109]=true;
+        if(!pJson["APSYS_CDEANGRMTCLI2S"].isNull())
+        {
+            apsysCdeangrmtcli2s_=std::make_shared<std::string>(pJson["APSYS_CDEANGRMTCLI2S"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDFATCATYPC"))
+    {
+        dirtyFlag_[110]=true;
+        if(!pJson["APSYS_CDFATCATYPC"].isNull())
+        {
+            apsysCdfatcatypc_=std::make_shared<std::string>(pJson["APSYS_CDFATCATYPC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_IDFATCACLAS"))
+    {
+        dirtyFlag_[111]=true;
+        if(!pJson["APSYS_IDFATCACLAS"].isNull())
+        {
+            apsysIdfatcaclas_=std::make_shared<std::string>(pJson["APSYS_IDFATCACLAS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATCALCCRMC"))
+    {
+        dirtyFlag_[112]=true;
+        if(!pJson["APSYS_CDFATCASTATCALCCRMC"].isNull())
+        {
+            apsysCdfatcastatcalccrmc_=std::make_shared<std::string>(pJson["APSYS_CDFATCASTATCALCCRMC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATC"))
+    {
+        dirtyFlag_[113]=true;
+        if(!pJson["APSYS_CDFATCASTATC"].isNull())
+        {
+            apsysCdfatcastatc_=std::make_shared<std::string>(pJson["APSYS_CDFATCASTATC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_COMMENTFATCASTATS"))
+    {
+        dirtyFlag_[114]=true;
+        if(!pJson["APSYS_COMMENTFATCASTATS"].isNull())
+        {
+            apsysCommentfatcastats_=std::make_shared<std::string>(pJson["APSYS_COMMENTFATCASTATS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDFATCAMOTIFPARTS"))
+    {
+        dirtyFlag_[115]=true;
+        if(!pJson["APSYS_CDFATCAMOTIFPARTS"].isNull())
+        {
+            apsysCdfatcamotifparts_=std::make_shared<std::string>(pJson["APSYS_CDFATCAMOTIFPARTS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATCALCGLOBC"))
+    {
+        dirtyFlag_[116]=true;
+        if(!pJson["APSYS_CDFATCASTATCALCGLOBC"].isNull())
+        {
+            apsysCdfatcastatcalcglobc_=std::make_shared<std::string>(pJson["APSYS_CDFATCASTATCALCGLOBC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATCALCLOCC"))
+    {
+        dirtyFlag_[117]=true;
+        if(!pJson["APSYS_CDFATCASTATCALCLOCC"].isNull())
+        {
+            apsysCdfatcastatcalclocc_=std::make_shared<std::string>(pJson["APSYS_CDFATCASTATCALCLOCC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDVALIDSTATC"))
+    {
+        dirtyFlag_[118]=true;
+        if(!pJson["APSYS_CDVALIDSTATC"].isNull())
+        {
+            apsysCdvalidstatc_=std::make_shared<std::string>(pJson["APSYS_CDVALIDSTATC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_USERVALIDFATCASTATS"))
+    {
+        dirtyFlag_[119]=true;
+        if(!pJson["APSYS_USERVALIDFATCASTATS"].isNull())
+        {
+            apsysUservalidfatcastats_=std::make_shared<std::string>(pJson["APSYS_USERVALIDFATCASTATS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_DTVALIDFATCASTATL"))
+    {
+        dirtyFlag_[120]=true;
+        if(!pJson["APSYS_DTVALIDFATCASTATL"].isNull())
+        {
+            auto timeStr = pJson["APSYS_DTVALIDFATCASTATL"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtvalidfatcastatl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_HRVALIDFATCASTATL"))
+    {
+        dirtyFlag_[121]=true;
+        if(!pJson["APSYS_HRVALIDFATCASTATL"].isNull())
+        {
+            auto timeStr = pJson["APSYS_HRVALIDFATCASTATL"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysHrvalidfatcastatl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTRNETTC553C"))
+    {
+        dirtyFlag_[122]=true;
+        if(!pJson["APSYS_CDCTRNETTC553C"].isNull())
+        {
+            apsysCdctrnettc553c_=std::make_shared<std::string>(pJson["APSYS_CDCTRNETTC553C"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_FLAGFORCEPOSOSTMANAGI"))
+    {
+        dirtyFlag_[123]=true;
+        if(!pJson["APSYS_FLAGFORCEPOSOSTMANAGI"].isNull())
+        {
+            apsysFlagforceposostmanagi_=std::make_shared<std::string>(pJson["APSYS_FLAGFORCEPOSOSTMANAGI"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_POSOSTMANAGC"))
+    {
+        dirtyFlag_[124]=true;
+        if(!pJson["APSYS_POSOSTMANAGC"].isNull())
+        {
+            apsysPosostmanagc_=std::make_shared<std::string>(pJson["APSYS_POSOSTMANAGC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CRITEREUSFATCASTATL"))
+    {
+        dirtyFlag_[125]=true;
+        if(!pJson["APSYS_CRITEREUSFATCASTATL"].isNull())
+        {
+            apsysCritereusfatcastatl_=std::make_shared<double>(pJson["APSYS_CRITEREUSFATCASTATL"].asDouble());
+        }
+    }
+    if(pJson.isMember("APSYS_FLAGSIMSI"))
+    {
+        dirtyFlag_[126]=true;
+        if(!pJson["APSYS_FLAGSIMSI"].isNull())
+        {
+            apsysFlagsimsi_=std::make_shared<std::string>(pJson["APSYS_FLAGSIMSI"].asString());
+        }
+    }
+    if(pJson.isMember("NR_OF_BO_IN_WHT_STATEMENT"))
+    {
+        dirtyFlag_[127]=true;
+        if(!pJson["NR_OF_BO_IN_WHT_STATEMENT"].isNull())
+        {
+            nrOfBoInWhtStatement_=std::make_shared<double>(pJson["NR_OF_BO_IN_WHT_STATEMENT"].asDouble());
+        }
+    }
+    if(pJson.isMember("PARTNER_WITH_UNL_LIABILITY_CD"))
+    {
+        dirtyFlag_[128]=true;
+        if(!pJson["PARTNER_WITH_UNL_LIABILITY_CD"].isNull())
+        {
+            partnerWithUnlLiabilityCd_=std::make_shared<std::string>(pJson["PARTNER_WITH_UNL_LIABILITY_CD"].asString());
+        }
+    }
+    if(pJson.isMember("COMPANY_MANAGED_BY_BO_CD"))
+    {
+        dirtyFlag_[129]=true;
+        if(!pJson["COMPANY_MANAGED_BY_BO_CD"].isNull())
+        {
+            companyManagedByBoCd_=std::make_shared<std::string>(pJson["COMPANY_MANAGED_BY_BO_CD"].asString());
+        }
+    }
+    if(pJson.isMember("IS_TRUSTEE_PHYSICAL_CD"))
+    {
+        dirtyFlag_[130]=true;
+        if(!pJson["IS_TRUSTEE_PHYSICAL_CD"].isNull())
+        {
+            isTrusteePhysicalCd_=std::make_shared<std::string>(pJson["IS_TRUSTEE_PHYSICAL_CD"].asString());
+        }
+    }
+    if(pJson.isMember("NO_TRADING_US_SECURITIES_CD"))
+    {
+        dirtyFlag_[131]=true;
+        if(!pJson["NO_TRADING_US_SECURITIES_CD"].isNull())
+        {
+            noTradingUsSecuritiesCd_=std::make_shared<std::string>(pJson["NO_TRADING_US_SECURITIES_CD"].asString());
+        }
+    }
+    if(pJson.isMember("PORTFOLIO_SEGR_ACCOUNT_CD"))
+    {
+        dirtyFlag_[132]=true;
+        if(!pJson["PORTFOLIO_SEGR_ACCOUNT_CD"].isNull())
+        {
+            portfolioSegrAccountCd_=std::make_shared<std::string>(pJson["PORTFOLIO_SEGR_ACCOUNT_CD"].asString());
+        }
+    }
+    if(pJson.isMember("US_WHT_START_DATE"))
+    {
+        dirtyFlag_[133]=true;
+        if(!pJson["US_WHT_START_DATE"].isNull())
+        {
+            auto timeStr = pJson["US_WHT_START_DATE"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                usWhtStartDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFIVSTAUTOS"))
+    {
+        dirtyFlag_[134]=true;
+        if(!pJson["APSYS_CDCTGPTFIVSTAUTOS"].isNull())
+        {
+            apsysCdctgptfivstautos_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFIVSTAUTOS"].asString());
+        }
+    }
+    if(pJson.isMember("AUTOMATISCHE_VERTEILUNG_CD"))
+    {
+        dirtyFlag_[135]=true;
+        if(!pJson["AUTOMATISCHE_VERTEILUNG_CD"].isNull())
+        {
+            automatischeVerteilungCd_=std::make_shared<std::string>(pJson["AUTOMATISCHE_VERTEILUNG_CD"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDTYPREPORTQIC"))
+    {
+        dirtyFlag_[136]=true;
+        if(!pJson["APSYS_CDTYPREPORTQIC"].isNull())
+        {
+            apsysCdtypreportqic_=std::make_shared<std::string>(pJson["APSYS_CDTYPREPORTQIC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_FLAGIRSNONACTIFI"))
+    {
+        dirtyFlag_[137]=true;
+        if(!pJson["APSYS_FLAGIRSNONACTIFI"].isNull())
+        {
+            apsysFlagirsnonactifi_=std::make_shared<std::string>(pJson["APSYS_FLAGIRSNONACTIFI"].asString());
+        }
+    }
+    if(pJson.isMember("OPENING_DOCUMENTS_PROPOSED_CD"))
+    {
+        dirtyFlag_[138]=true;
+        if(!pJson["OPENING_DOCUMENTS_PROPOSED_CD"].isNull())
+        {
+            openingDocumentsProposedCd_=std::make_shared<std::string>(pJson["OPENING_DOCUMENTS_PROPOSED_CD"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFALGCPTS"))
+    {
+        dirtyFlag_[139]=true;
+        if(!pJson["APSYS_CDCTGPTFALGCPTS"].isNull())
+        {
+            apsysCdctgptfalgcpts_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFALGCPTS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_IDSTRUCFORJURS"))
+    {
+        dirtyFlag_[140]=true;
+        if(!pJson["APSYS_IDSTRUCFORJURS"].isNull())
+        {
+            apsysIdstrucforjurs_=std::make_shared<std::string>(pJson["APSYS_IDSTRUCFORJURS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_IDENTFORJURS"))
+    {
+        dirtyFlag_[141]=true;
+        if(!pJson["APSYS_IDENTFORJURS"].isNull())
+        {
+            apsysIdentforjurs_=std::make_shared<std::string>(pJson["APSYS_IDENTFORJURS"].asString());
+        }
+    }
+    if(pJson.isMember("FATCA_BASKET_CD"))
+    {
+        dirtyFlag_[142]=true;
+        if(!pJson["FATCA_BASKET_CD"].isNull())
+        {
+            fatcaBasketCd_=std::make_shared<double>(pJson["FATCA_BASKET_CD"].asDouble());
+        }
+    }
+    if(pJson.isMember("APSYS_CDMETHCLOC"))
+    {
+        dirtyFlag_[143]=true;
+        if(!pJson["APSYS_CDMETHCLOC"].isNull())
+        {
+            apsysCdmethcloc_=std::make_shared<std::string>(pJson["APSYS_CDMETHCLOC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_DTEVALCLOL"))
+    {
+        dirtyFlag_[144]=true;
+        if(!pJson["APSYS_DTEVALCLOL"].isNull())
+        {
+            auto timeStr = pJson["APSYS_DTEVALCLOL"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtevalclol_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("AEOI_EXEMPTION_CD"))
+    {
+        dirtyFlag_[145]=true;
+        if(!pJson["AEOI_EXEMPTION_CD"].isNull())
+        {
+            aeoiExemptionCd_=std::make_shared<std::string>(pJson["AEOI_EXEMPTION_CD"].asString());
+        }
+    }
+    if(pJson.isMember("AEOI_SUB_EXEMPTION_CD"))
+    {
+        dirtyFlag_[146]=true;
+        if(!pJson["AEOI_SUB_EXEMPTION_CD"].isNull())
+        {
+            aeoiSubExemptionCd_=std::make_shared<std::string>(pJson["AEOI_SUB_EXEMPTION_CD"].asString());
+        }
+    }
+    if(pJson.isMember("UNDOCUMENTED_ACCOUNT_CD"))
+    {
+        dirtyFlag_[147]=true;
+        if(!pJson["UNDOCUMENTED_ACCOUNT_CD"].isNull())
+        {
+            undocumentedAccountCd_=std::make_shared<std::string>(pJson["UNDOCUMENTED_ACCOUNT_CD"].asString());
+        }
+    }
+    if(pJson.isMember("DORMANT_ACCOUNT_CD"))
+    {
+        dirtyFlag_[148]=true;
+        if(!pJson["DORMANT_ACCOUNT_CD"].isNull())
+        {
+            dormantAccountCd_=std::make_shared<std::string>(pJson["DORMANT_ACCOUNT_CD"].asString());
+        }
+    }
+    if(pJson.isMember("AEOI_CONSISTENCY_STATUS_CD"))
+    {
+        dirtyFlag_[149]=true;
+        if(!pJson["AEOI_CONSISTENCY_STATUS_CD"].isNull())
+        {
+            aeoiConsistencyStatusCd_=std::make_shared<std::string>(pJson["AEOI_CONSISTENCY_STATUS_CD"].asString());
+        }
+    }
+    if(pJson.isMember("AEOI_FINAL_STATUS_CD"))
+    {
+        dirtyFlag_[150]=true;
+        if(!pJson["AEOI_FINAL_STATUS_CD"].isNull())
+        {
+            aeoiFinalStatusCd_=std::make_shared<std::string>(pJson["AEOI_FINAL_STATUS_CD"].asString());
+        }
+    }
+    if(pJson.isMember("AEOI_REVIEW_DATE"))
+    {
+        dirtyFlag_[151]=true;
+        if(!pJson["AEOI_REVIEW_DATE"].isNull())
+        {
+            auto timeStr = pJson["AEOI_REVIEW_DATE"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                aeoiReviewDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_CDMIFIDEXEMPTC"))
+    {
+        dirtyFlag_[152]=true;
+        if(!pJson["APSYS_CDMIFIDEXEMPTC"].isNull())
+        {
+            apsysCdmifidexemptc_=std::make_shared<std::string>(pJson["APSYS_CDMIFIDEXEMPTC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_DTDEBMIFIDL"))
+    {
+        dirtyFlag_[153]=true;
+        if(!pJson["APSYS_DTDEBMIFIDL"].isNull())
+        {
+            auto timeStr = pJson["APSYS_DTDEBMIFIDL"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtdebmifidl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("OPENED_IN_APSYS_DATE"))
+    {
+        dirtyFlag_[154]=true;
+        if(!pJson["OPENED_IN_APSYS_DATE"].isNull())
+        {
+            auto timeStr = pJson["OPENED_IN_APSYS_DATE"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                openedInApsysDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_FLAGDELDATAPERSI"))
+    {
+        dirtyFlag_[155]=true;
+        if(!pJson["APSYS_FLAGDELDATAPERSI"].isNull())
+        {
+            apsysFlagdeldatapersi_=std::make_shared<std::string>(pJson["APSYS_FLAGDELDATAPERSI"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_DTWAITDELDATAPERSL"))
+    {
+        dirtyFlag_[156]=true;
+        if(!pJson["APSYS_DTWAITDELDATAPERSL"].isNull())
+        {
+            auto timeStr = pJson["APSYS_DTWAITDELDATAPERSL"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtwaitdeldatapersl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_CDPTFSELDGSC"))
+    {
+        dirtyFlag_[157]=true;
+        if(!pJson["APSYS_CDPTFSELDGSC"].isNull())
+        {
+            apsysCdptfseldgsc_=std::make_shared<std::string>(pJson["APSYS_CDPTFSELDGSC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDMOTIFPARTDGSS"))
+    {
+        dirtyFlag_[158]=true;
+        if(!pJson["APSYS_CDMOTIFPARTDGSS"].isNull())
+        {
+            apsysCdmotifpartdgss_=std::make_shared<std::string>(pJson["APSYS_CDMOTIFPARTDGSS"].asString());
+        }
+    }
+    if(pJson.isMember("EAM_CD"))
+    {
+        dirtyFlag_[159]=true;
+        if(!pJson["EAM_CD"].isNull())
+        {
+            eamCd_=std::make_shared<std::string>(pJson["EAM_CD"].asString());
+        }
+    }
+    if(pJson.isMember("RETENTION_ON_HOLD"))
+    {
+        dirtyFlag_[160]=true;
+        if(!pJson["RETENTION_ON_HOLD"].isNull())
+        {
+            retentionOnHold_=std::make_shared<std::string>(pJson["RETENTION_ON_HOLD"].asString());
+        }
+    }
+    if(pJson.isMember("LOGICAL_ERASURE"))
+    {
+        dirtyFlag_[161]=true;
+        if(!pJson["LOGICAL_ERASURE"].isNull())
+        {
+            logicalErasure_=std::make_shared<std::string>(pJson["LOGICAL_ERASURE"].asString());
+        }
+    }
+    if(pJson.isMember("RETENTION_ON_HOLD_DATE"))
+    {
+        dirtyFlag_[162]=true;
+        if(!pJson["RETENTION_ON_HOLD_DATE"].isNull())
+        {
+            auto timeStr = pJson["RETENTION_ON_HOLD_DATE"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                retentionOnHoldDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("RETENTION_ON_HOLD_REASON"))
+    {
+        dirtyFlag_[163]=true;
+        if(!pJson["RETENTION_ON_HOLD_REASON"].isNull())
+        {
+            retentionOnHoldReason_=std::make_shared<std::string>(pJson["RETENTION_ON_HOLD_REASON"].asString());
+        }
+    }
+    if(pJson.isMember("LOGICAL_ERASURE_DATE"))
+    {
+        dirtyFlag_[164]=true;
+        if(!pJson["LOGICAL_ERASURE_DATE"].isNull())
+        {
+            auto timeStr = pJson["LOGICAL_ERASURE_DATE"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                logicalErasureDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("LOGICAL_ERASURE_REASON"))
+    {
+        dirtyFlag_[165]=true;
+        if(!pJson["LOGICAL_ERASURE_REASON"].isNull())
+        {
+            logicalErasureReason_=std::make_shared<std::string>(pJson["LOGICAL_ERASURE_REASON"].asString());
         }
     }
 }
@@ -186,24 +5836,24 @@ Portfolio::Portfolio(const Json::Value &pJson) noexcept(false)
 void Portfolio::updateByMasqueradedJson(const Json::Value &pJson,
                                             const std::vector<std::string> &pMasqueradingVector) noexcept(false)
 {
-    if(pMasqueradingVector.size() != 4)
+    if(pMasqueradingVector.size() != 166)
     {
         LOG_ERROR << "Bad masquerading vector";
         return;
     }
     if(!pMasqueradingVector[0].empty() && pJson.isMember(pMasqueradingVector[0]))
     {
+        dirtyFlag_[0] = true;
         if(!pJson[pMasqueradingVector[0]].isNull())
         {
-            porfolioId_=std::make_shared<int32_t>((int32_t)pJson[pMasqueradingVector[0]].asInt64());
+            kundenid_=std::make_shared<double>(pJson[pMasqueradingVector[0]].asDouble());
         }
     }
     if(!pMasqueradingVector[1].empty() && pJson.isMember(pMasqueradingVector[1]))
     {
-        dirtyFlag_[1] = true;
         if(!pJson[pMasqueradingVector[1]].isNull())
         {
-            porfolioName_=std::make_shared<std::string>(pJson[pMasqueradingVector[1]].asString());
+            portfoliono_=std::make_shared<double>(pJson[pMasqueradingVector[1]].asDouble());
         }
     }
     if(!pMasqueradingVector[2].empty() && pJson.isMember(pMasqueradingVector[2]))
@@ -211,12 +5861,7 @@ void Portfolio::updateByMasqueradedJson(const Json::Value &pJson,
         dirtyFlag_[2] = true;
         if(!pJson[pMasqueradingVector[2]].isNull())
         {
-            auto daysStr = pJson[pMasqueradingVector[2]].asString();
-            struct tm stm;
-            memset(&stm,0,sizeof(stm));
-            strptime(daysStr.c_str(),"%Y-%m-%d",&stm);
-            time_t t = mktime(&stm);
-            dateCreation_=std::make_shared<::trantor::Date>(t*1000000);
+            bezeichnung_=std::make_shared<std::string>(pJson[pMasqueradingVector[2]].asString());
         }
     }
     if(!pMasqueradingVector[3].empty() && pJson.isMember(pMasqueradingVector[3]))
@@ -224,161 +5869,7808 @@ void Portfolio::updateByMasqueradedJson(const Json::Value &pJson,
         dirtyFlag_[3] = true;
         if(!pJson[pMasqueradingVector[3]].isNull())
         {
-            openClosed_=std::make_shared<int32_t>((int32_t)pJson[pMasqueradingVector[3]].asInt64());
+            managementtypCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[3]].asString());
+        }
+    }
+    if(!pMasqueradingVector[4].empty() && pJson.isMember(pMasqueradingVector[4]))
+    {
+        dirtyFlag_[4] = true;
+        if(!pJson[pMasqueradingVector[4]].isNull())
+        {
+            manager1Cd_=std::make_shared<std::string>(pJson[pMasqueradingVector[4]].asString());
+        }
+    }
+    if(!pMasqueradingVector[5].empty() && pJson.isMember(pMasqueradingVector[5]))
+    {
+        dirtyFlag_[5] = true;
+        if(!pJson[pMasqueradingVector[5]].isNull())
+        {
+            manager2Cd_=std::make_shared<std::string>(pJson[pMasqueradingVector[5]].asString());
+        }
+    }
+    if(!pMasqueradingVector[6].empty() && pJson.isMember(pMasqueradingVector[6]))
+    {
+        dirtyFlag_[6] = true;
+        if(!pJson[pMasqueradingVector[6]].isNull())
+        {
+            manager3Cd_=std::make_shared<std::string>(pJson[pMasqueradingVector[6]].asString());
+        }
+    }
+    if(!pMasqueradingVector[7].empty() && pJson.isMember(pMasqueradingVector[7]))
+    {
+        dirtyFlag_[7] = true;
+        if(!pJson[pMasqueradingVector[7]].isNull())
+        {
+            manager4Cd_=std::make_shared<std::string>(pJson[pMasqueradingVector[7]].asString());
+        }
+    }
+    if(!pMasqueradingVector[8].empty() && pJson.isMember(pMasqueradingVector[8]))
+    {
+        dirtyFlag_[8] = true;
+        if(!pJson[pMasqueradingVector[8]].isNull())
+        {
+            manager5Cd_=std::make_shared<std::string>(pJson[pMasqueradingVector[8]].asString());
+        }
+    }
+    if(!pMasqueradingVector[9].empty() && pJson.isMember(pMasqueradingVector[9]))
+    {
+        dirtyFlag_[9] = true;
+        if(!pJson[pMasqueradingVector[9]].isNull())
+        {
+            vermittlerCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[9]].asString());
+        }
+    }
+    if(!pMasqueradingVector[10].empty() && pJson.isMember(pMasqueradingVector[10]))
+    {
+        dirtyFlag_[10] = true;
+        if(!pJson[pMasqueradingVector[10]].isNull())
+        {
+            infovollmacht_=std::make_shared<std::string>(pJson[pMasqueradingVector[10]].asString());
+        }
+    }
+    if(!pMasqueradingVector[11].empty() && pJson.isMember(pMasqueradingVector[11]))
+    {
+        dirtyFlag_[11] = true;
+        if(!pJson[pMasqueradingVector[11]].isNull())
+        {
+            kontakt_=std::make_shared<std::string>(pJson[pMasqueradingVector[11]].asString());
+        }
+    }
+    if(!pMasqueradingVector[12].empty() && pJson.isMember(pMasqueradingVector[12]))
+    {
+        dirtyFlag_[12] = true;
+        if(!pJson[pMasqueradingVector[12]].isNull())
+        {
+            ertraegnisaufCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[12]].asString());
+        }
+    }
+    if(!pMasqueradingVector[13].empty() && pJson.isMember(pMasqueradingVector[13]))
+    {
+        dirtyFlag_[13] = true;
+        if(!pJson[pMasqueradingVector[13]].isNull())
+        {
+            waehrungsCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[13]].asString());
+        }
+    }
+    if(!pMasqueradingVector[14].empty() && pJson.isMember(pMasqueradingVector[14]))
+    {
+        dirtyFlag_[14] = true;
+        if(!pJson[pMasqueradingVector[14]].isNull())
+        {
+            belegsatzCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[14]].asString());
+        }
+    }
+    if(!pMasqueradingVector[15].empty() && pJson.isMember(pMasqueradingVector[15]))
+    {
+        dirtyFlag_[15] = true;
+        if(!pJson[pMasqueradingVector[15]].isNull())
+        {
+            loeschCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[15]].asString());
+        }
+    }
+    if(!pMasqueradingVector[16].empty() && pJson.isMember(pMasqueradingVector[16]))
+    {
+        dirtyFlag_[16] = true;
+        if(!pJson[pMasqueradingVector[16]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[16]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                loeschdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[17].empty() && pJson.isMember(pMasqueradingVector[17]))
+    {
+        dirtyFlag_[17] = true;
+        if(!pJson[pMasqueradingVector[17]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[17]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                crtdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[18].empty() && pJson.isMember(pMasqueradingVector[18]))
+    {
+        dirtyFlag_[18] = true;
+        if(!pJson[pMasqueradingVector[18]].isNull())
+        {
+            crtuser_=std::make_shared<std::string>(pJson[pMasqueradingVector[18]].asString());
+        }
+    }
+    if(!pMasqueradingVector[19].empty() && pJson.isMember(pMasqueradingVector[19]))
+    {
+        dirtyFlag_[19] = true;
+        if(!pJson[pMasqueradingVector[19]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[19]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                mutdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[20].empty() && pJson.isMember(pMasqueradingVector[20]))
+    {
+        dirtyFlag_[20] = true;
+        if(!pJson[pMasqueradingVector[20]].isNull())
+        {
+            mutuser_=std::make_shared<std::string>(pJson[pMasqueradingVector[20]].asString());
+        }
+    }
+    if(!pMasqueradingVector[21].empty() && pJson.isMember(pMasqueradingVector[21]))
+    {
+        dirtyFlag_[21] = true;
+        if(!pJson[pMasqueradingVector[21]].isNull())
+        {
+            misdomizilCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[21]].asString());
+        }
+    }
+    if(!pMasqueradingVector[22].empty() && pJson.isMember(pMasqueradingVector[22]))
+    {
+        dirtyFlag_[22] = true;
+        if(!pJson[pMasqueradingVector[22]].isNull())
+        {
+            anlagestrategieCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[22]].asString());
+        }
+    }
+    if(!pMasqueradingVector[23].empty() && pJson.isMember(pMasqueradingVector[23]))
+    {
+        dirtyFlag_[23] = true;
+        if(!pJson[pMasqueradingVector[23]].isNull())
+        {
+            uswbasketCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[23]].asString());
+        }
+    }
+    if(!pMasqueradingVector[24].empty() && pJson.isMember(pMasqueradingVector[24]))
+    {
+        dirtyFlag_[24] = true;
+        if(!pJson[pMasqueradingVector[24]].isNull())
+        {
+            versandhaeufigCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[24]].asString());
+        }
+    }
+    if(!pMasqueradingVector[25].empty() && pJson.isMember(pMasqueradingVector[25]))
+    {
+        dirtyFlag_[25] = true;
+        if(!pJson[pMasqueradingVector[25]].isNull())
+        {
+            rubrik_=std::make_shared<std::string>(pJson[pMasqueradingVector[25]].asString());
+        }
+    }
+    if(!pMasqueradingVector[26].empty() && pJson.isMember(pMasqueradingVector[26]))
+    {
+        dirtyFlag_[26] = true;
+        if(!pJson[pMasqueradingVector[26]].isNull())
+        {
+            verwaltungsmodusCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[26]].asString());
+        }
+    }
+    if(!pMasqueradingVector[27].empty() && pJson.isMember(pMasqueradingVector[27]))
+    {
+        dirtyFlag_[27] = true;
+        if(!pJson[pMasqueradingVector[27]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[27]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                kundeletzterbesuch_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[28].empty() && pJson.isMember(pMasqueradingVector[28]))
+    {
+        dirtyFlag_[28] = true;
+        if(!pJson[pMasqueradingVector[28]].isNull())
+        {
+            antragsort_=std::make_shared<std::string>(pJson[pMasqueradingVector[28]].asString());
+        }
+    }
+    if(!pMasqueradingVector[29].empty() && pJson.isMember(pMasqueradingVector[29]))
+    {
+        dirtyFlag_[29] = true;
+        if(!pJson[pMasqueradingVector[29]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[29]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                antragsdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[30].empty() && pJson.isMember(pMasqueradingVector[30]))
+    {
+        dirtyFlag_[30] = true;
+        if(!pJson[pMasqueradingVector[30]].isNull())
+        {
+            anderepostadresseCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[30]].asString());
+        }
+    }
+    if(!pMasqueradingVector[31].empty() && pJson.isMember(pMasqueradingVector[31]))
+    {
+        dirtyFlag_[31] = true;
+        if(!pJson[pMasqueradingVector[31]].isNull())
+        {
+            banklagerndCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[31]].asString());
+        }
+    }
+    if(!pMasqueradingVector[32].empty() && pJson.isMember(pMasqueradingVector[32]))
+    {
+        dirtyFlag_[32] = true;
+        if(!pJson[pMasqueradingVector[32]].isNull())
+        {
+            spezialinstruktion_=std::make_shared<std::string>(pJson[pMasqueradingVector[32]].asString());
+        }
+    }
+    if(!pMasqueradingVector[33].empty() && pJson.isMember(pMasqueradingVector[33]))
+    {
+        dirtyFlag_[33] = true;
+        if(!pJson[pMasqueradingVector[33]].isNull())
+        {
+            geldvonkontoinhaberCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[33]].asString());
+        }
+    }
+    if(!pMasqueradingVector[34].empty() && pJson.isMember(pMasqueradingVector[34]))
+    {
+        dirtyFlag_[34] = true;
+        if(!pJson[pMasqueradingVector[34]].isNull())
+        {
+            manualopenCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[34]].asString());
+        }
+    }
+    if(!pMasqueradingVector[35].empty() && pJson.isMember(pMasqueradingVector[35]))
+    {
+        dirtyFlag_[35] = true;
+        if(!pJson[pMasqueradingVector[35]].isNull())
+        {
+            kontonummer1_=std::make_shared<std::string>(pJson[pMasqueradingVector[35]].asString());
+        }
+    }
+    if(!pMasqueradingVector[36].empty() && pJson.isMember(pMasqueradingVector[36]))
+    {
+        dirtyFlag_[36] = true;
+        if(!pJson[pMasqueradingVector[36]].isNull())
+        {
+            kontonummer2_=std::make_shared<std::string>(pJson[pMasqueradingVector[36]].asString());
+        }
+    }
+    if(!pMasqueradingVector[37].empty() && pJson.isMember(pMasqueradingVector[37]))
+    {
+        dirtyFlag_[37] = true;
+        if(!pJson[pMasqueradingVector[37]].isNull())
+        {
+            kontonummer3_=std::make_shared<std::string>(pJson[pMasqueradingVector[37]].asString());
+        }
+    }
+    if(!pMasqueradingVector[38].empty() && pJson.isMember(pMasqueradingVector[38]))
+    {
+        dirtyFlag_[38] = true;
+        if(!pJson[pMasqueradingVector[38]].isNull())
+        {
+            filialCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[38]].asString());
+        }
+    }
+    if(!pMasqueradingVector[39].empty() && pJson.isMember(pMasqueradingVector[39]))
+    {
+        dirtyFlag_[39] = true;
+        if(!pJson[pMasqueradingVector[39]].isNull())
+        {
+            rubrik1_=std::make_shared<std::string>(pJson[pMasqueradingVector[39]].asString());
+        }
+    }
+    if(!pMasqueradingVector[40].empty() && pJson.isMember(pMasqueradingVector[40]))
+    {
+        dirtyFlag_[40] = true;
+        if(!pJson[pMasqueradingVector[40]].isNull())
+        {
+            rubrik2_=std::make_shared<std::string>(pJson[pMasqueradingVector[40]].asString());
+        }
+    }
+    if(!pMasqueradingVector[41].empty() && pJson.isMember(pMasqueradingVector[41]))
+    {
+        dirtyFlag_[41] = true;
+        if(!pJson[pMasqueradingVector[41]].isNull())
+        {
+            rubrik3_=std::make_shared<std::string>(pJson[pMasqueradingVector[41]].asString());
+        }
+    }
+    if(!pMasqueradingVector[42].empty() && pJson.isMember(pMasqueradingVector[42]))
+    {
+        dirtyFlag_[42] = true;
+        if(!pJson[pMasqueradingVector[42]].isNull())
+        {
+            onlineCd_=std::make_shared<double>(pJson[pMasqueradingVector[42]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[43].empty() && pJson.isMember(pMasqueradingVector[43]))
+    {
+        dirtyFlag_[43] = true;
+        if(!pJson[pMasqueradingVector[43]].isNull())
+        {
+            portfoliotypCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[43]].asString());
+        }
+    }
+    if(!pMasqueradingVector[44].empty() && pJson.isMember(pMasqueradingVector[44]))
+    {
+        dirtyFlag_[44] = true;
+        if(!pJson[pMasqueradingVector[44]].isNull())
+        {
+            cdpartc_=std::make_shared<std::string>(pJson[pMasqueradingVector[44]].asString());
+        }
+    }
+    if(!pMasqueradingVector[45].empty() && pJson.isMember(pMasqueradingVector[45]))
+    {
+        dirtyFlag_[45] = true;
+        if(!pJson[pMasqueradingVector[45]].isNull())
+        {
+            poEuTaxProzent_=std::make_shared<float>(pJson[pMasqueradingVector[45]].asFloat());
+        }
+    }
+    if(!pMasqueradingVector[46].empty() && pJson.isMember(pMasqueradingVector[46]))
+    {
+        dirtyFlag_[46] = true;
+        if(!pJson[pMasqueradingVector[46]].isNull())
+        {
+            apsysStatusOpec_=std::make_shared<std::string>(pJson[pMasqueradingVector[46]].asString());
+        }
+    }
+    if(!pMasqueradingVector[47].empty() && pJson.isMember(pMasqueradingVector[47]))
+    {
+        dirtyFlag_[47] = true;
+        if(!pJson[pMasqueradingVector[47]].isNull())
+        {
+            apsysErri_=std::make_shared<double>(pJson[pMasqueradingVector[47]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[48].empty() && pJson.isMember(pMasqueradingVector[48]))
+    {
+        dirtyFlag_[48] = true;
+        if(!pJson[pMasqueradingVector[48]].isNull())
+        {
+            apsysShnas_=std::make_shared<std::string>(pJson[pMasqueradingVector[48]].asString());
+        }
+    }
+    if(!pMasqueradingVector[49].empty() && pJson.isMember(pMasqueradingVector[49]))
+    {
+        dirtyFlag_[49] = true;
+        if(!pJson[pMasqueradingVector[49]].isNull())
+        {
+            apsysTypmdcs_=std::make_shared<std::string>(pJson[pMasqueradingVector[49]].asString());
+        }
+    }
+    if(!pMasqueradingVector[50].empty() && pJson.isMember(pMasqueradingVector[50]))
+    {
+        dirtyFlag_[50] = true;
+        if(!pJson[pMasqueradingVector[50]].isNull())
+        {
+            apsysIntilgs_=std::make_shared<std::string>(pJson[pMasqueradingVector[50]].asString());
+        }
+    }
+    if(!pMasqueradingVector[51].empty() && pJson.isMember(pMasqueradingVector[51]))
+    {
+        dirtyFlag_[51] = true;
+        if(!pJson[pMasqueradingVector[51]].isNull())
+        {
+            apsysShlibptfs_=std::make_shared<std::string>(pJson[pMasqueradingVector[51]].asString());
+        }
+    }
+    if(!pMasqueradingVector[52].empty() && pJson.isMember(pMasqueradingVector[52]))
+    {
+        dirtyFlag_[52] = true;
+        if(!pJson[pMasqueradingVector[52]].isNull())
+        {
+            apsysCdstatdusc_=std::make_shared<std::string>(pJson[pMasqueradingVector[52]].asString());
+        }
+    }
+    if(!pMasqueradingVector[53].empty() && pJson.isMember(pMasqueradingVector[53]))
+    {
+        dirtyFlag_[53] = true;
+        if(!pJson[pMasqueradingVector[53]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[53]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtdebpartl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[54].empty() && pJson.isMember(pMasqueradingVector[54]))
+    {
+        dirtyFlag_[54] = true;
+        if(!pJson[pMasqueradingVector[54]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[54]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtfinpartl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[55].empty() && pJson.isMember(pMasqueradingVector[55]))
+    {
+        dirtyFlag_[55] = true;
+        if(!pJson[pMasqueradingVector[55]].isNull())
+        {
+            apsysIdstrucs_=std::make_shared<std::string>(pJson[pMasqueradingVector[55]].asString());
+        }
+    }
+    if(!pMasqueradingVector[56].empty() && pJson.isMember(pMasqueradingVector[56]))
+    {
+        dirtyFlag_[56] = true;
+        if(!pJson[pMasqueradingVector[56]].isNull())
+        {
+            apsysCdpermi_=std::make_shared<double>(pJson[pMasqueradingVector[56]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[57].empty() && pJson.isMember(pMasqueradingVector[57]))
+    {
+        dirtyFlag_[57] = true;
+        if(!pJson[pMasqueradingVector[57]].isNull())
+        {
+            apsysCdctgptfints_=std::make_shared<std::string>(pJson[pMasqueradingVector[57]].asString());
+        }
+    }
+    if(!pMasqueradingVector[58].empty() && pJson.isMember(pMasqueradingVector[58]))
+    {
+        dirtyFlag_[58] = true;
+        if(!pJson[pMasqueradingVector[58]].isNull())
+        {
+            apsysCdctgptfstes_=std::make_shared<std::string>(pJson[pMasqueradingVector[58]].asString());
+        }
+    }
+    if(!pMasqueradingVector[59].empty() && pJson.isMember(pMasqueradingVector[59]))
+    {
+        dirtyFlag_[59] = true;
+        if(!pJson[pMasqueradingVector[59]].isNull())
+        {
+            apsysCdctgptfstms_=std::make_shared<std::string>(pJson[pMasqueradingVector[59]].asString());
+        }
+    }
+    if(!pMasqueradingVector[60].empty() && pJson.isMember(pMasqueradingVector[60]))
+    {
+        dirtyFlag_[60] = true;
+        if(!pJson[pMasqueradingVector[60]].isNull())
+        {
+            apsysCdctgptfmafs_=std::make_shared<std::string>(pJson[pMasqueradingVector[60]].asString());
+        }
+    }
+    if(!pMasqueradingVector[61].empty() && pJson.isMember(pMasqueradingVector[61]))
+    {
+        dirtyFlag_[61] = true;
+        if(!pJson[pMasqueradingVector[61]].isNull())
+        {
+            apsysCdctgptfrisks_=std::make_shared<std::string>(pJson[pMasqueradingVector[61]].asString());
+        }
+    }
+    if(!pMasqueradingVector[62].empty() && pJson.isMember(pMasqueradingVector[62]))
+    {
+        dirtyFlag_[62] = true;
+        if(!pJson[pMasqueradingVector[62]].isNull())
+        {
+            apsysCdctgptfcous_=std::make_shared<std::string>(pJson[pMasqueradingVector[62]].asString());
+        }
+    }
+    if(!pMasqueradingVector[63].empty() && pJson.isMember(pMasqueradingVector[63]))
+    {
+        dirtyFlag_[63] = true;
+        if(!pJson[pMasqueradingVector[63]].isNull())
+        {
+            apsysCdctgptftrcs_=std::make_shared<std::string>(pJson[pMasqueradingVector[63]].asString());
+        }
+    }
+    if(!pMasqueradingVector[64].empty() && pJson.isMember(pMasqueradingVector[64]))
+    {
+        dirtyFlag_[64] = true;
+        if(!pJson[pMasqueradingVector[64]].isNull())
+        {
+            apsysCdctgptfstebrutnets_=std::make_shared<std::string>(pJson[pMasqueradingVector[64]].asString());
+        }
+    }
+    if(!pMasqueradingVector[65].empty() && pJson.isMember(pMasqueradingVector[65]))
+    {
+        dirtyFlag_[65] = true;
+        if(!pJson[pMasqueradingVector[65]].isNull())
+        {
+            apsysFlagirsreppartc_=std::make_shared<std::string>(pJson[pMasqueradingVector[65]].asString());
+        }
+    }
+    if(!pMasqueradingVector[66].empty() && pJson.isMember(pMasqueradingVector[66]))
+    {
+        dirtyFlag_[66] = true;
+        if(!pJson[pMasqueradingVector[66]].isNull())
+        {
+            apsysCdctgptftaxints_=std::make_shared<std::string>(pJson[pMasqueradingVector[66]].asString());
+        }
+    }
+    if(!pMasqueradingVector[67].empty() && pJson.isMember(pMasqueradingVector[67]))
+    {
+        dirtyFlag_[67] = true;
+        if(!pJson[pMasqueradingVector[67]].isNull())
+        {
+            apsysIdpocs_=std::make_shared<std::string>(pJson[pMasqueradingVector[67]].asString());
+        }
+    }
+    if(!pMasqueradingVector[68].empty() && pJson.isMember(pMasqueradingVector[68]))
+    {
+        dirtyFlag_[68] = true;
+        if(!pJson[pMasqueradingVector[68]].isNull())
+        {
+            apsysInfo_=std::make_shared<std::string>(pJson[pMasqueradingVector[68]].asString());
+        }
+    }
+    if(!pMasqueradingVector[69].empty() && pJson.isMember(pMasqueradingVector[69]))
+    {
+        dirtyFlag_[69] = true;
+        if(!pJson[pMasqueradingVector[69]].isNull())
+        {
+            nettovermoegenChf_=std::make_shared<std::string>(pJson[pMasqueradingVector[69]].asString());
+        }
+    }
+    if(!pMasqueradingVector[70].empty() && pJson.isMember(pMasqueradingVector[70]))
+    {
+        dirtyFlag_[70] = true;
+        if(!pJson[pMasqueradingVector[70]].isNull())
+        {
+            apsysIntishs_=std::make_shared<std::string>(pJson[pMasqueradingVector[70]].asString());
+        }
+    }
+    if(!pMasqueradingVector[71].empty() && pJson.isMember(pMasqueradingVector[71]))
+    {
+        dirtyFlag_[71] = true;
+        if(!pJson[pMasqueradingVector[71]].isNull())
+        {
+            apsysIdpersl_=std::make_shared<double>(pJson[pMasqueradingVector[71]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[72].empty() && pJson.isMember(pMasqueradingVector[72]))
+    {
+        dirtyFlag_[72] = true;
+        if(!pJson[pMasqueradingVector[72]].isNull())
+        {
+            apsysCdmotifparts_=std::make_shared<std::string>(pJson[pMasqueradingVector[72]].asString());
+        }
+    }
+    if(!pMasqueradingVector[73].empty() && pJson.isMember(pMasqueradingVector[73]))
+    {
+        dirtyFlag_[73] = true;
+        if(!pJson[pMasqueradingVector[73]].isNull())
+        {
+            inApsysTempEntspUserid_=std::make_shared<std::string>(pJson[pMasqueradingVector[73]].asString());
+        }
+    }
+    if(!pMasqueradingVector[74].empty() && pJson.isMember(pMasqueradingVector[74]))
+    {
+        dirtyFlag_[74] = true;
+        if(!pJson[pMasqueradingVector[74]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[74]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                inApsysTempEntspDatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[75].empty() && pJson.isMember(pMasqueradingVector[75]))
+    {
+        dirtyFlag_[75] = true;
+        if(!pJson[pMasqueradingVector[75]].isNull())
+        {
+            inApsysTempEntsperrenCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[75]].asString());
+        }
+    }
+    if(!pMasqueradingVector[76].empty() && pJson.isMember(pMasqueradingVector[76]))
+    {
+        dirtyFlag_[76] = true;
+        if(!pJson[pMasqueradingVector[76]].isNull())
+        {
+            kundenkategorieCd_=std::make_shared<double>(pJson[pMasqueradingVector[76]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[77].empty() && pJson.isMember(pMasqueradingVector[77]))
+    {
+        dirtyFlag_[77] = true;
+        if(!pJson[pMasqueradingVector[77]].isNull())
+        {
+            gemeinschaftskontoCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[77]].asString());
+        }
+    }
+    if(!pMasqueradingVector[78].empty() && pJson.isMember(pMasqueradingVector[78]))
+    {
+        dirtyFlag_[78] = true;
+        if(!pJson[pMasqueradingVector[78]].isNull())
+        {
+            dritteSaeuleCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[78]].asString());
+        }
+    }
+    if(!pMasqueradingVector[79].empty() && pJson.isMember(pMasqueradingVector[79]))
+    {
+        dirtyFlag_[79] = true;
+        if(!pJson[pMasqueradingVector[79]].isNull())
+        {
+            apsysTypptfs_=std::make_shared<std::string>(pJson[pMasqueradingVector[79]].asString());
+        }
+    }
+    if(!pMasqueradingVector[80].empty() && pJson.isMember(pMasqueradingVector[80]))
+    {
+        dirtyFlag_[80] = true;
+        if(!pJson[pMasqueradingVector[80]].isNull())
+        {
+            autoEuTaxPercentage_=std::make_shared<std::string>(pJson[pMasqueradingVector[80]].asString());
+        }
+    }
+    if(!pMasqueradingVector[81].empty() && pJson.isMember(pMasqueradingVector[81]))
+    {
+        dirtyFlag_[81] = true;
+        if(!pJson[pMasqueradingVector[81]].isNull())
+        {
+            aktid_=std::make_shared<double>(pJson[pMasqueradingVector[81]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[82].empty() && pJson.isMember(pMasqueradingVector[82]))
+    {
+        dirtyFlag_[82] = true;
+        if(!pJson[pMasqueradingVector[82]].isNull())
+        {
+            validid_=std::make_shared<double>(pJson[pMasqueradingVector[82]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[83].empty() && pJson.isMember(pMasqueradingVector[83]))
+    {
+        dirtyFlag_[83] = true;
+        if(!pJson[pMasqueradingVector[83]].isNull())
+        {
+            validCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[83]].asString());
+        }
+    }
+    if(!pMasqueradingVector[84].empty() && pJson.isMember(pMasqueradingVector[84]))
+    {
+        dirtyFlag_[84] = true;
+        if(!pJson[pMasqueradingVector[84]].isNull())
+        {
+            validuser_=std::make_shared<std::string>(pJson[pMasqueradingVector[84]].asString());
+        }
+    }
+    if(!pMasqueradingVector[85].empty() && pJson.isMember(pMasqueradingVector[85]))
+    {
+        dirtyFlag_[85] = true;
+        if(!pJson[pMasqueradingVector[85]].isNull())
+        {
+            apsysCdctgptfsbxps_=std::make_shared<std::string>(pJson[pMasqueradingVector[85]].asString());
+        }
+    }
+    if(!pMasqueradingVector[86].empty() && pJson.isMember(pMasqueradingVector[86]))
+    {
+        dirtyFlag_[86] = true;
+        if(!pJson[pMasqueradingVector[86]].isNull())
+        {
+            apsysCdctgptfsdocs_=std::make_shared<std::string>(pJson[pMasqueradingVector[86]].asString());
+        }
+    }
+    if(!pMasqueradingVector[87].empty() && pJson.isMember(pMasqueradingVector[87]))
+    {
+        dirtyFlag_[87] = true;
+        if(!pJson[pMasqueradingVector[87]].isNull())
+        {
+            apsysIdents_=std::make_shared<std::string>(pJson[pMasqueradingVector[87]].asString());
+        }
+    }
+    if(!pMasqueradingVector[88].empty() && pJson.isMember(pMasqueradingVector[88]))
+    {
+        dirtyFlag_[88] = true;
+        if(!pJson[pMasqueradingVector[88]].isNull())
+        {
+            apsysCdsoumbolc_=std::make_shared<std::string>(pJson[pMasqueradingVector[88]].asString());
+        }
+    }
+    if(!pMasqueradingVector[89].empty() && pJson.isMember(pMasqueradingVector[89]))
+    {
+        dirtyFlag_[89] = true;
+        if(!pJson[pMasqueradingVector[89]].isNull())
+        {
+            apsysCdfacbolc_=std::make_shared<std::string>(pJson[pMasqueradingVector[89]].asString());
+        }
+    }
+    if(!pMasqueradingVector[90].empty() && pJson.isMember(pMasqueradingVector[90]))
+    {
+        dirtyFlag_[90] = true;
+        if(!pJson[pMasqueradingVector[90]].isNull())
+        {
+            apsysFlagtyptrfpolc_=std::make_shared<std::string>(pJson[pMasqueradingVector[90]].asString());
+        }
+    }
+    if(!pMasqueradingVector[91].empty() && pJson.isMember(pMasqueradingVector[91]))
+    {
+        dirtyFlag_[91] = true;
+        if(!pJson[pMasqueradingVector[91]].isNull())
+        {
+            apsysIdtrfpols_=std::make_shared<std::string>(pJson[pMasqueradingVector[91]].asString());
+        }
+    }
+    if(!pMasqueradingVector[92].empty() && pJson.isMember(pMasqueradingVector[92]))
+    {
+        dirtyFlag_[92] = true;
+        if(!pJson[pMasqueradingVector[92]].isNull())
+        {
+            apsysCdpctpartictitueutaxc_=std::make_shared<std::string>(pJson[pMasqueradingVector[92]].asString());
+        }
+    }
+    if(!pMasqueradingVector[93].empty() && pJson.isMember(pMasqueradingVector[93]))
+    {
+        dirtyFlag_[93] = true;
+        if(!pJson[pMasqueradingVector[93]].isNull())
+        {
+            apsysCdmotifclos_=std::make_shared<std::string>(pJson[pMasqueradingVector[93]].asString());
+        }
+    }
+    if(!pMasqueradingVector[94].empty() && pJson.isMember(pMasqueradingVector[94]))
+    {
+        dirtyFlag_[94] = true;
+        if(!pJson[pMasqueradingVector[94]].isNull())
+        {
+            encSalt_=std::make_shared<std::string>(pJson[pMasqueradingVector[94]].asString());
+        }
+    }
+    if(!pMasqueradingVector[95].empty() && pJson.isMember(pMasqueradingVector[95]))
+    {
+        dirtyFlag_[95] = true;
+        if(!pJson[pMasqueradingVector[95]].isNull())
+        {
+            bezeichnungEnc_=std::make_shared<std::string>(pJson[pMasqueradingVector[95]].asString());
+        }
+    }
+    if(!pMasqueradingVector[96].empty() && pJson.isMember(pMasqueradingVector[96]))
+    {
+        dirtyFlag_[96] = true;
+        if(!pJson[pMasqueradingVector[96]].isNull())
+        {
+            ktoeAmlProfilCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[96]].asString());
+        }
+    }
+    if(!pMasqueradingVector[97].empty() && pJson.isMember(pMasqueradingVector[97]))
+    {
+        dirtyFlag_[97] = true;
+        if(!pJson[pMasqueradingVector[97]].isNull())
+        {
+            apsysDevevals_=std::make_shared<std::string>(pJson[pMasqueradingVector[97]].asString());
+        }
+    }
+    if(!pMasqueradingVector[98].empty() && pJson.isMember(pMasqueradingVector[98]))
+    {
+        dirtyFlag_[98] = true;
+        if(!pJson[pMasqueradingVector[98]].isNull())
+        {
+            apsysCdrnvstmc_=std::make_shared<std::string>(pJson[pMasqueradingVector[98]].asString());
+        }
+    }
+    if(!pMasqueradingVector[99].empty() && pJson.isMember(pMasqueradingVector[99]))
+    {
+        dirtyFlag_[99] = true;
+        if(!pJson[pMasqueradingVector[99]].isNull())
+        {
+            apsysCdrglprlgc_=std::make_shared<std::string>(pJson[pMasqueradingVector[99]].asString());
+        }
+    }
+    if(!pMasqueradingVector[100].empty() && pJson.isMember(pMasqueradingVector[100]))
+    {
+        dirtyFlag_[100] = true;
+        if(!pJson[pMasqueradingVector[100]].isNull())
+        {
+            apsysCdctgptfcomagtcpts_=std::make_shared<std::string>(pJson[pMasqueradingVector[100]].asString());
+        }
+    }
+    if(!pMasqueradingVector[101].empty() && pJson.isMember(pMasqueradingVector[101]))
+    {
+        dirtyFlag_[101] = true;
+        if(!pJson[pMasqueradingVector[101]].isNull())
+        {
+            apsysCdctgptfroutords_=std::make_shared<std::string>(pJson[pMasqueradingVector[101]].asString());
+        }
+    }
+    if(!pMasqueradingVector[102].empty() && pJson.isMember(pMasqueradingVector[102]))
+    {
+        dirtyFlag_[102] = true;
+        if(!pJson[pMasqueradingVector[102]].isNull())
+        {
+            apsysCdctgptfgrecpts_=std::make_shared<std::string>(pJson[pMasqueradingVector[102]].asString());
+        }
+    }
+    if(!pMasqueradingVector[103].empty() && pJson.isMember(pMasqueradingVector[103]))
+    {
+        dirtyFlag_[103] = true;
+        if(!pJson[pMasqueradingVector[103]].isNull())
+        {
+            apsysCdctgptftrsftits_=std::make_shared<std::string>(pJson[pMasqueradingVector[103]].asString());
+        }
+    }
+    if(!pMasqueradingVector[104].empty() && pJson.isMember(pMasqueradingVector[104]))
+    {
+        dirtyFlag_[104] = true;
+        if(!pJson[pMasqueradingVector[104]].isNull())
+        {
+            apsysFlagexpsysexttaxi_=std::make_shared<std::string>(pJson[pMasqueradingVector[104]].asString());
+        }
+    }
+    if(!pMasqueradingVector[105].empty() && pJson.isMember(pMasqueradingVector[105]))
+    {
+        dirtyFlag_[105] = true;
+        if(!pJson[pMasqueradingVector[105]].isNull())
+        {
+            wbIstNichtZwingendCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[105]].asString());
+        }
+    }
+    if(!pMasqueradingVector[106].empty() && pJson.isMember(pMasqueradingVector[106]))
+    {
+        dirtyFlag_[106] = true;
+        if(!pJson[pMasqueradingVector[106]].isNull())
+        {
+            apsysCdbqerestc_=std::make_shared<std::string>(pJson[pMasqueradingVector[106]].asString());
+        }
+    }
+    if(!pMasqueradingVector[107].empty() && pJson.isMember(pMasqueradingVector[107]))
+    {
+        dirtyFlag_[107] = true;
+        if(!pJson[pMasqueradingVector[107]].isNull())
+        {
+            apsysCdctgptftypplacs_=std::make_shared<std::string>(pJson[pMasqueradingVector[107]].asString());
+        }
+    }
+    if(!pMasqueradingVector[108].empty() && pJson.isMember(pMasqueradingVector[108]))
+    {
+        dirtyFlag_[108] = true;
+        if(!pJson[pMasqueradingVector[108]].isNull())
+        {
+            apsysCdeangrmtcli1s_=std::make_shared<std::string>(pJson[pMasqueradingVector[108]].asString());
+        }
+    }
+    if(!pMasqueradingVector[109].empty() && pJson.isMember(pMasqueradingVector[109]))
+    {
+        dirtyFlag_[109] = true;
+        if(!pJson[pMasqueradingVector[109]].isNull())
+        {
+            apsysCdeangrmtcli2s_=std::make_shared<std::string>(pJson[pMasqueradingVector[109]].asString());
+        }
+    }
+    if(!pMasqueradingVector[110].empty() && pJson.isMember(pMasqueradingVector[110]))
+    {
+        dirtyFlag_[110] = true;
+        if(!pJson[pMasqueradingVector[110]].isNull())
+        {
+            apsysCdfatcatypc_=std::make_shared<std::string>(pJson[pMasqueradingVector[110]].asString());
+        }
+    }
+    if(!pMasqueradingVector[111].empty() && pJson.isMember(pMasqueradingVector[111]))
+    {
+        dirtyFlag_[111] = true;
+        if(!pJson[pMasqueradingVector[111]].isNull())
+        {
+            apsysIdfatcaclas_=std::make_shared<std::string>(pJson[pMasqueradingVector[111]].asString());
+        }
+    }
+    if(!pMasqueradingVector[112].empty() && pJson.isMember(pMasqueradingVector[112]))
+    {
+        dirtyFlag_[112] = true;
+        if(!pJson[pMasqueradingVector[112]].isNull())
+        {
+            apsysCdfatcastatcalccrmc_=std::make_shared<std::string>(pJson[pMasqueradingVector[112]].asString());
+        }
+    }
+    if(!pMasqueradingVector[113].empty() && pJson.isMember(pMasqueradingVector[113]))
+    {
+        dirtyFlag_[113] = true;
+        if(!pJson[pMasqueradingVector[113]].isNull())
+        {
+            apsysCdfatcastatc_=std::make_shared<std::string>(pJson[pMasqueradingVector[113]].asString());
+        }
+    }
+    if(!pMasqueradingVector[114].empty() && pJson.isMember(pMasqueradingVector[114]))
+    {
+        dirtyFlag_[114] = true;
+        if(!pJson[pMasqueradingVector[114]].isNull())
+        {
+            apsysCommentfatcastats_=std::make_shared<std::string>(pJson[pMasqueradingVector[114]].asString());
+        }
+    }
+    if(!pMasqueradingVector[115].empty() && pJson.isMember(pMasqueradingVector[115]))
+    {
+        dirtyFlag_[115] = true;
+        if(!pJson[pMasqueradingVector[115]].isNull())
+        {
+            apsysCdfatcamotifparts_=std::make_shared<std::string>(pJson[pMasqueradingVector[115]].asString());
+        }
+    }
+    if(!pMasqueradingVector[116].empty() && pJson.isMember(pMasqueradingVector[116]))
+    {
+        dirtyFlag_[116] = true;
+        if(!pJson[pMasqueradingVector[116]].isNull())
+        {
+            apsysCdfatcastatcalcglobc_=std::make_shared<std::string>(pJson[pMasqueradingVector[116]].asString());
+        }
+    }
+    if(!pMasqueradingVector[117].empty() && pJson.isMember(pMasqueradingVector[117]))
+    {
+        dirtyFlag_[117] = true;
+        if(!pJson[pMasqueradingVector[117]].isNull())
+        {
+            apsysCdfatcastatcalclocc_=std::make_shared<std::string>(pJson[pMasqueradingVector[117]].asString());
+        }
+    }
+    if(!pMasqueradingVector[118].empty() && pJson.isMember(pMasqueradingVector[118]))
+    {
+        dirtyFlag_[118] = true;
+        if(!pJson[pMasqueradingVector[118]].isNull())
+        {
+            apsysCdvalidstatc_=std::make_shared<std::string>(pJson[pMasqueradingVector[118]].asString());
+        }
+    }
+    if(!pMasqueradingVector[119].empty() && pJson.isMember(pMasqueradingVector[119]))
+    {
+        dirtyFlag_[119] = true;
+        if(!pJson[pMasqueradingVector[119]].isNull())
+        {
+            apsysUservalidfatcastats_=std::make_shared<std::string>(pJson[pMasqueradingVector[119]].asString());
+        }
+    }
+    if(!pMasqueradingVector[120].empty() && pJson.isMember(pMasqueradingVector[120]))
+    {
+        dirtyFlag_[120] = true;
+        if(!pJson[pMasqueradingVector[120]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[120]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtvalidfatcastatl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[121].empty() && pJson.isMember(pMasqueradingVector[121]))
+    {
+        dirtyFlag_[121] = true;
+        if(!pJson[pMasqueradingVector[121]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[121]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysHrvalidfatcastatl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[122].empty() && pJson.isMember(pMasqueradingVector[122]))
+    {
+        dirtyFlag_[122] = true;
+        if(!pJson[pMasqueradingVector[122]].isNull())
+        {
+            apsysCdctrnettc553c_=std::make_shared<std::string>(pJson[pMasqueradingVector[122]].asString());
+        }
+    }
+    if(!pMasqueradingVector[123].empty() && pJson.isMember(pMasqueradingVector[123]))
+    {
+        dirtyFlag_[123] = true;
+        if(!pJson[pMasqueradingVector[123]].isNull())
+        {
+            apsysFlagforceposostmanagi_=std::make_shared<std::string>(pJson[pMasqueradingVector[123]].asString());
+        }
+    }
+    if(!pMasqueradingVector[124].empty() && pJson.isMember(pMasqueradingVector[124]))
+    {
+        dirtyFlag_[124] = true;
+        if(!pJson[pMasqueradingVector[124]].isNull())
+        {
+            apsysPosostmanagc_=std::make_shared<std::string>(pJson[pMasqueradingVector[124]].asString());
+        }
+    }
+    if(!pMasqueradingVector[125].empty() && pJson.isMember(pMasqueradingVector[125]))
+    {
+        dirtyFlag_[125] = true;
+        if(!pJson[pMasqueradingVector[125]].isNull())
+        {
+            apsysCritereusfatcastatl_=std::make_shared<double>(pJson[pMasqueradingVector[125]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[126].empty() && pJson.isMember(pMasqueradingVector[126]))
+    {
+        dirtyFlag_[126] = true;
+        if(!pJson[pMasqueradingVector[126]].isNull())
+        {
+            apsysFlagsimsi_=std::make_shared<std::string>(pJson[pMasqueradingVector[126]].asString());
+        }
+    }
+    if(!pMasqueradingVector[127].empty() && pJson.isMember(pMasqueradingVector[127]))
+    {
+        dirtyFlag_[127] = true;
+        if(!pJson[pMasqueradingVector[127]].isNull())
+        {
+            nrOfBoInWhtStatement_=std::make_shared<double>(pJson[pMasqueradingVector[127]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[128].empty() && pJson.isMember(pMasqueradingVector[128]))
+    {
+        dirtyFlag_[128] = true;
+        if(!pJson[pMasqueradingVector[128]].isNull())
+        {
+            partnerWithUnlLiabilityCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[128]].asString());
+        }
+    }
+    if(!pMasqueradingVector[129].empty() && pJson.isMember(pMasqueradingVector[129]))
+    {
+        dirtyFlag_[129] = true;
+        if(!pJson[pMasqueradingVector[129]].isNull())
+        {
+            companyManagedByBoCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[129]].asString());
+        }
+    }
+    if(!pMasqueradingVector[130].empty() && pJson.isMember(pMasqueradingVector[130]))
+    {
+        dirtyFlag_[130] = true;
+        if(!pJson[pMasqueradingVector[130]].isNull())
+        {
+            isTrusteePhysicalCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[130]].asString());
+        }
+    }
+    if(!pMasqueradingVector[131].empty() && pJson.isMember(pMasqueradingVector[131]))
+    {
+        dirtyFlag_[131] = true;
+        if(!pJson[pMasqueradingVector[131]].isNull())
+        {
+            noTradingUsSecuritiesCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[131]].asString());
+        }
+    }
+    if(!pMasqueradingVector[132].empty() && pJson.isMember(pMasqueradingVector[132]))
+    {
+        dirtyFlag_[132] = true;
+        if(!pJson[pMasqueradingVector[132]].isNull())
+        {
+            portfolioSegrAccountCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[132]].asString());
+        }
+    }
+    if(!pMasqueradingVector[133].empty() && pJson.isMember(pMasqueradingVector[133]))
+    {
+        dirtyFlag_[133] = true;
+        if(!pJson[pMasqueradingVector[133]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[133]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                usWhtStartDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[134].empty() && pJson.isMember(pMasqueradingVector[134]))
+    {
+        dirtyFlag_[134] = true;
+        if(!pJson[pMasqueradingVector[134]].isNull())
+        {
+            apsysCdctgptfivstautos_=std::make_shared<std::string>(pJson[pMasqueradingVector[134]].asString());
+        }
+    }
+    if(!pMasqueradingVector[135].empty() && pJson.isMember(pMasqueradingVector[135]))
+    {
+        dirtyFlag_[135] = true;
+        if(!pJson[pMasqueradingVector[135]].isNull())
+        {
+            automatischeVerteilungCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[135]].asString());
+        }
+    }
+    if(!pMasqueradingVector[136].empty() && pJson.isMember(pMasqueradingVector[136]))
+    {
+        dirtyFlag_[136] = true;
+        if(!pJson[pMasqueradingVector[136]].isNull())
+        {
+            apsysCdtypreportqic_=std::make_shared<std::string>(pJson[pMasqueradingVector[136]].asString());
+        }
+    }
+    if(!pMasqueradingVector[137].empty() && pJson.isMember(pMasqueradingVector[137]))
+    {
+        dirtyFlag_[137] = true;
+        if(!pJson[pMasqueradingVector[137]].isNull())
+        {
+            apsysFlagirsnonactifi_=std::make_shared<std::string>(pJson[pMasqueradingVector[137]].asString());
+        }
+    }
+    if(!pMasqueradingVector[138].empty() && pJson.isMember(pMasqueradingVector[138]))
+    {
+        dirtyFlag_[138] = true;
+        if(!pJson[pMasqueradingVector[138]].isNull())
+        {
+            openingDocumentsProposedCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[138]].asString());
+        }
+    }
+    if(!pMasqueradingVector[139].empty() && pJson.isMember(pMasqueradingVector[139]))
+    {
+        dirtyFlag_[139] = true;
+        if(!pJson[pMasqueradingVector[139]].isNull())
+        {
+            apsysCdctgptfalgcpts_=std::make_shared<std::string>(pJson[pMasqueradingVector[139]].asString());
+        }
+    }
+    if(!pMasqueradingVector[140].empty() && pJson.isMember(pMasqueradingVector[140]))
+    {
+        dirtyFlag_[140] = true;
+        if(!pJson[pMasqueradingVector[140]].isNull())
+        {
+            apsysIdstrucforjurs_=std::make_shared<std::string>(pJson[pMasqueradingVector[140]].asString());
+        }
+    }
+    if(!pMasqueradingVector[141].empty() && pJson.isMember(pMasqueradingVector[141]))
+    {
+        dirtyFlag_[141] = true;
+        if(!pJson[pMasqueradingVector[141]].isNull())
+        {
+            apsysIdentforjurs_=std::make_shared<std::string>(pJson[pMasqueradingVector[141]].asString());
+        }
+    }
+    if(!pMasqueradingVector[142].empty() && pJson.isMember(pMasqueradingVector[142]))
+    {
+        dirtyFlag_[142] = true;
+        if(!pJson[pMasqueradingVector[142]].isNull())
+        {
+            fatcaBasketCd_=std::make_shared<double>(pJson[pMasqueradingVector[142]].asDouble());
+        }
+    }
+    if(!pMasqueradingVector[143].empty() && pJson.isMember(pMasqueradingVector[143]))
+    {
+        dirtyFlag_[143] = true;
+        if(!pJson[pMasqueradingVector[143]].isNull())
+        {
+            apsysCdmethcloc_=std::make_shared<std::string>(pJson[pMasqueradingVector[143]].asString());
+        }
+    }
+    if(!pMasqueradingVector[144].empty() && pJson.isMember(pMasqueradingVector[144]))
+    {
+        dirtyFlag_[144] = true;
+        if(!pJson[pMasqueradingVector[144]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[144]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtevalclol_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[145].empty() && pJson.isMember(pMasqueradingVector[145]))
+    {
+        dirtyFlag_[145] = true;
+        if(!pJson[pMasqueradingVector[145]].isNull())
+        {
+            aeoiExemptionCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[145]].asString());
+        }
+    }
+    if(!pMasqueradingVector[146].empty() && pJson.isMember(pMasqueradingVector[146]))
+    {
+        dirtyFlag_[146] = true;
+        if(!pJson[pMasqueradingVector[146]].isNull())
+        {
+            aeoiSubExemptionCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[146]].asString());
+        }
+    }
+    if(!pMasqueradingVector[147].empty() && pJson.isMember(pMasqueradingVector[147]))
+    {
+        dirtyFlag_[147] = true;
+        if(!pJson[pMasqueradingVector[147]].isNull())
+        {
+            undocumentedAccountCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[147]].asString());
+        }
+    }
+    if(!pMasqueradingVector[148].empty() && pJson.isMember(pMasqueradingVector[148]))
+    {
+        dirtyFlag_[148] = true;
+        if(!pJson[pMasqueradingVector[148]].isNull())
+        {
+            dormantAccountCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[148]].asString());
+        }
+    }
+    if(!pMasqueradingVector[149].empty() && pJson.isMember(pMasqueradingVector[149]))
+    {
+        dirtyFlag_[149] = true;
+        if(!pJson[pMasqueradingVector[149]].isNull())
+        {
+            aeoiConsistencyStatusCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[149]].asString());
+        }
+    }
+    if(!pMasqueradingVector[150].empty() && pJson.isMember(pMasqueradingVector[150]))
+    {
+        dirtyFlag_[150] = true;
+        if(!pJson[pMasqueradingVector[150]].isNull())
+        {
+            aeoiFinalStatusCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[150]].asString());
+        }
+    }
+    if(!pMasqueradingVector[151].empty() && pJson.isMember(pMasqueradingVector[151]))
+    {
+        dirtyFlag_[151] = true;
+        if(!pJson[pMasqueradingVector[151]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[151]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                aeoiReviewDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[152].empty() && pJson.isMember(pMasqueradingVector[152]))
+    {
+        dirtyFlag_[152] = true;
+        if(!pJson[pMasqueradingVector[152]].isNull())
+        {
+            apsysCdmifidexemptc_=std::make_shared<std::string>(pJson[pMasqueradingVector[152]].asString());
+        }
+    }
+    if(!pMasqueradingVector[153].empty() && pJson.isMember(pMasqueradingVector[153]))
+    {
+        dirtyFlag_[153] = true;
+        if(!pJson[pMasqueradingVector[153]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[153]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtdebmifidl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[154].empty() && pJson.isMember(pMasqueradingVector[154]))
+    {
+        dirtyFlag_[154] = true;
+        if(!pJson[pMasqueradingVector[154]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[154]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                openedInApsysDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[155].empty() && pJson.isMember(pMasqueradingVector[155]))
+    {
+        dirtyFlag_[155] = true;
+        if(!pJson[pMasqueradingVector[155]].isNull())
+        {
+            apsysFlagdeldatapersi_=std::make_shared<std::string>(pJson[pMasqueradingVector[155]].asString());
+        }
+    }
+    if(!pMasqueradingVector[156].empty() && pJson.isMember(pMasqueradingVector[156]))
+    {
+        dirtyFlag_[156] = true;
+        if(!pJson[pMasqueradingVector[156]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[156]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtwaitdeldatapersl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[157].empty() && pJson.isMember(pMasqueradingVector[157]))
+    {
+        dirtyFlag_[157] = true;
+        if(!pJson[pMasqueradingVector[157]].isNull())
+        {
+            apsysCdptfseldgsc_=std::make_shared<std::string>(pJson[pMasqueradingVector[157]].asString());
+        }
+    }
+    if(!pMasqueradingVector[158].empty() && pJson.isMember(pMasqueradingVector[158]))
+    {
+        dirtyFlag_[158] = true;
+        if(!pJson[pMasqueradingVector[158]].isNull())
+        {
+            apsysCdmotifpartdgss_=std::make_shared<std::string>(pJson[pMasqueradingVector[158]].asString());
+        }
+    }
+    if(!pMasqueradingVector[159].empty() && pJson.isMember(pMasqueradingVector[159]))
+    {
+        dirtyFlag_[159] = true;
+        if(!pJson[pMasqueradingVector[159]].isNull())
+        {
+            eamCd_=std::make_shared<std::string>(pJson[pMasqueradingVector[159]].asString());
+        }
+    }
+    if(!pMasqueradingVector[160].empty() && pJson.isMember(pMasqueradingVector[160]))
+    {
+        dirtyFlag_[160] = true;
+        if(!pJson[pMasqueradingVector[160]].isNull())
+        {
+            retentionOnHold_=std::make_shared<std::string>(pJson[pMasqueradingVector[160]].asString());
+        }
+    }
+    if(!pMasqueradingVector[161].empty() && pJson.isMember(pMasqueradingVector[161]))
+    {
+        dirtyFlag_[161] = true;
+        if(!pJson[pMasqueradingVector[161]].isNull())
+        {
+            logicalErasure_=std::make_shared<std::string>(pJson[pMasqueradingVector[161]].asString());
+        }
+    }
+    if(!pMasqueradingVector[162].empty() && pJson.isMember(pMasqueradingVector[162]))
+    {
+        dirtyFlag_[162] = true;
+        if(!pJson[pMasqueradingVector[162]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[162]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                retentionOnHoldDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[163].empty() && pJson.isMember(pMasqueradingVector[163]))
+    {
+        dirtyFlag_[163] = true;
+        if(!pJson[pMasqueradingVector[163]].isNull())
+        {
+            retentionOnHoldReason_=std::make_shared<std::string>(pJson[pMasqueradingVector[163]].asString());
+        }
+    }
+    if(!pMasqueradingVector[164].empty() && pJson.isMember(pMasqueradingVector[164]))
+    {
+        dirtyFlag_[164] = true;
+        if(!pJson[pMasqueradingVector[164]].isNull())
+        {
+            auto timeStr = pJson[pMasqueradingVector[164]].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                logicalErasureDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(!pMasqueradingVector[165].empty() && pJson.isMember(pMasqueradingVector[165]))
+    {
+        dirtyFlag_[165] = true;
+        if(!pJson[pMasqueradingVector[165]].isNull())
+        {
+            logicalErasureReason_=std::make_shared<std::string>(pJson[pMasqueradingVector[165]].asString());
         }
     }
 }
 
 void Portfolio::updateByJson(const Json::Value &pJson) noexcept(false)
 {
-    if(pJson.isMember("porfolio_id"))
+    if(pJson.isMember("KUNDENID"))
     {
-        if(!pJson["porfolio_id"].isNull())
+        dirtyFlag_[0] = true;
+        if(!pJson["KUNDENID"].isNull())
         {
-            porfolioId_=std::make_shared<int32_t>((int32_t)pJson["porfolio_id"].asInt64());
+            kundenid_=std::make_shared<double>(pJson["KUNDENID"].asDouble());
         }
     }
-    if(pJson.isMember("porfolio_name"))
+    if(pJson.isMember("PORTFOLIONO"))
     {
-        dirtyFlag_[1] = true;
-        if(!pJson["porfolio_name"].isNull())
+        if(!pJson["PORTFOLIONO"].isNull())
         {
-            porfolioName_=std::make_shared<std::string>(pJson["porfolio_name"].asString());
+            portfoliono_=std::make_shared<double>(pJson["PORTFOLIONO"].asDouble());
         }
     }
-    if(pJson.isMember("date_Creation"))
+    if(pJson.isMember("BEZEICHNUNG"))
     {
         dirtyFlag_[2] = true;
-        if(!pJson["date_Creation"].isNull())
+        if(!pJson["BEZEICHNUNG"].isNull())
         {
-            auto daysStr = pJson["date_Creation"].asString();
-            struct tm stm;
-            memset(&stm,0,sizeof(stm));
-            strptime(daysStr.c_str(),"%Y-%m-%d",&stm);
-            time_t t = mktime(&stm);
-            dateCreation_=std::make_shared<::trantor::Date>(t*1000000);
+            bezeichnung_=std::make_shared<std::string>(pJson["BEZEICHNUNG"].asString());
         }
     }
-    if(pJson.isMember("open_closed"))
+    if(pJson.isMember("MANAGEMENTTYP_CD"))
     {
         dirtyFlag_[3] = true;
-        if(!pJson["open_closed"].isNull())
+        if(!pJson["MANAGEMENTTYP_CD"].isNull())
         {
-            openClosed_=std::make_shared<int32_t>((int32_t)pJson["open_closed"].asInt64());
+            managementtypCd_=std::make_shared<std::string>(pJson["MANAGEMENTTYP_CD"].asString());
+        }
+    }
+    if(pJson.isMember("MANAGER1_CD"))
+    {
+        dirtyFlag_[4] = true;
+        if(!pJson["MANAGER1_CD"].isNull())
+        {
+            manager1Cd_=std::make_shared<std::string>(pJson["MANAGER1_CD"].asString());
+        }
+    }
+    if(pJson.isMember("MANAGER2_CD"))
+    {
+        dirtyFlag_[5] = true;
+        if(!pJson["MANAGER2_CD"].isNull())
+        {
+            manager2Cd_=std::make_shared<std::string>(pJson["MANAGER2_CD"].asString());
+        }
+    }
+    if(pJson.isMember("MANAGER3_CD"))
+    {
+        dirtyFlag_[6] = true;
+        if(!pJson["MANAGER3_CD"].isNull())
+        {
+            manager3Cd_=std::make_shared<std::string>(pJson["MANAGER3_CD"].asString());
+        }
+    }
+    if(pJson.isMember("MANAGER4_CD"))
+    {
+        dirtyFlag_[7] = true;
+        if(!pJson["MANAGER4_CD"].isNull())
+        {
+            manager4Cd_=std::make_shared<std::string>(pJson["MANAGER4_CD"].asString());
+        }
+    }
+    if(pJson.isMember("MANAGER5_CD"))
+    {
+        dirtyFlag_[8] = true;
+        if(!pJson["MANAGER5_CD"].isNull())
+        {
+            manager5Cd_=std::make_shared<std::string>(pJson["MANAGER5_CD"].asString());
+        }
+    }
+    if(pJson.isMember("VERMITTLER_CD"))
+    {
+        dirtyFlag_[9] = true;
+        if(!pJson["VERMITTLER_CD"].isNull())
+        {
+            vermittlerCd_=std::make_shared<std::string>(pJson["VERMITTLER_CD"].asString());
+        }
+    }
+    if(pJson.isMember("INFOVOLLMACHT"))
+    {
+        dirtyFlag_[10] = true;
+        if(!pJson["INFOVOLLMACHT"].isNull())
+        {
+            infovollmacht_=std::make_shared<std::string>(pJson["INFOVOLLMACHT"].asString());
+        }
+    }
+    if(pJson.isMember("KONTAKT"))
+    {
+        dirtyFlag_[11] = true;
+        if(!pJson["KONTAKT"].isNull())
+        {
+            kontakt_=std::make_shared<std::string>(pJson["KONTAKT"].asString());
+        }
+    }
+    if(pJson.isMember("ERTRAEGNISAUF_CD"))
+    {
+        dirtyFlag_[12] = true;
+        if(!pJson["ERTRAEGNISAUF_CD"].isNull())
+        {
+            ertraegnisaufCd_=std::make_shared<std::string>(pJson["ERTRAEGNISAUF_CD"].asString());
+        }
+    }
+    if(pJson.isMember("WAEHRUNGS_CD"))
+    {
+        dirtyFlag_[13] = true;
+        if(!pJson["WAEHRUNGS_CD"].isNull())
+        {
+            waehrungsCd_=std::make_shared<std::string>(pJson["WAEHRUNGS_CD"].asString());
+        }
+    }
+    if(pJson.isMember("BELEGSATZ_CD"))
+    {
+        dirtyFlag_[14] = true;
+        if(!pJson["BELEGSATZ_CD"].isNull())
+        {
+            belegsatzCd_=std::make_shared<std::string>(pJson["BELEGSATZ_CD"].asString());
+        }
+    }
+    if(pJson.isMember("LOESCH_CD"))
+    {
+        dirtyFlag_[15] = true;
+        if(!pJson["LOESCH_CD"].isNull())
+        {
+            loeschCd_=std::make_shared<std::string>(pJson["LOESCH_CD"].asString());
+        }
+    }
+    if(pJson.isMember("LOESCHDATUM"))
+    {
+        dirtyFlag_[16] = true;
+        if(!pJson["LOESCHDATUM"].isNull())
+        {
+            auto timeStr = pJson["LOESCHDATUM"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                loeschdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("CRTDATUM"))
+    {
+        dirtyFlag_[17] = true;
+        if(!pJson["CRTDATUM"].isNull())
+        {
+            auto timeStr = pJson["CRTDATUM"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                crtdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("CRTUSER"))
+    {
+        dirtyFlag_[18] = true;
+        if(!pJson["CRTUSER"].isNull())
+        {
+            crtuser_=std::make_shared<std::string>(pJson["CRTUSER"].asString());
+        }
+    }
+    if(pJson.isMember("MUTDATUM"))
+    {
+        dirtyFlag_[19] = true;
+        if(!pJson["MUTDATUM"].isNull())
+        {
+            auto timeStr = pJson["MUTDATUM"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                mutdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("MUTUSER"))
+    {
+        dirtyFlag_[20] = true;
+        if(!pJson["MUTUSER"].isNull())
+        {
+            mutuser_=std::make_shared<std::string>(pJson["MUTUSER"].asString());
+        }
+    }
+    if(pJson.isMember("MISDOMIZIL_CD"))
+    {
+        dirtyFlag_[21] = true;
+        if(!pJson["MISDOMIZIL_CD"].isNull())
+        {
+            misdomizilCd_=std::make_shared<std::string>(pJson["MISDOMIZIL_CD"].asString());
+        }
+    }
+    if(pJson.isMember("ANLAGESTRATEGIE_CD"))
+    {
+        dirtyFlag_[22] = true;
+        if(!pJson["ANLAGESTRATEGIE_CD"].isNull())
+        {
+            anlagestrategieCd_=std::make_shared<std::string>(pJson["ANLAGESTRATEGIE_CD"].asString());
+        }
+    }
+    if(pJson.isMember("USWBASKET_CD"))
+    {
+        dirtyFlag_[23] = true;
+        if(!pJson["USWBASKET_CD"].isNull())
+        {
+            uswbasketCd_=std::make_shared<std::string>(pJson["USWBASKET_CD"].asString());
+        }
+    }
+    if(pJson.isMember("VERSANDHAEUFIG_CD"))
+    {
+        dirtyFlag_[24] = true;
+        if(!pJson["VERSANDHAEUFIG_CD"].isNull())
+        {
+            versandhaeufigCd_=std::make_shared<std::string>(pJson["VERSANDHAEUFIG_CD"].asString());
+        }
+    }
+    if(pJson.isMember("RUBRIK"))
+    {
+        dirtyFlag_[25] = true;
+        if(!pJson["RUBRIK"].isNull())
+        {
+            rubrik_=std::make_shared<std::string>(pJson["RUBRIK"].asString());
+        }
+    }
+    if(pJson.isMember("VERWALTUNGSMODUS_CD"))
+    {
+        dirtyFlag_[26] = true;
+        if(!pJson["VERWALTUNGSMODUS_CD"].isNull())
+        {
+            verwaltungsmodusCd_=std::make_shared<std::string>(pJson["VERWALTUNGSMODUS_CD"].asString());
+        }
+    }
+    if(pJson.isMember("KUNDELETZTERBESUCH"))
+    {
+        dirtyFlag_[27] = true;
+        if(!pJson["KUNDELETZTERBESUCH"].isNull())
+        {
+            auto timeStr = pJson["KUNDELETZTERBESUCH"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                kundeletzterbesuch_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("ANTRAGSORT"))
+    {
+        dirtyFlag_[28] = true;
+        if(!pJson["ANTRAGSORT"].isNull())
+        {
+            antragsort_=std::make_shared<std::string>(pJson["ANTRAGSORT"].asString());
+        }
+    }
+    if(pJson.isMember("ANTRAGSDATUM"))
+    {
+        dirtyFlag_[29] = true;
+        if(!pJson["ANTRAGSDATUM"].isNull())
+        {
+            auto timeStr = pJson["ANTRAGSDATUM"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                antragsdatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("ANDEREPOSTADRESSE_CD"))
+    {
+        dirtyFlag_[30] = true;
+        if(!pJson["ANDEREPOSTADRESSE_CD"].isNull())
+        {
+            anderepostadresseCd_=std::make_shared<std::string>(pJson["ANDEREPOSTADRESSE_CD"].asString());
+        }
+    }
+    if(pJson.isMember("BANKLAGERND_CD"))
+    {
+        dirtyFlag_[31] = true;
+        if(!pJson["BANKLAGERND_CD"].isNull())
+        {
+            banklagerndCd_=std::make_shared<std::string>(pJson["BANKLAGERND_CD"].asString());
+        }
+    }
+    if(pJson.isMember("SPEZIALINSTRUKTION"))
+    {
+        dirtyFlag_[32] = true;
+        if(!pJson["SPEZIALINSTRUKTION"].isNull())
+        {
+            spezialinstruktion_=std::make_shared<std::string>(pJson["SPEZIALINSTRUKTION"].asString());
+        }
+    }
+    if(pJson.isMember("GELDVONKONTOINHABER_CD"))
+    {
+        dirtyFlag_[33] = true;
+        if(!pJson["GELDVONKONTOINHABER_CD"].isNull())
+        {
+            geldvonkontoinhaberCd_=std::make_shared<std::string>(pJson["GELDVONKONTOINHABER_CD"].asString());
+        }
+    }
+    if(pJson.isMember("MANUALOPEN_CD"))
+    {
+        dirtyFlag_[34] = true;
+        if(!pJson["MANUALOPEN_CD"].isNull())
+        {
+            manualopenCd_=std::make_shared<std::string>(pJson["MANUALOPEN_CD"].asString());
+        }
+    }
+    if(pJson.isMember("KONTONUMMER1"))
+    {
+        dirtyFlag_[35] = true;
+        if(!pJson["KONTONUMMER1"].isNull())
+        {
+            kontonummer1_=std::make_shared<std::string>(pJson["KONTONUMMER1"].asString());
+        }
+    }
+    if(pJson.isMember("KONTONUMMER2"))
+    {
+        dirtyFlag_[36] = true;
+        if(!pJson["KONTONUMMER2"].isNull())
+        {
+            kontonummer2_=std::make_shared<std::string>(pJson["KONTONUMMER2"].asString());
+        }
+    }
+    if(pJson.isMember("KONTONUMMER3"))
+    {
+        dirtyFlag_[37] = true;
+        if(!pJson["KONTONUMMER3"].isNull())
+        {
+            kontonummer3_=std::make_shared<std::string>(pJson["KONTONUMMER3"].asString());
+        }
+    }
+    if(pJson.isMember("FILIAL_CD"))
+    {
+        dirtyFlag_[38] = true;
+        if(!pJson["FILIAL_CD"].isNull())
+        {
+            filialCd_=std::make_shared<std::string>(pJson["FILIAL_CD"].asString());
+        }
+    }
+    if(pJson.isMember("RUBRIK1"))
+    {
+        dirtyFlag_[39] = true;
+        if(!pJson["RUBRIK1"].isNull())
+        {
+            rubrik1_=std::make_shared<std::string>(pJson["RUBRIK1"].asString());
+        }
+    }
+    if(pJson.isMember("RUBRIK2"))
+    {
+        dirtyFlag_[40] = true;
+        if(!pJson["RUBRIK2"].isNull())
+        {
+            rubrik2_=std::make_shared<std::string>(pJson["RUBRIK2"].asString());
+        }
+    }
+    if(pJson.isMember("RUBRIK3"))
+    {
+        dirtyFlag_[41] = true;
+        if(!pJson["RUBRIK3"].isNull())
+        {
+            rubrik3_=std::make_shared<std::string>(pJson["RUBRIK3"].asString());
+        }
+    }
+    if(pJson.isMember("ONLINE_CD"))
+    {
+        dirtyFlag_[42] = true;
+        if(!pJson["ONLINE_CD"].isNull())
+        {
+            onlineCd_=std::make_shared<double>(pJson["ONLINE_CD"].asDouble());
+        }
+    }
+    if(pJson.isMember("PORTFOLIOTYP_CD"))
+    {
+        dirtyFlag_[43] = true;
+        if(!pJson["PORTFOLIOTYP_CD"].isNull())
+        {
+            portfoliotypCd_=std::make_shared<std::string>(pJson["PORTFOLIOTYP_CD"].asString());
+        }
+    }
+    if(pJson.isMember("CDPARTC"))
+    {
+        dirtyFlag_[44] = true;
+        if(!pJson["CDPARTC"].isNull())
+        {
+            cdpartc_=std::make_shared<std::string>(pJson["CDPARTC"].asString());
+        }
+    }
+    if(pJson.isMember("PO_EU_TAX_PROZENT"))
+    {
+        dirtyFlag_[45] = true;
+        if(!pJson["PO_EU_TAX_PROZENT"].isNull())
+        {
+            poEuTaxProzent_=std::make_shared<float>(pJson["PO_EU_TAX_PROZENT"].asFloat());
+        }
+    }
+    if(pJson.isMember("APSYS_STATUS_OPEC"))
+    {
+        dirtyFlag_[46] = true;
+        if(!pJson["APSYS_STATUS_OPEC"].isNull())
+        {
+            apsysStatusOpec_=std::make_shared<std::string>(pJson["APSYS_STATUS_OPEC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_ERRI"))
+    {
+        dirtyFlag_[47] = true;
+        if(!pJson["APSYS_ERRI"].isNull())
+        {
+            apsysErri_=std::make_shared<double>(pJson["APSYS_ERRI"].asDouble());
+        }
+    }
+    if(pJson.isMember("APSYS_SHNAS"))
+    {
+        dirtyFlag_[48] = true;
+        if(!pJson["APSYS_SHNAS"].isNull())
+        {
+            apsysShnas_=std::make_shared<std::string>(pJson["APSYS_SHNAS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_TYPMDCS"))
+    {
+        dirtyFlag_[49] = true;
+        if(!pJson["APSYS_TYPMDCS"].isNull())
+        {
+            apsysTypmdcs_=std::make_shared<std::string>(pJson["APSYS_TYPMDCS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_INTILGS"))
+    {
+        dirtyFlag_[50] = true;
+        if(!pJson["APSYS_INTILGS"].isNull())
+        {
+            apsysIntilgs_=std::make_shared<std::string>(pJson["APSYS_INTILGS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_SHLIBPTFS"))
+    {
+        dirtyFlag_[51] = true;
+        if(!pJson["APSYS_SHLIBPTFS"].isNull())
+        {
+            apsysShlibptfs_=std::make_shared<std::string>(pJson["APSYS_SHLIBPTFS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDSTATDUSC"))
+    {
+        dirtyFlag_[52] = true;
+        if(!pJson["APSYS_CDSTATDUSC"].isNull())
+        {
+            apsysCdstatdusc_=std::make_shared<std::string>(pJson["APSYS_CDSTATDUSC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_DTDEBPARTL"))
+    {
+        dirtyFlag_[53] = true;
+        if(!pJson["APSYS_DTDEBPARTL"].isNull())
+        {
+            auto timeStr = pJson["APSYS_DTDEBPARTL"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtdebpartl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_DTFINPARTL"))
+    {
+        dirtyFlag_[54] = true;
+        if(!pJson["APSYS_DTFINPARTL"].isNull())
+        {
+            auto timeStr = pJson["APSYS_DTFINPARTL"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtfinpartl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_IDSTRUCS"))
+    {
+        dirtyFlag_[55] = true;
+        if(!pJson["APSYS_IDSTRUCS"].isNull())
+        {
+            apsysIdstrucs_=std::make_shared<std::string>(pJson["APSYS_IDSTRUCS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDPERMI"))
+    {
+        dirtyFlag_[56] = true;
+        if(!pJson["APSYS_CDPERMI"].isNull())
+        {
+            apsysCdpermi_=std::make_shared<double>(pJson["APSYS_CDPERMI"].asDouble());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFINTS"))
+    {
+        dirtyFlag_[57] = true;
+        if(!pJson["APSYS_CDCTGPTFINTS"].isNull())
+        {
+            apsysCdctgptfints_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFINTS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSTES"))
+    {
+        dirtyFlag_[58] = true;
+        if(!pJson["APSYS_CDCTGPTFSTES"].isNull())
+        {
+            apsysCdctgptfstes_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFSTES"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSTMS"))
+    {
+        dirtyFlag_[59] = true;
+        if(!pJson["APSYS_CDCTGPTFSTMS"].isNull())
+        {
+            apsysCdctgptfstms_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFSTMS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFMAFS"))
+    {
+        dirtyFlag_[60] = true;
+        if(!pJson["APSYS_CDCTGPTFMAFS"].isNull())
+        {
+            apsysCdctgptfmafs_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFMAFS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFRISKS"))
+    {
+        dirtyFlag_[61] = true;
+        if(!pJson["APSYS_CDCTGPTFRISKS"].isNull())
+        {
+            apsysCdctgptfrisks_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFRISKS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFCOUS"))
+    {
+        dirtyFlag_[62] = true;
+        if(!pJson["APSYS_CDCTGPTFCOUS"].isNull())
+        {
+            apsysCdctgptfcous_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFCOUS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTRCS"))
+    {
+        dirtyFlag_[63] = true;
+        if(!pJson["APSYS_CDCTGPTFTRCS"].isNull())
+        {
+            apsysCdctgptftrcs_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFTRCS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSTEBRUTNETS"))
+    {
+        dirtyFlag_[64] = true;
+        if(!pJson["APSYS_CDCTGPTFSTEBRUTNETS"].isNull())
+        {
+            apsysCdctgptfstebrutnets_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFSTEBRUTNETS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_FLAGIRSREPPARTC"))
+    {
+        dirtyFlag_[65] = true;
+        if(!pJson["APSYS_FLAGIRSREPPARTC"].isNull())
+        {
+            apsysFlagirsreppartc_=std::make_shared<std::string>(pJson["APSYS_FLAGIRSREPPARTC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTAXINTS"))
+    {
+        dirtyFlag_[66] = true;
+        if(!pJson["APSYS_CDCTGPTFTAXINTS"].isNull())
+        {
+            apsysCdctgptftaxints_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFTAXINTS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_IDPOCS"))
+    {
+        dirtyFlag_[67] = true;
+        if(!pJson["APSYS_IDPOCS"].isNull())
+        {
+            apsysIdpocs_=std::make_shared<std::string>(pJson["APSYS_IDPOCS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_INFO"))
+    {
+        dirtyFlag_[68] = true;
+        if(!pJson["APSYS_INFO"].isNull())
+        {
+            apsysInfo_=std::make_shared<std::string>(pJson["APSYS_INFO"].asString());
+        }
+    }
+    if(pJson.isMember("NETTOVERMOEGEN_CHF"))
+    {
+        dirtyFlag_[69] = true;
+        if(!pJson["NETTOVERMOEGEN_CHF"].isNull())
+        {
+            nettovermoegenChf_=std::make_shared<std::string>(pJson["NETTOVERMOEGEN_CHF"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_INTISHS"))
+    {
+        dirtyFlag_[70] = true;
+        if(!pJson["APSYS_INTISHS"].isNull())
+        {
+            apsysIntishs_=std::make_shared<std::string>(pJson["APSYS_INTISHS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_IDPERSL"))
+    {
+        dirtyFlag_[71] = true;
+        if(!pJson["APSYS_IDPERSL"].isNull())
+        {
+            apsysIdpersl_=std::make_shared<double>(pJson["APSYS_IDPERSL"].asDouble());
+        }
+    }
+    if(pJson.isMember("APSYS_CDMOTIFPARTS"))
+    {
+        dirtyFlag_[72] = true;
+        if(!pJson["APSYS_CDMOTIFPARTS"].isNull())
+        {
+            apsysCdmotifparts_=std::make_shared<std::string>(pJson["APSYS_CDMOTIFPARTS"].asString());
+        }
+    }
+    if(pJson.isMember("IN_APSYS_TEMP_ENTSP_USERID"))
+    {
+        dirtyFlag_[73] = true;
+        if(!pJson["IN_APSYS_TEMP_ENTSP_USERID"].isNull())
+        {
+            inApsysTempEntspUserid_=std::make_shared<std::string>(pJson["IN_APSYS_TEMP_ENTSP_USERID"].asString());
+        }
+    }
+    if(pJson.isMember("IN_APSYS_TEMP_ENTSP_DATUM"))
+    {
+        dirtyFlag_[74] = true;
+        if(!pJson["IN_APSYS_TEMP_ENTSP_DATUM"].isNull())
+        {
+            auto timeStr = pJson["IN_APSYS_TEMP_ENTSP_DATUM"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                inApsysTempEntspDatum_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("IN_APSYS_TEMP_ENTSPERREN_CD"))
+    {
+        dirtyFlag_[75] = true;
+        if(!pJson["IN_APSYS_TEMP_ENTSPERREN_CD"].isNull())
+        {
+            inApsysTempEntsperrenCd_=std::make_shared<std::string>(pJson["IN_APSYS_TEMP_ENTSPERREN_CD"].asString());
+        }
+    }
+    if(pJson.isMember("KUNDENKATEGORIE_CD"))
+    {
+        dirtyFlag_[76] = true;
+        if(!pJson["KUNDENKATEGORIE_CD"].isNull())
+        {
+            kundenkategorieCd_=std::make_shared<double>(pJson["KUNDENKATEGORIE_CD"].asDouble());
+        }
+    }
+    if(pJson.isMember("GEMEINSCHAFTSKONTO_CD"))
+    {
+        dirtyFlag_[77] = true;
+        if(!pJson["GEMEINSCHAFTSKONTO_CD"].isNull())
+        {
+            gemeinschaftskontoCd_=std::make_shared<std::string>(pJson["GEMEINSCHAFTSKONTO_CD"].asString());
+        }
+    }
+    if(pJson.isMember("DRITTE_SAEULE_CD"))
+    {
+        dirtyFlag_[78] = true;
+        if(!pJson["DRITTE_SAEULE_CD"].isNull())
+        {
+            dritteSaeuleCd_=std::make_shared<std::string>(pJson["DRITTE_SAEULE_CD"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_TYPPTFS"))
+    {
+        dirtyFlag_[79] = true;
+        if(!pJson["APSYS_TYPPTFS"].isNull())
+        {
+            apsysTypptfs_=std::make_shared<std::string>(pJson["APSYS_TYPPTFS"].asString());
+        }
+    }
+    if(pJson.isMember("AUTO_EU_TAX_PERCENTAGE"))
+    {
+        dirtyFlag_[80] = true;
+        if(!pJson["AUTO_EU_TAX_PERCENTAGE"].isNull())
+        {
+            autoEuTaxPercentage_=std::make_shared<std::string>(pJson["AUTO_EU_TAX_PERCENTAGE"].asString());
+        }
+    }
+    if(pJson.isMember("AKTID"))
+    {
+        dirtyFlag_[81] = true;
+        if(!pJson["AKTID"].isNull())
+        {
+            aktid_=std::make_shared<double>(pJson["AKTID"].asDouble());
+        }
+    }
+    if(pJson.isMember("VALIDID"))
+    {
+        dirtyFlag_[82] = true;
+        if(!pJson["VALIDID"].isNull())
+        {
+            validid_=std::make_shared<double>(pJson["VALIDID"].asDouble());
+        }
+    }
+    if(pJson.isMember("VALID_CD"))
+    {
+        dirtyFlag_[83] = true;
+        if(!pJson["VALID_CD"].isNull())
+        {
+            validCd_=std::make_shared<std::string>(pJson["VALID_CD"].asString());
+        }
+    }
+    if(pJson.isMember("VALIDUSER"))
+    {
+        dirtyFlag_[84] = true;
+        if(!pJson["VALIDUSER"].isNull())
+        {
+            validuser_=std::make_shared<std::string>(pJson["VALIDUSER"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSBXPS"))
+    {
+        dirtyFlag_[85] = true;
+        if(!pJson["APSYS_CDCTGPTFSBXPS"].isNull())
+        {
+            apsysCdctgptfsbxps_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFSBXPS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSDOCS"))
+    {
+        dirtyFlag_[86] = true;
+        if(!pJson["APSYS_CDCTGPTFSDOCS"].isNull())
+        {
+            apsysCdctgptfsdocs_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFSDOCS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_IDENTS"))
+    {
+        dirtyFlag_[87] = true;
+        if(!pJson["APSYS_IDENTS"].isNull())
+        {
+            apsysIdents_=std::make_shared<std::string>(pJson["APSYS_IDENTS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDSOUMBOLC"))
+    {
+        dirtyFlag_[88] = true;
+        if(!pJson["APSYS_CDSOUMBOLC"].isNull())
+        {
+            apsysCdsoumbolc_=std::make_shared<std::string>(pJson["APSYS_CDSOUMBOLC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDFACBOLC"))
+    {
+        dirtyFlag_[89] = true;
+        if(!pJson["APSYS_CDFACBOLC"].isNull())
+        {
+            apsysCdfacbolc_=std::make_shared<std::string>(pJson["APSYS_CDFACBOLC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_FLAGTYPTRFPOLC"))
+    {
+        dirtyFlag_[90] = true;
+        if(!pJson["APSYS_FLAGTYPTRFPOLC"].isNull())
+        {
+            apsysFlagtyptrfpolc_=std::make_shared<std::string>(pJson["APSYS_FLAGTYPTRFPOLC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_IDTRFPOLS"))
+    {
+        dirtyFlag_[91] = true;
+        if(!pJson["APSYS_IDTRFPOLS"].isNull())
+        {
+            apsysIdtrfpols_=std::make_shared<std::string>(pJson["APSYS_IDTRFPOLS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDPCTPARTICTITUEUTAXC"))
+    {
+        dirtyFlag_[92] = true;
+        if(!pJson["APSYS_CDPCTPARTICTITUEUTAXC"].isNull())
+        {
+            apsysCdpctpartictitueutaxc_=std::make_shared<std::string>(pJson["APSYS_CDPCTPARTICTITUEUTAXC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDMOTIFCLOS"))
+    {
+        dirtyFlag_[93] = true;
+        if(!pJson["APSYS_CDMOTIFCLOS"].isNull())
+        {
+            apsysCdmotifclos_=std::make_shared<std::string>(pJson["APSYS_CDMOTIFCLOS"].asString());
+        }
+    }
+    if(pJson.isMember("ENC_SALT"))
+    {
+        dirtyFlag_[94] = true;
+        if(!pJson["ENC_SALT"].isNull())
+        {
+            encSalt_=std::make_shared<std::string>(pJson["ENC_SALT"].asString());
+        }
+    }
+    if(pJson.isMember("BEZEICHNUNG_ENC"))
+    {
+        dirtyFlag_[95] = true;
+        if(!pJson["BEZEICHNUNG_ENC"].isNull())
+        {
+            bezeichnungEnc_=std::make_shared<std::string>(pJson["BEZEICHNUNG_ENC"].asString());
+        }
+    }
+    if(pJson.isMember("KTOE_AML_PROFIL_CD"))
+    {
+        dirtyFlag_[96] = true;
+        if(!pJson["KTOE_AML_PROFIL_CD"].isNull())
+        {
+            ktoeAmlProfilCd_=std::make_shared<std::string>(pJson["KTOE_AML_PROFIL_CD"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_DEVEVALS"))
+    {
+        dirtyFlag_[97] = true;
+        if(!pJson["APSYS_DEVEVALS"].isNull())
+        {
+            apsysDevevals_=std::make_shared<std::string>(pJson["APSYS_DEVEVALS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDRNVSTMC"))
+    {
+        dirtyFlag_[98] = true;
+        if(!pJson["APSYS_CDRNVSTMC"].isNull())
+        {
+            apsysCdrnvstmc_=std::make_shared<std::string>(pJson["APSYS_CDRNVSTMC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDRGLPRLGC"))
+    {
+        dirtyFlag_[99] = true;
+        if(!pJson["APSYS_CDRGLPRLGC"].isNull())
+        {
+            apsysCdrglprlgc_=std::make_shared<std::string>(pJson["APSYS_CDRGLPRLGC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFCOMAGTCPTS"))
+    {
+        dirtyFlag_[100] = true;
+        if(!pJson["APSYS_CDCTGPTFCOMAGTCPTS"].isNull())
+        {
+            apsysCdctgptfcomagtcpts_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFCOMAGTCPTS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFROUTORDS"))
+    {
+        dirtyFlag_[101] = true;
+        if(!pJson["APSYS_CDCTGPTFROUTORDS"].isNull())
+        {
+            apsysCdctgptfroutords_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFROUTORDS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFGRECPTS"))
+    {
+        dirtyFlag_[102] = true;
+        if(!pJson["APSYS_CDCTGPTFGRECPTS"].isNull())
+        {
+            apsysCdctgptfgrecpts_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFGRECPTS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTRSFTITS"))
+    {
+        dirtyFlag_[103] = true;
+        if(!pJson["APSYS_CDCTGPTFTRSFTITS"].isNull())
+        {
+            apsysCdctgptftrsftits_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFTRSFTITS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_FLAGEXPSYSEXTTAXI"))
+    {
+        dirtyFlag_[104] = true;
+        if(!pJson["APSYS_FLAGEXPSYSEXTTAXI"].isNull())
+        {
+            apsysFlagexpsysexttaxi_=std::make_shared<std::string>(pJson["APSYS_FLAGEXPSYSEXTTAXI"].asString());
+        }
+    }
+    if(pJson.isMember("WB_IST_NICHT_ZWINGEND_CD"))
+    {
+        dirtyFlag_[105] = true;
+        if(!pJson["WB_IST_NICHT_ZWINGEND_CD"].isNull())
+        {
+            wbIstNichtZwingendCd_=std::make_shared<std::string>(pJson["WB_IST_NICHT_ZWINGEND_CD"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDBQERESTC"))
+    {
+        dirtyFlag_[106] = true;
+        if(!pJson["APSYS_CDBQERESTC"].isNull())
+        {
+            apsysCdbqerestc_=std::make_shared<std::string>(pJson["APSYS_CDBQERESTC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTYPPLACS"))
+    {
+        dirtyFlag_[107] = true;
+        if(!pJson["APSYS_CDCTGPTFTYPPLACS"].isNull())
+        {
+            apsysCdctgptftypplacs_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFTYPPLACS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDEANGRMTCLI1S"))
+    {
+        dirtyFlag_[108] = true;
+        if(!pJson["APSYS_CDEANGRMTCLI1S"].isNull())
+        {
+            apsysCdeangrmtcli1s_=std::make_shared<std::string>(pJson["APSYS_CDEANGRMTCLI1S"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDEANGRMTCLI2S"))
+    {
+        dirtyFlag_[109] = true;
+        if(!pJson["APSYS_CDEANGRMTCLI2S"].isNull())
+        {
+            apsysCdeangrmtcli2s_=std::make_shared<std::string>(pJson["APSYS_CDEANGRMTCLI2S"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDFATCATYPC"))
+    {
+        dirtyFlag_[110] = true;
+        if(!pJson["APSYS_CDFATCATYPC"].isNull())
+        {
+            apsysCdfatcatypc_=std::make_shared<std::string>(pJson["APSYS_CDFATCATYPC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_IDFATCACLAS"))
+    {
+        dirtyFlag_[111] = true;
+        if(!pJson["APSYS_IDFATCACLAS"].isNull())
+        {
+            apsysIdfatcaclas_=std::make_shared<std::string>(pJson["APSYS_IDFATCACLAS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATCALCCRMC"))
+    {
+        dirtyFlag_[112] = true;
+        if(!pJson["APSYS_CDFATCASTATCALCCRMC"].isNull())
+        {
+            apsysCdfatcastatcalccrmc_=std::make_shared<std::string>(pJson["APSYS_CDFATCASTATCALCCRMC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATC"))
+    {
+        dirtyFlag_[113] = true;
+        if(!pJson["APSYS_CDFATCASTATC"].isNull())
+        {
+            apsysCdfatcastatc_=std::make_shared<std::string>(pJson["APSYS_CDFATCASTATC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_COMMENTFATCASTATS"))
+    {
+        dirtyFlag_[114] = true;
+        if(!pJson["APSYS_COMMENTFATCASTATS"].isNull())
+        {
+            apsysCommentfatcastats_=std::make_shared<std::string>(pJson["APSYS_COMMENTFATCASTATS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDFATCAMOTIFPARTS"))
+    {
+        dirtyFlag_[115] = true;
+        if(!pJson["APSYS_CDFATCAMOTIFPARTS"].isNull())
+        {
+            apsysCdfatcamotifparts_=std::make_shared<std::string>(pJson["APSYS_CDFATCAMOTIFPARTS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATCALCGLOBC"))
+    {
+        dirtyFlag_[116] = true;
+        if(!pJson["APSYS_CDFATCASTATCALCGLOBC"].isNull())
+        {
+            apsysCdfatcastatcalcglobc_=std::make_shared<std::string>(pJson["APSYS_CDFATCASTATCALCGLOBC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATCALCLOCC"))
+    {
+        dirtyFlag_[117] = true;
+        if(!pJson["APSYS_CDFATCASTATCALCLOCC"].isNull())
+        {
+            apsysCdfatcastatcalclocc_=std::make_shared<std::string>(pJson["APSYS_CDFATCASTATCALCLOCC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDVALIDSTATC"))
+    {
+        dirtyFlag_[118] = true;
+        if(!pJson["APSYS_CDVALIDSTATC"].isNull())
+        {
+            apsysCdvalidstatc_=std::make_shared<std::string>(pJson["APSYS_CDVALIDSTATC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_USERVALIDFATCASTATS"))
+    {
+        dirtyFlag_[119] = true;
+        if(!pJson["APSYS_USERVALIDFATCASTATS"].isNull())
+        {
+            apsysUservalidfatcastats_=std::make_shared<std::string>(pJson["APSYS_USERVALIDFATCASTATS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_DTVALIDFATCASTATL"))
+    {
+        dirtyFlag_[120] = true;
+        if(!pJson["APSYS_DTVALIDFATCASTATL"].isNull())
+        {
+            auto timeStr = pJson["APSYS_DTVALIDFATCASTATL"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtvalidfatcastatl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_HRVALIDFATCASTATL"))
+    {
+        dirtyFlag_[121] = true;
+        if(!pJson["APSYS_HRVALIDFATCASTATL"].isNull())
+        {
+            auto timeStr = pJson["APSYS_HRVALIDFATCASTATL"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysHrvalidfatcastatl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTRNETTC553C"))
+    {
+        dirtyFlag_[122] = true;
+        if(!pJson["APSYS_CDCTRNETTC553C"].isNull())
+        {
+            apsysCdctrnettc553c_=std::make_shared<std::string>(pJson["APSYS_CDCTRNETTC553C"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_FLAGFORCEPOSOSTMANAGI"))
+    {
+        dirtyFlag_[123] = true;
+        if(!pJson["APSYS_FLAGFORCEPOSOSTMANAGI"].isNull())
+        {
+            apsysFlagforceposostmanagi_=std::make_shared<std::string>(pJson["APSYS_FLAGFORCEPOSOSTMANAGI"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_POSOSTMANAGC"))
+    {
+        dirtyFlag_[124] = true;
+        if(!pJson["APSYS_POSOSTMANAGC"].isNull())
+        {
+            apsysPosostmanagc_=std::make_shared<std::string>(pJson["APSYS_POSOSTMANAGC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CRITEREUSFATCASTATL"))
+    {
+        dirtyFlag_[125] = true;
+        if(!pJson["APSYS_CRITEREUSFATCASTATL"].isNull())
+        {
+            apsysCritereusfatcastatl_=std::make_shared<double>(pJson["APSYS_CRITEREUSFATCASTATL"].asDouble());
+        }
+    }
+    if(pJson.isMember("APSYS_FLAGSIMSI"))
+    {
+        dirtyFlag_[126] = true;
+        if(!pJson["APSYS_FLAGSIMSI"].isNull())
+        {
+            apsysFlagsimsi_=std::make_shared<std::string>(pJson["APSYS_FLAGSIMSI"].asString());
+        }
+    }
+    if(pJson.isMember("NR_OF_BO_IN_WHT_STATEMENT"))
+    {
+        dirtyFlag_[127] = true;
+        if(!pJson["NR_OF_BO_IN_WHT_STATEMENT"].isNull())
+        {
+            nrOfBoInWhtStatement_=std::make_shared<double>(pJson["NR_OF_BO_IN_WHT_STATEMENT"].asDouble());
+        }
+    }
+    if(pJson.isMember("PARTNER_WITH_UNL_LIABILITY_CD"))
+    {
+        dirtyFlag_[128] = true;
+        if(!pJson["PARTNER_WITH_UNL_LIABILITY_CD"].isNull())
+        {
+            partnerWithUnlLiabilityCd_=std::make_shared<std::string>(pJson["PARTNER_WITH_UNL_LIABILITY_CD"].asString());
+        }
+    }
+    if(pJson.isMember("COMPANY_MANAGED_BY_BO_CD"))
+    {
+        dirtyFlag_[129] = true;
+        if(!pJson["COMPANY_MANAGED_BY_BO_CD"].isNull())
+        {
+            companyManagedByBoCd_=std::make_shared<std::string>(pJson["COMPANY_MANAGED_BY_BO_CD"].asString());
+        }
+    }
+    if(pJson.isMember("IS_TRUSTEE_PHYSICAL_CD"))
+    {
+        dirtyFlag_[130] = true;
+        if(!pJson["IS_TRUSTEE_PHYSICAL_CD"].isNull())
+        {
+            isTrusteePhysicalCd_=std::make_shared<std::string>(pJson["IS_TRUSTEE_PHYSICAL_CD"].asString());
+        }
+    }
+    if(pJson.isMember("NO_TRADING_US_SECURITIES_CD"))
+    {
+        dirtyFlag_[131] = true;
+        if(!pJson["NO_TRADING_US_SECURITIES_CD"].isNull())
+        {
+            noTradingUsSecuritiesCd_=std::make_shared<std::string>(pJson["NO_TRADING_US_SECURITIES_CD"].asString());
+        }
+    }
+    if(pJson.isMember("PORTFOLIO_SEGR_ACCOUNT_CD"))
+    {
+        dirtyFlag_[132] = true;
+        if(!pJson["PORTFOLIO_SEGR_ACCOUNT_CD"].isNull())
+        {
+            portfolioSegrAccountCd_=std::make_shared<std::string>(pJson["PORTFOLIO_SEGR_ACCOUNT_CD"].asString());
+        }
+    }
+    if(pJson.isMember("US_WHT_START_DATE"))
+    {
+        dirtyFlag_[133] = true;
+        if(!pJson["US_WHT_START_DATE"].isNull())
+        {
+            auto timeStr = pJson["US_WHT_START_DATE"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                usWhtStartDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFIVSTAUTOS"))
+    {
+        dirtyFlag_[134] = true;
+        if(!pJson["APSYS_CDCTGPTFIVSTAUTOS"].isNull())
+        {
+            apsysCdctgptfivstautos_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFIVSTAUTOS"].asString());
+        }
+    }
+    if(pJson.isMember("AUTOMATISCHE_VERTEILUNG_CD"))
+    {
+        dirtyFlag_[135] = true;
+        if(!pJson["AUTOMATISCHE_VERTEILUNG_CD"].isNull())
+        {
+            automatischeVerteilungCd_=std::make_shared<std::string>(pJson["AUTOMATISCHE_VERTEILUNG_CD"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDTYPREPORTQIC"))
+    {
+        dirtyFlag_[136] = true;
+        if(!pJson["APSYS_CDTYPREPORTQIC"].isNull())
+        {
+            apsysCdtypreportqic_=std::make_shared<std::string>(pJson["APSYS_CDTYPREPORTQIC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_FLAGIRSNONACTIFI"))
+    {
+        dirtyFlag_[137] = true;
+        if(!pJson["APSYS_FLAGIRSNONACTIFI"].isNull())
+        {
+            apsysFlagirsnonactifi_=std::make_shared<std::string>(pJson["APSYS_FLAGIRSNONACTIFI"].asString());
+        }
+    }
+    if(pJson.isMember("OPENING_DOCUMENTS_PROPOSED_CD"))
+    {
+        dirtyFlag_[138] = true;
+        if(!pJson["OPENING_DOCUMENTS_PROPOSED_CD"].isNull())
+        {
+            openingDocumentsProposedCd_=std::make_shared<std::string>(pJson["OPENING_DOCUMENTS_PROPOSED_CD"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFALGCPTS"))
+    {
+        dirtyFlag_[139] = true;
+        if(!pJson["APSYS_CDCTGPTFALGCPTS"].isNull())
+        {
+            apsysCdctgptfalgcpts_=std::make_shared<std::string>(pJson["APSYS_CDCTGPTFALGCPTS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_IDSTRUCFORJURS"))
+    {
+        dirtyFlag_[140] = true;
+        if(!pJson["APSYS_IDSTRUCFORJURS"].isNull())
+        {
+            apsysIdstrucforjurs_=std::make_shared<std::string>(pJson["APSYS_IDSTRUCFORJURS"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_IDENTFORJURS"))
+    {
+        dirtyFlag_[141] = true;
+        if(!pJson["APSYS_IDENTFORJURS"].isNull())
+        {
+            apsysIdentforjurs_=std::make_shared<std::string>(pJson["APSYS_IDENTFORJURS"].asString());
+        }
+    }
+    if(pJson.isMember("FATCA_BASKET_CD"))
+    {
+        dirtyFlag_[142] = true;
+        if(!pJson["FATCA_BASKET_CD"].isNull())
+        {
+            fatcaBasketCd_=std::make_shared<double>(pJson["FATCA_BASKET_CD"].asDouble());
+        }
+    }
+    if(pJson.isMember("APSYS_CDMETHCLOC"))
+    {
+        dirtyFlag_[143] = true;
+        if(!pJson["APSYS_CDMETHCLOC"].isNull())
+        {
+            apsysCdmethcloc_=std::make_shared<std::string>(pJson["APSYS_CDMETHCLOC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_DTEVALCLOL"))
+    {
+        dirtyFlag_[144] = true;
+        if(!pJson["APSYS_DTEVALCLOL"].isNull())
+        {
+            auto timeStr = pJson["APSYS_DTEVALCLOL"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtevalclol_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("AEOI_EXEMPTION_CD"))
+    {
+        dirtyFlag_[145] = true;
+        if(!pJson["AEOI_EXEMPTION_CD"].isNull())
+        {
+            aeoiExemptionCd_=std::make_shared<std::string>(pJson["AEOI_EXEMPTION_CD"].asString());
+        }
+    }
+    if(pJson.isMember("AEOI_SUB_EXEMPTION_CD"))
+    {
+        dirtyFlag_[146] = true;
+        if(!pJson["AEOI_SUB_EXEMPTION_CD"].isNull())
+        {
+            aeoiSubExemptionCd_=std::make_shared<std::string>(pJson["AEOI_SUB_EXEMPTION_CD"].asString());
+        }
+    }
+    if(pJson.isMember("UNDOCUMENTED_ACCOUNT_CD"))
+    {
+        dirtyFlag_[147] = true;
+        if(!pJson["UNDOCUMENTED_ACCOUNT_CD"].isNull())
+        {
+            undocumentedAccountCd_=std::make_shared<std::string>(pJson["UNDOCUMENTED_ACCOUNT_CD"].asString());
+        }
+    }
+    if(pJson.isMember("DORMANT_ACCOUNT_CD"))
+    {
+        dirtyFlag_[148] = true;
+        if(!pJson["DORMANT_ACCOUNT_CD"].isNull())
+        {
+            dormantAccountCd_=std::make_shared<std::string>(pJson["DORMANT_ACCOUNT_CD"].asString());
+        }
+    }
+    if(pJson.isMember("AEOI_CONSISTENCY_STATUS_CD"))
+    {
+        dirtyFlag_[149] = true;
+        if(!pJson["AEOI_CONSISTENCY_STATUS_CD"].isNull())
+        {
+            aeoiConsistencyStatusCd_=std::make_shared<std::string>(pJson["AEOI_CONSISTENCY_STATUS_CD"].asString());
+        }
+    }
+    if(pJson.isMember("AEOI_FINAL_STATUS_CD"))
+    {
+        dirtyFlag_[150] = true;
+        if(!pJson["AEOI_FINAL_STATUS_CD"].isNull())
+        {
+            aeoiFinalStatusCd_=std::make_shared<std::string>(pJson["AEOI_FINAL_STATUS_CD"].asString());
+        }
+    }
+    if(pJson.isMember("AEOI_REVIEW_DATE"))
+    {
+        dirtyFlag_[151] = true;
+        if(!pJson["AEOI_REVIEW_DATE"].isNull())
+        {
+            auto timeStr = pJson["AEOI_REVIEW_DATE"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                aeoiReviewDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_CDMIFIDEXEMPTC"))
+    {
+        dirtyFlag_[152] = true;
+        if(!pJson["APSYS_CDMIFIDEXEMPTC"].isNull())
+        {
+            apsysCdmifidexemptc_=std::make_shared<std::string>(pJson["APSYS_CDMIFIDEXEMPTC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_DTDEBMIFIDL"))
+    {
+        dirtyFlag_[153] = true;
+        if(!pJson["APSYS_DTDEBMIFIDL"].isNull())
+        {
+            auto timeStr = pJson["APSYS_DTDEBMIFIDL"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtdebmifidl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("OPENED_IN_APSYS_DATE"))
+    {
+        dirtyFlag_[154] = true;
+        if(!pJson["OPENED_IN_APSYS_DATE"].isNull())
+        {
+            auto timeStr = pJson["OPENED_IN_APSYS_DATE"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                openedInApsysDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_FLAGDELDATAPERSI"))
+    {
+        dirtyFlag_[155] = true;
+        if(!pJson["APSYS_FLAGDELDATAPERSI"].isNull())
+        {
+            apsysFlagdeldatapersi_=std::make_shared<std::string>(pJson["APSYS_FLAGDELDATAPERSI"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_DTWAITDELDATAPERSL"))
+    {
+        dirtyFlag_[156] = true;
+        if(!pJson["APSYS_DTWAITDELDATAPERSL"].isNull())
+        {
+            auto timeStr = pJson["APSYS_DTWAITDELDATAPERSL"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                apsysDtwaitdeldatapersl_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("APSYS_CDPTFSELDGSC"))
+    {
+        dirtyFlag_[157] = true;
+        if(!pJson["APSYS_CDPTFSELDGSC"].isNull())
+        {
+            apsysCdptfseldgsc_=std::make_shared<std::string>(pJson["APSYS_CDPTFSELDGSC"].asString());
+        }
+    }
+    if(pJson.isMember("APSYS_CDMOTIFPARTDGSS"))
+    {
+        dirtyFlag_[158] = true;
+        if(!pJson["APSYS_CDMOTIFPARTDGSS"].isNull())
+        {
+            apsysCdmotifpartdgss_=std::make_shared<std::string>(pJson["APSYS_CDMOTIFPARTDGSS"].asString());
+        }
+    }
+    if(pJson.isMember("EAM_CD"))
+    {
+        dirtyFlag_[159] = true;
+        if(!pJson["EAM_CD"].isNull())
+        {
+            eamCd_=std::make_shared<std::string>(pJson["EAM_CD"].asString());
+        }
+    }
+    if(pJson.isMember("RETENTION_ON_HOLD"))
+    {
+        dirtyFlag_[160] = true;
+        if(!pJson["RETENTION_ON_HOLD"].isNull())
+        {
+            retentionOnHold_=std::make_shared<std::string>(pJson["RETENTION_ON_HOLD"].asString());
+        }
+    }
+    if(pJson.isMember("LOGICAL_ERASURE"))
+    {
+        dirtyFlag_[161] = true;
+        if(!pJson["LOGICAL_ERASURE"].isNull())
+        {
+            logicalErasure_=std::make_shared<std::string>(pJson["LOGICAL_ERASURE"].asString());
+        }
+    }
+    if(pJson.isMember("RETENTION_ON_HOLD_DATE"))
+    {
+        dirtyFlag_[162] = true;
+        if(!pJson["RETENTION_ON_HOLD_DATE"].isNull())
+        {
+            auto timeStr = pJson["RETENTION_ON_HOLD_DATE"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                retentionOnHoldDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("RETENTION_ON_HOLD_REASON"))
+    {
+        dirtyFlag_[163] = true;
+        if(!pJson["RETENTION_ON_HOLD_REASON"].isNull())
+        {
+            retentionOnHoldReason_=std::make_shared<std::string>(pJson["RETENTION_ON_HOLD_REASON"].asString());
+        }
+    }
+    if(pJson.isMember("LOGICAL_ERASURE_DATE"))
+    {
+        dirtyFlag_[164] = true;
+        if(!pJson["LOGICAL_ERASURE_DATE"].isNull())
+        {
+            auto timeStr = pJson["LOGICAL_ERASURE_DATE"].asString();
+            struct tm stm;
+            memset(&stm,0,sizeof(stm));
+            auto p = strptime(timeStr.c_str(),"%Y-%m-%d %H:%M:%S",&stm);
+            time_t t = mktime(&stm);
+            size_t decimalNum = 0;
+            if(p)
+            {
+                if(*p=='.')
+                {
+                    std::string decimals(p+1,&timeStr[timeStr.length()]);
+                    while(decimals.length()<6)
+                    {
+                        decimals += "0";
+                    }
+                    decimalNum = (size_t)atol(decimals.c_str());
+                }
+                logicalErasureDate_=std::make_shared<::trantor::Date>(t*1000000+decimalNum);
+            }
+        }
+    }
+    if(pJson.isMember("LOGICAL_ERASURE_REASON"))
+    {
+        dirtyFlag_[165] = true;
+        if(!pJson["LOGICAL_ERASURE_REASON"].isNull())
+        {
+            logicalErasureReason_=std::make_shared<std::string>(pJson["LOGICAL_ERASURE_REASON"].asString());
         }
     }
 }
 
-const int32_t &Portfolio::getValueOfPorfolioId() const noexcept
+const double &Portfolio::getValueOfKundenid() const noexcept
 {
-    const static int32_t defaultValue = int32_t();
-    if(porfolioId_)
-        return *porfolioId_;
+    const static double defaultValue = double();
+    if(kundenid_)
+        return *kundenid_;
     return defaultValue;
 }
-const std::shared_ptr<int32_t> &Portfolio::getPorfolioId() const noexcept
+const std::shared_ptr<double> &Portfolio::getKundenid() const noexcept
 {
-    return porfolioId_;
+    return kundenid_;
 }
-void Portfolio::setPorfolioId(const int32_t &pPorfolioId) noexcept
+void Portfolio::setKundenid(const double &pKundenid) noexcept
 {
-    porfolioId_ = std::make_shared<int32_t>(pPorfolioId);
+    kundenid_ = std::make_shared<double>(pKundenid);
     dirtyFlag_[0] = true;
+}
+void Portfolio::setKundenidToNull() noexcept
+{
+    kundenid_.reset();
+    dirtyFlag_[0] = true;
+}
+
+const double &Portfolio::getValueOfPortfoliono() const noexcept
+{
+    const static double defaultValue = double();
+    if(portfoliono_)
+        return *portfoliono_;
+    return defaultValue;
+}
+const std::shared_ptr<double> &Portfolio::getPortfoliono() const noexcept
+{
+    return portfoliono_;
+}
+void Portfolio::setPortfoliono(const double &pPortfoliono) noexcept
+{
+    portfoliono_ = std::make_shared<double>(pPortfoliono);
+    dirtyFlag_[1] = true;
 }
 const typename Portfolio::PrimaryKeyType & Portfolio::getPrimaryKey() const
 {
-    assert(porfolioId_);
-    return *porfolioId_;
+    assert(portfoliono_);
+    return *portfoliono_;
 }
 
-const std::string &Portfolio::getValueOfPorfolioName() const noexcept
+const std::string &Portfolio::getValueOfBezeichnung() const noexcept
 {
     const static std::string defaultValue = std::string();
-    if(porfolioName_)
-        return *porfolioName_;
+    if(bezeichnung_)
+        return *bezeichnung_;
     return defaultValue;
 }
-const std::shared_ptr<std::string> &Portfolio::getPorfolioName() const noexcept
+const std::shared_ptr<std::string> &Portfolio::getBezeichnung() const noexcept
 {
-    return porfolioName_;
+    return bezeichnung_;
 }
-void Portfolio::setPorfolioName(const std::string &pPorfolioName) noexcept
+void Portfolio::setBezeichnung(const std::string &pBezeichnung) noexcept
 {
-    porfolioName_ = std::make_shared<std::string>(pPorfolioName);
-    dirtyFlag_[1] = true;
+    bezeichnung_ = std::make_shared<std::string>(pBezeichnung);
+    dirtyFlag_[2] = true;
 }
-void Portfolio::setPorfolioName(std::string &&pPorfolioName) noexcept
+void Portfolio::setBezeichnung(std::string &&pBezeichnung) noexcept
 {
-    porfolioName_ = std::make_shared<std::string>(std::move(pPorfolioName));
-    dirtyFlag_[1] = true;
+    bezeichnung_ = std::make_shared<std::string>(std::move(pBezeichnung));
+    dirtyFlag_[2] = true;
+}
+void Portfolio::setBezeichnungToNull() noexcept
+{
+    bezeichnung_.reset();
+    dirtyFlag_[2] = true;
 }
 
-const ::trantor::Date &Portfolio::getValueOfDateCreation() const noexcept
+const std::string &Portfolio::getValueOfManagementtypCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(managementtypCd_)
+        return *managementtypCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getManagementtypCd() const noexcept
+{
+    return managementtypCd_;
+}
+void Portfolio::setManagementtypCd(const std::string &pManagementtypCd) noexcept
+{
+    managementtypCd_ = std::make_shared<std::string>(pManagementtypCd);
+    dirtyFlag_[3] = true;
+}
+void Portfolio::setManagementtypCd(std::string &&pManagementtypCd) noexcept
+{
+    managementtypCd_ = std::make_shared<std::string>(std::move(pManagementtypCd));
+    dirtyFlag_[3] = true;
+}
+void Portfolio::setManagementtypCdToNull() noexcept
+{
+    managementtypCd_.reset();
+    dirtyFlag_[3] = true;
+}
+
+const std::string &Portfolio::getValueOfManager1Cd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(manager1Cd_)
+        return *manager1Cd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getManager1Cd() const noexcept
+{
+    return manager1Cd_;
+}
+void Portfolio::setManager1Cd(const std::string &pManager1Cd) noexcept
+{
+    manager1Cd_ = std::make_shared<std::string>(pManager1Cd);
+    dirtyFlag_[4] = true;
+}
+void Portfolio::setManager1Cd(std::string &&pManager1Cd) noexcept
+{
+    manager1Cd_ = std::make_shared<std::string>(std::move(pManager1Cd));
+    dirtyFlag_[4] = true;
+}
+void Portfolio::setManager1CdToNull() noexcept
+{
+    manager1Cd_.reset();
+    dirtyFlag_[4] = true;
+}
+
+const std::string &Portfolio::getValueOfManager2Cd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(manager2Cd_)
+        return *manager2Cd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getManager2Cd() const noexcept
+{
+    return manager2Cd_;
+}
+void Portfolio::setManager2Cd(const std::string &pManager2Cd) noexcept
+{
+    manager2Cd_ = std::make_shared<std::string>(pManager2Cd);
+    dirtyFlag_[5] = true;
+}
+void Portfolio::setManager2Cd(std::string &&pManager2Cd) noexcept
+{
+    manager2Cd_ = std::make_shared<std::string>(std::move(pManager2Cd));
+    dirtyFlag_[5] = true;
+}
+void Portfolio::setManager2CdToNull() noexcept
+{
+    manager2Cd_.reset();
+    dirtyFlag_[5] = true;
+}
+
+const std::string &Portfolio::getValueOfManager3Cd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(manager3Cd_)
+        return *manager3Cd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getManager3Cd() const noexcept
+{
+    return manager3Cd_;
+}
+void Portfolio::setManager3Cd(const std::string &pManager3Cd) noexcept
+{
+    manager3Cd_ = std::make_shared<std::string>(pManager3Cd);
+    dirtyFlag_[6] = true;
+}
+void Portfolio::setManager3Cd(std::string &&pManager3Cd) noexcept
+{
+    manager3Cd_ = std::make_shared<std::string>(std::move(pManager3Cd));
+    dirtyFlag_[6] = true;
+}
+void Portfolio::setManager3CdToNull() noexcept
+{
+    manager3Cd_.reset();
+    dirtyFlag_[6] = true;
+}
+
+const std::string &Portfolio::getValueOfManager4Cd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(manager4Cd_)
+        return *manager4Cd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getManager4Cd() const noexcept
+{
+    return manager4Cd_;
+}
+void Portfolio::setManager4Cd(const std::string &pManager4Cd) noexcept
+{
+    manager4Cd_ = std::make_shared<std::string>(pManager4Cd);
+    dirtyFlag_[7] = true;
+}
+void Portfolio::setManager4Cd(std::string &&pManager4Cd) noexcept
+{
+    manager4Cd_ = std::make_shared<std::string>(std::move(pManager4Cd));
+    dirtyFlag_[7] = true;
+}
+void Portfolio::setManager4CdToNull() noexcept
+{
+    manager4Cd_.reset();
+    dirtyFlag_[7] = true;
+}
+
+const std::string &Portfolio::getValueOfManager5Cd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(manager5Cd_)
+        return *manager5Cd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getManager5Cd() const noexcept
+{
+    return manager5Cd_;
+}
+void Portfolio::setManager5Cd(const std::string &pManager5Cd) noexcept
+{
+    manager5Cd_ = std::make_shared<std::string>(pManager5Cd);
+    dirtyFlag_[8] = true;
+}
+void Portfolio::setManager5Cd(std::string &&pManager5Cd) noexcept
+{
+    manager5Cd_ = std::make_shared<std::string>(std::move(pManager5Cd));
+    dirtyFlag_[8] = true;
+}
+void Portfolio::setManager5CdToNull() noexcept
+{
+    manager5Cd_.reset();
+    dirtyFlag_[8] = true;
+}
+
+const std::string &Portfolio::getValueOfVermittlerCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(vermittlerCd_)
+        return *vermittlerCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getVermittlerCd() const noexcept
+{
+    return vermittlerCd_;
+}
+void Portfolio::setVermittlerCd(const std::string &pVermittlerCd) noexcept
+{
+    vermittlerCd_ = std::make_shared<std::string>(pVermittlerCd);
+    dirtyFlag_[9] = true;
+}
+void Portfolio::setVermittlerCd(std::string &&pVermittlerCd) noexcept
+{
+    vermittlerCd_ = std::make_shared<std::string>(std::move(pVermittlerCd));
+    dirtyFlag_[9] = true;
+}
+void Portfolio::setVermittlerCdToNull() noexcept
+{
+    vermittlerCd_.reset();
+    dirtyFlag_[9] = true;
+}
+
+const std::string &Portfolio::getValueOfInfovollmacht() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(infovollmacht_)
+        return *infovollmacht_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getInfovollmacht() const noexcept
+{
+    return infovollmacht_;
+}
+void Portfolio::setInfovollmacht(const std::string &pInfovollmacht) noexcept
+{
+    infovollmacht_ = std::make_shared<std::string>(pInfovollmacht);
+    dirtyFlag_[10] = true;
+}
+void Portfolio::setInfovollmacht(std::string &&pInfovollmacht) noexcept
+{
+    infovollmacht_ = std::make_shared<std::string>(std::move(pInfovollmacht));
+    dirtyFlag_[10] = true;
+}
+void Portfolio::setInfovollmachtToNull() noexcept
+{
+    infovollmacht_.reset();
+    dirtyFlag_[10] = true;
+}
+
+const std::string &Portfolio::getValueOfKontakt() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(kontakt_)
+        return *kontakt_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getKontakt() const noexcept
+{
+    return kontakt_;
+}
+void Portfolio::setKontakt(const std::string &pKontakt) noexcept
+{
+    kontakt_ = std::make_shared<std::string>(pKontakt);
+    dirtyFlag_[11] = true;
+}
+void Portfolio::setKontakt(std::string &&pKontakt) noexcept
+{
+    kontakt_ = std::make_shared<std::string>(std::move(pKontakt));
+    dirtyFlag_[11] = true;
+}
+void Portfolio::setKontaktToNull() noexcept
+{
+    kontakt_.reset();
+    dirtyFlag_[11] = true;
+}
+
+const std::string &Portfolio::getValueOfErtraegnisaufCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(ertraegnisaufCd_)
+        return *ertraegnisaufCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getErtraegnisaufCd() const noexcept
+{
+    return ertraegnisaufCd_;
+}
+void Portfolio::setErtraegnisaufCd(const std::string &pErtraegnisaufCd) noexcept
+{
+    ertraegnisaufCd_ = std::make_shared<std::string>(pErtraegnisaufCd);
+    dirtyFlag_[12] = true;
+}
+void Portfolio::setErtraegnisaufCd(std::string &&pErtraegnisaufCd) noexcept
+{
+    ertraegnisaufCd_ = std::make_shared<std::string>(std::move(pErtraegnisaufCd));
+    dirtyFlag_[12] = true;
+}
+void Portfolio::setErtraegnisaufCdToNull() noexcept
+{
+    ertraegnisaufCd_.reset();
+    dirtyFlag_[12] = true;
+}
+
+const std::string &Portfolio::getValueOfWaehrungsCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(waehrungsCd_)
+        return *waehrungsCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getWaehrungsCd() const noexcept
+{
+    return waehrungsCd_;
+}
+void Portfolio::setWaehrungsCd(const std::string &pWaehrungsCd) noexcept
+{
+    waehrungsCd_ = std::make_shared<std::string>(pWaehrungsCd);
+    dirtyFlag_[13] = true;
+}
+void Portfolio::setWaehrungsCd(std::string &&pWaehrungsCd) noexcept
+{
+    waehrungsCd_ = std::make_shared<std::string>(std::move(pWaehrungsCd));
+    dirtyFlag_[13] = true;
+}
+void Portfolio::setWaehrungsCdToNull() noexcept
+{
+    waehrungsCd_.reset();
+    dirtyFlag_[13] = true;
+}
+
+const std::string &Portfolio::getValueOfBelegsatzCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(belegsatzCd_)
+        return *belegsatzCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getBelegsatzCd() const noexcept
+{
+    return belegsatzCd_;
+}
+void Portfolio::setBelegsatzCd(const std::string &pBelegsatzCd) noexcept
+{
+    belegsatzCd_ = std::make_shared<std::string>(pBelegsatzCd);
+    dirtyFlag_[14] = true;
+}
+void Portfolio::setBelegsatzCd(std::string &&pBelegsatzCd) noexcept
+{
+    belegsatzCd_ = std::make_shared<std::string>(std::move(pBelegsatzCd));
+    dirtyFlag_[14] = true;
+}
+void Portfolio::setBelegsatzCdToNull() noexcept
+{
+    belegsatzCd_.reset();
+    dirtyFlag_[14] = true;
+}
+
+const std::string &Portfolio::getValueOfLoeschCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(loeschCd_)
+        return *loeschCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getLoeschCd() const noexcept
+{
+    return loeschCd_;
+}
+void Portfolio::setLoeschCd(const std::string &pLoeschCd) noexcept
+{
+    loeschCd_ = std::make_shared<std::string>(pLoeschCd);
+    dirtyFlag_[15] = true;
+}
+void Portfolio::setLoeschCd(std::string &&pLoeschCd) noexcept
+{
+    loeschCd_ = std::make_shared<std::string>(std::move(pLoeschCd));
+    dirtyFlag_[15] = true;
+}
+void Portfolio::setLoeschCdToNull() noexcept
+{
+    loeschCd_.reset();
+    dirtyFlag_[15] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfLoeschdatum() const noexcept
 {
     const static ::trantor::Date defaultValue = ::trantor::Date();
-    if(dateCreation_)
-        return *dateCreation_;
+    if(loeschdatum_)
+        return *loeschdatum_;
     return defaultValue;
 }
-const std::shared_ptr<::trantor::Date> &Portfolio::getDateCreation() const noexcept
+const std::shared_ptr<::trantor::Date> &Portfolio::getLoeschdatum() const noexcept
 {
-    return dateCreation_;
+    return loeschdatum_;
 }
-void Portfolio::setDateCreation(const ::trantor::Date &pDateCreation) noexcept
+void Portfolio::setLoeschdatum(const ::trantor::Date &pLoeschdatum) noexcept
 {
-    dateCreation_ = std::make_shared<::trantor::Date>(pDateCreation.roundDay());
-    dirtyFlag_[2] = true;
+    loeschdatum_ = std::make_shared<::trantor::Date>(pLoeschdatum);
+    dirtyFlag_[16] = true;
 }
-void Portfolio::setDateCreationToNull() noexcept
+void Portfolio::setLoeschdatumToNull() noexcept
 {
-    dateCreation_.reset();
-    dirtyFlag_[2] = true;
+    loeschdatum_.reset();
+    dirtyFlag_[16] = true;
 }
 
-const int32_t &Portfolio::getValueOfOpenClosed() const noexcept
+const ::trantor::Date &Portfolio::getValueOfCrtdatum() const noexcept
 {
-    const static int32_t defaultValue = int32_t();
-    if(openClosed_)
-        return *openClosed_;
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(crtdatum_)
+        return *crtdatum_;
     return defaultValue;
 }
-const std::shared_ptr<int32_t> &Portfolio::getOpenClosed() const noexcept
+const std::shared_ptr<::trantor::Date> &Portfolio::getCrtdatum() const noexcept
 {
-    return openClosed_;
+    return crtdatum_;
 }
-void Portfolio::setOpenClosed(const int32_t &pOpenClosed) noexcept
+void Portfolio::setCrtdatum(const ::trantor::Date &pCrtdatum) noexcept
 {
-    openClosed_ = std::make_shared<int32_t>(pOpenClosed);
-    dirtyFlag_[3] = true;
+    crtdatum_ = std::make_shared<::trantor::Date>(pCrtdatum);
+    dirtyFlag_[17] = true;
 }
-void Portfolio::setOpenClosedToNull() noexcept
+void Portfolio::setCrtdatumToNull() noexcept
 {
-    openClosed_.reset();
-    dirtyFlag_[3] = true;
+    crtdatum_.reset();
+    dirtyFlag_[17] = true;
+}
+
+const std::string &Portfolio::getValueOfCrtuser() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(crtuser_)
+        return *crtuser_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getCrtuser() const noexcept
+{
+    return crtuser_;
+}
+void Portfolio::setCrtuser(const std::string &pCrtuser) noexcept
+{
+    crtuser_ = std::make_shared<std::string>(pCrtuser);
+    dirtyFlag_[18] = true;
+}
+void Portfolio::setCrtuser(std::string &&pCrtuser) noexcept
+{
+    crtuser_ = std::make_shared<std::string>(std::move(pCrtuser));
+    dirtyFlag_[18] = true;
+}
+void Portfolio::setCrtuserToNull() noexcept
+{
+    crtuser_.reset();
+    dirtyFlag_[18] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfMutdatum() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(mutdatum_)
+        return *mutdatum_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getMutdatum() const noexcept
+{
+    return mutdatum_;
+}
+void Portfolio::setMutdatum(const ::trantor::Date &pMutdatum) noexcept
+{
+    mutdatum_ = std::make_shared<::trantor::Date>(pMutdatum);
+    dirtyFlag_[19] = true;
+}
+void Portfolio::setMutdatumToNull() noexcept
+{
+    mutdatum_.reset();
+    dirtyFlag_[19] = true;
+}
+
+const std::string &Portfolio::getValueOfMutuser() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(mutuser_)
+        return *mutuser_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getMutuser() const noexcept
+{
+    return mutuser_;
+}
+void Portfolio::setMutuser(const std::string &pMutuser) noexcept
+{
+    mutuser_ = std::make_shared<std::string>(pMutuser);
+    dirtyFlag_[20] = true;
+}
+void Portfolio::setMutuser(std::string &&pMutuser) noexcept
+{
+    mutuser_ = std::make_shared<std::string>(std::move(pMutuser));
+    dirtyFlag_[20] = true;
+}
+void Portfolio::setMutuserToNull() noexcept
+{
+    mutuser_.reset();
+    dirtyFlag_[20] = true;
+}
+
+const std::string &Portfolio::getValueOfMisdomizilCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(misdomizilCd_)
+        return *misdomizilCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getMisdomizilCd() const noexcept
+{
+    return misdomizilCd_;
+}
+void Portfolio::setMisdomizilCd(const std::string &pMisdomizilCd) noexcept
+{
+    misdomizilCd_ = std::make_shared<std::string>(pMisdomizilCd);
+    dirtyFlag_[21] = true;
+}
+void Portfolio::setMisdomizilCd(std::string &&pMisdomizilCd) noexcept
+{
+    misdomizilCd_ = std::make_shared<std::string>(std::move(pMisdomizilCd));
+    dirtyFlag_[21] = true;
+}
+void Portfolio::setMisdomizilCdToNull() noexcept
+{
+    misdomizilCd_.reset();
+    dirtyFlag_[21] = true;
+}
+
+const std::string &Portfolio::getValueOfAnlagestrategieCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(anlagestrategieCd_)
+        return *anlagestrategieCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getAnlagestrategieCd() const noexcept
+{
+    return anlagestrategieCd_;
+}
+void Portfolio::setAnlagestrategieCd(const std::string &pAnlagestrategieCd) noexcept
+{
+    anlagestrategieCd_ = std::make_shared<std::string>(pAnlagestrategieCd);
+    dirtyFlag_[22] = true;
+}
+void Portfolio::setAnlagestrategieCd(std::string &&pAnlagestrategieCd) noexcept
+{
+    anlagestrategieCd_ = std::make_shared<std::string>(std::move(pAnlagestrategieCd));
+    dirtyFlag_[22] = true;
+}
+void Portfolio::setAnlagestrategieCdToNull() noexcept
+{
+    anlagestrategieCd_.reset();
+    dirtyFlag_[22] = true;
+}
+
+const std::string &Portfolio::getValueOfUswbasketCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(uswbasketCd_)
+        return *uswbasketCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getUswbasketCd() const noexcept
+{
+    return uswbasketCd_;
+}
+void Portfolio::setUswbasketCd(const std::string &pUswbasketCd) noexcept
+{
+    uswbasketCd_ = std::make_shared<std::string>(pUswbasketCd);
+    dirtyFlag_[23] = true;
+}
+void Portfolio::setUswbasketCd(std::string &&pUswbasketCd) noexcept
+{
+    uswbasketCd_ = std::make_shared<std::string>(std::move(pUswbasketCd));
+    dirtyFlag_[23] = true;
+}
+void Portfolio::setUswbasketCdToNull() noexcept
+{
+    uswbasketCd_.reset();
+    dirtyFlag_[23] = true;
+}
+
+const std::string &Portfolio::getValueOfVersandhaeufigCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(versandhaeufigCd_)
+        return *versandhaeufigCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getVersandhaeufigCd() const noexcept
+{
+    return versandhaeufigCd_;
+}
+void Portfolio::setVersandhaeufigCd(const std::string &pVersandhaeufigCd) noexcept
+{
+    versandhaeufigCd_ = std::make_shared<std::string>(pVersandhaeufigCd);
+    dirtyFlag_[24] = true;
+}
+void Portfolio::setVersandhaeufigCd(std::string &&pVersandhaeufigCd) noexcept
+{
+    versandhaeufigCd_ = std::make_shared<std::string>(std::move(pVersandhaeufigCd));
+    dirtyFlag_[24] = true;
+}
+void Portfolio::setVersandhaeufigCdToNull() noexcept
+{
+    versandhaeufigCd_.reset();
+    dirtyFlag_[24] = true;
+}
+
+const std::string &Portfolio::getValueOfRubrik() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(rubrik_)
+        return *rubrik_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getRubrik() const noexcept
+{
+    return rubrik_;
+}
+void Portfolio::setRubrik(const std::string &pRubrik) noexcept
+{
+    rubrik_ = std::make_shared<std::string>(pRubrik);
+    dirtyFlag_[25] = true;
+}
+void Portfolio::setRubrik(std::string &&pRubrik) noexcept
+{
+    rubrik_ = std::make_shared<std::string>(std::move(pRubrik));
+    dirtyFlag_[25] = true;
+}
+void Portfolio::setRubrikToNull() noexcept
+{
+    rubrik_.reset();
+    dirtyFlag_[25] = true;
+}
+
+const std::string &Portfolio::getValueOfVerwaltungsmodusCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(verwaltungsmodusCd_)
+        return *verwaltungsmodusCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getVerwaltungsmodusCd() const noexcept
+{
+    return verwaltungsmodusCd_;
+}
+void Portfolio::setVerwaltungsmodusCd(const std::string &pVerwaltungsmodusCd) noexcept
+{
+    verwaltungsmodusCd_ = std::make_shared<std::string>(pVerwaltungsmodusCd);
+    dirtyFlag_[26] = true;
+}
+void Portfolio::setVerwaltungsmodusCd(std::string &&pVerwaltungsmodusCd) noexcept
+{
+    verwaltungsmodusCd_ = std::make_shared<std::string>(std::move(pVerwaltungsmodusCd));
+    dirtyFlag_[26] = true;
+}
+void Portfolio::setVerwaltungsmodusCdToNull() noexcept
+{
+    verwaltungsmodusCd_.reset();
+    dirtyFlag_[26] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfKundeletzterbesuch() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(kundeletzterbesuch_)
+        return *kundeletzterbesuch_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getKundeletzterbesuch() const noexcept
+{
+    return kundeletzterbesuch_;
+}
+void Portfolio::setKundeletzterbesuch(const ::trantor::Date &pKundeletzterbesuch) noexcept
+{
+    kundeletzterbesuch_ = std::make_shared<::trantor::Date>(pKundeletzterbesuch);
+    dirtyFlag_[27] = true;
+}
+void Portfolio::setKundeletzterbesuchToNull() noexcept
+{
+    kundeletzterbesuch_.reset();
+    dirtyFlag_[27] = true;
+}
+
+const std::string &Portfolio::getValueOfAntragsort() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(antragsort_)
+        return *antragsort_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getAntragsort() const noexcept
+{
+    return antragsort_;
+}
+void Portfolio::setAntragsort(const std::string &pAntragsort) noexcept
+{
+    antragsort_ = std::make_shared<std::string>(pAntragsort);
+    dirtyFlag_[28] = true;
+}
+void Portfolio::setAntragsort(std::string &&pAntragsort) noexcept
+{
+    antragsort_ = std::make_shared<std::string>(std::move(pAntragsort));
+    dirtyFlag_[28] = true;
+}
+void Portfolio::setAntragsortToNull() noexcept
+{
+    antragsort_.reset();
+    dirtyFlag_[28] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfAntragsdatum() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(antragsdatum_)
+        return *antragsdatum_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getAntragsdatum() const noexcept
+{
+    return antragsdatum_;
+}
+void Portfolio::setAntragsdatum(const ::trantor::Date &pAntragsdatum) noexcept
+{
+    antragsdatum_ = std::make_shared<::trantor::Date>(pAntragsdatum);
+    dirtyFlag_[29] = true;
+}
+void Portfolio::setAntragsdatumToNull() noexcept
+{
+    antragsdatum_.reset();
+    dirtyFlag_[29] = true;
+}
+
+const std::string &Portfolio::getValueOfAnderepostadresseCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(anderepostadresseCd_)
+        return *anderepostadresseCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getAnderepostadresseCd() const noexcept
+{
+    return anderepostadresseCd_;
+}
+void Portfolio::setAnderepostadresseCd(const std::string &pAnderepostadresseCd) noexcept
+{
+    anderepostadresseCd_ = std::make_shared<std::string>(pAnderepostadresseCd);
+    dirtyFlag_[30] = true;
+}
+void Portfolio::setAnderepostadresseCd(std::string &&pAnderepostadresseCd) noexcept
+{
+    anderepostadresseCd_ = std::make_shared<std::string>(std::move(pAnderepostadresseCd));
+    dirtyFlag_[30] = true;
+}
+void Portfolio::setAnderepostadresseCdToNull() noexcept
+{
+    anderepostadresseCd_.reset();
+    dirtyFlag_[30] = true;
+}
+
+const std::string &Portfolio::getValueOfBanklagerndCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(banklagerndCd_)
+        return *banklagerndCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getBanklagerndCd() const noexcept
+{
+    return banklagerndCd_;
+}
+void Portfolio::setBanklagerndCd(const std::string &pBanklagerndCd) noexcept
+{
+    banklagerndCd_ = std::make_shared<std::string>(pBanklagerndCd);
+    dirtyFlag_[31] = true;
+}
+void Portfolio::setBanklagerndCd(std::string &&pBanklagerndCd) noexcept
+{
+    banklagerndCd_ = std::make_shared<std::string>(std::move(pBanklagerndCd));
+    dirtyFlag_[31] = true;
+}
+void Portfolio::setBanklagerndCdToNull() noexcept
+{
+    banklagerndCd_.reset();
+    dirtyFlag_[31] = true;
+}
+
+const std::string &Portfolio::getValueOfSpezialinstruktion() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(spezialinstruktion_)
+        return *spezialinstruktion_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getSpezialinstruktion() const noexcept
+{
+    return spezialinstruktion_;
+}
+void Portfolio::setSpezialinstruktion(const std::string &pSpezialinstruktion) noexcept
+{
+    spezialinstruktion_ = std::make_shared<std::string>(pSpezialinstruktion);
+    dirtyFlag_[32] = true;
+}
+void Portfolio::setSpezialinstruktion(std::string &&pSpezialinstruktion) noexcept
+{
+    spezialinstruktion_ = std::make_shared<std::string>(std::move(pSpezialinstruktion));
+    dirtyFlag_[32] = true;
+}
+void Portfolio::setSpezialinstruktionToNull() noexcept
+{
+    spezialinstruktion_.reset();
+    dirtyFlag_[32] = true;
+}
+
+const std::string &Portfolio::getValueOfGeldvonkontoinhaberCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(geldvonkontoinhaberCd_)
+        return *geldvonkontoinhaberCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getGeldvonkontoinhaberCd() const noexcept
+{
+    return geldvonkontoinhaberCd_;
+}
+void Portfolio::setGeldvonkontoinhaberCd(const std::string &pGeldvonkontoinhaberCd) noexcept
+{
+    geldvonkontoinhaberCd_ = std::make_shared<std::string>(pGeldvonkontoinhaberCd);
+    dirtyFlag_[33] = true;
+}
+void Portfolio::setGeldvonkontoinhaberCd(std::string &&pGeldvonkontoinhaberCd) noexcept
+{
+    geldvonkontoinhaberCd_ = std::make_shared<std::string>(std::move(pGeldvonkontoinhaberCd));
+    dirtyFlag_[33] = true;
+}
+void Portfolio::setGeldvonkontoinhaberCdToNull() noexcept
+{
+    geldvonkontoinhaberCd_.reset();
+    dirtyFlag_[33] = true;
+}
+
+const std::string &Portfolio::getValueOfManualopenCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(manualopenCd_)
+        return *manualopenCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getManualopenCd() const noexcept
+{
+    return manualopenCd_;
+}
+void Portfolio::setManualopenCd(const std::string &pManualopenCd) noexcept
+{
+    manualopenCd_ = std::make_shared<std::string>(pManualopenCd);
+    dirtyFlag_[34] = true;
+}
+void Portfolio::setManualopenCd(std::string &&pManualopenCd) noexcept
+{
+    manualopenCd_ = std::make_shared<std::string>(std::move(pManualopenCd));
+    dirtyFlag_[34] = true;
+}
+void Portfolio::setManualopenCdToNull() noexcept
+{
+    manualopenCd_.reset();
+    dirtyFlag_[34] = true;
+}
+
+const std::string &Portfolio::getValueOfKontonummer1() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(kontonummer1_)
+        return *kontonummer1_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getKontonummer1() const noexcept
+{
+    return kontonummer1_;
+}
+void Portfolio::setKontonummer1(const std::string &pKontonummer1) noexcept
+{
+    kontonummer1_ = std::make_shared<std::string>(pKontonummer1);
+    dirtyFlag_[35] = true;
+}
+void Portfolio::setKontonummer1(std::string &&pKontonummer1) noexcept
+{
+    kontonummer1_ = std::make_shared<std::string>(std::move(pKontonummer1));
+    dirtyFlag_[35] = true;
+}
+void Portfolio::setKontonummer1ToNull() noexcept
+{
+    kontonummer1_.reset();
+    dirtyFlag_[35] = true;
+}
+
+const std::string &Portfolio::getValueOfKontonummer2() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(kontonummer2_)
+        return *kontonummer2_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getKontonummer2() const noexcept
+{
+    return kontonummer2_;
+}
+void Portfolio::setKontonummer2(const std::string &pKontonummer2) noexcept
+{
+    kontonummer2_ = std::make_shared<std::string>(pKontonummer2);
+    dirtyFlag_[36] = true;
+}
+void Portfolio::setKontonummer2(std::string &&pKontonummer2) noexcept
+{
+    kontonummer2_ = std::make_shared<std::string>(std::move(pKontonummer2));
+    dirtyFlag_[36] = true;
+}
+void Portfolio::setKontonummer2ToNull() noexcept
+{
+    kontonummer2_.reset();
+    dirtyFlag_[36] = true;
+}
+
+const std::string &Portfolio::getValueOfKontonummer3() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(kontonummer3_)
+        return *kontonummer3_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getKontonummer3() const noexcept
+{
+    return kontonummer3_;
+}
+void Portfolio::setKontonummer3(const std::string &pKontonummer3) noexcept
+{
+    kontonummer3_ = std::make_shared<std::string>(pKontonummer3);
+    dirtyFlag_[37] = true;
+}
+void Portfolio::setKontonummer3(std::string &&pKontonummer3) noexcept
+{
+    kontonummer3_ = std::make_shared<std::string>(std::move(pKontonummer3));
+    dirtyFlag_[37] = true;
+}
+void Portfolio::setKontonummer3ToNull() noexcept
+{
+    kontonummer3_.reset();
+    dirtyFlag_[37] = true;
+}
+
+const std::string &Portfolio::getValueOfFilialCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(filialCd_)
+        return *filialCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getFilialCd() const noexcept
+{
+    return filialCd_;
+}
+void Portfolio::setFilialCd(const std::string &pFilialCd) noexcept
+{
+    filialCd_ = std::make_shared<std::string>(pFilialCd);
+    dirtyFlag_[38] = true;
+}
+void Portfolio::setFilialCd(std::string &&pFilialCd) noexcept
+{
+    filialCd_ = std::make_shared<std::string>(std::move(pFilialCd));
+    dirtyFlag_[38] = true;
+}
+void Portfolio::setFilialCdToNull() noexcept
+{
+    filialCd_.reset();
+    dirtyFlag_[38] = true;
+}
+
+const std::string &Portfolio::getValueOfRubrik1() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(rubrik1_)
+        return *rubrik1_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getRubrik1() const noexcept
+{
+    return rubrik1_;
+}
+void Portfolio::setRubrik1(const std::string &pRubrik1) noexcept
+{
+    rubrik1_ = std::make_shared<std::string>(pRubrik1);
+    dirtyFlag_[39] = true;
+}
+void Portfolio::setRubrik1(std::string &&pRubrik1) noexcept
+{
+    rubrik1_ = std::make_shared<std::string>(std::move(pRubrik1));
+    dirtyFlag_[39] = true;
+}
+void Portfolio::setRubrik1ToNull() noexcept
+{
+    rubrik1_.reset();
+    dirtyFlag_[39] = true;
+}
+
+const std::string &Portfolio::getValueOfRubrik2() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(rubrik2_)
+        return *rubrik2_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getRubrik2() const noexcept
+{
+    return rubrik2_;
+}
+void Portfolio::setRubrik2(const std::string &pRubrik2) noexcept
+{
+    rubrik2_ = std::make_shared<std::string>(pRubrik2);
+    dirtyFlag_[40] = true;
+}
+void Portfolio::setRubrik2(std::string &&pRubrik2) noexcept
+{
+    rubrik2_ = std::make_shared<std::string>(std::move(pRubrik2));
+    dirtyFlag_[40] = true;
+}
+void Portfolio::setRubrik2ToNull() noexcept
+{
+    rubrik2_.reset();
+    dirtyFlag_[40] = true;
+}
+
+const std::string &Portfolio::getValueOfRubrik3() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(rubrik3_)
+        return *rubrik3_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getRubrik3() const noexcept
+{
+    return rubrik3_;
+}
+void Portfolio::setRubrik3(const std::string &pRubrik3) noexcept
+{
+    rubrik3_ = std::make_shared<std::string>(pRubrik3);
+    dirtyFlag_[41] = true;
+}
+void Portfolio::setRubrik3(std::string &&pRubrik3) noexcept
+{
+    rubrik3_ = std::make_shared<std::string>(std::move(pRubrik3));
+    dirtyFlag_[41] = true;
+}
+void Portfolio::setRubrik3ToNull() noexcept
+{
+    rubrik3_.reset();
+    dirtyFlag_[41] = true;
+}
+
+const double &Portfolio::getValueOfOnlineCd() const noexcept
+{
+    const static double defaultValue = double();
+    if(onlineCd_)
+        return *onlineCd_;
+    return defaultValue;
+}
+const std::shared_ptr<double> &Portfolio::getOnlineCd() const noexcept
+{
+    return onlineCd_;
+}
+void Portfolio::setOnlineCd(const double &pOnlineCd) noexcept
+{
+    onlineCd_ = std::make_shared<double>(pOnlineCd);
+    dirtyFlag_[42] = true;
+}
+void Portfolio::setOnlineCdToNull() noexcept
+{
+    onlineCd_.reset();
+    dirtyFlag_[42] = true;
+}
+
+const std::string &Portfolio::getValueOfPortfoliotypCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(portfoliotypCd_)
+        return *portfoliotypCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getPortfoliotypCd() const noexcept
+{
+    return portfoliotypCd_;
+}
+void Portfolio::setPortfoliotypCd(const std::string &pPortfoliotypCd) noexcept
+{
+    portfoliotypCd_ = std::make_shared<std::string>(pPortfoliotypCd);
+    dirtyFlag_[43] = true;
+}
+void Portfolio::setPortfoliotypCd(std::string &&pPortfoliotypCd) noexcept
+{
+    portfoliotypCd_ = std::make_shared<std::string>(std::move(pPortfoliotypCd));
+    dirtyFlag_[43] = true;
+}
+void Portfolio::setPortfoliotypCdToNull() noexcept
+{
+    portfoliotypCd_.reset();
+    dirtyFlag_[43] = true;
+}
+
+const std::string &Portfolio::getValueOfCdpartc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(cdpartc_)
+        return *cdpartc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getCdpartc() const noexcept
+{
+    return cdpartc_;
+}
+void Portfolio::setCdpartc(const std::string &pCdpartc) noexcept
+{
+    cdpartc_ = std::make_shared<std::string>(pCdpartc);
+    dirtyFlag_[44] = true;
+}
+void Portfolio::setCdpartc(std::string &&pCdpartc) noexcept
+{
+    cdpartc_ = std::make_shared<std::string>(std::move(pCdpartc));
+    dirtyFlag_[44] = true;
+}
+void Portfolio::setCdpartcToNull() noexcept
+{
+    cdpartc_.reset();
+    dirtyFlag_[44] = true;
+}
+
+const float &Portfolio::getValueOfPoEuTaxProzent() const noexcept
+{
+    const static float defaultValue = float();
+    if(poEuTaxProzent_)
+        return *poEuTaxProzent_;
+    return defaultValue;
+}
+const std::shared_ptr<float> &Portfolio::getPoEuTaxProzent() const noexcept
+{
+    return poEuTaxProzent_;
+}
+void Portfolio::setPoEuTaxProzent(const float &pPoEuTaxProzent) noexcept
+{
+    poEuTaxProzent_ = std::make_shared<float>(pPoEuTaxProzent);
+    dirtyFlag_[45] = true;
+}
+void Portfolio::setPoEuTaxProzentToNull() noexcept
+{
+    poEuTaxProzent_.reset();
+    dirtyFlag_[45] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysStatusOpec() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysStatusOpec_)
+        return *apsysStatusOpec_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysStatusOpec() const noexcept
+{
+    return apsysStatusOpec_;
+}
+void Portfolio::setApsysStatusOpec(const std::string &pApsysStatusOpec) noexcept
+{
+    apsysStatusOpec_ = std::make_shared<std::string>(pApsysStatusOpec);
+    dirtyFlag_[46] = true;
+}
+void Portfolio::setApsysStatusOpec(std::string &&pApsysStatusOpec) noexcept
+{
+    apsysStatusOpec_ = std::make_shared<std::string>(std::move(pApsysStatusOpec));
+    dirtyFlag_[46] = true;
+}
+void Portfolio::setApsysStatusOpecToNull() noexcept
+{
+    apsysStatusOpec_.reset();
+    dirtyFlag_[46] = true;
+}
+
+const double &Portfolio::getValueOfApsysErri() const noexcept
+{
+    const static double defaultValue = double();
+    if(apsysErri_)
+        return *apsysErri_;
+    return defaultValue;
+}
+const std::shared_ptr<double> &Portfolio::getApsysErri() const noexcept
+{
+    return apsysErri_;
+}
+void Portfolio::setApsysErri(const double &pApsysErri) noexcept
+{
+    apsysErri_ = std::make_shared<double>(pApsysErri);
+    dirtyFlag_[47] = true;
+}
+void Portfolio::setApsysErriToNull() noexcept
+{
+    apsysErri_.reset();
+    dirtyFlag_[47] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysShnas() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysShnas_)
+        return *apsysShnas_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysShnas() const noexcept
+{
+    return apsysShnas_;
+}
+void Portfolio::setApsysShnas(const std::string &pApsysShnas) noexcept
+{
+    apsysShnas_ = std::make_shared<std::string>(pApsysShnas);
+    dirtyFlag_[48] = true;
+}
+void Portfolio::setApsysShnas(std::string &&pApsysShnas) noexcept
+{
+    apsysShnas_ = std::make_shared<std::string>(std::move(pApsysShnas));
+    dirtyFlag_[48] = true;
+}
+void Portfolio::setApsysShnasToNull() noexcept
+{
+    apsysShnas_.reset();
+    dirtyFlag_[48] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysTypmdcs() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysTypmdcs_)
+        return *apsysTypmdcs_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysTypmdcs() const noexcept
+{
+    return apsysTypmdcs_;
+}
+void Portfolio::setApsysTypmdcs(const std::string &pApsysTypmdcs) noexcept
+{
+    apsysTypmdcs_ = std::make_shared<std::string>(pApsysTypmdcs);
+    dirtyFlag_[49] = true;
+}
+void Portfolio::setApsysTypmdcs(std::string &&pApsysTypmdcs) noexcept
+{
+    apsysTypmdcs_ = std::make_shared<std::string>(std::move(pApsysTypmdcs));
+    dirtyFlag_[49] = true;
+}
+void Portfolio::setApsysTypmdcsToNull() noexcept
+{
+    apsysTypmdcs_.reset();
+    dirtyFlag_[49] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysIntilgs() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysIntilgs_)
+        return *apsysIntilgs_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysIntilgs() const noexcept
+{
+    return apsysIntilgs_;
+}
+void Portfolio::setApsysIntilgs(const std::string &pApsysIntilgs) noexcept
+{
+    apsysIntilgs_ = std::make_shared<std::string>(pApsysIntilgs);
+    dirtyFlag_[50] = true;
+}
+void Portfolio::setApsysIntilgs(std::string &&pApsysIntilgs) noexcept
+{
+    apsysIntilgs_ = std::make_shared<std::string>(std::move(pApsysIntilgs));
+    dirtyFlag_[50] = true;
+}
+void Portfolio::setApsysIntilgsToNull() noexcept
+{
+    apsysIntilgs_.reset();
+    dirtyFlag_[50] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysShlibptfs() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysShlibptfs_)
+        return *apsysShlibptfs_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysShlibptfs() const noexcept
+{
+    return apsysShlibptfs_;
+}
+void Portfolio::setApsysShlibptfs(const std::string &pApsysShlibptfs) noexcept
+{
+    apsysShlibptfs_ = std::make_shared<std::string>(pApsysShlibptfs);
+    dirtyFlag_[51] = true;
+}
+void Portfolio::setApsysShlibptfs(std::string &&pApsysShlibptfs) noexcept
+{
+    apsysShlibptfs_ = std::make_shared<std::string>(std::move(pApsysShlibptfs));
+    dirtyFlag_[51] = true;
+}
+void Portfolio::setApsysShlibptfsToNull() noexcept
+{
+    apsysShlibptfs_.reset();
+    dirtyFlag_[51] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdstatdusc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdstatdusc_)
+        return *apsysCdstatdusc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdstatdusc() const noexcept
+{
+    return apsysCdstatdusc_;
+}
+void Portfolio::setApsysCdstatdusc(const std::string &pApsysCdstatdusc) noexcept
+{
+    apsysCdstatdusc_ = std::make_shared<std::string>(pApsysCdstatdusc);
+    dirtyFlag_[52] = true;
+}
+void Portfolio::setApsysCdstatdusc(std::string &&pApsysCdstatdusc) noexcept
+{
+    apsysCdstatdusc_ = std::make_shared<std::string>(std::move(pApsysCdstatdusc));
+    dirtyFlag_[52] = true;
+}
+void Portfolio::setApsysCdstatduscToNull() noexcept
+{
+    apsysCdstatdusc_.reset();
+    dirtyFlag_[52] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfApsysDtdebpartl() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(apsysDtdebpartl_)
+        return *apsysDtdebpartl_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getApsysDtdebpartl() const noexcept
+{
+    return apsysDtdebpartl_;
+}
+void Portfolio::setApsysDtdebpartl(const ::trantor::Date &pApsysDtdebpartl) noexcept
+{
+    apsysDtdebpartl_ = std::make_shared<::trantor::Date>(pApsysDtdebpartl);
+    dirtyFlag_[53] = true;
+}
+void Portfolio::setApsysDtdebpartlToNull() noexcept
+{
+    apsysDtdebpartl_.reset();
+    dirtyFlag_[53] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfApsysDtfinpartl() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(apsysDtfinpartl_)
+        return *apsysDtfinpartl_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getApsysDtfinpartl() const noexcept
+{
+    return apsysDtfinpartl_;
+}
+void Portfolio::setApsysDtfinpartl(const ::trantor::Date &pApsysDtfinpartl) noexcept
+{
+    apsysDtfinpartl_ = std::make_shared<::trantor::Date>(pApsysDtfinpartl);
+    dirtyFlag_[54] = true;
+}
+void Portfolio::setApsysDtfinpartlToNull() noexcept
+{
+    apsysDtfinpartl_.reset();
+    dirtyFlag_[54] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysIdstrucs() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysIdstrucs_)
+        return *apsysIdstrucs_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysIdstrucs() const noexcept
+{
+    return apsysIdstrucs_;
+}
+void Portfolio::setApsysIdstrucs(const std::string &pApsysIdstrucs) noexcept
+{
+    apsysIdstrucs_ = std::make_shared<std::string>(pApsysIdstrucs);
+    dirtyFlag_[55] = true;
+}
+void Portfolio::setApsysIdstrucs(std::string &&pApsysIdstrucs) noexcept
+{
+    apsysIdstrucs_ = std::make_shared<std::string>(std::move(pApsysIdstrucs));
+    dirtyFlag_[55] = true;
+}
+void Portfolio::setApsysIdstrucsToNull() noexcept
+{
+    apsysIdstrucs_.reset();
+    dirtyFlag_[55] = true;
+}
+
+const double &Portfolio::getValueOfApsysCdpermi() const noexcept
+{
+    const static double defaultValue = double();
+    if(apsysCdpermi_)
+        return *apsysCdpermi_;
+    return defaultValue;
+}
+const std::shared_ptr<double> &Portfolio::getApsysCdpermi() const noexcept
+{
+    return apsysCdpermi_;
+}
+void Portfolio::setApsysCdpermi(const double &pApsysCdpermi) noexcept
+{
+    apsysCdpermi_ = std::make_shared<double>(pApsysCdpermi);
+    dirtyFlag_[56] = true;
+}
+void Portfolio::setApsysCdpermiToNull() noexcept
+{
+    apsysCdpermi_.reset();
+    dirtyFlag_[56] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptfints() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptfints_)
+        return *apsysCdctgptfints_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptfints() const noexcept
+{
+    return apsysCdctgptfints_;
+}
+void Portfolio::setApsysCdctgptfints(const std::string &pApsysCdctgptfints) noexcept
+{
+    apsysCdctgptfints_ = std::make_shared<std::string>(pApsysCdctgptfints);
+    dirtyFlag_[57] = true;
+}
+void Portfolio::setApsysCdctgptfints(std::string &&pApsysCdctgptfints) noexcept
+{
+    apsysCdctgptfints_ = std::make_shared<std::string>(std::move(pApsysCdctgptfints));
+    dirtyFlag_[57] = true;
+}
+void Portfolio::setApsysCdctgptfintsToNull() noexcept
+{
+    apsysCdctgptfints_.reset();
+    dirtyFlag_[57] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptfstes() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptfstes_)
+        return *apsysCdctgptfstes_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptfstes() const noexcept
+{
+    return apsysCdctgptfstes_;
+}
+void Portfolio::setApsysCdctgptfstes(const std::string &pApsysCdctgptfstes) noexcept
+{
+    apsysCdctgptfstes_ = std::make_shared<std::string>(pApsysCdctgptfstes);
+    dirtyFlag_[58] = true;
+}
+void Portfolio::setApsysCdctgptfstes(std::string &&pApsysCdctgptfstes) noexcept
+{
+    apsysCdctgptfstes_ = std::make_shared<std::string>(std::move(pApsysCdctgptfstes));
+    dirtyFlag_[58] = true;
+}
+void Portfolio::setApsysCdctgptfstesToNull() noexcept
+{
+    apsysCdctgptfstes_.reset();
+    dirtyFlag_[58] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptfstms() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptfstms_)
+        return *apsysCdctgptfstms_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptfstms() const noexcept
+{
+    return apsysCdctgptfstms_;
+}
+void Portfolio::setApsysCdctgptfstms(const std::string &pApsysCdctgptfstms) noexcept
+{
+    apsysCdctgptfstms_ = std::make_shared<std::string>(pApsysCdctgptfstms);
+    dirtyFlag_[59] = true;
+}
+void Portfolio::setApsysCdctgptfstms(std::string &&pApsysCdctgptfstms) noexcept
+{
+    apsysCdctgptfstms_ = std::make_shared<std::string>(std::move(pApsysCdctgptfstms));
+    dirtyFlag_[59] = true;
+}
+void Portfolio::setApsysCdctgptfstmsToNull() noexcept
+{
+    apsysCdctgptfstms_.reset();
+    dirtyFlag_[59] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptfmafs() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptfmafs_)
+        return *apsysCdctgptfmafs_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptfmafs() const noexcept
+{
+    return apsysCdctgptfmafs_;
+}
+void Portfolio::setApsysCdctgptfmafs(const std::string &pApsysCdctgptfmafs) noexcept
+{
+    apsysCdctgptfmafs_ = std::make_shared<std::string>(pApsysCdctgptfmafs);
+    dirtyFlag_[60] = true;
+}
+void Portfolio::setApsysCdctgptfmafs(std::string &&pApsysCdctgptfmafs) noexcept
+{
+    apsysCdctgptfmafs_ = std::make_shared<std::string>(std::move(pApsysCdctgptfmafs));
+    dirtyFlag_[60] = true;
+}
+void Portfolio::setApsysCdctgptfmafsToNull() noexcept
+{
+    apsysCdctgptfmafs_.reset();
+    dirtyFlag_[60] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptfrisks() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptfrisks_)
+        return *apsysCdctgptfrisks_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptfrisks() const noexcept
+{
+    return apsysCdctgptfrisks_;
+}
+void Portfolio::setApsysCdctgptfrisks(const std::string &pApsysCdctgptfrisks) noexcept
+{
+    apsysCdctgptfrisks_ = std::make_shared<std::string>(pApsysCdctgptfrisks);
+    dirtyFlag_[61] = true;
+}
+void Portfolio::setApsysCdctgptfrisks(std::string &&pApsysCdctgptfrisks) noexcept
+{
+    apsysCdctgptfrisks_ = std::make_shared<std::string>(std::move(pApsysCdctgptfrisks));
+    dirtyFlag_[61] = true;
+}
+void Portfolio::setApsysCdctgptfrisksToNull() noexcept
+{
+    apsysCdctgptfrisks_.reset();
+    dirtyFlag_[61] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptfcous() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptfcous_)
+        return *apsysCdctgptfcous_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptfcous() const noexcept
+{
+    return apsysCdctgptfcous_;
+}
+void Portfolio::setApsysCdctgptfcous(const std::string &pApsysCdctgptfcous) noexcept
+{
+    apsysCdctgptfcous_ = std::make_shared<std::string>(pApsysCdctgptfcous);
+    dirtyFlag_[62] = true;
+}
+void Portfolio::setApsysCdctgptfcous(std::string &&pApsysCdctgptfcous) noexcept
+{
+    apsysCdctgptfcous_ = std::make_shared<std::string>(std::move(pApsysCdctgptfcous));
+    dirtyFlag_[62] = true;
+}
+void Portfolio::setApsysCdctgptfcousToNull() noexcept
+{
+    apsysCdctgptfcous_.reset();
+    dirtyFlag_[62] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptftrcs() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptftrcs_)
+        return *apsysCdctgptftrcs_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptftrcs() const noexcept
+{
+    return apsysCdctgptftrcs_;
+}
+void Portfolio::setApsysCdctgptftrcs(const std::string &pApsysCdctgptftrcs) noexcept
+{
+    apsysCdctgptftrcs_ = std::make_shared<std::string>(pApsysCdctgptftrcs);
+    dirtyFlag_[63] = true;
+}
+void Portfolio::setApsysCdctgptftrcs(std::string &&pApsysCdctgptftrcs) noexcept
+{
+    apsysCdctgptftrcs_ = std::make_shared<std::string>(std::move(pApsysCdctgptftrcs));
+    dirtyFlag_[63] = true;
+}
+void Portfolio::setApsysCdctgptftrcsToNull() noexcept
+{
+    apsysCdctgptftrcs_.reset();
+    dirtyFlag_[63] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptfstebrutnets() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptfstebrutnets_)
+        return *apsysCdctgptfstebrutnets_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptfstebrutnets() const noexcept
+{
+    return apsysCdctgptfstebrutnets_;
+}
+void Portfolio::setApsysCdctgptfstebrutnets(const std::string &pApsysCdctgptfstebrutnets) noexcept
+{
+    apsysCdctgptfstebrutnets_ = std::make_shared<std::string>(pApsysCdctgptfstebrutnets);
+    dirtyFlag_[64] = true;
+}
+void Portfolio::setApsysCdctgptfstebrutnets(std::string &&pApsysCdctgptfstebrutnets) noexcept
+{
+    apsysCdctgptfstebrutnets_ = std::make_shared<std::string>(std::move(pApsysCdctgptfstebrutnets));
+    dirtyFlag_[64] = true;
+}
+void Portfolio::setApsysCdctgptfstebrutnetsToNull() noexcept
+{
+    apsysCdctgptfstebrutnets_.reset();
+    dirtyFlag_[64] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysFlagirsreppartc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysFlagirsreppartc_)
+        return *apsysFlagirsreppartc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysFlagirsreppartc() const noexcept
+{
+    return apsysFlagirsreppartc_;
+}
+void Portfolio::setApsysFlagirsreppartc(const std::string &pApsysFlagirsreppartc) noexcept
+{
+    apsysFlagirsreppartc_ = std::make_shared<std::string>(pApsysFlagirsreppartc);
+    dirtyFlag_[65] = true;
+}
+void Portfolio::setApsysFlagirsreppartc(std::string &&pApsysFlagirsreppartc) noexcept
+{
+    apsysFlagirsreppartc_ = std::make_shared<std::string>(std::move(pApsysFlagirsreppartc));
+    dirtyFlag_[65] = true;
+}
+void Portfolio::setApsysFlagirsreppartcToNull() noexcept
+{
+    apsysFlagirsreppartc_.reset();
+    dirtyFlag_[65] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptftaxints() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptftaxints_)
+        return *apsysCdctgptftaxints_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptftaxints() const noexcept
+{
+    return apsysCdctgptftaxints_;
+}
+void Portfolio::setApsysCdctgptftaxints(const std::string &pApsysCdctgptftaxints) noexcept
+{
+    apsysCdctgptftaxints_ = std::make_shared<std::string>(pApsysCdctgptftaxints);
+    dirtyFlag_[66] = true;
+}
+void Portfolio::setApsysCdctgptftaxints(std::string &&pApsysCdctgptftaxints) noexcept
+{
+    apsysCdctgptftaxints_ = std::make_shared<std::string>(std::move(pApsysCdctgptftaxints));
+    dirtyFlag_[66] = true;
+}
+void Portfolio::setApsysCdctgptftaxintsToNull() noexcept
+{
+    apsysCdctgptftaxints_.reset();
+    dirtyFlag_[66] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysIdpocs() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysIdpocs_)
+        return *apsysIdpocs_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysIdpocs() const noexcept
+{
+    return apsysIdpocs_;
+}
+void Portfolio::setApsysIdpocs(const std::string &pApsysIdpocs) noexcept
+{
+    apsysIdpocs_ = std::make_shared<std::string>(pApsysIdpocs);
+    dirtyFlag_[67] = true;
+}
+void Portfolio::setApsysIdpocs(std::string &&pApsysIdpocs) noexcept
+{
+    apsysIdpocs_ = std::make_shared<std::string>(std::move(pApsysIdpocs));
+    dirtyFlag_[67] = true;
+}
+void Portfolio::setApsysIdpocsToNull() noexcept
+{
+    apsysIdpocs_.reset();
+    dirtyFlag_[67] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysInfo() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysInfo_)
+        return *apsysInfo_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysInfo() const noexcept
+{
+    return apsysInfo_;
+}
+void Portfolio::setApsysInfo(const std::string &pApsysInfo) noexcept
+{
+    apsysInfo_ = std::make_shared<std::string>(pApsysInfo);
+    dirtyFlag_[68] = true;
+}
+void Portfolio::setApsysInfo(std::string &&pApsysInfo) noexcept
+{
+    apsysInfo_ = std::make_shared<std::string>(std::move(pApsysInfo));
+    dirtyFlag_[68] = true;
+}
+void Portfolio::setApsysInfoToNull() noexcept
+{
+    apsysInfo_.reset();
+    dirtyFlag_[68] = true;
+}
+
+const std::string &Portfolio::getValueOfNettovermoegenChf() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(nettovermoegenChf_)
+        return *nettovermoegenChf_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getNettovermoegenChf() const noexcept
+{
+    return nettovermoegenChf_;
+}
+void Portfolio::setNettovermoegenChf(const std::string &pNettovermoegenChf) noexcept
+{
+    nettovermoegenChf_ = std::make_shared<std::string>(pNettovermoegenChf);
+    dirtyFlag_[69] = true;
+}
+void Portfolio::setNettovermoegenChf(std::string &&pNettovermoegenChf) noexcept
+{
+    nettovermoegenChf_ = std::make_shared<std::string>(std::move(pNettovermoegenChf));
+    dirtyFlag_[69] = true;
+}
+void Portfolio::setNettovermoegenChfToNull() noexcept
+{
+    nettovermoegenChf_.reset();
+    dirtyFlag_[69] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysIntishs() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysIntishs_)
+        return *apsysIntishs_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysIntishs() const noexcept
+{
+    return apsysIntishs_;
+}
+void Portfolio::setApsysIntishs(const std::string &pApsysIntishs) noexcept
+{
+    apsysIntishs_ = std::make_shared<std::string>(pApsysIntishs);
+    dirtyFlag_[70] = true;
+}
+void Portfolio::setApsysIntishs(std::string &&pApsysIntishs) noexcept
+{
+    apsysIntishs_ = std::make_shared<std::string>(std::move(pApsysIntishs));
+    dirtyFlag_[70] = true;
+}
+void Portfolio::setApsysIntishsToNull() noexcept
+{
+    apsysIntishs_.reset();
+    dirtyFlag_[70] = true;
+}
+
+const double &Portfolio::getValueOfApsysIdpersl() const noexcept
+{
+    const static double defaultValue = double();
+    if(apsysIdpersl_)
+        return *apsysIdpersl_;
+    return defaultValue;
+}
+const std::shared_ptr<double> &Portfolio::getApsysIdpersl() const noexcept
+{
+    return apsysIdpersl_;
+}
+void Portfolio::setApsysIdpersl(const double &pApsysIdpersl) noexcept
+{
+    apsysIdpersl_ = std::make_shared<double>(pApsysIdpersl);
+    dirtyFlag_[71] = true;
+}
+void Portfolio::setApsysIdperslToNull() noexcept
+{
+    apsysIdpersl_.reset();
+    dirtyFlag_[71] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdmotifparts() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdmotifparts_)
+        return *apsysCdmotifparts_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdmotifparts() const noexcept
+{
+    return apsysCdmotifparts_;
+}
+void Portfolio::setApsysCdmotifparts(const std::string &pApsysCdmotifparts) noexcept
+{
+    apsysCdmotifparts_ = std::make_shared<std::string>(pApsysCdmotifparts);
+    dirtyFlag_[72] = true;
+}
+void Portfolio::setApsysCdmotifparts(std::string &&pApsysCdmotifparts) noexcept
+{
+    apsysCdmotifparts_ = std::make_shared<std::string>(std::move(pApsysCdmotifparts));
+    dirtyFlag_[72] = true;
+}
+void Portfolio::setApsysCdmotifpartsToNull() noexcept
+{
+    apsysCdmotifparts_.reset();
+    dirtyFlag_[72] = true;
+}
+
+const std::string &Portfolio::getValueOfInApsysTempEntspUserid() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(inApsysTempEntspUserid_)
+        return *inApsysTempEntspUserid_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getInApsysTempEntspUserid() const noexcept
+{
+    return inApsysTempEntspUserid_;
+}
+void Portfolio::setInApsysTempEntspUserid(const std::string &pInApsysTempEntspUserid) noexcept
+{
+    inApsysTempEntspUserid_ = std::make_shared<std::string>(pInApsysTempEntspUserid);
+    dirtyFlag_[73] = true;
+}
+void Portfolio::setInApsysTempEntspUserid(std::string &&pInApsysTempEntspUserid) noexcept
+{
+    inApsysTempEntspUserid_ = std::make_shared<std::string>(std::move(pInApsysTempEntspUserid));
+    dirtyFlag_[73] = true;
+}
+void Portfolio::setInApsysTempEntspUseridToNull() noexcept
+{
+    inApsysTempEntspUserid_.reset();
+    dirtyFlag_[73] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfInApsysTempEntspDatum() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(inApsysTempEntspDatum_)
+        return *inApsysTempEntspDatum_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getInApsysTempEntspDatum() const noexcept
+{
+    return inApsysTempEntspDatum_;
+}
+void Portfolio::setInApsysTempEntspDatum(const ::trantor::Date &pInApsysTempEntspDatum) noexcept
+{
+    inApsysTempEntspDatum_ = std::make_shared<::trantor::Date>(pInApsysTempEntspDatum);
+    dirtyFlag_[74] = true;
+}
+void Portfolio::setInApsysTempEntspDatumToNull() noexcept
+{
+    inApsysTempEntspDatum_.reset();
+    dirtyFlag_[74] = true;
+}
+
+const std::string &Portfolio::getValueOfInApsysTempEntsperrenCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(inApsysTempEntsperrenCd_)
+        return *inApsysTempEntsperrenCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getInApsysTempEntsperrenCd() const noexcept
+{
+    return inApsysTempEntsperrenCd_;
+}
+void Portfolio::setInApsysTempEntsperrenCd(const std::string &pInApsysTempEntsperrenCd) noexcept
+{
+    inApsysTempEntsperrenCd_ = std::make_shared<std::string>(pInApsysTempEntsperrenCd);
+    dirtyFlag_[75] = true;
+}
+void Portfolio::setInApsysTempEntsperrenCd(std::string &&pInApsysTempEntsperrenCd) noexcept
+{
+    inApsysTempEntsperrenCd_ = std::make_shared<std::string>(std::move(pInApsysTempEntsperrenCd));
+    dirtyFlag_[75] = true;
+}
+void Portfolio::setInApsysTempEntsperrenCdToNull() noexcept
+{
+    inApsysTempEntsperrenCd_.reset();
+    dirtyFlag_[75] = true;
+}
+
+const double &Portfolio::getValueOfKundenkategorieCd() const noexcept
+{
+    const static double defaultValue = double();
+    if(kundenkategorieCd_)
+        return *kundenkategorieCd_;
+    return defaultValue;
+}
+const std::shared_ptr<double> &Portfolio::getKundenkategorieCd() const noexcept
+{
+    return kundenkategorieCd_;
+}
+void Portfolio::setKundenkategorieCd(const double &pKundenkategorieCd) noexcept
+{
+    kundenkategorieCd_ = std::make_shared<double>(pKundenkategorieCd);
+    dirtyFlag_[76] = true;
+}
+void Portfolio::setKundenkategorieCdToNull() noexcept
+{
+    kundenkategorieCd_.reset();
+    dirtyFlag_[76] = true;
+}
+
+const std::string &Portfolio::getValueOfGemeinschaftskontoCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(gemeinschaftskontoCd_)
+        return *gemeinschaftskontoCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getGemeinschaftskontoCd() const noexcept
+{
+    return gemeinschaftskontoCd_;
+}
+void Portfolio::setGemeinschaftskontoCd(const std::string &pGemeinschaftskontoCd) noexcept
+{
+    gemeinschaftskontoCd_ = std::make_shared<std::string>(pGemeinschaftskontoCd);
+    dirtyFlag_[77] = true;
+}
+void Portfolio::setGemeinschaftskontoCd(std::string &&pGemeinschaftskontoCd) noexcept
+{
+    gemeinschaftskontoCd_ = std::make_shared<std::string>(std::move(pGemeinschaftskontoCd));
+    dirtyFlag_[77] = true;
+}
+void Portfolio::setGemeinschaftskontoCdToNull() noexcept
+{
+    gemeinschaftskontoCd_.reset();
+    dirtyFlag_[77] = true;
+}
+
+const std::string &Portfolio::getValueOfDritteSaeuleCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(dritteSaeuleCd_)
+        return *dritteSaeuleCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getDritteSaeuleCd() const noexcept
+{
+    return dritteSaeuleCd_;
+}
+void Portfolio::setDritteSaeuleCd(const std::string &pDritteSaeuleCd) noexcept
+{
+    dritteSaeuleCd_ = std::make_shared<std::string>(pDritteSaeuleCd);
+    dirtyFlag_[78] = true;
+}
+void Portfolio::setDritteSaeuleCd(std::string &&pDritteSaeuleCd) noexcept
+{
+    dritteSaeuleCd_ = std::make_shared<std::string>(std::move(pDritteSaeuleCd));
+    dirtyFlag_[78] = true;
+}
+void Portfolio::setDritteSaeuleCdToNull() noexcept
+{
+    dritteSaeuleCd_.reset();
+    dirtyFlag_[78] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysTypptfs() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysTypptfs_)
+        return *apsysTypptfs_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysTypptfs() const noexcept
+{
+    return apsysTypptfs_;
+}
+void Portfolio::setApsysTypptfs(const std::string &pApsysTypptfs) noexcept
+{
+    apsysTypptfs_ = std::make_shared<std::string>(pApsysTypptfs);
+    dirtyFlag_[79] = true;
+}
+void Portfolio::setApsysTypptfs(std::string &&pApsysTypptfs) noexcept
+{
+    apsysTypptfs_ = std::make_shared<std::string>(std::move(pApsysTypptfs));
+    dirtyFlag_[79] = true;
+}
+void Portfolio::setApsysTypptfsToNull() noexcept
+{
+    apsysTypptfs_.reset();
+    dirtyFlag_[79] = true;
+}
+
+const std::string &Portfolio::getValueOfAutoEuTaxPercentage() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(autoEuTaxPercentage_)
+        return *autoEuTaxPercentage_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getAutoEuTaxPercentage() const noexcept
+{
+    return autoEuTaxPercentage_;
+}
+void Portfolio::setAutoEuTaxPercentage(const std::string &pAutoEuTaxPercentage) noexcept
+{
+    autoEuTaxPercentage_ = std::make_shared<std::string>(pAutoEuTaxPercentage);
+    dirtyFlag_[80] = true;
+}
+void Portfolio::setAutoEuTaxPercentage(std::string &&pAutoEuTaxPercentage) noexcept
+{
+    autoEuTaxPercentage_ = std::make_shared<std::string>(std::move(pAutoEuTaxPercentage));
+    dirtyFlag_[80] = true;
+}
+void Portfolio::setAutoEuTaxPercentageToNull() noexcept
+{
+    autoEuTaxPercentage_.reset();
+    dirtyFlag_[80] = true;
+}
+
+const double &Portfolio::getValueOfAktid() const noexcept
+{
+    const static double defaultValue = double();
+    if(aktid_)
+        return *aktid_;
+    return defaultValue;
+}
+const std::shared_ptr<double> &Portfolio::getAktid() const noexcept
+{
+    return aktid_;
+}
+void Portfolio::setAktid(const double &pAktid) noexcept
+{
+    aktid_ = std::make_shared<double>(pAktid);
+    dirtyFlag_[81] = true;
+}
+void Portfolio::setAktidToNull() noexcept
+{
+    aktid_.reset();
+    dirtyFlag_[81] = true;
+}
+
+const double &Portfolio::getValueOfValidid() const noexcept
+{
+    const static double defaultValue = double();
+    if(validid_)
+        return *validid_;
+    return defaultValue;
+}
+const std::shared_ptr<double> &Portfolio::getValidid() const noexcept
+{
+    return validid_;
+}
+void Portfolio::setValidid(const double &pValidid) noexcept
+{
+    validid_ = std::make_shared<double>(pValidid);
+    dirtyFlag_[82] = true;
+}
+void Portfolio::setValididToNull() noexcept
+{
+    validid_.reset();
+    dirtyFlag_[82] = true;
+}
+
+const std::string &Portfolio::getValueOfValidCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(validCd_)
+        return *validCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getValidCd() const noexcept
+{
+    return validCd_;
+}
+void Portfolio::setValidCd(const std::string &pValidCd) noexcept
+{
+    validCd_ = std::make_shared<std::string>(pValidCd);
+    dirtyFlag_[83] = true;
+}
+void Portfolio::setValidCd(std::string &&pValidCd) noexcept
+{
+    validCd_ = std::make_shared<std::string>(std::move(pValidCd));
+    dirtyFlag_[83] = true;
+}
+void Portfolio::setValidCdToNull() noexcept
+{
+    validCd_.reset();
+    dirtyFlag_[83] = true;
+}
+
+const std::string &Portfolio::getValueOfValiduser() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(validuser_)
+        return *validuser_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getValiduser() const noexcept
+{
+    return validuser_;
+}
+void Portfolio::setValiduser(const std::string &pValiduser) noexcept
+{
+    validuser_ = std::make_shared<std::string>(pValiduser);
+    dirtyFlag_[84] = true;
+}
+void Portfolio::setValiduser(std::string &&pValiduser) noexcept
+{
+    validuser_ = std::make_shared<std::string>(std::move(pValiduser));
+    dirtyFlag_[84] = true;
+}
+void Portfolio::setValiduserToNull() noexcept
+{
+    validuser_.reset();
+    dirtyFlag_[84] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptfsbxps() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptfsbxps_)
+        return *apsysCdctgptfsbxps_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptfsbxps() const noexcept
+{
+    return apsysCdctgptfsbxps_;
+}
+void Portfolio::setApsysCdctgptfsbxps(const std::string &pApsysCdctgptfsbxps) noexcept
+{
+    apsysCdctgptfsbxps_ = std::make_shared<std::string>(pApsysCdctgptfsbxps);
+    dirtyFlag_[85] = true;
+}
+void Portfolio::setApsysCdctgptfsbxps(std::string &&pApsysCdctgptfsbxps) noexcept
+{
+    apsysCdctgptfsbxps_ = std::make_shared<std::string>(std::move(pApsysCdctgptfsbxps));
+    dirtyFlag_[85] = true;
+}
+void Portfolio::setApsysCdctgptfsbxpsToNull() noexcept
+{
+    apsysCdctgptfsbxps_.reset();
+    dirtyFlag_[85] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptfsdocs() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptfsdocs_)
+        return *apsysCdctgptfsdocs_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptfsdocs() const noexcept
+{
+    return apsysCdctgptfsdocs_;
+}
+void Portfolio::setApsysCdctgptfsdocs(const std::string &pApsysCdctgptfsdocs) noexcept
+{
+    apsysCdctgptfsdocs_ = std::make_shared<std::string>(pApsysCdctgptfsdocs);
+    dirtyFlag_[86] = true;
+}
+void Portfolio::setApsysCdctgptfsdocs(std::string &&pApsysCdctgptfsdocs) noexcept
+{
+    apsysCdctgptfsdocs_ = std::make_shared<std::string>(std::move(pApsysCdctgptfsdocs));
+    dirtyFlag_[86] = true;
+}
+void Portfolio::setApsysCdctgptfsdocsToNull() noexcept
+{
+    apsysCdctgptfsdocs_.reset();
+    dirtyFlag_[86] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysIdents() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysIdents_)
+        return *apsysIdents_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysIdents() const noexcept
+{
+    return apsysIdents_;
+}
+void Portfolio::setApsysIdents(const std::string &pApsysIdents) noexcept
+{
+    apsysIdents_ = std::make_shared<std::string>(pApsysIdents);
+    dirtyFlag_[87] = true;
+}
+void Portfolio::setApsysIdents(std::string &&pApsysIdents) noexcept
+{
+    apsysIdents_ = std::make_shared<std::string>(std::move(pApsysIdents));
+    dirtyFlag_[87] = true;
+}
+void Portfolio::setApsysIdentsToNull() noexcept
+{
+    apsysIdents_.reset();
+    dirtyFlag_[87] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdsoumbolc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdsoumbolc_)
+        return *apsysCdsoumbolc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdsoumbolc() const noexcept
+{
+    return apsysCdsoumbolc_;
+}
+void Portfolio::setApsysCdsoumbolc(const std::string &pApsysCdsoumbolc) noexcept
+{
+    apsysCdsoumbolc_ = std::make_shared<std::string>(pApsysCdsoumbolc);
+    dirtyFlag_[88] = true;
+}
+void Portfolio::setApsysCdsoumbolc(std::string &&pApsysCdsoumbolc) noexcept
+{
+    apsysCdsoumbolc_ = std::make_shared<std::string>(std::move(pApsysCdsoumbolc));
+    dirtyFlag_[88] = true;
+}
+void Portfolio::setApsysCdsoumbolcToNull() noexcept
+{
+    apsysCdsoumbolc_.reset();
+    dirtyFlag_[88] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdfacbolc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdfacbolc_)
+        return *apsysCdfacbolc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdfacbolc() const noexcept
+{
+    return apsysCdfacbolc_;
+}
+void Portfolio::setApsysCdfacbolc(const std::string &pApsysCdfacbolc) noexcept
+{
+    apsysCdfacbolc_ = std::make_shared<std::string>(pApsysCdfacbolc);
+    dirtyFlag_[89] = true;
+}
+void Portfolio::setApsysCdfacbolc(std::string &&pApsysCdfacbolc) noexcept
+{
+    apsysCdfacbolc_ = std::make_shared<std::string>(std::move(pApsysCdfacbolc));
+    dirtyFlag_[89] = true;
+}
+void Portfolio::setApsysCdfacbolcToNull() noexcept
+{
+    apsysCdfacbolc_.reset();
+    dirtyFlag_[89] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysFlagtyptrfpolc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysFlagtyptrfpolc_)
+        return *apsysFlagtyptrfpolc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysFlagtyptrfpolc() const noexcept
+{
+    return apsysFlagtyptrfpolc_;
+}
+void Portfolio::setApsysFlagtyptrfpolc(const std::string &pApsysFlagtyptrfpolc) noexcept
+{
+    apsysFlagtyptrfpolc_ = std::make_shared<std::string>(pApsysFlagtyptrfpolc);
+    dirtyFlag_[90] = true;
+}
+void Portfolio::setApsysFlagtyptrfpolc(std::string &&pApsysFlagtyptrfpolc) noexcept
+{
+    apsysFlagtyptrfpolc_ = std::make_shared<std::string>(std::move(pApsysFlagtyptrfpolc));
+    dirtyFlag_[90] = true;
+}
+void Portfolio::setApsysFlagtyptrfpolcToNull() noexcept
+{
+    apsysFlagtyptrfpolc_.reset();
+    dirtyFlag_[90] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysIdtrfpols() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysIdtrfpols_)
+        return *apsysIdtrfpols_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysIdtrfpols() const noexcept
+{
+    return apsysIdtrfpols_;
+}
+void Portfolio::setApsysIdtrfpols(const std::string &pApsysIdtrfpols) noexcept
+{
+    apsysIdtrfpols_ = std::make_shared<std::string>(pApsysIdtrfpols);
+    dirtyFlag_[91] = true;
+}
+void Portfolio::setApsysIdtrfpols(std::string &&pApsysIdtrfpols) noexcept
+{
+    apsysIdtrfpols_ = std::make_shared<std::string>(std::move(pApsysIdtrfpols));
+    dirtyFlag_[91] = true;
+}
+void Portfolio::setApsysIdtrfpolsToNull() noexcept
+{
+    apsysIdtrfpols_.reset();
+    dirtyFlag_[91] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdpctpartictitueutaxc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdpctpartictitueutaxc_)
+        return *apsysCdpctpartictitueutaxc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdpctpartictitueutaxc() const noexcept
+{
+    return apsysCdpctpartictitueutaxc_;
+}
+void Portfolio::setApsysCdpctpartictitueutaxc(const std::string &pApsysCdpctpartictitueutaxc) noexcept
+{
+    apsysCdpctpartictitueutaxc_ = std::make_shared<std::string>(pApsysCdpctpartictitueutaxc);
+    dirtyFlag_[92] = true;
+}
+void Portfolio::setApsysCdpctpartictitueutaxc(std::string &&pApsysCdpctpartictitueutaxc) noexcept
+{
+    apsysCdpctpartictitueutaxc_ = std::make_shared<std::string>(std::move(pApsysCdpctpartictitueutaxc));
+    dirtyFlag_[92] = true;
+}
+void Portfolio::setApsysCdpctpartictitueutaxcToNull() noexcept
+{
+    apsysCdpctpartictitueutaxc_.reset();
+    dirtyFlag_[92] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdmotifclos() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdmotifclos_)
+        return *apsysCdmotifclos_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdmotifclos() const noexcept
+{
+    return apsysCdmotifclos_;
+}
+void Portfolio::setApsysCdmotifclos(const std::string &pApsysCdmotifclos) noexcept
+{
+    apsysCdmotifclos_ = std::make_shared<std::string>(pApsysCdmotifclos);
+    dirtyFlag_[93] = true;
+}
+void Portfolio::setApsysCdmotifclos(std::string &&pApsysCdmotifclos) noexcept
+{
+    apsysCdmotifclos_ = std::make_shared<std::string>(std::move(pApsysCdmotifclos));
+    dirtyFlag_[93] = true;
+}
+void Portfolio::setApsysCdmotifclosToNull() noexcept
+{
+    apsysCdmotifclos_.reset();
+    dirtyFlag_[93] = true;
+}
+
+const std::string &Portfolio::getValueOfEncSalt() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(encSalt_)
+        return *encSalt_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getEncSalt() const noexcept
+{
+    return encSalt_;
+}
+void Portfolio::setEncSalt(const std::string &pEncSalt) noexcept
+{
+    encSalt_ = std::make_shared<std::string>(pEncSalt);
+    dirtyFlag_[94] = true;
+}
+void Portfolio::setEncSalt(std::string &&pEncSalt) noexcept
+{
+    encSalt_ = std::make_shared<std::string>(std::move(pEncSalt));
+    dirtyFlag_[94] = true;
+}
+void Portfolio::setEncSaltToNull() noexcept
+{
+    encSalt_.reset();
+    dirtyFlag_[94] = true;
+}
+
+const std::string &Portfolio::getValueOfBezeichnungEnc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(bezeichnungEnc_)
+        return *bezeichnungEnc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getBezeichnungEnc() const noexcept
+{
+    return bezeichnungEnc_;
+}
+void Portfolio::setBezeichnungEnc(const std::string &pBezeichnungEnc) noexcept
+{
+    bezeichnungEnc_ = std::make_shared<std::string>(pBezeichnungEnc);
+    dirtyFlag_[95] = true;
+}
+void Portfolio::setBezeichnungEnc(std::string &&pBezeichnungEnc) noexcept
+{
+    bezeichnungEnc_ = std::make_shared<std::string>(std::move(pBezeichnungEnc));
+    dirtyFlag_[95] = true;
+}
+void Portfolio::setBezeichnungEncToNull() noexcept
+{
+    bezeichnungEnc_.reset();
+    dirtyFlag_[95] = true;
+}
+
+const std::string &Portfolio::getValueOfKtoeAmlProfilCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(ktoeAmlProfilCd_)
+        return *ktoeAmlProfilCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getKtoeAmlProfilCd() const noexcept
+{
+    return ktoeAmlProfilCd_;
+}
+void Portfolio::setKtoeAmlProfilCd(const std::string &pKtoeAmlProfilCd) noexcept
+{
+    ktoeAmlProfilCd_ = std::make_shared<std::string>(pKtoeAmlProfilCd);
+    dirtyFlag_[96] = true;
+}
+void Portfolio::setKtoeAmlProfilCd(std::string &&pKtoeAmlProfilCd) noexcept
+{
+    ktoeAmlProfilCd_ = std::make_shared<std::string>(std::move(pKtoeAmlProfilCd));
+    dirtyFlag_[96] = true;
+}
+void Portfolio::setKtoeAmlProfilCdToNull() noexcept
+{
+    ktoeAmlProfilCd_.reset();
+    dirtyFlag_[96] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysDevevals() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysDevevals_)
+        return *apsysDevevals_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysDevevals() const noexcept
+{
+    return apsysDevevals_;
+}
+void Portfolio::setApsysDevevals(const std::string &pApsysDevevals) noexcept
+{
+    apsysDevevals_ = std::make_shared<std::string>(pApsysDevevals);
+    dirtyFlag_[97] = true;
+}
+void Portfolio::setApsysDevevals(std::string &&pApsysDevevals) noexcept
+{
+    apsysDevevals_ = std::make_shared<std::string>(std::move(pApsysDevevals));
+    dirtyFlag_[97] = true;
+}
+void Portfolio::setApsysDevevalsToNull() noexcept
+{
+    apsysDevevals_.reset();
+    dirtyFlag_[97] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdrnvstmc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdrnvstmc_)
+        return *apsysCdrnvstmc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdrnvstmc() const noexcept
+{
+    return apsysCdrnvstmc_;
+}
+void Portfolio::setApsysCdrnvstmc(const std::string &pApsysCdrnvstmc) noexcept
+{
+    apsysCdrnvstmc_ = std::make_shared<std::string>(pApsysCdrnvstmc);
+    dirtyFlag_[98] = true;
+}
+void Portfolio::setApsysCdrnvstmc(std::string &&pApsysCdrnvstmc) noexcept
+{
+    apsysCdrnvstmc_ = std::make_shared<std::string>(std::move(pApsysCdrnvstmc));
+    dirtyFlag_[98] = true;
+}
+void Portfolio::setApsysCdrnvstmcToNull() noexcept
+{
+    apsysCdrnvstmc_.reset();
+    dirtyFlag_[98] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdrglprlgc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdrglprlgc_)
+        return *apsysCdrglprlgc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdrglprlgc() const noexcept
+{
+    return apsysCdrglprlgc_;
+}
+void Portfolio::setApsysCdrglprlgc(const std::string &pApsysCdrglprlgc) noexcept
+{
+    apsysCdrglprlgc_ = std::make_shared<std::string>(pApsysCdrglprlgc);
+    dirtyFlag_[99] = true;
+}
+void Portfolio::setApsysCdrglprlgc(std::string &&pApsysCdrglprlgc) noexcept
+{
+    apsysCdrglprlgc_ = std::make_shared<std::string>(std::move(pApsysCdrglprlgc));
+    dirtyFlag_[99] = true;
+}
+void Portfolio::setApsysCdrglprlgcToNull() noexcept
+{
+    apsysCdrglprlgc_.reset();
+    dirtyFlag_[99] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptfcomagtcpts() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptfcomagtcpts_)
+        return *apsysCdctgptfcomagtcpts_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptfcomagtcpts() const noexcept
+{
+    return apsysCdctgptfcomagtcpts_;
+}
+void Portfolio::setApsysCdctgptfcomagtcpts(const std::string &pApsysCdctgptfcomagtcpts) noexcept
+{
+    apsysCdctgptfcomagtcpts_ = std::make_shared<std::string>(pApsysCdctgptfcomagtcpts);
+    dirtyFlag_[100] = true;
+}
+void Portfolio::setApsysCdctgptfcomagtcpts(std::string &&pApsysCdctgptfcomagtcpts) noexcept
+{
+    apsysCdctgptfcomagtcpts_ = std::make_shared<std::string>(std::move(pApsysCdctgptfcomagtcpts));
+    dirtyFlag_[100] = true;
+}
+void Portfolio::setApsysCdctgptfcomagtcptsToNull() noexcept
+{
+    apsysCdctgptfcomagtcpts_.reset();
+    dirtyFlag_[100] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptfroutords() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptfroutords_)
+        return *apsysCdctgptfroutords_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptfroutords() const noexcept
+{
+    return apsysCdctgptfroutords_;
+}
+void Portfolio::setApsysCdctgptfroutords(const std::string &pApsysCdctgptfroutords) noexcept
+{
+    apsysCdctgptfroutords_ = std::make_shared<std::string>(pApsysCdctgptfroutords);
+    dirtyFlag_[101] = true;
+}
+void Portfolio::setApsysCdctgptfroutords(std::string &&pApsysCdctgptfroutords) noexcept
+{
+    apsysCdctgptfroutords_ = std::make_shared<std::string>(std::move(pApsysCdctgptfroutords));
+    dirtyFlag_[101] = true;
+}
+void Portfolio::setApsysCdctgptfroutordsToNull() noexcept
+{
+    apsysCdctgptfroutords_.reset();
+    dirtyFlag_[101] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptfgrecpts() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptfgrecpts_)
+        return *apsysCdctgptfgrecpts_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptfgrecpts() const noexcept
+{
+    return apsysCdctgptfgrecpts_;
+}
+void Portfolio::setApsysCdctgptfgrecpts(const std::string &pApsysCdctgptfgrecpts) noexcept
+{
+    apsysCdctgptfgrecpts_ = std::make_shared<std::string>(pApsysCdctgptfgrecpts);
+    dirtyFlag_[102] = true;
+}
+void Portfolio::setApsysCdctgptfgrecpts(std::string &&pApsysCdctgptfgrecpts) noexcept
+{
+    apsysCdctgptfgrecpts_ = std::make_shared<std::string>(std::move(pApsysCdctgptfgrecpts));
+    dirtyFlag_[102] = true;
+}
+void Portfolio::setApsysCdctgptfgrecptsToNull() noexcept
+{
+    apsysCdctgptfgrecpts_.reset();
+    dirtyFlag_[102] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptftrsftits() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptftrsftits_)
+        return *apsysCdctgptftrsftits_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptftrsftits() const noexcept
+{
+    return apsysCdctgptftrsftits_;
+}
+void Portfolio::setApsysCdctgptftrsftits(const std::string &pApsysCdctgptftrsftits) noexcept
+{
+    apsysCdctgptftrsftits_ = std::make_shared<std::string>(pApsysCdctgptftrsftits);
+    dirtyFlag_[103] = true;
+}
+void Portfolio::setApsysCdctgptftrsftits(std::string &&pApsysCdctgptftrsftits) noexcept
+{
+    apsysCdctgptftrsftits_ = std::make_shared<std::string>(std::move(pApsysCdctgptftrsftits));
+    dirtyFlag_[103] = true;
+}
+void Portfolio::setApsysCdctgptftrsftitsToNull() noexcept
+{
+    apsysCdctgptftrsftits_.reset();
+    dirtyFlag_[103] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysFlagexpsysexttaxi() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysFlagexpsysexttaxi_)
+        return *apsysFlagexpsysexttaxi_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysFlagexpsysexttaxi() const noexcept
+{
+    return apsysFlagexpsysexttaxi_;
+}
+void Portfolio::setApsysFlagexpsysexttaxi(const std::string &pApsysFlagexpsysexttaxi) noexcept
+{
+    apsysFlagexpsysexttaxi_ = std::make_shared<std::string>(pApsysFlagexpsysexttaxi);
+    dirtyFlag_[104] = true;
+}
+void Portfolio::setApsysFlagexpsysexttaxi(std::string &&pApsysFlagexpsysexttaxi) noexcept
+{
+    apsysFlagexpsysexttaxi_ = std::make_shared<std::string>(std::move(pApsysFlagexpsysexttaxi));
+    dirtyFlag_[104] = true;
+}
+void Portfolio::setApsysFlagexpsysexttaxiToNull() noexcept
+{
+    apsysFlagexpsysexttaxi_.reset();
+    dirtyFlag_[104] = true;
+}
+
+const std::string &Portfolio::getValueOfWbIstNichtZwingendCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(wbIstNichtZwingendCd_)
+        return *wbIstNichtZwingendCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getWbIstNichtZwingendCd() const noexcept
+{
+    return wbIstNichtZwingendCd_;
+}
+void Portfolio::setWbIstNichtZwingendCd(const std::string &pWbIstNichtZwingendCd) noexcept
+{
+    wbIstNichtZwingendCd_ = std::make_shared<std::string>(pWbIstNichtZwingendCd);
+    dirtyFlag_[105] = true;
+}
+void Portfolio::setWbIstNichtZwingendCd(std::string &&pWbIstNichtZwingendCd) noexcept
+{
+    wbIstNichtZwingendCd_ = std::make_shared<std::string>(std::move(pWbIstNichtZwingendCd));
+    dirtyFlag_[105] = true;
+}
+void Portfolio::setWbIstNichtZwingendCdToNull() noexcept
+{
+    wbIstNichtZwingendCd_.reset();
+    dirtyFlag_[105] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdbqerestc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdbqerestc_)
+        return *apsysCdbqerestc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdbqerestc() const noexcept
+{
+    return apsysCdbqerestc_;
+}
+void Portfolio::setApsysCdbqerestc(const std::string &pApsysCdbqerestc) noexcept
+{
+    apsysCdbqerestc_ = std::make_shared<std::string>(pApsysCdbqerestc);
+    dirtyFlag_[106] = true;
+}
+void Portfolio::setApsysCdbqerestc(std::string &&pApsysCdbqerestc) noexcept
+{
+    apsysCdbqerestc_ = std::make_shared<std::string>(std::move(pApsysCdbqerestc));
+    dirtyFlag_[106] = true;
+}
+void Portfolio::setApsysCdbqerestcToNull() noexcept
+{
+    apsysCdbqerestc_.reset();
+    dirtyFlag_[106] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptftypplacs() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptftypplacs_)
+        return *apsysCdctgptftypplacs_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptftypplacs() const noexcept
+{
+    return apsysCdctgptftypplacs_;
+}
+void Portfolio::setApsysCdctgptftypplacs(const std::string &pApsysCdctgptftypplacs) noexcept
+{
+    apsysCdctgptftypplacs_ = std::make_shared<std::string>(pApsysCdctgptftypplacs);
+    dirtyFlag_[107] = true;
+}
+void Portfolio::setApsysCdctgptftypplacs(std::string &&pApsysCdctgptftypplacs) noexcept
+{
+    apsysCdctgptftypplacs_ = std::make_shared<std::string>(std::move(pApsysCdctgptftypplacs));
+    dirtyFlag_[107] = true;
+}
+void Portfolio::setApsysCdctgptftypplacsToNull() noexcept
+{
+    apsysCdctgptftypplacs_.reset();
+    dirtyFlag_[107] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdeangrmtcli1s() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdeangrmtcli1s_)
+        return *apsysCdeangrmtcli1s_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdeangrmtcli1s() const noexcept
+{
+    return apsysCdeangrmtcli1s_;
+}
+void Portfolio::setApsysCdeangrmtcli1s(const std::string &pApsysCdeangrmtcli1s) noexcept
+{
+    apsysCdeangrmtcli1s_ = std::make_shared<std::string>(pApsysCdeangrmtcli1s);
+    dirtyFlag_[108] = true;
+}
+void Portfolio::setApsysCdeangrmtcli1s(std::string &&pApsysCdeangrmtcli1s) noexcept
+{
+    apsysCdeangrmtcli1s_ = std::make_shared<std::string>(std::move(pApsysCdeangrmtcli1s));
+    dirtyFlag_[108] = true;
+}
+void Portfolio::setApsysCdeangrmtcli1sToNull() noexcept
+{
+    apsysCdeangrmtcli1s_.reset();
+    dirtyFlag_[108] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdeangrmtcli2s() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdeangrmtcli2s_)
+        return *apsysCdeangrmtcli2s_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdeangrmtcli2s() const noexcept
+{
+    return apsysCdeangrmtcli2s_;
+}
+void Portfolio::setApsysCdeangrmtcli2s(const std::string &pApsysCdeangrmtcli2s) noexcept
+{
+    apsysCdeangrmtcli2s_ = std::make_shared<std::string>(pApsysCdeangrmtcli2s);
+    dirtyFlag_[109] = true;
+}
+void Portfolio::setApsysCdeangrmtcli2s(std::string &&pApsysCdeangrmtcli2s) noexcept
+{
+    apsysCdeangrmtcli2s_ = std::make_shared<std::string>(std::move(pApsysCdeangrmtcli2s));
+    dirtyFlag_[109] = true;
+}
+void Portfolio::setApsysCdeangrmtcli2sToNull() noexcept
+{
+    apsysCdeangrmtcli2s_.reset();
+    dirtyFlag_[109] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdfatcatypc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdfatcatypc_)
+        return *apsysCdfatcatypc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdfatcatypc() const noexcept
+{
+    return apsysCdfatcatypc_;
+}
+void Portfolio::setApsysCdfatcatypc(const std::string &pApsysCdfatcatypc) noexcept
+{
+    apsysCdfatcatypc_ = std::make_shared<std::string>(pApsysCdfatcatypc);
+    dirtyFlag_[110] = true;
+}
+void Portfolio::setApsysCdfatcatypc(std::string &&pApsysCdfatcatypc) noexcept
+{
+    apsysCdfatcatypc_ = std::make_shared<std::string>(std::move(pApsysCdfatcatypc));
+    dirtyFlag_[110] = true;
+}
+void Portfolio::setApsysCdfatcatypcToNull() noexcept
+{
+    apsysCdfatcatypc_.reset();
+    dirtyFlag_[110] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysIdfatcaclas() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysIdfatcaclas_)
+        return *apsysIdfatcaclas_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysIdfatcaclas() const noexcept
+{
+    return apsysIdfatcaclas_;
+}
+void Portfolio::setApsysIdfatcaclas(const std::string &pApsysIdfatcaclas) noexcept
+{
+    apsysIdfatcaclas_ = std::make_shared<std::string>(pApsysIdfatcaclas);
+    dirtyFlag_[111] = true;
+}
+void Portfolio::setApsysIdfatcaclas(std::string &&pApsysIdfatcaclas) noexcept
+{
+    apsysIdfatcaclas_ = std::make_shared<std::string>(std::move(pApsysIdfatcaclas));
+    dirtyFlag_[111] = true;
+}
+void Portfolio::setApsysIdfatcaclasToNull() noexcept
+{
+    apsysIdfatcaclas_.reset();
+    dirtyFlag_[111] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdfatcastatcalccrmc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdfatcastatcalccrmc_)
+        return *apsysCdfatcastatcalccrmc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdfatcastatcalccrmc() const noexcept
+{
+    return apsysCdfatcastatcalccrmc_;
+}
+void Portfolio::setApsysCdfatcastatcalccrmc(const std::string &pApsysCdfatcastatcalccrmc) noexcept
+{
+    apsysCdfatcastatcalccrmc_ = std::make_shared<std::string>(pApsysCdfatcastatcalccrmc);
+    dirtyFlag_[112] = true;
+}
+void Portfolio::setApsysCdfatcastatcalccrmc(std::string &&pApsysCdfatcastatcalccrmc) noexcept
+{
+    apsysCdfatcastatcalccrmc_ = std::make_shared<std::string>(std::move(pApsysCdfatcastatcalccrmc));
+    dirtyFlag_[112] = true;
+}
+void Portfolio::setApsysCdfatcastatcalccrmcToNull() noexcept
+{
+    apsysCdfatcastatcalccrmc_.reset();
+    dirtyFlag_[112] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdfatcastatc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdfatcastatc_)
+        return *apsysCdfatcastatc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdfatcastatc() const noexcept
+{
+    return apsysCdfatcastatc_;
+}
+void Portfolio::setApsysCdfatcastatc(const std::string &pApsysCdfatcastatc) noexcept
+{
+    apsysCdfatcastatc_ = std::make_shared<std::string>(pApsysCdfatcastatc);
+    dirtyFlag_[113] = true;
+}
+void Portfolio::setApsysCdfatcastatc(std::string &&pApsysCdfatcastatc) noexcept
+{
+    apsysCdfatcastatc_ = std::make_shared<std::string>(std::move(pApsysCdfatcastatc));
+    dirtyFlag_[113] = true;
+}
+void Portfolio::setApsysCdfatcastatcToNull() noexcept
+{
+    apsysCdfatcastatc_.reset();
+    dirtyFlag_[113] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCommentfatcastats() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCommentfatcastats_)
+        return *apsysCommentfatcastats_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCommentfatcastats() const noexcept
+{
+    return apsysCommentfatcastats_;
+}
+void Portfolio::setApsysCommentfatcastats(const std::string &pApsysCommentfatcastats) noexcept
+{
+    apsysCommentfatcastats_ = std::make_shared<std::string>(pApsysCommentfatcastats);
+    dirtyFlag_[114] = true;
+}
+void Portfolio::setApsysCommentfatcastats(std::string &&pApsysCommentfatcastats) noexcept
+{
+    apsysCommentfatcastats_ = std::make_shared<std::string>(std::move(pApsysCommentfatcastats));
+    dirtyFlag_[114] = true;
+}
+void Portfolio::setApsysCommentfatcastatsToNull() noexcept
+{
+    apsysCommentfatcastats_.reset();
+    dirtyFlag_[114] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdfatcamotifparts() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdfatcamotifparts_)
+        return *apsysCdfatcamotifparts_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdfatcamotifparts() const noexcept
+{
+    return apsysCdfatcamotifparts_;
+}
+void Portfolio::setApsysCdfatcamotifparts(const std::string &pApsysCdfatcamotifparts) noexcept
+{
+    apsysCdfatcamotifparts_ = std::make_shared<std::string>(pApsysCdfatcamotifparts);
+    dirtyFlag_[115] = true;
+}
+void Portfolio::setApsysCdfatcamotifparts(std::string &&pApsysCdfatcamotifparts) noexcept
+{
+    apsysCdfatcamotifparts_ = std::make_shared<std::string>(std::move(pApsysCdfatcamotifparts));
+    dirtyFlag_[115] = true;
+}
+void Portfolio::setApsysCdfatcamotifpartsToNull() noexcept
+{
+    apsysCdfatcamotifparts_.reset();
+    dirtyFlag_[115] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdfatcastatcalcglobc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdfatcastatcalcglobc_)
+        return *apsysCdfatcastatcalcglobc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdfatcastatcalcglobc() const noexcept
+{
+    return apsysCdfatcastatcalcglobc_;
+}
+void Portfolio::setApsysCdfatcastatcalcglobc(const std::string &pApsysCdfatcastatcalcglobc) noexcept
+{
+    apsysCdfatcastatcalcglobc_ = std::make_shared<std::string>(pApsysCdfatcastatcalcglobc);
+    dirtyFlag_[116] = true;
+}
+void Portfolio::setApsysCdfatcastatcalcglobc(std::string &&pApsysCdfatcastatcalcglobc) noexcept
+{
+    apsysCdfatcastatcalcglobc_ = std::make_shared<std::string>(std::move(pApsysCdfatcastatcalcglobc));
+    dirtyFlag_[116] = true;
+}
+void Portfolio::setApsysCdfatcastatcalcglobcToNull() noexcept
+{
+    apsysCdfatcastatcalcglobc_.reset();
+    dirtyFlag_[116] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdfatcastatcalclocc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdfatcastatcalclocc_)
+        return *apsysCdfatcastatcalclocc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdfatcastatcalclocc() const noexcept
+{
+    return apsysCdfatcastatcalclocc_;
+}
+void Portfolio::setApsysCdfatcastatcalclocc(const std::string &pApsysCdfatcastatcalclocc) noexcept
+{
+    apsysCdfatcastatcalclocc_ = std::make_shared<std::string>(pApsysCdfatcastatcalclocc);
+    dirtyFlag_[117] = true;
+}
+void Portfolio::setApsysCdfatcastatcalclocc(std::string &&pApsysCdfatcastatcalclocc) noexcept
+{
+    apsysCdfatcastatcalclocc_ = std::make_shared<std::string>(std::move(pApsysCdfatcastatcalclocc));
+    dirtyFlag_[117] = true;
+}
+void Portfolio::setApsysCdfatcastatcalcloccToNull() noexcept
+{
+    apsysCdfatcastatcalclocc_.reset();
+    dirtyFlag_[117] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdvalidstatc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdvalidstatc_)
+        return *apsysCdvalidstatc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdvalidstatc() const noexcept
+{
+    return apsysCdvalidstatc_;
+}
+void Portfolio::setApsysCdvalidstatc(const std::string &pApsysCdvalidstatc) noexcept
+{
+    apsysCdvalidstatc_ = std::make_shared<std::string>(pApsysCdvalidstatc);
+    dirtyFlag_[118] = true;
+}
+void Portfolio::setApsysCdvalidstatc(std::string &&pApsysCdvalidstatc) noexcept
+{
+    apsysCdvalidstatc_ = std::make_shared<std::string>(std::move(pApsysCdvalidstatc));
+    dirtyFlag_[118] = true;
+}
+void Portfolio::setApsysCdvalidstatcToNull() noexcept
+{
+    apsysCdvalidstatc_.reset();
+    dirtyFlag_[118] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysUservalidfatcastats() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysUservalidfatcastats_)
+        return *apsysUservalidfatcastats_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysUservalidfatcastats() const noexcept
+{
+    return apsysUservalidfatcastats_;
+}
+void Portfolio::setApsysUservalidfatcastats(const std::string &pApsysUservalidfatcastats) noexcept
+{
+    apsysUservalidfatcastats_ = std::make_shared<std::string>(pApsysUservalidfatcastats);
+    dirtyFlag_[119] = true;
+}
+void Portfolio::setApsysUservalidfatcastats(std::string &&pApsysUservalidfatcastats) noexcept
+{
+    apsysUservalidfatcastats_ = std::make_shared<std::string>(std::move(pApsysUservalidfatcastats));
+    dirtyFlag_[119] = true;
+}
+void Portfolio::setApsysUservalidfatcastatsToNull() noexcept
+{
+    apsysUservalidfatcastats_.reset();
+    dirtyFlag_[119] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfApsysDtvalidfatcastatl() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(apsysDtvalidfatcastatl_)
+        return *apsysDtvalidfatcastatl_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getApsysDtvalidfatcastatl() const noexcept
+{
+    return apsysDtvalidfatcastatl_;
+}
+void Portfolio::setApsysDtvalidfatcastatl(const ::trantor::Date &pApsysDtvalidfatcastatl) noexcept
+{
+    apsysDtvalidfatcastatl_ = std::make_shared<::trantor::Date>(pApsysDtvalidfatcastatl);
+    dirtyFlag_[120] = true;
+}
+void Portfolio::setApsysDtvalidfatcastatlToNull() noexcept
+{
+    apsysDtvalidfatcastatl_.reset();
+    dirtyFlag_[120] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfApsysHrvalidfatcastatl() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(apsysHrvalidfatcastatl_)
+        return *apsysHrvalidfatcastatl_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getApsysHrvalidfatcastatl() const noexcept
+{
+    return apsysHrvalidfatcastatl_;
+}
+void Portfolio::setApsysHrvalidfatcastatl(const ::trantor::Date &pApsysHrvalidfatcastatl) noexcept
+{
+    apsysHrvalidfatcastatl_ = std::make_shared<::trantor::Date>(pApsysHrvalidfatcastatl);
+    dirtyFlag_[121] = true;
+}
+void Portfolio::setApsysHrvalidfatcastatlToNull() noexcept
+{
+    apsysHrvalidfatcastatl_.reset();
+    dirtyFlag_[121] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctrnettc553c() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctrnettc553c_)
+        return *apsysCdctrnettc553c_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctrnettc553c() const noexcept
+{
+    return apsysCdctrnettc553c_;
+}
+void Portfolio::setApsysCdctrnettc553c(const std::string &pApsysCdctrnettc553c) noexcept
+{
+    apsysCdctrnettc553c_ = std::make_shared<std::string>(pApsysCdctrnettc553c);
+    dirtyFlag_[122] = true;
+}
+void Portfolio::setApsysCdctrnettc553c(std::string &&pApsysCdctrnettc553c) noexcept
+{
+    apsysCdctrnettc553c_ = std::make_shared<std::string>(std::move(pApsysCdctrnettc553c));
+    dirtyFlag_[122] = true;
+}
+void Portfolio::setApsysCdctrnettc553cToNull() noexcept
+{
+    apsysCdctrnettc553c_.reset();
+    dirtyFlag_[122] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysFlagforceposostmanagi() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysFlagforceposostmanagi_)
+        return *apsysFlagforceposostmanagi_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysFlagforceposostmanagi() const noexcept
+{
+    return apsysFlagforceposostmanagi_;
+}
+void Portfolio::setApsysFlagforceposostmanagi(const std::string &pApsysFlagforceposostmanagi) noexcept
+{
+    apsysFlagforceposostmanagi_ = std::make_shared<std::string>(pApsysFlagforceposostmanagi);
+    dirtyFlag_[123] = true;
+}
+void Portfolio::setApsysFlagforceposostmanagi(std::string &&pApsysFlagforceposostmanagi) noexcept
+{
+    apsysFlagforceposostmanagi_ = std::make_shared<std::string>(std::move(pApsysFlagforceposostmanagi));
+    dirtyFlag_[123] = true;
+}
+void Portfolio::setApsysFlagforceposostmanagiToNull() noexcept
+{
+    apsysFlagforceposostmanagi_.reset();
+    dirtyFlag_[123] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysPosostmanagc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysPosostmanagc_)
+        return *apsysPosostmanagc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysPosostmanagc() const noexcept
+{
+    return apsysPosostmanagc_;
+}
+void Portfolio::setApsysPosostmanagc(const std::string &pApsysPosostmanagc) noexcept
+{
+    apsysPosostmanagc_ = std::make_shared<std::string>(pApsysPosostmanagc);
+    dirtyFlag_[124] = true;
+}
+void Portfolio::setApsysPosostmanagc(std::string &&pApsysPosostmanagc) noexcept
+{
+    apsysPosostmanagc_ = std::make_shared<std::string>(std::move(pApsysPosostmanagc));
+    dirtyFlag_[124] = true;
+}
+void Portfolio::setApsysPosostmanagcToNull() noexcept
+{
+    apsysPosostmanagc_.reset();
+    dirtyFlag_[124] = true;
+}
+
+const double &Portfolio::getValueOfApsysCritereusfatcastatl() const noexcept
+{
+    const static double defaultValue = double();
+    if(apsysCritereusfatcastatl_)
+        return *apsysCritereusfatcastatl_;
+    return defaultValue;
+}
+const std::shared_ptr<double> &Portfolio::getApsysCritereusfatcastatl() const noexcept
+{
+    return apsysCritereusfatcastatl_;
+}
+void Portfolio::setApsysCritereusfatcastatl(const double &pApsysCritereusfatcastatl) noexcept
+{
+    apsysCritereusfatcastatl_ = std::make_shared<double>(pApsysCritereusfatcastatl);
+    dirtyFlag_[125] = true;
+}
+void Portfolio::setApsysCritereusfatcastatlToNull() noexcept
+{
+    apsysCritereusfatcastatl_.reset();
+    dirtyFlag_[125] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysFlagsimsi() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysFlagsimsi_)
+        return *apsysFlagsimsi_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysFlagsimsi() const noexcept
+{
+    return apsysFlagsimsi_;
+}
+void Portfolio::setApsysFlagsimsi(const std::string &pApsysFlagsimsi) noexcept
+{
+    apsysFlagsimsi_ = std::make_shared<std::string>(pApsysFlagsimsi);
+    dirtyFlag_[126] = true;
+}
+void Portfolio::setApsysFlagsimsi(std::string &&pApsysFlagsimsi) noexcept
+{
+    apsysFlagsimsi_ = std::make_shared<std::string>(std::move(pApsysFlagsimsi));
+    dirtyFlag_[126] = true;
+}
+void Portfolio::setApsysFlagsimsiToNull() noexcept
+{
+    apsysFlagsimsi_.reset();
+    dirtyFlag_[126] = true;
+}
+
+const double &Portfolio::getValueOfNrOfBoInWhtStatement() const noexcept
+{
+    const static double defaultValue = double();
+    if(nrOfBoInWhtStatement_)
+        return *nrOfBoInWhtStatement_;
+    return defaultValue;
+}
+const std::shared_ptr<double> &Portfolio::getNrOfBoInWhtStatement() const noexcept
+{
+    return nrOfBoInWhtStatement_;
+}
+void Portfolio::setNrOfBoInWhtStatement(const double &pNrOfBoInWhtStatement) noexcept
+{
+    nrOfBoInWhtStatement_ = std::make_shared<double>(pNrOfBoInWhtStatement);
+    dirtyFlag_[127] = true;
+}
+void Portfolio::setNrOfBoInWhtStatementToNull() noexcept
+{
+    nrOfBoInWhtStatement_.reset();
+    dirtyFlag_[127] = true;
+}
+
+const std::string &Portfolio::getValueOfPartnerWithUnlLiabilityCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(partnerWithUnlLiabilityCd_)
+        return *partnerWithUnlLiabilityCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getPartnerWithUnlLiabilityCd() const noexcept
+{
+    return partnerWithUnlLiabilityCd_;
+}
+void Portfolio::setPartnerWithUnlLiabilityCd(const std::string &pPartnerWithUnlLiabilityCd) noexcept
+{
+    partnerWithUnlLiabilityCd_ = std::make_shared<std::string>(pPartnerWithUnlLiabilityCd);
+    dirtyFlag_[128] = true;
+}
+void Portfolio::setPartnerWithUnlLiabilityCd(std::string &&pPartnerWithUnlLiabilityCd) noexcept
+{
+    partnerWithUnlLiabilityCd_ = std::make_shared<std::string>(std::move(pPartnerWithUnlLiabilityCd));
+    dirtyFlag_[128] = true;
+}
+void Portfolio::setPartnerWithUnlLiabilityCdToNull() noexcept
+{
+    partnerWithUnlLiabilityCd_.reset();
+    dirtyFlag_[128] = true;
+}
+
+const std::string &Portfolio::getValueOfCompanyManagedByBoCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(companyManagedByBoCd_)
+        return *companyManagedByBoCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getCompanyManagedByBoCd() const noexcept
+{
+    return companyManagedByBoCd_;
+}
+void Portfolio::setCompanyManagedByBoCd(const std::string &pCompanyManagedByBoCd) noexcept
+{
+    companyManagedByBoCd_ = std::make_shared<std::string>(pCompanyManagedByBoCd);
+    dirtyFlag_[129] = true;
+}
+void Portfolio::setCompanyManagedByBoCd(std::string &&pCompanyManagedByBoCd) noexcept
+{
+    companyManagedByBoCd_ = std::make_shared<std::string>(std::move(pCompanyManagedByBoCd));
+    dirtyFlag_[129] = true;
+}
+void Portfolio::setCompanyManagedByBoCdToNull() noexcept
+{
+    companyManagedByBoCd_.reset();
+    dirtyFlag_[129] = true;
+}
+
+const std::string &Portfolio::getValueOfIsTrusteePhysicalCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(isTrusteePhysicalCd_)
+        return *isTrusteePhysicalCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getIsTrusteePhysicalCd() const noexcept
+{
+    return isTrusteePhysicalCd_;
+}
+void Portfolio::setIsTrusteePhysicalCd(const std::string &pIsTrusteePhysicalCd) noexcept
+{
+    isTrusteePhysicalCd_ = std::make_shared<std::string>(pIsTrusteePhysicalCd);
+    dirtyFlag_[130] = true;
+}
+void Portfolio::setIsTrusteePhysicalCd(std::string &&pIsTrusteePhysicalCd) noexcept
+{
+    isTrusteePhysicalCd_ = std::make_shared<std::string>(std::move(pIsTrusteePhysicalCd));
+    dirtyFlag_[130] = true;
+}
+void Portfolio::setIsTrusteePhysicalCdToNull() noexcept
+{
+    isTrusteePhysicalCd_.reset();
+    dirtyFlag_[130] = true;
+}
+
+const std::string &Portfolio::getValueOfNoTradingUsSecuritiesCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(noTradingUsSecuritiesCd_)
+        return *noTradingUsSecuritiesCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getNoTradingUsSecuritiesCd() const noexcept
+{
+    return noTradingUsSecuritiesCd_;
+}
+void Portfolio::setNoTradingUsSecuritiesCd(const std::string &pNoTradingUsSecuritiesCd) noexcept
+{
+    noTradingUsSecuritiesCd_ = std::make_shared<std::string>(pNoTradingUsSecuritiesCd);
+    dirtyFlag_[131] = true;
+}
+void Portfolio::setNoTradingUsSecuritiesCd(std::string &&pNoTradingUsSecuritiesCd) noexcept
+{
+    noTradingUsSecuritiesCd_ = std::make_shared<std::string>(std::move(pNoTradingUsSecuritiesCd));
+    dirtyFlag_[131] = true;
+}
+void Portfolio::setNoTradingUsSecuritiesCdToNull() noexcept
+{
+    noTradingUsSecuritiesCd_.reset();
+    dirtyFlag_[131] = true;
+}
+
+const std::string &Portfolio::getValueOfPortfolioSegrAccountCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(portfolioSegrAccountCd_)
+        return *portfolioSegrAccountCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getPortfolioSegrAccountCd() const noexcept
+{
+    return portfolioSegrAccountCd_;
+}
+void Portfolio::setPortfolioSegrAccountCd(const std::string &pPortfolioSegrAccountCd) noexcept
+{
+    portfolioSegrAccountCd_ = std::make_shared<std::string>(pPortfolioSegrAccountCd);
+    dirtyFlag_[132] = true;
+}
+void Portfolio::setPortfolioSegrAccountCd(std::string &&pPortfolioSegrAccountCd) noexcept
+{
+    portfolioSegrAccountCd_ = std::make_shared<std::string>(std::move(pPortfolioSegrAccountCd));
+    dirtyFlag_[132] = true;
+}
+void Portfolio::setPortfolioSegrAccountCdToNull() noexcept
+{
+    portfolioSegrAccountCd_.reset();
+    dirtyFlag_[132] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfUsWhtStartDate() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(usWhtStartDate_)
+        return *usWhtStartDate_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getUsWhtStartDate() const noexcept
+{
+    return usWhtStartDate_;
+}
+void Portfolio::setUsWhtStartDate(const ::trantor::Date &pUsWhtStartDate) noexcept
+{
+    usWhtStartDate_ = std::make_shared<::trantor::Date>(pUsWhtStartDate);
+    dirtyFlag_[133] = true;
+}
+void Portfolio::setUsWhtStartDateToNull() noexcept
+{
+    usWhtStartDate_.reset();
+    dirtyFlag_[133] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptfivstautos() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptfivstautos_)
+        return *apsysCdctgptfivstautos_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptfivstautos() const noexcept
+{
+    return apsysCdctgptfivstautos_;
+}
+void Portfolio::setApsysCdctgptfivstautos(const std::string &pApsysCdctgptfivstautos) noexcept
+{
+    apsysCdctgptfivstautos_ = std::make_shared<std::string>(pApsysCdctgptfivstautos);
+    dirtyFlag_[134] = true;
+}
+void Portfolio::setApsysCdctgptfivstautos(std::string &&pApsysCdctgptfivstautos) noexcept
+{
+    apsysCdctgptfivstautos_ = std::make_shared<std::string>(std::move(pApsysCdctgptfivstautos));
+    dirtyFlag_[134] = true;
+}
+void Portfolio::setApsysCdctgptfivstautosToNull() noexcept
+{
+    apsysCdctgptfivstautos_.reset();
+    dirtyFlag_[134] = true;
+}
+
+const std::string &Portfolio::getValueOfAutomatischeVerteilungCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(automatischeVerteilungCd_)
+        return *automatischeVerteilungCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getAutomatischeVerteilungCd() const noexcept
+{
+    return automatischeVerteilungCd_;
+}
+void Portfolio::setAutomatischeVerteilungCd(const std::string &pAutomatischeVerteilungCd) noexcept
+{
+    automatischeVerteilungCd_ = std::make_shared<std::string>(pAutomatischeVerteilungCd);
+    dirtyFlag_[135] = true;
+}
+void Portfolio::setAutomatischeVerteilungCd(std::string &&pAutomatischeVerteilungCd) noexcept
+{
+    automatischeVerteilungCd_ = std::make_shared<std::string>(std::move(pAutomatischeVerteilungCd));
+    dirtyFlag_[135] = true;
+}
+void Portfolio::setAutomatischeVerteilungCdToNull() noexcept
+{
+    automatischeVerteilungCd_.reset();
+    dirtyFlag_[135] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdtypreportqic() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdtypreportqic_)
+        return *apsysCdtypreportqic_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdtypreportqic() const noexcept
+{
+    return apsysCdtypreportqic_;
+}
+void Portfolio::setApsysCdtypreportqic(const std::string &pApsysCdtypreportqic) noexcept
+{
+    apsysCdtypreportqic_ = std::make_shared<std::string>(pApsysCdtypreportqic);
+    dirtyFlag_[136] = true;
+}
+void Portfolio::setApsysCdtypreportqic(std::string &&pApsysCdtypreportqic) noexcept
+{
+    apsysCdtypreportqic_ = std::make_shared<std::string>(std::move(pApsysCdtypreportqic));
+    dirtyFlag_[136] = true;
+}
+void Portfolio::setApsysCdtypreportqicToNull() noexcept
+{
+    apsysCdtypreportqic_.reset();
+    dirtyFlag_[136] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysFlagirsnonactifi() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysFlagirsnonactifi_)
+        return *apsysFlagirsnonactifi_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysFlagirsnonactifi() const noexcept
+{
+    return apsysFlagirsnonactifi_;
+}
+void Portfolio::setApsysFlagirsnonactifi(const std::string &pApsysFlagirsnonactifi) noexcept
+{
+    apsysFlagirsnonactifi_ = std::make_shared<std::string>(pApsysFlagirsnonactifi);
+    dirtyFlag_[137] = true;
+}
+void Portfolio::setApsysFlagirsnonactifi(std::string &&pApsysFlagirsnonactifi) noexcept
+{
+    apsysFlagirsnonactifi_ = std::make_shared<std::string>(std::move(pApsysFlagirsnonactifi));
+    dirtyFlag_[137] = true;
+}
+void Portfolio::setApsysFlagirsnonactifiToNull() noexcept
+{
+    apsysFlagirsnonactifi_.reset();
+    dirtyFlag_[137] = true;
+}
+
+const std::string &Portfolio::getValueOfOpeningDocumentsProposedCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(openingDocumentsProposedCd_)
+        return *openingDocumentsProposedCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getOpeningDocumentsProposedCd() const noexcept
+{
+    return openingDocumentsProposedCd_;
+}
+void Portfolio::setOpeningDocumentsProposedCd(const std::string &pOpeningDocumentsProposedCd) noexcept
+{
+    openingDocumentsProposedCd_ = std::make_shared<std::string>(pOpeningDocumentsProposedCd);
+    dirtyFlag_[138] = true;
+}
+void Portfolio::setOpeningDocumentsProposedCd(std::string &&pOpeningDocumentsProposedCd) noexcept
+{
+    openingDocumentsProposedCd_ = std::make_shared<std::string>(std::move(pOpeningDocumentsProposedCd));
+    dirtyFlag_[138] = true;
+}
+void Portfolio::setOpeningDocumentsProposedCdToNull() noexcept
+{
+    openingDocumentsProposedCd_.reset();
+    dirtyFlag_[138] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdctgptfalgcpts() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdctgptfalgcpts_)
+        return *apsysCdctgptfalgcpts_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdctgptfalgcpts() const noexcept
+{
+    return apsysCdctgptfalgcpts_;
+}
+void Portfolio::setApsysCdctgptfalgcpts(const std::string &pApsysCdctgptfalgcpts) noexcept
+{
+    apsysCdctgptfalgcpts_ = std::make_shared<std::string>(pApsysCdctgptfalgcpts);
+    dirtyFlag_[139] = true;
+}
+void Portfolio::setApsysCdctgptfalgcpts(std::string &&pApsysCdctgptfalgcpts) noexcept
+{
+    apsysCdctgptfalgcpts_ = std::make_shared<std::string>(std::move(pApsysCdctgptfalgcpts));
+    dirtyFlag_[139] = true;
+}
+void Portfolio::setApsysCdctgptfalgcptsToNull() noexcept
+{
+    apsysCdctgptfalgcpts_.reset();
+    dirtyFlag_[139] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysIdstrucforjurs() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysIdstrucforjurs_)
+        return *apsysIdstrucforjurs_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysIdstrucforjurs() const noexcept
+{
+    return apsysIdstrucforjurs_;
+}
+void Portfolio::setApsysIdstrucforjurs(const std::string &pApsysIdstrucforjurs) noexcept
+{
+    apsysIdstrucforjurs_ = std::make_shared<std::string>(pApsysIdstrucforjurs);
+    dirtyFlag_[140] = true;
+}
+void Portfolio::setApsysIdstrucforjurs(std::string &&pApsysIdstrucforjurs) noexcept
+{
+    apsysIdstrucforjurs_ = std::make_shared<std::string>(std::move(pApsysIdstrucforjurs));
+    dirtyFlag_[140] = true;
+}
+void Portfolio::setApsysIdstrucforjursToNull() noexcept
+{
+    apsysIdstrucforjurs_.reset();
+    dirtyFlag_[140] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysIdentforjurs() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysIdentforjurs_)
+        return *apsysIdentforjurs_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysIdentforjurs() const noexcept
+{
+    return apsysIdentforjurs_;
+}
+void Portfolio::setApsysIdentforjurs(const std::string &pApsysIdentforjurs) noexcept
+{
+    apsysIdentforjurs_ = std::make_shared<std::string>(pApsysIdentforjurs);
+    dirtyFlag_[141] = true;
+}
+void Portfolio::setApsysIdentforjurs(std::string &&pApsysIdentforjurs) noexcept
+{
+    apsysIdentforjurs_ = std::make_shared<std::string>(std::move(pApsysIdentforjurs));
+    dirtyFlag_[141] = true;
+}
+void Portfolio::setApsysIdentforjursToNull() noexcept
+{
+    apsysIdentforjurs_.reset();
+    dirtyFlag_[141] = true;
+}
+
+const double &Portfolio::getValueOfFatcaBasketCd() const noexcept
+{
+    const static double defaultValue = double();
+    if(fatcaBasketCd_)
+        return *fatcaBasketCd_;
+    return defaultValue;
+}
+const std::shared_ptr<double> &Portfolio::getFatcaBasketCd() const noexcept
+{
+    return fatcaBasketCd_;
+}
+void Portfolio::setFatcaBasketCd(const double &pFatcaBasketCd) noexcept
+{
+    fatcaBasketCd_ = std::make_shared<double>(pFatcaBasketCd);
+    dirtyFlag_[142] = true;
+}
+void Portfolio::setFatcaBasketCdToNull() noexcept
+{
+    fatcaBasketCd_.reset();
+    dirtyFlag_[142] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdmethcloc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdmethcloc_)
+        return *apsysCdmethcloc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdmethcloc() const noexcept
+{
+    return apsysCdmethcloc_;
+}
+void Portfolio::setApsysCdmethcloc(const std::string &pApsysCdmethcloc) noexcept
+{
+    apsysCdmethcloc_ = std::make_shared<std::string>(pApsysCdmethcloc);
+    dirtyFlag_[143] = true;
+}
+void Portfolio::setApsysCdmethcloc(std::string &&pApsysCdmethcloc) noexcept
+{
+    apsysCdmethcloc_ = std::make_shared<std::string>(std::move(pApsysCdmethcloc));
+    dirtyFlag_[143] = true;
+}
+void Portfolio::setApsysCdmethclocToNull() noexcept
+{
+    apsysCdmethcloc_.reset();
+    dirtyFlag_[143] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfApsysDtevalclol() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(apsysDtevalclol_)
+        return *apsysDtevalclol_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getApsysDtevalclol() const noexcept
+{
+    return apsysDtevalclol_;
+}
+void Portfolio::setApsysDtevalclol(const ::trantor::Date &pApsysDtevalclol) noexcept
+{
+    apsysDtevalclol_ = std::make_shared<::trantor::Date>(pApsysDtevalclol);
+    dirtyFlag_[144] = true;
+}
+void Portfolio::setApsysDtevalclolToNull() noexcept
+{
+    apsysDtevalclol_.reset();
+    dirtyFlag_[144] = true;
+}
+
+const std::string &Portfolio::getValueOfAeoiExemptionCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(aeoiExemptionCd_)
+        return *aeoiExemptionCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getAeoiExemptionCd() const noexcept
+{
+    return aeoiExemptionCd_;
+}
+void Portfolio::setAeoiExemptionCd(const std::string &pAeoiExemptionCd) noexcept
+{
+    aeoiExemptionCd_ = std::make_shared<std::string>(pAeoiExemptionCd);
+    dirtyFlag_[145] = true;
+}
+void Portfolio::setAeoiExemptionCd(std::string &&pAeoiExemptionCd) noexcept
+{
+    aeoiExemptionCd_ = std::make_shared<std::string>(std::move(pAeoiExemptionCd));
+    dirtyFlag_[145] = true;
+}
+void Portfolio::setAeoiExemptionCdToNull() noexcept
+{
+    aeoiExemptionCd_.reset();
+    dirtyFlag_[145] = true;
+}
+
+const std::string &Portfolio::getValueOfAeoiSubExemptionCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(aeoiSubExemptionCd_)
+        return *aeoiSubExemptionCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getAeoiSubExemptionCd() const noexcept
+{
+    return aeoiSubExemptionCd_;
+}
+void Portfolio::setAeoiSubExemptionCd(const std::string &pAeoiSubExemptionCd) noexcept
+{
+    aeoiSubExemptionCd_ = std::make_shared<std::string>(pAeoiSubExemptionCd);
+    dirtyFlag_[146] = true;
+}
+void Portfolio::setAeoiSubExemptionCd(std::string &&pAeoiSubExemptionCd) noexcept
+{
+    aeoiSubExemptionCd_ = std::make_shared<std::string>(std::move(pAeoiSubExemptionCd));
+    dirtyFlag_[146] = true;
+}
+void Portfolio::setAeoiSubExemptionCdToNull() noexcept
+{
+    aeoiSubExemptionCd_.reset();
+    dirtyFlag_[146] = true;
+}
+
+const std::string &Portfolio::getValueOfUndocumentedAccountCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(undocumentedAccountCd_)
+        return *undocumentedAccountCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getUndocumentedAccountCd() const noexcept
+{
+    return undocumentedAccountCd_;
+}
+void Portfolio::setUndocumentedAccountCd(const std::string &pUndocumentedAccountCd) noexcept
+{
+    undocumentedAccountCd_ = std::make_shared<std::string>(pUndocumentedAccountCd);
+    dirtyFlag_[147] = true;
+}
+void Portfolio::setUndocumentedAccountCd(std::string &&pUndocumentedAccountCd) noexcept
+{
+    undocumentedAccountCd_ = std::make_shared<std::string>(std::move(pUndocumentedAccountCd));
+    dirtyFlag_[147] = true;
+}
+void Portfolio::setUndocumentedAccountCdToNull() noexcept
+{
+    undocumentedAccountCd_.reset();
+    dirtyFlag_[147] = true;
+}
+
+const std::string &Portfolio::getValueOfDormantAccountCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(dormantAccountCd_)
+        return *dormantAccountCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getDormantAccountCd() const noexcept
+{
+    return dormantAccountCd_;
+}
+void Portfolio::setDormantAccountCd(const std::string &pDormantAccountCd) noexcept
+{
+    dormantAccountCd_ = std::make_shared<std::string>(pDormantAccountCd);
+    dirtyFlag_[148] = true;
+}
+void Portfolio::setDormantAccountCd(std::string &&pDormantAccountCd) noexcept
+{
+    dormantAccountCd_ = std::make_shared<std::string>(std::move(pDormantAccountCd));
+    dirtyFlag_[148] = true;
+}
+void Portfolio::setDormantAccountCdToNull() noexcept
+{
+    dormantAccountCd_.reset();
+    dirtyFlag_[148] = true;
+}
+
+const std::string &Portfolio::getValueOfAeoiConsistencyStatusCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(aeoiConsistencyStatusCd_)
+        return *aeoiConsistencyStatusCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getAeoiConsistencyStatusCd() const noexcept
+{
+    return aeoiConsistencyStatusCd_;
+}
+void Portfolio::setAeoiConsistencyStatusCd(const std::string &pAeoiConsistencyStatusCd) noexcept
+{
+    aeoiConsistencyStatusCd_ = std::make_shared<std::string>(pAeoiConsistencyStatusCd);
+    dirtyFlag_[149] = true;
+}
+void Portfolio::setAeoiConsistencyStatusCd(std::string &&pAeoiConsistencyStatusCd) noexcept
+{
+    aeoiConsistencyStatusCd_ = std::make_shared<std::string>(std::move(pAeoiConsistencyStatusCd));
+    dirtyFlag_[149] = true;
+}
+void Portfolio::setAeoiConsistencyStatusCdToNull() noexcept
+{
+    aeoiConsistencyStatusCd_.reset();
+    dirtyFlag_[149] = true;
+}
+
+const std::string &Portfolio::getValueOfAeoiFinalStatusCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(aeoiFinalStatusCd_)
+        return *aeoiFinalStatusCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getAeoiFinalStatusCd() const noexcept
+{
+    return aeoiFinalStatusCd_;
+}
+void Portfolio::setAeoiFinalStatusCd(const std::string &pAeoiFinalStatusCd) noexcept
+{
+    aeoiFinalStatusCd_ = std::make_shared<std::string>(pAeoiFinalStatusCd);
+    dirtyFlag_[150] = true;
+}
+void Portfolio::setAeoiFinalStatusCd(std::string &&pAeoiFinalStatusCd) noexcept
+{
+    aeoiFinalStatusCd_ = std::make_shared<std::string>(std::move(pAeoiFinalStatusCd));
+    dirtyFlag_[150] = true;
+}
+void Portfolio::setAeoiFinalStatusCdToNull() noexcept
+{
+    aeoiFinalStatusCd_.reset();
+    dirtyFlag_[150] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfAeoiReviewDate() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(aeoiReviewDate_)
+        return *aeoiReviewDate_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getAeoiReviewDate() const noexcept
+{
+    return aeoiReviewDate_;
+}
+void Portfolio::setAeoiReviewDate(const ::trantor::Date &pAeoiReviewDate) noexcept
+{
+    aeoiReviewDate_ = std::make_shared<::trantor::Date>(pAeoiReviewDate);
+    dirtyFlag_[151] = true;
+}
+void Portfolio::setAeoiReviewDateToNull() noexcept
+{
+    aeoiReviewDate_.reset();
+    dirtyFlag_[151] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdmifidexemptc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdmifidexemptc_)
+        return *apsysCdmifidexemptc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdmifidexemptc() const noexcept
+{
+    return apsysCdmifidexemptc_;
+}
+void Portfolio::setApsysCdmifidexemptc(const std::string &pApsysCdmifidexemptc) noexcept
+{
+    apsysCdmifidexemptc_ = std::make_shared<std::string>(pApsysCdmifidexemptc);
+    dirtyFlag_[152] = true;
+}
+void Portfolio::setApsysCdmifidexemptc(std::string &&pApsysCdmifidexemptc) noexcept
+{
+    apsysCdmifidexemptc_ = std::make_shared<std::string>(std::move(pApsysCdmifidexemptc));
+    dirtyFlag_[152] = true;
+}
+void Portfolio::setApsysCdmifidexemptcToNull() noexcept
+{
+    apsysCdmifidexemptc_.reset();
+    dirtyFlag_[152] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfApsysDtdebmifidl() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(apsysDtdebmifidl_)
+        return *apsysDtdebmifidl_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getApsysDtdebmifidl() const noexcept
+{
+    return apsysDtdebmifidl_;
+}
+void Portfolio::setApsysDtdebmifidl(const ::trantor::Date &pApsysDtdebmifidl) noexcept
+{
+    apsysDtdebmifidl_ = std::make_shared<::trantor::Date>(pApsysDtdebmifidl);
+    dirtyFlag_[153] = true;
+}
+void Portfolio::setApsysDtdebmifidlToNull() noexcept
+{
+    apsysDtdebmifidl_.reset();
+    dirtyFlag_[153] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfOpenedInApsysDate() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(openedInApsysDate_)
+        return *openedInApsysDate_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getOpenedInApsysDate() const noexcept
+{
+    return openedInApsysDate_;
+}
+void Portfolio::setOpenedInApsysDate(const ::trantor::Date &pOpenedInApsysDate) noexcept
+{
+    openedInApsysDate_ = std::make_shared<::trantor::Date>(pOpenedInApsysDate);
+    dirtyFlag_[154] = true;
+}
+void Portfolio::setOpenedInApsysDateToNull() noexcept
+{
+    openedInApsysDate_.reset();
+    dirtyFlag_[154] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysFlagdeldatapersi() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysFlagdeldatapersi_)
+        return *apsysFlagdeldatapersi_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysFlagdeldatapersi() const noexcept
+{
+    return apsysFlagdeldatapersi_;
+}
+void Portfolio::setApsysFlagdeldatapersi(const std::string &pApsysFlagdeldatapersi) noexcept
+{
+    apsysFlagdeldatapersi_ = std::make_shared<std::string>(pApsysFlagdeldatapersi);
+    dirtyFlag_[155] = true;
+}
+void Portfolio::setApsysFlagdeldatapersi(std::string &&pApsysFlagdeldatapersi) noexcept
+{
+    apsysFlagdeldatapersi_ = std::make_shared<std::string>(std::move(pApsysFlagdeldatapersi));
+    dirtyFlag_[155] = true;
+}
+void Portfolio::setApsysFlagdeldatapersiToNull() noexcept
+{
+    apsysFlagdeldatapersi_.reset();
+    dirtyFlag_[155] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfApsysDtwaitdeldatapersl() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(apsysDtwaitdeldatapersl_)
+        return *apsysDtwaitdeldatapersl_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getApsysDtwaitdeldatapersl() const noexcept
+{
+    return apsysDtwaitdeldatapersl_;
+}
+void Portfolio::setApsysDtwaitdeldatapersl(const ::trantor::Date &pApsysDtwaitdeldatapersl) noexcept
+{
+    apsysDtwaitdeldatapersl_ = std::make_shared<::trantor::Date>(pApsysDtwaitdeldatapersl);
+    dirtyFlag_[156] = true;
+}
+void Portfolio::setApsysDtwaitdeldataperslToNull() noexcept
+{
+    apsysDtwaitdeldatapersl_.reset();
+    dirtyFlag_[156] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdptfseldgsc() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdptfseldgsc_)
+        return *apsysCdptfseldgsc_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdptfseldgsc() const noexcept
+{
+    return apsysCdptfseldgsc_;
+}
+void Portfolio::setApsysCdptfseldgsc(const std::string &pApsysCdptfseldgsc) noexcept
+{
+    apsysCdptfseldgsc_ = std::make_shared<std::string>(pApsysCdptfseldgsc);
+    dirtyFlag_[157] = true;
+}
+void Portfolio::setApsysCdptfseldgsc(std::string &&pApsysCdptfseldgsc) noexcept
+{
+    apsysCdptfseldgsc_ = std::make_shared<std::string>(std::move(pApsysCdptfseldgsc));
+    dirtyFlag_[157] = true;
+}
+void Portfolio::setApsysCdptfseldgscToNull() noexcept
+{
+    apsysCdptfseldgsc_.reset();
+    dirtyFlag_[157] = true;
+}
+
+const std::string &Portfolio::getValueOfApsysCdmotifpartdgss() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(apsysCdmotifpartdgss_)
+        return *apsysCdmotifpartdgss_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getApsysCdmotifpartdgss() const noexcept
+{
+    return apsysCdmotifpartdgss_;
+}
+void Portfolio::setApsysCdmotifpartdgss(const std::string &pApsysCdmotifpartdgss) noexcept
+{
+    apsysCdmotifpartdgss_ = std::make_shared<std::string>(pApsysCdmotifpartdgss);
+    dirtyFlag_[158] = true;
+}
+void Portfolio::setApsysCdmotifpartdgss(std::string &&pApsysCdmotifpartdgss) noexcept
+{
+    apsysCdmotifpartdgss_ = std::make_shared<std::string>(std::move(pApsysCdmotifpartdgss));
+    dirtyFlag_[158] = true;
+}
+void Portfolio::setApsysCdmotifpartdgssToNull() noexcept
+{
+    apsysCdmotifpartdgss_.reset();
+    dirtyFlag_[158] = true;
+}
+
+const std::string &Portfolio::getValueOfEamCd() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(eamCd_)
+        return *eamCd_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getEamCd() const noexcept
+{
+    return eamCd_;
+}
+void Portfolio::setEamCd(const std::string &pEamCd) noexcept
+{
+    eamCd_ = std::make_shared<std::string>(pEamCd);
+    dirtyFlag_[159] = true;
+}
+void Portfolio::setEamCd(std::string &&pEamCd) noexcept
+{
+    eamCd_ = std::make_shared<std::string>(std::move(pEamCd));
+    dirtyFlag_[159] = true;
+}
+void Portfolio::setEamCdToNull() noexcept
+{
+    eamCd_.reset();
+    dirtyFlag_[159] = true;
+}
+
+const std::string &Portfolio::getValueOfRetentionOnHold() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(retentionOnHold_)
+        return *retentionOnHold_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getRetentionOnHold() const noexcept
+{
+    return retentionOnHold_;
+}
+void Portfolio::setRetentionOnHold(const std::string &pRetentionOnHold) noexcept
+{
+    retentionOnHold_ = std::make_shared<std::string>(pRetentionOnHold);
+    dirtyFlag_[160] = true;
+}
+void Portfolio::setRetentionOnHold(std::string &&pRetentionOnHold) noexcept
+{
+    retentionOnHold_ = std::make_shared<std::string>(std::move(pRetentionOnHold));
+    dirtyFlag_[160] = true;
+}
+void Portfolio::setRetentionOnHoldToNull() noexcept
+{
+    retentionOnHold_.reset();
+    dirtyFlag_[160] = true;
+}
+
+const std::string &Portfolio::getValueOfLogicalErasure() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(logicalErasure_)
+        return *logicalErasure_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getLogicalErasure() const noexcept
+{
+    return logicalErasure_;
+}
+void Portfolio::setLogicalErasure(const std::string &pLogicalErasure) noexcept
+{
+    logicalErasure_ = std::make_shared<std::string>(pLogicalErasure);
+    dirtyFlag_[161] = true;
+}
+void Portfolio::setLogicalErasure(std::string &&pLogicalErasure) noexcept
+{
+    logicalErasure_ = std::make_shared<std::string>(std::move(pLogicalErasure));
+    dirtyFlag_[161] = true;
+}
+void Portfolio::setLogicalErasureToNull() noexcept
+{
+    logicalErasure_.reset();
+    dirtyFlag_[161] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfRetentionOnHoldDate() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(retentionOnHoldDate_)
+        return *retentionOnHoldDate_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getRetentionOnHoldDate() const noexcept
+{
+    return retentionOnHoldDate_;
+}
+void Portfolio::setRetentionOnHoldDate(const ::trantor::Date &pRetentionOnHoldDate) noexcept
+{
+    retentionOnHoldDate_ = std::make_shared<::trantor::Date>(pRetentionOnHoldDate);
+    dirtyFlag_[162] = true;
+}
+void Portfolio::setRetentionOnHoldDateToNull() noexcept
+{
+    retentionOnHoldDate_.reset();
+    dirtyFlag_[162] = true;
+}
+
+const std::string &Portfolio::getValueOfRetentionOnHoldReason() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(retentionOnHoldReason_)
+        return *retentionOnHoldReason_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getRetentionOnHoldReason() const noexcept
+{
+    return retentionOnHoldReason_;
+}
+void Portfolio::setRetentionOnHoldReason(const std::string &pRetentionOnHoldReason) noexcept
+{
+    retentionOnHoldReason_ = std::make_shared<std::string>(pRetentionOnHoldReason);
+    dirtyFlag_[163] = true;
+}
+void Portfolio::setRetentionOnHoldReason(std::string &&pRetentionOnHoldReason) noexcept
+{
+    retentionOnHoldReason_ = std::make_shared<std::string>(std::move(pRetentionOnHoldReason));
+    dirtyFlag_[163] = true;
+}
+void Portfolio::setRetentionOnHoldReasonToNull() noexcept
+{
+    retentionOnHoldReason_.reset();
+    dirtyFlag_[163] = true;
+}
+
+const ::trantor::Date &Portfolio::getValueOfLogicalErasureDate() const noexcept
+{
+    const static ::trantor::Date defaultValue = ::trantor::Date();
+    if(logicalErasureDate_)
+        return *logicalErasureDate_;
+    return defaultValue;
+}
+const std::shared_ptr<::trantor::Date> &Portfolio::getLogicalErasureDate() const noexcept
+{
+    return logicalErasureDate_;
+}
+void Portfolio::setLogicalErasureDate(const ::trantor::Date &pLogicalErasureDate) noexcept
+{
+    logicalErasureDate_ = std::make_shared<::trantor::Date>(pLogicalErasureDate);
+    dirtyFlag_[164] = true;
+}
+void Portfolio::setLogicalErasureDateToNull() noexcept
+{
+    logicalErasureDate_.reset();
+    dirtyFlag_[164] = true;
+}
+
+const std::string &Portfolio::getValueOfLogicalErasureReason() const noexcept
+{
+    const static std::string defaultValue = std::string();
+    if(logicalErasureReason_)
+        return *logicalErasureReason_;
+    return defaultValue;
+}
+const std::shared_ptr<std::string> &Portfolio::getLogicalErasureReason() const noexcept
+{
+    return logicalErasureReason_;
+}
+void Portfolio::setLogicalErasureReason(const std::string &pLogicalErasureReason) noexcept
+{
+    logicalErasureReason_ = std::make_shared<std::string>(pLogicalErasureReason);
+    dirtyFlag_[165] = true;
+}
+void Portfolio::setLogicalErasureReason(std::string &&pLogicalErasureReason) noexcept
+{
+    logicalErasureReason_ = std::make_shared<std::string>(std::move(pLogicalErasureReason));
+    dirtyFlag_[165] = true;
+}
+void Portfolio::setLogicalErasureReasonToNull() noexcept
+{
+    logicalErasureReason_.reset();
+    dirtyFlag_[165] = true;
 }
 
 void Portfolio::updateId(const uint64_t id)
 {
-    porfolioId_ = std::make_shared<int32_t>(static_cast<int32_t>(id));
 }
 
 const std::vector<std::string> &Portfolio::insertColumns() noexcept
 {
     static const std::vector<std::string> inCols={
-        "porfolio_name",
-        "date_Creation",
-        "open_closed"
+        "KUNDENID",
+        "PORTFOLIONO",
+        "BEZEICHNUNG",
+        "MANAGEMENTTYP_CD",
+        "MANAGER1_CD",
+        "MANAGER2_CD",
+        "MANAGER3_CD",
+        "MANAGER4_CD",
+        "MANAGER5_CD",
+        "VERMITTLER_CD",
+        "INFOVOLLMACHT",
+        "KONTAKT",
+        "ERTRAEGNISAUF_CD",
+        "WAEHRUNGS_CD",
+        "BELEGSATZ_CD",
+        "LOESCH_CD",
+        "LOESCHDATUM",
+        "CRTDATUM",
+        "CRTUSER",
+        "MUTDATUM",
+        "MUTUSER",
+        "MISDOMIZIL_CD",
+        "ANLAGESTRATEGIE_CD",
+        "USWBASKET_CD",
+        "VERSANDHAEUFIG_CD",
+        "RUBRIK",
+        "VERWALTUNGSMODUS_CD",
+        "KUNDELETZTERBESUCH",
+        "ANTRAGSORT",
+        "ANTRAGSDATUM",
+        "ANDEREPOSTADRESSE_CD",
+        "BANKLAGERND_CD",
+        "SPEZIALINSTRUKTION",
+        "GELDVONKONTOINHABER_CD",
+        "MANUALOPEN_CD",
+        "KONTONUMMER1",
+        "KONTONUMMER2",
+        "KONTONUMMER3",
+        "FILIAL_CD",
+        "RUBRIK1",
+        "RUBRIK2",
+        "RUBRIK3",
+        "ONLINE_CD",
+        "PORTFOLIOTYP_CD",
+        "CDPARTC",
+        "PO_EU_TAX_PROZENT",
+        "APSYS_STATUS_OPEC",
+        "APSYS_ERRI",
+        "APSYS_SHNAS",
+        "APSYS_TYPMDCS",
+        "APSYS_INTILGS",
+        "APSYS_SHLIBPTFS",
+        "APSYS_CDSTATDUSC",
+        "APSYS_DTDEBPARTL",
+        "APSYS_DTFINPARTL",
+        "APSYS_IDSTRUCS",
+        "APSYS_CDPERMI",
+        "APSYS_CDCTGPTFINTS",
+        "APSYS_CDCTGPTFSTES",
+        "APSYS_CDCTGPTFSTMS",
+        "APSYS_CDCTGPTFMAFS",
+        "APSYS_CDCTGPTFRISKS",
+        "APSYS_CDCTGPTFCOUS",
+        "APSYS_CDCTGPTFTRCS",
+        "APSYS_CDCTGPTFSTEBRUTNETS",
+        "APSYS_FLAGIRSREPPARTC",
+        "APSYS_CDCTGPTFTAXINTS",
+        "APSYS_IDPOCS",
+        "APSYS_INFO",
+        "NETTOVERMOEGEN_CHF",
+        "APSYS_INTISHS",
+        "APSYS_IDPERSL",
+        "APSYS_CDMOTIFPARTS",
+        "IN_APSYS_TEMP_ENTSP_USERID",
+        "IN_APSYS_TEMP_ENTSP_DATUM",
+        "IN_APSYS_TEMP_ENTSPERREN_CD",
+        "KUNDENKATEGORIE_CD",
+        "GEMEINSCHAFTSKONTO_CD",
+        "DRITTE_SAEULE_CD",
+        "APSYS_TYPPTFS",
+        "AUTO_EU_TAX_PERCENTAGE",
+        "AKTID",
+        "VALIDID",
+        "VALID_CD",
+        "VALIDUSER",
+        "APSYS_CDCTGPTFSBXPS",
+        "APSYS_CDCTGPTFSDOCS",
+        "APSYS_IDENTS",
+        "APSYS_CDSOUMBOLC",
+        "APSYS_CDFACBOLC",
+        "APSYS_FLAGTYPTRFPOLC",
+        "APSYS_IDTRFPOLS",
+        "APSYS_CDPCTPARTICTITUEUTAXC",
+        "APSYS_CDMOTIFCLOS",
+        "ENC_SALT",
+        "BEZEICHNUNG_ENC",
+        "KTOE_AML_PROFIL_CD",
+        "APSYS_DEVEVALS",
+        "APSYS_CDRNVSTMC",
+        "APSYS_CDRGLPRLGC",
+        "APSYS_CDCTGPTFCOMAGTCPTS",
+        "APSYS_CDCTGPTFROUTORDS",
+        "APSYS_CDCTGPTFGRECPTS",
+        "APSYS_CDCTGPTFTRSFTITS",
+        "APSYS_FLAGEXPSYSEXTTAXI",
+        "WB_IST_NICHT_ZWINGEND_CD",
+        "APSYS_CDBQERESTC",
+        "APSYS_CDCTGPTFTYPPLACS",
+        "APSYS_CDEANGRMTCLI1S",
+        "APSYS_CDEANGRMTCLI2S",
+        "APSYS_CDFATCATYPC",
+        "APSYS_IDFATCACLAS",
+        "APSYS_CDFATCASTATCALCCRMC",
+        "APSYS_CDFATCASTATC",
+        "APSYS_COMMENTFATCASTATS",
+        "APSYS_CDFATCAMOTIFPARTS",
+        "APSYS_CDFATCASTATCALCGLOBC",
+        "APSYS_CDFATCASTATCALCLOCC",
+        "APSYS_CDVALIDSTATC",
+        "APSYS_USERVALIDFATCASTATS",
+        "APSYS_DTVALIDFATCASTATL",
+        "APSYS_HRVALIDFATCASTATL",
+        "APSYS_CDCTRNETTC553C",
+        "APSYS_FLAGFORCEPOSOSTMANAGI",
+        "APSYS_POSOSTMANAGC",
+        "APSYS_CRITEREUSFATCASTATL",
+        "APSYS_FLAGSIMSI",
+        "NR_OF_BO_IN_WHT_STATEMENT",
+        "PARTNER_WITH_UNL_LIABILITY_CD",
+        "COMPANY_MANAGED_BY_BO_CD",
+        "IS_TRUSTEE_PHYSICAL_CD",
+        "NO_TRADING_US_SECURITIES_CD",
+        "PORTFOLIO_SEGR_ACCOUNT_CD",
+        "US_WHT_START_DATE",
+        "APSYS_CDCTGPTFIVSTAUTOS",
+        "AUTOMATISCHE_VERTEILUNG_CD",
+        "APSYS_CDTYPREPORTQIC",
+        "APSYS_FLAGIRSNONACTIFI",
+        "OPENING_DOCUMENTS_PROPOSED_CD",
+        "APSYS_CDCTGPTFALGCPTS",
+        "APSYS_IDSTRUCFORJURS",
+        "APSYS_IDENTFORJURS",
+        "FATCA_BASKET_CD",
+        "APSYS_CDMETHCLOC",
+        "APSYS_DTEVALCLOL",
+        "AEOI_EXEMPTION_CD",
+        "AEOI_SUB_EXEMPTION_CD",
+        "UNDOCUMENTED_ACCOUNT_CD",
+        "DORMANT_ACCOUNT_CD",
+        "AEOI_CONSISTENCY_STATUS_CD",
+        "AEOI_FINAL_STATUS_CD",
+        "AEOI_REVIEW_DATE",
+        "APSYS_CDMIFIDEXEMPTC",
+        "APSYS_DTDEBMIFIDL",
+        "OPENED_IN_APSYS_DATE",
+        "APSYS_FLAGDELDATAPERSI",
+        "APSYS_DTWAITDELDATAPERSL",
+        "APSYS_CDPTFSELDGSC",
+        "APSYS_CDMOTIFPARTDGSS",
+        "EAM_CD",
+        "RETENTION_ON_HOLD",
+        "LOGICAL_ERASURE",
+        "RETENTION_ON_HOLD_DATE",
+        "RETENTION_ON_HOLD_REASON",
+        "LOGICAL_ERASURE_DATE",
+        "LOGICAL_ERASURE_REASON"
     };
     return inCols;
 }
 
 void Portfolio::outputArgs(drogon::orm::internal::SqlBinder &binder) const
 {
+    if(dirtyFlag_[0])
+    {
+        if(getKundenid())
+        {
+            binder << getValueOfKundenid();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
     if(dirtyFlag_[1])
     {
-        if(getPorfolioName())
+        if(getPortfoliono())
         {
-            binder << getValueOfPorfolioName();
+            binder << getValueOfPortfoliono();
         }
         else
         {
@@ -387,9 +13679,9 @@ void Portfolio::outputArgs(drogon::orm::internal::SqlBinder &binder) const
     }
     if(dirtyFlag_[2])
     {
-        if(getDateCreation())
+        if(getBezeichnung())
         {
-            binder << getValueOfDateCreation();
+            binder << getValueOfBezeichnung();
         }
         else
         {
@@ -398,9 +13690,1791 @@ void Portfolio::outputArgs(drogon::orm::internal::SqlBinder &binder) const
     }
     if(dirtyFlag_[3])
     {
-        if(getOpenClosed())
+        if(getManagementtypCd())
         {
-            binder << getValueOfOpenClosed();
+            binder << getValueOfManagementtypCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[4])
+    {
+        if(getManager1Cd())
+        {
+            binder << getValueOfManager1Cd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[5])
+    {
+        if(getManager2Cd())
+        {
+            binder << getValueOfManager2Cd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[6])
+    {
+        if(getManager3Cd())
+        {
+            binder << getValueOfManager3Cd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[7])
+    {
+        if(getManager4Cd())
+        {
+            binder << getValueOfManager4Cd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[8])
+    {
+        if(getManager5Cd())
+        {
+            binder << getValueOfManager5Cd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[9])
+    {
+        if(getVermittlerCd())
+        {
+            binder << getValueOfVermittlerCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[10])
+    {
+        if(getInfovollmacht())
+        {
+            binder << getValueOfInfovollmacht();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[11])
+    {
+        if(getKontakt())
+        {
+            binder << getValueOfKontakt();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[12])
+    {
+        if(getErtraegnisaufCd())
+        {
+            binder << getValueOfErtraegnisaufCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[13])
+    {
+        if(getWaehrungsCd())
+        {
+            binder << getValueOfWaehrungsCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[14])
+    {
+        if(getBelegsatzCd())
+        {
+            binder << getValueOfBelegsatzCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[15])
+    {
+        if(getLoeschCd())
+        {
+            binder << getValueOfLoeschCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[16])
+    {
+        if(getLoeschdatum())
+        {
+            binder << getValueOfLoeschdatum();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[17])
+    {
+        if(getCrtdatum())
+        {
+            binder << getValueOfCrtdatum();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[18])
+    {
+        if(getCrtuser())
+        {
+            binder << getValueOfCrtuser();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[19])
+    {
+        if(getMutdatum())
+        {
+            binder << getValueOfMutdatum();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[20])
+    {
+        if(getMutuser())
+        {
+            binder << getValueOfMutuser();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[21])
+    {
+        if(getMisdomizilCd())
+        {
+            binder << getValueOfMisdomizilCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[22])
+    {
+        if(getAnlagestrategieCd())
+        {
+            binder << getValueOfAnlagestrategieCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[23])
+    {
+        if(getUswbasketCd())
+        {
+            binder << getValueOfUswbasketCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[24])
+    {
+        if(getVersandhaeufigCd())
+        {
+            binder << getValueOfVersandhaeufigCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[25])
+    {
+        if(getRubrik())
+        {
+            binder << getValueOfRubrik();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[26])
+    {
+        if(getVerwaltungsmodusCd())
+        {
+            binder << getValueOfVerwaltungsmodusCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[27])
+    {
+        if(getKundeletzterbesuch())
+        {
+            binder << getValueOfKundeletzterbesuch();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[28])
+    {
+        if(getAntragsort())
+        {
+            binder << getValueOfAntragsort();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[29])
+    {
+        if(getAntragsdatum())
+        {
+            binder << getValueOfAntragsdatum();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[30])
+    {
+        if(getAnderepostadresseCd())
+        {
+            binder << getValueOfAnderepostadresseCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[31])
+    {
+        if(getBanklagerndCd())
+        {
+            binder << getValueOfBanklagerndCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[32])
+    {
+        if(getSpezialinstruktion())
+        {
+            binder << getValueOfSpezialinstruktion();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[33])
+    {
+        if(getGeldvonkontoinhaberCd())
+        {
+            binder << getValueOfGeldvonkontoinhaberCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[34])
+    {
+        if(getManualopenCd())
+        {
+            binder << getValueOfManualopenCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[35])
+    {
+        if(getKontonummer1())
+        {
+            binder << getValueOfKontonummer1();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[36])
+    {
+        if(getKontonummer2())
+        {
+            binder << getValueOfKontonummer2();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[37])
+    {
+        if(getKontonummer3())
+        {
+            binder << getValueOfKontonummer3();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[38])
+    {
+        if(getFilialCd())
+        {
+            binder << getValueOfFilialCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[39])
+    {
+        if(getRubrik1())
+        {
+            binder << getValueOfRubrik1();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[40])
+    {
+        if(getRubrik2())
+        {
+            binder << getValueOfRubrik2();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[41])
+    {
+        if(getRubrik3())
+        {
+            binder << getValueOfRubrik3();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[42])
+    {
+        if(getOnlineCd())
+        {
+            binder << getValueOfOnlineCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[43])
+    {
+        if(getPortfoliotypCd())
+        {
+            binder << getValueOfPortfoliotypCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[44])
+    {
+        if(getCdpartc())
+        {
+            binder << getValueOfCdpartc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[45])
+    {
+        if(getPoEuTaxProzent())
+        {
+            binder << getValueOfPoEuTaxProzent();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[46])
+    {
+        if(getApsysStatusOpec())
+        {
+            binder << getValueOfApsysStatusOpec();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[47])
+    {
+        if(getApsysErri())
+        {
+            binder << getValueOfApsysErri();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[48])
+    {
+        if(getApsysShnas())
+        {
+            binder << getValueOfApsysShnas();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[49])
+    {
+        if(getApsysTypmdcs())
+        {
+            binder << getValueOfApsysTypmdcs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[50])
+    {
+        if(getApsysIntilgs())
+        {
+            binder << getValueOfApsysIntilgs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[51])
+    {
+        if(getApsysShlibptfs())
+        {
+            binder << getValueOfApsysShlibptfs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[52])
+    {
+        if(getApsysCdstatdusc())
+        {
+            binder << getValueOfApsysCdstatdusc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[53])
+    {
+        if(getApsysDtdebpartl())
+        {
+            binder << getValueOfApsysDtdebpartl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[54])
+    {
+        if(getApsysDtfinpartl())
+        {
+            binder << getValueOfApsysDtfinpartl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[55])
+    {
+        if(getApsysIdstrucs())
+        {
+            binder << getValueOfApsysIdstrucs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[56])
+    {
+        if(getApsysCdpermi())
+        {
+            binder << getValueOfApsysCdpermi();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[57])
+    {
+        if(getApsysCdctgptfints())
+        {
+            binder << getValueOfApsysCdctgptfints();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[58])
+    {
+        if(getApsysCdctgptfstes())
+        {
+            binder << getValueOfApsysCdctgptfstes();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[59])
+    {
+        if(getApsysCdctgptfstms())
+        {
+            binder << getValueOfApsysCdctgptfstms();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[60])
+    {
+        if(getApsysCdctgptfmafs())
+        {
+            binder << getValueOfApsysCdctgptfmafs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[61])
+    {
+        if(getApsysCdctgptfrisks())
+        {
+            binder << getValueOfApsysCdctgptfrisks();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[62])
+    {
+        if(getApsysCdctgptfcous())
+        {
+            binder << getValueOfApsysCdctgptfcous();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[63])
+    {
+        if(getApsysCdctgptftrcs())
+        {
+            binder << getValueOfApsysCdctgptftrcs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[64])
+    {
+        if(getApsysCdctgptfstebrutnets())
+        {
+            binder << getValueOfApsysCdctgptfstebrutnets();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[65])
+    {
+        if(getApsysFlagirsreppartc())
+        {
+            binder << getValueOfApsysFlagirsreppartc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[66])
+    {
+        if(getApsysCdctgptftaxints())
+        {
+            binder << getValueOfApsysCdctgptftaxints();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[67])
+    {
+        if(getApsysIdpocs())
+        {
+            binder << getValueOfApsysIdpocs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[68])
+    {
+        if(getApsysInfo())
+        {
+            binder << getValueOfApsysInfo();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[69])
+    {
+        if(getNettovermoegenChf())
+        {
+            binder << getValueOfNettovermoegenChf();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[70])
+    {
+        if(getApsysIntishs())
+        {
+            binder << getValueOfApsysIntishs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[71])
+    {
+        if(getApsysIdpersl())
+        {
+            binder << getValueOfApsysIdpersl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[72])
+    {
+        if(getApsysCdmotifparts())
+        {
+            binder << getValueOfApsysCdmotifparts();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[73])
+    {
+        if(getInApsysTempEntspUserid())
+        {
+            binder << getValueOfInApsysTempEntspUserid();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[74])
+    {
+        if(getInApsysTempEntspDatum())
+        {
+            binder << getValueOfInApsysTempEntspDatum();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[75])
+    {
+        if(getInApsysTempEntsperrenCd())
+        {
+            binder << getValueOfInApsysTempEntsperrenCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[76])
+    {
+        if(getKundenkategorieCd())
+        {
+            binder << getValueOfKundenkategorieCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[77])
+    {
+        if(getGemeinschaftskontoCd())
+        {
+            binder << getValueOfGemeinschaftskontoCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[78])
+    {
+        if(getDritteSaeuleCd())
+        {
+            binder << getValueOfDritteSaeuleCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[79])
+    {
+        if(getApsysTypptfs())
+        {
+            binder << getValueOfApsysTypptfs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[80])
+    {
+        if(getAutoEuTaxPercentage())
+        {
+            binder << getValueOfAutoEuTaxPercentage();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[81])
+    {
+        if(getAktid())
+        {
+            binder << getValueOfAktid();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[82])
+    {
+        if(getValidid())
+        {
+            binder << getValueOfValidid();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[83])
+    {
+        if(getValidCd())
+        {
+            binder << getValueOfValidCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[84])
+    {
+        if(getValiduser())
+        {
+            binder << getValueOfValiduser();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[85])
+    {
+        if(getApsysCdctgptfsbxps())
+        {
+            binder << getValueOfApsysCdctgptfsbxps();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[86])
+    {
+        if(getApsysCdctgptfsdocs())
+        {
+            binder << getValueOfApsysCdctgptfsdocs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[87])
+    {
+        if(getApsysIdents())
+        {
+            binder << getValueOfApsysIdents();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[88])
+    {
+        if(getApsysCdsoumbolc())
+        {
+            binder << getValueOfApsysCdsoumbolc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[89])
+    {
+        if(getApsysCdfacbolc())
+        {
+            binder << getValueOfApsysCdfacbolc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[90])
+    {
+        if(getApsysFlagtyptrfpolc())
+        {
+            binder << getValueOfApsysFlagtyptrfpolc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[91])
+    {
+        if(getApsysIdtrfpols())
+        {
+            binder << getValueOfApsysIdtrfpols();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[92])
+    {
+        if(getApsysCdpctpartictitueutaxc())
+        {
+            binder << getValueOfApsysCdpctpartictitueutaxc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[93])
+    {
+        if(getApsysCdmotifclos())
+        {
+            binder << getValueOfApsysCdmotifclos();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[94])
+    {
+        if(getEncSalt())
+        {
+            binder << getValueOfEncSalt();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[95])
+    {
+        if(getBezeichnungEnc())
+        {
+            binder << getValueOfBezeichnungEnc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[96])
+    {
+        if(getKtoeAmlProfilCd())
+        {
+            binder << getValueOfKtoeAmlProfilCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[97])
+    {
+        if(getApsysDevevals())
+        {
+            binder << getValueOfApsysDevevals();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[98])
+    {
+        if(getApsysCdrnvstmc())
+        {
+            binder << getValueOfApsysCdrnvstmc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[99])
+    {
+        if(getApsysCdrglprlgc())
+        {
+            binder << getValueOfApsysCdrglprlgc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[100])
+    {
+        if(getApsysCdctgptfcomagtcpts())
+        {
+            binder << getValueOfApsysCdctgptfcomagtcpts();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[101])
+    {
+        if(getApsysCdctgptfroutords())
+        {
+            binder << getValueOfApsysCdctgptfroutords();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[102])
+    {
+        if(getApsysCdctgptfgrecpts())
+        {
+            binder << getValueOfApsysCdctgptfgrecpts();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[103])
+    {
+        if(getApsysCdctgptftrsftits())
+        {
+            binder << getValueOfApsysCdctgptftrsftits();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[104])
+    {
+        if(getApsysFlagexpsysexttaxi())
+        {
+            binder << getValueOfApsysFlagexpsysexttaxi();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[105])
+    {
+        if(getWbIstNichtZwingendCd())
+        {
+            binder << getValueOfWbIstNichtZwingendCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[106])
+    {
+        if(getApsysCdbqerestc())
+        {
+            binder << getValueOfApsysCdbqerestc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[107])
+    {
+        if(getApsysCdctgptftypplacs())
+        {
+            binder << getValueOfApsysCdctgptftypplacs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[108])
+    {
+        if(getApsysCdeangrmtcli1s())
+        {
+            binder << getValueOfApsysCdeangrmtcli1s();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[109])
+    {
+        if(getApsysCdeangrmtcli2s())
+        {
+            binder << getValueOfApsysCdeangrmtcli2s();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[110])
+    {
+        if(getApsysCdfatcatypc())
+        {
+            binder << getValueOfApsysCdfatcatypc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[111])
+    {
+        if(getApsysIdfatcaclas())
+        {
+            binder << getValueOfApsysIdfatcaclas();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[112])
+    {
+        if(getApsysCdfatcastatcalccrmc())
+        {
+            binder << getValueOfApsysCdfatcastatcalccrmc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[113])
+    {
+        if(getApsysCdfatcastatc())
+        {
+            binder << getValueOfApsysCdfatcastatc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[114])
+    {
+        if(getApsysCommentfatcastats())
+        {
+            binder << getValueOfApsysCommentfatcastats();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[115])
+    {
+        if(getApsysCdfatcamotifparts())
+        {
+            binder << getValueOfApsysCdfatcamotifparts();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[116])
+    {
+        if(getApsysCdfatcastatcalcglobc())
+        {
+            binder << getValueOfApsysCdfatcastatcalcglobc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[117])
+    {
+        if(getApsysCdfatcastatcalclocc())
+        {
+            binder << getValueOfApsysCdfatcastatcalclocc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[118])
+    {
+        if(getApsysCdvalidstatc())
+        {
+            binder << getValueOfApsysCdvalidstatc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[119])
+    {
+        if(getApsysUservalidfatcastats())
+        {
+            binder << getValueOfApsysUservalidfatcastats();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[120])
+    {
+        if(getApsysDtvalidfatcastatl())
+        {
+            binder << getValueOfApsysDtvalidfatcastatl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[121])
+    {
+        if(getApsysHrvalidfatcastatl())
+        {
+            binder << getValueOfApsysHrvalidfatcastatl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[122])
+    {
+        if(getApsysCdctrnettc553c())
+        {
+            binder << getValueOfApsysCdctrnettc553c();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[123])
+    {
+        if(getApsysFlagforceposostmanagi())
+        {
+            binder << getValueOfApsysFlagforceposostmanagi();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[124])
+    {
+        if(getApsysPosostmanagc())
+        {
+            binder << getValueOfApsysPosostmanagc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[125])
+    {
+        if(getApsysCritereusfatcastatl())
+        {
+            binder << getValueOfApsysCritereusfatcastatl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[126])
+    {
+        if(getApsysFlagsimsi())
+        {
+            binder << getValueOfApsysFlagsimsi();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[127])
+    {
+        if(getNrOfBoInWhtStatement())
+        {
+            binder << getValueOfNrOfBoInWhtStatement();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[128])
+    {
+        if(getPartnerWithUnlLiabilityCd())
+        {
+            binder << getValueOfPartnerWithUnlLiabilityCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[129])
+    {
+        if(getCompanyManagedByBoCd())
+        {
+            binder << getValueOfCompanyManagedByBoCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[130])
+    {
+        if(getIsTrusteePhysicalCd())
+        {
+            binder << getValueOfIsTrusteePhysicalCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[131])
+    {
+        if(getNoTradingUsSecuritiesCd())
+        {
+            binder << getValueOfNoTradingUsSecuritiesCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[132])
+    {
+        if(getPortfolioSegrAccountCd())
+        {
+            binder << getValueOfPortfolioSegrAccountCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[133])
+    {
+        if(getUsWhtStartDate())
+        {
+            binder << getValueOfUsWhtStartDate();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[134])
+    {
+        if(getApsysCdctgptfivstautos())
+        {
+            binder << getValueOfApsysCdctgptfivstautos();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[135])
+    {
+        if(getAutomatischeVerteilungCd())
+        {
+            binder << getValueOfAutomatischeVerteilungCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[136])
+    {
+        if(getApsysCdtypreportqic())
+        {
+            binder << getValueOfApsysCdtypreportqic();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[137])
+    {
+        if(getApsysFlagirsnonactifi())
+        {
+            binder << getValueOfApsysFlagirsnonactifi();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[138])
+    {
+        if(getOpeningDocumentsProposedCd())
+        {
+            binder << getValueOfOpeningDocumentsProposedCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[139])
+    {
+        if(getApsysCdctgptfalgcpts())
+        {
+            binder << getValueOfApsysCdctgptfalgcpts();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[140])
+    {
+        if(getApsysIdstrucforjurs())
+        {
+            binder << getValueOfApsysIdstrucforjurs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[141])
+    {
+        if(getApsysIdentforjurs())
+        {
+            binder << getValueOfApsysIdentforjurs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[142])
+    {
+        if(getFatcaBasketCd())
+        {
+            binder << getValueOfFatcaBasketCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[143])
+    {
+        if(getApsysCdmethcloc())
+        {
+            binder << getValueOfApsysCdmethcloc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[144])
+    {
+        if(getApsysDtevalclol())
+        {
+            binder << getValueOfApsysDtevalclol();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[145])
+    {
+        if(getAeoiExemptionCd())
+        {
+            binder << getValueOfAeoiExemptionCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[146])
+    {
+        if(getAeoiSubExemptionCd())
+        {
+            binder << getValueOfAeoiSubExemptionCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[147])
+    {
+        if(getUndocumentedAccountCd())
+        {
+            binder << getValueOfUndocumentedAccountCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[148])
+    {
+        if(getDormantAccountCd())
+        {
+            binder << getValueOfDormantAccountCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[149])
+    {
+        if(getAeoiConsistencyStatusCd())
+        {
+            binder << getValueOfAeoiConsistencyStatusCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[150])
+    {
+        if(getAeoiFinalStatusCd())
+        {
+            binder << getValueOfAeoiFinalStatusCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[151])
+    {
+        if(getAeoiReviewDate())
+        {
+            binder << getValueOfAeoiReviewDate();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[152])
+    {
+        if(getApsysCdmifidexemptc())
+        {
+            binder << getValueOfApsysCdmifidexemptc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[153])
+    {
+        if(getApsysDtdebmifidl())
+        {
+            binder << getValueOfApsysDtdebmifidl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[154])
+    {
+        if(getOpenedInApsysDate())
+        {
+            binder << getValueOfOpenedInApsysDate();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[155])
+    {
+        if(getApsysFlagdeldatapersi())
+        {
+            binder << getValueOfApsysFlagdeldatapersi();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[156])
+    {
+        if(getApsysDtwaitdeldatapersl())
+        {
+            binder << getValueOfApsysDtwaitdeldatapersl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[157])
+    {
+        if(getApsysCdptfseldgsc())
+        {
+            binder << getValueOfApsysCdptfseldgsc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[158])
+    {
+        if(getApsysCdmotifpartdgss())
+        {
+            binder << getValueOfApsysCdmotifpartdgss();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[159])
+    {
+        if(getEamCd())
+        {
+            binder << getValueOfEamCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[160])
+    {
+        if(getRetentionOnHold())
+        {
+            binder << getValueOfRetentionOnHold();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[161])
+    {
+        if(getLogicalErasure())
+        {
+            binder << getValueOfLogicalErasure();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[162])
+    {
+        if(getRetentionOnHoldDate())
+        {
+            binder << getValueOfRetentionOnHoldDate();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[163])
+    {
+        if(getRetentionOnHoldReason())
+        {
+            binder << getValueOfRetentionOnHoldReason();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[164])
+    {
+        if(getLogicalErasureDate())
+        {
+            binder << getValueOfLogicalErasureDate();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[165])
+    {
+        if(getLogicalErasureReason())
+        {
+            binder << getValueOfLogicalErasureReason();
         }
         else
         {
@@ -412,6 +15486,10 @@ void Portfolio::outputArgs(drogon::orm::internal::SqlBinder &binder) const
 const std::vector<std::string> Portfolio::updateColumns() const
 {
     std::vector<std::string> ret;
+    if(dirtyFlag_[0])
+    {
+        ret.push_back(getColumnName(0));
+    }
     if(dirtyFlag_[1])
     {
         ret.push_back(getColumnName(1));
@@ -424,16 +15502,675 @@ const std::vector<std::string> Portfolio::updateColumns() const
     {
         ret.push_back(getColumnName(3));
     }
+    if(dirtyFlag_[4])
+    {
+        ret.push_back(getColumnName(4));
+    }
+    if(dirtyFlag_[5])
+    {
+        ret.push_back(getColumnName(5));
+    }
+    if(dirtyFlag_[6])
+    {
+        ret.push_back(getColumnName(6));
+    }
+    if(dirtyFlag_[7])
+    {
+        ret.push_back(getColumnName(7));
+    }
+    if(dirtyFlag_[8])
+    {
+        ret.push_back(getColumnName(8));
+    }
+    if(dirtyFlag_[9])
+    {
+        ret.push_back(getColumnName(9));
+    }
+    if(dirtyFlag_[10])
+    {
+        ret.push_back(getColumnName(10));
+    }
+    if(dirtyFlag_[11])
+    {
+        ret.push_back(getColumnName(11));
+    }
+    if(dirtyFlag_[12])
+    {
+        ret.push_back(getColumnName(12));
+    }
+    if(dirtyFlag_[13])
+    {
+        ret.push_back(getColumnName(13));
+    }
+    if(dirtyFlag_[14])
+    {
+        ret.push_back(getColumnName(14));
+    }
+    if(dirtyFlag_[15])
+    {
+        ret.push_back(getColumnName(15));
+    }
+    if(dirtyFlag_[16])
+    {
+        ret.push_back(getColumnName(16));
+    }
+    if(dirtyFlag_[17])
+    {
+        ret.push_back(getColumnName(17));
+    }
+    if(dirtyFlag_[18])
+    {
+        ret.push_back(getColumnName(18));
+    }
+    if(dirtyFlag_[19])
+    {
+        ret.push_back(getColumnName(19));
+    }
+    if(dirtyFlag_[20])
+    {
+        ret.push_back(getColumnName(20));
+    }
+    if(dirtyFlag_[21])
+    {
+        ret.push_back(getColumnName(21));
+    }
+    if(dirtyFlag_[22])
+    {
+        ret.push_back(getColumnName(22));
+    }
+    if(dirtyFlag_[23])
+    {
+        ret.push_back(getColumnName(23));
+    }
+    if(dirtyFlag_[24])
+    {
+        ret.push_back(getColumnName(24));
+    }
+    if(dirtyFlag_[25])
+    {
+        ret.push_back(getColumnName(25));
+    }
+    if(dirtyFlag_[26])
+    {
+        ret.push_back(getColumnName(26));
+    }
+    if(dirtyFlag_[27])
+    {
+        ret.push_back(getColumnName(27));
+    }
+    if(dirtyFlag_[28])
+    {
+        ret.push_back(getColumnName(28));
+    }
+    if(dirtyFlag_[29])
+    {
+        ret.push_back(getColumnName(29));
+    }
+    if(dirtyFlag_[30])
+    {
+        ret.push_back(getColumnName(30));
+    }
+    if(dirtyFlag_[31])
+    {
+        ret.push_back(getColumnName(31));
+    }
+    if(dirtyFlag_[32])
+    {
+        ret.push_back(getColumnName(32));
+    }
+    if(dirtyFlag_[33])
+    {
+        ret.push_back(getColumnName(33));
+    }
+    if(dirtyFlag_[34])
+    {
+        ret.push_back(getColumnName(34));
+    }
+    if(dirtyFlag_[35])
+    {
+        ret.push_back(getColumnName(35));
+    }
+    if(dirtyFlag_[36])
+    {
+        ret.push_back(getColumnName(36));
+    }
+    if(dirtyFlag_[37])
+    {
+        ret.push_back(getColumnName(37));
+    }
+    if(dirtyFlag_[38])
+    {
+        ret.push_back(getColumnName(38));
+    }
+    if(dirtyFlag_[39])
+    {
+        ret.push_back(getColumnName(39));
+    }
+    if(dirtyFlag_[40])
+    {
+        ret.push_back(getColumnName(40));
+    }
+    if(dirtyFlag_[41])
+    {
+        ret.push_back(getColumnName(41));
+    }
+    if(dirtyFlag_[42])
+    {
+        ret.push_back(getColumnName(42));
+    }
+    if(dirtyFlag_[43])
+    {
+        ret.push_back(getColumnName(43));
+    }
+    if(dirtyFlag_[44])
+    {
+        ret.push_back(getColumnName(44));
+    }
+    if(dirtyFlag_[45])
+    {
+        ret.push_back(getColumnName(45));
+    }
+    if(dirtyFlag_[46])
+    {
+        ret.push_back(getColumnName(46));
+    }
+    if(dirtyFlag_[47])
+    {
+        ret.push_back(getColumnName(47));
+    }
+    if(dirtyFlag_[48])
+    {
+        ret.push_back(getColumnName(48));
+    }
+    if(dirtyFlag_[49])
+    {
+        ret.push_back(getColumnName(49));
+    }
+    if(dirtyFlag_[50])
+    {
+        ret.push_back(getColumnName(50));
+    }
+    if(dirtyFlag_[51])
+    {
+        ret.push_back(getColumnName(51));
+    }
+    if(dirtyFlag_[52])
+    {
+        ret.push_back(getColumnName(52));
+    }
+    if(dirtyFlag_[53])
+    {
+        ret.push_back(getColumnName(53));
+    }
+    if(dirtyFlag_[54])
+    {
+        ret.push_back(getColumnName(54));
+    }
+    if(dirtyFlag_[55])
+    {
+        ret.push_back(getColumnName(55));
+    }
+    if(dirtyFlag_[56])
+    {
+        ret.push_back(getColumnName(56));
+    }
+    if(dirtyFlag_[57])
+    {
+        ret.push_back(getColumnName(57));
+    }
+    if(dirtyFlag_[58])
+    {
+        ret.push_back(getColumnName(58));
+    }
+    if(dirtyFlag_[59])
+    {
+        ret.push_back(getColumnName(59));
+    }
+    if(dirtyFlag_[60])
+    {
+        ret.push_back(getColumnName(60));
+    }
+    if(dirtyFlag_[61])
+    {
+        ret.push_back(getColumnName(61));
+    }
+    if(dirtyFlag_[62])
+    {
+        ret.push_back(getColumnName(62));
+    }
+    if(dirtyFlag_[63])
+    {
+        ret.push_back(getColumnName(63));
+    }
+    if(dirtyFlag_[64])
+    {
+        ret.push_back(getColumnName(64));
+    }
+    if(dirtyFlag_[65])
+    {
+        ret.push_back(getColumnName(65));
+    }
+    if(dirtyFlag_[66])
+    {
+        ret.push_back(getColumnName(66));
+    }
+    if(dirtyFlag_[67])
+    {
+        ret.push_back(getColumnName(67));
+    }
+    if(dirtyFlag_[68])
+    {
+        ret.push_back(getColumnName(68));
+    }
+    if(dirtyFlag_[69])
+    {
+        ret.push_back(getColumnName(69));
+    }
+    if(dirtyFlag_[70])
+    {
+        ret.push_back(getColumnName(70));
+    }
+    if(dirtyFlag_[71])
+    {
+        ret.push_back(getColumnName(71));
+    }
+    if(dirtyFlag_[72])
+    {
+        ret.push_back(getColumnName(72));
+    }
+    if(dirtyFlag_[73])
+    {
+        ret.push_back(getColumnName(73));
+    }
+    if(dirtyFlag_[74])
+    {
+        ret.push_back(getColumnName(74));
+    }
+    if(dirtyFlag_[75])
+    {
+        ret.push_back(getColumnName(75));
+    }
+    if(dirtyFlag_[76])
+    {
+        ret.push_back(getColumnName(76));
+    }
+    if(dirtyFlag_[77])
+    {
+        ret.push_back(getColumnName(77));
+    }
+    if(dirtyFlag_[78])
+    {
+        ret.push_back(getColumnName(78));
+    }
+    if(dirtyFlag_[79])
+    {
+        ret.push_back(getColumnName(79));
+    }
+    if(dirtyFlag_[80])
+    {
+        ret.push_back(getColumnName(80));
+    }
+    if(dirtyFlag_[81])
+    {
+        ret.push_back(getColumnName(81));
+    }
+    if(dirtyFlag_[82])
+    {
+        ret.push_back(getColumnName(82));
+    }
+    if(dirtyFlag_[83])
+    {
+        ret.push_back(getColumnName(83));
+    }
+    if(dirtyFlag_[84])
+    {
+        ret.push_back(getColumnName(84));
+    }
+    if(dirtyFlag_[85])
+    {
+        ret.push_back(getColumnName(85));
+    }
+    if(dirtyFlag_[86])
+    {
+        ret.push_back(getColumnName(86));
+    }
+    if(dirtyFlag_[87])
+    {
+        ret.push_back(getColumnName(87));
+    }
+    if(dirtyFlag_[88])
+    {
+        ret.push_back(getColumnName(88));
+    }
+    if(dirtyFlag_[89])
+    {
+        ret.push_back(getColumnName(89));
+    }
+    if(dirtyFlag_[90])
+    {
+        ret.push_back(getColumnName(90));
+    }
+    if(dirtyFlag_[91])
+    {
+        ret.push_back(getColumnName(91));
+    }
+    if(dirtyFlag_[92])
+    {
+        ret.push_back(getColumnName(92));
+    }
+    if(dirtyFlag_[93])
+    {
+        ret.push_back(getColumnName(93));
+    }
+    if(dirtyFlag_[94])
+    {
+        ret.push_back(getColumnName(94));
+    }
+    if(dirtyFlag_[95])
+    {
+        ret.push_back(getColumnName(95));
+    }
+    if(dirtyFlag_[96])
+    {
+        ret.push_back(getColumnName(96));
+    }
+    if(dirtyFlag_[97])
+    {
+        ret.push_back(getColumnName(97));
+    }
+    if(dirtyFlag_[98])
+    {
+        ret.push_back(getColumnName(98));
+    }
+    if(dirtyFlag_[99])
+    {
+        ret.push_back(getColumnName(99));
+    }
+    if(dirtyFlag_[100])
+    {
+        ret.push_back(getColumnName(100));
+    }
+    if(dirtyFlag_[101])
+    {
+        ret.push_back(getColumnName(101));
+    }
+    if(dirtyFlag_[102])
+    {
+        ret.push_back(getColumnName(102));
+    }
+    if(dirtyFlag_[103])
+    {
+        ret.push_back(getColumnName(103));
+    }
+    if(dirtyFlag_[104])
+    {
+        ret.push_back(getColumnName(104));
+    }
+    if(dirtyFlag_[105])
+    {
+        ret.push_back(getColumnName(105));
+    }
+    if(dirtyFlag_[106])
+    {
+        ret.push_back(getColumnName(106));
+    }
+    if(dirtyFlag_[107])
+    {
+        ret.push_back(getColumnName(107));
+    }
+    if(dirtyFlag_[108])
+    {
+        ret.push_back(getColumnName(108));
+    }
+    if(dirtyFlag_[109])
+    {
+        ret.push_back(getColumnName(109));
+    }
+    if(dirtyFlag_[110])
+    {
+        ret.push_back(getColumnName(110));
+    }
+    if(dirtyFlag_[111])
+    {
+        ret.push_back(getColumnName(111));
+    }
+    if(dirtyFlag_[112])
+    {
+        ret.push_back(getColumnName(112));
+    }
+    if(dirtyFlag_[113])
+    {
+        ret.push_back(getColumnName(113));
+    }
+    if(dirtyFlag_[114])
+    {
+        ret.push_back(getColumnName(114));
+    }
+    if(dirtyFlag_[115])
+    {
+        ret.push_back(getColumnName(115));
+    }
+    if(dirtyFlag_[116])
+    {
+        ret.push_back(getColumnName(116));
+    }
+    if(dirtyFlag_[117])
+    {
+        ret.push_back(getColumnName(117));
+    }
+    if(dirtyFlag_[118])
+    {
+        ret.push_back(getColumnName(118));
+    }
+    if(dirtyFlag_[119])
+    {
+        ret.push_back(getColumnName(119));
+    }
+    if(dirtyFlag_[120])
+    {
+        ret.push_back(getColumnName(120));
+    }
+    if(dirtyFlag_[121])
+    {
+        ret.push_back(getColumnName(121));
+    }
+    if(dirtyFlag_[122])
+    {
+        ret.push_back(getColumnName(122));
+    }
+    if(dirtyFlag_[123])
+    {
+        ret.push_back(getColumnName(123));
+    }
+    if(dirtyFlag_[124])
+    {
+        ret.push_back(getColumnName(124));
+    }
+    if(dirtyFlag_[125])
+    {
+        ret.push_back(getColumnName(125));
+    }
+    if(dirtyFlag_[126])
+    {
+        ret.push_back(getColumnName(126));
+    }
+    if(dirtyFlag_[127])
+    {
+        ret.push_back(getColumnName(127));
+    }
+    if(dirtyFlag_[128])
+    {
+        ret.push_back(getColumnName(128));
+    }
+    if(dirtyFlag_[129])
+    {
+        ret.push_back(getColumnName(129));
+    }
+    if(dirtyFlag_[130])
+    {
+        ret.push_back(getColumnName(130));
+    }
+    if(dirtyFlag_[131])
+    {
+        ret.push_back(getColumnName(131));
+    }
+    if(dirtyFlag_[132])
+    {
+        ret.push_back(getColumnName(132));
+    }
+    if(dirtyFlag_[133])
+    {
+        ret.push_back(getColumnName(133));
+    }
+    if(dirtyFlag_[134])
+    {
+        ret.push_back(getColumnName(134));
+    }
+    if(dirtyFlag_[135])
+    {
+        ret.push_back(getColumnName(135));
+    }
+    if(dirtyFlag_[136])
+    {
+        ret.push_back(getColumnName(136));
+    }
+    if(dirtyFlag_[137])
+    {
+        ret.push_back(getColumnName(137));
+    }
+    if(dirtyFlag_[138])
+    {
+        ret.push_back(getColumnName(138));
+    }
+    if(dirtyFlag_[139])
+    {
+        ret.push_back(getColumnName(139));
+    }
+    if(dirtyFlag_[140])
+    {
+        ret.push_back(getColumnName(140));
+    }
+    if(dirtyFlag_[141])
+    {
+        ret.push_back(getColumnName(141));
+    }
+    if(dirtyFlag_[142])
+    {
+        ret.push_back(getColumnName(142));
+    }
+    if(dirtyFlag_[143])
+    {
+        ret.push_back(getColumnName(143));
+    }
+    if(dirtyFlag_[144])
+    {
+        ret.push_back(getColumnName(144));
+    }
+    if(dirtyFlag_[145])
+    {
+        ret.push_back(getColumnName(145));
+    }
+    if(dirtyFlag_[146])
+    {
+        ret.push_back(getColumnName(146));
+    }
+    if(dirtyFlag_[147])
+    {
+        ret.push_back(getColumnName(147));
+    }
+    if(dirtyFlag_[148])
+    {
+        ret.push_back(getColumnName(148));
+    }
+    if(dirtyFlag_[149])
+    {
+        ret.push_back(getColumnName(149));
+    }
+    if(dirtyFlag_[150])
+    {
+        ret.push_back(getColumnName(150));
+    }
+    if(dirtyFlag_[151])
+    {
+        ret.push_back(getColumnName(151));
+    }
+    if(dirtyFlag_[152])
+    {
+        ret.push_back(getColumnName(152));
+    }
+    if(dirtyFlag_[153])
+    {
+        ret.push_back(getColumnName(153));
+    }
+    if(dirtyFlag_[154])
+    {
+        ret.push_back(getColumnName(154));
+    }
+    if(dirtyFlag_[155])
+    {
+        ret.push_back(getColumnName(155));
+    }
+    if(dirtyFlag_[156])
+    {
+        ret.push_back(getColumnName(156));
+    }
+    if(dirtyFlag_[157])
+    {
+        ret.push_back(getColumnName(157));
+    }
+    if(dirtyFlag_[158])
+    {
+        ret.push_back(getColumnName(158));
+    }
+    if(dirtyFlag_[159])
+    {
+        ret.push_back(getColumnName(159));
+    }
+    if(dirtyFlag_[160])
+    {
+        ret.push_back(getColumnName(160));
+    }
+    if(dirtyFlag_[161])
+    {
+        ret.push_back(getColumnName(161));
+    }
+    if(dirtyFlag_[162])
+    {
+        ret.push_back(getColumnName(162));
+    }
+    if(dirtyFlag_[163])
+    {
+        ret.push_back(getColumnName(163));
+    }
+    if(dirtyFlag_[164])
+    {
+        ret.push_back(getColumnName(164));
+    }
+    if(dirtyFlag_[165])
+    {
+        ret.push_back(getColumnName(165));
+    }
     return ret;
 }
 
 void Portfolio::updateArgs(drogon::orm::internal::SqlBinder &binder) const
 {
+    if(dirtyFlag_[0])
+    {
+        if(getKundenid())
+        {
+            binder << getValueOfKundenid();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
     if(dirtyFlag_[1])
     {
-        if(getPorfolioName())
+        if(getPortfoliono())
         {
-            binder << getValueOfPorfolioName();
+            binder << getValueOfPortfoliono();
         }
         else
         {
@@ -442,9 +16179,9 @@ void Portfolio::updateArgs(drogon::orm::internal::SqlBinder &binder) const
     }
     if(dirtyFlag_[2])
     {
-        if(getDateCreation())
+        if(getBezeichnung())
         {
-            binder << getValueOfDateCreation();
+            binder << getValueOfBezeichnung();
         }
         else
         {
@@ -453,9 +16190,1791 @@ void Portfolio::updateArgs(drogon::orm::internal::SqlBinder &binder) const
     }
     if(dirtyFlag_[3])
     {
-        if(getOpenClosed())
+        if(getManagementtypCd())
         {
-            binder << getValueOfOpenClosed();
+            binder << getValueOfManagementtypCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[4])
+    {
+        if(getManager1Cd())
+        {
+            binder << getValueOfManager1Cd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[5])
+    {
+        if(getManager2Cd())
+        {
+            binder << getValueOfManager2Cd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[6])
+    {
+        if(getManager3Cd())
+        {
+            binder << getValueOfManager3Cd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[7])
+    {
+        if(getManager4Cd())
+        {
+            binder << getValueOfManager4Cd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[8])
+    {
+        if(getManager5Cd())
+        {
+            binder << getValueOfManager5Cd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[9])
+    {
+        if(getVermittlerCd())
+        {
+            binder << getValueOfVermittlerCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[10])
+    {
+        if(getInfovollmacht())
+        {
+            binder << getValueOfInfovollmacht();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[11])
+    {
+        if(getKontakt())
+        {
+            binder << getValueOfKontakt();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[12])
+    {
+        if(getErtraegnisaufCd())
+        {
+            binder << getValueOfErtraegnisaufCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[13])
+    {
+        if(getWaehrungsCd())
+        {
+            binder << getValueOfWaehrungsCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[14])
+    {
+        if(getBelegsatzCd())
+        {
+            binder << getValueOfBelegsatzCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[15])
+    {
+        if(getLoeschCd())
+        {
+            binder << getValueOfLoeschCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[16])
+    {
+        if(getLoeschdatum())
+        {
+            binder << getValueOfLoeschdatum();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[17])
+    {
+        if(getCrtdatum())
+        {
+            binder << getValueOfCrtdatum();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[18])
+    {
+        if(getCrtuser())
+        {
+            binder << getValueOfCrtuser();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[19])
+    {
+        if(getMutdatum())
+        {
+            binder << getValueOfMutdatum();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[20])
+    {
+        if(getMutuser())
+        {
+            binder << getValueOfMutuser();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[21])
+    {
+        if(getMisdomizilCd())
+        {
+            binder << getValueOfMisdomizilCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[22])
+    {
+        if(getAnlagestrategieCd())
+        {
+            binder << getValueOfAnlagestrategieCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[23])
+    {
+        if(getUswbasketCd())
+        {
+            binder << getValueOfUswbasketCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[24])
+    {
+        if(getVersandhaeufigCd())
+        {
+            binder << getValueOfVersandhaeufigCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[25])
+    {
+        if(getRubrik())
+        {
+            binder << getValueOfRubrik();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[26])
+    {
+        if(getVerwaltungsmodusCd())
+        {
+            binder << getValueOfVerwaltungsmodusCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[27])
+    {
+        if(getKundeletzterbesuch())
+        {
+            binder << getValueOfKundeletzterbesuch();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[28])
+    {
+        if(getAntragsort())
+        {
+            binder << getValueOfAntragsort();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[29])
+    {
+        if(getAntragsdatum())
+        {
+            binder << getValueOfAntragsdatum();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[30])
+    {
+        if(getAnderepostadresseCd())
+        {
+            binder << getValueOfAnderepostadresseCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[31])
+    {
+        if(getBanklagerndCd())
+        {
+            binder << getValueOfBanklagerndCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[32])
+    {
+        if(getSpezialinstruktion())
+        {
+            binder << getValueOfSpezialinstruktion();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[33])
+    {
+        if(getGeldvonkontoinhaberCd())
+        {
+            binder << getValueOfGeldvonkontoinhaberCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[34])
+    {
+        if(getManualopenCd())
+        {
+            binder << getValueOfManualopenCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[35])
+    {
+        if(getKontonummer1())
+        {
+            binder << getValueOfKontonummer1();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[36])
+    {
+        if(getKontonummer2())
+        {
+            binder << getValueOfKontonummer2();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[37])
+    {
+        if(getKontonummer3())
+        {
+            binder << getValueOfKontonummer3();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[38])
+    {
+        if(getFilialCd())
+        {
+            binder << getValueOfFilialCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[39])
+    {
+        if(getRubrik1())
+        {
+            binder << getValueOfRubrik1();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[40])
+    {
+        if(getRubrik2())
+        {
+            binder << getValueOfRubrik2();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[41])
+    {
+        if(getRubrik3())
+        {
+            binder << getValueOfRubrik3();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[42])
+    {
+        if(getOnlineCd())
+        {
+            binder << getValueOfOnlineCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[43])
+    {
+        if(getPortfoliotypCd())
+        {
+            binder << getValueOfPortfoliotypCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[44])
+    {
+        if(getCdpartc())
+        {
+            binder << getValueOfCdpartc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[45])
+    {
+        if(getPoEuTaxProzent())
+        {
+            binder << getValueOfPoEuTaxProzent();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[46])
+    {
+        if(getApsysStatusOpec())
+        {
+            binder << getValueOfApsysStatusOpec();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[47])
+    {
+        if(getApsysErri())
+        {
+            binder << getValueOfApsysErri();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[48])
+    {
+        if(getApsysShnas())
+        {
+            binder << getValueOfApsysShnas();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[49])
+    {
+        if(getApsysTypmdcs())
+        {
+            binder << getValueOfApsysTypmdcs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[50])
+    {
+        if(getApsysIntilgs())
+        {
+            binder << getValueOfApsysIntilgs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[51])
+    {
+        if(getApsysShlibptfs())
+        {
+            binder << getValueOfApsysShlibptfs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[52])
+    {
+        if(getApsysCdstatdusc())
+        {
+            binder << getValueOfApsysCdstatdusc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[53])
+    {
+        if(getApsysDtdebpartl())
+        {
+            binder << getValueOfApsysDtdebpartl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[54])
+    {
+        if(getApsysDtfinpartl())
+        {
+            binder << getValueOfApsysDtfinpartl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[55])
+    {
+        if(getApsysIdstrucs())
+        {
+            binder << getValueOfApsysIdstrucs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[56])
+    {
+        if(getApsysCdpermi())
+        {
+            binder << getValueOfApsysCdpermi();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[57])
+    {
+        if(getApsysCdctgptfints())
+        {
+            binder << getValueOfApsysCdctgptfints();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[58])
+    {
+        if(getApsysCdctgptfstes())
+        {
+            binder << getValueOfApsysCdctgptfstes();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[59])
+    {
+        if(getApsysCdctgptfstms())
+        {
+            binder << getValueOfApsysCdctgptfstms();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[60])
+    {
+        if(getApsysCdctgptfmafs())
+        {
+            binder << getValueOfApsysCdctgptfmafs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[61])
+    {
+        if(getApsysCdctgptfrisks())
+        {
+            binder << getValueOfApsysCdctgptfrisks();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[62])
+    {
+        if(getApsysCdctgptfcous())
+        {
+            binder << getValueOfApsysCdctgptfcous();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[63])
+    {
+        if(getApsysCdctgptftrcs())
+        {
+            binder << getValueOfApsysCdctgptftrcs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[64])
+    {
+        if(getApsysCdctgptfstebrutnets())
+        {
+            binder << getValueOfApsysCdctgptfstebrutnets();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[65])
+    {
+        if(getApsysFlagirsreppartc())
+        {
+            binder << getValueOfApsysFlagirsreppartc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[66])
+    {
+        if(getApsysCdctgptftaxints())
+        {
+            binder << getValueOfApsysCdctgptftaxints();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[67])
+    {
+        if(getApsysIdpocs())
+        {
+            binder << getValueOfApsysIdpocs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[68])
+    {
+        if(getApsysInfo())
+        {
+            binder << getValueOfApsysInfo();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[69])
+    {
+        if(getNettovermoegenChf())
+        {
+            binder << getValueOfNettovermoegenChf();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[70])
+    {
+        if(getApsysIntishs())
+        {
+            binder << getValueOfApsysIntishs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[71])
+    {
+        if(getApsysIdpersl())
+        {
+            binder << getValueOfApsysIdpersl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[72])
+    {
+        if(getApsysCdmotifparts())
+        {
+            binder << getValueOfApsysCdmotifparts();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[73])
+    {
+        if(getInApsysTempEntspUserid())
+        {
+            binder << getValueOfInApsysTempEntspUserid();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[74])
+    {
+        if(getInApsysTempEntspDatum())
+        {
+            binder << getValueOfInApsysTempEntspDatum();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[75])
+    {
+        if(getInApsysTempEntsperrenCd())
+        {
+            binder << getValueOfInApsysTempEntsperrenCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[76])
+    {
+        if(getKundenkategorieCd())
+        {
+            binder << getValueOfKundenkategorieCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[77])
+    {
+        if(getGemeinschaftskontoCd())
+        {
+            binder << getValueOfGemeinschaftskontoCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[78])
+    {
+        if(getDritteSaeuleCd())
+        {
+            binder << getValueOfDritteSaeuleCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[79])
+    {
+        if(getApsysTypptfs())
+        {
+            binder << getValueOfApsysTypptfs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[80])
+    {
+        if(getAutoEuTaxPercentage())
+        {
+            binder << getValueOfAutoEuTaxPercentage();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[81])
+    {
+        if(getAktid())
+        {
+            binder << getValueOfAktid();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[82])
+    {
+        if(getValidid())
+        {
+            binder << getValueOfValidid();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[83])
+    {
+        if(getValidCd())
+        {
+            binder << getValueOfValidCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[84])
+    {
+        if(getValiduser())
+        {
+            binder << getValueOfValiduser();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[85])
+    {
+        if(getApsysCdctgptfsbxps())
+        {
+            binder << getValueOfApsysCdctgptfsbxps();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[86])
+    {
+        if(getApsysCdctgptfsdocs())
+        {
+            binder << getValueOfApsysCdctgptfsdocs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[87])
+    {
+        if(getApsysIdents())
+        {
+            binder << getValueOfApsysIdents();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[88])
+    {
+        if(getApsysCdsoumbolc())
+        {
+            binder << getValueOfApsysCdsoumbolc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[89])
+    {
+        if(getApsysCdfacbolc())
+        {
+            binder << getValueOfApsysCdfacbolc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[90])
+    {
+        if(getApsysFlagtyptrfpolc())
+        {
+            binder << getValueOfApsysFlagtyptrfpolc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[91])
+    {
+        if(getApsysIdtrfpols())
+        {
+            binder << getValueOfApsysIdtrfpols();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[92])
+    {
+        if(getApsysCdpctpartictitueutaxc())
+        {
+            binder << getValueOfApsysCdpctpartictitueutaxc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[93])
+    {
+        if(getApsysCdmotifclos())
+        {
+            binder << getValueOfApsysCdmotifclos();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[94])
+    {
+        if(getEncSalt())
+        {
+            binder << getValueOfEncSalt();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[95])
+    {
+        if(getBezeichnungEnc())
+        {
+            binder << getValueOfBezeichnungEnc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[96])
+    {
+        if(getKtoeAmlProfilCd())
+        {
+            binder << getValueOfKtoeAmlProfilCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[97])
+    {
+        if(getApsysDevevals())
+        {
+            binder << getValueOfApsysDevevals();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[98])
+    {
+        if(getApsysCdrnvstmc())
+        {
+            binder << getValueOfApsysCdrnvstmc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[99])
+    {
+        if(getApsysCdrglprlgc())
+        {
+            binder << getValueOfApsysCdrglprlgc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[100])
+    {
+        if(getApsysCdctgptfcomagtcpts())
+        {
+            binder << getValueOfApsysCdctgptfcomagtcpts();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[101])
+    {
+        if(getApsysCdctgptfroutords())
+        {
+            binder << getValueOfApsysCdctgptfroutords();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[102])
+    {
+        if(getApsysCdctgptfgrecpts())
+        {
+            binder << getValueOfApsysCdctgptfgrecpts();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[103])
+    {
+        if(getApsysCdctgptftrsftits())
+        {
+            binder << getValueOfApsysCdctgptftrsftits();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[104])
+    {
+        if(getApsysFlagexpsysexttaxi())
+        {
+            binder << getValueOfApsysFlagexpsysexttaxi();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[105])
+    {
+        if(getWbIstNichtZwingendCd())
+        {
+            binder << getValueOfWbIstNichtZwingendCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[106])
+    {
+        if(getApsysCdbqerestc())
+        {
+            binder << getValueOfApsysCdbqerestc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[107])
+    {
+        if(getApsysCdctgptftypplacs())
+        {
+            binder << getValueOfApsysCdctgptftypplacs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[108])
+    {
+        if(getApsysCdeangrmtcli1s())
+        {
+            binder << getValueOfApsysCdeangrmtcli1s();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[109])
+    {
+        if(getApsysCdeangrmtcli2s())
+        {
+            binder << getValueOfApsysCdeangrmtcli2s();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[110])
+    {
+        if(getApsysCdfatcatypc())
+        {
+            binder << getValueOfApsysCdfatcatypc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[111])
+    {
+        if(getApsysIdfatcaclas())
+        {
+            binder << getValueOfApsysIdfatcaclas();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[112])
+    {
+        if(getApsysCdfatcastatcalccrmc())
+        {
+            binder << getValueOfApsysCdfatcastatcalccrmc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[113])
+    {
+        if(getApsysCdfatcastatc())
+        {
+            binder << getValueOfApsysCdfatcastatc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[114])
+    {
+        if(getApsysCommentfatcastats())
+        {
+            binder << getValueOfApsysCommentfatcastats();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[115])
+    {
+        if(getApsysCdfatcamotifparts())
+        {
+            binder << getValueOfApsysCdfatcamotifparts();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[116])
+    {
+        if(getApsysCdfatcastatcalcglobc())
+        {
+            binder << getValueOfApsysCdfatcastatcalcglobc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[117])
+    {
+        if(getApsysCdfatcastatcalclocc())
+        {
+            binder << getValueOfApsysCdfatcastatcalclocc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[118])
+    {
+        if(getApsysCdvalidstatc())
+        {
+            binder << getValueOfApsysCdvalidstatc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[119])
+    {
+        if(getApsysUservalidfatcastats())
+        {
+            binder << getValueOfApsysUservalidfatcastats();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[120])
+    {
+        if(getApsysDtvalidfatcastatl())
+        {
+            binder << getValueOfApsysDtvalidfatcastatl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[121])
+    {
+        if(getApsysHrvalidfatcastatl())
+        {
+            binder << getValueOfApsysHrvalidfatcastatl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[122])
+    {
+        if(getApsysCdctrnettc553c())
+        {
+            binder << getValueOfApsysCdctrnettc553c();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[123])
+    {
+        if(getApsysFlagforceposostmanagi())
+        {
+            binder << getValueOfApsysFlagforceposostmanagi();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[124])
+    {
+        if(getApsysPosostmanagc())
+        {
+            binder << getValueOfApsysPosostmanagc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[125])
+    {
+        if(getApsysCritereusfatcastatl())
+        {
+            binder << getValueOfApsysCritereusfatcastatl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[126])
+    {
+        if(getApsysFlagsimsi())
+        {
+            binder << getValueOfApsysFlagsimsi();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[127])
+    {
+        if(getNrOfBoInWhtStatement())
+        {
+            binder << getValueOfNrOfBoInWhtStatement();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[128])
+    {
+        if(getPartnerWithUnlLiabilityCd())
+        {
+            binder << getValueOfPartnerWithUnlLiabilityCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[129])
+    {
+        if(getCompanyManagedByBoCd())
+        {
+            binder << getValueOfCompanyManagedByBoCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[130])
+    {
+        if(getIsTrusteePhysicalCd())
+        {
+            binder << getValueOfIsTrusteePhysicalCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[131])
+    {
+        if(getNoTradingUsSecuritiesCd())
+        {
+            binder << getValueOfNoTradingUsSecuritiesCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[132])
+    {
+        if(getPortfolioSegrAccountCd())
+        {
+            binder << getValueOfPortfolioSegrAccountCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[133])
+    {
+        if(getUsWhtStartDate())
+        {
+            binder << getValueOfUsWhtStartDate();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[134])
+    {
+        if(getApsysCdctgptfivstautos())
+        {
+            binder << getValueOfApsysCdctgptfivstautos();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[135])
+    {
+        if(getAutomatischeVerteilungCd())
+        {
+            binder << getValueOfAutomatischeVerteilungCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[136])
+    {
+        if(getApsysCdtypreportqic())
+        {
+            binder << getValueOfApsysCdtypreportqic();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[137])
+    {
+        if(getApsysFlagirsnonactifi())
+        {
+            binder << getValueOfApsysFlagirsnonactifi();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[138])
+    {
+        if(getOpeningDocumentsProposedCd())
+        {
+            binder << getValueOfOpeningDocumentsProposedCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[139])
+    {
+        if(getApsysCdctgptfalgcpts())
+        {
+            binder << getValueOfApsysCdctgptfalgcpts();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[140])
+    {
+        if(getApsysIdstrucforjurs())
+        {
+            binder << getValueOfApsysIdstrucforjurs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[141])
+    {
+        if(getApsysIdentforjurs())
+        {
+            binder << getValueOfApsysIdentforjurs();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[142])
+    {
+        if(getFatcaBasketCd())
+        {
+            binder << getValueOfFatcaBasketCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[143])
+    {
+        if(getApsysCdmethcloc())
+        {
+            binder << getValueOfApsysCdmethcloc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[144])
+    {
+        if(getApsysDtevalclol())
+        {
+            binder << getValueOfApsysDtevalclol();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[145])
+    {
+        if(getAeoiExemptionCd())
+        {
+            binder << getValueOfAeoiExemptionCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[146])
+    {
+        if(getAeoiSubExemptionCd())
+        {
+            binder << getValueOfAeoiSubExemptionCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[147])
+    {
+        if(getUndocumentedAccountCd())
+        {
+            binder << getValueOfUndocumentedAccountCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[148])
+    {
+        if(getDormantAccountCd())
+        {
+            binder << getValueOfDormantAccountCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[149])
+    {
+        if(getAeoiConsistencyStatusCd())
+        {
+            binder << getValueOfAeoiConsistencyStatusCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[150])
+    {
+        if(getAeoiFinalStatusCd())
+        {
+            binder << getValueOfAeoiFinalStatusCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[151])
+    {
+        if(getAeoiReviewDate())
+        {
+            binder << getValueOfAeoiReviewDate();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[152])
+    {
+        if(getApsysCdmifidexemptc())
+        {
+            binder << getValueOfApsysCdmifidexemptc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[153])
+    {
+        if(getApsysDtdebmifidl())
+        {
+            binder << getValueOfApsysDtdebmifidl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[154])
+    {
+        if(getOpenedInApsysDate())
+        {
+            binder << getValueOfOpenedInApsysDate();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[155])
+    {
+        if(getApsysFlagdeldatapersi())
+        {
+            binder << getValueOfApsysFlagdeldatapersi();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[156])
+    {
+        if(getApsysDtwaitdeldatapersl())
+        {
+            binder << getValueOfApsysDtwaitdeldatapersl();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[157])
+    {
+        if(getApsysCdptfseldgsc())
+        {
+            binder << getValueOfApsysCdptfseldgsc();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[158])
+    {
+        if(getApsysCdmotifpartdgss())
+        {
+            binder << getValueOfApsysCdmotifpartdgss();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[159])
+    {
+        if(getEamCd())
+        {
+            binder << getValueOfEamCd();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[160])
+    {
+        if(getRetentionOnHold())
+        {
+            binder << getValueOfRetentionOnHold();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[161])
+    {
+        if(getLogicalErasure())
+        {
+            binder << getValueOfLogicalErasure();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[162])
+    {
+        if(getRetentionOnHoldDate())
+        {
+            binder << getValueOfRetentionOnHoldDate();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[163])
+    {
+        if(getRetentionOnHoldReason())
+        {
+            binder << getValueOfRetentionOnHoldReason();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[164])
+    {
+        if(getLogicalErasureDate())
+        {
+            binder << getValueOfLogicalErasureDate();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if(dirtyFlag_[165])
+    {
+        if(getLogicalErasureReason())
+        {
+            binder << getValueOfLogicalErasureReason();
         }
         else
         {
@@ -466,37 +17985,1333 @@ void Portfolio::updateArgs(drogon::orm::internal::SqlBinder &binder) const
 Json::Value Portfolio::toJson() const
 {
     Json::Value ret;
-    if(getPorfolioId())
+    if(getKundenid())
     {
-        ret["porfolio_id"]=getValueOfPorfolioId();
+        ret["KUNDENID"]=getValueOfKundenid();
     }
     else
     {
-        ret["porfolio_id"]=Json::Value();
+        ret["KUNDENID"]=Json::Value();
     }
-    if(getPorfolioName())
+    if(getPortfoliono())
     {
-        ret["porfolio_name"]=getValueOfPorfolioName();
-    }
-    else
-    {
-        ret["porfolio_name"]=Json::Value();
-    }
-    if(getDateCreation())
-    {
-        ret["date_Creation"]=getDateCreation()->toDbStringLocal();
+        ret["PORTFOLIONO"]=getValueOfPortfoliono();
     }
     else
     {
-        ret["date_Creation"]=Json::Value();
+        ret["PORTFOLIONO"]=Json::Value();
     }
-    if(getOpenClosed())
+    if(getBezeichnung())
     {
-        ret["open_closed"]=getValueOfOpenClosed();
+        ret["BEZEICHNUNG"]=getValueOfBezeichnung();
     }
     else
     {
-        ret["open_closed"]=Json::Value();
+        ret["BEZEICHNUNG"]=Json::Value();
+    }
+    if(getManagementtypCd())
+    {
+        ret["MANAGEMENTTYP_CD"]=getValueOfManagementtypCd();
+    }
+    else
+    {
+        ret["MANAGEMENTTYP_CD"]=Json::Value();
+    }
+    if(getManager1Cd())
+    {
+        ret["MANAGER1_CD"]=getValueOfManager1Cd();
+    }
+    else
+    {
+        ret["MANAGER1_CD"]=Json::Value();
+    }
+    if(getManager2Cd())
+    {
+        ret["MANAGER2_CD"]=getValueOfManager2Cd();
+    }
+    else
+    {
+        ret["MANAGER2_CD"]=Json::Value();
+    }
+    if(getManager3Cd())
+    {
+        ret["MANAGER3_CD"]=getValueOfManager3Cd();
+    }
+    else
+    {
+        ret["MANAGER3_CD"]=Json::Value();
+    }
+    if(getManager4Cd())
+    {
+        ret["MANAGER4_CD"]=getValueOfManager4Cd();
+    }
+    else
+    {
+        ret["MANAGER4_CD"]=Json::Value();
+    }
+    if(getManager5Cd())
+    {
+        ret["MANAGER5_CD"]=getValueOfManager5Cd();
+    }
+    else
+    {
+        ret["MANAGER5_CD"]=Json::Value();
+    }
+    if(getVermittlerCd())
+    {
+        ret["VERMITTLER_CD"]=getValueOfVermittlerCd();
+    }
+    else
+    {
+        ret["VERMITTLER_CD"]=Json::Value();
+    }
+    if(getInfovollmacht())
+    {
+        ret["INFOVOLLMACHT"]=getValueOfInfovollmacht();
+    }
+    else
+    {
+        ret["INFOVOLLMACHT"]=Json::Value();
+    }
+    if(getKontakt())
+    {
+        ret["KONTAKT"]=getValueOfKontakt();
+    }
+    else
+    {
+        ret["KONTAKT"]=Json::Value();
+    }
+    if(getErtraegnisaufCd())
+    {
+        ret["ERTRAEGNISAUF_CD"]=getValueOfErtraegnisaufCd();
+    }
+    else
+    {
+        ret["ERTRAEGNISAUF_CD"]=Json::Value();
+    }
+    if(getWaehrungsCd())
+    {
+        ret["WAEHRUNGS_CD"]=getValueOfWaehrungsCd();
+    }
+    else
+    {
+        ret["WAEHRUNGS_CD"]=Json::Value();
+    }
+    if(getBelegsatzCd())
+    {
+        ret["BELEGSATZ_CD"]=getValueOfBelegsatzCd();
+    }
+    else
+    {
+        ret["BELEGSATZ_CD"]=Json::Value();
+    }
+    if(getLoeschCd())
+    {
+        ret["LOESCH_CD"]=getValueOfLoeschCd();
+    }
+    else
+    {
+        ret["LOESCH_CD"]=Json::Value();
+    }
+    if(getLoeschdatum())
+    {
+        ret["LOESCHDATUM"]=getLoeschdatum()->toDbStringLocal();
+    }
+    else
+    {
+        ret["LOESCHDATUM"]=Json::Value();
+    }
+    if(getCrtdatum())
+    {
+        ret["CRTDATUM"]=getCrtdatum()->toDbStringLocal();
+    }
+    else
+    {
+        ret["CRTDATUM"]=Json::Value();
+    }
+    if(getCrtuser())
+    {
+        ret["CRTUSER"]=getValueOfCrtuser();
+    }
+    else
+    {
+        ret["CRTUSER"]=Json::Value();
+    }
+    if(getMutdatum())
+    {
+        ret["MUTDATUM"]=getMutdatum()->toDbStringLocal();
+    }
+    else
+    {
+        ret["MUTDATUM"]=Json::Value();
+    }
+    if(getMutuser())
+    {
+        ret["MUTUSER"]=getValueOfMutuser();
+    }
+    else
+    {
+        ret["MUTUSER"]=Json::Value();
+    }
+    if(getMisdomizilCd())
+    {
+        ret["MISDOMIZIL_CD"]=getValueOfMisdomizilCd();
+    }
+    else
+    {
+        ret["MISDOMIZIL_CD"]=Json::Value();
+    }
+    if(getAnlagestrategieCd())
+    {
+        ret["ANLAGESTRATEGIE_CD"]=getValueOfAnlagestrategieCd();
+    }
+    else
+    {
+        ret["ANLAGESTRATEGIE_CD"]=Json::Value();
+    }
+    if(getUswbasketCd())
+    {
+        ret["USWBASKET_CD"]=getValueOfUswbasketCd();
+    }
+    else
+    {
+        ret["USWBASKET_CD"]=Json::Value();
+    }
+    if(getVersandhaeufigCd())
+    {
+        ret["VERSANDHAEUFIG_CD"]=getValueOfVersandhaeufigCd();
+    }
+    else
+    {
+        ret["VERSANDHAEUFIG_CD"]=Json::Value();
+    }
+    if(getRubrik())
+    {
+        ret["RUBRIK"]=getValueOfRubrik();
+    }
+    else
+    {
+        ret["RUBRIK"]=Json::Value();
+    }
+    if(getVerwaltungsmodusCd())
+    {
+        ret["VERWALTUNGSMODUS_CD"]=getValueOfVerwaltungsmodusCd();
+    }
+    else
+    {
+        ret["VERWALTUNGSMODUS_CD"]=Json::Value();
+    }
+    if(getKundeletzterbesuch())
+    {
+        ret["KUNDELETZTERBESUCH"]=getKundeletzterbesuch()->toDbStringLocal();
+    }
+    else
+    {
+        ret["KUNDELETZTERBESUCH"]=Json::Value();
+    }
+    if(getAntragsort())
+    {
+        ret["ANTRAGSORT"]=getValueOfAntragsort();
+    }
+    else
+    {
+        ret["ANTRAGSORT"]=Json::Value();
+    }
+    if(getAntragsdatum())
+    {
+        ret["ANTRAGSDATUM"]=getAntragsdatum()->toDbStringLocal();
+    }
+    else
+    {
+        ret["ANTRAGSDATUM"]=Json::Value();
+    }
+    if(getAnderepostadresseCd())
+    {
+        ret["ANDEREPOSTADRESSE_CD"]=getValueOfAnderepostadresseCd();
+    }
+    else
+    {
+        ret["ANDEREPOSTADRESSE_CD"]=Json::Value();
+    }
+    if(getBanklagerndCd())
+    {
+        ret["BANKLAGERND_CD"]=getValueOfBanklagerndCd();
+    }
+    else
+    {
+        ret["BANKLAGERND_CD"]=Json::Value();
+    }
+    if(getSpezialinstruktion())
+    {
+        ret["SPEZIALINSTRUKTION"]=getValueOfSpezialinstruktion();
+    }
+    else
+    {
+        ret["SPEZIALINSTRUKTION"]=Json::Value();
+    }
+    if(getGeldvonkontoinhaberCd())
+    {
+        ret["GELDVONKONTOINHABER_CD"]=getValueOfGeldvonkontoinhaberCd();
+    }
+    else
+    {
+        ret["GELDVONKONTOINHABER_CD"]=Json::Value();
+    }
+    if(getManualopenCd())
+    {
+        ret["MANUALOPEN_CD"]=getValueOfManualopenCd();
+    }
+    else
+    {
+        ret["MANUALOPEN_CD"]=Json::Value();
+    }
+    if(getKontonummer1())
+    {
+        ret["KONTONUMMER1"]=getValueOfKontonummer1();
+    }
+    else
+    {
+        ret["KONTONUMMER1"]=Json::Value();
+    }
+    if(getKontonummer2())
+    {
+        ret["KONTONUMMER2"]=getValueOfKontonummer2();
+    }
+    else
+    {
+        ret["KONTONUMMER2"]=Json::Value();
+    }
+    if(getKontonummer3())
+    {
+        ret["KONTONUMMER3"]=getValueOfKontonummer3();
+    }
+    else
+    {
+        ret["KONTONUMMER3"]=Json::Value();
+    }
+    if(getFilialCd())
+    {
+        ret["FILIAL_CD"]=getValueOfFilialCd();
+    }
+    else
+    {
+        ret["FILIAL_CD"]=Json::Value();
+    }
+    if(getRubrik1())
+    {
+        ret["RUBRIK1"]=getValueOfRubrik1();
+    }
+    else
+    {
+        ret["RUBRIK1"]=Json::Value();
+    }
+    if(getRubrik2())
+    {
+        ret["RUBRIK2"]=getValueOfRubrik2();
+    }
+    else
+    {
+        ret["RUBRIK2"]=Json::Value();
+    }
+    if(getRubrik3())
+    {
+        ret["RUBRIK3"]=getValueOfRubrik3();
+    }
+    else
+    {
+        ret["RUBRIK3"]=Json::Value();
+    }
+    if(getOnlineCd())
+    {
+        ret["ONLINE_CD"]=getValueOfOnlineCd();
+    }
+    else
+    {
+        ret["ONLINE_CD"]=Json::Value();
+    }
+    if(getPortfoliotypCd())
+    {
+        ret["PORTFOLIOTYP_CD"]=getValueOfPortfoliotypCd();
+    }
+    else
+    {
+        ret["PORTFOLIOTYP_CD"]=Json::Value();
+    }
+    if(getCdpartc())
+    {
+        ret["CDPARTC"]=getValueOfCdpartc();
+    }
+    else
+    {
+        ret["CDPARTC"]=Json::Value();
+    }
+    if(getPoEuTaxProzent())
+    {
+        ret["PO_EU_TAX_PROZENT"]=getValueOfPoEuTaxProzent();
+    }
+    else
+    {
+        ret["PO_EU_TAX_PROZENT"]=Json::Value();
+    }
+    if(getApsysStatusOpec())
+    {
+        ret["APSYS_STATUS_OPEC"]=getValueOfApsysStatusOpec();
+    }
+    else
+    {
+        ret["APSYS_STATUS_OPEC"]=Json::Value();
+    }
+    if(getApsysErri())
+    {
+        ret["APSYS_ERRI"]=getValueOfApsysErri();
+    }
+    else
+    {
+        ret["APSYS_ERRI"]=Json::Value();
+    }
+    if(getApsysShnas())
+    {
+        ret["APSYS_SHNAS"]=getValueOfApsysShnas();
+    }
+    else
+    {
+        ret["APSYS_SHNAS"]=Json::Value();
+    }
+    if(getApsysTypmdcs())
+    {
+        ret["APSYS_TYPMDCS"]=getValueOfApsysTypmdcs();
+    }
+    else
+    {
+        ret["APSYS_TYPMDCS"]=Json::Value();
+    }
+    if(getApsysIntilgs())
+    {
+        ret["APSYS_INTILGS"]=getValueOfApsysIntilgs();
+    }
+    else
+    {
+        ret["APSYS_INTILGS"]=Json::Value();
+    }
+    if(getApsysShlibptfs())
+    {
+        ret["APSYS_SHLIBPTFS"]=getValueOfApsysShlibptfs();
+    }
+    else
+    {
+        ret["APSYS_SHLIBPTFS"]=Json::Value();
+    }
+    if(getApsysCdstatdusc())
+    {
+        ret["APSYS_CDSTATDUSC"]=getValueOfApsysCdstatdusc();
+    }
+    else
+    {
+        ret["APSYS_CDSTATDUSC"]=Json::Value();
+    }
+    if(getApsysDtdebpartl())
+    {
+        ret["APSYS_DTDEBPARTL"]=getApsysDtdebpartl()->toDbStringLocal();
+    }
+    else
+    {
+        ret["APSYS_DTDEBPARTL"]=Json::Value();
+    }
+    if(getApsysDtfinpartl())
+    {
+        ret["APSYS_DTFINPARTL"]=getApsysDtfinpartl()->toDbStringLocal();
+    }
+    else
+    {
+        ret["APSYS_DTFINPARTL"]=Json::Value();
+    }
+    if(getApsysIdstrucs())
+    {
+        ret["APSYS_IDSTRUCS"]=getValueOfApsysIdstrucs();
+    }
+    else
+    {
+        ret["APSYS_IDSTRUCS"]=Json::Value();
+    }
+    if(getApsysCdpermi())
+    {
+        ret["APSYS_CDPERMI"]=getValueOfApsysCdpermi();
+    }
+    else
+    {
+        ret["APSYS_CDPERMI"]=Json::Value();
+    }
+    if(getApsysCdctgptfints())
+    {
+        ret["APSYS_CDCTGPTFINTS"]=getValueOfApsysCdctgptfints();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFINTS"]=Json::Value();
+    }
+    if(getApsysCdctgptfstes())
+    {
+        ret["APSYS_CDCTGPTFSTES"]=getValueOfApsysCdctgptfstes();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFSTES"]=Json::Value();
+    }
+    if(getApsysCdctgptfstms())
+    {
+        ret["APSYS_CDCTGPTFSTMS"]=getValueOfApsysCdctgptfstms();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFSTMS"]=Json::Value();
+    }
+    if(getApsysCdctgptfmafs())
+    {
+        ret["APSYS_CDCTGPTFMAFS"]=getValueOfApsysCdctgptfmafs();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFMAFS"]=Json::Value();
+    }
+    if(getApsysCdctgptfrisks())
+    {
+        ret["APSYS_CDCTGPTFRISKS"]=getValueOfApsysCdctgptfrisks();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFRISKS"]=Json::Value();
+    }
+    if(getApsysCdctgptfcous())
+    {
+        ret["APSYS_CDCTGPTFCOUS"]=getValueOfApsysCdctgptfcous();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFCOUS"]=Json::Value();
+    }
+    if(getApsysCdctgptftrcs())
+    {
+        ret["APSYS_CDCTGPTFTRCS"]=getValueOfApsysCdctgptftrcs();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFTRCS"]=Json::Value();
+    }
+    if(getApsysCdctgptfstebrutnets())
+    {
+        ret["APSYS_CDCTGPTFSTEBRUTNETS"]=getValueOfApsysCdctgptfstebrutnets();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFSTEBRUTNETS"]=Json::Value();
+    }
+    if(getApsysFlagirsreppartc())
+    {
+        ret["APSYS_FLAGIRSREPPARTC"]=getValueOfApsysFlagirsreppartc();
+    }
+    else
+    {
+        ret["APSYS_FLAGIRSREPPARTC"]=Json::Value();
+    }
+    if(getApsysCdctgptftaxints())
+    {
+        ret["APSYS_CDCTGPTFTAXINTS"]=getValueOfApsysCdctgptftaxints();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFTAXINTS"]=Json::Value();
+    }
+    if(getApsysIdpocs())
+    {
+        ret["APSYS_IDPOCS"]=getValueOfApsysIdpocs();
+    }
+    else
+    {
+        ret["APSYS_IDPOCS"]=Json::Value();
+    }
+    if(getApsysInfo())
+    {
+        ret["APSYS_INFO"]=getValueOfApsysInfo();
+    }
+    else
+    {
+        ret["APSYS_INFO"]=Json::Value();
+    }
+    if(getNettovermoegenChf())
+    {
+        ret["NETTOVERMOEGEN_CHF"]=getValueOfNettovermoegenChf();
+    }
+    else
+    {
+        ret["NETTOVERMOEGEN_CHF"]=Json::Value();
+    }
+    if(getApsysIntishs())
+    {
+        ret["APSYS_INTISHS"]=getValueOfApsysIntishs();
+    }
+    else
+    {
+        ret["APSYS_INTISHS"]=Json::Value();
+    }
+    if(getApsysIdpersl())
+    {
+        ret["APSYS_IDPERSL"]=getValueOfApsysIdpersl();
+    }
+    else
+    {
+        ret["APSYS_IDPERSL"]=Json::Value();
+    }
+    if(getApsysCdmotifparts())
+    {
+        ret["APSYS_CDMOTIFPARTS"]=getValueOfApsysCdmotifparts();
+    }
+    else
+    {
+        ret["APSYS_CDMOTIFPARTS"]=Json::Value();
+    }
+    if(getInApsysTempEntspUserid())
+    {
+        ret["IN_APSYS_TEMP_ENTSP_USERID"]=getValueOfInApsysTempEntspUserid();
+    }
+    else
+    {
+        ret["IN_APSYS_TEMP_ENTSP_USERID"]=Json::Value();
+    }
+    if(getInApsysTempEntspDatum())
+    {
+        ret["IN_APSYS_TEMP_ENTSP_DATUM"]=getInApsysTempEntspDatum()->toDbStringLocal();
+    }
+    else
+    {
+        ret["IN_APSYS_TEMP_ENTSP_DATUM"]=Json::Value();
+    }
+    if(getInApsysTempEntsperrenCd())
+    {
+        ret["IN_APSYS_TEMP_ENTSPERREN_CD"]=getValueOfInApsysTempEntsperrenCd();
+    }
+    else
+    {
+        ret["IN_APSYS_TEMP_ENTSPERREN_CD"]=Json::Value();
+    }
+    if(getKundenkategorieCd())
+    {
+        ret["KUNDENKATEGORIE_CD"]=getValueOfKundenkategorieCd();
+    }
+    else
+    {
+        ret["KUNDENKATEGORIE_CD"]=Json::Value();
+    }
+    if(getGemeinschaftskontoCd())
+    {
+        ret["GEMEINSCHAFTSKONTO_CD"]=getValueOfGemeinschaftskontoCd();
+    }
+    else
+    {
+        ret["GEMEINSCHAFTSKONTO_CD"]=Json::Value();
+    }
+    if(getDritteSaeuleCd())
+    {
+        ret["DRITTE_SAEULE_CD"]=getValueOfDritteSaeuleCd();
+    }
+    else
+    {
+        ret["DRITTE_SAEULE_CD"]=Json::Value();
+    }
+    if(getApsysTypptfs())
+    {
+        ret["APSYS_TYPPTFS"]=getValueOfApsysTypptfs();
+    }
+    else
+    {
+        ret["APSYS_TYPPTFS"]=Json::Value();
+    }
+    if(getAutoEuTaxPercentage())
+    {
+        ret["AUTO_EU_TAX_PERCENTAGE"]=getValueOfAutoEuTaxPercentage();
+    }
+    else
+    {
+        ret["AUTO_EU_TAX_PERCENTAGE"]=Json::Value();
+    }
+    if(getAktid())
+    {
+        ret["AKTID"]=getValueOfAktid();
+    }
+    else
+    {
+        ret["AKTID"]=Json::Value();
+    }
+    if(getValidid())
+    {
+        ret["VALIDID"]=getValueOfValidid();
+    }
+    else
+    {
+        ret["VALIDID"]=Json::Value();
+    }
+    if(getValidCd())
+    {
+        ret["VALID_CD"]=getValueOfValidCd();
+    }
+    else
+    {
+        ret["VALID_CD"]=Json::Value();
+    }
+    if(getValiduser())
+    {
+        ret["VALIDUSER"]=getValueOfValiduser();
+    }
+    else
+    {
+        ret["VALIDUSER"]=Json::Value();
+    }
+    if(getApsysCdctgptfsbxps())
+    {
+        ret["APSYS_CDCTGPTFSBXPS"]=getValueOfApsysCdctgptfsbxps();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFSBXPS"]=Json::Value();
+    }
+    if(getApsysCdctgptfsdocs())
+    {
+        ret["APSYS_CDCTGPTFSDOCS"]=getValueOfApsysCdctgptfsdocs();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFSDOCS"]=Json::Value();
+    }
+    if(getApsysIdents())
+    {
+        ret["APSYS_IDENTS"]=getValueOfApsysIdents();
+    }
+    else
+    {
+        ret["APSYS_IDENTS"]=Json::Value();
+    }
+    if(getApsysCdsoumbolc())
+    {
+        ret["APSYS_CDSOUMBOLC"]=getValueOfApsysCdsoumbolc();
+    }
+    else
+    {
+        ret["APSYS_CDSOUMBOLC"]=Json::Value();
+    }
+    if(getApsysCdfacbolc())
+    {
+        ret["APSYS_CDFACBOLC"]=getValueOfApsysCdfacbolc();
+    }
+    else
+    {
+        ret["APSYS_CDFACBOLC"]=Json::Value();
+    }
+    if(getApsysFlagtyptrfpolc())
+    {
+        ret["APSYS_FLAGTYPTRFPOLC"]=getValueOfApsysFlagtyptrfpolc();
+    }
+    else
+    {
+        ret["APSYS_FLAGTYPTRFPOLC"]=Json::Value();
+    }
+    if(getApsysIdtrfpols())
+    {
+        ret["APSYS_IDTRFPOLS"]=getValueOfApsysIdtrfpols();
+    }
+    else
+    {
+        ret["APSYS_IDTRFPOLS"]=Json::Value();
+    }
+    if(getApsysCdpctpartictitueutaxc())
+    {
+        ret["APSYS_CDPCTPARTICTITUEUTAXC"]=getValueOfApsysCdpctpartictitueutaxc();
+    }
+    else
+    {
+        ret["APSYS_CDPCTPARTICTITUEUTAXC"]=Json::Value();
+    }
+    if(getApsysCdmotifclos())
+    {
+        ret["APSYS_CDMOTIFCLOS"]=getValueOfApsysCdmotifclos();
+    }
+    else
+    {
+        ret["APSYS_CDMOTIFCLOS"]=Json::Value();
+    }
+    if(getEncSalt())
+    {
+        ret["ENC_SALT"]=getValueOfEncSalt();
+    }
+    else
+    {
+        ret["ENC_SALT"]=Json::Value();
+    }
+    if(getBezeichnungEnc())
+    {
+        ret["BEZEICHNUNG_ENC"]=getValueOfBezeichnungEnc();
+    }
+    else
+    {
+        ret["BEZEICHNUNG_ENC"]=Json::Value();
+    }
+    if(getKtoeAmlProfilCd())
+    {
+        ret["KTOE_AML_PROFIL_CD"]=getValueOfKtoeAmlProfilCd();
+    }
+    else
+    {
+        ret["KTOE_AML_PROFIL_CD"]=Json::Value();
+    }
+    if(getApsysDevevals())
+    {
+        ret["APSYS_DEVEVALS"]=getValueOfApsysDevevals();
+    }
+    else
+    {
+        ret["APSYS_DEVEVALS"]=Json::Value();
+    }
+    if(getApsysCdrnvstmc())
+    {
+        ret["APSYS_CDRNVSTMC"]=getValueOfApsysCdrnvstmc();
+    }
+    else
+    {
+        ret["APSYS_CDRNVSTMC"]=Json::Value();
+    }
+    if(getApsysCdrglprlgc())
+    {
+        ret["APSYS_CDRGLPRLGC"]=getValueOfApsysCdrglprlgc();
+    }
+    else
+    {
+        ret["APSYS_CDRGLPRLGC"]=Json::Value();
+    }
+    if(getApsysCdctgptfcomagtcpts())
+    {
+        ret["APSYS_CDCTGPTFCOMAGTCPTS"]=getValueOfApsysCdctgptfcomagtcpts();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFCOMAGTCPTS"]=Json::Value();
+    }
+    if(getApsysCdctgptfroutords())
+    {
+        ret["APSYS_CDCTGPTFROUTORDS"]=getValueOfApsysCdctgptfroutords();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFROUTORDS"]=Json::Value();
+    }
+    if(getApsysCdctgptfgrecpts())
+    {
+        ret["APSYS_CDCTGPTFGRECPTS"]=getValueOfApsysCdctgptfgrecpts();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFGRECPTS"]=Json::Value();
+    }
+    if(getApsysCdctgptftrsftits())
+    {
+        ret["APSYS_CDCTGPTFTRSFTITS"]=getValueOfApsysCdctgptftrsftits();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFTRSFTITS"]=Json::Value();
+    }
+    if(getApsysFlagexpsysexttaxi())
+    {
+        ret["APSYS_FLAGEXPSYSEXTTAXI"]=getValueOfApsysFlagexpsysexttaxi();
+    }
+    else
+    {
+        ret["APSYS_FLAGEXPSYSEXTTAXI"]=Json::Value();
+    }
+    if(getWbIstNichtZwingendCd())
+    {
+        ret["WB_IST_NICHT_ZWINGEND_CD"]=getValueOfWbIstNichtZwingendCd();
+    }
+    else
+    {
+        ret["WB_IST_NICHT_ZWINGEND_CD"]=Json::Value();
+    }
+    if(getApsysCdbqerestc())
+    {
+        ret["APSYS_CDBQERESTC"]=getValueOfApsysCdbqerestc();
+    }
+    else
+    {
+        ret["APSYS_CDBQERESTC"]=Json::Value();
+    }
+    if(getApsysCdctgptftypplacs())
+    {
+        ret["APSYS_CDCTGPTFTYPPLACS"]=getValueOfApsysCdctgptftypplacs();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFTYPPLACS"]=Json::Value();
+    }
+    if(getApsysCdeangrmtcli1s())
+    {
+        ret["APSYS_CDEANGRMTCLI1S"]=getValueOfApsysCdeangrmtcli1s();
+    }
+    else
+    {
+        ret["APSYS_CDEANGRMTCLI1S"]=Json::Value();
+    }
+    if(getApsysCdeangrmtcli2s())
+    {
+        ret["APSYS_CDEANGRMTCLI2S"]=getValueOfApsysCdeangrmtcli2s();
+    }
+    else
+    {
+        ret["APSYS_CDEANGRMTCLI2S"]=Json::Value();
+    }
+    if(getApsysCdfatcatypc())
+    {
+        ret["APSYS_CDFATCATYPC"]=getValueOfApsysCdfatcatypc();
+    }
+    else
+    {
+        ret["APSYS_CDFATCATYPC"]=Json::Value();
+    }
+    if(getApsysIdfatcaclas())
+    {
+        ret["APSYS_IDFATCACLAS"]=getValueOfApsysIdfatcaclas();
+    }
+    else
+    {
+        ret["APSYS_IDFATCACLAS"]=Json::Value();
+    }
+    if(getApsysCdfatcastatcalccrmc())
+    {
+        ret["APSYS_CDFATCASTATCALCCRMC"]=getValueOfApsysCdfatcastatcalccrmc();
+    }
+    else
+    {
+        ret["APSYS_CDFATCASTATCALCCRMC"]=Json::Value();
+    }
+    if(getApsysCdfatcastatc())
+    {
+        ret["APSYS_CDFATCASTATC"]=getValueOfApsysCdfatcastatc();
+    }
+    else
+    {
+        ret["APSYS_CDFATCASTATC"]=Json::Value();
+    }
+    if(getApsysCommentfatcastats())
+    {
+        ret["APSYS_COMMENTFATCASTATS"]=getValueOfApsysCommentfatcastats();
+    }
+    else
+    {
+        ret["APSYS_COMMENTFATCASTATS"]=Json::Value();
+    }
+    if(getApsysCdfatcamotifparts())
+    {
+        ret["APSYS_CDFATCAMOTIFPARTS"]=getValueOfApsysCdfatcamotifparts();
+    }
+    else
+    {
+        ret["APSYS_CDFATCAMOTIFPARTS"]=Json::Value();
+    }
+    if(getApsysCdfatcastatcalcglobc())
+    {
+        ret["APSYS_CDFATCASTATCALCGLOBC"]=getValueOfApsysCdfatcastatcalcglobc();
+    }
+    else
+    {
+        ret["APSYS_CDFATCASTATCALCGLOBC"]=Json::Value();
+    }
+    if(getApsysCdfatcastatcalclocc())
+    {
+        ret["APSYS_CDFATCASTATCALCLOCC"]=getValueOfApsysCdfatcastatcalclocc();
+    }
+    else
+    {
+        ret["APSYS_CDFATCASTATCALCLOCC"]=Json::Value();
+    }
+    if(getApsysCdvalidstatc())
+    {
+        ret["APSYS_CDVALIDSTATC"]=getValueOfApsysCdvalidstatc();
+    }
+    else
+    {
+        ret["APSYS_CDVALIDSTATC"]=Json::Value();
+    }
+    if(getApsysUservalidfatcastats())
+    {
+        ret["APSYS_USERVALIDFATCASTATS"]=getValueOfApsysUservalidfatcastats();
+    }
+    else
+    {
+        ret["APSYS_USERVALIDFATCASTATS"]=Json::Value();
+    }
+    if(getApsysDtvalidfatcastatl())
+    {
+        ret["APSYS_DTVALIDFATCASTATL"]=getApsysDtvalidfatcastatl()->toDbStringLocal();
+    }
+    else
+    {
+        ret["APSYS_DTVALIDFATCASTATL"]=Json::Value();
+    }
+    if(getApsysHrvalidfatcastatl())
+    {
+        ret["APSYS_HRVALIDFATCASTATL"]=getApsysHrvalidfatcastatl()->toDbStringLocal();
+    }
+    else
+    {
+        ret["APSYS_HRVALIDFATCASTATL"]=Json::Value();
+    }
+    if(getApsysCdctrnettc553c())
+    {
+        ret["APSYS_CDCTRNETTC553C"]=getValueOfApsysCdctrnettc553c();
+    }
+    else
+    {
+        ret["APSYS_CDCTRNETTC553C"]=Json::Value();
+    }
+    if(getApsysFlagforceposostmanagi())
+    {
+        ret["APSYS_FLAGFORCEPOSOSTMANAGI"]=getValueOfApsysFlagforceposostmanagi();
+    }
+    else
+    {
+        ret["APSYS_FLAGFORCEPOSOSTMANAGI"]=Json::Value();
+    }
+    if(getApsysPosostmanagc())
+    {
+        ret["APSYS_POSOSTMANAGC"]=getValueOfApsysPosostmanagc();
+    }
+    else
+    {
+        ret["APSYS_POSOSTMANAGC"]=Json::Value();
+    }
+    if(getApsysCritereusfatcastatl())
+    {
+        ret["APSYS_CRITEREUSFATCASTATL"]=getValueOfApsysCritereusfatcastatl();
+    }
+    else
+    {
+        ret["APSYS_CRITEREUSFATCASTATL"]=Json::Value();
+    }
+    if(getApsysFlagsimsi())
+    {
+        ret["APSYS_FLAGSIMSI"]=getValueOfApsysFlagsimsi();
+    }
+    else
+    {
+        ret["APSYS_FLAGSIMSI"]=Json::Value();
+    }
+    if(getNrOfBoInWhtStatement())
+    {
+        ret["NR_OF_BO_IN_WHT_STATEMENT"]=getValueOfNrOfBoInWhtStatement();
+    }
+    else
+    {
+        ret["NR_OF_BO_IN_WHT_STATEMENT"]=Json::Value();
+    }
+    if(getPartnerWithUnlLiabilityCd())
+    {
+        ret["PARTNER_WITH_UNL_LIABILITY_CD"]=getValueOfPartnerWithUnlLiabilityCd();
+    }
+    else
+    {
+        ret["PARTNER_WITH_UNL_LIABILITY_CD"]=Json::Value();
+    }
+    if(getCompanyManagedByBoCd())
+    {
+        ret["COMPANY_MANAGED_BY_BO_CD"]=getValueOfCompanyManagedByBoCd();
+    }
+    else
+    {
+        ret["COMPANY_MANAGED_BY_BO_CD"]=Json::Value();
+    }
+    if(getIsTrusteePhysicalCd())
+    {
+        ret["IS_TRUSTEE_PHYSICAL_CD"]=getValueOfIsTrusteePhysicalCd();
+    }
+    else
+    {
+        ret["IS_TRUSTEE_PHYSICAL_CD"]=Json::Value();
+    }
+    if(getNoTradingUsSecuritiesCd())
+    {
+        ret["NO_TRADING_US_SECURITIES_CD"]=getValueOfNoTradingUsSecuritiesCd();
+    }
+    else
+    {
+        ret["NO_TRADING_US_SECURITIES_CD"]=Json::Value();
+    }
+    if(getPortfolioSegrAccountCd())
+    {
+        ret["PORTFOLIO_SEGR_ACCOUNT_CD"]=getValueOfPortfolioSegrAccountCd();
+    }
+    else
+    {
+        ret["PORTFOLIO_SEGR_ACCOUNT_CD"]=Json::Value();
+    }
+    if(getUsWhtStartDate())
+    {
+        ret["US_WHT_START_DATE"]=getUsWhtStartDate()->toDbStringLocal();
+    }
+    else
+    {
+        ret["US_WHT_START_DATE"]=Json::Value();
+    }
+    if(getApsysCdctgptfivstautos())
+    {
+        ret["APSYS_CDCTGPTFIVSTAUTOS"]=getValueOfApsysCdctgptfivstautos();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFIVSTAUTOS"]=Json::Value();
+    }
+    if(getAutomatischeVerteilungCd())
+    {
+        ret["AUTOMATISCHE_VERTEILUNG_CD"]=getValueOfAutomatischeVerteilungCd();
+    }
+    else
+    {
+        ret["AUTOMATISCHE_VERTEILUNG_CD"]=Json::Value();
+    }
+    if(getApsysCdtypreportqic())
+    {
+        ret["APSYS_CDTYPREPORTQIC"]=getValueOfApsysCdtypreportqic();
+    }
+    else
+    {
+        ret["APSYS_CDTYPREPORTQIC"]=Json::Value();
+    }
+    if(getApsysFlagirsnonactifi())
+    {
+        ret["APSYS_FLAGIRSNONACTIFI"]=getValueOfApsysFlagirsnonactifi();
+    }
+    else
+    {
+        ret["APSYS_FLAGIRSNONACTIFI"]=Json::Value();
+    }
+    if(getOpeningDocumentsProposedCd())
+    {
+        ret["OPENING_DOCUMENTS_PROPOSED_CD"]=getValueOfOpeningDocumentsProposedCd();
+    }
+    else
+    {
+        ret["OPENING_DOCUMENTS_PROPOSED_CD"]=Json::Value();
+    }
+    if(getApsysCdctgptfalgcpts())
+    {
+        ret["APSYS_CDCTGPTFALGCPTS"]=getValueOfApsysCdctgptfalgcpts();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFALGCPTS"]=Json::Value();
+    }
+    if(getApsysIdstrucforjurs())
+    {
+        ret["APSYS_IDSTRUCFORJURS"]=getValueOfApsysIdstrucforjurs();
+    }
+    else
+    {
+        ret["APSYS_IDSTRUCFORJURS"]=Json::Value();
+    }
+    if(getApsysIdentforjurs())
+    {
+        ret["APSYS_IDENTFORJURS"]=getValueOfApsysIdentforjurs();
+    }
+    else
+    {
+        ret["APSYS_IDENTFORJURS"]=Json::Value();
+    }
+    if(getFatcaBasketCd())
+    {
+        ret["FATCA_BASKET_CD"]=getValueOfFatcaBasketCd();
+    }
+    else
+    {
+        ret["FATCA_BASKET_CD"]=Json::Value();
+    }
+    if(getApsysCdmethcloc())
+    {
+        ret["APSYS_CDMETHCLOC"]=getValueOfApsysCdmethcloc();
+    }
+    else
+    {
+        ret["APSYS_CDMETHCLOC"]=Json::Value();
+    }
+    if(getApsysDtevalclol())
+    {
+        ret["APSYS_DTEVALCLOL"]=getApsysDtevalclol()->toDbStringLocal();
+    }
+    else
+    {
+        ret["APSYS_DTEVALCLOL"]=Json::Value();
+    }
+    if(getAeoiExemptionCd())
+    {
+        ret["AEOI_EXEMPTION_CD"]=getValueOfAeoiExemptionCd();
+    }
+    else
+    {
+        ret["AEOI_EXEMPTION_CD"]=Json::Value();
+    }
+    if(getAeoiSubExemptionCd())
+    {
+        ret["AEOI_SUB_EXEMPTION_CD"]=getValueOfAeoiSubExemptionCd();
+    }
+    else
+    {
+        ret["AEOI_SUB_EXEMPTION_CD"]=Json::Value();
+    }
+    if(getUndocumentedAccountCd())
+    {
+        ret["UNDOCUMENTED_ACCOUNT_CD"]=getValueOfUndocumentedAccountCd();
+    }
+    else
+    {
+        ret["UNDOCUMENTED_ACCOUNT_CD"]=Json::Value();
+    }
+    if(getDormantAccountCd())
+    {
+        ret["DORMANT_ACCOUNT_CD"]=getValueOfDormantAccountCd();
+    }
+    else
+    {
+        ret["DORMANT_ACCOUNT_CD"]=Json::Value();
+    }
+    if(getAeoiConsistencyStatusCd())
+    {
+        ret["AEOI_CONSISTENCY_STATUS_CD"]=getValueOfAeoiConsistencyStatusCd();
+    }
+    else
+    {
+        ret["AEOI_CONSISTENCY_STATUS_CD"]=Json::Value();
+    }
+    if(getAeoiFinalStatusCd())
+    {
+        ret["AEOI_FINAL_STATUS_CD"]=getValueOfAeoiFinalStatusCd();
+    }
+    else
+    {
+        ret["AEOI_FINAL_STATUS_CD"]=Json::Value();
+    }
+    if(getAeoiReviewDate())
+    {
+        ret["AEOI_REVIEW_DATE"]=getAeoiReviewDate()->toDbStringLocal();
+    }
+    else
+    {
+        ret["AEOI_REVIEW_DATE"]=Json::Value();
+    }
+    if(getApsysCdmifidexemptc())
+    {
+        ret["APSYS_CDMIFIDEXEMPTC"]=getValueOfApsysCdmifidexemptc();
+    }
+    else
+    {
+        ret["APSYS_CDMIFIDEXEMPTC"]=Json::Value();
+    }
+    if(getApsysDtdebmifidl())
+    {
+        ret["APSYS_DTDEBMIFIDL"]=getApsysDtdebmifidl()->toDbStringLocal();
+    }
+    else
+    {
+        ret["APSYS_DTDEBMIFIDL"]=Json::Value();
+    }
+    if(getOpenedInApsysDate())
+    {
+        ret["OPENED_IN_APSYS_DATE"]=getOpenedInApsysDate()->toDbStringLocal();
+    }
+    else
+    {
+        ret["OPENED_IN_APSYS_DATE"]=Json::Value();
+    }
+    if(getApsysFlagdeldatapersi())
+    {
+        ret["APSYS_FLAGDELDATAPERSI"]=getValueOfApsysFlagdeldatapersi();
+    }
+    else
+    {
+        ret["APSYS_FLAGDELDATAPERSI"]=Json::Value();
+    }
+    if(getApsysDtwaitdeldatapersl())
+    {
+        ret["APSYS_DTWAITDELDATAPERSL"]=getApsysDtwaitdeldatapersl()->toDbStringLocal();
+    }
+    else
+    {
+        ret["APSYS_DTWAITDELDATAPERSL"]=Json::Value();
+    }
+    if(getApsysCdptfseldgsc())
+    {
+        ret["APSYS_CDPTFSELDGSC"]=getValueOfApsysCdptfseldgsc();
+    }
+    else
+    {
+        ret["APSYS_CDPTFSELDGSC"]=Json::Value();
+    }
+    if(getApsysCdmotifpartdgss())
+    {
+        ret["APSYS_CDMOTIFPARTDGSS"]=getValueOfApsysCdmotifpartdgss();
+    }
+    else
+    {
+        ret["APSYS_CDMOTIFPARTDGSS"]=Json::Value();
+    }
+    if(getEamCd())
+    {
+        ret["EAM_CD"]=getValueOfEamCd();
+    }
+    else
+    {
+        ret["EAM_CD"]=Json::Value();
+    }
+    if(getRetentionOnHold())
+    {
+        ret["RETENTION_ON_HOLD"]=getValueOfRetentionOnHold();
+    }
+    else
+    {
+        ret["RETENTION_ON_HOLD"]=Json::Value();
+    }
+    if(getLogicalErasure())
+    {
+        ret["LOGICAL_ERASURE"]=getValueOfLogicalErasure();
+    }
+    else
+    {
+        ret["LOGICAL_ERASURE"]=Json::Value();
+    }
+    if(getRetentionOnHoldDate())
+    {
+        ret["RETENTION_ON_HOLD_DATE"]=getRetentionOnHoldDate()->toDbStringLocal();
+    }
+    else
+    {
+        ret["RETENTION_ON_HOLD_DATE"]=Json::Value();
+    }
+    if(getRetentionOnHoldReason())
+    {
+        ret["RETENTION_ON_HOLD_REASON"]=getValueOfRetentionOnHoldReason();
+    }
+    else
+    {
+        ret["RETENTION_ON_HOLD_REASON"]=Json::Value();
+    }
+    if(getLogicalErasureDate())
+    {
+        ret["LOGICAL_ERASURE_DATE"]=getLogicalErasureDate()->toDbStringLocal();
+    }
+    else
+    {
+        ret["LOGICAL_ERASURE_DATE"]=Json::Value();
+    }
+    if(getLogicalErasureReason())
+    {
+        ret["LOGICAL_ERASURE_REASON"]=getValueOfLogicalErasureReason();
+    }
+    else
+    {
+        ret["LOGICAL_ERASURE_REASON"]=Json::Value();
     }
     return ret;
 }
@@ -505,13 +19320,13 @@ Json::Value Portfolio::toMasqueradedJson(
     const std::vector<std::string> &pMasqueradingVector) const
 {
     Json::Value ret;
-    if(pMasqueradingVector.size() == 4)
+    if(pMasqueradingVector.size() == 166)
     {
         if(!pMasqueradingVector[0].empty())
         {
-            if(getPorfolioId())
+            if(getKundenid())
             {
-                ret[pMasqueradingVector[0]]=getValueOfPorfolioId();
+                ret[pMasqueradingVector[0]]=getValueOfKundenid();
             }
             else
             {
@@ -520,9 +19335,9 @@ Json::Value Portfolio::toMasqueradedJson(
         }
         if(!pMasqueradingVector[1].empty())
         {
-            if(getPorfolioName())
+            if(getPortfoliono())
             {
-                ret[pMasqueradingVector[1]]=getValueOfPorfolioName();
+                ret[pMasqueradingVector[1]]=getValueOfPortfoliono();
             }
             else
             {
@@ -531,9 +19346,9 @@ Json::Value Portfolio::toMasqueradedJson(
         }
         if(!pMasqueradingVector[2].empty())
         {
-            if(getDateCreation())
+            if(getBezeichnung())
             {
-                ret[pMasqueradingVector[2]]=getDateCreation()->toDbStringLocal();
+                ret[pMasqueradingVector[2]]=getValueOfBezeichnung();
             }
             else
             {
@@ -542,78 +19357,3966 @@ Json::Value Portfolio::toMasqueradedJson(
         }
         if(!pMasqueradingVector[3].empty())
         {
-            if(getOpenClosed())
+            if(getManagementtypCd())
             {
-                ret[pMasqueradingVector[3]]=getValueOfOpenClosed();
+                ret[pMasqueradingVector[3]]=getValueOfManagementtypCd();
             }
             else
             {
                 ret[pMasqueradingVector[3]]=Json::Value();
             }
         }
+        if(!pMasqueradingVector[4].empty())
+        {
+            if(getManager1Cd())
+            {
+                ret[pMasqueradingVector[4]]=getValueOfManager1Cd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[4]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[5].empty())
+        {
+            if(getManager2Cd())
+            {
+                ret[pMasqueradingVector[5]]=getValueOfManager2Cd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[5]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[6].empty())
+        {
+            if(getManager3Cd())
+            {
+                ret[pMasqueradingVector[6]]=getValueOfManager3Cd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[6]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[7].empty())
+        {
+            if(getManager4Cd())
+            {
+                ret[pMasqueradingVector[7]]=getValueOfManager4Cd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[7]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[8].empty())
+        {
+            if(getManager5Cd())
+            {
+                ret[pMasqueradingVector[8]]=getValueOfManager5Cd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[8]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[9].empty())
+        {
+            if(getVermittlerCd())
+            {
+                ret[pMasqueradingVector[9]]=getValueOfVermittlerCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[9]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[10].empty())
+        {
+            if(getInfovollmacht())
+            {
+                ret[pMasqueradingVector[10]]=getValueOfInfovollmacht();
+            }
+            else
+            {
+                ret[pMasqueradingVector[10]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[11].empty())
+        {
+            if(getKontakt())
+            {
+                ret[pMasqueradingVector[11]]=getValueOfKontakt();
+            }
+            else
+            {
+                ret[pMasqueradingVector[11]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[12].empty())
+        {
+            if(getErtraegnisaufCd())
+            {
+                ret[pMasqueradingVector[12]]=getValueOfErtraegnisaufCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[12]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[13].empty())
+        {
+            if(getWaehrungsCd())
+            {
+                ret[pMasqueradingVector[13]]=getValueOfWaehrungsCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[13]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[14].empty())
+        {
+            if(getBelegsatzCd())
+            {
+                ret[pMasqueradingVector[14]]=getValueOfBelegsatzCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[14]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[15].empty())
+        {
+            if(getLoeschCd())
+            {
+                ret[pMasqueradingVector[15]]=getValueOfLoeschCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[15]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[16].empty())
+        {
+            if(getLoeschdatum())
+            {
+                ret[pMasqueradingVector[16]]=getLoeschdatum()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[16]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[17].empty())
+        {
+            if(getCrtdatum())
+            {
+                ret[pMasqueradingVector[17]]=getCrtdatum()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[17]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[18].empty())
+        {
+            if(getCrtuser())
+            {
+                ret[pMasqueradingVector[18]]=getValueOfCrtuser();
+            }
+            else
+            {
+                ret[pMasqueradingVector[18]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[19].empty())
+        {
+            if(getMutdatum())
+            {
+                ret[pMasqueradingVector[19]]=getMutdatum()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[19]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[20].empty())
+        {
+            if(getMutuser())
+            {
+                ret[pMasqueradingVector[20]]=getValueOfMutuser();
+            }
+            else
+            {
+                ret[pMasqueradingVector[20]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[21].empty())
+        {
+            if(getMisdomizilCd())
+            {
+                ret[pMasqueradingVector[21]]=getValueOfMisdomizilCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[21]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[22].empty())
+        {
+            if(getAnlagestrategieCd())
+            {
+                ret[pMasqueradingVector[22]]=getValueOfAnlagestrategieCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[22]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[23].empty())
+        {
+            if(getUswbasketCd())
+            {
+                ret[pMasqueradingVector[23]]=getValueOfUswbasketCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[23]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[24].empty())
+        {
+            if(getVersandhaeufigCd())
+            {
+                ret[pMasqueradingVector[24]]=getValueOfVersandhaeufigCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[24]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[25].empty())
+        {
+            if(getRubrik())
+            {
+                ret[pMasqueradingVector[25]]=getValueOfRubrik();
+            }
+            else
+            {
+                ret[pMasqueradingVector[25]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[26].empty())
+        {
+            if(getVerwaltungsmodusCd())
+            {
+                ret[pMasqueradingVector[26]]=getValueOfVerwaltungsmodusCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[26]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[27].empty())
+        {
+            if(getKundeletzterbesuch())
+            {
+                ret[pMasqueradingVector[27]]=getKundeletzterbesuch()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[27]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[28].empty())
+        {
+            if(getAntragsort())
+            {
+                ret[pMasqueradingVector[28]]=getValueOfAntragsort();
+            }
+            else
+            {
+                ret[pMasqueradingVector[28]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[29].empty())
+        {
+            if(getAntragsdatum())
+            {
+                ret[pMasqueradingVector[29]]=getAntragsdatum()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[29]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[30].empty())
+        {
+            if(getAnderepostadresseCd())
+            {
+                ret[pMasqueradingVector[30]]=getValueOfAnderepostadresseCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[30]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[31].empty())
+        {
+            if(getBanklagerndCd())
+            {
+                ret[pMasqueradingVector[31]]=getValueOfBanklagerndCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[31]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[32].empty())
+        {
+            if(getSpezialinstruktion())
+            {
+                ret[pMasqueradingVector[32]]=getValueOfSpezialinstruktion();
+            }
+            else
+            {
+                ret[pMasqueradingVector[32]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[33].empty())
+        {
+            if(getGeldvonkontoinhaberCd())
+            {
+                ret[pMasqueradingVector[33]]=getValueOfGeldvonkontoinhaberCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[33]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[34].empty())
+        {
+            if(getManualopenCd())
+            {
+                ret[pMasqueradingVector[34]]=getValueOfManualopenCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[34]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[35].empty())
+        {
+            if(getKontonummer1())
+            {
+                ret[pMasqueradingVector[35]]=getValueOfKontonummer1();
+            }
+            else
+            {
+                ret[pMasqueradingVector[35]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[36].empty())
+        {
+            if(getKontonummer2())
+            {
+                ret[pMasqueradingVector[36]]=getValueOfKontonummer2();
+            }
+            else
+            {
+                ret[pMasqueradingVector[36]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[37].empty())
+        {
+            if(getKontonummer3())
+            {
+                ret[pMasqueradingVector[37]]=getValueOfKontonummer3();
+            }
+            else
+            {
+                ret[pMasqueradingVector[37]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[38].empty())
+        {
+            if(getFilialCd())
+            {
+                ret[pMasqueradingVector[38]]=getValueOfFilialCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[38]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[39].empty())
+        {
+            if(getRubrik1())
+            {
+                ret[pMasqueradingVector[39]]=getValueOfRubrik1();
+            }
+            else
+            {
+                ret[pMasqueradingVector[39]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[40].empty())
+        {
+            if(getRubrik2())
+            {
+                ret[pMasqueradingVector[40]]=getValueOfRubrik2();
+            }
+            else
+            {
+                ret[pMasqueradingVector[40]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[41].empty())
+        {
+            if(getRubrik3())
+            {
+                ret[pMasqueradingVector[41]]=getValueOfRubrik3();
+            }
+            else
+            {
+                ret[pMasqueradingVector[41]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[42].empty())
+        {
+            if(getOnlineCd())
+            {
+                ret[pMasqueradingVector[42]]=getValueOfOnlineCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[42]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[43].empty())
+        {
+            if(getPortfoliotypCd())
+            {
+                ret[pMasqueradingVector[43]]=getValueOfPortfoliotypCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[43]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[44].empty())
+        {
+            if(getCdpartc())
+            {
+                ret[pMasqueradingVector[44]]=getValueOfCdpartc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[44]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[45].empty())
+        {
+            if(getPoEuTaxProzent())
+            {
+                ret[pMasqueradingVector[45]]=getValueOfPoEuTaxProzent();
+            }
+            else
+            {
+                ret[pMasqueradingVector[45]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[46].empty())
+        {
+            if(getApsysStatusOpec())
+            {
+                ret[pMasqueradingVector[46]]=getValueOfApsysStatusOpec();
+            }
+            else
+            {
+                ret[pMasqueradingVector[46]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[47].empty())
+        {
+            if(getApsysErri())
+            {
+                ret[pMasqueradingVector[47]]=getValueOfApsysErri();
+            }
+            else
+            {
+                ret[pMasqueradingVector[47]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[48].empty())
+        {
+            if(getApsysShnas())
+            {
+                ret[pMasqueradingVector[48]]=getValueOfApsysShnas();
+            }
+            else
+            {
+                ret[pMasqueradingVector[48]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[49].empty())
+        {
+            if(getApsysTypmdcs())
+            {
+                ret[pMasqueradingVector[49]]=getValueOfApsysTypmdcs();
+            }
+            else
+            {
+                ret[pMasqueradingVector[49]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[50].empty())
+        {
+            if(getApsysIntilgs())
+            {
+                ret[pMasqueradingVector[50]]=getValueOfApsysIntilgs();
+            }
+            else
+            {
+                ret[pMasqueradingVector[50]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[51].empty())
+        {
+            if(getApsysShlibptfs())
+            {
+                ret[pMasqueradingVector[51]]=getValueOfApsysShlibptfs();
+            }
+            else
+            {
+                ret[pMasqueradingVector[51]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[52].empty())
+        {
+            if(getApsysCdstatdusc())
+            {
+                ret[pMasqueradingVector[52]]=getValueOfApsysCdstatdusc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[52]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[53].empty())
+        {
+            if(getApsysDtdebpartl())
+            {
+                ret[pMasqueradingVector[53]]=getApsysDtdebpartl()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[53]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[54].empty())
+        {
+            if(getApsysDtfinpartl())
+            {
+                ret[pMasqueradingVector[54]]=getApsysDtfinpartl()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[54]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[55].empty())
+        {
+            if(getApsysIdstrucs())
+            {
+                ret[pMasqueradingVector[55]]=getValueOfApsysIdstrucs();
+            }
+            else
+            {
+                ret[pMasqueradingVector[55]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[56].empty())
+        {
+            if(getApsysCdpermi())
+            {
+                ret[pMasqueradingVector[56]]=getValueOfApsysCdpermi();
+            }
+            else
+            {
+                ret[pMasqueradingVector[56]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[57].empty())
+        {
+            if(getApsysCdctgptfints())
+            {
+                ret[pMasqueradingVector[57]]=getValueOfApsysCdctgptfints();
+            }
+            else
+            {
+                ret[pMasqueradingVector[57]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[58].empty())
+        {
+            if(getApsysCdctgptfstes())
+            {
+                ret[pMasqueradingVector[58]]=getValueOfApsysCdctgptfstes();
+            }
+            else
+            {
+                ret[pMasqueradingVector[58]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[59].empty())
+        {
+            if(getApsysCdctgptfstms())
+            {
+                ret[pMasqueradingVector[59]]=getValueOfApsysCdctgptfstms();
+            }
+            else
+            {
+                ret[pMasqueradingVector[59]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[60].empty())
+        {
+            if(getApsysCdctgptfmafs())
+            {
+                ret[pMasqueradingVector[60]]=getValueOfApsysCdctgptfmafs();
+            }
+            else
+            {
+                ret[pMasqueradingVector[60]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[61].empty())
+        {
+            if(getApsysCdctgptfrisks())
+            {
+                ret[pMasqueradingVector[61]]=getValueOfApsysCdctgptfrisks();
+            }
+            else
+            {
+                ret[pMasqueradingVector[61]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[62].empty())
+        {
+            if(getApsysCdctgptfcous())
+            {
+                ret[pMasqueradingVector[62]]=getValueOfApsysCdctgptfcous();
+            }
+            else
+            {
+                ret[pMasqueradingVector[62]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[63].empty())
+        {
+            if(getApsysCdctgptftrcs())
+            {
+                ret[pMasqueradingVector[63]]=getValueOfApsysCdctgptftrcs();
+            }
+            else
+            {
+                ret[pMasqueradingVector[63]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[64].empty())
+        {
+            if(getApsysCdctgptfstebrutnets())
+            {
+                ret[pMasqueradingVector[64]]=getValueOfApsysCdctgptfstebrutnets();
+            }
+            else
+            {
+                ret[pMasqueradingVector[64]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[65].empty())
+        {
+            if(getApsysFlagirsreppartc())
+            {
+                ret[pMasqueradingVector[65]]=getValueOfApsysFlagirsreppartc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[65]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[66].empty())
+        {
+            if(getApsysCdctgptftaxints())
+            {
+                ret[pMasqueradingVector[66]]=getValueOfApsysCdctgptftaxints();
+            }
+            else
+            {
+                ret[pMasqueradingVector[66]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[67].empty())
+        {
+            if(getApsysIdpocs())
+            {
+                ret[pMasqueradingVector[67]]=getValueOfApsysIdpocs();
+            }
+            else
+            {
+                ret[pMasqueradingVector[67]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[68].empty())
+        {
+            if(getApsysInfo())
+            {
+                ret[pMasqueradingVector[68]]=getValueOfApsysInfo();
+            }
+            else
+            {
+                ret[pMasqueradingVector[68]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[69].empty())
+        {
+            if(getNettovermoegenChf())
+            {
+                ret[pMasqueradingVector[69]]=getValueOfNettovermoegenChf();
+            }
+            else
+            {
+                ret[pMasqueradingVector[69]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[70].empty())
+        {
+            if(getApsysIntishs())
+            {
+                ret[pMasqueradingVector[70]]=getValueOfApsysIntishs();
+            }
+            else
+            {
+                ret[pMasqueradingVector[70]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[71].empty())
+        {
+            if(getApsysIdpersl())
+            {
+                ret[pMasqueradingVector[71]]=getValueOfApsysIdpersl();
+            }
+            else
+            {
+                ret[pMasqueradingVector[71]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[72].empty())
+        {
+            if(getApsysCdmotifparts())
+            {
+                ret[pMasqueradingVector[72]]=getValueOfApsysCdmotifparts();
+            }
+            else
+            {
+                ret[pMasqueradingVector[72]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[73].empty())
+        {
+            if(getInApsysTempEntspUserid())
+            {
+                ret[pMasqueradingVector[73]]=getValueOfInApsysTempEntspUserid();
+            }
+            else
+            {
+                ret[pMasqueradingVector[73]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[74].empty())
+        {
+            if(getInApsysTempEntspDatum())
+            {
+                ret[pMasqueradingVector[74]]=getInApsysTempEntspDatum()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[74]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[75].empty())
+        {
+            if(getInApsysTempEntsperrenCd())
+            {
+                ret[pMasqueradingVector[75]]=getValueOfInApsysTempEntsperrenCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[75]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[76].empty())
+        {
+            if(getKundenkategorieCd())
+            {
+                ret[pMasqueradingVector[76]]=getValueOfKundenkategorieCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[76]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[77].empty())
+        {
+            if(getGemeinschaftskontoCd())
+            {
+                ret[pMasqueradingVector[77]]=getValueOfGemeinschaftskontoCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[77]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[78].empty())
+        {
+            if(getDritteSaeuleCd())
+            {
+                ret[pMasqueradingVector[78]]=getValueOfDritteSaeuleCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[78]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[79].empty())
+        {
+            if(getApsysTypptfs())
+            {
+                ret[pMasqueradingVector[79]]=getValueOfApsysTypptfs();
+            }
+            else
+            {
+                ret[pMasqueradingVector[79]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[80].empty())
+        {
+            if(getAutoEuTaxPercentage())
+            {
+                ret[pMasqueradingVector[80]]=getValueOfAutoEuTaxPercentage();
+            }
+            else
+            {
+                ret[pMasqueradingVector[80]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[81].empty())
+        {
+            if(getAktid())
+            {
+                ret[pMasqueradingVector[81]]=getValueOfAktid();
+            }
+            else
+            {
+                ret[pMasqueradingVector[81]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[82].empty())
+        {
+            if(getValidid())
+            {
+                ret[pMasqueradingVector[82]]=getValueOfValidid();
+            }
+            else
+            {
+                ret[pMasqueradingVector[82]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[83].empty())
+        {
+            if(getValidCd())
+            {
+                ret[pMasqueradingVector[83]]=getValueOfValidCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[83]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[84].empty())
+        {
+            if(getValiduser())
+            {
+                ret[pMasqueradingVector[84]]=getValueOfValiduser();
+            }
+            else
+            {
+                ret[pMasqueradingVector[84]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[85].empty())
+        {
+            if(getApsysCdctgptfsbxps())
+            {
+                ret[pMasqueradingVector[85]]=getValueOfApsysCdctgptfsbxps();
+            }
+            else
+            {
+                ret[pMasqueradingVector[85]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[86].empty())
+        {
+            if(getApsysCdctgptfsdocs())
+            {
+                ret[pMasqueradingVector[86]]=getValueOfApsysCdctgptfsdocs();
+            }
+            else
+            {
+                ret[pMasqueradingVector[86]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[87].empty())
+        {
+            if(getApsysIdents())
+            {
+                ret[pMasqueradingVector[87]]=getValueOfApsysIdents();
+            }
+            else
+            {
+                ret[pMasqueradingVector[87]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[88].empty())
+        {
+            if(getApsysCdsoumbolc())
+            {
+                ret[pMasqueradingVector[88]]=getValueOfApsysCdsoumbolc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[88]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[89].empty())
+        {
+            if(getApsysCdfacbolc())
+            {
+                ret[pMasqueradingVector[89]]=getValueOfApsysCdfacbolc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[89]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[90].empty())
+        {
+            if(getApsysFlagtyptrfpolc())
+            {
+                ret[pMasqueradingVector[90]]=getValueOfApsysFlagtyptrfpolc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[90]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[91].empty())
+        {
+            if(getApsysIdtrfpols())
+            {
+                ret[pMasqueradingVector[91]]=getValueOfApsysIdtrfpols();
+            }
+            else
+            {
+                ret[pMasqueradingVector[91]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[92].empty())
+        {
+            if(getApsysCdpctpartictitueutaxc())
+            {
+                ret[pMasqueradingVector[92]]=getValueOfApsysCdpctpartictitueutaxc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[92]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[93].empty())
+        {
+            if(getApsysCdmotifclos())
+            {
+                ret[pMasqueradingVector[93]]=getValueOfApsysCdmotifclos();
+            }
+            else
+            {
+                ret[pMasqueradingVector[93]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[94].empty())
+        {
+            if(getEncSalt())
+            {
+                ret[pMasqueradingVector[94]]=getValueOfEncSalt();
+            }
+            else
+            {
+                ret[pMasqueradingVector[94]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[95].empty())
+        {
+            if(getBezeichnungEnc())
+            {
+                ret[pMasqueradingVector[95]]=getValueOfBezeichnungEnc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[95]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[96].empty())
+        {
+            if(getKtoeAmlProfilCd())
+            {
+                ret[pMasqueradingVector[96]]=getValueOfKtoeAmlProfilCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[96]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[97].empty())
+        {
+            if(getApsysDevevals())
+            {
+                ret[pMasqueradingVector[97]]=getValueOfApsysDevevals();
+            }
+            else
+            {
+                ret[pMasqueradingVector[97]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[98].empty())
+        {
+            if(getApsysCdrnvstmc())
+            {
+                ret[pMasqueradingVector[98]]=getValueOfApsysCdrnvstmc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[98]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[99].empty())
+        {
+            if(getApsysCdrglprlgc())
+            {
+                ret[pMasqueradingVector[99]]=getValueOfApsysCdrglprlgc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[99]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[100].empty())
+        {
+            if(getApsysCdctgptfcomagtcpts())
+            {
+                ret[pMasqueradingVector[100]]=getValueOfApsysCdctgptfcomagtcpts();
+            }
+            else
+            {
+                ret[pMasqueradingVector[100]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[101].empty())
+        {
+            if(getApsysCdctgptfroutords())
+            {
+                ret[pMasqueradingVector[101]]=getValueOfApsysCdctgptfroutords();
+            }
+            else
+            {
+                ret[pMasqueradingVector[101]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[102].empty())
+        {
+            if(getApsysCdctgptfgrecpts())
+            {
+                ret[pMasqueradingVector[102]]=getValueOfApsysCdctgptfgrecpts();
+            }
+            else
+            {
+                ret[pMasqueradingVector[102]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[103].empty())
+        {
+            if(getApsysCdctgptftrsftits())
+            {
+                ret[pMasqueradingVector[103]]=getValueOfApsysCdctgptftrsftits();
+            }
+            else
+            {
+                ret[pMasqueradingVector[103]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[104].empty())
+        {
+            if(getApsysFlagexpsysexttaxi())
+            {
+                ret[pMasqueradingVector[104]]=getValueOfApsysFlagexpsysexttaxi();
+            }
+            else
+            {
+                ret[pMasqueradingVector[104]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[105].empty())
+        {
+            if(getWbIstNichtZwingendCd())
+            {
+                ret[pMasqueradingVector[105]]=getValueOfWbIstNichtZwingendCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[105]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[106].empty())
+        {
+            if(getApsysCdbqerestc())
+            {
+                ret[pMasqueradingVector[106]]=getValueOfApsysCdbqerestc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[106]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[107].empty())
+        {
+            if(getApsysCdctgptftypplacs())
+            {
+                ret[pMasqueradingVector[107]]=getValueOfApsysCdctgptftypplacs();
+            }
+            else
+            {
+                ret[pMasqueradingVector[107]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[108].empty())
+        {
+            if(getApsysCdeangrmtcli1s())
+            {
+                ret[pMasqueradingVector[108]]=getValueOfApsysCdeangrmtcli1s();
+            }
+            else
+            {
+                ret[pMasqueradingVector[108]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[109].empty())
+        {
+            if(getApsysCdeangrmtcli2s())
+            {
+                ret[pMasqueradingVector[109]]=getValueOfApsysCdeangrmtcli2s();
+            }
+            else
+            {
+                ret[pMasqueradingVector[109]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[110].empty())
+        {
+            if(getApsysCdfatcatypc())
+            {
+                ret[pMasqueradingVector[110]]=getValueOfApsysCdfatcatypc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[110]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[111].empty())
+        {
+            if(getApsysIdfatcaclas())
+            {
+                ret[pMasqueradingVector[111]]=getValueOfApsysIdfatcaclas();
+            }
+            else
+            {
+                ret[pMasqueradingVector[111]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[112].empty())
+        {
+            if(getApsysCdfatcastatcalccrmc())
+            {
+                ret[pMasqueradingVector[112]]=getValueOfApsysCdfatcastatcalccrmc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[112]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[113].empty())
+        {
+            if(getApsysCdfatcastatc())
+            {
+                ret[pMasqueradingVector[113]]=getValueOfApsysCdfatcastatc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[113]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[114].empty())
+        {
+            if(getApsysCommentfatcastats())
+            {
+                ret[pMasqueradingVector[114]]=getValueOfApsysCommentfatcastats();
+            }
+            else
+            {
+                ret[pMasqueradingVector[114]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[115].empty())
+        {
+            if(getApsysCdfatcamotifparts())
+            {
+                ret[pMasqueradingVector[115]]=getValueOfApsysCdfatcamotifparts();
+            }
+            else
+            {
+                ret[pMasqueradingVector[115]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[116].empty())
+        {
+            if(getApsysCdfatcastatcalcglobc())
+            {
+                ret[pMasqueradingVector[116]]=getValueOfApsysCdfatcastatcalcglobc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[116]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[117].empty())
+        {
+            if(getApsysCdfatcastatcalclocc())
+            {
+                ret[pMasqueradingVector[117]]=getValueOfApsysCdfatcastatcalclocc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[117]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[118].empty())
+        {
+            if(getApsysCdvalidstatc())
+            {
+                ret[pMasqueradingVector[118]]=getValueOfApsysCdvalidstatc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[118]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[119].empty())
+        {
+            if(getApsysUservalidfatcastats())
+            {
+                ret[pMasqueradingVector[119]]=getValueOfApsysUservalidfatcastats();
+            }
+            else
+            {
+                ret[pMasqueradingVector[119]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[120].empty())
+        {
+            if(getApsysDtvalidfatcastatl())
+            {
+                ret[pMasqueradingVector[120]]=getApsysDtvalidfatcastatl()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[120]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[121].empty())
+        {
+            if(getApsysHrvalidfatcastatl())
+            {
+                ret[pMasqueradingVector[121]]=getApsysHrvalidfatcastatl()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[121]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[122].empty())
+        {
+            if(getApsysCdctrnettc553c())
+            {
+                ret[pMasqueradingVector[122]]=getValueOfApsysCdctrnettc553c();
+            }
+            else
+            {
+                ret[pMasqueradingVector[122]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[123].empty())
+        {
+            if(getApsysFlagforceposostmanagi())
+            {
+                ret[pMasqueradingVector[123]]=getValueOfApsysFlagforceposostmanagi();
+            }
+            else
+            {
+                ret[pMasqueradingVector[123]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[124].empty())
+        {
+            if(getApsysPosostmanagc())
+            {
+                ret[pMasqueradingVector[124]]=getValueOfApsysPosostmanagc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[124]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[125].empty())
+        {
+            if(getApsysCritereusfatcastatl())
+            {
+                ret[pMasqueradingVector[125]]=getValueOfApsysCritereusfatcastatl();
+            }
+            else
+            {
+                ret[pMasqueradingVector[125]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[126].empty())
+        {
+            if(getApsysFlagsimsi())
+            {
+                ret[pMasqueradingVector[126]]=getValueOfApsysFlagsimsi();
+            }
+            else
+            {
+                ret[pMasqueradingVector[126]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[127].empty())
+        {
+            if(getNrOfBoInWhtStatement())
+            {
+                ret[pMasqueradingVector[127]]=getValueOfNrOfBoInWhtStatement();
+            }
+            else
+            {
+                ret[pMasqueradingVector[127]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[128].empty())
+        {
+            if(getPartnerWithUnlLiabilityCd())
+            {
+                ret[pMasqueradingVector[128]]=getValueOfPartnerWithUnlLiabilityCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[128]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[129].empty())
+        {
+            if(getCompanyManagedByBoCd())
+            {
+                ret[pMasqueradingVector[129]]=getValueOfCompanyManagedByBoCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[129]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[130].empty())
+        {
+            if(getIsTrusteePhysicalCd())
+            {
+                ret[pMasqueradingVector[130]]=getValueOfIsTrusteePhysicalCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[130]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[131].empty())
+        {
+            if(getNoTradingUsSecuritiesCd())
+            {
+                ret[pMasqueradingVector[131]]=getValueOfNoTradingUsSecuritiesCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[131]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[132].empty())
+        {
+            if(getPortfolioSegrAccountCd())
+            {
+                ret[pMasqueradingVector[132]]=getValueOfPortfolioSegrAccountCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[132]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[133].empty())
+        {
+            if(getUsWhtStartDate())
+            {
+                ret[pMasqueradingVector[133]]=getUsWhtStartDate()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[133]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[134].empty())
+        {
+            if(getApsysCdctgptfivstautos())
+            {
+                ret[pMasqueradingVector[134]]=getValueOfApsysCdctgptfivstautos();
+            }
+            else
+            {
+                ret[pMasqueradingVector[134]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[135].empty())
+        {
+            if(getAutomatischeVerteilungCd())
+            {
+                ret[pMasqueradingVector[135]]=getValueOfAutomatischeVerteilungCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[135]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[136].empty())
+        {
+            if(getApsysCdtypreportqic())
+            {
+                ret[pMasqueradingVector[136]]=getValueOfApsysCdtypreportqic();
+            }
+            else
+            {
+                ret[pMasqueradingVector[136]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[137].empty())
+        {
+            if(getApsysFlagirsnonactifi())
+            {
+                ret[pMasqueradingVector[137]]=getValueOfApsysFlagirsnonactifi();
+            }
+            else
+            {
+                ret[pMasqueradingVector[137]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[138].empty())
+        {
+            if(getOpeningDocumentsProposedCd())
+            {
+                ret[pMasqueradingVector[138]]=getValueOfOpeningDocumentsProposedCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[138]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[139].empty())
+        {
+            if(getApsysCdctgptfalgcpts())
+            {
+                ret[pMasqueradingVector[139]]=getValueOfApsysCdctgptfalgcpts();
+            }
+            else
+            {
+                ret[pMasqueradingVector[139]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[140].empty())
+        {
+            if(getApsysIdstrucforjurs())
+            {
+                ret[pMasqueradingVector[140]]=getValueOfApsysIdstrucforjurs();
+            }
+            else
+            {
+                ret[pMasqueradingVector[140]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[141].empty())
+        {
+            if(getApsysIdentforjurs())
+            {
+                ret[pMasqueradingVector[141]]=getValueOfApsysIdentforjurs();
+            }
+            else
+            {
+                ret[pMasqueradingVector[141]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[142].empty())
+        {
+            if(getFatcaBasketCd())
+            {
+                ret[pMasqueradingVector[142]]=getValueOfFatcaBasketCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[142]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[143].empty())
+        {
+            if(getApsysCdmethcloc())
+            {
+                ret[pMasqueradingVector[143]]=getValueOfApsysCdmethcloc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[143]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[144].empty())
+        {
+            if(getApsysDtevalclol())
+            {
+                ret[pMasqueradingVector[144]]=getApsysDtevalclol()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[144]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[145].empty())
+        {
+            if(getAeoiExemptionCd())
+            {
+                ret[pMasqueradingVector[145]]=getValueOfAeoiExemptionCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[145]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[146].empty())
+        {
+            if(getAeoiSubExemptionCd())
+            {
+                ret[pMasqueradingVector[146]]=getValueOfAeoiSubExemptionCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[146]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[147].empty())
+        {
+            if(getUndocumentedAccountCd())
+            {
+                ret[pMasqueradingVector[147]]=getValueOfUndocumentedAccountCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[147]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[148].empty())
+        {
+            if(getDormantAccountCd())
+            {
+                ret[pMasqueradingVector[148]]=getValueOfDormantAccountCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[148]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[149].empty())
+        {
+            if(getAeoiConsistencyStatusCd())
+            {
+                ret[pMasqueradingVector[149]]=getValueOfAeoiConsistencyStatusCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[149]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[150].empty())
+        {
+            if(getAeoiFinalStatusCd())
+            {
+                ret[pMasqueradingVector[150]]=getValueOfAeoiFinalStatusCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[150]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[151].empty())
+        {
+            if(getAeoiReviewDate())
+            {
+                ret[pMasqueradingVector[151]]=getAeoiReviewDate()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[151]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[152].empty())
+        {
+            if(getApsysCdmifidexemptc())
+            {
+                ret[pMasqueradingVector[152]]=getValueOfApsysCdmifidexemptc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[152]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[153].empty())
+        {
+            if(getApsysDtdebmifidl())
+            {
+                ret[pMasqueradingVector[153]]=getApsysDtdebmifidl()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[153]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[154].empty())
+        {
+            if(getOpenedInApsysDate())
+            {
+                ret[pMasqueradingVector[154]]=getOpenedInApsysDate()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[154]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[155].empty())
+        {
+            if(getApsysFlagdeldatapersi())
+            {
+                ret[pMasqueradingVector[155]]=getValueOfApsysFlagdeldatapersi();
+            }
+            else
+            {
+                ret[pMasqueradingVector[155]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[156].empty())
+        {
+            if(getApsysDtwaitdeldatapersl())
+            {
+                ret[pMasqueradingVector[156]]=getApsysDtwaitdeldatapersl()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[156]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[157].empty())
+        {
+            if(getApsysCdptfseldgsc())
+            {
+                ret[pMasqueradingVector[157]]=getValueOfApsysCdptfseldgsc();
+            }
+            else
+            {
+                ret[pMasqueradingVector[157]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[158].empty())
+        {
+            if(getApsysCdmotifpartdgss())
+            {
+                ret[pMasqueradingVector[158]]=getValueOfApsysCdmotifpartdgss();
+            }
+            else
+            {
+                ret[pMasqueradingVector[158]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[159].empty())
+        {
+            if(getEamCd())
+            {
+                ret[pMasqueradingVector[159]]=getValueOfEamCd();
+            }
+            else
+            {
+                ret[pMasqueradingVector[159]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[160].empty())
+        {
+            if(getRetentionOnHold())
+            {
+                ret[pMasqueradingVector[160]]=getValueOfRetentionOnHold();
+            }
+            else
+            {
+                ret[pMasqueradingVector[160]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[161].empty())
+        {
+            if(getLogicalErasure())
+            {
+                ret[pMasqueradingVector[161]]=getValueOfLogicalErasure();
+            }
+            else
+            {
+                ret[pMasqueradingVector[161]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[162].empty())
+        {
+            if(getRetentionOnHoldDate())
+            {
+                ret[pMasqueradingVector[162]]=getRetentionOnHoldDate()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[162]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[163].empty())
+        {
+            if(getRetentionOnHoldReason())
+            {
+                ret[pMasqueradingVector[163]]=getValueOfRetentionOnHoldReason();
+            }
+            else
+            {
+                ret[pMasqueradingVector[163]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[164].empty())
+        {
+            if(getLogicalErasureDate())
+            {
+                ret[pMasqueradingVector[164]]=getLogicalErasureDate()->toDbStringLocal();
+            }
+            else
+            {
+                ret[pMasqueradingVector[164]]=Json::Value();
+            }
+        }
+        if(!pMasqueradingVector[165].empty())
+        {
+            if(getLogicalErasureReason())
+            {
+                ret[pMasqueradingVector[165]]=getValueOfLogicalErasureReason();
+            }
+            else
+            {
+                ret[pMasqueradingVector[165]]=Json::Value();
+            }
+        }
         return ret;
     }
     LOG_ERROR << "Masquerade failed";
-    if(getPorfolioId())
+    if(getKundenid())
     {
-        ret["porfolio_id"]=getValueOfPorfolioId();
+        ret["KUNDENID"]=getValueOfKundenid();
     }
     else
     {
-        ret["porfolio_id"]=Json::Value();
+        ret["KUNDENID"]=Json::Value();
     }
-    if(getPorfolioName())
+    if(getPortfoliono())
     {
-        ret["porfolio_name"]=getValueOfPorfolioName();
-    }
-    else
-    {
-        ret["porfolio_name"]=Json::Value();
-    }
-    if(getDateCreation())
-    {
-        ret["date_Creation"]=getDateCreation()->toDbStringLocal();
+        ret["PORTFOLIONO"]=getValueOfPortfoliono();
     }
     else
     {
-        ret["date_Creation"]=Json::Value();
+        ret["PORTFOLIONO"]=Json::Value();
     }
-    if(getOpenClosed())
+    if(getBezeichnung())
     {
-        ret["open_closed"]=getValueOfOpenClosed();
+        ret["BEZEICHNUNG"]=getValueOfBezeichnung();
     }
     else
     {
-        ret["open_closed"]=Json::Value();
+        ret["BEZEICHNUNG"]=Json::Value();
+    }
+    if(getManagementtypCd())
+    {
+        ret["MANAGEMENTTYP_CD"]=getValueOfManagementtypCd();
+    }
+    else
+    {
+        ret["MANAGEMENTTYP_CD"]=Json::Value();
+    }
+    if(getManager1Cd())
+    {
+        ret["MANAGER1_CD"]=getValueOfManager1Cd();
+    }
+    else
+    {
+        ret["MANAGER1_CD"]=Json::Value();
+    }
+    if(getManager2Cd())
+    {
+        ret["MANAGER2_CD"]=getValueOfManager2Cd();
+    }
+    else
+    {
+        ret["MANAGER2_CD"]=Json::Value();
+    }
+    if(getManager3Cd())
+    {
+        ret["MANAGER3_CD"]=getValueOfManager3Cd();
+    }
+    else
+    {
+        ret["MANAGER3_CD"]=Json::Value();
+    }
+    if(getManager4Cd())
+    {
+        ret["MANAGER4_CD"]=getValueOfManager4Cd();
+    }
+    else
+    {
+        ret["MANAGER4_CD"]=Json::Value();
+    }
+    if(getManager5Cd())
+    {
+        ret["MANAGER5_CD"]=getValueOfManager5Cd();
+    }
+    else
+    {
+        ret["MANAGER5_CD"]=Json::Value();
+    }
+    if(getVermittlerCd())
+    {
+        ret["VERMITTLER_CD"]=getValueOfVermittlerCd();
+    }
+    else
+    {
+        ret["VERMITTLER_CD"]=Json::Value();
+    }
+    if(getInfovollmacht())
+    {
+        ret["INFOVOLLMACHT"]=getValueOfInfovollmacht();
+    }
+    else
+    {
+        ret["INFOVOLLMACHT"]=Json::Value();
+    }
+    if(getKontakt())
+    {
+        ret["KONTAKT"]=getValueOfKontakt();
+    }
+    else
+    {
+        ret["KONTAKT"]=Json::Value();
+    }
+    if(getErtraegnisaufCd())
+    {
+        ret["ERTRAEGNISAUF_CD"]=getValueOfErtraegnisaufCd();
+    }
+    else
+    {
+        ret["ERTRAEGNISAUF_CD"]=Json::Value();
+    }
+    if(getWaehrungsCd())
+    {
+        ret["WAEHRUNGS_CD"]=getValueOfWaehrungsCd();
+    }
+    else
+    {
+        ret["WAEHRUNGS_CD"]=Json::Value();
+    }
+    if(getBelegsatzCd())
+    {
+        ret["BELEGSATZ_CD"]=getValueOfBelegsatzCd();
+    }
+    else
+    {
+        ret["BELEGSATZ_CD"]=Json::Value();
+    }
+    if(getLoeschCd())
+    {
+        ret["LOESCH_CD"]=getValueOfLoeschCd();
+    }
+    else
+    {
+        ret["LOESCH_CD"]=Json::Value();
+    }
+    if(getLoeschdatum())
+    {
+        ret["LOESCHDATUM"]=getLoeschdatum()->toDbStringLocal();
+    }
+    else
+    {
+        ret["LOESCHDATUM"]=Json::Value();
+    }
+    if(getCrtdatum())
+    {
+        ret["CRTDATUM"]=getCrtdatum()->toDbStringLocal();
+    }
+    else
+    {
+        ret["CRTDATUM"]=Json::Value();
+    }
+    if(getCrtuser())
+    {
+        ret["CRTUSER"]=getValueOfCrtuser();
+    }
+    else
+    {
+        ret["CRTUSER"]=Json::Value();
+    }
+    if(getMutdatum())
+    {
+        ret["MUTDATUM"]=getMutdatum()->toDbStringLocal();
+    }
+    else
+    {
+        ret["MUTDATUM"]=Json::Value();
+    }
+    if(getMutuser())
+    {
+        ret["MUTUSER"]=getValueOfMutuser();
+    }
+    else
+    {
+        ret["MUTUSER"]=Json::Value();
+    }
+    if(getMisdomizilCd())
+    {
+        ret["MISDOMIZIL_CD"]=getValueOfMisdomizilCd();
+    }
+    else
+    {
+        ret["MISDOMIZIL_CD"]=Json::Value();
+    }
+    if(getAnlagestrategieCd())
+    {
+        ret["ANLAGESTRATEGIE_CD"]=getValueOfAnlagestrategieCd();
+    }
+    else
+    {
+        ret["ANLAGESTRATEGIE_CD"]=Json::Value();
+    }
+    if(getUswbasketCd())
+    {
+        ret["USWBASKET_CD"]=getValueOfUswbasketCd();
+    }
+    else
+    {
+        ret["USWBASKET_CD"]=Json::Value();
+    }
+    if(getVersandhaeufigCd())
+    {
+        ret["VERSANDHAEUFIG_CD"]=getValueOfVersandhaeufigCd();
+    }
+    else
+    {
+        ret["VERSANDHAEUFIG_CD"]=Json::Value();
+    }
+    if(getRubrik())
+    {
+        ret["RUBRIK"]=getValueOfRubrik();
+    }
+    else
+    {
+        ret["RUBRIK"]=Json::Value();
+    }
+    if(getVerwaltungsmodusCd())
+    {
+        ret["VERWALTUNGSMODUS_CD"]=getValueOfVerwaltungsmodusCd();
+    }
+    else
+    {
+        ret["VERWALTUNGSMODUS_CD"]=Json::Value();
+    }
+    if(getKundeletzterbesuch())
+    {
+        ret["KUNDELETZTERBESUCH"]=getKundeletzterbesuch()->toDbStringLocal();
+    }
+    else
+    {
+        ret["KUNDELETZTERBESUCH"]=Json::Value();
+    }
+    if(getAntragsort())
+    {
+        ret["ANTRAGSORT"]=getValueOfAntragsort();
+    }
+    else
+    {
+        ret["ANTRAGSORT"]=Json::Value();
+    }
+    if(getAntragsdatum())
+    {
+        ret["ANTRAGSDATUM"]=getAntragsdatum()->toDbStringLocal();
+    }
+    else
+    {
+        ret["ANTRAGSDATUM"]=Json::Value();
+    }
+    if(getAnderepostadresseCd())
+    {
+        ret["ANDEREPOSTADRESSE_CD"]=getValueOfAnderepostadresseCd();
+    }
+    else
+    {
+        ret["ANDEREPOSTADRESSE_CD"]=Json::Value();
+    }
+    if(getBanklagerndCd())
+    {
+        ret["BANKLAGERND_CD"]=getValueOfBanklagerndCd();
+    }
+    else
+    {
+        ret["BANKLAGERND_CD"]=Json::Value();
+    }
+    if(getSpezialinstruktion())
+    {
+        ret["SPEZIALINSTRUKTION"]=getValueOfSpezialinstruktion();
+    }
+    else
+    {
+        ret["SPEZIALINSTRUKTION"]=Json::Value();
+    }
+    if(getGeldvonkontoinhaberCd())
+    {
+        ret["GELDVONKONTOINHABER_CD"]=getValueOfGeldvonkontoinhaberCd();
+    }
+    else
+    {
+        ret["GELDVONKONTOINHABER_CD"]=Json::Value();
+    }
+    if(getManualopenCd())
+    {
+        ret["MANUALOPEN_CD"]=getValueOfManualopenCd();
+    }
+    else
+    {
+        ret["MANUALOPEN_CD"]=Json::Value();
+    }
+    if(getKontonummer1())
+    {
+        ret["KONTONUMMER1"]=getValueOfKontonummer1();
+    }
+    else
+    {
+        ret["KONTONUMMER1"]=Json::Value();
+    }
+    if(getKontonummer2())
+    {
+        ret["KONTONUMMER2"]=getValueOfKontonummer2();
+    }
+    else
+    {
+        ret["KONTONUMMER2"]=Json::Value();
+    }
+    if(getKontonummer3())
+    {
+        ret["KONTONUMMER3"]=getValueOfKontonummer3();
+    }
+    else
+    {
+        ret["KONTONUMMER3"]=Json::Value();
+    }
+    if(getFilialCd())
+    {
+        ret["FILIAL_CD"]=getValueOfFilialCd();
+    }
+    else
+    {
+        ret["FILIAL_CD"]=Json::Value();
+    }
+    if(getRubrik1())
+    {
+        ret["RUBRIK1"]=getValueOfRubrik1();
+    }
+    else
+    {
+        ret["RUBRIK1"]=Json::Value();
+    }
+    if(getRubrik2())
+    {
+        ret["RUBRIK2"]=getValueOfRubrik2();
+    }
+    else
+    {
+        ret["RUBRIK2"]=Json::Value();
+    }
+    if(getRubrik3())
+    {
+        ret["RUBRIK3"]=getValueOfRubrik3();
+    }
+    else
+    {
+        ret["RUBRIK3"]=Json::Value();
+    }
+    if(getOnlineCd())
+    {
+        ret["ONLINE_CD"]=getValueOfOnlineCd();
+    }
+    else
+    {
+        ret["ONLINE_CD"]=Json::Value();
+    }
+    if(getPortfoliotypCd())
+    {
+        ret["PORTFOLIOTYP_CD"]=getValueOfPortfoliotypCd();
+    }
+    else
+    {
+        ret["PORTFOLIOTYP_CD"]=Json::Value();
+    }
+    if(getCdpartc())
+    {
+        ret["CDPARTC"]=getValueOfCdpartc();
+    }
+    else
+    {
+        ret["CDPARTC"]=Json::Value();
+    }
+    if(getPoEuTaxProzent())
+    {
+        ret["PO_EU_TAX_PROZENT"]=getValueOfPoEuTaxProzent();
+    }
+    else
+    {
+        ret["PO_EU_TAX_PROZENT"]=Json::Value();
+    }
+    if(getApsysStatusOpec())
+    {
+        ret["APSYS_STATUS_OPEC"]=getValueOfApsysStatusOpec();
+    }
+    else
+    {
+        ret["APSYS_STATUS_OPEC"]=Json::Value();
+    }
+    if(getApsysErri())
+    {
+        ret["APSYS_ERRI"]=getValueOfApsysErri();
+    }
+    else
+    {
+        ret["APSYS_ERRI"]=Json::Value();
+    }
+    if(getApsysShnas())
+    {
+        ret["APSYS_SHNAS"]=getValueOfApsysShnas();
+    }
+    else
+    {
+        ret["APSYS_SHNAS"]=Json::Value();
+    }
+    if(getApsysTypmdcs())
+    {
+        ret["APSYS_TYPMDCS"]=getValueOfApsysTypmdcs();
+    }
+    else
+    {
+        ret["APSYS_TYPMDCS"]=Json::Value();
+    }
+    if(getApsysIntilgs())
+    {
+        ret["APSYS_INTILGS"]=getValueOfApsysIntilgs();
+    }
+    else
+    {
+        ret["APSYS_INTILGS"]=Json::Value();
+    }
+    if(getApsysShlibptfs())
+    {
+        ret["APSYS_SHLIBPTFS"]=getValueOfApsysShlibptfs();
+    }
+    else
+    {
+        ret["APSYS_SHLIBPTFS"]=Json::Value();
+    }
+    if(getApsysCdstatdusc())
+    {
+        ret["APSYS_CDSTATDUSC"]=getValueOfApsysCdstatdusc();
+    }
+    else
+    {
+        ret["APSYS_CDSTATDUSC"]=Json::Value();
+    }
+    if(getApsysDtdebpartl())
+    {
+        ret["APSYS_DTDEBPARTL"]=getApsysDtdebpartl()->toDbStringLocal();
+    }
+    else
+    {
+        ret["APSYS_DTDEBPARTL"]=Json::Value();
+    }
+    if(getApsysDtfinpartl())
+    {
+        ret["APSYS_DTFINPARTL"]=getApsysDtfinpartl()->toDbStringLocal();
+    }
+    else
+    {
+        ret["APSYS_DTFINPARTL"]=Json::Value();
+    }
+    if(getApsysIdstrucs())
+    {
+        ret["APSYS_IDSTRUCS"]=getValueOfApsysIdstrucs();
+    }
+    else
+    {
+        ret["APSYS_IDSTRUCS"]=Json::Value();
+    }
+    if(getApsysCdpermi())
+    {
+        ret["APSYS_CDPERMI"]=getValueOfApsysCdpermi();
+    }
+    else
+    {
+        ret["APSYS_CDPERMI"]=Json::Value();
+    }
+    if(getApsysCdctgptfints())
+    {
+        ret["APSYS_CDCTGPTFINTS"]=getValueOfApsysCdctgptfints();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFINTS"]=Json::Value();
+    }
+    if(getApsysCdctgptfstes())
+    {
+        ret["APSYS_CDCTGPTFSTES"]=getValueOfApsysCdctgptfstes();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFSTES"]=Json::Value();
+    }
+    if(getApsysCdctgptfstms())
+    {
+        ret["APSYS_CDCTGPTFSTMS"]=getValueOfApsysCdctgptfstms();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFSTMS"]=Json::Value();
+    }
+    if(getApsysCdctgptfmafs())
+    {
+        ret["APSYS_CDCTGPTFMAFS"]=getValueOfApsysCdctgptfmafs();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFMAFS"]=Json::Value();
+    }
+    if(getApsysCdctgptfrisks())
+    {
+        ret["APSYS_CDCTGPTFRISKS"]=getValueOfApsysCdctgptfrisks();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFRISKS"]=Json::Value();
+    }
+    if(getApsysCdctgptfcous())
+    {
+        ret["APSYS_CDCTGPTFCOUS"]=getValueOfApsysCdctgptfcous();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFCOUS"]=Json::Value();
+    }
+    if(getApsysCdctgptftrcs())
+    {
+        ret["APSYS_CDCTGPTFTRCS"]=getValueOfApsysCdctgptftrcs();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFTRCS"]=Json::Value();
+    }
+    if(getApsysCdctgptfstebrutnets())
+    {
+        ret["APSYS_CDCTGPTFSTEBRUTNETS"]=getValueOfApsysCdctgptfstebrutnets();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFSTEBRUTNETS"]=Json::Value();
+    }
+    if(getApsysFlagirsreppartc())
+    {
+        ret["APSYS_FLAGIRSREPPARTC"]=getValueOfApsysFlagirsreppartc();
+    }
+    else
+    {
+        ret["APSYS_FLAGIRSREPPARTC"]=Json::Value();
+    }
+    if(getApsysCdctgptftaxints())
+    {
+        ret["APSYS_CDCTGPTFTAXINTS"]=getValueOfApsysCdctgptftaxints();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFTAXINTS"]=Json::Value();
+    }
+    if(getApsysIdpocs())
+    {
+        ret["APSYS_IDPOCS"]=getValueOfApsysIdpocs();
+    }
+    else
+    {
+        ret["APSYS_IDPOCS"]=Json::Value();
+    }
+    if(getApsysInfo())
+    {
+        ret["APSYS_INFO"]=getValueOfApsysInfo();
+    }
+    else
+    {
+        ret["APSYS_INFO"]=Json::Value();
+    }
+    if(getNettovermoegenChf())
+    {
+        ret["NETTOVERMOEGEN_CHF"]=getValueOfNettovermoegenChf();
+    }
+    else
+    {
+        ret["NETTOVERMOEGEN_CHF"]=Json::Value();
+    }
+    if(getApsysIntishs())
+    {
+        ret["APSYS_INTISHS"]=getValueOfApsysIntishs();
+    }
+    else
+    {
+        ret["APSYS_INTISHS"]=Json::Value();
+    }
+    if(getApsysIdpersl())
+    {
+        ret["APSYS_IDPERSL"]=getValueOfApsysIdpersl();
+    }
+    else
+    {
+        ret["APSYS_IDPERSL"]=Json::Value();
+    }
+    if(getApsysCdmotifparts())
+    {
+        ret["APSYS_CDMOTIFPARTS"]=getValueOfApsysCdmotifparts();
+    }
+    else
+    {
+        ret["APSYS_CDMOTIFPARTS"]=Json::Value();
+    }
+    if(getInApsysTempEntspUserid())
+    {
+        ret["IN_APSYS_TEMP_ENTSP_USERID"]=getValueOfInApsysTempEntspUserid();
+    }
+    else
+    {
+        ret["IN_APSYS_TEMP_ENTSP_USERID"]=Json::Value();
+    }
+    if(getInApsysTempEntspDatum())
+    {
+        ret["IN_APSYS_TEMP_ENTSP_DATUM"]=getInApsysTempEntspDatum()->toDbStringLocal();
+    }
+    else
+    {
+        ret["IN_APSYS_TEMP_ENTSP_DATUM"]=Json::Value();
+    }
+    if(getInApsysTempEntsperrenCd())
+    {
+        ret["IN_APSYS_TEMP_ENTSPERREN_CD"]=getValueOfInApsysTempEntsperrenCd();
+    }
+    else
+    {
+        ret["IN_APSYS_TEMP_ENTSPERREN_CD"]=Json::Value();
+    }
+    if(getKundenkategorieCd())
+    {
+        ret["KUNDENKATEGORIE_CD"]=getValueOfKundenkategorieCd();
+    }
+    else
+    {
+        ret["KUNDENKATEGORIE_CD"]=Json::Value();
+    }
+    if(getGemeinschaftskontoCd())
+    {
+        ret["GEMEINSCHAFTSKONTO_CD"]=getValueOfGemeinschaftskontoCd();
+    }
+    else
+    {
+        ret["GEMEINSCHAFTSKONTO_CD"]=Json::Value();
+    }
+    if(getDritteSaeuleCd())
+    {
+        ret["DRITTE_SAEULE_CD"]=getValueOfDritteSaeuleCd();
+    }
+    else
+    {
+        ret["DRITTE_SAEULE_CD"]=Json::Value();
+    }
+    if(getApsysTypptfs())
+    {
+        ret["APSYS_TYPPTFS"]=getValueOfApsysTypptfs();
+    }
+    else
+    {
+        ret["APSYS_TYPPTFS"]=Json::Value();
+    }
+    if(getAutoEuTaxPercentage())
+    {
+        ret["AUTO_EU_TAX_PERCENTAGE"]=getValueOfAutoEuTaxPercentage();
+    }
+    else
+    {
+        ret["AUTO_EU_TAX_PERCENTAGE"]=Json::Value();
+    }
+    if(getAktid())
+    {
+        ret["AKTID"]=getValueOfAktid();
+    }
+    else
+    {
+        ret["AKTID"]=Json::Value();
+    }
+    if(getValidid())
+    {
+        ret["VALIDID"]=getValueOfValidid();
+    }
+    else
+    {
+        ret["VALIDID"]=Json::Value();
+    }
+    if(getValidCd())
+    {
+        ret["VALID_CD"]=getValueOfValidCd();
+    }
+    else
+    {
+        ret["VALID_CD"]=Json::Value();
+    }
+    if(getValiduser())
+    {
+        ret["VALIDUSER"]=getValueOfValiduser();
+    }
+    else
+    {
+        ret["VALIDUSER"]=Json::Value();
+    }
+    if(getApsysCdctgptfsbxps())
+    {
+        ret["APSYS_CDCTGPTFSBXPS"]=getValueOfApsysCdctgptfsbxps();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFSBXPS"]=Json::Value();
+    }
+    if(getApsysCdctgptfsdocs())
+    {
+        ret["APSYS_CDCTGPTFSDOCS"]=getValueOfApsysCdctgptfsdocs();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFSDOCS"]=Json::Value();
+    }
+    if(getApsysIdents())
+    {
+        ret["APSYS_IDENTS"]=getValueOfApsysIdents();
+    }
+    else
+    {
+        ret["APSYS_IDENTS"]=Json::Value();
+    }
+    if(getApsysCdsoumbolc())
+    {
+        ret["APSYS_CDSOUMBOLC"]=getValueOfApsysCdsoumbolc();
+    }
+    else
+    {
+        ret["APSYS_CDSOUMBOLC"]=Json::Value();
+    }
+    if(getApsysCdfacbolc())
+    {
+        ret["APSYS_CDFACBOLC"]=getValueOfApsysCdfacbolc();
+    }
+    else
+    {
+        ret["APSYS_CDFACBOLC"]=Json::Value();
+    }
+    if(getApsysFlagtyptrfpolc())
+    {
+        ret["APSYS_FLAGTYPTRFPOLC"]=getValueOfApsysFlagtyptrfpolc();
+    }
+    else
+    {
+        ret["APSYS_FLAGTYPTRFPOLC"]=Json::Value();
+    }
+    if(getApsysIdtrfpols())
+    {
+        ret["APSYS_IDTRFPOLS"]=getValueOfApsysIdtrfpols();
+    }
+    else
+    {
+        ret["APSYS_IDTRFPOLS"]=Json::Value();
+    }
+    if(getApsysCdpctpartictitueutaxc())
+    {
+        ret["APSYS_CDPCTPARTICTITUEUTAXC"]=getValueOfApsysCdpctpartictitueutaxc();
+    }
+    else
+    {
+        ret["APSYS_CDPCTPARTICTITUEUTAXC"]=Json::Value();
+    }
+    if(getApsysCdmotifclos())
+    {
+        ret["APSYS_CDMOTIFCLOS"]=getValueOfApsysCdmotifclos();
+    }
+    else
+    {
+        ret["APSYS_CDMOTIFCLOS"]=Json::Value();
+    }
+    if(getEncSalt())
+    {
+        ret["ENC_SALT"]=getValueOfEncSalt();
+    }
+    else
+    {
+        ret["ENC_SALT"]=Json::Value();
+    }
+    if(getBezeichnungEnc())
+    {
+        ret["BEZEICHNUNG_ENC"]=getValueOfBezeichnungEnc();
+    }
+    else
+    {
+        ret["BEZEICHNUNG_ENC"]=Json::Value();
+    }
+    if(getKtoeAmlProfilCd())
+    {
+        ret["KTOE_AML_PROFIL_CD"]=getValueOfKtoeAmlProfilCd();
+    }
+    else
+    {
+        ret["KTOE_AML_PROFIL_CD"]=Json::Value();
+    }
+    if(getApsysDevevals())
+    {
+        ret["APSYS_DEVEVALS"]=getValueOfApsysDevevals();
+    }
+    else
+    {
+        ret["APSYS_DEVEVALS"]=Json::Value();
+    }
+    if(getApsysCdrnvstmc())
+    {
+        ret["APSYS_CDRNVSTMC"]=getValueOfApsysCdrnvstmc();
+    }
+    else
+    {
+        ret["APSYS_CDRNVSTMC"]=Json::Value();
+    }
+    if(getApsysCdrglprlgc())
+    {
+        ret["APSYS_CDRGLPRLGC"]=getValueOfApsysCdrglprlgc();
+    }
+    else
+    {
+        ret["APSYS_CDRGLPRLGC"]=Json::Value();
+    }
+    if(getApsysCdctgptfcomagtcpts())
+    {
+        ret["APSYS_CDCTGPTFCOMAGTCPTS"]=getValueOfApsysCdctgptfcomagtcpts();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFCOMAGTCPTS"]=Json::Value();
+    }
+    if(getApsysCdctgptfroutords())
+    {
+        ret["APSYS_CDCTGPTFROUTORDS"]=getValueOfApsysCdctgptfroutords();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFROUTORDS"]=Json::Value();
+    }
+    if(getApsysCdctgptfgrecpts())
+    {
+        ret["APSYS_CDCTGPTFGRECPTS"]=getValueOfApsysCdctgptfgrecpts();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFGRECPTS"]=Json::Value();
+    }
+    if(getApsysCdctgptftrsftits())
+    {
+        ret["APSYS_CDCTGPTFTRSFTITS"]=getValueOfApsysCdctgptftrsftits();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFTRSFTITS"]=Json::Value();
+    }
+    if(getApsysFlagexpsysexttaxi())
+    {
+        ret["APSYS_FLAGEXPSYSEXTTAXI"]=getValueOfApsysFlagexpsysexttaxi();
+    }
+    else
+    {
+        ret["APSYS_FLAGEXPSYSEXTTAXI"]=Json::Value();
+    }
+    if(getWbIstNichtZwingendCd())
+    {
+        ret["WB_IST_NICHT_ZWINGEND_CD"]=getValueOfWbIstNichtZwingendCd();
+    }
+    else
+    {
+        ret["WB_IST_NICHT_ZWINGEND_CD"]=Json::Value();
+    }
+    if(getApsysCdbqerestc())
+    {
+        ret["APSYS_CDBQERESTC"]=getValueOfApsysCdbqerestc();
+    }
+    else
+    {
+        ret["APSYS_CDBQERESTC"]=Json::Value();
+    }
+    if(getApsysCdctgptftypplacs())
+    {
+        ret["APSYS_CDCTGPTFTYPPLACS"]=getValueOfApsysCdctgptftypplacs();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFTYPPLACS"]=Json::Value();
+    }
+    if(getApsysCdeangrmtcli1s())
+    {
+        ret["APSYS_CDEANGRMTCLI1S"]=getValueOfApsysCdeangrmtcli1s();
+    }
+    else
+    {
+        ret["APSYS_CDEANGRMTCLI1S"]=Json::Value();
+    }
+    if(getApsysCdeangrmtcli2s())
+    {
+        ret["APSYS_CDEANGRMTCLI2S"]=getValueOfApsysCdeangrmtcli2s();
+    }
+    else
+    {
+        ret["APSYS_CDEANGRMTCLI2S"]=Json::Value();
+    }
+    if(getApsysCdfatcatypc())
+    {
+        ret["APSYS_CDFATCATYPC"]=getValueOfApsysCdfatcatypc();
+    }
+    else
+    {
+        ret["APSYS_CDFATCATYPC"]=Json::Value();
+    }
+    if(getApsysIdfatcaclas())
+    {
+        ret["APSYS_IDFATCACLAS"]=getValueOfApsysIdfatcaclas();
+    }
+    else
+    {
+        ret["APSYS_IDFATCACLAS"]=Json::Value();
+    }
+    if(getApsysCdfatcastatcalccrmc())
+    {
+        ret["APSYS_CDFATCASTATCALCCRMC"]=getValueOfApsysCdfatcastatcalccrmc();
+    }
+    else
+    {
+        ret["APSYS_CDFATCASTATCALCCRMC"]=Json::Value();
+    }
+    if(getApsysCdfatcastatc())
+    {
+        ret["APSYS_CDFATCASTATC"]=getValueOfApsysCdfatcastatc();
+    }
+    else
+    {
+        ret["APSYS_CDFATCASTATC"]=Json::Value();
+    }
+    if(getApsysCommentfatcastats())
+    {
+        ret["APSYS_COMMENTFATCASTATS"]=getValueOfApsysCommentfatcastats();
+    }
+    else
+    {
+        ret["APSYS_COMMENTFATCASTATS"]=Json::Value();
+    }
+    if(getApsysCdfatcamotifparts())
+    {
+        ret["APSYS_CDFATCAMOTIFPARTS"]=getValueOfApsysCdfatcamotifparts();
+    }
+    else
+    {
+        ret["APSYS_CDFATCAMOTIFPARTS"]=Json::Value();
+    }
+    if(getApsysCdfatcastatcalcglobc())
+    {
+        ret["APSYS_CDFATCASTATCALCGLOBC"]=getValueOfApsysCdfatcastatcalcglobc();
+    }
+    else
+    {
+        ret["APSYS_CDFATCASTATCALCGLOBC"]=Json::Value();
+    }
+    if(getApsysCdfatcastatcalclocc())
+    {
+        ret["APSYS_CDFATCASTATCALCLOCC"]=getValueOfApsysCdfatcastatcalclocc();
+    }
+    else
+    {
+        ret["APSYS_CDFATCASTATCALCLOCC"]=Json::Value();
+    }
+    if(getApsysCdvalidstatc())
+    {
+        ret["APSYS_CDVALIDSTATC"]=getValueOfApsysCdvalidstatc();
+    }
+    else
+    {
+        ret["APSYS_CDVALIDSTATC"]=Json::Value();
+    }
+    if(getApsysUservalidfatcastats())
+    {
+        ret["APSYS_USERVALIDFATCASTATS"]=getValueOfApsysUservalidfatcastats();
+    }
+    else
+    {
+        ret["APSYS_USERVALIDFATCASTATS"]=Json::Value();
+    }
+    if(getApsysDtvalidfatcastatl())
+    {
+        ret["APSYS_DTVALIDFATCASTATL"]=getApsysDtvalidfatcastatl()->toDbStringLocal();
+    }
+    else
+    {
+        ret["APSYS_DTVALIDFATCASTATL"]=Json::Value();
+    }
+    if(getApsysHrvalidfatcastatl())
+    {
+        ret["APSYS_HRVALIDFATCASTATL"]=getApsysHrvalidfatcastatl()->toDbStringLocal();
+    }
+    else
+    {
+        ret["APSYS_HRVALIDFATCASTATL"]=Json::Value();
+    }
+    if(getApsysCdctrnettc553c())
+    {
+        ret["APSYS_CDCTRNETTC553C"]=getValueOfApsysCdctrnettc553c();
+    }
+    else
+    {
+        ret["APSYS_CDCTRNETTC553C"]=Json::Value();
+    }
+    if(getApsysFlagforceposostmanagi())
+    {
+        ret["APSYS_FLAGFORCEPOSOSTMANAGI"]=getValueOfApsysFlagforceposostmanagi();
+    }
+    else
+    {
+        ret["APSYS_FLAGFORCEPOSOSTMANAGI"]=Json::Value();
+    }
+    if(getApsysPosostmanagc())
+    {
+        ret["APSYS_POSOSTMANAGC"]=getValueOfApsysPosostmanagc();
+    }
+    else
+    {
+        ret["APSYS_POSOSTMANAGC"]=Json::Value();
+    }
+    if(getApsysCritereusfatcastatl())
+    {
+        ret["APSYS_CRITEREUSFATCASTATL"]=getValueOfApsysCritereusfatcastatl();
+    }
+    else
+    {
+        ret["APSYS_CRITEREUSFATCASTATL"]=Json::Value();
+    }
+    if(getApsysFlagsimsi())
+    {
+        ret["APSYS_FLAGSIMSI"]=getValueOfApsysFlagsimsi();
+    }
+    else
+    {
+        ret["APSYS_FLAGSIMSI"]=Json::Value();
+    }
+    if(getNrOfBoInWhtStatement())
+    {
+        ret["NR_OF_BO_IN_WHT_STATEMENT"]=getValueOfNrOfBoInWhtStatement();
+    }
+    else
+    {
+        ret["NR_OF_BO_IN_WHT_STATEMENT"]=Json::Value();
+    }
+    if(getPartnerWithUnlLiabilityCd())
+    {
+        ret["PARTNER_WITH_UNL_LIABILITY_CD"]=getValueOfPartnerWithUnlLiabilityCd();
+    }
+    else
+    {
+        ret["PARTNER_WITH_UNL_LIABILITY_CD"]=Json::Value();
+    }
+    if(getCompanyManagedByBoCd())
+    {
+        ret["COMPANY_MANAGED_BY_BO_CD"]=getValueOfCompanyManagedByBoCd();
+    }
+    else
+    {
+        ret["COMPANY_MANAGED_BY_BO_CD"]=Json::Value();
+    }
+    if(getIsTrusteePhysicalCd())
+    {
+        ret["IS_TRUSTEE_PHYSICAL_CD"]=getValueOfIsTrusteePhysicalCd();
+    }
+    else
+    {
+        ret["IS_TRUSTEE_PHYSICAL_CD"]=Json::Value();
+    }
+    if(getNoTradingUsSecuritiesCd())
+    {
+        ret["NO_TRADING_US_SECURITIES_CD"]=getValueOfNoTradingUsSecuritiesCd();
+    }
+    else
+    {
+        ret["NO_TRADING_US_SECURITIES_CD"]=Json::Value();
+    }
+    if(getPortfolioSegrAccountCd())
+    {
+        ret["PORTFOLIO_SEGR_ACCOUNT_CD"]=getValueOfPortfolioSegrAccountCd();
+    }
+    else
+    {
+        ret["PORTFOLIO_SEGR_ACCOUNT_CD"]=Json::Value();
+    }
+    if(getUsWhtStartDate())
+    {
+        ret["US_WHT_START_DATE"]=getUsWhtStartDate()->toDbStringLocal();
+    }
+    else
+    {
+        ret["US_WHT_START_DATE"]=Json::Value();
+    }
+    if(getApsysCdctgptfivstautos())
+    {
+        ret["APSYS_CDCTGPTFIVSTAUTOS"]=getValueOfApsysCdctgptfivstautos();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFIVSTAUTOS"]=Json::Value();
+    }
+    if(getAutomatischeVerteilungCd())
+    {
+        ret["AUTOMATISCHE_VERTEILUNG_CD"]=getValueOfAutomatischeVerteilungCd();
+    }
+    else
+    {
+        ret["AUTOMATISCHE_VERTEILUNG_CD"]=Json::Value();
+    }
+    if(getApsysCdtypreportqic())
+    {
+        ret["APSYS_CDTYPREPORTQIC"]=getValueOfApsysCdtypreportqic();
+    }
+    else
+    {
+        ret["APSYS_CDTYPREPORTQIC"]=Json::Value();
+    }
+    if(getApsysFlagirsnonactifi())
+    {
+        ret["APSYS_FLAGIRSNONACTIFI"]=getValueOfApsysFlagirsnonactifi();
+    }
+    else
+    {
+        ret["APSYS_FLAGIRSNONACTIFI"]=Json::Value();
+    }
+    if(getOpeningDocumentsProposedCd())
+    {
+        ret["OPENING_DOCUMENTS_PROPOSED_CD"]=getValueOfOpeningDocumentsProposedCd();
+    }
+    else
+    {
+        ret["OPENING_DOCUMENTS_PROPOSED_CD"]=Json::Value();
+    }
+    if(getApsysCdctgptfalgcpts())
+    {
+        ret["APSYS_CDCTGPTFALGCPTS"]=getValueOfApsysCdctgptfalgcpts();
+    }
+    else
+    {
+        ret["APSYS_CDCTGPTFALGCPTS"]=Json::Value();
+    }
+    if(getApsysIdstrucforjurs())
+    {
+        ret["APSYS_IDSTRUCFORJURS"]=getValueOfApsysIdstrucforjurs();
+    }
+    else
+    {
+        ret["APSYS_IDSTRUCFORJURS"]=Json::Value();
+    }
+    if(getApsysIdentforjurs())
+    {
+        ret["APSYS_IDENTFORJURS"]=getValueOfApsysIdentforjurs();
+    }
+    else
+    {
+        ret["APSYS_IDENTFORJURS"]=Json::Value();
+    }
+    if(getFatcaBasketCd())
+    {
+        ret["FATCA_BASKET_CD"]=getValueOfFatcaBasketCd();
+    }
+    else
+    {
+        ret["FATCA_BASKET_CD"]=Json::Value();
+    }
+    if(getApsysCdmethcloc())
+    {
+        ret["APSYS_CDMETHCLOC"]=getValueOfApsysCdmethcloc();
+    }
+    else
+    {
+        ret["APSYS_CDMETHCLOC"]=Json::Value();
+    }
+    if(getApsysDtevalclol())
+    {
+        ret["APSYS_DTEVALCLOL"]=getApsysDtevalclol()->toDbStringLocal();
+    }
+    else
+    {
+        ret["APSYS_DTEVALCLOL"]=Json::Value();
+    }
+    if(getAeoiExemptionCd())
+    {
+        ret["AEOI_EXEMPTION_CD"]=getValueOfAeoiExemptionCd();
+    }
+    else
+    {
+        ret["AEOI_EXEMPTION_CD"]=Json::Value();
+    }
+    if(getAeoiSubExemptionCd())
+    {
+        ret["AEOI_SUB_EXEMPTION_CD"]=getValueOfAeoiSubExemptionCd();
+    }
+    else
+    {
+        ret["AEOI_SUB_EXEMPTION_CD"]=Json::Value();
+    }
+    if(getUndocumentedAccountCd())
+    {
+        ret["UNDOCUMENTED_ACCOUNT_CD"]=getValueOfUndocumentedAccountCd();
+    }
+    else
+    {
+        ret["UNDOCUMENTED_ACCOUNT_CD"]=Json::Value();
+    }
+    if(getDormantAccountCd())
+    {
+        ret["DORMANT_ACCOUNT_CD"]=getValueOfDormantAccountCd();
+    }
+    else
+    {
+        ret["DORMANT_ACCOUNT_CD"]=Json::Value();
+    }
+    if(getAeoiConsistencyStatusCd())
+    {
+        ret["AEOI_CONSISTENCY_STATUS_CD"]=getValueOfAeoiConsistencyStatusCd();
+    }
+    else
+    {
+        ret["AEOI_CONSISTENCY_STATUS_CD"]=Json::Value();
+    }
+    if(getAeoiFinalStatusCd())
+    {
+        ret["AEOI_FINAL_STATUS_CD"]=getValueOfAeoiFinalStatusCd();
+    }
+    else
+    {
+        ret["AEOI_FINAL_STATUS_CD"]=Json::Value();
+    }
+    if(getAeoiReviewDate())
+    {
+        ret["AEOI_REVIEW_DATE"]=getAeoiReviewDate()->toDbStringLocal();
+    }
+    else
+    {
+        ret["AEOI_REVIEW_DATE"]=Json::Value();
+    }
+    if(getApsysCdmifidexemptc())
+    {
+        ret["APSYS_CDMIFIDEXEMPTC"]=getValueOfApsysCdmifidexemptc();
+    }
+    else
+    {
+        ret["APSYS_CDMIFIDEXEMPTC"]=Json::Value();
+    }
+    if(getApsysDtdebmifidl())
+    {
+        ret["APSYS_DTDEBMIFIDL"]=getApsysDtdebmifidl()->toDbStringLocal();
+    }
+    else
+    {
+        ret["APSYS_DTDEBMIFIDL"]=Json::Value();
+    }
+    if(getOpenedInApsysDate())
+    {
+        ret["OPENED_IN_APSYS_DATE"]=getOpenedInApsysDate()->toDbStringLocal();
+    }
+    else
+    {
+        ret["OPENED_IN_APSYS_DATE"]=Json::Value();
+    }
+    if(getApsysFlagdeldatapersi())
+    {
+        ret["APSYS_FLAGDELDATAPERSI"]=getValueOfApsysFlagdeldatapersi();
+    }
+    else
+    {
+        ret["APSYS_FLAGDELDATAPERSI"]=Json::Value();
+    }
+    if(getApsysDtwaitdeldatapersl())
+    {
+        ret["APSYS_DTWAITDELDATAPERSL"]=getApsysDtwaitdeldatapersl()->toDbStringLocal();
+    }
+    else
+    {
+        ret["APSYS_DTWAITDELDATAPERSL"]=Json::Value();
+    }
+    if(getApsysCdptfseldgsc())
+    {
+        ret["APSYS_CDPTFSELDGSC"]=getValueOfApsysCdptfseldgsc();
+    }
+    else
+    {
+        ret["APSYS_CDPTFSELDGSC"]=Json::Value();
+    }
+    if(getApsysCdmotifpartdgss())
+    {
+        ret["APSYS_CDMOTIFPARTDGSS"]=getValueOfApsysCdmotifpartdgss();
+    }
+    else
+    {
+        ret["APSYS_CDMOTIFPARTDGSS"]=Json::Value();
+    }
+    if(getEamCd())
+    {
+        ret["EAM_CD"]=getValueOfEamCd();
+    }
+    else
+    {
+        ret["EAM_CD"]=Json::Value();
+    }
+    if(getRetentionOnHold())
+    {
+        ret["RETENTION_ON_HOLD"]=getValueOfRetentionOnHold();
+    }
+    else
+    {
+        ret["RETENTION_ON_HOLD"]=Json::Value();
+    }
+    if(getLogicalErasure())
+    {
+        ret["LOGICAL_ERASURE"]=getValueOfLogicalErasure();
+    }
+    else
+    {
+        ret["LOGICAL_ERASURE"]=Json::Value();
+    }
+    if(getRetentionOnHoldDate())
+    {
+        ret["RETENTION_ON_HOLD_DATE"]=getRetentionOnHoldDate()->toDbStringLocal();
+    }
+    else
+    {
+        ret["RETENTION_ON_HOLD_DATE"]=Json::Value();
+    }
+    if(getRetentionOnHoldReason())
+    {
+        ret["RETENTION_ON_HOLD_REASON"]=getValueOfRetentionOnHoldReason();
+    }
+    else
+    {
+        ret["RETENTION_ON_HOLD_REASON"]=Json::Value();
+    }
+    if(getLogicalErasureDate())
+    {
+        ret["LOGICAL_ERASURE_DATE"]=getLogicalErasureDate()->toDbStringLocal();
+    }
+    else
+    {
+        ret["LOGICAL_ERASURE_DATE"]=Json::Value();
+    }
+    if(getLogicalErasureReason())
+    {
+        ret["LOGICAL_ERASURE_REASON"]=getValueOfLogicalErasureReason();
+    }
+    else
+    {
+        ret["LOGICAL_ERASURE_REASON"]=Json::Value();
     }
     return ret;
 }
 
 bool Portfolio::validateJsonForCreation(const Json::Value &pJson, std::string &err)
 {
-    if(pJson.isMember("porfolio_id"))
+    if(pJson.isMember("KUNDENID"))
     {
-        if(!validJsonOfField(0, "porfolio_id", pJson["porfolio_id"], err, true))
+        if(!validJsonOfField(0, "KUNDENID", pJson["KUNDENID"], err, true))
             return false;
     }
-    if(pJson.isMember("porfolio_name"))
+    if(pJson.isMember("PORTFOLIONO"))
     {
-        if(!validJsonOfField(1, "porfolio_name", pJson["porfolio_name"], err, true))
+        if(!validJsonOfField(1, "PORTFOLIONO", pJson["PORTFOLIONO"], err, true))
             return false;
     }
     else
     {
-        err="The porfolio_name column cannot be null";
+        err="The PORTFOLIONO column cannot be null";
         return false;
     }
-    if(pJson.isMember("date_Creation"))
+    if(pJson.isMember("BEZEICHNUNG"))
     {
-        if(!validJsonOfField(2, "date_Creation", pJson["date_Creation"], err, true))
+        if(!validJsonOfField(2, "BEZEICHNUNG", pJson["BEZEICHNUNG"], err, true))
             return false;
     }
-    if(pJson.isMember("open_closed"))
+    if(pJson.isMember("MANAGEMENTTYP_CD"))
     {
-        if(!validJsonOfField(3, "open_closed", pJson["open_closed"], err, true))
+        if(!validJsonOfField(3, "MANAGEMENTTYP_CD", pJson["MANAGEMENTTYP_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("MANAGER1_CD"))
+    {
+        if(!validJsonOfField(4, "MANAGER1_CD", pJson["MANAGER1_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("MANAGER2_CD"))
+    {
+        if(!validJsonOfField(5, "MANAGER2_CD", pJson["MANAGER2_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("MANAGER3_CD"))
+    {
+        if(!validJsonOfField(6, "MANAGER3_CD", pJson["MANAGER3_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("MANAGER4_CD"))
+    {
+        if(!validJsonOfField(7, "MANAGER4_CD", pJson["MANAGER4_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("MANAGER5_CD"))
+    {
+        if(!validJsonOfField(8, "MANAGER5_CD", pJson["MANAGER5_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("VERMITTLER_CD"))
+    {
+        if(!validJsonOfField(9, "VERMITTLER_CD", pJson["VERMITTLER_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("INFOVOLLMACHT"))
+    {
+        if(!validJsonOfField(10, "INFOVOLLMACHT", pJson["INFOVOLLMACHT"], err, true))
+            return false;
+    }
+    if(pJson.isMember("KONTAKT"))
+    {
+        if(!validJsonOfField(11, "KONTAKT", pJson["KONTAKT"], err, true))
+            return false;
+    }
+    if(pJson.isMember("ERTRAEGNISAUF_CD"))
+    {
+        if(!validJsonOfField(12, "ERTRAEGNISAUF_CD", pJson["ERTRAEGNISAUF_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("WAEHRUNGS_CD"))
+    {
+        if(!validJsonOfField(13, "WAEHRUNGS_CD", pJson["WAEHRUNGS_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("BELEGSATZ_CD"))
+    {
+        if(!validJsonOfField(14, "BELEGSATZ_CD", pJson["BELEGSATZ_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("LOESCH_CD"))
+    {
+        if(!validJsonOfField(15, "LOESCH_CD", pJson["LOESCH_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("LOESCHDATUM"))
+    {
+        if(!validJsonOfField(16, "LOESCHDATUM", pJson["LOESCHDATUM"], err, true))
+            return false;
+    }
+    if(pJson.isMember("CRTDATUM"))
+    {
+        if(!validJsonOfField(17, "CRTDATUM", pJson["CRTDATUM"], err, true))
+            return false;
+    }
+    if(pJson.isMember("CRTUSER"))
+    {
+        if(!validJsonOfField(18, "CRTUSER", pJson["CRTUSER"], err, true))
+            return false;
+    }
+    if(pJson.isMember("MUTDATUM"))
+    {
+        if(!validJsonOfField(19, "MUTDATUM", pJson["MUTDATUM"], err, true))
+            return false;
+    }
+    if(pJson.isMember("MUTUSER"))
+    {
+        if(!validJsonOfField(20, "MUTUSER", pJson["MUTUSER"], err, true))
+            return false;
+    }
+    if(pJson.isMember("MISDOMIZIL_CD"))
+    {
+        if(!validJsonOfField(21, "MISDOMIZIL_CD", pJson["MISDOMIZIL_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("ANLAGESTRATEGIE_CD"))
+    {
+        if(!validJsonOfField(22, "ANLAGESTRATEGIE_CD", pJson["ANLAGESTRATEGIE_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("USWBASKET_CD"))
+    {
+        if(!validJsonOfField(23, "USWBASKET_CD", pJson["USWBASKET_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("VERSANDHAEUFIG_CD"))
+    {
+        if(!validJsonOfField(24, "VERSANDHAEUFIG_CD", pJson["VERSANDHAEUFIG_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("RUBRIK"))
+    {
+        if(!validJsonOfField(25, "RUBRIK", pJson["RUBRIK"], err, true))
+            return false;
+    }
+    if(pJson.isMember("VERWALTUNGSMODUS_CD"))
+    {
+        if(!validJsonOfField(26, "VERWALTUNGSMODUS_CD", pJson["VERWALTUNGSMODUS_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("KUNDELETZTERBESUCH"))
+    {
+        if(!validJsonOfField(27, "KUNDELETZTERBESUCH", pJson["KUNDELETZTERBESUCH"], err, true))
+            return false;
+    }
+    if(pJson.isMember("ANTRAGSORT"))
+    {
+        if(!validJsonOfField(28, "ANTRAGSORT", pJson["ANTRAGSORT"], err, true))
+            return false;
+    }
+    if(pJson.isMember("ANTRAGSDATUM"))
+    {
+        if(!validJsonOfField(29, "ANTRAGSDATUM", pJson["ANTRAGSDATUM"], err, true))
+            return false;
+    }
+    if(pJson.isMember("ANDEREPOSTADRESSE_CD"))
+    {
+        if(!validJsonOfField(30, "ANDEREPOSTADRESSE_CD", pJson["ANDEREPOSTADRESSE_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("BANKLAGERND_CD"))
+    {
+        if(!validJsonOfField(31, "BANKLAGERND_CD", pJson["BANKLAGERND_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("SPEZIALINSTRUKTION"))
+    {
+        if(!validJsonOfField(32, "SPEZIALINSTRUKTION", pJson["SPEZIALINSTRUKTION"], err, true))
+            return false;
+    }
+    if(pJson.isMember("GELDVONKONTOINHABER_CD"))
+    {
+        if(!validJsonOfField(33, "GELDVONKONTOINHABER_CD", pJson["GELDVONKONTOINHABER_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("MANUALOPEN_CD"))
+    {
+        if(!validJsonOfField(34, "MANUALOPEN_CD", pJson["MANUALOPEN_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("KONTONUMMER1"))
+    {
+        if(!validJsonOfField(35, "KONTONUMMER1", pJson["KONTONUMMER1"], err, true))
+            return false;
+    }
+    if(pJson.isMember("KONTONUMMER2"))
+    {
+        if(!validJsonOfField(36, "KONTONUMMER2", pJson["KONTONUMMER2"], err, true))
+            return false;
+    }
+    if(pJson.isMember("KONTONUMMER3"))
+    {
+        if(!validJsonOfField(37, "KONTONUMMER3", pJson["KONTONUMMER3"], err, true))
+            return false;
+    }
+    if(pJson.isMember("FILIAL_CD"))
+    {
+        if(!validJsonOfField(38, "FILIAL_CD", pJson["FILIAL_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("RUBRIK1"))
+    {
+        if(!validJsonOfField(39, "RUBRIK1", pJson["RUBRIK1"], err, true))
+            return false;
+    }
+    if(pJson.isMember("RUBRIK2"))
+    {
+        if(!validJsonOfField(40, "RUBRIK2", pJson["RUBRIK2"], err, true))
+            return false;
+    }
+    if(pJson.isMember("RUBRIK3"))
+    {
+        if(!validJsonOfField(41, "RUBRIK3", pJson["RUBRIK3"], err, true))
+            return false;
+    }
+    if(pJson.isMember("ONLINE_CD"))
+    {
+        if(!validJsonOfField(42, "ONLINE_CD", pJson["ONLINE_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("PORTFOLIOTYP_CD"))
+    {
+        if(!validJsonOfField(43, "PORTFOLIOTYP_CD", pJson["PORTFOLIOTYP_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("CDPARTC"))
+    {
+        if(!validJsonOfField(44, "CDPARTC", pJson["CDPARTC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("PO_EU_TAX_PROZENT"))
+    {
+        if(!validJsonOfField(45, "PO_EU_TAX_PROZENT", pJson["PO_EU_TAX_PROZENT"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_STATUS_OPEC"))
+    {
+        if(!validJsonOfField(46, "APSYS_STATUS_OPEC", pJson["APSYS_STATUS_OPEC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_ERRI"))
+    {
+        if(!validJsonOfField(47, "APSYS_ERRI", pJson["APSYS_ERRI"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_SHNAS"))
+    {
+        if(!validJsonOfField(48, "APSYS_SHNAS", pJson["APSYS_SHNAS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_TYPMDCS"))
+    {
+        if(!validJsonOfField(49, "APSYS_TYPMDCS", pJson["APSYS_TYPMDCS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_INTILGS"))
+    {
+        if(!validJsonOfField(50, "APSYS_INTILGS", pJson["APSYS_INTILGS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_SHLIBPTFS"))
+    {
+        if(!validJsonOfField(51, "APSYS_SHLIBPTFS", pJson["APSYS_SHLIBPTFS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDSTATDUSC"))
+    {
+        if(!validJsonOfField(52, "APSYS_CDSTATDUSC", pJson["APSYS_CDSTATDUSC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_DTDEBPARTL"))
+    {
+        if(!validJsonOfField(53, "APSYS_DTDEBPARTL", pJson["APSYS_DTDEBPARTL"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_DTFINPARTL"))
+    {
+        if(!validJsonOfField(54, "APSYS_DTFINPARTL", pJson["APSYS_DTFINPARTL"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDSTRUCS"))
+    {
+        if(!validJsonOfField(55, "APSYS_IDSTRUCS", pJson["APSYS_IDSTRUCS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDPERMI"))
+    {
+        if(!validJsonOfField(56, "APSYS_CDPERMI", pJson["APSYS_CDPERMI"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFINTS"))
+    {
+        if(!validJsonOfField(57, "APSYS_CDCTGPTFINTS", pJson["APSYS_CDCTGPTFINTS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSTES"))
+    {
+        if(!validJsonOfField(58, "APSYS_CDCTGPTFSTES", pJson["APSYS_CDCTGPTFSTES"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSTMS"))
+    {
+        if(!validJsonOfField(59, "APSYS_CDCTGPTFSTMS", pJson["APSYS_CDCTGPTFSTMS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFMAFS"))
+    {
+        if(!validJsonOfField(60, "APSYS_CDCTGPTFMAFS", pJson["APSYS_CDCTGPTFMAFS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFRISKS"))
+    {
+        if(!validJsonOfField(61, "APSYS_CDCTGPTFRISKS", pJson["APSYS_CDCTGPTFRISKS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFCOUS"))
+    {
+        if(!validJsonOfField(62, "APSYS_CDCTGPTFCOUS", pJson["APSYS_CDCTGPTFCOUS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTRCS"))
+    {
+        if(!validJsonOfField(63, "APSYS_CDCTGPTFTRCS", pJson["APSYS_CDCTGPTFTRCS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSTEBRUTNETS"))
+    {
+        if(!validJsonOfField(64, "APSYS_CDCTGPTFSTEBRUTNETS", pJson["APSYS_CDCTGPTFSTEBRUTNETS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_FLAGIRSREPPARTC"))
+    {
+        if(!validJsonOfField(65, "APSYS_FLAGIRSREPPARTC", pJson["APSYS_FLAGIRSREPPARTC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTAXINTS"))
+    {
+        if(!validJsonOfField(66, "APSYS_CDCTGPTFTAXINTS", pJson["APSYS_CDCTGPTFTAXINTS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDPOCS"))
+    {
+        if(!validJsonOfField(67, "APSYS_IDPOCS", pJson["APSYS_IDPOCS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_INFO"))
+    {
+        if(!validJsonOfField(68, "APSYS_INFO", pJson["APSYS_INFO"], err, true))
+            return false;
+    }
+    if(pJson.isMember("NETTOVERMOEGEN_CHF"))
+    {
+        if(!validJsonOfField(69, "NETTOVERMOEGEN_CHF", pJson["NETTOVERMOEGEN_CHF"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_INTISHS"))
+    {
+        if(!validJsonOfField(70, "APSYS_INTISHS", pJson["APSYS_INTISHS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDPERSL"))
+    {
+        if(!validJsonOfField(71, "APSYS_IDPERSL", pJson["APSYS_IDPERSL"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDMOTIFPARTS"))
+    {
+        if(!validJsonOfField(72, "APSYS_CDMOTIFPARTS", pJson["APSYS_CDMOTIFPARTS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("IN_APSYS_TEMP_ENTSP_USERID"))
+    {
+        if(!validJsonOfField(73, "IN_APSYS_TEMP_ENTSP_USERID", pJson["IN_APSYS_TEMP_ENTSP_USERID"], err, true))
+            return false;
+    }
+    if(pJson.isMember("IN_APSYS_TEMP_ENTSP_DATUM"))
+    {
+        if(!validJsonOfField(74, "IN_APSYS_TEMP_ENTSP_DATUM", pJson["IN_APSYS_TEMP_ENTSP_DATUM"], err, true))
+            return false;
+    }
+    if(pJson.isMember("IN_APSYS_TEMP_ENTSPERREN_CD"))
+    {
+        if(!validJsonOfField(75, "IN_APSYS_TEMP_ENTSPERREN_CD", pJson["IN_APSYS_TEMP_ENTSPERREN_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("KUNDENKATEGORIE_CD"))
+    {
+        if(!validJsonOfField(76, "KUNDENKATEGORIE_CD", pJson["KUNDENKATEGORIE_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("GEMEINSCHAFTSKONTO_CD"))
+    {
+        if(!validJsonOfField(77, "GEMEINSCHAFTSKONTO_CD", pJson["GEMEINSCHAFTSKONTO_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("DRITTE_SAEULE_CD"))
+    {
+        if(!validJsonOfField(78, "DRITTE_SAEULE_CD", pJson["DRITTE_SAEULE_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_TYPPTFS"))
+    {
+        if(!validJsonOfField(79, "APSYS_TYPPTFS", pJson["APSYS_TYPPTFS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("AUTO_EU_TAX_PERCENTAGE"))
+    {
+        if(!validJsonOfField(80, "AUTO_EU_TAX_PERCENTAGE", pJson["AUTO_EU_TAX_PERCENTAGE"], err, true))
+            return false;
+    }
+    if(pJson.isMember("AKTID"))
+    {
+        if(!validJsonOfField(81, "AKTID", pJson["AKTID"], err, true))
+            return false;
+    }
+    if(pJson.isMember("VALIDID"))
+    {
+        if(!validJsonOfField(82, "VALIDID", pJson["VALIDID"], err, true))
+            return false;
+    }
+    if(pJson.isMember("VALID_CD"))
+    {
+        if(!validJsonOfField(83, "VALID_CD", pJson["VALID_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("VALIDUSER"))
+    {
+        if(!validJsonOfField(84, "VALIDUSER", pJson["VALIDUSER"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSBXPS"))
+    {
+        if(!validJsonOfField(85, "APSYS_CDCTGPTFSBXPS", pJson["APSYS_CDCTGPTFSBXPS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSDOCS"))
+    {
+        if(!validJsonOfField(86, "APSYS_CDCTGPTFSDOCS", pJson["APSYS_CDCTGPTFSDOCS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDENTS"))
+    {
+        if(!validJsonOfField(87, "APSYS_IDENTS", pJson["APSYS_IDENTS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDSOUMBOLC"))
+    {
+        if(!validJsonOfField(88, "APSYS_CDSOUMBOLC", pJson["APSYS_CDSOUMBOLC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDFACBOLC"))
+    {
+        if(!validJsonOfField(89, "APSYS_CDFACBOLC", pJson["APSYS_CDFACBOLC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_FLAGTYPTRFPOLC"))
+    {
+        if(!validJsonOfField(90, "APSYS_FLAGTYPTRFPOLC", pJson["APSYS_FLAGTYPTRFPOLC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDTRFPOLS"))
+    {
+        if(!validJsonOfField(91, "APSYS_IDTRFPOLS", pJson["APSYS_IDTRFPOLS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDPCTPARTICTITUEUTAXC"))
+    {
+        if(!validJsonOfField(92, "APSYS_CDPCTPARTICTITUEUTAXC", pJson["APSYS_CDPCTPARTICTITUEUTAXC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDMOTIFCLOS"))
+    {
+        if(!validJsonOfField(93, "APSYS_CDMOTIFCLOS", pJson["APSYS_CDMOTIFCLOS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("ENC_SALT"))
+    {
+        if(!validJsonOfField(94, "ENC_SALT", pJson["ENC_SALT"], err, true))
+            return false;
+    }
+    if(pJson.isMember("BEZEICHNUNG_ENC"))
+    {
+        if(!validJsonOfField(95, "BEZEICHNUNG_ENC", pJson["BEZEICHNUNG_ENC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("KTOE_AML_PROFIL_CD"))
+    {
+        if(!validJsonOfField(96, "KTOE_AML_PROFIL_CD", pJson["KTOE_AML_PROFIL_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_DEVEVALS"))
+    {
+        if(!validJsonOfField(97, "APSYS_DEVEVALS", pJson["APSYS_DEVEVALS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDRNVSTMC"))
+    {
+        if(!validJsonOfField(98, "APSYS_CDRNVSTMC", pJson["APSYS_CDRNVSTMC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDRGLPRLGC"))
+    {
+        if(!validJsonOfField(99, "APSYS_CDRGLPRLGC", pJson["APSYS_CDRGLPRLGC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFCOMAGTCPTS"))
+    {
+        if(!validJsonOfField(100, "APSYS_CDCTGPTFCOMAGTCPTS", pJson["APSYS_CDCTGPTFCOMAGTCPTS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFROUTORDS"))
+    {
+        if(!validJsonOfField(101, "APSYS_CDCTGPTFROUTORDS", pJson["APSYS_CDCTGPTFROUTORDS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFGRECPTS"))
+    {
+        if(!validJsonOfField(102, "APSYS_CDCTGPTFGRECPTS", pJson["APSYS_CDCTGPTFGRECPTS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTRSFTITS"))
+    {
+        if(!validJsonOfField(103, "APSYS_CDCTGPTFTRSFTITS", pJson["APSYS_CDCTGPTFTRSFTITS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_FLAGEXPSYSEXTTAXI"))
+    {
+        if(!validJsonOfField(104, "APSYS_FLAGEXPSYSEXTTAXI", pJson["APSYS_FLAGEXPSYSEXTTAXI"], err, true))
+            return false;
+    }
+    if(pJson.isMember("WB_IST_NICHT_ZWINGEND_CD"))
+    {
+        if(!validJsonOfField(105, "WB_IST_NICHT_ZWINGEND_CD", pJson["WB_IST_NICHT_ZWINGEND_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDBQERESTC"))
+    {
+        if(!validJsonOfField(106, "APSYS_CDBQERESTC", pJson["APSYS_CDBQERESTC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTYPPLACS"))
+    {
+        if(!validJsonOfField(107, "APSYS_CDCTGPTFTYPPLACS", pJson["APSYS_CDCTGPTFTYPPLACS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDEANGRMTCLI1S"))
+    {
+        if(!validJsonOfField(108, "APSYS_CDEANGRMTCLI1S", pJson["APSYS_CDEANGRMTCLI1S"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDEANGRMTCLI2S"))
+    {
+        if(!validJsonOfField(109, "APSYS_CDEANGRMTCLI2S", pJson["APSYS_CDEANGRMTCLI2S"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDFATCATYPC"))
+    {
+        if(!validJsonOfField(110, "APSYS_CDFATCATYPC", pJson["APSYS_CDFATCATYPC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDFATCACLAS"))
+    {
+        if(!validJsonOfField(111, "APSYS_IDFATCACLAS", pJson["APSYS_IDFATCACLAS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATCALCCRMC"))
+    {
+        if(!validJsonOfField(112, "APSYS_CDFATCASTATCALCCRMC", pJson["APSYS_CDFATCASTATCALCCRMC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATC"))
+    {
+        if(!validJsonOfField(113, "APSYS_CDFATCASTATC", pJson["APSYS_CDFATCASTATC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_COMMENTFATCASTATS"))
+    {
+        if(!validJsonOfField(114, "APSYS_COMMENTFATCASTATS", pJson["APSYS_COMMENTFATCASTATS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDFATCAMOTIFPARTS"))
+    {
+        if(!validJsonOfField(115, "APSYS_CDFATCAMOTIFPARTS", pJson["APSYS_CDFATCAMOTIFPARTS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATCALCGLOBC"))
+    {
+        if(!validJsonOfField(116, "APSYS_CDFATCASTATCALCGLOBC", pJson["APSYS_CDFATCASTATCALCGLOBC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATCALCLOCC"))
+    {
+        if(!validJsonOfField(117, "APSYS_CDFATCASTATCALCLOCC", pJson["APSYS_CDFATCASTATCALCLOCC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDVALIDSTATC"))
+    {
+        if(!validJsonOfField(118, "APSYS_CDVALIDSTATC", pJson["APSYS_CDVALIDSTATC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_USERVALIDFATCASTATS"))
+    {
+        if(!validJsonOfField(119, "APSYS_USERVALIDFATCASTATS", pJson["APSYS_USERVALIDFATCASTATS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_DTVALIDFATCASTATL"))
+    {
+        if(!validJsonOfField(120, "APSYS_DTVALIDFATCASTATL", pJson["APSYS_DTVALIDFATCASTATL"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_HRVALIDFATCASTATL"))
+    {
+        if(!validJsonOfField(121, "APSYS_HRVALIDFATCASTATL", pJson["APSYS_HRVALIDFATCASTATL"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTRNETTC553C"))
+    {
+        if(!validJsonOfField(122, "APSYS_CDCTRNETTC553C", pJson["APSYS_CDCTRNETTC553C"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_FLAGFORCEPOSOSTMANAGI"))
+    {
+        if(!validJsonOfField(123, "APSYS_FLAGFORCEPOSOSTMANAGI", pJson["APSYS_FLAGFORCEPOSOSTMANAGI"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_POSOSTMANAGC"))
+    {
+        if(!validJsonOfField(124, "APSYS_POSOSTMANAGC", pJson["APSYS_POSOSTMANAGC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CRITEREUSFATCASTATL"))
+    {
+        if(!validJsonOfField(125, "APSYS_CRITEREUSFATCASTATL", pJson["APSYS_CRITEREUSFATCASTATL"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_FLAGSIMSI"))
+    {
+        if(!validJsonOfField(126, "APSYS_FLAGSIMSI", pJson["APSYS_FLAGSIMSI"], err, true))
+            return false;
+    }
+    if(pJson.isMember("NR_OF_BO_IN_WHT_STATEMENT"))
+    {
+        if(!validJsonOfField(127, "NR_OF_BO_IN_WHT_STATEMENT", pJson["NR_OF_BO_IN_WHT_STATEMENT"], err, true))
+            return false;
+    }
+    if(pJson.isMember("PARTNER_WITH_UNL_LIABILITY_CD"))
+    {
+        if(!validJsonOfField(128, "PARTNER_WITH_UNL_LIABILITY_CD", pJson["PARTNER_WITH_UNL_LIABILITY_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("COMPANY_MANAGED_BY_BO_CD"))
+    {
+        if(!validJsonOfField(129, "COMPANY_MANAGED_BY_BO_CD", pJson["COMPANY_MANAGED_BY_BO_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("IS_TRUSTEE_PHYSICAL_CD"))
+    {
+        if(!validJsonOfField(130, "IS_TRUSTEE_PHYSICAL_CD", pJson["IS_TRUSTEE_PHYSICAL_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("NO_TRADING_US_SECURITIES_CD"))
+    {
+        if(!validJsonOfField(131, "NO_TRADING_US_SECURITIES_CD", pJson["NO_TRADING_US_SECURITIES_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("PORTFOLIO_SEGR_ACCOUNT_CD"))
+    {
+        if(!validJsonOfField(132, "PORTFOLIO_SEGR_ACCOUNT_CD", pJson["PORTFOLIO_SEGR_ACCOUNT_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("US_WHT_START_DATE"))
+    {
+        if(!validJsonOfField(133, "US_WHT_START_DATE", pJson["US_WHT_START_DATE"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFIVSTAUTOS"))
+    {
+        if(!validJsonOfField(134, "APSYS_CDCTGPTFIVSTAUTOS", pJson["APSYS_CDCTGPTFIVSTAUTOS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("AUTOMATISCHE_VERTEILUNG_CD"))
+    {
+        if(!validJsonOfField(135, "AUTOMATISCHE_VERTEILUNG_CD", pJson["AUTOMATISCHE_VERTEILUNG_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDTYPREPORTQIC"))
+    {
+        if(!validJsonOfField(136, "APSYS_CDTYPREPORTQIC", pJson["APSYS_CDTYPREPORTQIC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_FLAGIRSNONACTIFI"))
+    {
+        if(!validJsonOfField(137, "APSYS_FLAGIRSNONACTIFI", pJson["APSYS_FLAGIRSNONACTIFI"], err, true))
+            return false;
+    }
+    if(pJson.isMember("OPENING_DOCUMENTS_PROPOSED_CD"))
+    {
+        if(!validJsonOfField(138, "OPENING_DOCUMENTS_PROPOSED_CD", pJson["OPENING_DOCUMENTS_PROPOSED_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFALGCPTS"))
+    {
+        if(!validJsonOfField(139, "APSYS_CDCTGPTFALGCPTS", pJson["APSYS_CDCTGPTFALGCPTS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDSTRUCFORJURS"))
+    {
+        if(!validJsonOfField(140, "APSYS_IDSTRUCFORJURS", pJson["APSYS_IDSTRUCFORJURS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDENTFORJURS"))
+    {
+        if(!validJsonOfField(141, "APSYS_IDENTFORJURS", pJson["APSYS_IDENTFORJURS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("FATCA_BASKET_CD"))
+    {
+        if(!validJsonOfField(142, "FATCA_BASKET_CD", pJson["FATCA_BASKET_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDMETHCLOC"))
+    {
+        if(!validJsonOfField(143, "APSYS_CDMETHCLOC", pJson["APSYS_CDMETHCLOC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_DTEVALCLOL"))
+    {
+        if(!validJsonOfField(144, "APSYS_DTEVALCLOL", pJson["APSYS_DTEVALCLOL"], err, true))
+            return false;
+    }
+    if(pJson.isMember("AEOI_EXEMPTION_CD"))
+    {
+        if(!validJsonOfField(145, "AEOI_EXEMPTION_CD", pJson["AEOI_EXEMPTION_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("AEOI_SUB_EXEMPTION_CD"))
+    {
+        if(!validJsonOfField(146, "AEOI_SUB_EXEMPTION_CD", pJson["AEOI_SUB_EXEMPTION_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("UNDOCUMENTED_ACCOUNT_CD"))
+    {
+        if(!validJsonOfField(147, "UNDOCUMENTED_ACCOUNT_CD", pJson["UNDOCUMENTED_ACCOUNT_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("DORMANT_ACCOUNT_CD"))
+    {
+        if(!validJsonOfField(148, "DORMANT_ACCOUNT_CD", pJson["DORMANT_ACCOUNT_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("AEOI_CONSISTENCY_STATUS_CD"))
+    {
+        if(!validJsonOfField(149, "AEOI_CONSISTENCY_STATUS_CD", pJson["AEOI_CONSISTENCY_STATUS_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("AEOI_FINAL_STATUS_CD"))
+    {
+        if(!validJsonOfField(150, "AEOI_FINAL_STATUS_CD", pJson["AEOI_FINAL_STATUS_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("AEOI_REVIEW_DATE"))
+    {
+        if(!validJsonOfField(151, "AEOI_REVIEW_DATE", pJson["AEOI_REVIEW_DATE"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDMIFIDEXEMPTC"))
+    {
+        if(!validJsonOfField(152, "APSYS_CDMIFIDEXEMPTC", pJson["APSYS_CDMIFIDEXEMPTC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_DTDEBMIFIDL"))
+    {
+        if(!validJsonOfField(153, "APSYS_DTDEBMIFIDL", pJson["APSYS_DTDEBMIFIDL"], err, true))
+            return false;
+    }
+    if(pJson.isMember("OPENED_IN_APSYS_DATE"))
+    {
+        if(!validJsonOfField(154, "OPENED_IN_APSYS_DATE", pJson["OPENED_IN_APSYS_DATE"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_FLAGDELDATAPERSI"))
+    {
+        if(!validJsonOfField(155, "APSYS_FLAGDELDATAPERSI", pJson["APSYS_FLAGDELDATAPERSI"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_DTWAITDELDATAPERSL"))
+    {
+        if(!validJsonOfField(156, "APSYS_DTWAITDELDATAPERSL", pJson["APSYS_DTWAITDELDATAPERSL"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDPTFSELDGSC"))
+    {
+        if(!validJsonOfField(157, "APSYS_CDPTFSELDGSC", pJson["APSYS_CDPTFSELDGSC"], err, true))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDMOTIFPARTDGSS"))
+    {
+        if(!validJsonOfField(158, "APSYS_CDMOTIFPARTDGSS", pJson["APSYS_CDMOTIFPARTDGSS"], err, true))
+            return false;
+    }
+    if(pJson.isMember("EAM_CD"))
+    {
+        if(!validJsonOfField(159, "EAM_CD", pJson["EAM_CD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("RETENTION_ON_HOLD"))
+    {
+        if(!validJsonOfField(160, "RETENTION_ON_HOLD", pJson["RETENTION_ON_HOLD"], err, true))
+            return false;
+    }
+    if(pJson.isMember("LOGICAL_ERASURE"))
+    {
+        if(!validJsonOfField(161, "LOGICAL_ERASURE", pJson["LOGICAL_ERASURE"], err, true))
+            return false;
+    }
+    if(pJson.isMember("RETENTION_ON_HOLD_DATE"))
+    {
+        if(!validJsonOfField(162, "RETENTION_ON_HOLD_DATE", pJson["RETENTION_ON_HOLD_DATE"], err, true))
+            return false;
+    }
+    if(pJson.isMember("RETENTION_ON_HOLD_REASON"))
+    {
+        if(!validJsonOfField(163, "RETENTION_ON_HOLD_REASON", pJson["RETENTION_ON_HOLD_REASON"], err, true))
+            return false;
+    }
+    if(pJson.isMember("LOGICAL_ERASURE_DATE"))
+    {
+        if(!validJsonOfField(164, "LOGICAL_ERASURE_DATE", pJson["LOGICAL_ERASURE_DATE"], err, true))
+            return false;
+    }
+    if(pJson.isMember("LOGICAL_ERASURE_REASON"))
+    {
+        if(!validJsonOfField(165, "LOGICAL_ERASURE_REASON", pJson["LOGICAL_ERASURE_REASON"], err, true))
             return false;
     }
     return true;
@@ -622,7 +23325,7 @@ bool Portfolio::validateMasqueradedJsonForCreation(const Json::Value &pJson,
                                                    const std::vector<std::string> &pMasqueradingVector,
                                                    std::string &err)
 {
-    if(pMasqueradingVector.size() != 4)
+    if(pMasqueradingVector.size() != 166)
     {
         err = "Bad masquerading vector";
         return false;
@@ -665,6 +23368,1302 @@ bool Portfolio::validateMasqueradedJsonForCreation(const Json::Value &pJson,
                   return false;
           }
       }
+      if(!pMasqueradingVector[4].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[4]))
+          {
+              if(!validJsonOfField(4, pMasqueradingVector[4], pJson[pMasqueradingVector[4]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[5].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[5]))
+          {
+              if(!validJsonOfField(5, pMasqueradingVector[5], pJson[pMasqueradingVector[5]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[6].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[6]))
+          {
+              if(!validJsonOfField(6, pMasqueradingVector[6], pJson[pMasqueradingVector[6]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[7].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[7]))
+          {
+              if(!validJsonOfField(7, pMasqueradingVector[7], pJson[pMasqueradingVector[7]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[8].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[8]))
+          {
+              if(!validJsonOfField(8, pMasqueradingVector[8], pJson[pMasqueradingVector[8]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[9].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[9]))
+          {
+              if(!validJsonOfField(9, pMasqueradingVector[9], pJson[pMasqueradingVector[9]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[10].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[10]))
+          {
+              if(!validJsonOfField(10, pMasqueradingVector[10], pJson[pMasqueradingVector[10]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[11].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[11]))
+          {
+              if(!validJsonOfField(11, pMasqueradingVector[11], pJson[pMasqueradingVector[11]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[12].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[12]))
+          {
+              if(!validJsonOfField(12, pMasqueradingVector[12], pJson[pMasqueradingVector[12]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[13].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[13]))
+          {
+              if(!validJsonOfField(13, pMasqueradingVector[13], pJson[pMasqueradingVector[13]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[14].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[14]))
+          {
+              if(!validJsonOfField(14, pMasqueradingVector[14], pJson[pMasqueradingVector[14]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[15].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[15]))
+          {
+              if(!validJsonOfField(15, pMasqueradingVector[15], pJson[pMasqueradingVector[15]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[16].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[16]))
+          {
+              if(!validJsonOfField(16, pMasqueradingVector[16], pJson[pMasqueradingVector[16]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[17].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[17]))
+          {
+              if(!validJsonOfField(17, pMasqueradingVector[17], pJson[pMasqueradingVector[17]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[18].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[18]))
+          {
+              if(!validJsonOfField(18, pMasqueradingVector[18], pJson[pMasqueradingVector[18]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[19].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[19]))
+          {
+              if(!validJsonOfField(19, pMasqueradingVector[19], pJson[pMasqueradingVector[19]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[20].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[20]))
+          {
+              if(!validJsonOfField(20, pMasqueradingVector[20], pJson[pMasqueradingVector[20]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[21].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[21]))
+          {
+              if(!validJsonOfField(21, pMasqueradingVector[21], pJson[pMasqueradingVector[21]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[22].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[22]))
+          {
+              if(!validJsonOfField(22, pMasqueradingVector[22], pJson[pMasqueradingVector[22]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[23].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[23]))
+          {
+              if(!validJsonOfField(23, pMasqueradingVector[23], pJson[pMasqueradingVector[23]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[24].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[24]))
+          {
+              if(!validJsonOfField(24, pMasqueradingVector[24], pJson[pMasqueradingVector[24]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[25].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[25]))
+          {
+              if(!validJsonOfField(25, pMasqueradingVector[25], pJson[pMasqueradingVector[25]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[26].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[26]))
+          {
+              if(!validJsonOfField(26, pMasqueradingVector[26], pJson[pMasqueradingVector[26]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[27].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[27]))
+          {
+              if(!validJsonOfField(27, pMasqueradingVector[27], pJson[pMasqueradingVector[27]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[28].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[28]))
+          {
+              if(!validJsonOfField(28, pMasqueradingVector[28], pJson[pMasqueradingVector[28]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[29].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[29]))
+          {
+              if(!validJsonOfField(29, pMasqueradingVector[29], pJson[pMasqueradingVector[29]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[30].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[30]))
+          {
+              if(!validJsonOfField(30, pMasqueradingVector[30], pJson[pMasqueradingVector[30]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[31].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[31]))
+          {
+              if(!validJsonOfField(31, pMasqueradingVector[31], pJson[pMasqueradingVector[31]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[32].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[32]))
+          {
+              if(!validJsonOfField(32, pMasqueradingVector[32], pJson[pMasqueradingVector[32]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[33].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[33]))
+          {
+              if(!validJsonOfField(33, pMasqueradingVector[33], pJson[pMasqueradingVector[33]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[34].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[34]))
+          {
+              if(!validJsonOfField(34, pMasqueradingVector[34], pJson[pMasqueradingVector[34]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[35].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[35]))
+          {
+              if(!validJsonOfField(35, pMasqueradingVector[35], pJson[pMasqueradingVector[35]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[36].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[36]))
+          {
+              if(!validJsonOfField(36, pMasqueradingVector[36], pJson[pMasqueradingVector[36]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[37].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[37]))
+          {
+              if(!validJsonOfField(37, pMasqueradingVector[37], pJson[pMasqueradingVector[37]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[38].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[38]))
+          {
+              if(!validJsonOfField(38, pMasqueradingVector[38], pJson[pMasqueradingVector[38]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[39].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[39]))
+          {
+              if(!validJsonOfField(39, pMasqueradingVector[39], pJson[pMasqueradingVector[39]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[40].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[40]))
+          {
+              if(!validJsonOfField(40, pMasqueradingVector[40], pJson[pMasqueradingVector[40]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[41].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[41]))
+          {
+              if(!validJsonOfField(41, pMasqueradingVector[41], pJson[pMasqueradingVector[41]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[42].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[42]))
+          {
+              if(!validJsonOfField(42, pMasqueradingVector[42], pJson[pMasqueradingVector[42]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[43].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[43]))
+          {
+              if(!validJsonOfField(43, pMasqueradingVector[43], pJson[pMasqueradingVector[43]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[44].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[44]))
+          {
+              if(!validJsonOfField(44, pMasqueradingVector[44], pJson[pMasqueradingVector[44]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[45].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[45]))
+          {
+              if(!validJsonOfField(45, pMasqueradingVector[45], pJson[pMasqueradingVector[45]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[46].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[46]))
+          {
+              if(!validJsonOfField(46, pMasqueradingVector[46], pJson[pMasqueradingVector[46]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[47].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[47]))
+          {
+              if(!validJsonOfField(47, pMasqueradingVector[47], pJson[pMasqueradingVector[47]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[48].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[48]))
+          {
+              if(!validJsonOfField(48, pMasqueradingVector[48], pJson[pMasqueradingVector[48]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[49].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[49]))
+          {
+              if(!validJsonOfField(49, pMasqueradingVector[49], pJson[pMasqueradingVector[49]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[50].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[50]))
+          {
+              if(!validJsonOfField(50, pMasqueradingVector[50], pJson[pMasqueradingVector[50]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[51].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[51]))
+          {
+              if(!validJsonOfField(51, pMasqueradingVector[51], pJson[pMasqueradingVector[51]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[52].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[52]))
+          {
+              if(!validJsonOfField(52, pMasqueradingVector[52], pJson[pMasqueradingVector[52]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[53].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[53]))
+          {
+              if(!validJsonOfField(53, pMasqueradingVector[53], pJson[pMasqueradingVector[53]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[54].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[54]))
+          {
+              if(!validJsonOfField(54, pMasqueradingVector[54], pJson[pMasqueradingVector[54]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[55].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[55]))
+          {
+              if(!validJsonOfField(55, pMasqueradingVector[55], pJson[pMasqueradingVector[55]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[56].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[56]))
+          {
+              if(!validJsonOfField(56, pMasqueradingVector[56], pJson[pMasqueradingVector[56]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[57].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[57]))
+          {
+              if(!validJsonOfField(57, pMasqueradingVector[57], pJson[pMasqueradingVector[57]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[58].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[58]))
+          {
+              if(!validJsonOfField(58, pMasqueradingVector[58], pJson[pMasqueradingVector[58]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[59].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[59]))
+          {
+              if(!validJsonOfField(59, pMasqueradingVector[59], pJson[pMasqueradingVector[59]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[60].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[60]))
+          {
+              if(!validJsonOfField(60, pMasqueradingVector[60], pJson[pMasqueradingVector[60]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[61].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[61]))
+          {
+              if(!validJsonOfField(61, pMasqueradingVector[61], pJson[pMasqueradingVector[61]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[62].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[62]))
+          {
+              if(!validJsonOfField(62, pMasqueradingVector[62], pJson[pMasqueradingVector[62]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[63].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[63]))
+          {
+              if(!validJsonOfField(63, pMasqueradingVector[63], pJson[pMasqueradingVector[63]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[64].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[64]))
+          {
+              if(!validJsonOfField(64, pMasqueradingVector[64], pJson[pMasqueradingVector[64]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[65].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[65]))
+          {
+              if(!validJsonOfField(65, pMasqueradingVector[65], pJson[pMasqueradingVector[65]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[66].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[66]))
+          {
+              if(!validJsonOfField(66, pMasqueradingVector[66], pJson[pMasqueradingVector[66]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[67].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[67]))
+          {
+              if(!validJsonOfField(67, pMasqueradingVector[67], pJson[pMasqueradingVector[67]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[68].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[68]))
+          {
+              if(!validJsonOfField(68, pMasqueradingVector[68], pJson[pMasqueradingVector[68]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[69].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[69]))
+          {
+              if(!validJsonOfField(69, pMasqueradingVector[69], pJson[pMasqueradingVector[69]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[70].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[70]))
+          {
+              if(!validJsonOfField(70, pMasqueradingVector[70], pJson[pMasqueradingVector[70]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[71].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[71]))
+          {
+              if(!validJsonOfField(71, pMasqueradingVector[71], pJson[pMasqueradingVector[71]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[72].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[72]))
+          {
+              if(!validJsonOfField(72, pMasqueradingVector[72], pJson[pMasqueradingVector[72]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[73].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[73]))
+          {
+              if(!validJsonOfField(73, pMasqueradingVector[73], pJson[pMasqueradingVector[73]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[74].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[74]))
+          {
+              if(!validJsonOfField(74, pMasqueradingVector[74], pJson[pMasqueradingVector[74]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[75].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[75]))
+          {
+              if(!validJsonOfField(75, pMasqueradingVector[75], pJson[pMasqueradingVector[75]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[76].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[76]))
+          {
+              if(!validJsonOfField(76, pMasqueradingVector[76], pJson[pMasqueradingVector[76]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[77].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[77]))
+          {
+              if(!validJsonOfField(77, pMasqueradingVector[77], pJson[pMasqueradingVector[77]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[78].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[78]))
+          {
+              if(!validJsonOfField(78, pMasqueradingVector[78], pJson[pMasqueradingVector[78]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[79].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[79]))
+          {
+              if(!validJsonOfField(79, pMasqueradingVector[79], pJson[pMasqueradingVector[79]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[80].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[80]))
+          {
+              if(!validJsonOfField(80, pMasqueradingVector[80], pJson[pMasqueradingVector[80]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[81].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[81]))
+          {
+              if(!validJsonOfField(81, pMasqueradingVector[81], pJson[pMasqueradingVector[81]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[82].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[82]))
+          {
+              if(!validJsonOfField(82, pMasqueradingVector[82], pJson[pMasqueradingVector[82]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[83].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[83]))
+          {
+              if(!validJsonOfField(83, pMasqueradingVector[83], pJson[pMasqueradingVector[83]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[84].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[84]))
+          {
+              if(!validJsonOfField(84, pMasqueradingVector[84], pJson[pMasqueradingVector[84]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[85].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[85]))
+          {
+              if(!validJsonOfField(85, pMasqueradingVector[85], pJson[pMasqueradingVector[85]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[86].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[86]))
+          {
+              if(!validJsonOfField(86, pMasqueradingVector[86], pJson[pMasqueradingVector[86]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[87].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[87]))
+          {
+              if(!validJsonOfField(87, pMasqueradingVector[87], pJson[pMasqueradingVector[87]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[88].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[88]))
+          {
+              if(!validJsonOfField(88, pMasqueradingVector[88], pJson[pMasqueradingVector[88]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[89].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[89]))
+          {
+              if(!validJsonOfField(89, pMasqueradingVector[89], pJson[pMasqueradingVector[89]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[90].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[90]))
+          {
+              if(!validJsonOfField(90, pMasqueradingVector[90], pJson[pMasqueradingVector[90]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[91].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[91]))
+          {
+              if(!validJsonOfField(91, pMasqueradingVector[91], pJson[pMasqueradingVector[91]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[92].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[92]))
+          {
+              if(!validJsonOfField(92, pMasqueradingVector[92], pJson[pMasqueradingVector[92]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[93].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[93]))
+          {
+              if(!validJsonOfField(93, pMasqueradingVector[93], pJson[pMasqueradingVector[93]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[94].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[94]))
+          {
+              if(!validJsonOfField(94, pMasqueradingVector[94], pJson[pMasqueradingVector[94]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[95].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[95]))
+          {
+              if(!validJsonOfField(95, pMasqueradingVector[95], pJson[pMasqueradingVector[95]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[96].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[96]))
+          {
+              if(!validJsonOfField(96, pMasqueradingVector[96], pJson[pMasqueradingVector[96]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[97].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[97]))
+          {
+              if(!validJsonOfField(97, pMasqueradingVector[97], pJson[pMasqueradingVector[97]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[98].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[98]))
+          {
+              if(!validJsonOfField(98, pMasqueradingVector[98], pJson[pMasqueradingVector[98]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[99].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[99]))
+          {
+              if(!validJsonOfField(99, pMasqueradingVector[99], pJson[pMasqueradingVector[99]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[100].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[100]))
+          {
+              if(!validJsonOfField(100, pMasqueradingVector[100], pJson[pMasqueradingVector[100]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[101].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[101]))
+          {
+              if(!validJsonOfField(101, pMasqueradingVector[101], pJson[pMasqueradingVector[101]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[102].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[102]))
+          {
+              if(!validJsonOfField(102, pMasqueradingVector[102], pJson[pMasqueradingVector[102]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[103].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[103]))
+          {
+              if(!validJsonOfField(103, pMasqueradingVector[103], pJson[pMasqueradingVector[103]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[104].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[104]))
+          {
+              if(!validJsonOfField(104, pMasqueradingVector[104], pJson[pMasqueradingVector[104]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[105].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[105]))
+          {
+              if(!validJsonOfField(105, pMasqueradingVector[105], pJson[pMasqueradingVector[105]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[106].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[106]))
+          {
+              if(!validJsonOfField(106, pMasqueradingVector[106], pJson[pMasqueradingVector[106]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[107].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[107]))
+          {
+              if(!validJsonOfField(107, pMasqueradingVector[107], pJson[pMasqueradingVector[107]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[108].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[108]))
+          {
+              if(!validJsonOfField(108, pMasqueradingVector[108], pJson[pMasqueradingVector[108]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[109].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[109]))
+          {
+              if(!validJsonOfField(109, pMasqueradingVector[109], pJson[pMasqueradingVector[109]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[110].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[110]))
+          {
+              if(!validJsonOfField(110, pMasqueradingVector[110], pJson[pMasqueradingVector[110]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[111].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[111]))
+          {
+              if(!validJsonOfField(111, pMasqueradingVector[111], pJson[pMasqueradingVector[111]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[112].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[112]))
+          {
+              if(!validJsonOfField(112, pMasqueradingVector[112], pJson[pMasqueradingVector[112]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[113].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[113]))
+          {
+              if(!validJsonOfField(113, pMasqueradingVector[113], pJson[pMasqueradingVector[113]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[114].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[114]))
+          {
+              if(!validJsonOfField(114, pMasqueradingVector[114], pJson[pMasqueradingVector[114]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[115].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[115]))
+          {
+              if(!validJsonOfField(115, pMasqueradingVector[115], pJson[pMasqueradingVector[115]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[116].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[116]))
+          {
+              if(!validJsonOfField(116, pMasqueradingVector[116], pJson[pMasqueradingVector[116]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[117].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[117]))
+          {
+              if(!validJsonOfField(117, pMasqueradingVector[117], pJson[pMasqueradingVector[117]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[118].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[118]))
+          {
+              if(!validJsonOfField(118, pMasqueradingVector[118], pJson[pMasqueradingVector[118]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[119].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[119]))
+          {
+              if(!validJsonOfField(119, pMasqueradingVector[119], pJson[pMasqueradingVector[119]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[120].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[120]))
+          {
+              if(!validJsonOfField(120, pMasqueradingVector[120], pJson[pMasqueradingVector[120]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[121].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[121]))
+          {
+              if(!validJsonOfField(121, pMasqueradingVector[121], pJson[pMasqueradingVector[121]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[122].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[122]))
+          {
+              if(!validJsonOfField(122, pMasqueradingVector[122], pJson[pMasqueradingVector[122]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[123].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[123]))
+          {
+              if(!validJsonOfField(123, pMasqueradingVector[123], pJson[pMasqueradingVector[123]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[124].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[124]))
+          {
+              if(!validJsonOfField(124, pMasqueradingVector[124], pJson[pMasqueradingVector[124]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[125].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[125]))
+          {
+              if(!validJsonOfField(125, pMasqueradingVector[125], pJson[pMasqueradingVector[125]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[126].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[126]))
+          {
+              if(!validJsonOfField(126, pMasqueradingVector[126], pJson[pMasqueradingVector[126]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[127].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[127]))
+          {
+              if(!validJsonOfField(127, pMasqueradingVector[127], pJson[pMasqueradingVector[127]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[128].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[128]))
+          {
+              if(!validJsonOfField(128, pMasqueradingVector[128], pJson[pMasqueradingVector[128]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[129].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[129]))
+          {
+              if(!validJsonOfField(129, pMasqueradingVector[129], pJson[pMasqueradingVector[129]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[130].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[130]))
+          {
+              if(!validJsonOfField(130, pMasqueradingVector[130], pJson[pMasqueradingVector[130]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[131].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[131]))
+          {
+              if(!validJsonOfField(131, pMasqueradingVector[131], pJson[pMasqueradingVector[131]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[132].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[132]))
+          {
+              if(!validJsonOfField(132, pMasqueradingVector[132], pJson[pMasqueradingVector[132]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[133].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[133]))
+          {
+              if(!validJsonOfField(133, pMasqueradingVector[133], pJson[pMasqueradingVector[133]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[134].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[134]))
+          {
+              if(!validJsonOfField(134, pMasqueradingVector[134], pJson[pMasqueradingVector[134]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[135].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[135]))
+          {
+              if(!validJsonOfField(135, pMasqueradingVector[135], pJson[pMasqueradingVector[135]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[136].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[136]))
+          {
+              if(!validJsonOfField(136, pMasqueradingVector[136], pJson[pMasqueradingVector[136]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[137].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[137]))
+          {
+              if(!validJsonOfField(137, pMasqueradingVector[137], pJson[pMasqueradingVector[137]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[138].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[138]))
+          {
+              if(!validJsonOfField(138, pMasqueradingVector[138], pJson[pMasqueradingVector[138]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[139].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[139]))
+          {
+              if(!validJsonOfField(139, pMasqueradingVector[139], pJson[pMasqueradingVector[139]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[140].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[140]))
+          {
+              if(!validJsonOfField(140, pMasqueradingVector[140], pJson[pMasqueradingVector[140]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[141].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[141]))
+          {
+              if(!validJsonOfField(141, pMasqueradingVector[141], pJson[pMasqueradingVector[141]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[142].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[142]))
+          {
+              if(!validJsonOfField(142, pMasqueradingVector[142], pJson[pMasqueradingVector[142]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[143].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[143]))
+          {
+              if(!validJsonOfField(143, pMasqueradingVector[143], pJson[pMasqueradingVector[143]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[144].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[144]))
+          {
+              if(!validJsonOfField(144, pMasqueradingVector[144], pJson[pMasqueradingVector[144]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[145].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[145]))
+          {
+              if(!validJsonOfField(145, pMasqueradingVector[145], pJson[pMasqueradingVector[145]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[146].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[146]))
+          {
+              if(!validJsonOfField(146, pMasqueradingVector[146], pJson[pMasqueradingVector[146]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[147].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[147]))
+          {
+              if(!validJsonOfField(147, pMasqueradingVector[147], pJson[pMasqueradingVector[147]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[148].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[148]))
+          {
+              if(!validJsonOfField(148, pMasqueradingVector[148], pJson[pMasqueradingVector[148]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[149].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[149]))
+          {
+              if(!validJsonOfField(149, pMasqueradingVector[149], pJson[pMasqueradingVector[149]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[150].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[150]))
+          {
+              if(!validJsonOfField(150, pMasqueradingVector[150], pJson[pMasqueradingVector[150]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[151].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[151]))
+          {
+              if(!validJsonOfField(151, pMasqueradingVector[151], pJson[pMasqueradingVector[151]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[152].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[152]))
+          {
+              if(!validJsonOfField(152, pMasqueradingVector[152], pJson[pMasqueradingVector[152]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[153].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[153]))
+          {
+              if(!validJsonOfField(153, pMasqueradingVector[153], pJson[pMasqueradingVector[153]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[154].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[154]))
+          {
+              if(!validJsonOfField(154, pMasqueradingVector[154], pJson[pMasqueradingVector[154]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[155].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[155]))
+          {
+              if(!validJsonOfField(155, pMasqueradingVector[155], pJson[pMasqueradingVector[155]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[156].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[156]))
+          {
+              if(!validJsonOfField(156, pMasqueradingVector[156], pJson[pMasqueradingVector[156]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[157].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[157]))
+          {
+              if(!validJsonOfField(157, pMasqueradingVector[157], pJson[pMasqueradingVector[157]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[158].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[158]))
+          {
+              if(!validJsonOfField(158, pMasqueradingVector[158], pJson[pMasqueradingVector[158]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[159].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[159]))
+          {
+              if(!validJsonOfField(159, pMasqueradingVector[159], pJson[pMasqueradingVector[159]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[160].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[160]))
+          {
+              if(!validJsonOfField(160, pMasqueradingVector[160], pJson[pMasqueradingVector[160]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[161].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[161]))
+          {
+              if(!validJsonOfField(161, pMasqueradingVector[161], pJson[pMasqueradingVector[161]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[162].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[162]))
+          {
+              if(!validJsonOfField(162, pMasqueradingVector[162], pJson[pMasqueradingVector[162]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[163].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[163]))
+          {
+              if(!validJsonOfField(163, pMasqueradingVector[163], pJson[pMasqueradingVector[163]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[164].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[164]))
+          {
+              if(!validJsonOfField(164, pMasqueradingVector[164], pJson[pMasqueradingVector[164]], err, true))
+                  return false;
+          }
+      }
+      if(!pMasqueradingVector[165].empty())
+      {
+          if(pJson.isMember(pMasqueradingVector[165]))
+          {
+              if(!validJsonOfField(165, pMasqueradingVector[165], pJson[pMasqueradingVector[165]], err, true))
+                  return false;
+          }
+      }
     }
     catch(const Json::LogicError &e)
     {
@@ -675,9 +24674,14 @@ bool Portfolio::validateMasqueradedJsonForCreation(const Json::Value &pJson,
 }
 bool Portfolio::validateJsonForUpdate(const Json::Value &pJson, std::string &err)
 {
-    if(pJson.isMember("porfolio_id"))
+    if(pJson.isMember("KUNDENID"))
     {
-        if(!validJsonOfField(0, "porfolio_id", pJson["porfolio_id"], err, false))
+        if(!validJsonOfField(0, "KUNDENID", pJson["KUNDENID"], err, false))
+            return false;
+    }
+    if(pJson.isMember("PORTFOLIONO"))
+    {
+        if(!validJsonOfField(1, "PORTFOLIONO", pJson["PORTFOLIONO"], err, false))
             return false;
     }
     else
@@ -685,19 +24689,824 @@ bool Portfolio::validateJsonForUpdate(const Json::Value &pJson, std::string &err
         err = "The value of primary key must be set in the json object for update";
         return false;
     }
-    if(pJson.isMember("porfolio_name"))
+    if(pJson.isMember("BEZEICHNUNG"))
     {
-        if(!validJsonOfField(1, "porfolio_name", pJson["porfolio_name"], err, false))
+        if(!validJsonOfField(2, "BEZEICHNUNG", pJson["BEZEICHNUNG"], err, false))
             return false;
     }
-    if(pJson.isMember("date_Creation"))
+    if(pJson.isMember("MANAGEMENTTYP_CD"))
     {
-        if(!validJsonOfField(2, "date_Creation", pJson["date_Creation"], err, false))
+        if(!validJsonOfField(3, "MANAGEMENTTYP_CD", pJson["MANAGEMENTTYP_CD"], err, false))
             return false;
     }
-    if(pJson.isMember("open_closed"))
+    if(pJson.isMember("MANAGER1_CD"))
     {
-        if(!validJsonOfField(3, "open_closed", pJson["open_closed"], err, false))
+        if(!validJsonOfField(4, "MANAGER1_CD", pJson["MANAGER1_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("MANAGER2_CD"))
+    {
+        if(!validJsonOfField(5, "MANAGER2_CD", pJson["MANAGER2_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("MANAGER3_CD"))
+    {
+        if(!validJsonOfField(6, "MANAGER3_CD", pJson["MANAGER3_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("MANAGER4_CD"))
+    {
+        if(!validJsonOfField(7, "MANAGER4_CD", pJson["MANAGER4_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("MANAGER5_CD"))
+    {
+        if(!validJsonOfField(8, "MANAGER5_CD", pJson["MANAGER5_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("VERMITTLER_CD"))
+    {
+        if(!validJsonOfField(9, "VERMITTLER_CD", pJson["VERMITTLER_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("INFOVOLLMACHT"))
+    {
+        if(!validJsonOfField(10, "INFOVOLLMACHT", pJson["INFOVOLLMACHT"], err, false))
+            return false;
+    }
+    if(pJson.isMember("KONTAKT"))
+    {
+        if(!validJsonOfField(11, "KONTAKT", pJson["KONTAKT"], err, false))
+            return false;
+    }
+    if(pJson.isMember("ERTRAEGNISAUF_CD"))
+    {
+        if(!validJsonOfField(12, "ERTRAEGNISAUF_CD", pJson["ERTRAEGNISAUF_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("WAEHRUNGS_CD"))
+    {
+        if(!validJsonOfField(13, "WAEHRUNGS_CD", pJson["WAEHRUNGS_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("BELEGSATZ_CD"))
+    {
+        if(!validJsonOfField(14, "BELEGSATZ_CD", pJson["BELEGSATZ_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("LOESCH_CD"))
+    {
+        if(!validJsonOfField(15, "LOESCH_CD", pJson["LOESCH_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("LOESCHDATUM"))
+    {
+        if(!validJsonOfField(16, "LOESCHDATUM", pJson["LOESCHDATUM"], err, false))
+            return false;
+    }
+    if(pJson.isMember("CRTDATUM"))
+    {
+        if(!validJsonOfField(17, "CRTDATUM", pJson["CRTDATUM"], err, false))
+            return false;
+    }
+    if(pJson.isMember("CRTUSER"))
+    {
+        if(!validJsonOfField(18, "CRTUSER", pJson["CRTUSER"], err, false))
+            return false;
+    }
+    if(pJson.isMember("MUTDATUM"))
+    {
+        if(!validJsonOfField(19, "MUTDATUM", pJson["MUTDATUM"], err, false))
+            return false;
+    }
+    if(pJson.isMember("MUTUSER"))
+    {
+        if(!validJsonOfField(20, "MUTUSER", pJson["MUTUSER"], err, false))
+            return false;
+    }
+    if(pJson.isMember("MISDOMIZIL_CD"))
+    {
+        if(!validJsonOfField(21, "MISDOMIZIL_CD", pJson["MISDOMIZIL_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("ANLAGESTRATEGIE_CD"))
+    {
+        if(!validJsonOfField(22, "ANLAGESTRATEGIE_CD", pJson["ANLAGESTRATEGIE_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("USWBASKET_CD"))
+    {
+        if(!validJsonOfField(23, "USWBASKET_CD", pJson["USWBASKET_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("VERSANDHAEUFIG_CD"))
+    {
+        if(!validJsonOfField(24, "VERSANDHAEUFIG_CD", pJson["VERSANDHAEUFIG_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("RUBRIK"))
+    {
+        if(!validJsonOfField(25, "RUBRIK", pJson["RUBRIK"], err, false))
+            return false;
+    }
+    if(pJson.isMember("VERWALTUNGSMODUS_CD"))
+    {
+        if(!validJsonOfField(26, "VERWALTUNGSMODUS_CD", pJson["VERWALTUNGSMODUS_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("KUNDELETZTERBESUCH"))
+    {
+        if(!validJsonOfField(27, "KUNDELETZTERBESUCH", pJson["KUNDELETZTERBESUCH"], err, false))
+            return false;
+    }
+    if(pJson.isMember("ANTRAGSORT"))
+    {
+        if(!validJsonOfField(28, "ANTRAGSORT", pJson["ANTRAGSORT"], err, false))
+            return false;
+    }
+    if(pJson.isMember("ANTRAGSDATUM"))
+    {
+        if(!validJsonOfField(29, "ANTRAGSDATUM", pJson["ANTRAGSDATUM"], err, false))
+            return false;
+    }
+    if(pJson.isMember("ANDEREPOSTADRESSE_CD"))
+    {
+        if(!validJsonOfField(30, "ANDEREPOSTADRESSE_CD", pJson["ANDEREPOSTADRESSE_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("BANKLAGERND_CD"))
+    {
+        if(!validJsonOfField(31, "BANKLAGERND_CD", pJson["BANKLAGERND_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("SPEZIALINSTRUKTION"))
+    {
+        if(!validJsonOfField(32, "SPEZIALINSTRUKTION", pJson["SPEZIALINSTRUKTION"], err, false))
+            return false;
+    }
+    if(pJson.isMember("GELDVONKONTOINHABER_CD"))
+    {
+        if(!validJsonOfField(33, "GELDVONKONTOINHABER_CD", pJson["GELDVONKONTOINHABER_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("MANUALOPEN_CD"))
+    {
+        if(!validJsonOfField(34, "MANUALOPEN_CD", pJson["MANUALOPEN_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("KONTONUMMER1"))
+    {
+        if(!validJsonOfField(35, "KONTONUMMER1", pJson["KONTONUMMER1"], err, false))
+            return false;
+    }
+    if(pJson.isMember("KONTONUMMER2"))
+    {
+        if(!validJsonOfField(36, "KONTONUMMER2", pJson["KONTONUMMER2"], err, false))
+            return false;
+    }
+    if(pJson.isMember("KONTONUMMER3"))
+    {
+        if(!validJsonOfField(37, "KONTONUMMER3", pJson["KONTONUMMER3"], err, false))
+            return false;
+    }
+    if(pJson.isMember("FILIAL_CD"))
+    {
+        if(!validJsonOfField(38, "FILIAL_CD", pJson["FILIAL_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("RUBRIK1"))
+    {
+        if(!validJsonOfField(39, "RUBRIK1", pJson["RUBRIK1"], err, false))
+            return false;
+    }
+    if(pJson.isMember("RUBRIK2"))
+    {
+        if(!validJsonOfField(40, "RUBRIK2", pJson["RUBRIK2"], err, false))
+            return false;
+    }
+    if(pJson.isMember("RUBRIK3"))
+    {
+        if(!validJsonOfField(41, "RUBRIK3", pJson["RUBRIK3"], err, false))
+            return false;
+    }
+    if(pJson.isMember("ONLINE_CD"))
+    {
+        if(!validJsonOfField(42, "ONLINE_CD", pJson["ONLINE_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("PORTFOLIOTYP_CD"))
+    {
+        if(!validJsonOfField(43, "PORTFOLIOTYP_CD", pJson["PORTFOLIOTYP_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("CDPARTC"))
+    {
+        if(!validJsonOfField(44, "CDPARTC", pJson["CDPARTC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("PO_EU_TAX_PROZENT"))
+    {
+        if(!validJsonOfField(45, "PO_EU_TAX_PROZENT", pJson["PO_EU_TAX_PROZENT"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_STATUS_OPEC"))
+    {
+        if(!validJsonOfField(46, "APSYS_STATUS_OPEC", pJson["APSYS_STATUS_OPEC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_ERRI"))
+    {
+        if(!validJsonOfField(47, "APSYS_ERRI", pJson["APSYS_ERRI"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_SHNAS"))
+    {
+        if(!validJsonOfField(48, "APSYS_SHNAS", pJson["APSYS_SHNAS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_TYPMDCS"))
+    {
+        if(!validJsonOfField(49, "APSYS_TYPMDCS", pJson["APSYS_TYPMDCS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_INTILGS"))
+    {
+        if(!validJsonOfField(50, "APSYS_INTILGS", pJson["APSYS_INTILGS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_SHLIBPTFS"))
+    {
+        if(!validJsonOfField(51, "APSYS_SHLIBPTFS", pJson["APSYS_SHLIBPTFS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDSTATDUSC"))
+    {
+        if(!validJsonOfField(52, "APSYS_CDSTATDUSC", pJson["APSYS_CDSTATDUSC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_DTDEBPARTL"))
+    {
+        if(!validJsonOfField(53, "APSYS_DTDEBPARTL", pJson["APSYS_DTDEBPARTL"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_DTFINPARTL"))
+    {
+        if(!validJsonOfField(54, "APSYS_DTFINPARTL", pJson["APSYS_DTFINPARTL"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDSTRUCS"))
+    {
+        if(!validJsonOfField(55, "APSYS_IDSTRUCS", pJson["APSYS_IDSTRUCS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDPERMI"))
+    {
+        if(!validJsonOfField(56, "APSYS_CDPERMI", pJson["APSYS_CDPERMI"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFINTS"))
+    {
+        if(!validJsonOfField(57, "APSYS_CDCTGPTFINTS", pJson["APSYS_CDCTGPTFINTS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSTES"))
+    {
+        if(!validJsonOfField(58, "APSYS_CDCTGPTFSTES", pJson["APSYS_CDCTGPTFSTES"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSTMS"))
+    {
+        if(!validJsonOfField(59, "APSYS_CDCTGPTFSTMS", pJson["APSYS_CDCTGPTFSTMS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFMAFS"))
+    {
+        if(!validJsonOfField(60, "APSYS_CDCTGPTFMAFS", pJson["APSYS_CDCTGPTFMAFS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFRISKS"))
+    {
+        if(!validJsonOfField(61, "APSYS_CDCTGPTFRISKS", pJson["APSYS_CDCTGPTFRISKS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFCOUS"))
+    {
+        if(!validJsonOfField(62, "APSYS_CDCTGPTFCOUS", pJson["APSYS_CDCTGPTFCOUS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTRCS"))
+    {
+        if(!validJsonOfField(63, "APSYS_CDCTGPTFTRCS", pJson["APSYS_CDCTGPTFTRCS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSTEBRUTNETS"))
+    {
+        if(!validJsonOfField(64, "APSYS_CDCTGPTFSTEBRUTNETS", pJson["APSYS_CDCTGPTFSTEBRUTNETS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_FLAGIRSREPPARTC"))
+    {
+        if(!validJsonOfField(65, "APSYS_FLAGIRSREPPARTC", pJson["APSYS_FLAGIRSREPPARTC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTAXINTS"))
+    {
+        if(!validJsonOfField(66, "APSYS_CDCTGPTFTAXINTS", pJson["APSYS_CDCTGPTFTAXINTS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDPOCS"))
+    {
+        if(!validJsonOfField(67, "APSYS_IDPOCS", pJson["APSYS_IDPOCS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_INFO"))
+    {
+        if(!validJsonOfField(68, "APSYS_INFO", pJson["APSYS_INFO"], err, false))
+            return false;
+    }
+    if(pJson.isMember("NETTOVERMOEGEN_CHF"))
+    {
+        if(!validJsonOfField(69, "NETTOVERMOEGEN_CHF", pJson["NETTOVERMOEGEN_CHF"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_INTISHS"))
+    {
+        if(!validJsonOfField(70, "APSYS_INTISHS", pJson["APSYS_INTISHS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDPERSL"))
+    {
+        if(!validJsonOfField(71, "APSYS_IDPERSL", pJson["APSYS_IDPERSL"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDMOTIFPARTS"))
+    {
+        if(!validJsonOfField(72, "APSYS_CDMOTIFPARTS", pJson["APSYS_CDMOTIFPARTS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("IN_APSYS_TEMP_ENTSP_USERID"))
+    {
+        if(!validJsonOfField(73, "IN_APSYS_TEMP_ENTSP_USERID", pJson["IN_APSYS_TEMP_ENTSP_USERID"], err, false))
+            return false;
+    }
+    if(pJson.isMember("IN_APSYS_TEMP_ENTSP_DATUM"))
+    {
+        if(!validJsonOfField(74, "IN_APSYS_TEMP_ENTSP_DATUM", pJson["IN_APSYS_TEMP_ENTSP_DATUM"], err, false))
+            return false;
+    }
+    if(pJson.isMember("IN_APSYS_TEMP_ENTSPERREN_CD"))
+    {
+        if(!validJsonOfField(75, "IN_APSYS_TEMP_ENTSPERREN_CD", pJson["IN_APSYS_TEMP_ENTSPERREN_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("KUNDENKATEGORIE_CD"))
+    {
+        if(!validJsonOfField(76, "KUNDENKATEGORIE_CD", pJson["KUNDENKATEGORIE_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("GEMEINSCHAFTSKONTO_CD"))
+    {
+        if(!validJsonOfField(77, "GEMEINSCHAFTSKONTO_CD", pJson["GEMEINSCHAFTSKONTO_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("DRITTE_SAEULE_CD"))
+    {
+        if(!validJsonOfField(78, "DRITTE_SAEULE_CD", pJson["DRITTE_SAEULE_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_TYPPTFS"))
+    {
+        if(!validJsonOfField(79, "APSYS_TYPPTFS", pJson["APSYS_TYPPTFS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("AUTO_EU_TAX_PERCENTAGE"))
+    {
+        if(!validJsonOfField(80, "AUTO_EU_TAX_PERCENTAGE", pJson["AUTO_EU_TAX_PERCENTAGE"], err, false))
+            return false;
+    }
+    if(pJson.isMember("AKTID"))
+    {
+        if(!validJsonOfField(81, "AKTID", pJson["AKTID"], err, false))
+            return false;
+    }
+    if(pJson.isMember("VALIDID"))
+    {
+        if(!validJsonOfField(82, "VALIDID", pJson["VALIDID"], err, false))
+            return false;
+    }
+    if(pJson.isMember("VALID_CD"))
+    {
+        if(!validJsonOfField(83, "VALID_CD", pJson["VALID_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("VALIDUSER"))
+    {
+        if(!validJsonOfField(84, "VALIDUSER", pJson["VALIDUSER"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSBXPS"))
+    {
+        if(!validJsonOfField(85, "APSYS_CDCTGPTFSBXPS", pJson["APSYS_CDCTGPTFSBXPS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFSDOCS"))
+    {
+        if(!validJsonOfField(86, "APSYS_CDCTGPTFSDOCS", pJson["APSYS_CDCTGPTFSDOCS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDENTS"))
+    {
+        if(!validJsonOfField(87, "APSYS_IDENTS", pJson["APSYS_IDENTS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDSOUMBOLC"))
+    {
+        if(!validJsonOfField(88, "APSYS_CDSOUMBOLC", pJson["APSYS_CDSOUMBOLC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDFACBOLC"))
+    {
+        if(!validJsonOfField(89, "APSYS_CDFACBOLC", pJson["APSYS_CDFACBOLC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_FLAGTYPTRFPOLC"))
+    {
+        if(!validJsonOfField(90, "APSYS_FLAGTYPTRFPOLC", pJson["APSYS_FLAGTYPTRFPOLC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDTRFPOLS"))
+    {
+        if(!validJsonOfField(91, "APSYS_IDTRFPOLS", pJson["APSYS_IDTRFPOLS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDPCTPARTICTITUEUTAXC"))
+    {
+        if(!validJsonOfField(92, "APSYS_CDPCTPARTICTITUEUTAXC", pJson["APSYS_CDPCTPARTICTITUEUTAXC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDMOTIFCLOS"))
+    {
+        if(!validJsonOfField(93, "APSYS_CDMOTIFCLOS", pJson["APSYS_CDMOTIFCLOS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("ENC_SALT"))
+    {
+        if(!validJsonOfField(94, "ENC_SALT", pJson["ENC_SALT"], err, false))
+            return false;
+    }
+    if(pJson.isMember("BEZEICHNUNG_ENC"))
+    {
+        if(!validJsonOfField(95, "BEZEICHNUNG_ENC", pJson["BEZEICHNUNG_ENC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("KTOE_AML_PROFIL_CD"))
+    {
+        if(!validJsonOfField(96, "KTOE_AML_PROFIL_CD", pJson["KTOE_AML_PROFIL_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_DEVEVALS"))
+    {
+        if(!validJsonOfField(97, "APSYS_DEVEVALS", pJson["APSYS_DEVEVALS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDRNVSTMC"))
+    {
+        if(!validJsonOfField(98, "APSYS_CDRNVSTMC", pJson["APSYS_CDRNVSTMC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDRGLPRLGC"))
+    {
+        if(!validJsonOfField(99, "APSYS_CDRGLPRLGC", pJson["APSYS_CDRGLPRLGC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFCOMAGTCPTS"))
+    {
+        if(!validJsonOfField(100, "APSYS_CDCTGPTFCOMAGTCPTS", pJson["APSYS_CDCTGPTFCOMAGTCPTS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFROUTORDS"))
+    {
+        if(!validJsonOfField(101, "APSYS_CDCTGPTFROUTORDS", pJson["APSYS_CDCTGPTFROUTORDS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFGRECPTS"))
+    {
+        if(!validJsonOfField(102, "APSYS_CDCTGPTFGRECPTS", pJson["APSYS_CDCTGPTFGRECPTS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTRSFTITS"))
+    {
+        if(!validJsonOfField(103, "APSYS_CDCTGPTFTRSFTITS", pJson["APSYS_CDCTGPTFTRSFTITS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_FLAGEXPSYSEXTTAXI"))
+    {
+        if(!validJsonOfField(104, "APSYS_FLAGEXPSYSEXTTAXI", pJson["APSYS_FLAGEXPSYSEXTTAXI"], err, false))
+            return false;
+    }
+    if(pJson.isMember("WB_IST_NICHT_ZWINGEND_CD"))
+    {
+        if(!validJsonOfField(105, "WB_IST_NICHT_ZWINGEND_CD", pJson["WB_IST_NICHT_ZWINGEND_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDBQERESTC"))
+    {
+        if(!validJsonOfField(106, "APSYS_CDBQERESTC", pJson["APSYS_CDBQERESTC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFTYPPLACS"))
+    {
+        if(!validJsonOfField(107, "APSYS_CDCTGPTFTYPPLACS", pJson["APSYS_CDCTGPTFTYPPLACS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDEANGRMTCLI1S"))
+    {
+        if(!validJsonOfField(108, "APSYS_CDEANGRMTCLI1S", pJson["APSYS_CDEANGRMTCLI1S"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDEANGRMTCLI2S"))
+    {
+        if(!validJsonOfField(109, "APSYS_CDEANGRMTCLI2S", pJson["APSYS_CDEANGRMTCLI2S"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDFATCATYPC"))
+    {
+        if(!validJsonOfField(110, "APSYS_CDFATCATYPC", pJson["APSYS_CDFATCATYPC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDFATCACLAS"))
+    {
+        if(!validJsonOfField(111, "APSYS_IDFATCACLAS", pJson["APSYS_IDFATCACLAS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATCALCCRMC"))
+    {
+        if(!validJsonOfField(112, "APSYS_CDFATCASTATCALCCRMC", pJson["APSYS_CDFATCASTATCALCCRMC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATC"))
+    {
+        if(!validJsonOfField(113, "APSYS_CDFATCASTATC", pJson["APSYS_CDFATCASTATC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_COMMENTFATCASTATS"))
+    {
+        if(!validJsonOfField(114, "APSYS_COMMENTFATCASTATS", pJson["APSYS_COMMENTFATCASTATS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDFATCAMOTIFPARTS"))
+    {
+        if(!validJsonOfField(115, "APSYS_CDFATCAMOTIFPARTS", pJson["APSYS_CDFATCAMOTIFPARTS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATCALCGLOBC"))
+    {
+        if(!validJsonOfField(116, "APSYS_CDFATCASTATCALCGLOBC", pJson["APSYS_CDFATCASTATCALCGLOBC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDFATCASTATCALCLOCC"))
+    {
+        if(!validJsonOfField(117, "APSYS_CDFATCASTATCALCLOCC", pJson["APSYS_CDFATCASTATCALCLOCC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDVALIDSTATC"))
+    {
+        if(!validJsonOfField(118, "APSYS_CDVALIDSTATC", pJson["APSYS_CDVALIDSTATC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_USERVALIDFATCASTATS"))
+    {
+        if(!validJsonOfField(119, "APSYS_USERVALIDFATCASTATS", pJson["APSYS_USERVALIDFATCASTATS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_DTVALIDFATCASTATL"))
+    {
+        if(!validJsonOfField(120, "APSYS_DTVALIDFATCASTATL", pJson["APSYS_DTVALIDFATCASTATL"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_HRVALIDFATCASTATL"))
+    {
+        if(!validJsonOfField(121, "APSYS_HRVALIDFATCASTATL", pJson["APSYS_HRVALIDFATCASTATL"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTRNETTC553C"))
+    {
+        if(!validJsonOfField(122, "APSYS_CDCTRNETTC553C", pJson["APSYS_CDCTRNETTC553C"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_FLAGFORCEPOSOSTMANAGI"))
+    {
+        if(!validJsonOfField(123, "APSYS_FLAGFORCEPOSOSTMANAGI", pJson["APSYS_FLAGFORCEPOSOSTMANAGI"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_POSOSTMANAGC"))
+    {
+        if(!validJsonOfField(124, "APSYS_POSOSTMANAGC", pJson["APSYS_POSOSTMANAGC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CRITEREUSFATCASTATL"))
+    {
+        if(!validJsonOfField(125, "APSYS_CRITEREUSFATCASTATL", pJson["APSYS_CRITEREUSFATCASTATL"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_FLAGSIMSI"))
+    {
+        if(!validJsonOfField(126, "APSYS_FLAGSIMSI", pJson["APSYS_FLAGSIMSI"], err, false))
+            return false;
+    }
+    if(pJson.isMember("NR_OF_BO_IN_WHT_STATEMENT"))
+    {
+        if(!validJsonOfField(127, "NR_OF_BO_IN_WHT_STATEMENT", pJson["NR_OF_BO_IN_WHT_STATEMENT"], err, false))
+            return false;
+    }
+    if(pJson.isMember("PARTNER_WITH_UNL_LIABILITY_CD"))
+    {
+        if(!validJsonOfField(128, "PARTNER_WITH_UNL_LIABILITY_CD", pJson["PARTNER_WITH_UNL_LIABILITY_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("COMPANY_MANAGED_BY_BO_CD"))
+    {
+        if(!validJsonOfField(129, "COMPANY_MANAGED_BY_BO_CD", pJson["COMPANY_MANAGED_BY_BO_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("IS_TRUSTEE_PHYSICAL_CD"))
+    {
+        if(!validJsonOfField(130, "IS_TRUSTEE_PHYSICAL_CD", pJson["IS_TRUSTEE_PHYSICAL_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("NO_TRADING_US_SECURITIES_CD"))
+    {
+        if(!validJsonOfField(131, "NO_TRADING_US_SECURITIES_CD", pJson["NO_TRADING_US_SECURITIES_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("PORTFOLIO_SEGR_ACCOUNT_CD"))
+    {
+        if(!validJsonOfField(132, "PORTFOLIO_SEGR_ACCOUNT_CD", pJson["PORTFOLIO_SEGR_ACCOUNT_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("US_WHT_START_DATE"))
+    {
+        if(!validJsonOfField(133, "US_WHT_START_DATE", pJson["US_WHT_START_DATE"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFIVSTAUTOS"))
+    {
+        if(!validJsonOfField(134, "APSYS_CDCTGPTFIVSTAUTOS", pJson["APSYS_CDCTGPTFIVSTAUTOS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("AUTOMATISCHE_VERTEILUNG_CD"))
+    {
+        if(!validJsonOfField(135, "AUTOMATISCHE_VERTEILUNG_CD", pJson["AUTOMATISCHE_VERTEILUNG_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDTYPREPORTQIC"))
+    {
+        if(!validJsonOfField(136, "APSYS_CDTYPREPORTQIC", pJson["APSYS_CDTYPREPORTQIC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_FLAGIRSNONACTIFI"))
+    {
+        if(!validJsonOfField(137, "APSYS_FLAGIRSNONACTIFI", pJson["APSYS_FLAGIRSNONACTIFI"], err, false))
+            return false;
+    }
+    if(pJson.isMember("OPENING_DOCUMENTS_PROPOSED_CD"))
+    {
+        if(!validJsonOfField(138, "OPENING_DOCUMENTS_PROPOSED_CD", pJson["OPENING_DOCUMENTS_PROPOSED_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDCTGPTFALGCPTS"))
+    {
+        if(!validJsonOfField(139, "APSYS_CDCTGPTFALGCPTS", pJson["APSYS_CDCTGPTFALGCPTS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDSTRUCFORJURS"))
+    {
+        if(!validJsonOfField(140, "APSYS_IDSTRUCFORJURS", pJson["APSYS_IDSTRUCFORJURS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_IDENTFORJURS"))
+    {
+        if(!validJsonOfField(141, "APSYS_IDENTFORJURS", pJson["APSYS_IDENTFORJURS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("FATCA_BASKET_CD"))
+    {
+        if(!validJsonOfField(142, "FATCA_BASKET_CD", pJson["FATCA_BASKET_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDMETHCLOC"))
+    {
+        if(!validJsonOfField(143, "APSYS_CDMETHCLOC", pJson["APSYS_CDMETHCLOC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_DTEVALCLOL"))
+    {
+        if(!validJsonOfField(144, "APSYS_DTEVALCLOL", pJson["APSYS_DTEVALCLOL"], err, false))
+            return false;
+    }
+    if(pJson.isMember("AEOI_EXEMPTION_CD"))
+    {
+        if(!validJsonOfField(145, "AEOI_EXEMPTION_CD", pJson["AEOI_EXEMPTION_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("AEOI_SUB_EXEMPTION_CD"))
+    {
+        if(!validJsonOfField(146, "AEOI_SUB_EXEMPTION_CD", pJson["AEOI_SUB_EXEMPTION_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("UNDOCUMENTED_ACCOUNT_CD"))
+    {
+        if(!validJsonOfField(147, "UNDOCUMENTED_ACCOUNT_CD", pJson["UNDOCUMENTED_ACCOUNT_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("DORMANT_ACCOUNT_CD"))
+    {
+        if(!validJsonOfField(148, "DORMANT_ACCOUNT_CD", pJson["DORMANT_ACCOUNT_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("AEOI_CONSISTENCY_STATUS_CD"))
+    {
+        if(!validJsonOfField(149, "AEOI_CONSISTENCY_STATUS_CD", pJson["AEOI_CONSISTENCY_STATUS_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("AEOI_FINAL_STATUS_CD"))
+    {
+        if(!validJsonOfField(150, "AEOI_FINAL_STATUS_CD", pJson["AEOI_FINAL_STATUS_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("AEOI_REVIEW_DATE"))
+    {
+        if(!validJsonOfField(151, "AEOI_REVIEW_DATE", pJson["AEOI_REVIEW_DATE"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDMIFIDEXEMPTC"))
+    {
+        if(!validJsonOfField(152, "APSYS_CDMIFIDEXEMPTC", pJson["APSYS_CDMIFIDEXEMPTC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_DTDEBMIFIDL"))
+    {
+        if(!validJsonOfField(153, "APSYS_DTDEBMIFIDL", pJson["APSYS_DTDEBMIFIDL"], err, false))
+            return false;
+    }
+    if(pJson.isMember("OPENED_IN_APSYS_DATE"))
+    {
+        if(!validJsonOfField(154, "OPENED_IN_APSYS_DATE", pJson["OPENED_IN_APSYS_DATE"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_FLAGDELDATAPERSI"))
+    {
+        if(!validJsonOfField(155, "APSYS_FLAGDELDATAPERSI", pJson["APSYS_FLAGDELDATAPERSI"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_DTWAITDELDATAPERSL"))
+    {
+        if(!validJsonOfField(156, "APSYS_DTWAITDELDATAPERSL", pJson["APSYS_DTWAITDELDATAPERSL"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDPTFSELDGSC"))
+    {
+        if(!validJsonOfField(157, "APSYS_CDPTFSELDGSC", pJson["APSYS_CDPTFSELDGSC"], err, false))
+            return false;
+    }
+    if(pJson.isMember("APSYS_CDMOTIFPARTDGSS"))
+    {
+        if(!validJsonOfField(158, "APSYS_CDMOTIFPARTDGSS", pJson["APSYS_CDMOTIFPARTDGSS"], err, false))
+            return false;
+    }
+    if(pJson.isMember("EAM_CD"))
+    {
+        if(!validJsonOfField(159, "EAM_CD", pJson["EAM_CD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("RETENTION_ON_HOLD"))
+    {
+        if(!validJsonOfField(160, "RETENTION_ON_HOLD", pJson["RETENTION_ON_HOLD"], err, false))
+            return false;
+    }
+    if(pJson.isMember("LOGICAL_ERASURE"))
+    {
+        if(!validJsonOfField(161, "LOGICAL_ERASURE", pJson["LOGICAL_ERASURE"], err, false))
+            return false;
+    }
+    if(pJson.isMember("RETENTION_ON_HOLD_DATE"))
+    {
+        if(!validJsonOfField(162, "RETENTION_ON_HOLD_DATE", pJson["RETENTION_ON_HOLD_DATE"], err, false))
+            return false;
+    }
+    if(pJson.isMember("RETENTION_ON_HOLD_REASON"))
+    {
+        if(!validJsonOfField(163, "RETENTION_ON_HOLD_REASON", pJson["RETENTION_ON_HOLD_REASON"], err, false))
+            return false;
+    }
+    if(pJson.isMember("LOGICAL_ERASURE_DATE"))
+    {
+        if(!validJsonOfField(164, "LOGICAL_ERASURE_DATE", pJson["LOGICAL_ERASURE_DATE"], err, false))
+            return false;
+    }
+    if(pJson.isMember("LOGICAL_ERASURE_REASON"))
+    {
+        if(!validJsonOfField(165, "LOGICAL_ERASURE_REASON", pJson["LOGICAL_ERASURE_REASON"], err, false))
             return false;
     }
     return true;
@@ -706,7 +25515,7 @@ bool Portfolio::validateMasqueradedJsonForUpdate(const Json::Value &pJson,
                                                  const std::vector<std::string> &pMasqueradingVector,
                                                  std::string &err)
 {
-    if(pMasqueradingVector.size() != 4)
+    if(pMasqueradingVector.size() != 166)
     {
         err = "Bad masquerading vector";
         return false;
@@ -717,16 +25526,16 @@ bool Portfolio::validateMasqueradedJsonForUpdate(const Json::Value &pJson,
           if(!validJsonOfField(0, pMasqueradingVector[0], pJson[pMasqueradingVector[0]], err, false))
               return false;
       }
-    else
-    {
-        err = "The value of primary key must be set in the json object for update";
-        return false;
-    }
       if(!pMasqueradingVector[1].empty() && pJson.isMember(pMasqueradingVector[1]))
       {
           if(!validJsonOfField(1, pMasqueradingVector[1], pJson[pMasqueradingVector[1]], err, false))
               return false;
       }
+    else
+    {
+        err = "The value of primary key must be set in the json object for update";
+        return false;
+    }
       if(!pMasqueradingVector[2].empty() && pJson.isMember(pMasqueradingVector[2]))
       {
           if(!validJsonOfField(2, pMasqueradingVector[2], pJson[pMasqueradingVector[2]], err, false))
@@ -735,6 +25544,816 @@ bool Portfolio::validateMasqueradedJsonForUpdate(const Json::Value &pJson,
       if(!pMasqueradingVector[3].empty() && pJson.isMember(pMasqueradingVector[3]))
       {
           if(!validJsonOfField(3, pMasqueradingVector[3], pJson[pMasqueradingVector[3]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[4].empty() && pJson.isMember(pMasqueradingVector[4]))
+      {
+          if(!validJsonOfField(4, pMasqueradingVector[4], pJson[pMasqueradingVector[4]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[5].empty() && pJson.isMember(pMasqueradingVector[5]))
+      {
+          if(!validJsonOfField(5, pMasqueradingVector[5], pJson[pMasqueradingVector[5]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[6].empty() && pJson.isMember(pMasqueradingVector[6]))
+      {
+          if(!validJsonOfField(6, pMasqueradingVector[6], pJson[pMasqueradingVector[6]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[7].empty() && pJson.isMember(pMasqueradingVector[7]))
+      {
+          if(!validJsonOfField(7, pMasqueradingVector[7], pJson[pMasqueradingVector[7]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[8].empty() && pJson.isMember(pMasqueradingVector[8]))
+      {
+          if(!validJsonOfField(8, pMasqueradingVector[8], pJson[pMasqueradingVector[8]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[9].empty() && pJson.isMember(pMasqueradingVector[9]))
+      {
+          if(!validJsonOfField(9, pMasqueradingVector[9], pJson[pMasqueradingVector[9]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[10].empty() && pJson.isMember(pMasqueradingVector[10]))
+      {
+          if(!validJsonOfField(10, pMasqueradingVector[10], pJson[pMasqueradingVector[10]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[11].empty() && pJson.isMember(pMasqueradingVector[11]))
+      {
+          if(!validJsonOfField(11, pMasqueradingVector[11], pJson[pMasqueradingVector[11]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[12].empty() && pJson.isMember(pMasqueradingVector[12]))
+      {
+          if(!validJsonOfField(12, pMasqueradingVector[12], pJson[pMasqueradingVector[12]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[13].empty() && pJson.isMember(pMasqueradingVector[13]))
+      {
+          if(!validJsonOfField(13, pMasqueradingVector[13], pJson[pMasqueradingVector[13]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[14].empty() && pJson.isMember(pMasqueradingVector[14]))
+      {
+          if(!validJsonOfField(14, pMasqueradingVector[14], pJson[pMasqueradingVector[14]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[15].empty() && pJson.isMember(pMasqueradingVector[15]))
+      {
+          if(!validJsonOfField(15, pMasqueradingVector[15], pJson[pMasqueradingVector[15]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[16].empty() && pJson.isMember(pMasqueradingVector[16]))
+      {
+          if(!validJsonOfField(16, pMasqueradingVector[16], pJson[pMasqueradingVector[16]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[17].empty() && pJson.isMember(pMasqueradingVector[17]))
+      {
+          if(!validJsonOfField(17, pMasqueradingVector[17], pJson[pMasqueradingVector[17]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[18].empty() && pJson.isMember(pMasqueradingVector[18]))
+      {
+          if(!validJsonOfField(18, pMasqueradingVector[18], pJson[pMasqueradingVector[18]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[19].empty() && pJson.isMember(pMasqueradingVector[19]))
+      {
+          if(!validJsonOfField(19, pMasqueradingVector[19], pJson[pMasqueradingVector[19]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[20].empty() && pJson.isMember(pMasqueradingVector[20]))
+      {
+          if(!validJsonOfField(20, pMasqueradingVector[20], pJson[pMasqueradingVector[20]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[21].empty() && pJson.isMember(pMasqueradingVector[21]))
+      {
+          if(!validJsonOfField(21, pMasqueradingVector[21], pJson[pMasqueradingVector[21]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[22].empty() && pJson.isMember(pMasqueradingVector[22]))
+      {
+          if(!validJsonOfField(22, pMasqueradingVector[22], pJson[pMasqueradingVector[22]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[23].empty() && pJson.isMember(pMasqueradingVector[23]))
+      {
+          if(!validJsonOfField(23, pMasqueradingVector[23], pJson[pMasqueradingVector[23]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[24].empty() && pJson.isMember(pMasqueradingVector[24]))
+      {
+          if(!validJsonOfField(24, pMasqueradingVector[24], pJson[pMasqueradingVector[24]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[25].empty() && pJson.isMember(pMasqueradingVector[25]))
+      {
+          if(!validJsonOfField(25, pMasqueradingVector[25], pJson[pMasqueradingVector[25]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[26].empty() && pJson.isMember(pMasqueradingVector[26]))
+      {
+          if(!validJsonOfField(26, pMasqueradingVector[26], pJson[pMasqueradingVector[26]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[27].empty() && pJson.isMember(pMasqueradingVector[27]))
+      {
+          if(!validJsonOfField(27, pMasqueradingVector[27], pJson[pMasqueradingVector[27]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[28].empty() && pJson.isMember(pMasqueradingVector[28]))
+      {
+          if(!validJsonOfField(28, pMasqueradingVector[28], pJson[pMasqueradingVector[28]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[29].empty() && pJson.isMember(pMasqueradingVector[29]))
+      {
+          if(!validJsonOfField(29, pMasqueradingVector[29], pJson[pMasqueradingVector[29]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[30].empty() && pJson.isMember(pMasqueradingVector[30]))
+      {
+          if(!validJsonOfField(30, pMasqueradingVector[30], pJson[pMasqueradingVector[30]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[31].empty() && pJson.isMember(pMasqueradingVector[31]))
+      {
+          if(!validJsonOfField(31, pMasqueradingVector[31], pJson[pMasqueradingVector[31]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[32].empty() && pJson.isMember(pMasqueradingVector[32]))
+      {
+          if(!validJsonOfField(32, pMasqueradingVector[32], pJson[pMasqueradingVector[32]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[33].empty() && pJson.isMember(pMasqueradingVector[33]))
+      {
+          if(!validJsonOfField(33, pMasqueradingVector[33], pJson[pMasqueradingVector[33]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[34].empty() && pJson.isMember(pMasqueradingVector[34]))
+      {
+          if(!validJsonOfField(34, pMasqueradingVector[34], pJson[pMasqueradingVector[34]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[35].empty() && pJson.isMember(pMasqueradingVector[35]))
+      {
+          if(!validJsonOfField(35, pMasqueradingVector[35], pJson[pMasqueradingVector[35]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[36].empty() && pJson.isMember(pMasqueradingVector[36]))
+      {
+          if(!validJsonOfField(36, pMasqueradingVector[36], pJson[pMasqueradingVector[36]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[37].empty() && pJson.isMember(pMasqueradingVector[37]))
+      {
+          if(!validJsonOfField(37, pMasqueradingVector[37], pJson[pMasqueradingVector[37]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[38].empty() && pJson.isMember(pMasqueradingVector[38]))
+      {
+          if(!validJsonOfField(38, pMasqueradingVector[38], pJson[pMasqueradingVector[38]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[39].empty() && pJson.isMember(pMasqueradingVector[39]))
+      {
+          if(!validJsonOfField(39, pMasqueradingVector[39], pJson[pMasqueradingVector[39]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[40].empty() && pJson.isMember(pMasqueradingVector[40]))
+      {
+          if(!validJsonOfField(40, pMasqueradingVector[40], pJson[pMasqueradingVector[40]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[41].empty() && pJson.isMember(pMasqueradingVector[41]))
+      {
+          if(!validJsonOfField(41, pMasqueradingVector[41], pJson[pMasqueradingVector[41]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[42].empty() && pJson.isMember(pMasqueradingVector[42]))
+      {
+          if(!validJsonOfField(42, pMasqueradingVector[42], pJson[pMasqueradingVector[42]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[43].empty() && pJson.isMember(pMasqueradingVector[43]))
+      {
+          if(!validJsonOfField(43, pMasqueradingVector[43], pJson[pMasqueradingVector[43]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[44].empty() && pJson.isMember(pMasqueradingVector[44]))
+      {
+          if(!validJsonOfField(44, pMasqueradingVector[44], pJson[pMasqueradingVector[44]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[45].empty() && pJson.isMember(pMasqueradingVector[45]))
+      {
+          if(!validJsonOfField(45, pMasqueradingVector[45], pJson[pMasqueradingVector[45]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[46].empty() && pJson.isMember(pMasqueradingVector[46]))
+      {
+          if(!validJsonOfField(46, pMasqueradingVector[46], pJson[pMasqueradingVector[46]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[47].empty() && pJson.isMember(pMasqueradingVector[47]))
+      {
+          if(!validJsonOfField(47, pMasqueradingVector[47], pJson[pMasqueradingVector[47]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[48].empty() && pJson.isMember(pMasqueradingVector[48]))
+      {
+          if(!validJsonOfField(48, pMasqueradingVector[48], pJson[pMasqueradingVector[48]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[49].empty() && pJson.isMember(pMasqueradingVector[49]))
+      {
+          if(!validJsonOfField(49, pMasqueradingVector[49], pJson[pMasqueradingVector[49]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[50].empty() && pJson.isMember(pMasqueradingVector[50]))
+      {
+          if(!validJsonOfField(50, pMasqueradingVector[50], pJson[pMasqueradingVector[50]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[51].empty() && pJson.isMember(pMasqueradingVector[51]))
+      {
+          if(!validJsonOfField(51, pMasqueradingVector[51], pJson[pMasqueradingVector[51]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[52].empty() && pJson.isMember(pMasqueradingVector[52]))
+      {
+          if(!validJsonOfField(52, pMasqueradingVector[52], pJson[pMasqueradingVector[52]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[53].empty() && pJson.isMember(pMasqueradingVector[53]))
+      {
+          if(!validJsonOfField(53, pMasqueradingVector[53], pJson[pMasqueradingVector[53]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[54].empty() && pJson.isMember(pMasqueradingVector[54]))
+      {
+          if(!validJsonOfField(54, pMasqueradingVector[54], pJson[pMasqueradingVector[54]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[55].empty() && pJson.isMember(pMasqueradingVector[55]))
+      {
+          if(!validJsonOfField(55, pMasqueradingVector[55], pJson[pMasqueradingVector[55]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[56].empty() && pJson.isMember(pMasqueradingVector[56]))
+      {
+          if(!validJsonOfField(56, pMasqueradingVector[56], pJson[pMasqueradingVector[56]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[57].empty() && pJson.isMember(pMasqueradingVector[57]))
+      {
+          if(!validJsonOfField(57, pMasqueradingVector[57], pJson[pMasqueradingVector[57]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[58].empty() && pJson.isMember(pMasqueradingVector[58]))
+      {
+          if(!validJsonOfField(58, pMasqueradingVector[58], pJson[pMasqueradingVector[58]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[59].empty() && pJson.isMember(pMasqueradingVector[59]))
+      {
+          if(!validJsonOfField(59, pMasqueradingVector[59], pJson[pMasqueradingVector[59]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[60].empty() && pJson.isMember(pMasqueradingVector[60]))
+      {
+          if(!validJsonOfField(60, pMasqueradingVector[60], pJson[pMasqueradingVector[60]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[61].empty() && pJson.isMember(pMasqueradingVector[61]))
+      {
+          if(!validJsonOfField(61, pMasqueradingVector[61], pJson[pMasqueradingVector[61]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[62].empty() && pJson.isMember(pMasqueradingVector[62]))
+      {
+          if(!validJsonOfField(62, pMasqueradingVector[62], pJson[pMasqueradingVector[62]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[63].empty() && pJson.isMember(pMasqueradingVector[63]))
+      {
+          if(!validJsonOfField(63, pMasqueradingVector[63], pJson[pMasqueradingVector[63]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[64].empty() && pJson.isMember(pMasqueradingVector[64]))
+      {
+          if(!validJsonOfField(64, pMasqueradingVector[64], pJson[pMasqueradingVector[64]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[65].empty() && pJson.isMember(pMasqueradingVector[65]))
+      {
+          if(!validJsonOfField(65, pMasqueradingVector[65], pJson[pMasqueradingVector[65]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[66].empty() && pJson.isMember(pMasqueradingVector[66]))
+      {
+          if(!validJsonOfField(66, pMasqueradingVector[66], pJson[pMasqueradingVector[66]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[67].empty() && pJson.isMember(pMasqueradingVector[67]))
+      {
+          if(!validJsonOfField(67, pMasqueradingVector[67], pJson[pMasqueradingVector[67]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[68].empty() && pJson.isMember(pMasqueradingVector[68]))
+      {
+          if(!validJsonOfField(68, pMasqueradingVector[68], pJson[pMasqueradingVector[68]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[69].empty() && pJson.isMember(pMasqueradingVector[69]))
+      {
+          if(!validJsonOfField(69, pMasqueradingVector[69], pJson[pMasqueradingVector[69]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[70].empty() && pJson.isMember(pMasqueradingVector[70]))
+      {
+          if(!validJsonOfField(70, pMasqueradingVector[70], pJson[pMasqueradingVector[70]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[71].empty() && pJson.isMember(pMasqueradingVector[71]))
+      {
+          if(!validJsonOfField(71, pMasqueradingVector[71], pJson[pMasqueradingVector[71]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[72].empty() && pJson.isMember(pMasqueradingVector[72]))
+      {
+          if(!validJsonOfField(72, pMasqueradingVector[72], pJson[pMasqueradingVector[72]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[73].empty() && pJson.isMember(pMasqueradingVector[73]))
+      {
+          if(!validJsonOfField(73, pMasqueradingVector[73], pJson[pMasqueradingVector[73]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[74].empty() && pJson.isMember(pMasqueradingVector[74]))
+      {
+          if(!validJsonOfField(74, pMasqueradingVector[74], pJson[pMasqueradingVector[74]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[75].empty() && pJson.isMember(pMasqueradingVector[75]))
+      {
+          if(!validJsonOfField(75, pMasqueradingVector[75], pJson[pMasqueradingVector[75]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[76].empty() && pJson.isMember(pMasqueradingVector[76]))
+      {
+          if(!validJsonOfField(76, pMasqueradingVector[76], pJson[pMasqueradingVector[76]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[77].empty() && pJson.isMember(pMasqueradingVector[77]))
+      {
+          if(!validJsonOfField(77, pMasqueradingVector[77], pJson[pMasqueradingVector[77]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[78].empty() && pJson.isMember(pMasqueradingVector[78]))
+      {
+          if(!validJsonOfField(78, pMasqueradingVector[78], pJson[pMasqueradingVector[78]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[79].empty() && pJson.isMember(pMasqueradingVector[79]))
+      {
+          if(!validJsonOfField(79, pMasqueradingVector[79], pJson[pMasqueradingVector[79]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[80].empty() && pJson.isMember(pMasqueradingVector[80]))
+      {
+          if(!validJsonOfField(80, pMasqueradingVector[80], pJson[pMasqueradingVector[80]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[81].empty() && pJson.isMember(pMasqueradingVector[81]))
+      {
+          if(!validJsonOfField(81, pMasqueradingVector[81], pJson[pMasqueradingVector[81]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[82].empty() && pJson.isMember(pMasqueradingVector[82]))
+      {
+          if(!validJsonOfField(82, pMasqueradingVector[82], pJson[pMasqueradingVector[82]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[83].empty() && pJson.isMember(pMasqueradingVector[83]))
+      {
+          if(!validJsonOfField(83, pMasqueradingVector[83], pJson[pMasqueradingVector[83]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[84].empty() && pJson.isMember(pMasqueradingVector[84]))
+      {
+          if(!validJsonOfField(84, pMasqueradingVector[84], pJson[pMasqueradingVector[84]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[85].empty() && pJson.isMember(pMasqueradingVector[85]))
+      {
+          if(!validJsonOfField(85, pMasqueradingVector[85], pJson[pMasqueradingVector[85]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[86].empty() && pJson.isMember(pMasqueradingVector[86]))
+      {
+          if(!validJsonOfField(86, pMasqueradingVector[86], pJson[pMasqueradingVector[86]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[87].empty() && pJson.isMember(pMasqueradingVector[87]))
+      {
+          if(!validJsonOfField(87, pMasqueradingVector[87], pJson[pMasqueradingVector[87]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[88].empty() && pJson.isMember(pMasqueradingVector[88]))
+      {
+          if(!validJsonOfField(88, pMasqueradingVector[88], pJson[pMasqueradingVector[88]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[89].empty() && pJson.isMember(pMasqueradingVector[89]))
+      {
+          if(!validJsonOfField(89, pMasqueradingVector[89], pJson[pMasqueradingVector[89]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[90].empty() && pJson.isMember(pMasqueradingVector[90]))
+      {
+          if(!validJsonOfField(90, pMasqueradingVector[90], pJson[pMasqueradingVector[90]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[91].empty() && pJson.isMember(pMasqueradingVector[91]))
+      {
+          if(!validJsonOfField(91, pMasqueradingVector[91], pJson[pMasqueradingVector[91]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[92].empty() && pJson.isMember(pMasqueradingVector[92]))
+      {
+          if(!validJsonOfField(92, pMasqueradingVector[92], pJson[pMasqueradingVector[92]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[93].empty() && pJson.isMember(pMasqueradingVector[93]))
+      {
+          if(!validJsonOfField(93, pMasqueradingVector[93], pJson[pMasqueradingVector[93]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[94].empty() && pJson.isMember(pMasqueradingVector[94]))
+      {
+          if(!validJsonOfField(94, pMasqueradingVector[94], pJson[pMasqueradingVector[94]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[95].empty() && pJson.isMember(pMasqueradingVector[95]))
+      {
+          if(!validJsonOfField(95, pMasqueradingVector[95], pJson[pMasqueradingVector[95]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[96].empty() && pJson.isMember(pMasqueradingVector[96]))
+      {
+          if(!validJsonOfField(96, pMasqueradingVector[96], pJson[pMasqueradingVector[96]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[97].empty() && pJson.isMember(pMasqueradingVector[97]))
+      {
+          if(!validJsonOfField(97, pMasqueradingVector[97], pJson[pMasqueradingVector[97]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[98].empty() && pJson.isMember(pMasqueradingVector[98]))
+      {
+          if(!validJsonOfField(98, pMasqueradingVector[98], pJson[pMasqueradingVector[98]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[99].empty() && pJson.isMember(pMasqueradingVector[99]))
+      {
+          if(!validJsonOfField(99, pMasqueradingVector[99], pJson[pMasqueradingVector[99]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[100].empty() && pJson.isMember(pMasqueradingVector[100]))
+      {
+          if(!validJsonOfField(100, pMasqueradingVector[100], pJson[pMasqueradingVector[100]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[101].empty() && pJson.isMember(pMasqueradingVector[101]))
+      {
+          if(!validJsonOfField(101, pMasqueradingVector[101], pJson[pMasqueradingVector[101]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[102].empty() && pJson.isMember(pMasqueradingVector[102]))
+      {
+          if(!validJsonOfField(102, pMasqueradingVector[102], pJson[pMasqueradingVector[102]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[103].empty() && pJson.isMember(pMasqueradingVector[103]))
+      {
+          if(!validJsonOfField(103, pMasqueradingVector[103], pJson[pMasqueradingVector[103]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[104].empty() && pJson.isMember(pMasqueradingVector[104]))
+      {
+          if(!validJsonOfField(104, pMasqueradingVector[104], pJson[pMasqueradingVector[104]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[105].empty() && pJson.isMember(pMasqueradingVector[105]))
+      {
+          if(!validJsonOfField(105, pMasqueradingVector[105], pJson[pMasqueradingVector[105]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[106].empty() && pJson.isMember(pMasqueradingVector[106]))
+      {
+          if(!validJsonOfField(106, pMasqueradingVector[106], pJson[pMasqueradingVector[106]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[107].empty() && pJson.isMember(pMasqueradingVector[107]))
+      {
+          if(!validJsonOfField(107, pMasqueradingVector[107], pJson[pMasqueradingVector[107]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[108].empty() && pJson.isMember(pMasqueradingVector[108]))
+      {
+          if(!validJsonOfField(108, pMasqueradingVector[108], pJson[pMasqueradingVector[108]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[109].empty() && pJson.isMember(pMasqueradingVector[109]))
+      {
+          if(!validJsonOfField(109, pMasqueradingVector[109], pJson[pMasqueradingVector[109]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[110].empty() && pJson.isMember(pMasqueradingVector[110]))
+      {
+          if(!validJsonOfField(110, pMasqueradingVector[110], pJson[pMasqueradingVector[110]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[111].empty() && pJson.isMember(pMasqueradingVector[111]))
+      {
+          if(!validJsonOfField(111, pMasqueradingVector[111], pJson[pMasqueradingVector[111]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[112].empty() && pJson.isMember(pMasqueradingVector[112]))
+      {
+          if(!validJsonOfField(112, pMasqueradingVector[112], pJson[pMasqueradingVector[112]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[113].empty() && pJson.isMember(pMasqueradingVector[113]))
+      {
+          if(!validJsonOfField(113, pMasqueradingVector[113], pJson[pMasqueradingVector[113]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[114].empty() && pJson.isMember(pMasqueradingVector[114]))
+      {
+          if(!validJsonOfField(114, pMasqueradingVector[114], pJson[pMasqueradingVector[114]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[115].empty() && pJson.isMember(pMasqueradingVector[115]))
+      {
+          if(!validJsonOfField(115, pMasqueradingVector[115], pJson[pMasqueradingVector[115]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[116].empty() && pJson.isMember(pMasqueradingVector[116]))
+      {
+          if(!validJsonOfField(116, pMasqueradingVector[116], pJson[pMasqueradingVector[116]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[117].empty() && pJson.isMember(pMasqueradingVector[117]))
+      {
+          if(!validJsonOfField(117, pMasqueradingVector[117], pJson[pMasqueradingVector[117]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[118].empty() && pJson.isMember(pMasqueradingVector[118]))
+      {
+          if(!validJsonOfField(118, pMasqueradingVector[118], pJson[pMasqueradingVector[118]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[119].empty() && pJson.isMember(pMasqueradingVector[119]))
+      {
+          if(!validJsonOfField(119, pMasqueradingVector[119], pJson[pMasqueradingVector[119]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[120].empty() && pJson.isMember(pMasqueradingVector[120]))
+      {
+          if(!validJsonOfField(120, pMasqueradingVector[120], pJson[pMasqueradingVector[120]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[121].empty() && pJson.isMember(pMasqueradingVector[121]))
+      {
+          if(!validJsonOfField(121, pMasqueradingVector[121], pJson[pMasqueradingVector[121]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[122].empty() && pJson.isMember(pMasqueradingVector[122]))
+      {
+          if(!validJsonOfField(122, pMasqueradingVector[122], pJson[pMasqueradingVector[122]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[123].empty() && pJson.isMember(pMasqueradingVector[123]))
+      {
+          if(!validJsonOfField(123, pMasqueradingVector[123], pJson[pMasqueradingVector[123]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[124].empty() && pJson.isMember(pMasqueradingVector[124]))
+      {
+          if(!validJsonOfField(124, pMasqueradingVector[124], pJson[pMasqueradingVector[124]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[125].empty() && pJson.isMember(pMasqueradingVector[125]))
+      {
+          if(!validJsonOfField(125, pMasqueradingVector[125], pJson[pMasqueradingVector[125]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[126].empty() && pJson.isMember(pMasqueradingVector[126]))
+      {
+          if(!validJsonOfField(126, pMasqueradingVector[126], pJson[pMasqueradingVector[126]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[127].empty() && pJson.isMember(pMasqueradingVector[127]))
+      {
+          if(!validJsonOfField(127, pMasqueradingVector[127], pJson[pMasqueradingVector[127]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[128].empty() && pJson.isMember(pMasqueradingVector[128]))
+      {
+          if(!validJsonOfField(128, pMasqueradingVector[128], pJson[pMasqueradingVector[128]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[129].empty() && pJson.isMember(pMasqueradingVector[129]))
+      {
+          if(!validJsonOfField(129, pMasqueradingVector[129], pJson[pMasqueradingVector[129]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[130].empty() && pJson.isMember(pMasqueradingVector[130]))
+      {
+          if(!validJsonOfField(130, pMasqueradingVector[130], pJson[pMasqueradingVector[130]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[131].empty() && pJson.isMember(pMasqueradingVector[131]))
+      {
+          if(!validJsonOfField(131, pMasqueradingVector[131], pJson[pMasqueradingVector[131]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[132].empty() && pJson.isMember(pMasqueradingVector[132]))
+      {
+          if(!validJsonOfField(132, pMasqueradingVector[132], pJson[pMasqueradingVector[132]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[133].empty() && pJson.isMember(pMasqueradingVector[133]))
+      {
+          if(!validJsonOfField(133, pMasqueradingVector[133], pJson[pMasqueradingVector[133]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[134].empty() && pJson.isMember(pMasqueradingVector[134]))
+      {
+          if(!validJsonOfField(134, pMasqueradingVector[134], pJson[pMasqueradingVector[134]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[135].empty() && pJson.isMember(pMasqueradingVector[135]))
+      {
+          if(!validJsonOfField(135, pMasqueradingVector[135], pJson[pMasqueradingVector[135]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[136].empty() && pJson.isMember(pMasqueradingVector[136]))
+      {
+          if(!validJsonOfField(136, pMasqueradingVector[136], pJson[pMasqueradingVector[136]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[137].empty() && pJson.isMember(pMasqueradingVector[137]))
+      {
+          if(!validJsonOfField(137, pMasqueradingVector[137], pJson[pMasqueradingVector[137]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[138].empty() && pJson.isMember(pMasqueradingVector[138]))
+      {
+          if(!validJsonOfField(138, pMasqueradingVector[138], pJson[pMasqueradingVector[138]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[139].empty() && pJson.isMember(pMasqueradingVector[139]))
+      {
+          if(!validJsonOfField(139, pMasqueradingVector[139], pJson[pMasqueradingVector[139]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[140].empty() && pJson.isMember(pMasqueradingVector[140]))
+      {
+          if(!validJsonOfField(140, pMasqueradingVector[140], pJson[pMasqueradingVector[140]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[141].empty() && pJson.isMember(pMasqueradingVector[141]))
+      {
+          if(!validJsonOfField(141, pMasqueradingVector[141], pJson[pMasqueradingVector[141]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[142].empty() && pJson.isMember(pMasqueradingVector[142]))
+      {
+          if(!validJsonOfField(142, pMasqueradingVector[142], pJson[pMasqueradingVector[142]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[143].empty() && pJson.isMember(pMasqueradingVector[143]))
+      {
+          if(!validJsonOfField(143, pMasqueradingVector[143], pJson[pMasqueradingVector[143]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[144].empty() && pJson.isMember(pMasqueradingVector[144]))
+      {
+          if(!validJsonOfField(144, pMasqueradingVector[144], pJson[pMasqueradingVector[144]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[145].empty() && pJson.isMember(pMasqueradingVector[145]))
+      {
+          if(!validJsonOfField(145, pMasqueradingVector[145], pJson[pMasqueradingVector[145]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[146].empty() && pJson.isMember(pMasqueradingVector[146]))
+      {
+          if(!validJsonOfField(146, pMasqueradingVector[146], pJson[pMasqueradingVector[146]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[147].empty() && pJson.isMember(pMasqueradingVector[147]))
+      {
+          if(!validJsonOfField(147, pMasqueradingVector[147], pJson[pMasqueradingVector[147]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[148].empty() && pJson.isMember(pMasqueradingVector[148]))
+      {
+          if(!validJsonOfField(148, pMasqueradingVector[148], pJson[pMasqueradingVector[148]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[149].empty() && pJson.isMember(pMasqueradingVector[149]))
+      {
+          if(!validJsonOfField(149, pMasqueradingVector[149], pJson[pMasqueradingVector[149]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[150].empty() && pJson.isMember(pMasqueradingVector[150]))
+      {
+          if(!validJsonOfField(150, pMasqueradingVector[150], pJson[pMasqueradingVector[150]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[151].empty() && pJson.isMember(pMasqueradingVector[151]))
+      {
+          if(!validJsonOfField(151, pMasqueradingVector[151], pJson[pMasqueradingVector[151]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[152].empty() && pJson.isMember(pMasqueradingVector[152]))
+      {
+          if(!validJsonOfField(152, pMasqueradingVector[152], pJson[pMasqueradingVector[152]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[153].empty() && pJson.isMember(pMasqueradingVector[153]))
+      {
+          if(!validJsonOfField(153, pMasqueradingVector[153], pJson[pMasqueradingVector[153]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[154].empty() && pJson.isMember(pMasqueradingVector[154]))
+      {
+          if(!validJsonOfField(154, pMasqueradingVector[154], pJson[pMasqueradingVector[154]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[155].empty() && pJson.isMember(pMasqueradingVector[155]))
+      {
+          if(!validJsonOfField(155, pMasqueradingVector[155], pJson[pMasqueradingVector[155]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[156].empty() && pJson.isMember(pMasqueradingVector[156]))
+      {
+          if(!validJsonOfField(156, pMasqueradingVector[156], pJson[pMasqueradingVector[156]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[157].empty() && pJson.isMember(pMasqueradingVector[157]))
+      {
+          if(!validJsonOfField(157, pMasqueradingVector[157], pJson[pMasqueradingVector[157]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[158].empty() && pJson.isMember(pMasqueradingVector[158]))
+      {
+          if(!validJsonOfField(158, pMasqueradingVector[158], pJson[pMasqueradingVector[158]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[159].empty() && pJson.isMember(pMasqueradingVector[159]))
+      {
+          if(!validJsonOfField(159, pMasqueradingVector[159], pJson[pMasqueradingVector[159]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[160].empty() && pJson.isMember(pMasqueradingVector[160]))
+      {
+          if(!validJsonOfField(160, pMasqueradingVector[160], pJson[pMasqueradingVector[160]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[161].empty() && pJson.isMember(pMasqueradingVector[161]))
+      {
+          if(!validJsonOfField(161, pMasqueradingVector[161], pJson[pMasqueradingVector[161]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[162].empty() && pJson.isMember(pMasqueradingVector[162]))
+      {
+          if(!validJsonOfField(162, pMasqueradingVector[162], pJson[pMasqueradingVector[162]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[163].empty() && pJson.isMember(pMasqueradingVector[163]))
+      {
+          if(!validJsonOfField(163, pMasqueradingVector[163], pJson[pMasqueradingVector[163]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[164].empty() && pJson.isMember(pMasqueradingVector[164]))
+      {
+          if(!validJsonOfField(164, pMasqueradingVector[164], pJson[pMasqueradingVector[164]], err, false))
+              return false;
+      }
+      if(!pMasqueradingVector[165].empty() && pJson.isMember(pMasqueradingVector[165]))
+      {
+          if(!validJsonOfField(165, pMasqueradingVector[165], pJson[pMasqueradingVector[165]], err, false))
               return false;
       }
     }
@@ -756,15 +26375,9 @@ bool Portfolio::validJsonOfField(size_t index,
         case 0:
             if(pJson.isNull())
             {
-                err="The " + fieldName + " column cannot be null";
-                return false;
+                return true;
             }
-            if(isForCreation)
-            {
-                err="The automatic primary key cannot be set";
-                return false;
-            }
-            if(!pJson.isInt())
+            if(!pJson.isNumeric())
             {
                 err="Type error in the "+fieldName+" field";
                 return false;
@@ -776,20 +26389,11 @@ bool Portfolio::validJsonOfField(size_t index,
                 err="The " + fieldName + " column cannot be null";
                 return false;
             }
-            if(!pJson.isString())
+            if(!pJson.isNumeric())
             {
                 err="Type error in the "+fieldName+" field";
                 return false;
             }
-            // asString().length() creates a string object, is there any better way to validate the length?
-            if(pJson.isString() && pJson.asString().length() > 255)
-            {
-                err="String length exceeds limit for the " +
-                    fieldName +
-                    " field (the maximum value is 255)";
-                return false;
-            }
-
             break;
         case 2:
             if(pJson.isNull())
@@ -801,17 +26405,2951 @@ bool Portfolio::validJsonOfField(size_t index,
                 err="Type error in the "+fieldName+" field";
                 return false;
             }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 30)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 30)";
+                return false;
+            }
+
             break;
         case 3:
             if(pJson.isNull())
             {
                 return true;
             }
-            if(!pJson.isInt())
+            if(!pJson.isString())
             {
                 err="Type error in the "+fieldName+" field";
                 return false;
             }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 4:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 8)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 8)";
+                return false;
+            }
+
+            break;
+        case 5:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 8)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 8)";
+                return false;
+            }
+
+            break;
+        case 6:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 8)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 8)";
+                return false;
+            }
+
+            break;
+        case 7:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 8)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 8)";
+                return false;
+            }
+
+            break;
+        case 8:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 8)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 8)";
+                return false;
+            }
+
+            break;
+        case 9:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 8)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 8)";
+                return false;
+            }
+
+            break;
+        case 10:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 30)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 30)";
+                return false;
+            }
+
+            break;
+        case 11:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 50)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 50)";
+                return false;
+            }
+
+            break;
+        case 12:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 13:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 14:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 15:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 16:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 17:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 18:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 30)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 30)";
+                return false;
+            }
+
+            break;
+        case 19:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 20:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 30)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 30)";
+                return false;
+            }
+
+            break;
+        case 21:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 22:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 23:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 24:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 25:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 60)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 60)";
+                return false;
+            }
+
+            break;
+        case 26:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 27:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 28:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 35)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 35)";
+                return false;
+            }
+
+            break;
+        case 29:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 30:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 31:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 32:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 512)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 512)";
+                return false;
+            }
+
+            break;
+        case 33:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 34:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 35:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 30)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 30)";
+                return false;
+            }
+
+            break;
+        case 36:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 30)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 30)";
+                return false;
+            }
+
+            break;
+        case 37:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 30)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 30)";
+                return false;
+            }
+
+            break;
+        case 38:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 39:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 60)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 60)";
+                return false;
+            }
+
+            break;
+        case 40:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 60)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 60)";
+                return false;
+            }
+
+            break;
+        case 41:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 60)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 60)";
+                return false;
+            }
+
+            break;
+        case 42:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isNumeric())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 43:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 44:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 45:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isNumeric())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 46:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 2)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 2)";
+                return false;
+            }
+
+            break;
+        case 47:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isNumeric())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 48:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 13)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 13)";
+                return false;
+            }
+
+            break;
+        case 49:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 50:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 60)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 60)";
+                return false;
+            }
+
+            break;
+        case 51:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 30)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 30)";
+                return false;
+            }
+
+            break;
+        case 52:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 53:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 54:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 55:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 56:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isNumeric())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 57:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 58:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 59:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 60:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 61:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 62:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 63:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 64:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 65:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 66:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 67:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 68:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 60)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 60)";
+                return false;
+            }
+
+            break;
+        case 69:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 70:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 30)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 30)";
+                return false;
+            }
+
+            break;
+        case 71:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isNumeric())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 72:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 73:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 30)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 30)";
+                return false;
+            }
+
+            break;
+        case 74:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 75:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 76:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isNumeric())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 77:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 78:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 79:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 80:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 81:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isNumeric())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 82:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isNumeric())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 83:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 84:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 30)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 30)";
+                return false;
+            }
+
+            break;
+        case 85:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 86:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 87:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 88:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 89:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 90:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 91:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 5)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 5)";
+                return false;
+            }
+
+            break;
+        case 92:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 93:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 94:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 95:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 96:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 97:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 98:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 99:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 100:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 101:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 102:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 103:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 104:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 105:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 106:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 107:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 108:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 5)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 5)";
+                return false;
+            }
+
+            break;
+        case 109:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 5)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 5)";
+                return false;
+            }
+
+            break;
+        case 110:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 111:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 5)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 5)";
+                return false;
+            }
+
+            break;
+        case 112:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 113:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 114:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 60)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 60)";
+                return false;
+            }
+
+            break;
+        case 115:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 116:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 117:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 118:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 119:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 9)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 9)";
+                return false;
+            }
+
+            break;
+        case 120:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 121:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 122:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 123:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 124:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 125:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isNumeric())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 126:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 127:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isNumeric())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 128:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 129:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 130:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 131:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 132:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 133:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 134:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 135:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 136:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 137:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 138:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 139:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 140:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 141:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 142:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isNumeric())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 143:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 144:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 145:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 146:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 147:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 148:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 149:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 150:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 151:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 152:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 153:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 154:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 155:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 156:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 157:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 158:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 3)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 3)";
+                return false;
+            }
+
+            break;
+        case 159:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 160:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 161:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 1)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 1)";
+                return false;
+            }
+
+            break;
+        case 162:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 163:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 2000)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 2000)";
+                return false;
+            }
+
+            break;
+        case 164:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            break;
+        case 165:
+            if(pJson.isNull())
+            {
+                return true;
+            }
+            if(!pJson.isString())
+            {
+                err="Type error in the "+fieldName+" field";
+                return false;
+            }
+            // asString().length() creates a string object, is there any better way to validate the length?
+            if(pJson.isString() && pJson.asString().length() > 2000)
+            {
+                err="String length exceeds limit for the " +
+                    fieldName +
+                    " field (the maximum value is 2000)";
+                return false;
+            }
+
             break;
         default:
             err="Internal error in the server";

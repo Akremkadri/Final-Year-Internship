@@ -36,6 +36,7 @@ namespace drogon_model
 {
 namespace cim_web
 {
+class Exemple;
 
 class Client
 {
@@ -218,6 +219,9 @@ class Client
     Json::Value toJson() const;
     Json::Value toMasqueradedJson(const std::vector<std::string> &pMasqueradingVector) const;
     /// Relationship interfaces
+    void getExemple(const drogon::orm::DbClientPtr &clientPtr,
+                    const std::function<void(Exemple)> &rcb,
+                    const drogon::orm::ExceptionCallback &ecb) const;
   private:
     friend drogon::orm::Mapper<Client>;
 #ifdef __cpp_impl_coroutine

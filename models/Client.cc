@@ -6,6 +6,7 @@
  */
 
 #include "Client.h"
+#include "Exemple.h"
 #include <drogon/utils/Utilities.h>
 #include <string>
 
@@ -2219,4 +2220,27 @@ bool Client::validJsonOfField(size_t index,
             break;
     }
     return true;
+}
+void Client::getExemple(const DbClientPtr &clientPtr,
+                        const std::function<void(Exemple)> &rcb,
+                        const ExceptionCallback &ecb) const
+{
+    const static std::string sql = "select * from exemple where id = ?";
+    *clientPtr << sql
+               << *clientManager_
+               >> [rcb = std::move(rcb), ecb](const Result &r){
+                    if (r.size() == 0)
+                    {
+                        ecb(UnexpectedRows("0 rows found"));
+                    }
+                    else if (r.size() > 1)
+                    {
+                        ecb(UnexpectedRows("Found more than one row"));
+                    }
+                    else
+                    {
+                        rcb(Exemple(r[0]));
+                    }
+               }
+               >> ecb;
 }
