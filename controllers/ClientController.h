@@ -1,3 +1,4 @@
+/*
 #pragma once
 
 #include <drogon/HttpController.h>
@@ -22,3 +23,4 @@ class ClientController : public drogon::HttpController<ClientController>
     void updateOne(const HttpRequestPtr &req, std::function<void(const HttpResponsePtr &)> &&callback, int ClientID, Client &&pClient) const;
     void deleteOne(const HttpRequestPtr &req, std::function<void(const HttpResponsePtr &)> &&callback, int ClientID) const;
 };
+*/

@@ -40,17 +40,17 @@
     },
     "relationships": {
         "enabled": true,
-        "items": [
+         "items": [
             {
-                "type": "has one",
-                "original_table_name": "client",
-                "original_table_alias": "",
-                "original_key": "CLIENT_Manager",
-                "target_table_name": "exemple",
-                "target_table_alias": "",
-                "target_key": "id",
-                "enable_reverse": false
-            }
+                "type": "hasOne",
+                "original_table_name": "PORTFOLIO",
+                "original_table_alias": "PORTFOLIO",
+                "original_key": "KUNDENID",
+                "target_table_name": "KUNDE",
+                "target_table_alias": "KUNDE",
+                "target_key": "PORTFOLIONO",
+                "enable_reverse": true
+            },
         ]
     },
     "restful_api_controllers": {

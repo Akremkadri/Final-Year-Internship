@@ -1,20 +1,24 @@
 #pragma once
 
 #include <drogon/HttpController.h>
+#include "../models/Kunde.h"
 
 using namespace drogon;
-
+using namespace drogon_model::cim_web;
 class KundeControllers : public drogon::HttpController<KundeControllers>
 {
   public:
     METHOD_LIST_BEGIN
     // use METHOD_ADD to add your custom processing function here;
-    // METHOD_ADD(KundeControllers::get, "/{2}/{1}", Get); // path is /KundeControllers/{arg2}/{arg1}
-    // METHOD_ADD(KundeControllers::your_method_name, "/{1}/{2}/list", Get); // path is /KundeControllers/{arg1}/{arg2}/list
-    // ADD_METHOD_TO(KundeControllers::your_method_name, "/absolute/path/{1}/{2}/list", Get); // path is /absolute/path/{arg1}/{arg2}/list
-
+    ADD_METHOD_TO(KundeControllers::get, "/Kunde", Get);
+    // ADD_METHOD_TO(KundeControllers::getOne, "/Kunde/{1}", Get, "LoginFilter");
+    // ADD_METHOD_TO(KundeControllers::createOne, "/Kunde", Post , "LoginFilter");
+    // ADD_METHOD_TO(KundeControllers::updateOne, "/Kunde/{1}", Put , "LoginFilter");
+    // ADD_METHOD_TO(KundeControllers::deleteOne, "/Kunde/{1}", Delete, "LoginFilter");
     METHOD_LIST_END
-    // your declaration of processing function maybe like this:
-    // void get(const HttpRequestPtr& req, std::function<void (const HttpResponsePtr &)> &&callback, int p1, std::string p2);
-    // void your_method_name(const HttpRequestPtr& req, std::function<void (const HttpResponsePtr &)> &&callback, double p1, int p2) const;
+    void get(const HttpRequestPtr& req, std::function<void(const HttpResponsePtr &)> &&callback) const;
+    // void getOne(const HttpRequestPtr& req, std::function<void(const HttpResponsePtr &)> &&callback, int KUNDENID) const;
+    // void createOne(const HttpRequestPtr &req, std::function<void(const HttpResponsePtr &)> &&callback, Kunde &&KUNDENID) const;
+    // void updateOne(const HttpRequestPtr &req, std::function<void(const HttpResponsePtr &)> &&callback, int KUNDENID, Kunde &&pKUNDENID) const;
+    // void deleteOne(const HttpRequestPtr &req, std::function<void(const HttpResponsePtr &)> &&callback, int KUNDENID) const;
 };
