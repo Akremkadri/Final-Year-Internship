@@ -12,6 +12,9 @@ InternalTable::~InternalTable()
 }
 
 string LoadJsonFile(){
+
+  Json::FastWriter fastWriter;
+  std::string output = fastWriter.write(root);
   fstream ofile("json.json");
   string strjson;
   if (!ofile.is_open()) {
