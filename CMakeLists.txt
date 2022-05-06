@@ -33,9 +33,11 @@ target_link_libraries(${PROJECT_NAME} PRIVATE jwt-cpp)
 # https://github.com/trusch/libbcrypt
 add_subdirectory(/home/akram/Desktop/WebserverDrogon/WebServer/SubModules/libbcrypt)
 target_link_libraries(${PROJECT_NAME} PRIVATE bcrypt)
+
 # and comment out the following lines
 find_package(Drogon CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE Drogon::Drogon)
+
 # https://github.com/Thalhammer/jwt-cpp
 
 # ##############################################################################

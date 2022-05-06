@@ -4,6 +4,9 @@
 #pragma once
 #include <string>
 #include "../models/Portfolio.h"
+#include <trantor/utils/Date.h>
+#include <trantor/utils/Logger.h>
+
 struct PortfolioDetails
 {
          double KUNDENID;
@@ -173,7 +176,7 @@ struct PortfolioDetails
          trantor::Date LOGICAL_ERASURE_DATE;
          std::string LOGICAL_ERASURE_REASON;
          PortfolioDetails(){}
-         explicit PortfolioDetails(const drogon_model::cim_web::Portfolio &Portfolio);
+         PortfolioDetails(const drogon_model::cim_web::Portfolio &Portfolio);
          Json::Value toJson(); 
 };
  
