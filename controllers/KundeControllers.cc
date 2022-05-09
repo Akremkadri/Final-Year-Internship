@@ -70,3 +70,34 @@ void KundeControllers::get(const HttpRequestPtr& req, std::function<void(const H
                        (*callbackPtr)(resp);
                    };
 }
+void KundeControllers::getOne(const HttpRequestPtr& req, std::function<void(const HttpResponsePtr &)> &&callback, int KUNDENID) const{
+     LOG_DEBUG << "getOne kundeID: "<< KUNDENID;
+        auto callbackPtr = std::make_shared<std::function<void(const HttpResponsePtr &)>>(std::move(callback));
+        auto dbClientPtr = drogon::app().getDbClient();
+
+        Mapper<Kunde> mp(dbClientPtr);
+        mp.findByPrimaryKey(
+         KUNDENID,
+         [callbackPtr](const Kunde &Kunde) {
+             Json::Value ret{};
+             ret = Kunde.toJson();
+             auto resp = HttpResponse::newHttpJsonResponse(ret);
+             resp->setStatusCode(HttpStatusCode::k201Created);
+             (*callbackPtr)(resp);
+         },
+         [callbackPtr](const DrogonDbException &e) {
+             const drogon::orm::UnexpectedRows *s = dynamic_cast<const drogon::orm::UnexpectedRows *>(&e.base());
+             if(s) {
+                 auto resp = HttpResponse::newHttpResponse();
+                 resp->setStatusCode(k404NotFound);
+                 (*callbackPtr)(resp);
+                 return;
+             }
+             LOG_ERROR << e.base().what();
+             Json::Value ret{};
+             ret["error"] = "DataBase error";
+             auto resp = HttpResponse::newHttpJsonResponse(ret);
+             resp->setStatusCode(HttpStatusCode::k500InternalServerError);
+             (*callbackPtr)(resp);
+    }); 
+};

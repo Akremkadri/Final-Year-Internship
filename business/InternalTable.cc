@@ -11,49 +11,42 @@ InternalTable::~InternalTable()
 
 }
 
-string LoadJsonFile(){
+Json::Value  InternalTable::LoadJsonFile(){
 
-  Json::FastWriter fastWriter;
-  std::string output = fastWriter.write(root);
-  fstream ofile("json.json");
-  string strjson;
-  if (!ofile.is_open()) {
-    return;
-  }
- 
-  string strline;
-  while (getline(ofile, strline)) {
-   strjson += strline;
-  }
+  Json::Value root;
+  Json::Reader reader;
   
-  ofile.close();
-  Json::Reader reader;  //  Reader 
-  Json::Value root;    //  The value of value can be any object
+  std::ifstream file(defaultPath);
+  file >> root;
+  std::cout << root ; 
+  if(reader.parse(file, root, true)){
+        //for some reason it always fails to parse
+	std::cout  << "Failed to parse configuration\n"
+               << reader.getFormattedErrorMessages();}
   
-  if (reader.parse(strjson, root)) {
-  
-    int size = root.size();   //  Number of root nodes
-  
-    for (int j = 0; j < size; j++) {
-      
-      cout << root[j]["name"].asString() << endl;
- 
-      const Json::Value arrayObj = root[j]["lines"];
- 
-      for (int i = 0; i < arrayObj.size(); i++) {
- 
-        if (arrayObj[i].isMember("line")) {
-          cout << arrayObj[i]["line"].asString() << endl;
-        }
-        if (arrayObj[i].isMember("cpp")) {
-          cout << arrayObj[i]["cpp"].asString() << endl;
-        }
-        if (arrayObj[i].isMember("java")) {
-          cout << arrayObj[i]["java"].asString() << endl;
-        }
-    
-        int m = 0;
-      }
-    }
-  }
+  return root; 
 }
+
+std::vector<Json::Value> InternalTable::SearchInArray(const Json::Value& root, const std::string &key , const std::string  &value)
+{
+    std::vector<Json::Value> res;
+    for (const Json::Value& array : root)  // iterate over "books"
+    {
+        if (array[key].asString() == value)   // if by "Petr"
+           {
+            res.push_back(array);                   // take a copy
+           }
+    }
+    return res;                                    // and return
+}
+
+
+
+
+
+/* auto  InternalTable::InternalTablesToMap(Json::Value root)
+{
+  InternalMap  std::map<std::string , Json::Value> ; 
+
+  return InternalMap; 
+} */
