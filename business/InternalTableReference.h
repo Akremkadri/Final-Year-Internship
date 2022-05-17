@@ -10,13 +10,17 @@
 #include <string>
 #include "../business/InternalTable.h"
 
+
 class InternalTableReference
 {
 public:
-    InternalTable MainTable ;
     InternalTableReference();
     ~InternalTableReference();
     Json::Value InternalTableReferenceValue(const std::string &Table , const std::string  &Column , const std::string  &Value);
+    void Printmap();
+    Json::Value SearchJson(const std::string &Table , const std::string  &Column , const std::string  &Value );
+private:
+std::unordered_map<std::string, Json::Value> my_map;
 
 
 };

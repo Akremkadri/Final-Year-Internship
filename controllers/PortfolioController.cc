@@ -55,8 +55,10 @@ void PortfolioController::get(const HttpRequestPtr& req, std::function<void(cons
                       for (auto row : result) {
                           Portfolio _Portfolio{row};
                           PortfolioDetails PortfolioDetails{_Portfolio};
+                          
                           ret.append(PortfolioDetails.toJson());
                       }
+                      LOG_DEBUG << "get";
 
                       auto resp = HttpResponse::newHttpJsonResponse(ret);
                       resp->setStatusCode(HttpStatusCode::k200OK);

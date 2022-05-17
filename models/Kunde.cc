@@ -210,7 +210,7 @@ const std::string Kunde::Cols::_CLIENT_STRUCTURE_CD = "CLIENT_STRUCTURE_CD";
 const std::string Kunde::Cols::_CLIENT_SUBSTRUCTURE_CD = "CLIENT_SUBSTRUCTURE_CD";
 const std::string Kunde::primaryKeyName = "KUNDENID";
 const bool Kunde::hasPrimaryKey = true;
-const std::string Kunde::tableName = "kunde";
+const std::string Kunde::tableName = "KUNDE";
 
 const std::vector<typename Kunde::MetaData> Kunde::metaData_={
 {"KUNDENID","double","double",8,0,1,1},
@@ -5579,7 +5579,7 @@ Kunde::Kunde(const Json::Value &pJson) noexcept(false)
         dirtyFlag_[20]=true;
         if(!pJson["IDENTIFIKATIONSART_CD"].isNull())
         {
-            identifikationsartCd_=std::make_shared<std::string>(pJson["IDENTIFIKATIONSART_CD"].asString());
+            identifikationsartCd_=std::make_shared<std::string>(pJson["IDENTIFIKATIONSART_CD"]["IDENTIFIKATIONSART_CD"].asString());
         }
     }
     if(pJson.isMember("VERMOEGENSURSPRUNG_CD"))
@@ -6171,7 +6171,7 @@ Kunde::Kunde(const Json::Value &pJson) noexcept(false)
         dirtyFlag_[85]=true;
         if(!pJson["APSYS_CDFWTSTATREGULFISCANCC"].isNull())
         {
-            apsysCdfwtstatregulfiscancc_=std::make_shared<std::string>(pJson["APSYS_CDFWTSTATREGULFISCANCC"].asString());
+            apsysCdfwtstatregulfiscancc_=std::make_shared<std::string>(pJson["APSYS_CDFWTSTATREGULFISCANCC"]["CDFWTOPTREGULFISCANCC_CD"].asString());
         }
     }
     if(pJson.isMember("APSYS_CDFWTOPTREGULFISCFUTC"))

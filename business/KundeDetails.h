@@ -6,8 +6,10 @@
 #include "../models/Kunde.h"
 #include <trantor/utils/Date.h>
 #include <trantor/utils/Logger.h>
+#include "../business/InternalTableReference.h"
 
 struct KundeDetails {
+        InternalTableReference Table ;
         double KUNDENID;
         std::string BEZEICHNUNG;
         trantor::Date KUNDESEIT;
@@ -206,6 +208,8 @@ struct KundeDetails {
         KundeDetails() {}
         KundeDetails(const drogon_model::cim_web::Kunde &Kunde);
         Json::Value toJson();
+        Json::Value toJsonInsert(Json::Value Value) ;
+
     };
 
 #endif

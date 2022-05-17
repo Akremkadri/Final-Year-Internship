@@ -1,14 +1,23 @@
 #include <drogon/HttpAppFramework.h>
 #include "../business/InternalTableReference.h"
-
-Json::Value root ; 
+#include "../business/InternalTable.h"
+#define keyword "xxx"
 int main() {    
     InternalTableReference Table; 
    // root = Table.LoadJsonFile() ;
-    Json::Value results ;
+    /* Json::Value results ;
     results = Table.InternalTableReferenceValue("ACCOUNT_FREQUENCY", "ACCOUNT_FREQUENCY_CD" , "W");
-    std::cout << results ; 
-
+    std::cout << results ; */
+    Json::Value JsonObject ;
+    JsonObject=Table.SearchJson("PORTFOLIOTYP", "PORTFOLIOTYP_CD" , "C") ; 
+    std::cout << JsonObject  << std::endl;
+    // Table.Printmap();
+    // InternalTable AnotherTable ;
+    // AnotherTable.Printall(); 
+    /* Json::Value Affichage ; 
+    Affichage = AnotherTable.LoadJsonFile();
+    std::cout << AnotherTable.PrintJsonAndKey(Affichage) ; 
+    AnotherTable.Printall(Affichage) ; */ 
     //for (auto i: results)
     //std::cout << i << ' ';
     //Set HTTP listener address and port

@@ -6,9 +6,10 @@
 #include "../models/Portfolio.h"
 #include <trantor/utils/Date.h>
 #include <trantor/utils/Logger.h>
-
+#include "../business/InternalTableReference.h"
 struct PortfolioDetails
 {
+         InternalTableReference Table ;
          double KUNDENID;
          double PORTFOLIONO;
          std::string BEZEICHNUNG;
@@ -175,7 +176,8 @@ struct PortfolioDetails
          std::string RETENTION_ON_HOLD_REASON;
          trantor::Date LOGICAL_ERASURE_DATE;
          std::string LOGICAL_ERASURE_REASON;
-         PortfolioDetails(){}
+         PortfolioDetails();
+         //~PortfolioDetails();
          PortfolioDetails(const drogon_model::cim_web::Portfolio &Portfolio);
          Json::Value toJson(); 
 };

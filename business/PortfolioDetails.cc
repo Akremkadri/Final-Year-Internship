@@ -1,4 +1,4 @@
-#include "PortfolioDetails.h"
+#include "PortfolioDetails.h" 
 
 PortfolioDetails::PortfolioDetails(const drogon_model::cim_web::Portfolio &Portfolio){
           KUNDENID=Portfolio.getValueOfKundenid();
@@ -167,6 +167,7 @@ PortfolioDetails::PortfolioDetails(const drogon_model::cim_web::Portfolio &Portf
           RETENTION_ON_HOLD_REASON=Portfolio.getValueOfRetentionOnHoldReason();
           LOGICAL_ERASURE_DATE=Portfolio.getValueOfLogicalErasureDate();
           LOGICAL_ERASURE_REASON=Portfolio.getValueOfLogicalErasureReason();
+          Table = InternalTableReference();
 } 
 auto PortfolioDetails::toJson()-> Json::Value{
      Json::Value ret{};
@@ -213,7 +214,7 @@ auto PortfolioDetails::toJson()-> Json::Value{
            ret["RUBRIK2"] =RUBRIK2;
            ret["RUBRIK3"] =RUBRIK3;
            ret["ONLINE_CD"] =ONLINE_CD;
-           ret["PORTFOLIOTYP_CD"] =PORTFOLIOTYP_CD;
+           ret["PORTFOLIOTYP_CD"] =Table.SearchJson("PORTFOLIOTYP", "PORTFOLIOTYP_CD" , PORTFOLIOTYP_CD);
            ret["CDPARTC"] =CDPARTC;
            ret["PO_EU_TAX_PROZENT"] =PO_EU_TAX_PROZENT;
            ret["APSYS_STATUS_OPEC"] =APSYS_STATUS_OPEC;
