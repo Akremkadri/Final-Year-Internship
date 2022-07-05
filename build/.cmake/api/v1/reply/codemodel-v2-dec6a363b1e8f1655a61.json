@@ -1,0 +1,279 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						4,
+						5
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "SubModules/jwt-cpp",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "SubModules/jwt-cpp"
+				},
+				{
+					"build" : "SubModules/jwt-cpp/example",
+					"childIndexes" : 
+					[
+						3
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "SubModules/jwt-cpp/example",
+					"targetIndexes" : 
+					[
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					]
+				},
+				{
+					"build" : "SubModules/jwt-cpp/example/traits",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "SubModules/jwt-cpp/example/traits"
+				},
+				{
+					"build" : "SubModules/libbcrypt",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "SubModules/libbcrypt",
+					"targetIndexes" : 
+					[
+						2,
+						3
+					]
+				},
+				{
+					"build" : "test",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "test",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						4,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "WebServer",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "jwt-cpp",
+					"parentIndex" : 0
+				},
+				{
+					"childIndexes" : 
+					[
+						3
+					],
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "jwt-cpp-examples",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "jwt-cpp-traits",
+					"parentIndex" : 2
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "bcrypt",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2,
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "WebServer_test",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "WebServer::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-WebServer-Debug-73bd54b47f8d8838fdc3.json",
+					"name" : "WebServer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "WebServer_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-WebServer_test-Debug-5cc560af4528fdc9b740.json",
+					"name" : "WebServer_test",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "bcrypt::@54a9922497cf910abb91",
+					"jsonFile" : "target-bcrypt-Debug-1c93fc8122b08f3550de.json",
+					"name" : "bcrypt",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "bcrypt_test::@54a9922497cf910abb91",
+					"jsonFile" : "target-bcrypt_test-Debug-9b6547c7d5d4cedfd050.json",
+					"name" : "bcrypt_test",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "es256k::@56d19d91a95b929bcd31",
+					"jsonFile" : "target-es256k-Debug-6aa233da90902bf006ae.json",
+					"name" : "es256k",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "jwks-verify::@56d19d91a95b929bcd31",
+					"jsonFile" : "target-jwks-verify-Debug-8702358ab9b3ac0449a0.json",
+					"name" : "jwks-verify",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "print-claims::@56d19d91a95b929bcd31",
+					"jsonFile" : "target-print-claims-Debug-926fc45668add9104c00.json",
+					"name" : "print-claims",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "private-claims::@56d19d91a95b929bcd31",
+					"jsonFile" : "target-private-claims-Debug-2bc7c28095e44432cf19.json",
+					"name" : "private-claims",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "rsa-create::@56d19d91a95b929bcd31",
+					"jsonFile" : "target-rsa-create-Debug-54f84dbcf2e20245aeae.json",
+					"name" : "rsa-create",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "rsa-verify::@56d19d91a95b929bcd31",
+					"jsonFile" : "target-rsa-verify-Debug-ca2350580bb2612415d9.json",
+					"name" : "rsa-verify",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/akram/Desktop/WebserverDrogon/WebServer/build",
+		"source" : "/home/akram/Desktop/WebserverDrogon/WebServer"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

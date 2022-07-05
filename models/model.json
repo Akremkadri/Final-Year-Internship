@@ -42,15 +42,15 @@
         "enabled": true,
          "items": [
             {
-                "type": "hasOne",
-                "original_table_name": "PORTFOLIO",
-                "original_table_alias": "PORTFOLIO",
+                "type": "has one",
+                "original_table_name": "KUNDE",
+                "original_table_alias": "KUNDE",
                 "original_key": "KUNDENID",
-                "target_table_name": "KUNDE",
-                "target_table_alias": "KUNDE",
-                "target_key": "PORTFOLIONO",
+                "target_table_name": "PORTFOLIO",
+                "target_table_alias": "PORTFOLIO",
+                "target_key": "KUNDENID",
                 "enable_reverse": true
-            },
+            }
         ]
     },
     "restful_api_controllers": {

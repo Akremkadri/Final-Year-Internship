@@ -36,6 +36,7 @@ namespace drogon_model
 {
 namespace cim_web
 {
+class Portfolio;
 
 class Kunde
 {
@@ -2192,6 +2193,9 @@ class Kunde
     Json::Value toJson() const;
     Json::Value toMasqueradedJson(const std::vector<std::string> &pMasqueradingVector) const;
     /// Relationship interfaces
+    void getPORTFOLIO(const drogon::orm::DbClientPtr &clientPtr,
+                      const std::function<void(Portfolio)> &rcb,
+                      const drogon::orm::ExceptionCallback &ecb) const;
   private:
     friend drogon::orm::Mapper<Kunde>;
 #ifdef __cpp_impl_coroutine

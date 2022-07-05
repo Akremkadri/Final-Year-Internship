@@ -6,6 +6,7 @@
  */
 
 #include "Portfolio.h"
+#include "Kunde.h"
 #include <drogon/utils/Utilities.h>
 #include <string>
 
@@ -181,7 +182,7 @@ const std::string Portfolio::Cols::_LOGICAL_ERASURE_DATE = "LOGICAL_ERASURE_DATE
 const std::string Portfolio::Cols::_LOGICAL_ERASURE_REASON = "LOGICAL_ERASURE_REASON";
 const std::string Portfolio::primaryKeyName = "PORTFOLIONO";
 const bool Portfolio::hasPrimaryKey = true;
-const std::string Portfolio::tableName = "portfolio";
+const std::string Portfolio::tableName = "PORTFOLIO";
 
 const std::vector<typename Portfolio::MetaData> Portfolio::metaData_={
 {"KUNDENID","double","double",8,0,0,0},
@@ -29357,4 +29358,27 @@ bool Portfolio::validJsonOfField(size_t index,
             break;
     }
     return true;
+}
+void Portfolio::getKUNDE(const DbClientPtr &clientPtr,
+                         const std::function<void(Kunde)> &rcb,
+                         const ExceptionCallback &ecb) const
+{
+    const static std::string sql = "select * from KUNDE where KUNDENID = ?";
+    *clientPtr << sql
+               << *kundenid_
+               >> [rcb = std::move(rcb), ecb](const Result &r){
+                    if (r.size() == 0)
+                    {
+                        ecb(UnexpectedRows("0 rows found"));
+                    }
+                    else if (r.size() > 1)
+                    {
+                        ecb(UnexpectedRows("Found more than one row"));
+                    }
+                    else
+                    {
+                        rcb(Kunde(r[0]));
+                    }
+               }
+               >> ecb;
 }

@@ -7,6 +7,7 @@
 #include <trantor/utils/Date.h>
 #include <trantor/utils/Logger.h>
 #include "../business/InternalTableReference.h"
+#include "../business/KundeDetails.h"
 struct PortfolioDetails
 {
          InternalTableReference Table ;

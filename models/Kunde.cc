@@ -6,6 +6,7 @@
  */
 
 #include "Kunde.h"
+#include "Portfolio.h"
 #include <drogon/utils/Utilities.h>
 #include <string>
 
@@ -5579,7 +5580,7 @@ Kunde::Kunde(const Json::Value &pJson) noexcept(false)
         dirtyFlag_[20]=true;
         if(!pJson["IDENTIFIKATIONSART_CD"].isNull())
         {
-            identifikationsartCd_=std::make_shared<std::string>(pJson["IDENTIFIKATIONSART_CD"]["IDENTIFIKATIONSART_CD"].asString());
+            identifikationsartCd_=std::make_shared<std::string>(pJson["IDENTIFIKATIONSART_CD"].asString());
         }
     }
     if(pJson.isMember("VERMOEGENSURSPRUNG_CD"))
@@ -6171,7 +6172,7 @@ Kunde::Kunde(const Json::Value &pJson) noexcept(false)
         dirtyFlag_[85]=true;
         if(!pJson["APSYS_CDFWTSTATREGULFISCANCC"].isNull())
         {
-            apsysCdfwtstatregulfiscancc_=std::make_shared<std::string>(pJson["APSYS_CDFWTSTATREGULFISCANCC"]["CDFWTOPTREGULFISCANCC_CD"].asString());
+            apsysCdfwtstatregulfiscancc_=std::make_shared<std::string>(pJson["APSYS_CDFWTSTATREGULFISCANCC"].asString());
         }
     }
     if(pJson.isMember("APSYS_CDFWTOPTREGULFISCFUTC"))
@@ -35013,4 +35014,27 @@ bool Kunde::validJsonOfField(size_t index,
             break;
     }
     return true;
+}
+void Kunde::getPORTFOLIO(const DbClientPtr &clientPtr,
+                         const std::function<void(Portfolio)> &rcb,
+                         const ExceptionCallback &ecb) const
+{
+    const static std::string sql = "select * from PORTFOLIO where KUNDENID = ?";
+    *clientPtr << sql
+               << *kundenid_
+               >> [rcb = std::move(rcb), ecb](const Result &r){
+                    if (r.size() == 0)
+                    {
+                        ecb(UnexpectedRows("0 rows found"));
+                    }
+                    else if (r.size() > 1)
+                    {
+                        ecb(UnexpectedRows("Found more than one row"));
+                    }
+                    else
+                    {
+                        rcb(Portfolio(r[0]));
+                    }
+               }
+               >> ecb;
 }
